@@ -10,7 +10,7 @@
 /* Layout: a reading desk. Source text on the left, an annotation slip pinned beside it; tab two turns the slips into a paragraph. */
 :root{
   --bg:#EDF0F2; --surface:#FFFFFF; --ink:#16202A; --muted:#56626E; --line:#D3DAE0; --hover:#E2E9EE;
-  --accent:#1C5D7C; --accent-ink:#FFFFFF; --soft:#E4EEF3;
+  --accent:#1C5D7C; --accent-ink:#FFFFFF; --soft:#E4EEF3; --drawer:#EEF5F9;
   --ok:#2C7A4C; --bad:#B23A48; --warn:#8F6400;
   --t-position:#2F62C9; --t-reasoning:#7C47B8; --t-evidence:#A86F06; --t-counter:#B8384F; --t-concession:#147F78; --t-conclusion:#3A7F2A;
   --f-read:"Literata", Georgia, "Times New Roman", serif;
@@ -20,7 +20,7 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --line:#2B3642; --hover:#212C37;
-    --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+    --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A; --drawer:#1A2630;
     --ok:#62C08A; --bad:#E57A88; --warn:#DDAE45;
     --t-position:#86A6F2; --t-reasoning:#B790E8; --t-evidence:#E2B04E; --t-counter:#EC8297; --t-concession:#55C4BB; --t-conclusion:#88C774;
     color-scheme:dark;
@@ -28,7 +28,7 @@
 }
 :root[data-theme="dark"]{
   --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --line:#2B3642; --hover:#212C37;
-  --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+  --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A; --drawer:#1A2630;
   --ok:#62C08A; --bad:#E57A88; --warn:#DDAE45;
   --t-position:#86A6F2; --t-reasoning:#B790E8; --t-evidence:#E2B04E; --t-counter:#EC8297; --t-concession:#55C4BB; --t-conclusion:#88C774;
   color-scheme:dark;
@@ -104,6 +104,8 @@ article.src h2{font-family:var(--f-read);font-weight:400;font-style:italic;font-
 .legend{display:grid;gap:8px;font-size:13.5px}
 .legend div{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:baseline}
 .legend .k{font-family:var(--f-mono);font-size:11px;font-weight:500;color:var(--tc);letter-spacing:.05em;min-width:34px}
+.guidebtn{display:none;justify-self:start}
+.trapbox{display:grid;gap:8px}
 .trap{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:13.5px}
 .trap b{display:block;margin-bottom:2px}
 .fb{border-radius:8px;padding:10px 12px;font-size:14px;border:1px solid var(--line)}
@@ -154,9 +156,11 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:80ch}
 
 @media (max-width:880px){
   .readgrid,.buildgrid{grid-template-columns:minmax(0,1fr)}
-  .panel{top:auto;bottom:0;position:sticky;max-height:56vh;overflow:auto;box-shadow:0 -8px 24px rgba(0,0,0,.12);padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .panel{top:auto;bottom:0;position:sticky;max-height:56vh;overflow:auto;background:var(--drawer);border-color:color-mix(in srgb,var(--accent) 35%,var(--line));border-top:3px solid color-mix(in srgb,var(--accent) 55%,var(--line));box-shadow:0 -4px 14px rgba(0,0,0,.06);padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .panel .tagbtn,.panel .rate button,.panel .pill{background:var(--surface)}
   .panel .legend,.panel .trapbox{display:none}
-  .panel.idle .legend{display:grid}
+  .panel.idle.open .legend,.panel.idle.open .trapbox{display:grid}
+  .guidebtn{display:inline}
   .preview{position:static}
   .body{font-size:17px}
 }
@@ -334,7 +338,7 @@ function renderRead(){
         <div class="textfoot">${foot}</div>
       </article>
     </div>
-    <aside class="panel ${st.sel?'':'idle'}" id="panel">${panelHTML()}</aside>
+    <aside class="panel ${st.sel?'':'idle'} ${st.guide?'open':''}" id="panel">${panelHTML()}</aside>
   </div>`;
   bindRead();
 }
@@ -347,8 +351,9 @@ function panelHTML(){
   if(!s){
     return `<h3>How to read</h3>
     <p class="small" style="margin:0">Click a sentence and say what move the author is making. You’ll know straight away if you’re right; you get two tries. For evidence and reasoning, judge it too: strong or questionable, and why?</p>
+    <button class="linkbtn guidebtn" id="guide">${st.guide?'Hide':'Show'} the six moves and tips</button>
     ${legendHTML()}
-    <div class="trapbox" style="display:grid;gap:8px">
+    <div class="trapbox">
       <div class="trap"><b>Reported is not held</b>Authors often describe a view in order to attack it. Look for signals like “X argues that…”, “critics claim…”, followed by “however”.</div>
       <div class="trap"><b>Data is not proof</b>A number can be precise and still weak. Ask who produced it, how big the sample was, and what else might explain it.</div>
     </div>`;
@@ -400,6 +405,7 @@ function bindRead(){
     if(s.reasons.includes(r))u.reason=r;else{u.badReasons=u.badReasons||[];u.badReasons.push(r);if(u.badReasons.length>=2)u.reason=s.reasons.find(x=>(u.rating==='strong'?STRONG_R:WEAK_R).includes(x))||s.reasons[0];}
     save();renderRead();});
   const d=$('#deselect');if(d)d.onclick=()=>{st.sel=null;renderRead();};
+  const gb=$('#guide');if(gb)gb.onclick=()=>{st.guide=!st.guide;renderRead();};
   const g=$('#giveup');if(g)g.onclick=()=>{KEYS(TEXT[st.cur]).forEach(s=>{const u=U(s.id);if(!resolved(u)){u.revealed=true;u.tag=s.tag;if(s.rating){u.rRevealed=true;u.rating=s.rating;}}});st.sel=null;save();renderRead();};
   const r=$('#retry');if(r)r.onclick=()=>{TEXT[st.cur].s.forEach(s=>delete st.tags[s.id]);st.sel=null;save();renderRead();};
   const n=$('#next');if(n)n.onclick=()=>{st.cur=nextSrc();st.sel=null;save();renderRead();window.scrollTo({top:0,behavior:'smooth'});};
