@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Reading the Tariff Debate</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: a reading desk. Source text on the left, an annotation slip pinned beside it; tab two turns the slips into a paragraph. */
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --ink:#16202A; --muted:#56626E; --line:#D3DAE0; --hover:#E2E9EE;
+  --accent:#1C5D7C; --accent-ink:#FFFFFF; --soft:#E4EEF3;
+  --ok:#2C7A4C; --bad:#B23A48; --warn:#8F6400;
+  --t-position:#2F62C9; --t-reasoning:#7C47B8; --t-evidence:#A86F06; --t-counter:#B8384F; --t-concession:#147F78; --t-conclusion:#3A7F2A;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --line:#2B3642; --hover:#212C37;
+    --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+    --ok:#62C08A; --bad:#E57A88; --warn:#DDAE45;
+    --t-position:#86A6F2; --t-reasoning:#B790E8; --t-evidence:#E2B04E; --t-counter:#EC8297; --t-concession:#55C4BB; --t-conclusion:#88C774;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --line:#2B3642; --hover:#212C37;
+  --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+  --ok:#62C08A; --bad:#E57A88; --warn:#DDAE45;
+  --t-position:#86A6F2; --t-reasoning:#B790E8; --t-evidence:#E2B04E; --t-counter:#EC8297; --t-concession:#55C4BB; --t-conclusion:#88C774;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 40px}
+.wrap{max-width:1180px;margin:0 auto}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+/* header */
+header.top{padding-block:28px 18px;display:grid;gap:10px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,4.2vw,40px);line-height:1.1;letter-spacing:-.01em}
+.question{font-family:var(--f-read);font-style:italic;font-size:18px;max-width:62ch;color:var(--ink)}
+.question b{font-style:normal;font-family:var(--f-ui);font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.disclaimer{font-size:13px;color:var(--muted);max-width:75ch}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-top:6px}
+nav.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 14px 9px;cursor:pointer;font-weight:600;color:var(--muted)}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs .n{font-family:var(--f-mono);font-weight:500;margin-right:6px}
+
+/* read view */
+.readgrid{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:28px;margin-top:22px;align-items:start}
+.srcbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.srcbtn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;min-width:0;text-align:left}
+.srcbtn .who{font-weight:600}
+.srcbtn .st{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.srcbtn[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.srcbtn .st.done{color:var(--ok)}
+article.src{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:clamp(18px,3vw,34px)}
+.docket{font-family:var(--f-mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px;padding-bottom:12px;border-bottom:1px dashed var(--line);margin-bottom:16px}
+.docket span:first-child{color:var(--accent);font-weight:500}
+article.src h2{font-family:var(--f-read);font-weight:400;font-style:italic;font-size:22px;line-height:1.25;margin-bottom:4px}
+.byline{color:var(--muted);font-size:14px;margin-bottom:18px}
+.body{font-family:var(--f-read);font-size:18px;line-height:1.85;max-width:66ch}
+.s{cursor:pointer;border-radius:3px;padding:2px 1px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background .12s}
+.s:hover{background:var(--hover)}
+.s.sel{outline:2px solid var(--accent);outline-offset:1px}
+.s[data-tag]{background:color-mix(in srgb,var(--tc) 15%,transparent);box-shadow:inset 0 -2px 0 var(--tc)}
+[data-tag="position"]{--tc:var(--t-position)} [data-tag="reasoning"]{--tc:var(--t-reasoning)} [data-tag="evidence"]{--tc:var(--t-evidence)}
+[data-tag="counter"]{--tc:var(--t-counter)} [data-tag="concession"]{--tc:var(--t-concession)} [data-tag="conclusion"]{--tc:var(--t-conclusion)}
+.chip{font-family:var(--f-mono);font-size:10.5px;font-weight:500;letter-spacing:.05em;color:var(--tc,var(--muted));vertical-align:super;margin-left:3px;white-space:nowrap;line-height:1}
+.chip .r{margin-left:3px}
+.chip .ok{color:var(--ok)} .chip .bad{color:var(--bad)}
+.s.revealed{background:transparent;box-shadow:inset 0 -2px 0 var(--tc);background-image:none;opacity:.85}
+.s.tried{box-shadow:inset 0 -2px 0 var(--bad)}
+.tagbtn.no,.rate button.no,.pill.no{text-decoration:line-through;opacity:.5}
+.pill.yes{border-color:var(--ok)!important;color:var(--ok)!important;background:transparent!important}
+.textfoot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px dashed var(--line)}
+.score{font-family:var(--f-mono);font-size:13px}
+.score b{font-size:15px}
+
+/* panel */
+.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 14px);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:14px}
+.panel h3{font-size:12px;font-family:var(--f-mono);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.quote{font-family:var(--f-read);font-size:15px;line-height:1.55;border-left:3px solid var(--line);padding-left:10px;color:var(--ink)}
+.taggrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tagbtn{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:7px 9px;cursor:pointer;font-weight:500;font-size:14px;text-align:left}
+.tagbtn::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--tc);flex:none}
+.tagbtn[aria-pressed="true"]{border-color:var(--tc);background:color-mix(in srgb,var(--tc) 16%,var(--surface))}
+.tagbtn:disabled{cursor:default;opacity:.75}
+.rate{display:flex;gap:6px}
+.rate button,.pill{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:13.5px}
+.rate button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.reasons{display:flex;flex-wrap:wrap;gap:6px}
+.reasons .pill[aria-pressed="true"]{border-color:var(--accent);background:var(--soft);color:var(--ink);font-weight:500}
+.btn{background:var(--accent);color:var(--accent-ink);border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+.linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.legend{display:grid;gap:8px;font-size:13.5px}
+.legend div{display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:baseline}
+.legend .k{font-family:var(--f-mono);font-size:11px;font-weight:500;color:var(--tc);letter-spacing:.05em;min-width:34px}
+.trap{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:13.5px}
+.trap b{display:block;margin-bottom:2px}
+.fb{border-radius:8px;padding:10px 12px;font-size:14px;border:1px solid var(--line)}
+.fb.ok{border-color:color-mix(in srgb,var(--ok) 50%,var(--line))}
+.fb.bad{border-color:color-mix(in srgb,var(--bad) 55%,var(--line))}
+.fb .h{font-weight:600;margin-bottom:3px}
+.fb.ok .h{color:var(--ok)} .fb.bad .h{color:var(--bad)} .fb.neutral .h{color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* build view */
+.buildgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:28px;margin-top:22px;align-items:start}
+.slot{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:grid;gap:10px}
+.slots{display:grid;gap:14px}
+.slot .lab{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.slot .lab .n{font-family:var(--f-mono);font-size:12px;color:var(--accent);font-weight:500}
+.slot .lab h3{font-size:16px;font-weight:600}
+.slot .lab .why{font-size:13px;color:var(--muted)}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.row .pill[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px 10px;width:100%;max-width:100%}
+textarea{font-family:var(--f-read);font-size:15.5px;line-height:1.5;resize:vertical;min-height:62px}
+.orig{font-family:var(--f-read);font-size:14px;color:var(--muted);border-left:3px solid var(--tc,var(--line));padding-left:10px}
+.orig .meta{font-family:var(--f-mono);font-size:11px;color:var(--tc,var(--muted));display:block;margin-bottom:2px;letter-spacing:.04em}
+.lead{font-family:var(--f-read);font-size:15.5px}
+.lead .cite{font-weight:600}
+.warn{font-size:13px;color:var(--warn)}
+.tip{font-size:13px;color:var(--muted)}
+.preview{position:sticky;top:calc(env(safe-area-inset-top,0px) + 14px);display:grid;gap:14px}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.para{font-family:var(--f-read);font-size:16.5px;line-height:1.75}
+.para .ph{color:var(--muted);font-style:italic}
+.para .seg{border-radius:3px;padding:1px 0}
+.para .seg.src{background:var(--soft)}
+.refs{font-family:var(--f-read);font-size:14px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.refs h4{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 6px}
+.refs p{margin:0 0 6px;padding-left:2em;text-indent:-2em}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px}
+.check li{display:grid;grid-template-columns:20px 1fr;gap:6px}
+.check .m{font-family:var(--f-mono);font-weight:500}
+.check .y .m{color:var(--ok)} .check .n .m{color:var(--muted)}
+.wc{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;text-align:left}
+.model{font-family:var(--f-read);font-size:15.5px;line-height:1.7;background:var(--soft);border-radius:8px;padding:14px 16px}
+.model p{margin:0 0 8px}
+.model .ann{font-family:var(--f-ui);font-size:12.5px;color:var(--muted)}
+footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:80ch}
+
+@media (max-width:880px){
+  .readgrid,.buildgrid{grid-template-columns:minmax(0,1fr)}
+  .panel{top:auto;bottom:0;position:sticky;max-height:56vh;overflow:auto;box-shadow:0 -8px 24px rgba(0,0,0,.12);padding-bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .panel .legend,.panel .trapbox{display:none}
+  .panel.idle .legend{display:grid}
+  .preview{position:static}
+  .body{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">C2 Academic English · Week 2 warm-up · Reading sources as arguments</div>
+    <h1>Reading the Tariff Debate</h1>
+    <p class="question"><b>The question the four sources argue about</b>Should green economies use tariffs to protect their clean-tech manufacturers from cheaper imports?</p>
+    <p class="disclaimer">All authors, studies, figures and countries here are fictional, written for class. Practise citing them as if they were real, but never cite them in real work.</p>
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-read" aria-selected="true"><span class="n">1</span>Read and tag</button>
+      <button role="tab" id="tab-build" aria-selected="false"><span class="n">2</span>Build a paragraph</button>
+    </nav>
+  </header>
+  <main id="view"></main>
+  <footer>Reporting verbs carry your judgement: <i>shows</i> and <i>demonstrates</i> say you trust the evidence; <i>claims</i> and <i>asserts</i> keep your distance. The builder suggests verbs from the judgements made in step 1.</footer>
+</div>
+
+<script>
+const TAGS={
+  position:{label:'Position',k:'POS',def:'What the author believes or wants. Usually one clear claim.'},
+  reasoning:{label:'Reasoning',k:'REA',def:'The “because”: the logic linking the claim to the world.'},
+  evidence:{label:'Evidence',k:'EVI',def:'Data, studies, cases or examples offered as support.'},
+  counter:{label:'Counter-argument',btn:'Counter',k:'CTR',def:'A view the author reports in order to reject it. Not the author’s own view.'},
+  concession:{label:'Concession',k:'CON',def:'Where the author admits a weakness or gives ground.'},
+  conclusion:{label:'Conclusion',k:'CLU',def:'Where the author lands: the recommendation or final judgement.'}
+};
+const RATED=['evidence','reasoning'];
+const STRONG_R=['Reliable, independent source','Specific and checkable','Clear logical link','Large or long-term data'];
+const WEAK_R=['Small sample','Correlation, not cause','Another cause ignored','Possible bias or funding','Anecdotal','Assumes what it should prove','Overgeneralises'];
+
+const TEXTS=[
+{id:'A',author:'Reinholt',year:2024,first:'Mara Reinholt',role:'Industrial strategy researcher',
+ title:'Resilience before price: the case for clean-technology protection',
+ ref:'Reinholt, M. (2024). Resilience before price: the case for clean-technology protection. <i>Journal of Strategic Economic Policy</i>, 12(3), 201–219.',
+ venue:'J. Strategic Economic Policy 12(3)',
+ s:[
+ {id:'A1',tag:'context',t:'Few industries have changed as quickly as solar manufacturing: in the decade to 2023, Kesh’s share of global module production rose from roughly half to more than four-fifths.',note:'Background. It sets the scene with a trend but does not argue anything yet.'},
+ {id:'A2',tag:'counter',t:'Free-trade economists tend to treat this as good news, arguing that if another country is willing to sell us cheap panels, we should simply say thank you and install them.',note:'A reported view. Reinholt describes what free-trade economists think so that she can reject it in the next sentence. “Tend to treat… arguing that” signals someone else’s position.'},
+ {id:'A3',tag:'position',t:'This view, however, mistakes a low price for a safe one: governments that are serious about decarbonisation have a duty to protect at least part of their clean-technology manufacturing base.',note:'Reinholt’s position. “This view, however” marks the turn from the reported view to her own.'},
+ {id:'A4',tag:'reasoning',rating:'strong',reasons:['Clear logical link'],t:'When a single supplier controls most of a market, any disruption, whether a pandemic, a shipping crisis or a political dispute, can halt a country’s energy transition overnight.',note:'The reasoning behind her position: concentration creates vulnerability. The logic holds up.'},
+ {id:'A5',tag:'evidence',rating:'strong',rAccept:['strong','weak'],reasons:['Reliable, independent source','Specific and checkable','Small sample','Overgeneralises'],t:'This is not hypothetical: during the 2021 container shortage, the Norland Installers’ Register recorded average waiting times for residential solar systems of seven months, against six weeks the previous year.',note:'Official register data, specific and checkable, so broadly strong. It is a single episode, though, so “questionable” for that reason is also a fair judgement.'},
+ {id:'A6',tag:'concession',t:'Protection is not free, and I accept that tariffs will raise prices for households in the short run.',note:'Reinholt gives ground (“I accept that”). Admitting a cost makes her argument more credible, not less.'},
+ {id:'A7',tag:'reasoning',rating:'weak',reasons:['Assumes what it should prove','Overgeneralises'],t:'But a modest premium today is surely a price worth paying for an industry that will employ tens of thousands of people for decades to come.',note:'Questionable reasoning. “Surely” asserts rather than shows, and the decades of jobs are assumed, not demonstrated. O’Mahony attacks exactly this point.'},
+ {id:'A8',tag:'conclusion',t:'Norland should therefore introduce temporary tariffs on imported modules, tied to firm commitments from domestic manufacturers to expand capacity within five years.',note:'Her recommendation, signalled by “therefore”. Note the conditions: temporary, and tied to commitments.'}
+ ]},
+{id:'B',author:'Whitcombe',year:2023,first:'Carla Whitcombe',role:'Energy transition economist',
+ title:'Taxing the transition: why clean-tech tariffs backfire',
+ ref:'Whitcombe, C. (2023). Taxing the transition: why clean-tech tariffs backfire. <i>Energy Transition Review</i>, 8(2), 45–61.',
+ venue:'Energy Transition Review 8(2)',
+ s:[
+ {id:'B1',tag:'position',t:'Tariffs on imported clean technology are, in my view, one of the most self-defeating policies a climate-conscious government can adopt.',note:'Her position, stated directly (“in my view”) in strong terms: “self-defeating”.'},
+ {id:'B2',tag:'reasoning',rating:'strong',reasons:['Clear logical link'],t:'The logic is simple: the cheaper solar panels and batteries become, the faster households and businesses install them, and every year of delay locks in emissions that cannot be recovered.',note:'Clear causal reasoning: cheaper technology leads to faster adoption, which leads to fewer emissions.'},
+ {id:'B3',tag:'evidence',rating:'weak',reasons:['Another cause ignored','Correlation, not cause'],t:'Norland’s own experience proves the point: in the two years after the 2017 Solar Safeguard duties were introduced, new residential installations fell by 38 percent.',note:'It looks impressive, but a fall after the duties does not prove the duties caused it. The next sentence admits that a subsidy was cut at the same time. “Proves” is too strong a word.'},
+ {id:'B4',tag:'concession',accept:['concession','counter'],t:'The government did also end its rooftop subsidy scheme in 2018, but this was a relatively minor change.',note:'Whitcombe acknowledges a rival explanation, then dismisses it as “minor” without evidence. Ending a rooftop subsidy is hardly minor for residential installations. This sentence is what weakens B3.'},
+ {id:'B5',tag:'counter',t:'Supporters of tariffs reply that protection saves jobs, and that a green economy needs green factories.',note:'A reported view (“supporters… reply that”), set up so that she can answer it.'},
+ {id:'B6',tag:'evidence',accept:['evidence','reasoning'],rating:'strong',reasons:['Reliable, independent source','Specific and checkable','Large or long-term data'],t:'Yet according to the Norland Labour Statistics Office, installation and maintenance account for around 70 percent of all solar jobs, and that work cannot be offshored.',note:'Official labour statistics support her rebuttal: most solar jobs are in installation, which tariffs do not protect.'},
+ {id:'B7',tag:'conclusion',t:'Governments that want both lower emissions and more green jobs should keep their markets open and invest directly in training the people who install the technology.',note:'Her recommendation: open markets plus direct investment in installers.'}
+ ]},
+{id:'C',author:'Lennart',year:2025,first:'Tobias Lennart',role:'Trade and environment scholar',
+ title:'Origin or carbon? Rethinking green protectionism',
+ ref:'Lennart, T. (2025). Origin or carbon? Rethinking green protectionism. <i>Trade and Environment Quarterly</i>, 30(1), 77–95.',
+ venue:'Trade & Environment Quarterly 30(1)',
+ s:[
+ {id:'C1',tag:'context',t:'The debate over clean-tech tariffs is usually framed as a choice between cheap imports and domestic jobs.',note:'Background. It describes how the debate is usually framed before Lennart reframes it.'},
+ {id:'C2',tag:'position',t:'I want to suggest that both sides are asking the wrong question: what matters is not where a solar panel is made, but how much carbon was emitted in making it.',note:'His position. He rejects both camps and reframes the question. “I want to suggest” is hedged, but the claim is clear.'},
+ {id:'C3',tag:'reasoning',rating:'strong',reasons:['Clear logical link'],t:'A bloc that claims climate leadership cannot easily justify blocking the cheapest green goods on the planet; it can, however, justify charging every importer, its friends included, for the emissions embedded in what they sell.',note:'A consistency argument: you cannot claim climate leadership while blocking green goods, but you can charge for carbon. “Its friends included” shows the rule applies to everyone.'},
+ {id:'C4',tag:'evidence',rating:'weak',reasons:['Possible bias or funding','Small sample'],t:'There is some evidence that such a levy would hit Kesh hardest: a 2023 study found that modules made in Kesh carried around 40 percent more lifecycle emissions than those made in Norland.',note:'Questionable. Read the next sentence: the study was paid for by domestic manufacturers and looked at only four factories.'},
+ {id:'C5',tag:'concession',accept:['concession','evidence'],t:'That study, it should be said, was commissioned by the Norland Solar Manufacturers’ Association and examined only four factories.',note:'Lennart is open about the weakness of his own evidence. A careful writer flags this, and a careful reader uses it.'},
+ {id:'C6',tag:'concession',t:'A carbon-based levy would also be harder to administer than a simple tariff, since every importer’s emissions would need to be measured and verified.',note:'A second concession: his idea has a practical cost.'},
+ {id:'C7',tag:'conclusion',t:'Even so, it may be the only form of protection a green economy can defend without hypocrisy, and Norland should begin by piloting it on solar modules.',note:'A hedged conclusion (“may be”) with a concrete first step.'}
+ ]},
+{id:'D',author:'O’Mahony',year:2025,first:'Declan O’Mahony',role:'Regional labour economist',
+ title:'Protecting workers, not factories: the regional cost of clean-tech tariffs',
+ ref:'O’Mahony, D. (2025). Protecting workers, not factories: the regional cost of clean-tech tariffs. <i>Regional Economic Studies</i>, 41(4), 310–327.',
+ venue:'Regional Economic Studies 41(4)',
+ s:[
+ {id:'D1',tag:'counter',t:'Reinholt (2024) argues that clean-tech tariffs are a necessary insurance policy against supply shocks, and that the jobs they protect will last for decades.',note:'The biggest trap in the set. This is Reinholt’s view, reported by O’Mahony. If you use it, cite Reinholt (2024), not O’Mahony.'},
+ {id:'D2',tag:'concession',t:'The first half of this argument deserves to be taken seriously, since dependence on a single supplier is a genuine risk.',note:'O’Mahony accepts half of Reinholt’s argument before attacking the other half.'},
+ {id:'D3',tag:'position',t:'The second half, however, does not survive contact with the evidence: tariffs are an extraordinarily expensive way to protect workers.',note:'His position. “However” marks the turn from conceding to arguing.'},
+ {id:'D4',tag:'evidence',rating:'strong',reasons:['Reliable, independent source','Specific and checkable'],t:'The Norland Audit Office’s review of the 2017 Solar Safeguard duties found that each manufacturing job they preserved cost consumers roughly €410,000 a year in higher prices, more than ten times the average manufacturing wage.',note:'Independent audit data with a clear point of comparison (ten times the average wage). The strongest single figure in the four texts.'},
+ {id:'D5',tag:'evidence',rating:'weak',reasons:['Anecdotal','Overgeneralises'],t:'Nor did the protection last: one factory manager in the Brennach valley told me that his plant closed within eighteen months of the duties being lifted.',note:'One manager’s story is vivid, but it is an anecdote. It sits right next to the audit figure, so strong and weak evidence appear side by side.'},
+ {id:'D6',tag:'reasoning',rating:'strong',rAccept:['strong','weak'],reasons:['Clear logical link','Assumes what it should prove','Overgeneralises'],t:'If the aim is to support the regions that depend on manufacturing, the money is better spent on the workers themselves than on shielding firms that may close anyway.',note:'The logic is sound if you accept that protected firms “may close anyway”, but that rests partly on the anecdote above. Either judgement can be defended.'},
+ {id:'D7',tag:'conclusion',t:'I therefore recommend that Norland replace tariffs with a regional transition fund offering retraining and wage insurance to affected workers.',note:'His recommendation, signalled by “therefore”.'}
+ ]}
+];
+const SENT={};TEXTS.forEach(x=>x.s.forEach(s=>{s.text=x.id;SENT[s.id]=s;}));
+const TEXT=Object.fromEntries(TEXTS.map(x=>[x.id,x]));
+
+/* state */
+const KEY='tariff-reading-v2';
+let st={tab:'read',cur:'A',sel:null,tags:{},checked:{},b:{stance:'',topic:'',sup:{card:'',verb:'',form:'author',text:''},comp:{card:'',verb:'',form:'author',link:'However,',text:''},resp:'',concl:''},showModel:false};
+try{const raw=localStorage.getItem(KEY);if(raw){const o=JSON.parse(raw);st=Object.assign(st,o,{sel:null});}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=s=>document.querySelector(s);
+const cite=x=>`${x.author} (${x.year})`;
+
+/* marking: live, per sentence */
+const HINTS={
+  position:'Look again. This is the main claim the whole text defends, in the author’s own voice.',
+  reasoning:'Look again. This explains why, with logic rather than data.',
+  evidence:'Look again. Is there a figure, a study, a record or a case here?',
+  counter:'Look again. Is this really the author’s own view? Check who is speaking.',
+  concession:'Look again. Is the author pushing their case here, or giving ground?',
+  conclusion:'Look again. Where does the author land? Watch for “therefore” or a recommendation.'
+};
+const KEYS=t=>t.s.filter(s=>s.tag!=='context');
+const U=id=>st.tags[id]||(st.tags[id]={tries:0,wrong:[],rTries:0,badReasons:[]});
+const resolved=u=>u&&(u.solved||u.revealed);
+function isDone(tid){return KEYS(TEXT[tid]).every(s=>resolved(st.tags[s.id]));}
+function score(tid){
+  const ks=KEYS(TEXT[tid]);let found=0,first=0,rated=0,rfirst=0;
+  ks.forEach(s=>{const u=st.tags[s.id];if(u&&u.solved){found++;if(u.first)first++;}
+    if(s.rating){rated++;if(u&&u.rSolved&&u.rFirst)rfirst++;}});
+  return{key:ks.length,found,first,rated,rfirst};
+}
+function tagSentence(s,k){
+  const u=U(s.id);u.fb=null;
+  if(s.tag==='context'){u.ctx=true;u.fb='ctx';return;}
+  if(resolved(u))return;
+  const acc=s.accept||[s.tag];
+  if(acc.includes(k)){u.first=u.tries===0;u.tries++;u.solved=true;u.tag=k;u.fb='ok';}
+  else{u.tries++;if(!u.wrong.includes(k))u.wrong.push(k);u.last=k;
+    if(u.tries>=2){u.revealed=true;u.tag=s.tag;u.fb='reveal';}else u.fb='bad';}
+}
+function rateSentence(s,r){
+  const u=U(s.id);if(u.rSolved||u.rRevealed)return;
+  if((s.rAccept||[s.rating]).includes(r)){u.rFirst=u.rTries===0;u.rTries++;u.rSolved=true;u.rating=r;u.rfb='ok';}
+  else{u.rTries++;u.rLast=r;if(u.rTries>=2){u.rRevealed=true;u.rating=s.rating;u.rfb='reveal';}else u.rfb='bad';}
+}
+
+/* tabs */
+function setTab(t){st.tab=t;save();$('#tab-read').setAttribute('aria-selected',t==='read');$('#tab-build').setAttribute('aria-selected',t==='build');render();}
+$('#tab-read').onclick=()=>setTab('read');
+$('#tab-build').onclick=()=>setTab('build');
+function render(){st.tab==='read'?renderRead():renderBuild();}
+
+/* ---------- READ ---------- */
+function renderRead(){
+  const t=TEXT[st.cur];
+  const srcbar=TEXTS.map(x=>{const sc=score(x.id);const done=isDone(x.id);
+    return `<button class="srcbtn" aria-pressed="${x.id===st.cur}" data-src="${x.id}"><span class="who">${esc(cite(x))}</span><span class="st ${done?'done':''}">Source ${x.id} · ${done?'done · ':''}${sc.found}/${sc.key} found</span></button>`;}).join('');
+  const body=t.s.map(s=>{
+    const u=st.tags[s.id];let cls='s',tagAttr='',chip='';
+    if(s.id===st.sel)cls+=' sel';
+    if(u&&resolved(u)){
+      tagAttr=`data-tag="${u.tag}"`;
+      const r=u.rating?(u.rating==='strong'?'+':'−'):'';
+      if(u.solved)chip=`<span class="chip">${TAGS[u.tag].k}${r}<span class="r ok">✓</span></span>`;
+      else{cls+=' revealed';chip=`<span class="chip">${TAGS[u.tag].k}${r}</span>`;}
+    }else if(u&&u.wrong&&u.wrong.length){cls+=' tried';}
+    return `<span class="${cls}" ${tagAttr} data-id="${s.id}" tabindex="0" role="button" aria-label="Sentence ${s.id}">${esc(s.t)}${chip}</span>`;
+  }).join(' ');
+  const sc=score(t.id);const done=isDone(t.id);
+  const left=sc.key-KEYS(t).filter(s=>resolved(st.tags[s.id])).length;
+  let foot=`<div class="score">Moves found <b>${sc.found}/${sc.key}</b> · first time <b>${sc.first}</b>${sc.rated?` &nbsp;·&nbsp; Judgements first time <b>${sc.rfirst}/${sc.rated}</b>`:''}
+    <div class="muted small" style="font-family:var(--f-ui)">${done?'All moves in this source are marked. Click any sentence to see its note again.':`${left} move${left===1?'':'s'} still to find. Background sentences don’t count.`}</div></div>`;
+  foot+=`<div class="row">${!done?`<button class="btn ghost" id="giveup">Show what I missed</button>`:`<button class="btn ghost" id="retry">Start this source again</button>`}${done?(nextSrc()?`<button class="btn" id="next">Next source</button>`:`<button class="btn" id="tobuild">Build your paragraph</button>`):''}</div>`;
+  $('#view').innerHTML=`<div class="readgrid">
+    <div style="min-width:0">
+      <div class="srcbar">${srcbar}</div>
+      <article class="src">
+        <div class="docket"><span>SOURCE ${t.id}</span><span>${esc(t.venue)}</span><span>${esc(t.first)} · ${esc(t.role)}</span></div>
+        <h2>${esc(t.title)}</h2>
+        <div class="byline">${esc(t.first)} (${t.year})</div>
+        <div class="body">${body}</div>
+        <div class="textfoot">${foot}</div>
+      </article>
+    </div>
+    <aside class="panel ${st.sel?'':'idle'}" id="panel">${panelHTML()}</aside>
+  </div>`;
+  bindRead();
+}
+function nextSrc(){const i=TEXTS.findIndex(x=>x.id===st.cur);for(let k=1;k<TEXTS.length;k++){const x=TEXTS[(i+k)%TEXTS.length];if(!isDone(x.id))return x.id;}return null;}
+function legendHTML(){
+  return `<div class="legend">${Object.entries(TAGS).map(([k,v])=>`<div data-tag="${k}"><span class="k">${v.k}</span><span><b>${v.label}.</b> ${v.def}</span></div>`).join('')}</div>`;
+}
+function panelHTML(){
+  const s=st.sel?SENT[st.sel]:null;const t=TEXT[st.cur];
+  if(!s){
+    return `<h3>How to read</h3>
+    <p class="small" style="margin:0">Click a sentence and say what move the author is making. You’ll know straight away if you’re right; you get two tries. For evidence and reasoning, judge it too: strong or questionable, and why?</p>
+    ${legendHTML()}
+    <div class="trapbox" style="display:grid;gap:8px">
+      <div class="trap"><b>Reported is not held</b>Authors often describe a view in order to attack it. Look for signals like “X argues that…”, “critics claim…”, followed by “however”.</div>
+      <div class="trap"><b>Data is not proof</b>A number can be precise and still weak. Ask who produced it, how big the sample was, and what else might explain it.</div>
+    </div>`;
+  }
+  const u=st.tags[s.id]||{tries:0,wrong:[]};const locked=resolved(u);
+  let h=`<h3>Sentence ${s.id} · ${esc(cite(t))}</h3><div class="quote">${esc(s.t)}</div>`;
+  h+=`<div><div class="small muted" style="margin-bottom:6px">What is the author doing here?</div><div class="taggrid">${Object.entries(TAGS).map(([k,v])=>{
+    const isWrong=u.wrong&&u.wrong.includes(k);const on=locked&&u.tag===k;
+    return `<button class="tagbtn ${isWrong?'no':''}" data-tag="${k}" data-settag="${k}" aria-pressed="${on}" ${locked||isWrong?'disabled':''}>${v.btn||v.label}</button>`;}).join('')}</div></div>`;
+  // tag feedback
+  if(s.tag==='context'&&u.ctx)h+=`<div class="fb neutral"><div class="h">Background, no move here</div>${esc(s.note)}</div>`;
+  const noteNow=!(s.rating&&RATED.includes(s.tag))||u.rSolved||u.rRevealed;
+  const note=noteNow?esc(s.note):'Now judge it below.';
+  if(s.tag==='context'&&u.ctx){}
+  else if(u.solved)h+=`<div class="fb ok"><div class="h">${TAGS[u.tag].label} ✓</div>${note}</div>`;
+  else if(u.revealed)h+=`<div class="fb bad"><div class="h">It’s ${/^[aeiou]/i.test(TAGS[s.tag].label)?'an':'a'} ${TAGS[s.tag].label.toLowerCase()}</div>${note}</div>`;
+  else if(u.wrong&&u.wrong.length)h+=`<div class="fb bad"><div class="h">Not ${TAGS[u.last].label.toLowerCase()}. One more try.</div>${esc(HINTS[s.tag])}</div>`;
+  // rating
+  if(locked&&s.rating&&RATED.includes(s.tag)){
+    const rl=u.rSolved||u.rRevealed;
+    h+=`<div><div class="small muted" style="margin-bottom:6px">How good is this ${s.tag}?</div><div class="rate">
+      ${['strong','weak'].map(r=>`<button data-rate="${r}" class="${u.rLast===r&&!u.rSolved?'no':''}" aria-pressed="${rl&&u.rating===r}" ${rl||(u.rLast===r)?'disabled':''}>${r==='strong'?'Strong':'Questionable'}</button>`).join('')}</div></div>`;
+    if(u.rfb==='bad')h+=`<div class="fb bad"><div class="h">Look again. One more try.</div>Who produced this, how much does it really show, and is anything else going on?</div>`;
+    if(rl){
+      const both=(s.rAccept||[]).length>1;
+      if(u.rRevealed)h+=`<div class="fb bad"><div class="h">The better judgement is ${s.rating==='strong'?'strong':'questionable'}</div></div>`;
+      else if(both)h+=`<div class="fb ok"><div class="h">Fair judgement ✓</div>Both readings can be defended here.</div>`;
+      else h+=`<div class="fb ok"><div class="h">Right judgement ✓</div></div>`;
+      const list=u.rating==='strong'?STRONG_R:WEAK_R;
+      h+=`<div><div class="small muted" style="margin-bottom:6px">Why? Pick the main reason.</div><div class="reasons">${list.map(r=>{
+        const good=u.reason===r,bad=(u.badReasons||[]).includes(r);
+        return `<button class="pill ${good?'yes':''} ${bad?'no':''}" data-reason="${esc(r)}" aria-pressed="${good}" ${u.reason||bad?'disabled':''}>${esc(r)}</button>`;}).join('')}</div></div>`;
+      if(u.reason)h+=`<div class="tip" style="color:var(--ok)">Yes, that’s the key reason.</div>`;
+      else if(u.badReasons&&u.badReasons.length)h+=`<div class="tip">That’s not the main issue here. Try another.</div>`;
+    }
+  }
+  h+=`<button class="linkbtn" id="deselect">Done</button>`;
+  return h;
+}
+function bindRead(){
+  document.querySelectorAll('[data-src]').forEach(b=>b.onclick=()=>{st.cur=b.dataset.src;st.sel=null;save();renderRead();});
+  document.querySelectorAll('.s').forEach(el=>{
+    const go=()=>{st.sel=st.sel===el.dataset.id?null:el.dataset.id;renderRead();if(window.innerWidth<=880&&st.sel){const p=$('#panel');p&&p.scrollTo&&p.scrollTo(0,0);}};
+    el.onclick=go;el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}};
+  });
+  document.querySelectorAll('[data-settag]').forEach(b=>b.onclick=()=>{tagSentence(SENT[st.sel],b.dataset.settag);save();renderRead();});
+  document.querySelectorAll('[data-rate]').forEach(b=>b.onclick=()=>{rateSentence(SENT[st.sel],b.dataset.rate);save();renderRead();});
+  document.querySelectorAll('[data-reason]').forEach(b=>b.onclick=()=>{const s=SENT[st.sel],u=U(s.id),r=b.dataset.reason;
+    if(s.reasons.includes(r))u.reason=r;else{u.badReasons=u.badReasons||[];u.badReasons.push(r);if(u.badReasons.length>=2)u.reason=s.reasons.find(x=>(u.rating==='strong'?STRONG_R:WEAK_R).includes(x))||s.reasons[0];}
+    save();renderRead();});
+  const d=$('#deselect');if(d)d.onclick=()=>{st.sel=null;renderRead();};
+  const g=$('#giveup');if(g)g.onclick=()=>{KEYS(TEXT[st.cur]).forEach(s=>{const u=U(s.id);if(!resolved(u)){u.revealed=true;u.tag=s.tag;if(s.rating){u.rRevealed=true;u.rating=s.rating;}}});st.sel=null;save();renderRead();};
+  const r=$('#retry');if(r)r.onclick=()=>{TEXT[st.cur].s.forEach(s=>delete st.tags[s.id]);st.sel=null;save();renderRead();};
+  const n=$('#next');if(n)n.onclick=()=>{st.cur=nextSrc();st.sel=null;save();renderRead();window.scrollTo({top:0,behavior:'smooth'});};
+  const tb=$('#tobuild');if(tb)tb.onclick=()=>{setTab('build');window.scrollTo({top:0});};
+}
+
+/* ---------- BUILD ---------- */
+const STANCES={
+  for:{label:'Tariffs are justified',starters:['Clean-tech tariffs are a justified response to ','A green economy cannot afford to depend on ']},
+  against:{label:'Tariffs do more harm than good',starters:['Tariffs on clean technology are likely to ','Protecting clean-tech manufacturers through tariffs ']},
+  cond:{label:'Only with strict conditions',starters:['Clean-tech tariffs can be justified only when ','Protection is defensible only if ']},
+  carbon:{label:'Tax carbon, not origin',starters:['Rather than asking where a product is made, policymakers should ']}
+};
+const LINKS=['However,','By contrast,','Admittedly,','On the other hand,','Yet'];
+const NO_THAT=['calls for'];
+function verbsFor(tag,rating){
+  if(tag==='position')return['argues','contends','maintains','insists'];
+  if(tag==='reasoning')return rating==='weak'?['assumes','asserts','suggests']:['reasons','points out','explains','argues convincingly'];
+  if(tag==='evidence')return rating==='weak'?['claims','reports','suggests']:['shows','demonstrates','documents','finds'];
+  if(tag==='concession')return['concedes','acknowledges','admits','accepts'];
+  if(tag==='conclusion')return['concludes','recommends','proposes','calls for'];
+  return['argues'];
+}
+function cards(){
+  const out=[];TEXTS.forEach(x=>x.s.forEach(s=>{if(s.tag==='context'||s.tag==='counter')return;if(resolved(st.tags[s.id]))out.push(s);}));return out;
+}
+function cardLabel(s){const x=TEXT[s.text];const r=s.rating?(s.rating==='strong'?', strong':', questionable'):'';
+  const short=s.t.length>70?s.t.slice(0,68).replace(/\s+\S*$/,'')+'…':s.t;return `${cite(x)} · ${TAGS[s.tag].label}${r} · ${short}`;}
+const words=s=>(s.toLowerCase().match(/[a-z0-9€’']+/g)||[]);
+function overlaps(orig,mine){const a=words(orig),b=words(mine);if(b.length<6)return false;const g=new Set();for(let i=0;i+6<=a.length;i++)g.add(a.slice(i,i+6).join(' '));for(let i=0;i+6<=b.length;i++)if(g.has(b.slice(i,i+6).join(' ')))return true;return false;}
+function cleanPara(p){return p.trim().replace(/^that\s+/i,'').replace(/[.\s]+$/,'');}
+function sentenceFor(slot,withLink){
+  const s=SENT[slot.card];if(!s||!slot.text.trim())return '';const x=TEXT[s.text];
+  const p=cleanPara(slot.text);let out;
+  if(slot.form==='idea'){const body=withLink&&slot.link?p:p.charAt(0).toUpperCase()+p.slice(1);out=`${body} (${x.author}, ${x.year}).`;}
+  else{const v=slot.verb||verbsFor(s.tag,s.rating)[0];out=`${x.author} (${x.year}) ${v}${NO_THAT.includes(v)?'':' that'} ${p}.`;}
+  if(withLink&&slot.link)out=`${slot.link} ${out}`;
+  return out;
+}
+function endDot(t){t=t.trim();if(!t)return '';return /[.!?]$/.test(t)?t:t+'.';}
+
+function slotHTML(key,n,title,why,withLink){
+  const slot=st.b[key];const cs=cards();const s=SENT[slot.card];
+  let h=`<section class="slot"><div class="lab"><span class="n">${n}</span><h3>${title}</h3><span class="why">${why}</span></div>`;
+  h+=`<select id="${key}-card" data-card="${key}"><option value="">Choose a source move…</option>${TEXTS.filter(x=>cs.some(c=>c.text===x.id)).map(x=>`<optgroup label="${esc(cite(x))}">${cs.filter(c=>c.text===x.id).map(c=>`<option value="${c.id}" ${c.id===slot.card?'selected':''}>${esc(cardLabel(c))}</option>`).join('')}</optgroup>`).join('')}</select>`;
+  if(s){
+    const x=TEXT[s.text];
+    h+=`<div class="orig" data-tag="${s.tag}"><span class="meta">${esc(cite(x))} · ${TAGS[s.tag].label.toUpperCase()}${s.rating?' · '+(s.rating==='strong'?'STRONG':'QUESTIONABLE'):''}</span>${esc(s.t)}</div>`;
+    if(withLink)h+=`<div class="row"><span class="tip">Link:</span>${LINKS.map(l=>`<button class="pill" data-link="${key}" data-v="${esc(l)}" aria-pressed="${slot.link===l}">${esc(l)}</button>`).join('')}</div>`;
+    h+=`<div class="row"><span class="tip">Citation:</span><button class="pill" data-form="${key}" data-v="author" aria-pressed="${slot.form!=='idea'}">Author first</button><button class="pill" data-form="${key}" data-v="idea" aria-pressed="${slot.form==='idea'}">Idea first</button></div>`;
+    if(slot.form!=='idea'){
+      const vs=verbsFor(s.tag,s.rating);
+      h+=`<div class="row"><span class="tip">Verb:</span>${vs.map(v=>`<button class="pill" data-verb="${key}" data-v="${v}" aria-pressed="${(slot.verb||vs[0])===v}">${v}</button>`).join('')}</div>`;
+      if(s.rating==='weak')h+=`<div class="tip">This one was judged questionable, so the verbs keep their distance.</div>`;
+      h+=`<div class="lead">${withLink&&slot.link?esc(slot.link)+' ':''}<span class="cite">${esc(x.author)} (${x.year})</span> ${esc(slot.verb||vs[0])}${NO_THAT.includes(slot.verb||vs[0])?'':' that'} …</div>`;
+    }else{
+      h+=`<div class="lead">${withLink&&slot.link?esc(slot.link)+' ':''}… <span class="cite">(${esc(x.author)}, ${x.year})</span>.</div>`;
+    }
+    h+=`<textarea id="${key}-text" data-text="${key}" placeholder="Put the idea in your own words…">${esc(slot.text)}</textarea><div class="warn" id="${key}-warn" ${overlaps(s.t,slot.text)?'':'hidden'}>This is very close to the original wording. Paraphrase it, or put the exact words in quotation marks.</div>`;
+  }
+  return h+`</section>`;
+}
+function renderBuild(){
+  const cs=cards();
+  if(!cs.length){
+    $('#view').innerHTML=`<div class="empty" style="margin-top:22px"><h2 style="font-family:var(--f-read);font-weight:600;font-size:22px;margin-bottom:6px">Find some moves first</h2><p class="muted" style="margin:0 0 14px;max-width:60ch">The builder uses the moves you identified in step 1: positions, evidence, reasoning, concessions and conclusions, each with its strength already judged. Work through a source, then come back.</p><button class="btn" id="goread">Go to step 1</button></div>`;
+    $('#goread').onclick=()=>setTab('read');return;
+  }
+  const b=st.b;const comp=SENT[b.comp.card];
+  const respStarters=comp&&comp.rating==='weak'?['Yet this evidence should be treated with caution, since ','This figure is less persuasive than it first appears, because ']:['While this is a valid concern, ','This does not, however, undermine the case for ','This is difficult to dismiss, but '];
+  const nChecked=new Set(cs.map(c=>c.text)).size;
+  $('#view').innerHTML=`<div class="buildgrid">
+    <div class="slots" style="min-width:0">
+      ${nChecked<2?`<div class="trap">You have found moves in one source so far. A good paragraph puts at least two sources in tension, so work through another one in step 1.</div>`:''}
+      <section class="slot"><div class="lab"><span class="n">1</span><h3>Your claim</h3><span class="why">Your voice opens the paragraph, not a source.</span></div>
+        <div class="row">${Object.entries(STANCES).map(([k,v])=>`<button class="pill" data-stance="${k}" aria-pressed="${b.stance===k}">${v.label}</button>`).join('')}</div>
+        ${b.stance?`<div class="row"><span class="tip">Start with:</span>${STANCES[b.stance].starters.map(t=>`<button class="pill" data-start="topic" data-v="${esc(t)}">${esc(t.trim())}…</button>`).join('')}</div>`:''}
+        <textarea id="topic" data-free="topic" placeholder="State your own position in one sentence.">${esc(b.topic)}</textarea>
+      </section>
+      ${slotHTML('sup','2','Support','A source move that backs your claim.',false)}
+      ${slotHTML('comp','3','Complication','A source that pushes back. Choose a different author.',true)}
+      <section class="slot"><div class="lab"><span class="n">4</span><h3>Your response</h3><span class="why">Weigh the complication. Use your judgement from step 1.</span></div>
+        <div class="row">${respStarters.map(t=>`<button class="pill" data-start="resp" data-v="${esc(t)}">${esc(t.trim())}…</button>`).join('')}</div>
+        <textarea id="resp" data-free="resp" placeholder="Does the complication defeat your claim, limit it, or fall apart on inspection?">${esc(b.resp)}</textarea>
+      </section>
+      <section class="slot"><div class="lab"><span class="n">5</span><h3>Closing sentence</h3><span class="why">Return to your claim, now sharpened.</span></div>
+        <div class="row">${['On balance, ','It follows that ','The stronger case, therefore, is that '].map(t=>`<button class="pill" data-start="concl" data-v="${esc(t)}">${esc(t.trim())}…</button>`).join('')}</div>
+        <textarea id="concl" data-free="concl" placeholder="Where does this leave your argument?">${esc(b.concl)}</textarea>
+      </section>
+    </div>
+    <div class="preview">
+      <div class="sheet">
+        <div class="row" style="justify-content:space-between;margin-bottom:10px"><h3 style="font-size:12px;font-family:var(--f-mono);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Your paragraph</h3><span class="wc" id="wc"></span></div>
+        <div class="para" id="para"></div>
+        <div class="refs" id="refs"></div>
+        <div class="row" style="margin-top:14px"><button class="btn" id="copy">Copy paragraph and references</button><span class="tip" id="copied" aria-live="polite"></span></div>
+      </div>
+      <div class="sheet"><h3 style="font-size:12px;font-family:var(--f-mono);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Checklist</h3><ul class="check" id="checklist"></ul></div>
+      <div class="sheet"><button class="linkbtn" id="model">${st.showModel?'Hide':'Show'} a model paragraph</button>${st.showModel?modelHTML():''}</div>
+    </div>
+  </div>`;
+  bindBuild();updatePreview();
+}
+function modelHTML(){return `<div class="model" style="margin-top:12px"><p>Clean-tech tariffs can be justified only when they are temporary and tied to measurable obligations, rather than imposed as open-ended protection. Reinholt (2024) shows that dependence on a single supplier has real costs: during the 2021 container shortage, waiting times for residential solar systems in Norland rose from six weeks to seven months. However, O’Mahony (2025) finds that each manufacturing job preserved by the 2017 Solar Safeguard duties cost consumers around €410,000 a year. This figure is difficult to dismiss, since it comes from an independent audit, but it measures the cost of unconditional duties and says little about tariffs that lapse automatically when capacity targets are missed. On balance, a time-limited tariff with binding investment commitments, as Reinholt (2024) proposes, offers a degree of security without asking households to subsidise failing firms indefinitely.</p>
+<div class="ann">Notice: the writer’s claim comes first; the strong evidence gets “shows” and “finds”; the response evaluates the source rather than just disagreeing; the close returns to the claim.</div></div>`;}
+function bindBuild(){
+  document.querySelectorAll('[data-stance]').forEach(b=>b.onclick=()=>{st.b.stance=b.dataset.stance;save();renderBuild();});
+  document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{const k=b.dataset.start;st.b[k]=b.dataset.v;save();renderBuild();const ta=document.getElementById(k);if(ta){ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length);}});
+  document.querySelectorAll('[data-card]').forEach(sel=>sel.onchange=()=>{const k=sel.dataset.card;st.b[k].card=sel.value;st.b[k].verb='';save();renderBuild();});
+  document.querySelectorAll('[data-verb]').forEach(b=>b.onclick=()=>{st.b[b.dataset.verb].verb=b.dataset.v;save();renderBuild();});
+  document.querySelectorAll('[data-form]').forEach(b=>b.onclick=()=>{st.b[b.dataset.form].form=b.dataset.v;save();renderBuild();});
+  document.querySelectorAll('[data-link]').forEach(b=>b.onclick=()=>{st.b[b.dataset.link].link=b.dataset.v;save();renderBuild();});
+  document.querySelectorAll('[data-text]').forEach(ta=>ta.oninput=()=>{const k=ta.dataset.text;st.b[k].text=ta.value;save();const w=document.getElementById(k+'-warn');if(w)w.hidden=!overlaps(SENT[st.b[k].card].t,ta.value);updatePreview();});
+  document.querySelectorAll('[data-free]').forEach(ta=>ta.oninput=()=>{st.b[ta.dataset.free]=ta.value;save();updatePreview();});
+  $('#model').onclick=()=>{st.showModel=!st.showModel;save();renderBuild();};
+  $('#copy').onclick=()=>{const txt=plainOut();const done=()=>{$('#copied').textContent='Copied';setTimeout(()=>{const c=$('#copied');if(c)c.textContent='';},2000);};
+    try{navigator.clipboard.writeText(txt).then(done,()=>fallbackCopy(txt,done));}catch(e){fallbackCopy(txt,done);}};
+}
+function fallbackCopy(txt,done){const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){$('#copied').textContent='Select the paragraph and copy it manually.';}ta.remove();}
+function parts(){const b=st.b;return[
+  {k:'topic',t:endDot(b.topic),src:false,ph:'Your claim…'},
+  {k:'sup',t:sentenceFor(b.sup,false),src:true,ph:'Supporting source…'},
+  {k:'comp',t:sentenceFor(b.comp,true),src:true,ph:'Complicating source…'},
+  {k:'resp',t:endDot(b.resp),src:false,ph:'Your response…'},
+  {k:'concl',t:endDot(b.concl),src:false,ph:'Closing sentence…'}];}
+function citedTexts(){const ids=[st.b.sup,st.b.comp].filter(s=>s.card&&s.text.trim()).map(s=>SENT[s.card].text);
+  const all=parts().map(p=>p.t).join(' ');TEXTS.forEach(x=>{if(all.includes(x.author+' ('+x.year+')')||all.includes('('+x.author+', '+x.year+')'))ids.push(x.id);});
+  return [...new Set(ids)].map(i=>TEXT[i]).sort((a,c)=>a.author.localeCompare(c.author));}
+function plainOut(){const p=parts().map(x=>x.t).filter(Boolean).join(' ');const refs=citedTexts().map(x=>x.ref.replace(/<\/?i>/g,'')).join('\n');return p+(refs?'\n\nReferences\n'+refs:'');}
+function updatePreview(){
+  const ps=parts();
+  $('#para').innerHTML=ps.map(p=>p.t?`<span class="seg ${p.src?'src':''}">${esc(p.t)}</span>`:`<span class="ph">${p.ph}</span>`).join(' ');
+  const refs=citedTexts();
+  $('#refs').innerHTML=refs.length?`<h4>References</h4>${refs.map(x=>`<p>${x.ref}</p>`).join('')}`:'';
+  const text=ps.map(p=>p.t).filter(Boolean).join(' ');const wc=(text.match(/\S+/g)||[]).length;
+  $('#wc').textContent=`${wc} words · aim 120–200`;
+  const b=st.b;const sa=SENT[b.sup.card],sb=SENT[b.comp.card];
+  const topicOK=words(b.topic).length>=6&&!/\(\d{4}\)|\b\d{4}\)/.test(b.topic);
+  const twoAuthors=sa&&sb&&sa.text!==sb.text&&b.sup.text.trim()&&b.comp.text.trim();
+  const vs=v=>v.verb||verbsFor(SENT[v.card].tag,SENT[v.card].rating)[0];
+  const variedVerbs=!(sa&&sb&&b.sup.form!=='idea'&&b.comp.form!=='idea'&&vs(b.sup)===vs(b.comp));
+  const ownWords=!(sa&&overlaps(sa.t,b.sup.text))&&!(sb&&overlaps(sb.t,b.comp.text));
+  const respOK=words(b.resp).length>=8;
+  const conclOK=words(b.concl).length>=6;
+  const lenOK=wc>=120&&wc<=200;
+  const items=[
+    [topicOK,'Your own claim opens the paragraph'],
+    [twoAuthors,'Two different authors, in tension'],
+    [variedVerbs&&sa&&sb,'Reporting verbs vary and fit the evidence'],
+    [ownWords&&(b.sup.text.trim()||b.comp.text.trim()),'Sources paraphrased, not copied'],
+    [respOK,'You evaluate the complication, not just report it'],
+    [conclOK,'A closing sentence returns to your claim'],
+    [lenOK,'Length between 120 and 200 words']];
+  $('#checklist').innerHTML=items.map(([ok,l])=>`<li class="${ok?'y':'n'}"><span class="m">${ok?'✓':'○'}</span><span>${l}</span></li>`).join('');
+}
+setTab(st.tab);
+</script>
+
+</body>
+</html>
