@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Confidence Bets</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: a projector quiz with a betting desk. Question on the left, the teacher's bet sheet on the right; the reveal swaps the sheet for live standings. */
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --ink:#16202A; --muted:#56626E; --faint:#7D8994; --line:#D3DAE0; --hover:#E2E9EE;
+  --accent:#1C5D7C; --accent-ink:#FFFFFF; --soft:#E4EEF3;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --bad:#B23A48; --bad-bg:#F6E3E5; --warn:#8F6400; --gold:#A86F06;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --faint:#6F7C88; --line:#2B3642; --hover:#212C37;
+    --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+    --ok:#62C08A; --ok-bg:#1A3024; --bad:#E57A88; --bad-bg:#3A1F25; --warn:#DDAE45; --gold:#E2B04E;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161C; --surface:#18212A; --ink:#E3E9EF; --muted:#98A4B0; --faint:#6F7C88; --line:#2B3642; --hover:#212C37;
+  --accent:#72B5D8; --accent-ink:#0C1A22; --soft:#1C2E3A;
+  --ok:#62C08A; --ok-bg:#1A3024; --bad:#E57A88; --bad-bg:#3A1F25; --warn:#DDAE45; --gold:#E2B04E;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:15px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+.mono{font-family:var(--f-mono)}
+.num{font-variant-numeric:tabular-nums}
+
+/* top strip */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.top .count{color:var(--ink);font-weight:500;white-space:nowrap}
+.track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
+
+main{flex:1;padding:clamp(20px,4vh,44px) clamp(16px,4vw,44px)}
+.view{display:none;max-width:1240px;margin:0 auto}
+.view.on{display:block;animation:rise .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.on{animation:none}}
+
+.split{display:grid;gap:clamp(24px,4vw,56px);align-items:start}
+@media (min-width:980px){.split{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 12px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.panel h3{font-family:var(--f-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+
+/* setup */
+.cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(34px,5.4vw,56px);line-height:1.05;letter-spacing:-.01em;margin-bottom:18px}
+.cover p{font-size:17px;line-height:1.6;color:var(--muted);max-width:56ch;margin:0 0 10px}
+.rules{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);font-size:15px;max-width:58ch}
+.rules b{color:var(--ink)}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field>span{font-size:13px;color:var(--muted)}
+.inp{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%}
+.inp:focus{border-color:var(--accent);outline:none}
+.row2{display:grid;grid-template-columns:1fr 90px;gap:10px}
+.teams{display:grid;gap:6px;margin-bottom:8px}
+.teamline{display:grid;grid-template-columns:28px 1fr 34px;gap:6px;align-items:center}
+.teamline .n{font-family:var(--f-mono);font-size:12px;color:var(--faint);text-align:right}
+.iconbtn{border:1px solid var(--line);background:transparent;border-radius:6px;height:34px;color:var(--muted)}
+.iconbtn:hover{border-color:var(--bad);color:var(--bad)}
+.linkbtn{border:0;background:none;color:var(--accent);padding:4px 0;font-size:14px}
+.linkbtn:hover{text-decoration:underline}
+details{margin-top:10px;font-size:14px}
+details summary{cursor:pointer;color:var(--accent)}
+details textarea{width:100%;min-height:150px;margin-top:8px;font-family:var(--f-mono);font-size:12px}
+details p{color:var(--muted);font-size:13px;margin:6px 0}
+.msg{font-size:13.5px;margin-top:8px;min-height:1.2em}
+.msg.bad{color:var(--bad)} .msg.ok{color:var(--ok)}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+
+/* buttons */
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--accent)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:disabled:hover{border-color:var(--line)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+
+/* question */
+.qtext{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.9vw,34px);line-height:1.22;margin:0 0 26px}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.opt{display:flex;align-items:baseline;gap:14px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:8px;font-size:17px;line-height:1.4}
+.opt .L{font-family:var(--f-mono);font-weight:500;font-size:13px;width:24px;height:24px;flex:none;display:grid;place-items:center;border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+.opt .who{margin-left:auto;font-family:var(--f-mono);font-size:12px;color:var(--faint);flex:none;text-align:right}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .L{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.opt.right .who{color:var(--ok)}
+.opts.compact .opt{padding:9px 14px;font-size:15px}
+
+/* bet sheet */
+.sheet .head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.sheet .head h3{margin:0}
+.sheet .tot{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
+.bet{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.bet:first-of-type{border-top:0}
+.bet .nm{font-weight:600;font-size:15.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bet .bal{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.bet .ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.stake{width:96px;text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;padding:7px 8px}
+.chip{border:1px solid var(--line);background:transparent;border-radius:6px;padding:5px 8px;font-size:12.5px;font-family:var(--f-mono);color:var(--muted)}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.picks{display:flex;gap:4px}
+.pk{width:34px;height:34px;border:1px solid var(--line);background:var(--bg);border-radius:6px;font-family:var(--f-mono);font-weight:500;color:var(--muted)}
+.pk:hover{border-color:var(--accent)}
+.pk.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.bet.missing .picks{outline:2px solid var(--bad);outline-offset:2px;border-radius:6px}
+.bet.bust{opacity:.5}
+.bet.bust .ctl{pointer-events:none}
+.bustlbl{font-family:var(--f-mono);font-size:12px;color:var(--bad);text-transform:uppercase;letter-spacing:.06em}
+.sheet .note{font-size:13.5px;color:var(--faint);margin-top:10px;min-height:1.2em}
+.sheet .note.bad{color:var(--bad)}
+@media (max-width:560px){.bet{grid-template-columns:1fr}.bet .ctl{justify-content:flex-start}}
+
+/* suspense */
+.suspense{text-align:center;padding:12vh 0 8vh}
+.suspense .r{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,7vw,72px);margin:0 0 8px}
+.suspense .s{font-size:20px;color:var(--muted);margin:0 0 30px}
+.pot{font-family:var(--f-mono);font-size:14px;color:var(--faint)}
+.pot b{color:var(--ink);font-weight:500}
+
+/* reveal */
+.fig{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:22px 0 6px}
+.reel{font-family:var(--f-mono);font-weight:500;font-variant-numeric:tabular-nums;font-size:clamp(40px,6.5vw,64px);line-height:1;color:var(--faint);transition:color .15s}
+.reel.land{color:var(--ok)}
+.reel.small{font-size:clamp(30px,5vw,46px)}
+.sub{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.explain{font-size:16.5px;line-height:1.65;max-width:62ch;margin:14px 0 16px}
+.src{font-family:var(--f-mono);font-size:12.5px;color:var(--faint);border-top:1px solid var(--line);padding-top:12px;display:flex;gap:8px}
+.src b{color:var(--accent);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+
+.board{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.st{display:grid;grid-template-columns:28px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 12px;background:var(--bg);border-radius:8px;transition:transform .3s}
+.st .rk{font-family:var(--f-mono);font-size:13px;color:var(--faint);text-align:right}
+.st .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.st .nm small{display:block;font-weight:400;font-family:var(--f-mono);font-size:11.5px;color:var(--faint)}
+.st .dl{font-family:var(--f-mono);font-size:13px;padding:2px 8px;border-radius:5px;opacity:0;transition:opacity .35s;white-space:nowrap}
+.st .dl.show{opacity:1}
+.st .dl.up{color:var(--ok);background:var(--ok-bg)}
+.st .dl.down{color:var(--bad);background:var(--bad-bg)}
+.st .dl.flat{color:var(--faint)}
+.st .mn{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:500;font-size:17px;min-width:84px;text-align:right}
+.st.lead{background:var(--soft)}
+.st.lead .rk{color:var(--gold)}
+
+/* end */
+.podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:end;margin:8px 0 28px;max-width:720px}
+.pd{background:var(--surface);border:1px solid var(--line);border-radius:10px 10px 0 0;padding:16px 12px;text-align:center}
+.pd .pl{font-family:var(--f-mono);font-size:12px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+.pd .pn{font-family:var(--f-read);font-weight:600;font-size:clamp(17px,2.2vw,22px);margin:6px 0 4px;overflow-wrap:anywhere}
+.pd .pm{font-family:var(--f-mono);font-size:clamp(15px,2vw,19px);font-weight:500}
+.pd.p1{min-height:190px;border-color:var(--gold);border-width:2px} .pd.p1 .pl{color:var(--gold)}
+.pd.p2{min-height:150px} .pd.p3{min-height:120px}
+.endtitle{font-family:var(--f-read);font-weight:600;font-size:clamp(30px,4.6vw,46px);margin-bottom:20px}
+.outro p{font-size:16.5px;line-height:1.65;color:var(--muted);max-width:58ch;margin:0 0 12px}
+.cue{margin-top:22px;padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;font-size:15px;color:var(--muted)}
+.cue b{color:var(--ink)}
+table.hist{width:100%;border-collapse:collapse;font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+table.hist th,table.hist td{padding:6px 6px;text-align:right;border-top:1px solid var(--line)}
+table.hist th:first-child,table.hist td:first-child{text-align:left;font-family:var(--f-ui);font-size:14px}
+table.hist thead th{color:var(--faint);font-weight:400;border-top:0}
+table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.hist td.z{color:var(--faint)}
+.histwrap{overflow-x:auto}
+
+/* controls */
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,44px) clamp(16px,3vh,28px)}
+.controls .side{display:flex;gap:8px;align-items:center}
+.kbd{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);display:none}
+@media (min-width:760px){.kbd{display:inline}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span id="topTitle">SimLearn Extras · Confidence Bets</span>
+  <span class="count num" id="topCount">Setup</span>
+</div>
+<div class="track"><div class="fill" id="fill"></div></div>
+
+<main>
+
+  <!-- SETUP -->
+  <section class="view" id="v-setup">
+    <div class="split">
+      <div class="cover">
+        <p class="eyebrow" id="cEyebrow"></p>
+        <h1 id="cTitle"></h1>
+        <div id="cIntro"></div>
+        <div class="rules" id="cRules"></div>
+      </div>
+      <div class="panel">
+        <h3>Game setup</h3>
+        <label class="field"><span>Question set</span>
+          <select class="inp" id="setPick"></select>
+        </label>
+        <details id="customBox">
+          <summary>Use your own questions</summary>
+          <p>Paste a question set in JSON. Each question needs <code>q</code>, four <code>options</code>, the index of the <code>correct</code> one (0 = A) and, optionally, <code>figure</code>, <code>sub</code>, <code>explain</code> and <code>source</code>.</p>
+          <textarea class="inp" id="customJson" spellcheck="false"></textarea>
+          <div class="btnrow" style="margin-top:8px">
+            <button class="btn" id="loadCustom">Load these questions</button>
+            <button class="linkbtn" id="showExample">Show an example</button>
+          </div>
+          <div class="msg" id="customMsg"></div>
+        </details>
+
+        <div style="height:16px"></div>
+        <div class="field"><span>Teams</span></div>
+        <div class="teams" id="teamList"></div>
+        <button class="linkbtn" id="addTeam">+ Add a team</button>
+
+        <div style="height:14px"></div>
+        <div class="row2">
+          <label class="field"><span>Starting money</span><input class="inp num" id="bank" type="number" min="10" step="10" inputmode="numeric"></label>
+          <label class="field"><span>Currency</span><input class="inp" id="cur" maxlength="3"></label>
+        </div>
+
+        <div class="btnrow">
+          <button class="btn primary" id="startBtn">Start the game →</button>
+          <button class="btn" id="resumeBtn" hidden>Resume saved game</button>
+        </div>
+        <div class="msg" id="setupMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTION -->
+  <section class="view" id="v-question">
+    <div class="split">
+      <div>
+        <p class="label" id="qLabel"></p>
+        <h2 class="qtext" id="qText"></h2>
+        <ul class="opts" id="qOpts"></ul>
+      </div>
+      <div class="panel sheet">
+        <div class="head"><h3>Bets</h3><span class="tot num" id="potTotal"></span></div>
+        <div id="betRows"></div>
+        <div class="note" id="betNote">Type each team's stake, then tap the letter on their card.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSPENSE -->
+  <section class="view" id="v-suspense">
+    <div class="suspense">
+      <p class="r">Ready?</p>
+      <p class="s">… are you sure?</p>
+      <p class="pot" id="suspPot"></p>
+    </div>
+  </section>
+
+  <!-- REVEAL -->
+  <section class="view" id="v-reveal">
+    <div class="split">
+      <div>
+        <p class="label" id="rLabel"></p>
+        <ul class="opts compact" id="rOpts"></ul>
+        <div class="fig"><span class="reel" id="reel">00</span><span class="sub" id="rSub"></span></div>
+        <p class="explain" id="rExplain"></p>
+        <p class="src" id="rSrcWrap"><b>Source</b><span id="rSrc"></span></p>
+      </div>
+      <div class="panel">
+        <h3>Standings</h3>
+        <ol class="board" id="board"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- END -->
+  <section class="view" id="v-end">
+    <p class="eyebrow">Final standings</p>
+    <h2 class="endtitle" id="endWinner"></h2>
+    <div class="podium" id="podium"></div>
+    <div class="split">
+      <div class="outro" id="outro"></div>
+      <div class="panel">
+        <h3>Round by round</h3>
+        <div class="histwrap"><table class="hist" id="hist"></table></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="controls">
+  <div class="side"><button class="btn" id="prevBtn">← Back</button></div>
+  <span class="kbd" id="kbdHint">Space / → to advance · ← to go back</span>
+  <div class="side"><button class="btn primary" id="nextBtn">Next →</button></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------------ */
+  /* Question sets. Add new ones here; each appears in the setup picker. */
+  /* ------------------------------------------------------------------ */
+  var SETS = {
+    "sponsorship": {
+      title: "The Sponsorship Decision",
+      eyebrow: "EBC · Week 3 warm-up",
+      heading: "How far off is your gut?",
+      intro: [
+        "Ten real numbers about football sponsorship — the kind that show up in match-day arguments, boardroom memos, and newspaper back pages.",
+        "Every figure is real and sourced. Nothing in this warm-up is fictional — that starts once we open Stokes Croft's files."
+      ],
+      outro: {
+        heading: "The gap is the lesson.",
+        paras: [
+          "On almost every one of these, the confident guess in the room was further from reality than the numbers Stokes Croft's own advisors are about to hand you — and that gap, between what we assume about money, fans, and fairness, and what the evidence actually says, is exactly what today's emails are going to complicate.",
+          "Priya, Yusuf, and the rest of the club don't always agree with each other either. But every one of them is arguing from something real, not just a gut feeling."
+        ],
+        cue: "Switch to the SimLearn app now — open <b>The Sponsorship Decision</b> and let's meet Stokes Croft FC."
+      },
+      questions: [
+        { q: "YouGov asked 1,000 Premier League fans a simple question: would you rather your shirt had a sponsor on the front, or not? What share said they actively want one?",
+          options: ["11%", "28%", "44%", "61%"], correct: 0, figure: "11%", sub: "actively want a front sponsor",
+          explain: "Just one in nine fans (11%) said they'd prefer a shirt with a sponsor on the front. 42% would rather have none at all, and 44% didn't mind either way — clubs chase these deals for the money, not because supporters are asking for them.",
+          source: "YouGov, Aug 2023" },
+        { q: "Stokes Croft are chasing their first-ever promotion to the Premier League. Roughly how much is Premier League promotion actually worth to a club?",
+          options: ["About £20 million", "About £75 million", "About £200 million", "About £500 million"], correct: 2, figure: "£200m", sub: "estimated value of promotion",
+          explain: "Promotion to the Premier League is worth roughly £200 million to a club — about half of it broadcast revenue alone. That's the prize Stokes Croft is racing the clock to reach, and exactly why £2,000,000 a season from a shirt sponsor suddenly looks like small change by comparison.",
+          source: "Sports Illustrated, 2026" },
+        { q: "Since 1983, how many English football league clubs have gone into administration — unable to pay their own debts?",
+          options: ["12", "34", "61", "92"], correct: 3, figure: "92", sub: "administrations since 1983",
+          explain: "Ninety-two separate administrations across the English game since 1983 — a reminder that financial collapse in football isn't a rare, freak event. It's a recurring part of the business, which is exactly why boards get cautious about a sponsor's staying power.",
+          source: "SQAF, English Football Clubs That Went Into Administration, 2022" },
+        { q: "How many of the 20 Premier League clubs are majority owned by their own supporters?",
+          options: ["Zero", "2 clubs", "5 clubs", "9 clubs"], correct: 0, figure: "0 of 20", sub: "fan-owned Premier League clubs",
+          explain: "Not one of the 20 Premier League clubs is majority owned by its own fans — every one belongs to a private owner or investor group. A handful of English clubs further down the pyramid are fan-owned, but none has ever sustained top-flight status.",
+          source: "Football Ground Guide, 2026" },
+        { q: "In 2013, Portsmouth's own supporters bought the club outright after a previous owner nearly sold the ground. Roughly how much did fans put in, and how?",
+          options: ["£25m from a single wealthy fan", "£2.5m, in £1,000 pledges from 2,300 fans", "£500,000 through a crowdfunding platform", "Nothing — the league waived the debts"], correct: 1, figure: "£2.5m", sub: "2,300 fans, £1,000 pledges each",
+          explain: "Portsmouth's Supporters' Trust raised roughly £2.5 million through 2,300 individual £1,000 pledges to buy their own club outright in 2013 — proof that a fan-led buyout isn't just a nice story, it's a real, working ownership model in English football.",
+          source: "Football Supporters' Association / Pompey Supporters Trust records" },
+        { q: "In 2021, a company pulled out of a £200m shirt sponsorship deal with Manchester United before it even started. Why?",
+          options: ["The club failed a financial audit", "A rival made a higher bid", "It feared its own product would be boycotted by fans", "The deal breached league sponsorship rules"], correct: 2, figure: "£200m", sub: "deal withdrawn — THG/Myprotein, 2021",
+          explain: "THG walked away from its own £200m Myprotein shirt deal after supporter protests against United's ownership spread into a boycott campaign targeting the club's commercial partners. The sponsor blinked first — fan pressure on a shirt deal isn't just noise, it can cost real money.",
+          source: "The Observer, via Gulf News, 2021" },
+        { q: "Wrexham's own promotion push has meant redeveloping their stadium to Premier League standards — just like Stokes Croft would need to. Roughly how much is that redevelopment costing?",
+          options: ["£9 million", "£25 million", "£90 million", "£300 million"], correct: 2, figure: "£90m", sub: "Wrexham's stadium redevelopment cost",
+          explain: "Rebuilding a single stand to Premier League standard is costing Wrexham up to £90 million — even with an £18m government grant covering part of it. That's exactly the kind of bill a shirt sponsorship deal is meant to help cover.",
+          source: "FourFourTwo, 2026" },
+        { q: "How much did pharmaceutical companies spend on direct consumer advertising in the US in 2024?",
+          options: ["About $200 million", "About $1 billion", "About $10 billion", "About $40 billion"], correct: 2, figure: "$10.1bn", sub: "US pharma consumer ad spend, 2024",
+          explain: "Drug companies spent over $10 billion on consumer advertising in 2024 alone — enough that drug ads made up nearly a quarter of all ad minutes on US evening news. A pharmaceutical company's marketing budget, and its instinct to protect its public image, both run very deep.",
+          source: "Wisconsin Watch / industry ad-spend trackers, 2025" },
+        { q: "West Ham's shirt sponsor XL Holidays collapsed with £143m in debts, partway through their deal, in 2008. How much did that actually cost the club in lost sponsorship income?",
+          options: ["Nothing — fully insured", "£3-4 million", "£15 million", "£40 million"], correct: 1, figure: "£3-4m", sub: "West Ham's real loss, of £143m owed",
+          explain: "XL Leisure Group went bust owing £143m only a year into a three-year shirt deal — but the direct hit to West Ham's own finances was a comparatively modest £3-4 million. Sponsors collapsing mid-deal is rare in English football, but it isn't unheard of, and it's rarely as ruinous as the headline debt figure suggests.",
+          source: "PlanetSport, 2022" },
+        { q: "For six straight seasons up to 2021-22, EFL Championship clubs collectively did something most businesses could never survive. What?",
+          options: ["Paid more in wages than the whole division earned in revenue", "Sold more shirts than match tickets", "Spent more on stadiums than on players", "Lost every single relegation playoff"], correct: 0, figure: "6 seasons", sub: "running where wages beat revenue",
+          explain: "From 2016-17 to 2021-22, Championship clubs spent more on player wages alone than the entire division brought in — revenue only overtook wages again in 2022-23 (£749m vs £706m). Even that 'good' year still ended in a combined £316m loss across the league.",
+          source: "Deloitte, Annual Review of Football Finance, 2024" }
+      ]
+    }
+  };
+
+  var EXAMPLE = {
+    title: "My warm-up",
+    heading: "How sure are you?",
+    intro: ["A few numbers before we start."],
+    outro: { heading: "Well played.", paras: ["Let's see what the evidence says."], cue: "" },
+    questions: [
+      { q: "What share of the world's population lives in cities?", options: ["About 25%", "About 40%", "About 57%", "About 80%"], correct: 2,
+        figure: "57%", sub: "urban population, 2023", explain: "Just over half the world now lives in urban areas.", source: "World Bank" }
+    ]
+  };
+
+  var LETTERS = ["A", "B", "C", "D", "E", "F"];
+  var KEY = "simlearn-extras:confidence-bets:v1";
+
+  /* ------------------------------ state ------------------------------ */
+  var st = null;          // the live game
+  var draft = {           // setup screen values, kept until the game starts
+    setKey: "sponsorship", custom: null,
+    teams: ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6"],
+    bank: 1000, cur: "€"
+  };
+  var reelTimer = null;
+
+  function $(id) { return document.getElementById(id); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify({ st: st, draft: draft })); } catch (e) {} }
+  function load() {
+    try { var raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+  }
+  function getSet(key, custom) { return key === "custom" && custom ? custom : (SETS[key] || SETS.sponsorship); }
+  function set() { return getSet(st.setKey, st.custom); }
+  function money(n, cur) { cur = cur || st.cur; return (n < 0 ? "−" : "") + cur + Math.abs(n).toLocaleString("en-GB"); }
+  function signed(n) { return n > 0 ? "+" + money(n) : n < 0 ? money(n) : "±0"; }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  /* Balances are always recomputed from the rounds, so going back and fixing a bet stays consistent. */
+  function ledger() {
+    var qs = set().questions, bal = {}, rows = [];
+    st.teams.forEach(function (t) { bal[t.id] = st.bank; });
+    for (var i = 0; i < qs.length; i++) {
+      var r = st.rounds[i], before = Object.assign({}, bal), stake = {}, delta = {};
+      st.teams.forEach(function (t) {
+        var b = r ? Math.max(0, Math.min(+r.bets[t.id] || 0, before[t.id])) : 0;
+        stake[t.id] = b;
+        var d = 0;
+        if (r && r.revealed && b > 0 && r.picks[t.id] != null) d = r.picks[t.id] === qs[i].correct ? b : -b;
+        delta[t.id] = d; bal[t.id] = before[t.id] + d;
+      });
+      rows.push({ before: before, after: Object.assign({}, bal), stake: stake, delta: delta, revealed: !!(r && r.revealed) });
+    }
+    return { rows: rows, final: bal };
+  }
+  function round() {
+    if (!st.rounds[st.idx]) st.rounds[st.idx] = { bets: {}, picks: {}, revealed: false };
+    return st.rounds[st.idx];
+  }
+  function ranked(balances) {
+    return st.teams.slice().sort(function (a, b) { return balances[b.id] - balances[a.id] || a.order - b.order; });
+  }
+
+  /* ------------------------------ views ------------------------------ */
+  function show(name) {
+    ["setup", "question", "suspense", "reveal", "end"].forEach(function (v) { $("v-" + v).classList.toggle("on", v === name); });
+  }
+
+  function renderSetup() {
+    var s = getSet(draft.setKey, draft.custom);
+    $("cEyebrow").textContent = s.eyebrow || "Warm-up";
+    $("cTitle").textContent = s.heading || s.title;
+    var intro = $("cIntro"); intro.innerHTML = "";
+    (s.intro || []).forEach(function (p) { intro.appendChild(el("p", null, p)); });
+    var bank = (+draft.bank || 1000), c = draft.cur || "€";
+    $("cRules").innerHTML = "";
+    [
+      ["1.", " Every team starts with " + c + bank.toLocaleString("en-GB") + ". There are " + s.questions.length + " questions."],
+      ["2.", " Before each answer is revealed, bet as much of your money as you're confident you're right."],
+      ["3.", " On three, hold up your card: A, B, C or D."],
+      ["4.", " Right answer: win your stake. Wrong answer: lose it. Hit zero and you're out."]
+    ].forEach(function (r) { var d = el("div"); d.appendChild(el("b", null, r[0])); d.appendChild(document.createTextNode(r[1])); $("cRules").appendChild(d); });
+
+    var pick = $("setPick"); pick.innerHTML = "";
+    Object.keys(SETS).forEach(function (k) { var o = el("option", null, SETS[k].title + " (" + SETS[k].questions.length + " questions)"); o.value = k; pick.appendChild(o); });
+    if (draft.custom) { var o = el("option", null, (draft.custom.title || "Your questions") + " (" + draft.custom.questions.length + " questions)"); o.value = "custom"; pick.appendChild(o); }
+    pick.value = draft.setKey;
+
+    var list = $("teamList"); list.innerHTML = "";
+    draft.teams.forEach(function (name, i) {
+      var line = el("div", "teamline");
+      line.appendChild(el("span", "n", String(i + 1)));
+      var inp = el("input", "inp"); inp.value = name; inp.maxLength = 24; inp.setAttribute("aria-label", "Team " + (i + 1) + " name");
+      inp.addEventListener("input", function () { draft.teams[i] = inp.value; save(); });
+      line.appendChild(inp);
+      var rm = el("button", "iconbtn", "×"); rm.title = "Remove team"; rm.disabled = draft.teams.length <= 2;
+      rm.addEventListener("click", function () { draft.teams.splice(i, 1); save(); renderSetup(); });
+      line.appendChild(rm);
+      list.appendChild(line);
+    });
+    $("addTeam").hidden = draft.teams.length >= 12;
+    $("bank").value = draft.bank; $("cur").value = draft.cur;
+    $("resumeBtn").hidden = !st;
+  }
+
+  function renderQuestion() {
+    var s = set(), q = s.questions[st.idx], r = round(), L = ledger().rows[st.idx];
+    $("qLabel").textContent = "Question " + (st.idx + 1) + " of " + s.questions.length;
+    $("qText").textContent = q.q;
+    var ul = $("qOpts"); ul.innerHTML = "";
+    q.options.forEach(function (o, i) {
+      var li = el("li", "opt"); li.appendChild(el("span", "L", LETTERS[i])); li.appendChild(el("span", null, o)); ul.appendChild(li);
+    });
+
+    var box = $("betRows"); box.innerHTML = "";
+    st.teams.forEach(function (t) {
+      var have = L.before[t.id];
+      var row = el("div", "bet" + (have <= 0 ? " bust" : "")); row.dataset.id = t.id;
+      var who = el("div"); who.appendChild(el("div", "nm", t.name)); who.appendChild(el("div", "bal num", "Has " + money(have)));
+      row.appendChild(who);
+      var ctl = el("div", "ctl");
+      if (have <= 0) { ctl.appendChild(el("span", "bustlbl", "Bust")); row.appendChild(ctl); box.appendChild(row); return; }
+
+      var inp = el("input", "inp stake"); inp.type = "number"; inp.min = 0; inp.max = have; inp.step = 10; inp.inputMode = "numeric";
+      inp.placeholder = "0"; inp.setAttribute("aria-label", t.name + " stake");
+      if (r.bets[t.id]) inp.value = r.bets[t.id];
+      function setBet(v) {
+        v = Math.max(0, Math.min(Math.round(+v || 0), have));
+        r.bets[t.id] = v; inp.value = v || ""; row.classList.remove("missing"); updatePot(); save();
+      }
+      inp.addEventListener("change", function () { setBet(inp.value); });
+      inp.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") { e.preventDefault(); setBet(inp.value); var all = box.querySelectorAll(".stake"), k = [].indexOf.call(all, inp); if (all[k + 1]) all[k + 1].focus(); else inp.blur(); }
+      });
+      ctl.appendChild(inp);
+      [["½", 0.5], ["All", 1]].forEach(function (c) {
+        var b = el("button", "chip", c[0]); b.type = "button"; b.title = c[0] === "All" ? "All in" : "Half";
+        b.addEventListener("click", function () { setBet(Math.floor(have * c[1])); });
+        ctl.appendChild(b);
+      });
+      var pk = el("div", "picks");
+      q.options.forEach(function (_, i) {
+        var b = el("button", "pk" + (r.picks[t.id] === i ? " sel" : ""), LETTERS[i]); b.type = "button";
+        b.setAttribute("aria-label", t.name + " answers " + LETTERS[i]);
+        b.addEventListener("click", function () {
+          r.picks[t.id] = r.picks[t.id] === i ? null : i;
+          pk.querySelectorAll(".pk").forEach(function (x, j) { x.classList.toggle("sel", r.picks[t.id] === j); });
+          row.classList.remove("missing"); save();
+        });
+        pk.appendChild(b);
+      });
+      ctl.appendChild(pk);
+      row.appendChild(ctl);
+      box.appendChild(row);
+    });
+    $("betNote").className = "note"; $("betNote").textContent = "Type each team's stake, then tap the letter on their card.";
+    updatePot();
+  }
+  function updatePot() {
+    var r = round(), tot = 0;
+    st.teams.forEach(function (t) { tot += +r.bets[t.id] || 0; });
+    $("potTotal").textContent = "On the table: " + money(tot);
+  }
+
+  function validateBets() {
+    var r = round(), L = ledger().rows[st.idx], missing = [];
+    st.teams.forEach(function (t) {
+      if (L.before[t.id] > 0 && (+r.bets[t.id] || 0) > 0 && r.picks[t.id] == null) missing.push(t);
+    });
+    document.querySelectorAll("#betRows .bet").forEach(function (row) {
+      row.classList.toggle("missing", missing.some(function (t) { return String(t.id) === row.dataset.id; }));
+    });
+    if (missing.length) {
+      $("betNote").className = "note bad";
+      $("betNote").textContent = missing.map(function (t) { return t.name; }).join(", ") + (missing.length > 1 ? " have" : " has") + " a stake but no answer — tap a letter, or set the stake to 0.";
+      return false;
+    }
+    return true;
+  }
+
+  function renderSuspense() {
+    var r = round(), tot = 0, n = 0;
+    st.teams.forEach(function (t) { var b = +r.bets[t.id] || 0; tot += b; if (b > 0) n++; });
+    $("suspPot").innerHTML = "";
+    $("suspPot").appendChild(document.createTextNode(n + " team" + (n === 1 ? "" : "s") + " betting · "));
+    $("suspPot").appendChild(el("b", null, money(tot)));
+    $("suspPot").appendChild(document.createTextNode(" on the table"));
+  }
+
+  function renderReveal(animate) {
+    var s = set(), q = s.questions[st.idx], r = round(), L = ledger().rows[st.idx];
+    $("rLabel").textContent = "Question " + (st.idx + 1) + " of " + s.questions.length;
+    var ul = $("rOpts"); ul.innerHTML = "";
+    q.options.forEach(function (o, i) {
+      var li = el("li", "opt" + (i === q.correct ? " right" : ""));
+      li.appendChild(el("span", "L", LETTERS[i])); li.appendChild(el("span", null, o));
+      var names = st.teams.filter(function (t) { return r.picks[t.id] === i && L.stake[t.id] > 0; }).map(function (t) { return t.name; });
+      if (names.length) li.appendChild(el("span", "who", names.join(", ")));
+      ul.appendChild(li);
+    });
+    $("rSub").textContent = q.sub || "";
+    $("rExplain").textContent = q.explain || "";
+    $("rExplain").hidden = !q.explain;
+    $("rSrc").textContent = q.source || ""; $("rSrcWrap").hidden = !q.source;
+    runReel(q.figure || LETTERS[q.correct], animate);
+
+    var board = $("board"); board.innerHTML = "";
+    var leader = null;
+    ranked(L.after).forEach(function (t, i) {
+      var li = el("li", "st");
+      if (i === 0 && L.after[t.id] > 0) { li.classList.add("lead"); leader = t; }
+      li.appendChild(el("span", "rk", String(i + 1)));
+      var nm = el("span", "nm", t.name);
+      var stake = L.stake[t.id];
+      nm.appendChild(el("small", null, stake > 0 ? "Bet " + money(stake) + " on " + LETTERS[r.picks[t.id]] : (L.before[t.id] <= 0 ? "Bust" : "Sat this one out")));
+      li.appendChild(nm);
+      var d = L.delta[t.id];
+      var dl = el("span", "dl " + (d > 0 ? "up" : d < 0 ? "down" : "flat"), signed(d));
+      li.appendChild(dl);
+      var mn = el("span", "mn num", money(animate ? L.before[t.id] : L.after[t.id]));
+      li.appendChild(mn);
+      board.appendChild(li);
+      var go = function () { dl.classList.add("show"); countTo(mn, L.before[t.id], L.after[t.id], animate); };
+      if (animate) setTimeout(go, 1100 + i * 90); else go();
+    });
+  }
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function runReel(final, animate) {
+    var reel = $("reel");
+    clearInterval(reelTimer);
+    reel.classList.remove("land"); reel.classList.toggle("small", final.length > 5);
+    if (!animate || reduce) { reel.textContent = final; reel.classList.add("land"); return; }
+    var ticks = 0;
+    reelTimer = setInterval(function () {
+      if (++ticks >= 14) { clearInterval(reelTimer); reel.textContent = final; reel.classList.add("land"); }
+      else reel.textContent = String(Math.floor(Math.random() * 90) + 5);
+    }, 70);
+  }
+  function countTo(node, from, to, animate) {
+    if (!animate || reduce || from === to) { node.textContent = money(to); return; }
+    var t0 = performance.now(), dur = 700;
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      node.textContent = money(Math.round(from + (to - from) * e));
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  function renderEnd() {
+    var s = set(), led = ledger(), fin = led.final, order = ranked(fin);
+    var top = order[0];
+    var tied = order.filter(function (t) { return fin[t.id] === fin[top.id]; });
+    $("endWinner").textContent = fin[top.id] <= 0 ? "Everyone went bust." :
+      tied.length > 1 ? tied.map(function (t) { return t.name; }).join(" & ") + " tie for the win" :
+      top.name + " walk away with " + money(fin[top.id]);
+
+    var pod = $("podium"); pod.innerHTML = "";
+    var places = [order[1], order[0], order[2]], cls = ["p2", "p1", "p3"], lbl = ["2nd", "1st", "3rd"];
+    places.forEach(function (t, i) {
+      var d = el("div", "pd " + cls[i]);
+      if (!t) { d.style.visibility = "hidden"; pod.appendChild(d); return; }
+      d.appendChild(el("div", "pl", lbl[i])); d.appendChild(el("div", "pn", t.name)); d.appendChild(el("div", "pm num", money(fin[t.id])));
+      pod.appendChild(d);
+    });
+
+    var out = $("outro"); out.innerHTML = "";
+    var o = s.outro || {};
+    if (o.heading) { var h = el("h3", null, o.heading); h.style.cssText = "font-family:var(--f-read);font-weight:600;font-size:26px;margin:0 0 14px"; out.appendChild(h); }
+    (o.paras || []).forEach(function (p) { out.appendChild(el("p", null, p)); });
+    if (o.cue) { var c = el("div", "cue"); c.innerHTML = o.cue; out.appendChild(c); }
+
+    var tb = $("hist"); tb.innerHTML = "";
+    var thead = el("thead"), hr = el("tr");
+    hr.appendChild(el("th", null, "Team"));
+    s.questions.forEach(function (_, i) { hr.appendChild(el("th", null, "Q" + (i + 1))); });
+    hr.appendChild(el("th", null, "Final"));
+    thead.appendChild(hr); tb.appendChild(thead);
+    var tbody = el("tbody");
+    order.forEach(function (t) {
+      var tr = el("tr"); tr.appendChild(el("td", null, t.name));
+      led.rows.forEach(function (row) {
+        var d = row.delta[t.id];
+        tr.appendChild(el("td", d > 0 ? "up" : d < 0 ? "down" : "z", d === 0 ? "·" : (d > 0 ? "+" : "−") + Math.abs(d).toLocaleString("en-GB")));
+      });
+      var f = el("td", null, money(fin[t.id])); f.style.fontWeight = "500"; tr.appendChild(f);
+      tbody.appendChild(tr);
+    });
+    tb.appendChild(tbody);
+  }
+
+  /* --------------------------- navigation --------------------------- */
+  function chrome() {
+    var s = st && st.phase !== "setup" ? set() : getSet(draft.setKey, draft.custom), n = s.questions.length;
+    $("topTitle").textContent = "SimLearn Extras · Confidence Bets · " + s.title;
+    var p = !st || st.phase === "setup" ? 0 : st.phase === "end" ? 1 :
+      (st.idx + (st.phase === "question" ? 0 : st.phase === "suspense" ? 0.5 : 1)) / n;
+    $("fill").style.width = (p * 100) + "%";
+    $("topCount").textContent = !st || st.phase === "setup" ? "Setup" : st.phase === "end" ? "Final" : (st.idx + 1) + " / " + n;
+    var ph = st ? st.phase : "setup";
+    $("prevBtn").disabled = ph === "setup";
+    $("nextBtn").hidden = ph === "setup";
+    $("kbdHint").hidden = ph === "setup";
+    $("nextBtn").textContent =
+      ph === "question" ? "Lock in bets →" :
+      ph === "suspense" ? "Reveal →" :
+      ph === "reveal" ? (st.idx === n - 1 ? "Final standings →" : "Next question →") :
+      ph === "end" ? "New game ↻" : "Next →";
+  }
+
+  function render(animate) {
+    var ph = st ? st.phase : "setup";
+    if (ph === "setup") renderSetup();
+    else if (ph === "question") renderQuestion();
+    else if (ph === "suspense") renderSuspense();
+    else if (ph === "reveal") renderReveal(animate);
+    else if (ph === "end") renderEnd();
+    show(ph); chrome(); save();
+    window.scrollTo(0, 0);
+  }
+
+  function next() {
+    if (!st || st.phase === "setup") return;
+    var n = set().questions.length;
+    if (st.phase === "question") { if (!validateBets()) return; st.phase = "suspense"; render(); }
+    else if (st.phase === "suspense") { round().revealed = true; st.phase = "reveal"; render(true); }
+    else if (st.phase === "reveal") {
+      if (st.idx >= n - 1) st.phase = "end"; else { st.idx++; st.phase = "question"; }
+      render();
+    } else if (st.phase === "end") {
+      if (confirm("Start a new game? These scores will be cleared.")) { st = null; render(); }
+    }
+  }
+  function prev() {
+    if (!st || st.phase === "setup") return;
+    if (st.phase === "question") {
+      if (st.idx === 0) st.phase = "setup"; else { st.idx--; st.phase = "reveal"; }
+    } else if (st.phase === "suspense") st.phase = "question";
+    else if (st.phase === "reveal") { round().revealed = false; st.phase = "question"; } // re-open bets to fix a mistake
+    else if (st.phase === "end") { st.idx = set().questions.length - 1; st.phase = "reveal"; }
+    render();
+  }
+
+  function startGame() {
+    var names = draft.teams.map(function (s) { return s.trim(); });
+    if (names.some(function (s) { return !s; })) { $("setupMsg").className = "msg bad"; $("setupMsg").textContent = "Every team needs a name."; return; }
+    var bank = Math.round(+$("bank").value);
+    if (!(bank >= 10)) { $("setupMsg").className = "msg bad"; $("setupMsg").textContent = "Starting money must be at least 10."; return; }
+    if (st && st.rounds.some(function (r) { return r && r.revealed; }) && !confirm("Start a new game? The saved game will be cleared.")) return;
+    st = {
+      setKey: draft.setKey, custom: draft.setKey === "custom" ? draft.custom : null,
+      teams: names.map(function (n, i) { return { id: i + 1, order: i, name: n }; }),
+      bank: bank, cur: ($("cur").value || "€").trim(),
+      idx: 0, phase: "question", rounds: []
+    };
+    $("setupMsg").textContent = "";
+    render();
+  }
+
+  /* ------------------------------ wiring ----------------------------- */
+  $("nextBtn").addEventListener("click", next);
+  $("prevBtn").addEventListener("click", prev);
+  $("startBtn").addEventListener("click", startGame);
+  $("resumeBtn").addEventListener("click", function () {
+    if (st.phase === "setup") st.phase = "question";
+    render();
+  });
+  $("addTeam").addEventListener("click", function () { draft.teams.push("Team " + (draft.teams.length + 1)); save(); renderSetup(); var all = $("teamList").querySelectorAll("input"); all[all.length - 1].select(); });
+  $("setPick").addEventListener("change", function (e) { draft.setKey = e.target.value; save(); renderSetup(); });
+  $("bank").addEventListener("change", function (e) { draft.bank = Math.round(+e.target.value) || 1000; save(); renderSetup(); });
+  $("cur").addEventListener("input", function (e) { draft.cur = e.target.value; save(); });
+  $("cur").addEventListener("change", function () { renderSetup(); });
+  $("showExample").addEventListener("click", function () { $("customJson").value = JSON.stringify(EXAMPLE, null, 2); });
+  $("loadCustom").addEventListener("click", function () {
+    var m = $("customMsg");
+    try {
+      var data = JSON.parse($("customJson").value);
+      if (Array.isArray(data)) data = { title: "Your questions", questions: data };
+      if (!data.questions || !data.questions.length) throw new Error("No questions found.");
+      data.questions.forEach(function (q, i) {
+        if (!q.q || !Array.isArray(q.options) || q.options.length < 2 || q.options.length > 6) throw new Error("Question " + (i + 1) + " needs q and 2–6 options.");
+        if (!(q.correct >= 0 && q.correct < q.options.length)) throw new Error("Question " + (i + 1) + ": correct must be 0 to " + (q.options.length - 1) + ".");
+      });
+      data.title = data.title || "Your questions";
+      draft.custom = data; draft.setKey = "custom"; save(); renderSetup();
+      $("customBox").open = true; m.className = "msg ok"; m.textContent = "Loaded " + data.questions.length + " questions.";
+    } catch (err) { m.className = "msg bad"; m.textContent = "Couldn't read that: " + err.message; }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    var tag = (document.activeElement && document.activeElement.tagName) || "";
+    if (/INPUT|TEXTAREA|SELECT/.test(tag)) { if (e.key === "Escape") document.activeElement.blur(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.code === "Space" || e.key === "ArrowRight") { e.preventDefault(); next(); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+  });
+
+  var saved = load();
+  if (saved) { if (saved.draft) draft = Object.assign(draft, saved.draft); if (saved.st) st = saved.st; }
+  if (st && st.phase !== "setup") { /* show setup with a resume button so a refresh never jumps mid-reveal */
+    var keep = st; render(); st = keep; renderSetup(); show("setup");
+    $("prevBtn").disabled = true; $("nextBtn").hidden = true; $("topCount").textContent = "Setup";
+  } else render();
+})();
+</script>
+</body>
+</html>
