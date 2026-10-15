@@ -372,6 +372,65 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
           source: "Independent ethics rating (M&S updated May 2026)" }
       ]
     },
+    "migration": {
+      title: "The Southern Crossing: migration in numbers",
+      eyebrow: "AE · Week 3 warm-up",
+      heading: "How far off is your gut?",
+      intro: [
+        "Ten real numbers about migration: the kind that turn up in news coverage, dinner-table arguments and political speeches.",
+        "Every figure is real and sourced. Nothing in this warm-up is fictional: that starts when we open the Commission's files."
+      ],
+      outro: {
+        heading: "The gap is the lesson.",
+        paras: [
+          "On most of these, the confident guess in the room was further from reality than the evidence. That gap, between what we assume about migration and what the numbers say, is what today's sources will keep testing.",
+          "The researchers in the simulation don't always agree with each other. But each of them starts from evidence, not a gut feeling. And this time, the people on the move are Europeans."
+        ],
+        cue: "Now open <b>The Southern Crossing</b> (code: exodus) and meet the North African Joint Reception Commission."
+      },
+      questions: [
+        { q: "Ipsos asked people in 30 countries what share of their country's population are immigrants (people born in another country). The average guess was 24%. What's the real average across those 30 countries?",
+          options: ["6%", "11%", "18%", "24%"], correct: 1, figure: "11%", sub: "guessed: 24%",
+          explain: "People guessed more than double the real figure: 24% against an actual 11%. Ipsos has found the same kind of gap in its surveys for over a decade.",
+          source: "Ipsos, Perils of Perception, 2024 (30 countries)" },
+        { q: "In the same survey, Germans guessed that 29% of Germany's population are immigrants. What's the real figure?",
+          options: ["9%", "14%", "19%", "24%"], correct: 2, figure: "19%", sub: "guessed: 29%",
+          explain: "Germany's real figure is 19%: a 10-point overestimate, and one of the smaller gaps in the survey. Americans guessed 30% (actual 15%); Canadians guessed 39% (actual 21%).",
+          source: "Ipsos, Perils of Perception, 2024" },
+        { q: "Which of these four countries had the biggest gap between guess and reality in the same survey?",
+          options: ["France: guessed 25%, actual 13%", "Great Britain: guessed 26%, actual 14%", "Germany: guessed 29%, actual 19%", "Canada: guessed 39%, actual 21%"], correct: 3, figure: "+18 pts", sub: "Canada's gap",
+          explain: "Canadians guessed that 39% of the population are immigrants; the real figure is 21%, an 18-point gap, the widest of these four. Canada also has one of the highest real shares in the whole survey.",
+          source: "Ipsos, Perils of Perception, 2024" },
+        { q: "In 2025, about 813,000 people moved to the UK long-term. Roughly what share arrived by small boat across the Channel, the image most associated with 'the migration crisis'?",
+          options: ["5%", "20%", "45%", "70%"], correct: 0, figure: "≈5%", sub: "of long-term arrivals",
+          explain: "About 41,500 people crossed the Channel by small boat in 2025: roughly 5% of the 813,000 long-term arrivals. They made up 41% of asylum applications, but only a small slice of immigration as a whole. Most people who move to the UK come to work, study or join family.",
+          source: "ONS, provisional estimate for 2025; Migration Observatory, 2026" },
+        { q: "Who hosts most of the world's refugees: wealthy countries such as Germany, the UK or the US, or poorer ones?",
+          options: ["High-income countries host about 70%", "It's split roughly 50/50", "Low- and middle-income countries host about 68%", "Most refugees stay in their own country"], correct: 2, figure: "68%", sub: "hosted by low- and middle-income countries",
+          explain: "At the end of 2025, low- and middle-income countries hosted 68% of the world's refugees, and 65% of refugees were in a country next door to the one they fled. The countries carrying most of the load are rarely the ones dominating the political debate.",
+          source: "UNHCR, Global Trends 2025" },
+        { q: "There are about 304 million international migrants in the world. Roughly what share are refugees or asylum seekers, rather than people who moved for work, study or family?",
+          options: ["About 1 in 20", "About 1 in 6", "About 1 in 2", "About 4 in 5"], correct: 1, figure: "≈1 in 6", sub: "refugees or asylum seekers",
+          explain: "Refugees and asylum seekers together came to about 51 million people at the end of 2024: roughly one in six international migrants. Most migration in the world has nothing to do with asylum.",
+          source: "UNHCR, Global Trends 2024; UN DESA, International Migrant Stock 2024" },
+        { q: "What share of the world's international migrants are women?",
+          options: ["20%", "35%", "48%", "65%"], correct: 2, figure: "48%", sub: "of migrants are women",
+          explain: "Close to half: 48%. Migration is often talked about as if it were mostly young men on the move; worldwide, it's nearly an even split.",
+          source: "UN DESA, International Migrant Stock 2024" },
+        { q: "What share of the whole world's population are international migrants, people living outside the country they were born in?",
+          options: ["3.7%", "12%", "20%", "30%"], correct: 0, figure: "3.7%", sub: "about 1 in 27 people",
+          explain: "About 1 in 27 people worldwide (3.7%) live outside the country they were born in. The number has grown steadily, but it's a far smaller share of humanity than the volume of political debate might suggest.",
+          source: "UN DESA, International Migrant Stock 2024" },
+        { q: "Where is the world's largest refugee camp, the biggest every year since 2018?",
+          options: ["On the US–Mexico border", "Near Berlin", "Cox's Bazar, Bangladesh", "Istanbul, Türkiye"], correct: 2, figure: "≈690k", sub: "Kutupalong, Cox's Bazar",
+          explain: "The Kutupalong camp in Cox's Bazar, Bangladesh, home to about 690,000 mostly Rohingya refugees from Myanmar, has been the world's largest refugee camp since 2018. The places carrying the heaviest load are rarely the ones in Western headlines.",
+          source: "UNHCR data for the end of 2024" },
+        { q: "The OECD compared what immigrants pay in taxes with what they receive in public services and benefits, in 25 rich countries from 2006 to 2018. What did it find?",
+          options: ["A large cost: several % of GDP", "Small either way: about −1% to +1% of GDP", "Impossible to calculate", "A large gain: several % of GDP"], correct: 1, figure: "±1%", sub: "of GDP in most countries",
+          explain: "In most countries the net effect was small: between −1% and +1% of GDP, positive in some countries and negative in others, depending partly on how shared costs such as defence are counted. It's neither the drain nor the windfall that either side of the debate tends to claim.",
+          source: "OECD, International Migration Outlook 2021" }
+      ]
+    },
     "sponsorship": {
       title: "The Sponsorship Decision",
       eyebrow: "EBC · Week 3 warm-up",
