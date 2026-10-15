@@ -85,11 +85,6 @@ textarea::placeholder{color:var(--faint);font-style:italic}
 .arcmap div b{display:block;font-size:12px;font-family:var(--f-mono);color:var(--gold);margin-bottom:4px;letter-spacing:.03em}
 .arcmap span{display:inline-block;font-family:var(--f-mono);font-size:12px;background:var(--soft);color:var(--accent);border-radius:4px;padding:1px 5px;margin:2px 2px 0 0}
 @media (max-width:620px){.arcmap{grid-template-columns:1fr 1fr}}
-.starters{font-size:14px;color:var(--muted);margin:0 0 10px;padding-left:18px}
-.check{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-size:13px}
-.check span{border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--faint)}
-.check span.on{border-color:var(--ok);color:var(--ok);background:var(--ok-bg)}
-.wc{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:6px}
 .toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
 .status{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
 #copyOut{width:100%;min-height:160px;margin-top:10px;font-family:var(--f-mono);font-size:12.5px}
@@ -112,7 +107,6 @@ footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
     <li><b>Read ten shots</b>one focus each, then compare with a model reading</li>
     <li><b>Map the story</b>place each shot on a five-stage arc</li>
     <li><b>Step back</b>three big-picture questions and the film's afterlife</li>
-    <li><b>Write</b>a short paragraph of analysis</li>
   </ol>
   <div class="watch">
     <a class="btn primary" href="https://www.youtube.com/watch?v=4pQhmDr6Mkk" target="_blank" rel="noopener">▶ Watch KENZO World</a>
@@ -156,20 +150,6 @@ footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
     <p class="q" style="margin-top:8px">In 2018, Taylor Swift's music video for "Delicate", directed by Joseph Kahn, was accused online of copying KENZO World: a woman bored at a glamorous event becomes invisible and lets loose with silly faces and wild dancing. Why might this ad have become a template that others copy? Is being copied a compliment, a problem, or both?</p>
     <textarea data-k="copy" placeholder="Your notes…"></textarea>
     <p class="note" style="margin:8px 0 0">Read about it: <a href="https://www.itsnicethat.com/news/taylor-swift-delicate-video-accused-of-copying-spike-jonze-kenzo-ad-film-130318" target="_blank" rel="noopener">It's Nice That, March 2018</a></p>
-  </div></div>
-
-  <h2><small>Step 5</small>Write it up</h2>
-  <div class="card plain"><div class="body">
-    <p class="q">In 120–150 words: how does KENZO World present a young woman breaking away from traditional expectations? Refer to at least two shots and use at least three of the five tools.</p>
-    <ul class="starters">
-      <li>Although the film opens like a conventional perfume ad, …</li>
-      <li>In the first shot, she is positioned … , which suggests …</li>
-      <li>This contrasts sharply with … , where …</li>
-      <li>By the final shot, … . The film links the perfume with …</li>
-    </ul>
-    <textarea data-k="para" id="para" style="min-height:170px" placeholder="Your paragraph…"></textarea>
-    <div class="wc" id="wc">0 words</div>
-    <div class="check" id="check"></div>
   </div></div>
 
   <div class="toolbar">
@@ -225,10 +205,6 @@ footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
     { k: "message", q: "Before and after: what view of femininity does she leave behind, and what does she become? Use evidence from at least two shots.",
       model: "She starts as the decorative, silent woman at a table of older men: elegant, polite and watched. She ends loud, physical, funny and free, making her own way, out of the building and into the open air. The film presents this as a real breakthrough: smashing the expectations of a traditional, male-dominated world, and the perfume is sold as the feeling of that release." }
   ];
-  var TERMS = [["setting", /\bsetting|location|space|room|foyer|theatre|corridor/i], ["dress code", /\bdress|costume|gown|tuxedo|clothes|outfit/i],
-    ["props", /\bprop|object|bust|flowers?|eye\b|bottle/i], ["lighting & colour", /\blight|lit\b|colou?r|palette|dark|bright/i],
-    ["non-verbal", /\bnon-verbal|gesture|face|facial|body|expression|pose|posture|movement/i]];
-
   var KEY = "simlearn-extras:kenzo-world:v1:";
   function get(k) { try { return localStorage.getItem(KEY + k) || ""; } catch (e) { return mem[k] || ""; } }
   function set(k, v) { mem[k] = v; try { localStorage.setItem(KEY + k, v); } catch (e) {} }
@@ -312,21 +288,8 @@ footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
     card.appendChild(body); big.appendChild(card);
   });
 
-  /* paragraph: word count and tool checklist */
-  function checkPara() {
-    var t = get("para"), words = (t.trim().match(/\S+/g) || []).length;
-    var wc = document.getElementById("wc");
-    wc.textContent = words + " words" + (words === 0 ? "" : words < 120 ? " · aim for 120–150" : words > 150 ? " · a little long: aim for 120–150" : " · good length");
-    var shots = (t.match(/\bshots?\s*(0?[1-9]|10)\b/gi) || []).length;
-    var c = document.getElementById("check"); c.innerHTML = "";
-    var used = 0;
-    TERMS.forEach(function (x) { var on = x[1].test(t); used += on; var s = el("span", on ? "on" : "", x[0]); c.appendChild(s); });
-    var s2 = el("span", shots >= 2 ? "on" : "", shots >= 2 ? "two shots named" : "name two shots (e.g. 'shot 01')"); c.appendChild(s2);
-  }
-  syncs.push(checkPara);
-
   /* progress */
-  var ALL = ["first", "arc", "familiar", "camera", "message", "copy", "para"].concat(SHOTS.map(function (_, i) { return "shot" + (i + 1); }));
+  var ALL = ["first", "arc", "familiar", "camera", "message", "copy"].concat(SHOTS.map(function (_, i) { return "shot" + (i + 1); }));
   ALL.splice(ALL.indexOf("copy"), 1); // 'copy' is optional extra
   var TOTAL = ALL.length + 1;
   function progress() {
@@ -349,7 +312,6 @@ footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
     add("Story shape", "arc");
     BIG.forEach(function (b) { add(b.q.split(":")[0].split("?")[0], b.k); });
     add("Afterlife: Delicate", "copy");
-    add("Paragraph", "para");
     return L.length > 2 ? L.join("\n") : "";
   }
   var status = document.getElementById("status"), out = document.getElementById("copyOut");
