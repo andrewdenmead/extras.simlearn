@@ -210,7 +210,7 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
   try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
   if (S.step === 0) S.step = -1;
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
-  // steps: -1 cover, 1..12 rounds, 13 end (the fallacies themselves are on guide.html, for students' phones)
+  // steps: -1 cover, 1..12 rounds, 13 end (the fallacies themselves are on guide.html, for students' phones; served as guide/)
   var lastWhere = null;
 
   var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev");
