@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>How Many Brands?</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* A projector game in the style of The Price Is Right: five numbers about brand portfolios. The teacher types each team's guess; scoring is automatic (over = 0, closest without going over +2, within 10% +1, exact +3). Progress stays in this browser. */
+:root{
+  --bg:#F2EFE8; --surface:#FFFFFF; --ink:#1E1B16; --muted:#5D574C; --faint:#8A8377; --line:#DCD5C8; --hover:#EAE4D8;
+  --accent:#7A3E8C; --accent-ink:#FFFFFF; --soft:#F0E6F3;
+  --old:#2F5E8C; --old-bg:#E3ECF5; --young:#B4532A; --young-bg:#F7E6DD;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --gold:#9A6E12; --gold-soft:#F4EAD2;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+    --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+    --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+    --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+  --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+  --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+  --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.top .count{color:var(--ink);font-weight:500;white-space:nowrap}
+.track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
+main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
+.view{max-width:1200px;margin:0 auto}
+.view.anim{animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.anim{animation:none}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,6.5vw,72px);line-height:1;margin:0 0 18px}
+.cover p{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin:0 0 10px}
+.cover p.eyebrow{font-size:12px;color:var(--accent);margin:0 0 14px}
+.cover p.guide{margin-top:18px;padding:12px 16px;background:var(--soft);border-radius:10px;color:var(--ink);display:inline-block}
+.cover p.guide b{color:var(--accent)}
+.rules{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);max-width:70ch}
+.rules b{color:var(--ink)}
+.teams-set{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.stepper button{border:0;background:none;width:38px;height:38px;font-size:18px}
+.stepper span{min-width:28px;text-align:center;font-weight:600}
+
+h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px);margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 20px;max-width:70ch}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fcard .n{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.fcard h3{font-family:var(--f-read);font-size:21px;font-weight:600;color:var(--accent)}
+.fcard .def{font-size:15px}
+.fcard .tell{font-size:13.5px;color:var(--muted)}
+.fcard .tell b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.fcard .ex{font-family:var(--f-read);font-style:italic;font-size:14.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+
+.round{display:grid;gap:clamp(20px,3vw,44px);align-items:start}
+@media (min-width:980px){.round{grid-template-columns:minmax(0,1.6fr) minmax(240px,.7fr)}}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+.who{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px 4px 6px;font-size:14px;font-weight:600;margin-bottom:12px}
+.who .dot{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.who.old{background:var(--old-bg);color:var(--old)} .who.old .dot{background:var(--old)}
+.who.young{background:var(--young-bg);color:var(--young)} .who.young .dot{background:var(--young)}
+.reply{font-size:15.5px;color:var(--muted);margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line)}
+.reply b{color:var(--ink);font-weight:600}
+.quote{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.25;margin:0 0 26px}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:700px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:18px}
+.opt .l{font-family:var(--f-mono);font-weight:500;font-size:14px;width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--faint)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .l{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.dim{opacity:.45}
+.reveal{margin-top:20px;display:grid;gap:12px}
+.why{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:0 10px 10px 0;padding:14px 18px;font-size:17px}
+.why b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ok);display:block;margin-bottom:4px}
+.fair{background:var(--gold-soft);border-radius:10px;padding:14px 18px;font-size:17px}
+.fair b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.fair .ask{color:var(--muted);margin:0 0 10px}
+.fair .model{font-family:var(--f-read);font-size:19px}
+
+.side{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.side h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+.team{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.team:first-of-type{border-top:0}
+.team .nm{font-weight:600}
+.team .pts{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:18px}
+.team button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
+.team button.got{background:var(--ok);border-color:var(--ok);color:#fff}
+.side .hint{font-size:13px;color:var(--faint);margin-top:8px}
+
+.end h2{font-family:var(--f-read);font-weight:600;font-size:clamp(32px,4.5vw,52px);margin:0 0 16px}
+.end p{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 12px}
+.board{display:grid;gap:8px;max-width:520px;margin:20px 0}
+.board div{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:18px}
+.board div.win{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.board span:last-child{font-family:var(--f-mono)}
+.tally{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tally span{border-radius:999px;padding:4px 12px;font-size:14px}
+.tally .old{background:var(--old-bg);color:var(--old)} .tally .young{background:var(--young-bg);color:var(--young)}
+
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,44px) clamp(16px,3vh,28px)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.35;cursor:default}
+.kbd{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);display:none}
+@media (min-width:760px){.kbd{display:inline}}
+
+:root{--accent:#2F3C7E;--soft:color-mix(in srgb,#2F3C7E 12%,white)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#9AA8F0;--soft:color-mix(in srgb,#9AA8F0 18%,black)}}
+:root[data-theme="dark"]{--accent:#9AA8F0;--soft:color-mix(in srgb,#9AA8F0 18%,black)}
+.brandline{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.prompt{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.7vw,34px);line-height:1.25;margin:0 0 12px}
+.ctx{font-size:17px;color:var(--muted);margin:0 0 18px;max-width:60ch}
+.rule{display:inline-block;background:var(--gold-soft);color:var(--gold);border-radius:999px;padding:4px 12px;font-size:14px;font-weight:600}
+.big{font-family:var(--f-mono);font-size:clamp(56px,8vw,96px);line-height:1;color:var(--ok);margin:6px 0}
+.guess{width:84px;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:5px 8px;font:inherit;font-family:var(--f-mono);font-size:16px;text-align:right;color:var(--ink)}
+.guess:disabled{opacity:.8}
+.team .res{font-size:12.5px;color:var(--muted);min-width:92px;text-align:right}
+.team .res.over{color:#B23A48}
+.team .res.win{color:var(--ok);font-weight:600}
+</style>
+</head>
+<body>
+<div class="top"><span>SimLearn Extras · How Many Brands?</span><span class="count" id="count">Start</span></div>
+<div class="track"><div class="fill" id="fill"></div></div>
+<main id="main"></main>
+<div class="controls">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <span class="kbd">→ to go on · ← to go back</span>
+  <button class="btn primary" id="next" type="button">Start the game →</button>
+</div>
+<script>
+(function () {
+  "use strict";
+  var ROUNDS = [
+    { company: "Yum! Brands", prompt: "In June 2026, Yum! Brands agreed to sell Pizza Hut for $2.7 billion. Once the sale is complete, how many restaurant brands will Yum! own?",
+      ctx: "You know its restaurants from high streets all over the world: fried chicken, tacos and a fast-casual burger chain.",
+      actual: 3, detail: "KFC, Taco Bell and The Habit Burger Grill.",
+      fact: "Pizza Hut goes to the investment firm LongRange Capital, and its China business to Yum China. Yum! is concentrating on KFC and Taco Bell, which earn about 90% of its operating profit.",
+      concept: "Portfolio pruning", body: "Sometimes the strategic move isn't adding a brand. It's cutting one, even a famous one, to focus on what's growing." },
+    { company: "Marriott International", prompt: "Marriott says it has \"more than ___\" hotel brands, all in one loyalty programme. What's the number?",
+      ctx: "Everything from budget roadside hotels to five-star resorts, all earning the same Marriott Bonvoy points.",
+      actual: 30, detail: "\"More than 30\": from Fairfield and Courtyard up to The Ritz-Carlton and St. Regis. (List every one separately and the travel site Skift counts 37.)",
+      fact: "Each brand keeps its own identity: a Ritz-Carlton guest never sees a Fairfield logo. But every guest earns and spends the same points everywhere.",
+      concept: "House of brands, with a shared layer", body: "Distinct brands for distinct customers, quietly tied together by one loyalty programme." },
+    { company: "LVMH", prompt: "LVMH says it owns more than ___ \"Maisons\" (luxury houses). What's the number?",
+      ctx: "Fashion, jewellery, champagne, watches: one parent company that almost nobody sees.",
+      actual: 75, detail: "\"More than 75 Maisons\", including Louis Vuitton, Dior, Tiffany & Co. and Moët & Chandon.",
+      fact: "You won't find the LVMH name on a Louis Vuitton bag or a Dior dress. Each Maison protects its own prestige as if the parent didn't exist.",
+      concept: "House of brands (the strict version)", body: "When the product is exclusivity and heritage, hiding the parent is the strategy. Visible common ownership would make every Maison feel less special." },
+    { company: "Procter & Gamble", prompt: "In 2014, P&G announced it would get rid of about how many of its smaller brands?",
+      ctx: "Laundry, razors, nappies, toothpaste: one of the biggest consumer-goods portfolios on Earth.",
+      actual: 100, detail: "About 100 brands, sold or dropped. P&G kept 70 to 80 brands, which brought in about 90% of its sales.",
+      fact: "It cut brands that were still profitable, on purpose, to put its money and attention behind fewer, bigger names such as Tide, Pampers and Gillette.",
+      concept: "Portfolio pruning, again", body: "A shrinking brand count isn't always a sign of trouble. For P&G it was a growth strategy." },
+    { company: "Procter & Gamble and Coty", prompt: "In 2015, P&G agreed to sell a bundle of beauty brands, including Wella, CoverGirl and Max Factor, to Coty for $12.5 billion. How many brands were in the deal?",
+      ctx: "Shampoo, hair colour, make-up and perfume: one buyer took the lot.",
+      actual: 43, detail: "43 beauty brands in a single deal.",
+      fact: "For Coty it was a way to become a beauty giant overnight; for P&G it was the biggest step in the pruning it had announced the year before.",
+      concept: "Divestment", body: "Selling brands that don't fit the core can be worth more to someone else, and frees the seller to focus." }
+  ];
+  var N = ROUNDS.length;
+
+  var KEY = "simlearn-extras:how-many-brands:v1", S;
+  function fresh(k) { return { step: -1, phase: "q", teams: k || 4, guesses: {} }; }
+  try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function html(t, c, h) { var e = el(t, c); e.innerHTML = h; return e; }
+  function g(r, t) { var v = (S.guesses["r" + r] || {})[t]; return v === undefined || v === "" ? null : +v; }
+
+  // Price-is-Right scoring: over = 0; closest without going over = +2 (ties share); exact = +3 more, else within 10% = +1 more.
+  function roundPoints(r) {
+    var a = ROUNDS[r].actual, pts = [], best = null, t, x;
+    for (t = 0; t < S.teams; t++) { x = g(r, t); if (x !== null && x <= a && (best === null || a - x < best)) best = a - x; }
+    for (t = 0; t < S.teams; t++) {
+      x = g(r, t); var p = 0, why = "no guess";
+      if (x !== null) {
+        if (x > a) why = "over";
+        else {
+          why = [];
+          if (a - x === best) { p += 2; why.push("closest +2"); }
+          if (x === a) { p += 3; why.push("exact +3"); }
+          else if (a - x <= a * 0.1) { p += 1; why.push("within 10% +1"); }
+          why = why.length ? why.join(", ") : "under";
+        }
+      }
+      pts.push([p, why]);
+    }
+    return pts;
+  }
+  function total(t, upto) { var s = 0; for (var r = 0; r < upto; r++) s += roundPoints(r)[t][0]; return s; }
+  function revealedCount() { return S.step > N ? N : S.step < 1 ? 0 : S.step - 1 + (S.phase === "r" ? 1 : 0); }
+
+  var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev"), lastWhere = null;
+
+  function render() {
+    main.innerHTML = "";
+    var v = el("div", "view");
+    if (S.step < 0) cover(v); else if (S.step <= N) round(v, S.step - 1); else end(v);
+    var where = S.step + S.phase; if (where !== lastWhere) v.classList.add("anim"); lastWhere = where;
+    main.appendChild(v);
+    document.getElementById("count").textContent = S.step < 0 ? "Start" : S.step > N ? "Done" : "Round " + S.step + " / " + N;
+    document.getElementById("fill").style.width = (S.step < 0 ? 0 : S.step > N ? 100 : (S.step - 1 + (S.phase === "r" ? .5 : 0)) / N * 100) + "%";
+    prev.disabled = S.step < 0;
+    next.textContent = S.step < 0 ? "Start the game →" : S.step > N ? "Play again ↻" : S.phase === "q" ? "Reveal →" : S.step === N ? "Final scores →" : "Next round →";
+    save();
+  }
+
+  function cover(v) {
+    v.classList.add("cover");
+    v.appendChild(el("p", "eyebrow", "Warm-up · Brand architecture"));
+    v.appendChild(el("h1", null, "How many brands?"));
+    v.appendChild(el("p", null, "Five real companies, five numbers about the brands they own, buy and sell. Guess as close as you can, but don't go over."));
+    var r = el("div", "rules");
+    ["<b>1.</b> Each team writes one number. Hold it up on three; your teacher types it in.",
+     "<b>2.</b> Over the real number? 0 points, however close.",
+     "<b>3.</b> Closest without going over: +2 (ties share it). Within 10%: +1 more. Exactly right: +3 more instead."]
+      .forEach(function (h) { r.appendChild(html("div", null, h)); });
+    v.appendChild(r);
+    var t = el("div", "teams-set"); t.appendChild(el("span", null, "Number of teams"));
+    var st = el("div", "stepper"), minus = el("button", null, "−"), n = el("span", null, String(S.teams)), plus = el("button", null, "+");
+    minus.type = plus.type = "button";
+    function setTeams(k) { S.teams = Math.max(2, Math.min(10, k)); n.textContent = S.teams; save(); }
+    minus.onclick = function () { setTeams(S.teams - 1); }; plus.onclick = function () { setTeams(S.teams + 1); };
+    st.appendChild(minus); st.appendChild(n); st.appendChild(plus); t.appendChild(st);
+    var reset = el("button", "btn", "New game"); reset.type = "button"; reset.onclick = function () { S = fresh(S.teams); render(); };
+    t.appendChild(reset); v.appendChild(t);
+  }
+
+  function round(v, i) {
+    var R = ROUNDS[i], shown = S.phase === "r", wrap = el("div", "round"), left = el("div");
+    left.appendChild(el("p", "label", "Round " + (i + 1) + " of " + N));
+    left.appendChild(el("p", "brandline", R.company));
+    left.appendChild(el("p", "prompt", R.prompt));
+    left.appendChild(el("p", "ctx", R.ctx));
+    if (!shown) left.appendChild(el("span", "rule", "Don't go over!"));
+    else {
+      left.appendChild(el("div", "big", String(R.actual)));
+      var rv = el("div", "reveal");
+      var w = el("div", "why"); w.appendChild(el("b", null, R.detail)); w.appendChild(document.createTextNode(R.fact)); rv.appendChild(w);
+      var c = el("div", "fair"); c.appendChild(el("b", null, R.concept)); c.appendChild(el("div", "model", R.body)); rv.appendChild(c);
+      left.appendChild(rv);
+    }
+    wrap.appendChild(left);
+    var side = el("div", "side"); side.appendChild(el("h3", null, shown ? "Points this round" : "Team guesses"));
+    var pts = shown ? roundPoints(i) : null;
+    for (var t = 0; t < S.teams; t++) (function (t) {
+      var row = el("div", "team"); row.appendChild(el("span", "nm", "Team " + (t + 1)));
+      var right = el("span"); right.style.cssText = "display:flex;align-items:center;gap:10px";
+      var inp = el("input", "guess"); inp.type = "number"; inp.min = "0"; inp.inputMode = "numeric";
+      var cur = g(i, t); inp.value = cur === null ? "" : String(cur); inp.disabled = shown; inp.setAttribute("aria-label", "Team " + (t + 1) + " guess");
+      inp.addEventListener("input", function () { (S.guesses["r" + i] || (S.guesses["r" + i] = {}))[t] = inp.value; save(); });
+      right.appendChild(inp);
+      if (shown) {
+        var p = pts[t], cls = "res" + (p[1] === "over" ? " over" : p[0] > 0 ? " win" : "");
+        right.appendChild(el("span", cls, p[1]));
+      }
+      right.appendChild(el("span", "pts", String(total(t, shown ? i + 1 : i))));
+      row.appendChild(right); side.appendChild(row);
+    })(t);
+    side.appendChild(el("p", "hint", shown ? "Totals include this round." : "Type each team's number, then press Reveal."));
+    wrap.appendChild(side);
+    v.appendChild(wrap);
+  }
+
+  function end(v) {
+    v.classList.add("end");
+    v.appendChild(el("p", "eyebrow", "Final scores"));
+    v.appendChild(el("h2", null, "More brands isn't always better."));
+    var sc = []; for (var t = 0; t < S.teams; t++) sc.push([t, total(t, N)]);
+    var best = Math.max.apply(null, sc.map(function (x) { return x[1]; })), b = el("div", "board");
+    sc.sort(function (a, c) { return c[1] - a[1]; }).forEach(function (x) {
+      var r = el("div", x[1] === best && best > 0 ? "win" : null); r.appendChild(el("span", null, "Team " + (x[0] + 1))); r.appendChild(el("span", null, x[1] + " pts")); b.appendChild(r);
+    });
+    v.appendChild(b);
+    v.appendChild(el("p", null, "Some groups hide the parent company (LVMH), some tie their brands together (Marriott), and some cut, sell or split brands to grow (Yum!, P&G). In December 2025, Unilever went further still: it split off its whole ice-cream business, including Magnum and Ben & Jerry's, into a new company listed on the stock market."));
+    v.appendChild(el("p", null, "How many brands a company should have, and how they relate to each other, is a strategic choice, not an accident."));
+  }
+
+  function go(d) {
+    if (d > 0) {
+      if (S.step > N) S = fresh(S.teams);
+      else if (S.step >= 1 && S.phase === "q") S.phase = "r";
+      else { S.step = S.step < 0 ? 1 : S.step + 1; S.phase = "q"; }
+    } else {
+      if (S.step < 0) return;
+      if (S.step >= 1 && S.step <= N && S.phase === "r") S.phase = "q";
+      else { S.step = S.step <= 1 ? -1 : S.step - 1; S.phase = (S.step >= 1 && S.step <= N) ? "r" : "q"; }
+    }
+    render(); window.scrollTo(0, 0);
+  }
+  next.onclick = function () { go(1); }; prev.onclick = function () { go(-1); };
+  document.addEventListener("keydown", function (e) {
+    var tag = e.target && e.target.tagName;
+    if (tag === "INPUT" || (e.target.closest && e.target.closest("button") && (e.key === " " || e.key === "Enter"))) return;
+    if (e.key === " " || e.key === "ArrowRight") { e.preventDefault(); go(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Rebrand Roulette</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* A projector game: five real repositionings and a wildcard vote. Teams hold up A–C; the teacher taps points (right answer, named strategy) and records the wildcard votes. Progress stays in this browser. */
+:root{
+  --bg:#F2EFE8; --surface:#FFFFFF; --ink:#1E1B16; --muted:#5D574C; --faint:#8A8377; --line:#DCD5C8; --hover:#EAE4D8;
+  --accent:#7A3E8C; --accent-ink:#FFFFFF; --soft:#F0E6F3;
+  --old:#2F5E8C; --old-bg:#E3ECF5; --young:#B4532A; --young-bg:#F7E6DD;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --gold:#9A6E12; --gold-soft:#F4EAD2;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+    --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+    --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+    --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+  --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+  --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+  --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.top .count{color:var(--ink);font-weight:500;white-space:nowrap}
+.track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
+main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
+.view{max-width:1200px;margin:0 auto}
+.view.anim{animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.anim{animation:none}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,6.5vw,72px);line-height:1;margin:0 0 18px}
+.cover p{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin:0 0 10px}
+.cover p.eyebrow{font-size:12px;color:var(--accent);margin:0 0 14px}
+.cover p.guide{margin-top:18px;padding:12px 16px;background:var(--soft);border-radius:10px;color:var(--ink);display:inline-block}
+.cover p.guide b{color:var(--accent)}
+.rules{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);max-width:70ch}
+.rules b{color:var(--ink)}
+.teams-set{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.stepper button{border:0;background:none;width:38px;height:38px;font-size:18px}
+.stepper span{min-width:28px;text-align:center;font-weight:600}
+
+h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px);margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 20px;max-width:70ch}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fcard .n{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.fcard h3{font-family:var(--f-read);font-size:21px;font-weight:600;color:var(--accent)}
+.fcard .def{font-size:15px}
+.fcard .tell{font-size:13.5px;color:var(--muted)}
+.fcard .tell b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.fcard .ex{font-family:var(--f-read);font-style:italic;font-size:14.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+
+.round{display:grid;gap:clamp(20px,3vw,44px);align-items:start}
+@media (min-width:980px){.round{grid-template-columns:minmax(0,1.6fr) minmax(240px,.7fr)}}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+.who{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px 4px 6px;font-size:14px;font-weight:600;margin-bottom:12px}
+.who .dot{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.who.old{background:var(--old-bg);color:var(--old)} .who.old .dot{background:var(--old)}
+.who.young{background:var(--young-bg);color:var(--young)} .who.young .dot{background:var(--young)}
+.reply{font-size:15.5px;color:var(--muted);margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line)}
+.reply b{color:var(--ink);font-weight:600}
+.quote{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.25;margin:0 0 26px}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:700px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:18px}
+.opt .l{font-family:var(--f-mono);font-weight:500;font-size:14px;width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--faint)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .l{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.dim{opacity:.45}
+.reveal{margin-top:20px;display:grid;gap:12px}
+.why{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:0 10px 10px 0;padding:14px 18px;font-size:17px}
+.why b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ok);display:block;margin-bottom:4px}
+.fair{background:var(--gold-soft);border-radius:10px;padding:14px 18px;font-size:17px}
+.fair b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.fair .ask{color:var(--muted);margin:0 0 10px}
+.fair .model{font-family:var(--f-read);font-size:19px}
+
+.side{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.side h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+.team{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.team:first-of-type{border-top:0}
+.team .nm{font-weight:600}
+.team .pts{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:18px}
+.team button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
+.team button.got{background:var(--ok);border-color:var(--ok);color:#fff}
+.side .hint{font-size:13px;color:var(--faint);margin-top:8px}
+
+.end h2{font-family:var(--f-read);font-weight:600;font-size:clamp(32px,4.5vw,52px);margin:0 0 16px}
+.end p{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 12px}
+.board{display:grid;gap:8px;max-width:520px;margin:20px 0}
+.board div{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:18px}
+.board div.win{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.board span:last-child{font-family:var(--f-mono)}
+.tally{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tally span{border-radius:999px;padding:4px 12px;font-size:14px}
+.tally .old{background:var(--old-bg);color:var(--old)} .tally .young{background:var(--young-bg);color:var(--young)}
+
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,44px) clamp(16px,3vh,28px)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.35;cursor:default}
+.kbd{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);display:none}
+@media (min-width:760px){.kbd{display:inline}}
+
+:root{--accent:#B23A2E;--soft:color-mix(in srgb,#B23A2E 12%,white)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#E8836F;--soft:color-mix(in srgb,#E8836F 18%,black)}}
+:root[data-theme="dark"]{--accent:#E8836F;--soft:color-mix(in srgb,#E8836F 18%,black)}
+.brandline{font-family:var(--f-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.before{font-family:var(--f-read);font-size:clamp(22px,2.4vw,30px);line-height:1.3;margin:0 0 10px}
+.ask{font-size:19px;font-weight:600;margin:0 0 18px}
+.opts.three{grid-template-columns:1fr}
+.reveal-name{font-family:var(--f-read);font-weight:600;font-size:clamp(26px,3vw,36px);color:var(--ok);margin:0 0 4px}
+.bank{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13.5px;color:var(--muted)}
+.bank span.t{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 10px;color:var(--ink)}
+.team .btns{display:flex;gap:6px}
+.vote button.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.vbar{display:grid;grid-template-columns:28px 1fr 40px;gap:10px;align-items:center;margin:6px 0}
+.vbar .b{height:12px;border-radius:6px;background:var(--accent)}
+</style>
+</head>
+<body>
+<div class="top"><span>SimLearn Extras · Rebrand Roulette</span><span class="count" id="count">Start</span></div>
+<div class="track"><div class="fill" id="fill"></div></div>
+<main id="main"></main>
+<div class="controls">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <span class="kbd">Space or → to go on · ← to go back</span>
+  <button class="btn primary" id="next" type="button">Start the game →</button>
+</div>
+<script>
+(function () {
+  "use strict";
+  var STRATEGIES = ["Personality shift", "Restoring exclusivity", "Public relaunch", "Values-led repositioning", "A new, separate brand"];
+  var ROUNDS = [
+    { brand: "A men's grooming brand, 2010",
+      before: "Seen as 'your dad's aftershave'. Sales are flat, and younger, trendier competitors are taking over.",
+      ask: "How did it reposition itself?",
+      options: ["Launched a luxury fragrance line to move upmarket", "Ran one bold, funny ad campaign that flipped the brand's tone", "Relaunched as a men's skincare start-up under a new name"],
+      correct: 1, reveal: "Old Spice: 'The Man Your Man Could Smell Like'",
+      outcome: "The 2010 campaign by the agency Wieden+Kennedy became one of the most talked-about ads of its time. Same products, completely different personality: confident, absurd and funny instead of old-fashioned.",
+      strategy: 0 },
+    { brand: "A heritage British fashion house, mid-2000s",
+      before: "For years it licensed its famous check pattern onto hundreds of products worldwide. The check was everywhere, including on cheap copies, and the UK press linked it with a downmarket stereotype.",
+      ask: "How did it win back its image?",
+      options: ["Replaced the famous check with a completely new pattern", "Sued newspapers that linked the check to a stereotype", "Bought back licences and strictly limited where the check appeared"],
+      correct: 2, reveal: "Burberry",
+      outcome: "Burberry bought back licences, used the check far more sparingly and refocused on its runway collections. The recovery took years, and it's still taught as a classic case of brand dilution and repair.",
+      strategy: 1 },
+    { brand: "A global pizza chain, 2009",
+      before: "Focus groups told the company the blunt truth: customers thought its pizza tasted like cardboard.",
+      ask: "What did it do next?",
+      options: ["Admitted in its own ads that the pizza was bad, then changed the recipe", "Ignored the feedback and focused its ads on faster delivery", "Changed its name and logo to escape the bad reputation"],
+      correct: 0, reveal: "Domino's: the 'Pizza Turnaround'",
+      outcome: "From December 2009, Domino's showed real customer complaints in its own adverts and relaunched with a new recipe. Admitting the problem in public became the strategy.",
+      strategy: 2 },
+    { brand: "A home-sharing platform, early 2010s",
+      before: "Seen mainly as a cheap, slightly risky way to sleep on a stranger's sofa.",
+      ask: "How did it reposition itself in 2014?",
+      options: ["Merged with a hotel chain to look more trustworthy", "Rebranded around a new symbol and the idea of 'belonging'", "Put its low prices compared with hotels at the centre of its ads"],
+      correct: 1, reveal: "Airbnb: 'Belong Anywhere'",
+      outcome: "The 2014 rebrand and its new symbol, the Bélo, tied the whole brand to one idea: belonging, not budget. The product stayed the same; what it stood for changed.",
+      strategy: 3 },
+    { brand: "An iconic American motorcycle brand, late 2010s",
+      before: "Its core riders are getting older. It wants to reach younger, urban riders who are curious about electric bikes, without upsetting its loyal base.",
+      ask: "What did it do?",
+      options: ["Made its classic motorcycle line fully electric", "Asked its loyal older riders to 'go electric' in a big campaign", "Launched its electric bikes as a separate brand with its own name"],
+      correct: 2, reveal: "Harley-Davidson: LiveWire",
+      outcome: "LiveWire was announced as a standalone electric brand in December 2021 and listed on the New York Stock Exchange in 2022. A separate identity for a separate audience, while the core brand stayed as it was.",
+      strategy: 4 }
+  ];
+  var WILD = { brand: "A luxury car maker, 2024",
+    before: "Ahead of relaunching as an all-electric luxury brand, it dropped almost all car imagery from its rebrand: no cars, bold colours and the slogan 'Copy Nothing'.",
+    ask: "Vote: did it work?",
+    options: ["Yes: bold bets like this pay off", "No: you don't abandon what people already love", "Too early to tell"],
+    reveal: "Jaguar",
+    outcome: "There's no right answer here yet. Whether it worked depends on evidence that is still coming in: sales of the new cars, who buys them and what happens to the brand's image. Some calls can't be judged from a press release." };
+  var N = ROUNDS.length + 1;   // + wildcard
+
+  var KEY = "simlearn-extras:rebrand-roulette:v1", S;
+  function fresh(k) { k = k || 4; return { step: -1, phase: "q", teams: k, got: {}, bonus: {}, votes: {} }; }
+  try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function html(t, c, h) { var e = el(t, c); e.innerHTML = h; return e; }
+  function has(map, r, t) { return (map["r" + r] || []).indexOf(t) >= 0; }
+  function toggle(map, r, t) { var a = map["r" + r] || (map["r" + r] = []), i = a.indexOf(t); if (i >= 0) a.splice(i, 1); else a.push(t); }
+  function majority() {
+    var c = [0, 0, 0]; Object.keys(S.votes).forEach(function (t) { if (+t < S.teams) c[S.votes[t]]++; });
+    var max = Math.max.apply(null, c); if (!max) return -1;
+    return c.filter(function (x) { return x === max; }).length === 1 ? c.indexOf(max) : -1;
+  }
+  function score(t) {
+    var s = 0;
+    for (var r = 0; r < ROUNDS.length; r++) { if (has(S.got, r, t)) s++; if (has(S.bonus, r, t)) s++; }
+    var m = majority(); if (m >= 0 && S.votes[t] === m && S.wildShown) s++;
+    return s;
+  }
+  var MAX = ROUNDS.length * 2 + 1;
+
+  var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev"), lastWhere = null;
+
+  function render() {
+    main.innerHTML = "";
+    var v = el("div", "view");
+    if (S.step < 0) cover(v); else if (S.step <= N) round(v, S.step - 1); else end(v);
+    var where = S.step + S.phase; if (where !== lastWhere) v.classList.add("anim"); lastWhere = where;
+    main.appendChild(v);
+    document.getElementById("count").textContent = S.step < 0 ? "Start" : S.step > N ? "Done" : S.step === N ? "Wildcard" : "Round " + S.step + " / " + ROUNDS.length;
+    document.getElementById("fill").style.width = (S.step < 0 ? 0 : S.step > N ? 100 : (S.step - 1 + (S.phase === "r" ? .5 : 0)) / N * 100) + "%";
+    prev.disabled = S.step < 0;
+    next.textContent = S.step < 0 ? "Start the game →" : S.step > N ? "Play again ↻" : S.phase === "q" ? "Reveal →" : S.step === N ? "Final scores →" : S.step === N - 1 ? "Wildcard round →" : "Next round →";
+    save();
+  }
+
+  function cover(v) {
+    v.classList.add("cover");
+    v.appendChild(el("p", "eyebrow", "Warm-up · Brand positioning and repositioning"));
+    v.appendChild(el("h1", null, "Rebrand Roulette"));
+    v.appendChild(el("p", null, "Five real brands in trouble, plus one wildcard. Read the problem, then guess how the brand repositioned itself."));
+    var r = el("div", "rules");
+    ["<b>1.</b> In your team, agree on A, B or C. On three, hold up your card.",
+     "<b>2.</b> A point for the right answer.",
+     "<b>3.</b> A bonus point if you can also name the strategy (from the list below) before the reveal.",
+     "<b>4.</b> Round 6 is a wildcard vote: a point if your team votes with the majority."]
+      .forEach(function (h) { r.appendChild(html("div", null, h)); });
+    v.appendChild(r);
+    v.appendChild(bank());
+    teamPicker(v);
+  }
+  function bank() {
+    var b = el("div", "bank"); b.appendChild(el("span", null, "Strategies:"));
+    STRATEGIES.forEach(function (s) { b.appendChild(el("span", "t", s)); });
+    return b;
+  }
+  function teamPicker(v) {
+    var t = el("div", "teams-set"); t.appendChild(el("span", null, "Number of teams"));
+    var st = el("div", "stepper"), minus = el("button", null, "−"), n = el("span", null, String(S.teams)), plus = el("button", null, "+");
+    minus.type = plus.type = "button";
+    function setTeams(k) { S.teams = Math.max(2, Math.min(10, k)); n.textContent = S.teams; save(); }
+    minus.onclick = function () { setTeams(S.teams - 1); }; plus.onclick = function () { setTeams(S.teams + 1); };
+    st.appendChild(minus); st.appendChild(n); st.appendChild(plus); t.appendChild(st);
+    var reset = el("button", "btn", "New game"); reset.type = "button";
+    reset.onclick = function () { S = fresh(S.teams); render(); };
+    t.appendChild(reset); v.appendChild(t);
+  }
+
+  function round(v, i) {
+    var wild = i === ROUNDS.length, R = wild ? WILD : ROUNDS[i], shown = S.phase === "r";
+    var wrap = el("div", "round"), left = el("div");
+    left.appendChild(el("p", "label", wild ? "Round 6 · Wildcard vote" : "Round " + (i + 1) + " of " + ROUNDS.length));
+    left.appendChild(el("p", "brandline", R.brand));
+    left.appendChild(el("p", "before", R.before));
+    left.appendChild(el("p", "ask", R.ask));
+    var ul = el("ul", "opts three");
+    R.options.forEach(function (o, j) {
+      var li = el("li", "opt" + (shown && !wild ? (j === R.correct ? " right" : " dim") : ""));
+      li.appendChild(el("span", "l", "ABC"[j])); li.appendChild(el("span", null, o)); ul.appendChild(li);
+    });
+    left.appendChild(ul);
+    if (shown) {
+      var rv = el("div", "reveal");
+      var w = el("div", "why"); w.appendChild(el("div", "reveal-name", R.reveal)); w.appendChild(document.createTextNode(R.outcome)); rv.appendChild(w);
+      if (!wild) { var f = el("div", "fair"); f.appendChild(el("b", null, "The strategy")); f.appendChild(el("div", "model", STRATEGIES[R.strategy])); rv.appendChild(f); }
+      else rv.appendChild(voteBars());
+      left.appendChild(rv);
+    } else if (!wild) left.appendChild(bank());
+    wrap.appendChild(left);
+    wrap.appendChild(wild ? voteSide(shown) : scoreSide(i, shown));
+    v.appendChild(wrap);
+  }
+
+  function scoreSide(i, shown) {
+    var side = el("div", "side"); side.appendChild(el("h3", null, shown ? "Who got it?" : "Points"));
+    for (var t = 0; t < S.teams; t++) (function (t) {
+      var row = el("div", "team"); row.appendChild(el("span", "nm", "Team " + (t + 1)));
+      var right = el("span", "btns");
+      if (shown) {
+        [["Right", S.got], ["Strategy", S.bonus]].forEach(function (x) {
+          var on = has(x[1], i, t), b = el("button", on ? "got" : null, (on ? "✓ " : "+1 ") + x[0]); b.type = "button";
+          b.onclick = function () { toggle(x[1], i, t); render(); };
+          right.appendChild(b);
+        });
+      }
+      right.appendChild(el("span", "pts", String(score(t)))); row.appendChild(right); side.appendChild(row);
+    })(t);
+    side.appendChild(el("p", "hint", shown ? "Tap Right for the correct letter, Strategy if they named it before the reveal." : "On three, every team holds up a letter."));
+    return side;
+  }
+  function voteSide(shown) {
+    var side = el("div", "side vote"); side.appendChild(el("h3", null, "Each team's vote"));
+    for (var t = 0; t < S.teams; t++) (function (t) {
+      var row = el("div", "team"); row.appendChild(el("span", "nm", "Team " + (t + 1)));
+      var right = el("span", "btns");
+      ["A", "B", "C"].forEach(function (L, j) {
+        var b = el("button", S.votes[t] === j ? "sel" : null, L); b.type = "button";
+        b.onclick = function () { if (S.votes[t] === j) delete S.votes[t]; else S.votes[t] = j; render(); };
+        right.appendChild(b);
+      });
+      right.appendChild(el("span", "pts", String(score(t)))); row.appendChild(right); side.appendChild(row);
+    })(t);
+    side.appendChild(el("p", "hint", shown ? "Teams that voted with the majority get a point (no point on a tie)." : "Tap each team's letter as they hold it up."));
+    return side;
+  }
+  function voteBars() {
+    var c = [0, 0, 0], tot = 0; Object.keys(S.votes).forEach(function (t) { if (+t < S.teams) { c[S.votes[t]]++; tot++; } });
+    var box = el("div", "fair"); box.appendChild(el("b", null, "How the room voted"));
+    c.forEach(function (n, j) {
+      var r = el("div", "vbar"); r.appendChild(el("span", null, "ABC"[j]));
+      var bar = el("div"), fill = el("div", "b"); fill.style.width = (tot ? n / tot * 100 : 0) + "%"; bar.appendChild(fill); r.appendChild(bar);
+      r.appendChild(el("span", null, String(n))); box.appendChild(r);
+    });
+    var m = majority(); box.appendChild(el("p", "ask", m >= 0 ? "Majority: " + "ABC"[m] + ". Those teams get a point." : "No clear majority, so no point this time."));
+    return box;
+  }
+
+  function end(v) {
+    v.classList.add("end");
+    v.appendChild(el("p", "eyebrow", "Final scores"));
+    v.appendChild(el("h2", null, "Five fixes, one open question."));
+    var sc = []; for (var t = 0; t < S.teams; t++) sc.push([t, score(t)]);
+    var best = Math.max.apply(null, sc.map(function (x) { return x[1]; })), b = el("div", "board");
+    sc.sort(function (a, c) { return c[1] - a[1]; }).forEach(function (x) {
+      var r = el("div", x[1] === best && best > 0 ? "win" : null); r.appendChild(el("span", null, "Team " + (x[0] + 1))); r.appendChild(el("span", null, x[1] + " / " + MAX)); b.appendChild(r);
+    });
+    v.appendChild(b);
+    v.appendChild(el("p", null, "Each brand diagnosed a different problem: a tired personality, an overexposed logo, a product people disliked, an image that didn't match the experience, an audience the core brand couldn't reach. The fix only worked because it matched the diagnosis."));
+    v.appendChild(el("p", null, "And the wildcard is a reminder: you can't judge a repositioning from the launch. You need evidence."));
+  }
+
+  function go(d) {
+    if (d > 0) {
+      if (S.step > N) S = fresh(S.teams);
+      else if (S.step >= 1 && S.phase === "q") { S.phase = "r"; if (S.step === N) S.wildShown = true; }
+      else { S.step = S.step < 0 ? 1 : S.step + 1; S.phase = "q"; }
+    } else {
+      if (S.step < 0) return;
+      if (S.step >= 1 && S.step <= N && S.phase === "r") S.phase = "q";
+      else { S.step = S.step <= 1 ? -1 : S.step - 1; S.phase = (S.step >= 1 && S.step <= N) ? "r" : "q"; }
+    }
+    render(); window.scrollTo(0, 0);
+  }
+  next.onclick = function () { go(1); }; prev.onclick = function () { go(-1); };
+  document.addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
+    if (e.key === " " || e.key === "ArrowRight") { e.preventDefault(); go(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
