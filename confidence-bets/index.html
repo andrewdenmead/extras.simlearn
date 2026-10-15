@@ -313,6 +313,65 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   /* Question sets. Add new ones here; each appears in the setup picker. */
   /* ------------------------------------------------------------------ */
   var SETS = {
+    "fashion-ethics": {
+      title: "Fashion Ethics Ratings",
+      eyebrow: "EIM · Week 2 warm-up",
+      heading: "Who's really ethical?",
+      intro: [
+        "An independent ethics rating scores fashion and beauty brands in three areas: Planet (environmental impact), People (how the workers in their supply chains are treated) and Animals. Each area is scored from 1 to 5, and the three together give an overall rating: We avoid, Not good enough, It's a start, Good or Great.",
+        "Each round names four well-known brands and one of those ratings. Bet on which brand is rated best, or worst. Ratings as published when this game was checked (15 October 2026); they're updated regularly."
+      ],
+      outro: {
+        heading: "Image isn't evidence.",
+        paras: [
+          "Several of today's answers went against the brand's image: the 'eco' sneaker brand scored badly on workers, a fast-fashion favourite beat the 'ethical' names on people, and a luxury price tag said nothing about the supply chain. A rating can only reflect what a brand discloses and what it can prove.",
+          "That gap, between what a company says and what it can show, is exactly what Nordhavn is about to face."
+        ],
+        cue: "Now open <b>Nordhavn: The Meridian Deal</b>."
+      },
+      questions: [
+        { q: "Ethics rating: PLANET. Of these four sportswear brands, which is rated best for its impact on the planet?",
+          options: ["Puma", "Under Armour", "Nike", "Adidas"], correct: 0, figure: "Puma", sub: "Planet 4/5 (Good)",
+          explain: "Puma is the only one of the four rated 'Good' (4/5) for Planet: it has a science-based target to cut emissions in its own operations and its supply chain, says it's on track, and offers customers clothing recycling. Nike and Adidas score 3/5, Under Armour 2/5.",
+          source: "Independent ethics rating (Puma updated Oct 2025; Nike, Adidas, Under Armour Jan–Feb 2026)" },
+        { q: "Ethics rating: OVERALL. Of these four luxury fashion houses, which has the best overall ethics rating?",
+          options: ["Chanel", "Louis Vuitton", "Gucci", "Prada"], correct: 2, figure: "Gucci", sub: "overall: Good",
+          explain: "Gucci is rated 'Good' overall, with 5/5 for Planet and 4/5 for People: it traces most of its supply chain and publishes a breakdown of its suppliers. Prada is rated 'It's a start'; Chanel and Louis Vuitton 'Not good enough'. All four score only 2/5 for Animals. A high price tag says nothing on its own about how a product is made.",
+          source: "Independent ethics rating (Gucci updated Aug 2026)" },
+        { q: "Ethics rating: PEOPLE. Of these four denim brands, which is rated best for how it treats the workers in its supply chain?",
+          options: ["Levi's", "Gap", "Wrangler", "Lee"], correct: 1, figure: "Gap", sub: "People 3/5 (It's a start)",
+          explain: "Gap scores 3/5 for People; Levi's, Wrangler and Lee all score 2/5. Gap runs initiatives to empower vulnerable women and girls in its supply chain and has a diversity and inclusion policy that covers its suppliers. But, like the other three, there's no evidence it ensures workers are paid a living wage.",
+          source: "Independent ethics rating (Gap updated Aug 2026)" },
+        { q: "Ethics rating: PEOPLE. Of these four outdoor brands, which is rated best for how it treats the workers in its supply chain?",
+          options: ["Columbia", "The North Face", "Arc'teryx", "Patagonia"], correct: 3, figure: "Patagonia", sub: "People 4/5 (Good)",
+          explain: "Patagonia scores 4/5 for People; The North Face and Arc'teryx 3/5; Columbia 2/5. All of Patagonia's final production stage is certified by the Fair Labor Association and Fair Trade USA, it bans suppliers from charging workers recruitment fees (a measure against forced labour), and some final-stage workers are paid living wages.",
+          source: "Independent ethics rating (Patagonia updated Apr 2026)" },
+        { q: "Ethics rating: OVERALL. Of these four beauty brands, which has the best overall ethics rating?",
+          options: ["Lush", "Estée Lauder", "L'Oréal Paris", "The Body Shop"], correct: 0, figure: "Lush", sub: "overall: Good",
+          explain: "Lush is rated 'Good' overall: 5/5 for Animals (certified animal-test-free by PETA), 4/5 for Planet and 3/5 for People, with an external, anonymous grievance channel for supply-chain workers. L'Oréal Paris and The Body Shop are rated 'It's a start' (L'Oréal Paris scores 4/5 for Planet but only 1/5 for Animals); Estée Lauder 'Not good enough'.",
+          source: "Independent ethics rating (Lush updated Sep 2026)" },
+        { q: "Ethics rating: PEOPLE. Of these four sneaker brands, which is rated best for how it treats the workers in its supply chain?",
+          options: ["Nike", "Adidas", "New Balance", "Allbirds"], correct: 2, figure: "New Balance", sub: "People 3/5 (It's a start)",
+          explain: "New Balance scores 3/5 for People; Nike, Adidas and Allbirds all score 2/5. More than half of New Balance's final production stage is certified by the Fair Labor Association, and some of those workers are paid living wages. Allbirds scores well for Animals (4/5), but it doesn't publish a breakdown of its suppliers and isn't taking adequate steps on living wages: its sustainability story is about materials, not people.",
+          source: "Independent ethics rating (New Balance updated Jan 2026; Allbirds Jul 2025)" },
+        { q: "Ethics rating: OVERALL. Three of these ultra-fast-fashion brands share the same overall ethics rating, 'Not good enough'. Which one is rated lower still?",
+          options: ["Boohoo", "Shein", "Missguided", "PrettyLittleThing"], correct: 1, figure: "Shein", sub: "overall: We avoid (the lowest)",
+          explain: "Shein is rated 'We avoid', the lowest rating, with 1/5 for People and 1/5 for Animals. Most of its final production is in China, which the rating classes as extreme risk for labour abuse, and there's no evidence it ensures living wages or gives suppliers financial security. Boohoo, Missguided and PrettyLittleThing are all 'Not good enough'.",
+          source: "Independent ethics rating (Shein updated Feb 2025)" },
+        { q: "Ethics rating: PEOPLE. Of these four high-street brands, which is rated best for how it treats the workers in its supply chain?",
+          options: ["Zara", "Primark", "H&M", "Uniqlo"], correct: 3, figure: "Uniqlo", sub: "People 4/5 (Good)",
+          explain: "Uniqlo scores 4/5 for People; Zara, Primark and H&M all score 3/5. Its supplier auditing programme is accredited by the Fair Labor Association, it runs leadership programmes for women in part of its supply chain, it works to give suppliers financial security, and it disclosed adequate policies to protect workers during the pandemic. There's still no evidence that most of its supply chain is paid a living wage.",
+          source: "Independent ethics rating (Uniqlo updated Jun 2026)" },
+        { q: "Ethics rating: PLANET. Of these four athleisure brands, which is rated best for its impact on the planet?",
+          options: ["Athleta", "Gymshark", "Lululemon", "Fabletics"], correct: 0, figure: "Athleta", sub: "Planet 3/5 (It's a start)",
+          explain: "Athleta, owned by Gap Inc., scores 3/5 for Planet; Gymshark, Lululemon and Fabletics all score 2/5. It has a science-based target to cut emissions in its operations and supply chain and says it's on track, and it resells second-hand items to keep them in use for longer.",
+          source: "Independent ethics rating (Athleta updated Aug 2026)" },
+        { q: "Ethics rating: PEOPLE. Of these four British retailers, which is rated best for how it treats the workers in its supply chain?",
+          options: ["ASOS", "Boohoo", "Marks & Spencer", "PrettyLittleThing"], correct: 2, figure: "M&S", sub: "People 3/5 (It's a start)",
+          explain: "Marks & Spencer scores 3/5 for People; ASOS, Boohoo and PrettyLittleThing all score 2/5. Over half of its final production stage is audited under Sedex's SMETA ethical-trade guidance, it runs programmes for vulnerable women and girls, and it has initiatives to give suppliers more financial security. But there's no evidence it ensures living wages across its supply chain.",
+          source: "Independent ethics rating (M&S updated May 2026)" }
+      ]
+    },
     "sponsorship": {
       title: "The Sponsorship Decision",
       eyebrow: "EBC · Week 3 warm-up",
@@ -769,6 +828,8 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
 
   var saved = load();
   if (saved) { if (saved.draft) draft = Object.assign(draft, saved.draft); if (saved.st) st = saved.st; }
+  var want = (location.search.match(/[?&]set=([\w-]+)/) || [])[1];   /* e.g. confidence-bets/?set=fashion-ethics */
+  if (want && SETS[want]) draft.setKey = want;
   if (st && st.phase !== "setup") { /* show setup with a resume button so a refresh never jumps mid-reveal */
     var keep = st; render(); st = keep; renderSetup(); show("setup");
     $("prevBtn").disabled = true; $("nextBtn").hidden = true; $("topCount").textContent = "Setup";
