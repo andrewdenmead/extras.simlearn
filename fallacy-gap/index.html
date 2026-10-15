@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Mind the Fallacy</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* A projector game for the whole class. First the eight fallacies on cards, then twelve things people say across the
+   generation gap: teams hold up A–D for the fallacy, the teacher reveals it, then someone says it fairly. Simple team
+   points. Progress stays in this browser. */
+:root{
+  --bg:#F2EFE8; --surface:#FFFFFF; --ink:#1E1B16; --muted:#5D574C; --faint:#8A8377; --line:#DCD5C8; --hover:#EAE4D8;
+  --accent:#7A3E8C; --accent-ink:#FFFFFF; --soft:#F0E6F3;
+  --old:#2F5E8C; --old-bg:#E3ECF5; --young:#B4532A; --young-bg:#F7E6DD;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --gold:#9A6E12; --gold-soft:#F4EAD2;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+    --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+    --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+    --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+  --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+  --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+  --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.top .count{color:var(--ink);font-weight:500;white-space:nowrap}
+.track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
+main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
+.view{max-width:1200px;margin:0 auto}
+.view.anim{animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.anim{animation:none}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,6.5vw,72px);line-height:1;margin:0 0 18px}
+.cover p{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin:0 0 10px}
+.cover p.eyebrow{font-size:12px;color:var(--accent);margin:0 0 14px}
+.rules{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);max-width:70ch}
+.rules b{color:var(--ink)}
+.teams-set{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.stepper button{border:0;background:none;width:38px;height:38px;font-size:18px}
+.stepper span{min-width:28px;text-align:center;font-weight:600}
+
+h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px);margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 20px;max-width:70ch}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fcard .n{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.fcard h3{font-family:var(--f-read);font-size:21px;font-weight:600;color:var(--accent)}
+.fcard .def{font-size:15px}
+.fcard .tell{font-size:13.5px;color:var(--muted)}
+.fcard .tell b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.fcard .ex{font-family:var(--f-read);font-style:italic;font-size:14.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+
+.round{display:grid;gap:clamp(20px,3vw,44px);align-items:start}
+@media (min-width:980px){.round{grid-template-columns:minmax(0,1.6fr) minmax(240px,.7fr)}}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+.who{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px 4px 6px;font-size:14px;font-weight:600;margin-bottom:12px}
+.who .dot{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.who.old{background:var(--old-bg);color:var(--old)} .who.old .dot{background:var(--old)}
+.who.young{background:var(--young-bg);color:var(--young)} .who.young .dot{background:var(--young)}
+.reply{font-size:15.5px;color:var(--muted);margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line)}
+.reply b{color:var(--ink);font-weight:600}
+.quote{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.25;margin:0 0 26px}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:700px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:18px}
+.opt .l{font-family:var(--f-mono);font-weight:500;font-size:14px;width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--faint)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .l{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.dim{opacity:.45}
+.reveal{margin-top:20px;display:grid;gap:12px}
+.why{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:0 10px 10px 0;padding:14px 18px;font-size:17px}
+.why b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ok);display:block;margin-bottom:4px}
+.fair{background:var(--gold-soft);border-radius:10px;padding:14px 18px;font-size:17px}
+.fair b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.fair .ask{color:var(--muted);margin:0 0 10px}
+.fair .model{font-family:var(--f-read);font-size:19px}
+
+.side{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.side h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+.team{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.team:first-of-type{border-top:0}
+.team .nm{font-weight:600}
+.team .pts{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:18px}
+.team button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
+.team button.got{background:var(--ok);border-color:var(--ok);color:#fff}
+.side .hint{font-size:13px;color:var(--faint);margin-top:8px}
+
+.end h2{font-family:var(--f-read);font-weight:600;font-size:clamp(32px,4.5vw,52px);margin:0 0 16px}
+.end p{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 12px}
+.board{display:grid;gap:8px;max-width:520px;margin:20px 0}
+.board div{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:18px}
+.board div.win{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.board span:last-child{font-family:var(--f-mono)}
+.tally{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tally span{border-radius:999px;padding:4px 12px;font-size:14px}
+.tally .old{background:var(--old-bg);color:var(--old)} .tally .young{background:var(--young-bg);color:var(--young)}
+
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,44px) clamp(16px,3vh,28px)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.35;cursor:default}
+.kbd{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);display:none}
+@media (min-width:760px){.kbd{display:inline}}
+</style>
+</head>
+<body>
+<div class="top"><span>SimLearn Extras · Mind the Fallacy</span><span class="count" id="count">Start</span></div>
+<div class="track"><div class="fill" id="fill"></div></div>
+<main id="main"></main>
+<div class="controls">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <span class="kbd">Space or → to go on · ← to go back</span>
+  <button class="btn primary" id="next" type="button">Begin →</button>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var F = {
+    adhom:   { name: "Ad hominem", def: "Attacking the person making the argument instead of the argument itself.", tell: "Who said it, how old they are, what they've done: but nothing about whether they're right.", ex: "\"Of course she wants higher taxes. She's a teacher.\"" },
+    straw:   { name: "Straw man", def: "Twisting someone's point into a weaker or more extreme version, then attacking that.", tell: "\"So what you're saying is…\" followed by something they didn't say.", ex: "\"You want fewer cars in the city centre? So you want to ban driving.\"" },
+    hasty:   { name: "Hasty generalisation", def: "Drawing a big conclusion about a whole group from a few examples.", tell: "\"I know two people who…, so everyone…\"", ex: "\"My last two flights were late. That airline is always late.\"" },
+    dilemma: { name: "False dilemma", def: "Offering only two options when there are more.", tell: "\"Either… or…\", \"You're with us or against us.\"", ex: "\"Either we cut the library budget or we close the school.\"" },
+    slope:   { name: "Slippery slope", def: "Claiming one small step will lead, step by step, to disaster, without showing why.", tell: "\"Next…\", \"Before you know it…\", \"Where will it end?\"", ex: "\"If we allow one food truck in the park, soon it'll be a car park.\"" },
+    tradition: { name: "Appeal to tradition", def: "Saying something is right because it has always been done that way.", tell: "\"We've always…\", \"It was good enough for…\"", ex: "\"The company has always had a dress code, so we should keep it.\"" },
+    novelty: { name: "Appeal to novelty", def: "Saying something is better simply because it's new.", tell: "\"The latest…\", \"That's so old-fashioned.\"", ex: "\"It's the newest phone, so it must take better photos.\"" },
+    posthoc: { name: "False cause", def: "Assuming that because one thing came after another, the first caused the second.", tell: "\"Ever since…\", \"After X, Y happened, so…\"", ex: "\"I wore my lucky socks and we won. The socks work.\"" }
+  };
+  var ORDER = ["adhom", "straw", "hasty", "dilemma", "slope", "tradition", "novelty", "posthoc"];
+
+  // side: "old" or "young" (the speaker's generation). opts: four fallacy keys; ans: the right one.
+  var ROUNDS = [
+    { who: "Margaret, 71", side: "old", quote: "My grandson and his flatmate both quit their jobs within a year. Young people today just can't commit to anything.",
+      opts: ["slope", "tradition", "straw", "hasty"], ans: "hasty",
+      why: "Two people, one flat: that's far too small a sample to say anything about a whole generation.",
+      fair: "My grandson and his flatmate both changed jobs quickly. I wonder whether that's common now, and why." },
+    { who: "Jas, 22", side: "young", reply: "<b>A 66-year-old economist:</b> \"Building more homes won't bring prices down as fast as people hope.\"", quote: "Why should we listen to him? He bought his house for £40,000 in 1985.",
+      opts: ["dilemma", "adhom", "posthoc", "novelty"], ans: "adhom",
+      why: "When he bought his house tells us nothing about whether his point about prices is right. Jas attacks the speaker, not the claim.",
+      fair: "He may be right that building alone isn't enough, but then what else would bring prices down for people my age?" },
+    { who: "Colin, 58, a manager", side: "old", reply: "<b>His team:</b> \"Could we trial a four-day week for three months?\"", quote: "So you want to be paid full-time for doing part-time work. That's not how business works.",
+      opts: ["adhom", "hasty", "straw", "novelty"], ans: "straw",
+      why: "The team asked for a short trial, not full pay for less work. Colin answers an extreme version of their request that nobody made.",
+      fair: "A trial could work, but how would we keep the same output in four days, and how would we measure it?" },
+    { who: "Leah, 26", side: "young", quote: "Either the country builds on the green belt, or my generation will never own a home.",
+      opts: ["slope", "straw", "dilemma", "posthoc"], ans: "dilemma",
+      why: "There are other options: building on brownfield sites, converting empty offices, changing tax or rental rules. Leah offers only two.",
+      fair: "Building on some green belt land is one way to get more homes. Let's compare it with the other options." },
+    { who: "Derek, 63, a teacher", side: "old", quote: "If we let students use AI to check their grammar, next they'll use it to write whole essays, and soon nobody will be able to write at all.",
+      opts: ["tradition", "hasty", "adhom", "slope"], ans: "slope",
+      why: "Each step is presented as unavoidable, but Derek gives no reason why a grammar check must lead to the end of writing.",
+      fair: "If students use AI for grammar, we'll need clear rules about where help ends and their own writing begins." },
+    { who: "Max, 19", side: "young", quote: "Paper diaries belong to the last century. A planning app has to be better than a notebook. It's new.",
+      opts: ["tradition", "novelty", "dilemma", "straw"], ans: "novelty",
+      why: "Being new doesn't make something better. Max gives no reason, such as reminders or sharing, why the app works better.",
+      fair: "I prefer an app because it reminds me about deadlines and syncs with my phone, but a notebook works for some people." },
+    { who: "Pauline, 54", side: "old", quote: "My daughter started using TikTok in September, and her marks dropped by Christmas. TikTok has ruined her schoolwork.",
+      opts: ["posthoc", "tradition", "slope", "adhom"], ans: "posthoc",
+      why: "One thing came after the other, but that doesn't prove it caused it: a harder term, a new teacher or something at home could explain the drop too. It's also a sample of one.",
+      fair: "Her marks dropped this term. TikTok might be part of it, so let's look at what else changed too." },
+    { who: "Geoffrey, 77", side: "old", quote: "Handwritten exams have worked for 150 years. There's no reason to change them now.",
+      opts: ["novelty", "dilemma", "posthoc", "tradition"], ans: "tradition",
+      why: "Something being old isn't a reason to keep it. Geoffrey doesn't say what handwritten exams do better than the alternatives.",
+      fair: "Handwritten exams make it harder to cheat with technology. Any new system would need to do that as well." },
+    { who: "Priya, 24", side: "young", reply: "<b>Her grandad:</b> \"I think you spend too long on your phone at dinner.\"", quote: "So you think phones are evil and we should all go back to writing letters?",
+      opts: ["slope", "adhom", "straw", "hasty"], ans: "straw",
+      why: "Her grandad made a small point about dinner. Priya turns it into an extreme position he never took, which is easier to laugh at.",
+      fair: "Fair, I'm on it a lot at dinner. Can we agree on no phones while we're eating?" },
+    { who: "Brian, 69, a shop owner", side: "old", quote: "A 24-year-old is telling me how to run a shop? She's barely out of school.",
+      opts: ["adhom", "tradition", "straw", "dilemma"], ans: "adhom",
+      why: "Her age doesn't make her advice wrong. Brian dismisses it because of who she is, without looking at what she suggested.",
+      fair: "She's young, so let's check her ideas against what's worked here. What exactly is she suggesting?" },
+    { who: "Tom, 21", side: "young", quote: "My dad and my uncle both complain about cycle lanes. Older people just don't care about the planet.",
+      opts: ["posthoc", "hasty", "adhom", "dilemma"], ans: "hasty",
+      why: "Two relatives and one issue can't tell us what a whole age group thinks about the environment. Many older people campaign on it.",
+      fair: "My dad and my uncle don't like the cycle lanes. I'd like to know why, and whether other people their age agree." },
+    { who: "Zoe, 25", side: "young", reply: "<b>Her manager:</b> \"I'd like everyone in the office on Mondays.\"", quote: "Either you accept remote work, or you're stuck in the 1990s.",
+      opts: ["dilemma", "tradition", "slope", "straw"], ans: "dilemma",
+      why: "There's a lot of room between full remote work and \"the 1990s\": one office day, flexible hours, a trial. Zoe offers just two extremes, and also hints that new is better.",
+      fair: "Could we try Mondays for a month and then look at whether it actually helps the team?" }
+  ];
+
+  var KEY = "simlearn-extras:mind-the-fallacy:v1", S;
+  function fresh() { return { step: -1, phase: "q", teams: 4, scores: [0, 0, 0, 0], got: {}, fairShown: {} }; }
+  try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  // steps: -1 cover, 0 learn, 1..12 rounds, 13 end
+  var lastWhere = null;
+
+  var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev");
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function html(t, c, h) { var e = el(t, c); e.innerHTML = h; return e; }
+  function initials(who) { return who.split(",")[0].trim().charAt(0); }
+
+  function render() {
+    main.innerHTML = "";
+    var v = el("div", "view");
+    if (S.step < 0) cover(v);
+    else if (S.step === 0) learn(v);
+    else if (S.step <= ROUNDS.length) round(v, S.step - 1);
+    else end(v);
+    var where = S.step + S.phase;
+    if (where !== lastWhere) v.classList.add("anim");   // animate only when the screen changes, not on every tap
+    lastWhere = where;
+    main.appendChild(v);
+    // chrome
+    var c = document.getElementById("count"), f = document.getElementById("fill");
+    c.textContent = S.step < 0 ? "Start" : S.step === 0 ? "The fallacies" : S.step > ROUNDS.length ? "Done" : "Round " + S.step + " / " + ROUNDS.length;
+    f.style.width = (S.step < 0 ? 0 : Math.min(100, (S.step + (S.phase === "r" ? .5 : 0)) / (ROUNDS.length + 1) * 100)) + "%";
+    prev.disabled = S.step < 0;
+    next.textContent = S.step < 0 ? "Begin →" : S.step === 0 ? "Start the game →" : S.step > ROUNDS.length ? "Play again ↻" :
+      S.phase === "q" ? "Reveal →" : (S.step === ROUNDS.length ? "Final scores →" : "Next round →");
+    save();
+  }
+
+  function cover(v) {
+    v.classList.add("cover");
+    v.appendChild(el("p", "eyebrow", "Warm-up · Intergenerational differences"));
+    v.appendChild(el("h1", null, "Mind the fallacy"));
+    v.appendChild(el("p", null, "Young and old argue about work, homes, phones and the planet. Some of those arguments are good. Many contain a fallacy: a mistake in reasoning that can sound convincing."));
+    v.appendChild(el("p", null, "First, meet eight common fallacies. Then twelve things people say across the generation gap: spot the fallacy, then say it fairly."));
+    var r = el("div", "rules");
+    ["<b>1.</b> Read the quote. In your team, agree which fallacy it is.",
+     "<b>2.</b> On three, hold up your card: A, B, C or D.",
+     "<b>3.</b> A point for every team that's right. Then one team says it fairly: the same point, without the fallacy."]
+      .forEach(function (h) { r.appendChild(html("div", null, h)); });
+    v.appendChild(r);
+    var t = el("div", "teams-set"); t.appendChild(el("span", null, "Number of teams"));
+    var st = el("div", "stepper"), minus = el("button", null, "−"), n = el("span", null, String(S.teams)), plus = el("button", null, "+");
+    minus.type = plus.type = "button";
+    function setTeams(k) { S.teams = Math.max(2, Math.min(10, k)); while (S.scores.length < S.teams) S.scores.push(0); S.scores.length = S.teams; n.textContent = S.teams; save(); }
+    minus.onclick = function (e) { e.stopPropagation(); setTeams(S.teams - 1); };
+    plus.onclick = function (e) { e.stopPropagation(); setTeams(S.teams + 1); };
+    st.appendChild(minus); st.appendChild(n); st.appendChild(plus); t.appendChild(st);
+    var reset = el("button", "btn", "New game"); reset.type = "button";
+    reset.onclick = function () { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); render(); };
+    t.appendChild(reset);
+    v.appendChild(t);
+  }
+
+  function learn(v) {
+    v.appendChild(el("p", "eyebrow", "Before we play"));
+    v.appendChild(el("h2", "big", "Eight fallacies"));
+    v.appendChild(el("p", "lede", "A fallacy is an argument that sounds convincing but has a flaw in its reasoning. Read them in pairs; your teacher may ask you for an example of your own."));
+    var g = el("div", "cards");
+    ORDER.forEach(function (k, i) {
+      var f = F[k], c = el("div", "fcard");
+      c.appendChild(el("span", "n", String(i + 1).padStart(2, "0")));
+      c.appendChild(el("h3", null, f.name));
+      c.appendChild(el("div", "def", f.def));
+      c.appendChild(html("div", "tell", "<b>Listen for</b>" + f.tell.replace(/&/g, "&amp;").replace(/</g, "&lt;")));
+      c.appendChild(el("div", "ex", f.ex));
+      g.appendChild(c);
+    });
+    v.appendChild(g);
+  }
+
+  function round(v, i) {
+    var R = ROUNDS[i], shown = S.phase === "r", wrap = el("div", "round"), left = el("div");
+    left.appendChild(el("p", "label", "Round " + (i + 1) + " of " + ROUNDS.length + " · Which fallacy?"));
+    var who = el("div", "who " + R.side); var d = el("span", "dot", initials(R.who)); who.appendChild(d); who.appendChild(document.createTextNode(R.who));
+    left.appendChild(who);
+    if (R.reply) left.appendChild(html("p", "reply", R.reply));
+    left.appendChild(el("p", "quote", "“" + R.quote + "”"));
+    var ul = el("ul", "opts");
+    R.opts.forEach(function (k, j) {
+      var li = el("li", "opt" + (shown ? (k === R.ans ? " right" : " dim") : ""));
+      li.appendChild(el("span", "l", "ABCD"[j])); li.appendChild(el("span", null, F[k].name));
+      ul.appendChild(li);
+    });
+    left.appendChild(ul);
+    if (shown) {
+      var rv = el("div", "reveal");
+      rv.appendChild(html("div", "why", "<b>" + F[R.ans].name + "</b>"));
+      rv.lastChild.appendChild(document.createTextNode(R.why));
+      var fair = el("div", "fair"); fair.appendChild(el("b", null, "Say it fairly"));
+      var fk = "r" + i;
+      if (S.fairShown[fk]) fair.appendChild(el("div", "model", "“" + R.fair + "”"));
+      else {
+        fair.appendChild(el("p", "ask", "One team: make the same point without the fallacy. Then compare with one fair version."));
+        var b = el("button", "btn", "Show one fair version"); b.type = "button";
+        b.onclick = function (e) { e.stopPropagation(); S.fairShown[fk] = true; render(); };
+        fair.appendChild(b);
+      }
+      rv.appendChild(fair);
+      left.appendChild(rv);
+    }
+    wrap.appendChild(left);
+    wrap.appendChild(scoreSide(i, shown));
+    v.appendChild(wrap);
+  }
+
+  function scoreSide(i, shown) {
+    var side = el("div", "side"); side.appendChild(el("h3", null, shown ? "Who got it?" : "Points"));
+    var got = S.got["r" + i] || [];
+    for (var t = 0; t < S.teams; t++) {
+      (function (t) {
+        var row = el("div", "team"), nm = el("span", "nm", "Team " + (t + 1)), pts = el("span", "pts", String(S.scores[t] || 0));
+        row.appendChild(nm);
+        var right = el("span"); right.style.cssText = "display:flex;align-items:center;gap:10px";
+        if (shown) {
+          var has = got.indexOf(t) >= 0, b = el("button", has ? "got" : null, has ? "✓ +1" : "+1"); b.type = "button";
+          b.onclick = function (e) {
+            e.stopPropagation();
+            var g = S.got["r" + i] || (S.got["r" + i] = []), k = g.indexOf(t);
+            if (k >= 0) { g.splice(k, 1); S.scores[t]--; } else { g.push(t); S.scores[t] = (S.scores[t] || 0) + 1; }
+            render();
+          };
+          right.appendChild(b);
+        }
+        right.appendChild(pts); row.appendChild(right); side.appendChild(row);
+      })(t);
+    }
+    side.appendChild(el("p", "hint", shown ? "Tap each team that held up the right letter." : "On three, every team holds up a letter."));
+    return side;
+  }
+
+  function end(v) {
+    v.classList.add("end");
+    v.appendChild(el("p", "eyebrow", "Final scores"));
+    v.appendChild(el("h2", null, "Both sides used every trick."));
+    var best = Math.max.apply(null, S.scores.slice(0, S.teams)), b = el("div", "board");
+    S.scores.slice(0, S.teams).map(function (s, t) { return [t, s]; }).sort(function (a, c) { return c[1] - a[1]; }).forEach(function (x) {
+      var r = el("div", x[1] === best && best > 0 ? "win" : null); r.appendChild(el("span", null, "Team " + (x[0] + 1))); r.appendChild(el("span", null, x[1] + " / " + ROUNDS.length)); b.appendChild(r);
+    });
+    v.appendChild(b);
+    var old = ROUNDS.filter(function (r) { return r.side === "old"; }).length;
+    var tl = el("div", "tally"); tl.appendChild(el("span", "old", old + " fallacies from older speakers")); tl.appendChild(el("span", "young", (ROUNDS.length - old) + " from younger speakers"));
+    v.appendChild(tl);
+    v.appendChild(el("p", null, "Half of today's fallacies came from older speakers and half from younger ones. Bad reasoning doesn't belong to a generation, and neither does good reasoning."));
+    v.appendChild(el("p", null, "When you read and argue today, listen for them, in your sources and in your own group, and name them politely: \"Isn't that a bit of a straw man?\""));
+  }
+
+  function go(d) {
+    if (d > 0) {
+      if (S.step > ROUNDS.length) { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); }
+      else if (S.step >= 1 && S.phase === "q") S.phase = "r";
+      else { S.step++; S.phase = "q"; }
+    } else {
+      if (S.step < 0) return;
+      if (S.step >= 1 && S.step <= ROUNDS.length && S.phase === "r") S.phase = "q";
+      else { S.step--; S.phase = (S.step >= 1 && S.step <= ROUNDS.length) ? "r" : "q"; }
+    }
+    render(); window.scrollTo(0, 0);
+  }
+  next.onclick = function () { go(1); };
+  prev.onclick = function () { go(-1); };
+  document.addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
+    if (e.key === " " || e.key === "ArrowRight") { e.preventDefault(); go(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
