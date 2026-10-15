@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>KENZO World</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* A shot-by-shot mise-en-scène log: each frame gets one focus term, one question, a note box, a model reading
+   that opens once the student has written something, and a place on the story arc. Notes stay in this browser. */
+:root{
+  --bg:#F3F1EC; --surface:#FFFFFF; --ink:#18201C; --muted:#56605A; --faint:#7E877F; --line:#DAD6CC; --soft:#E9F1EC;
+  --accent:#17694E; --accent-ink:#FFFFFF; --gold:#9A6E12; --gold-soft:#F4EAD2; --ok:#2C7A4C; --ok-bg:#E1F0E6;
+  --f-read:"Literata", Georgia, serif; --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111613; --surface:#19201C; --ink:#E5EAE6; --muted:#A1ABA4; --faint:#748079; --line:#2C3530; --soft:#1C2C24;
+    --accent:#5CC59B; --accent-ink:#0B1611; --gold:#DDB664; --gold-soft:#33291A; --ok:#62C08A; --ok-bg:#1A3024; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111613; --surface:#19201C; --ink:#E5EAE6; --muted:#A1ABA4; --faint:#748079; --line:#2C3530; --soft:#1C2C24;
+  --accent:#5CC59B; --accent-ink:#0B1611; --gold:#DDB664; --gold-soft:#33291A; --ok:#62C08A; --ok-bg:#1A3024; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding:40px 16px 90px}
+button,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.page{max-width:860px;margin:0 auto}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+h1{font-family:var(--f-read);font-weight:600;font-size:clamp(38px,6vw,58px);line-height:1.02;margin:0 0 8px;letter-spacing:-.01em}
+.sub{font-family:var(--f-read);font-style:italic;color:var(--muted);font-size:19px;margin:0 0 22px}
+.intro p{max-width:64ch;margin:0 0 12px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:22px 0 10px;padding:0;list-style:none;counter-reset:s}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;color:var(--muted);counter-increment:s}
+.steps li::before{content:counter(s);display:block;font-family:var(--f-mono);font-size:12px;color:var(--gold);margin-bottom:2px}
+.steps b{color:var(--ink);display:block}
+.watch{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0 8px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.4;cursor:default}
+.note{font-size:14px;color:var(--muted)}
+h2{font-family:var(--f-read);font-weight:600;font-size:28px;margin:56px 0 6px}
+h2 small{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:4px}
+.lede{color:var(--muted);max-width:64ch;margin:0 0 18px}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:18px 0 8px}
+.terms div{background:var(--surface);padding:11px 13px;font-size:13.5px;color:var(--muted)}
+.terms b{display:block;color:var(--ink);font-size:14.5px}
+@media (max-width:620px){.terms div:last-child{grid-column:1/-1}}
+.icon{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 6px 6px 0;padding:12px 16px;font-size:14.5px;margin:14px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 18px}
+.shot{display:grid}
+@media (min-width:760px){.shot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:900/468;background:var(--line)}
+.shot .body{padding:18px 20px 20px}
+.tagrow{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.num{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
+.chip{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--accent)}
+.q{font-family:var(--f-read);font-size:17.5px;line-height:1.4;margin:0 0 12px}
+textarea{width:100%;min-height:86px;resize:vertical;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;line-height:1.45}
+textarea:focus{border-color:var(--accent);outline:none}
+textarea::placeholder{color:var(--faint);font-style:italic}
+.arc{margin-top:12px}
+.arc .lbl{font-size:13px;color:var(--muted);margin-bottom:6px}
+.arcbtns{display:flex;flex-wrap:wrap;gap:6px}
+.arcbtns button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted)}
+.arcbtns button:hover{border-color:var(--accent);color:var(--ink)}
+.arcbtns button.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.arcfb{font-size:13px;margin-top:6px;min-height:1.2em;color:var(--muted)}
+.arcfb.ok{color:var(--ok)}
+.reveal{margin-top:12px}
+.reveal button{font-size:13.5px;padding:7px 12px}
+.model{margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:12px 14px;font-size:14.5px}
+.model b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
+.plain .body{padding:18px 20px 20px}
+.arcmap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:6px 0 4px}
+.arcmap div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;font-size:12.5px;min-height:74px}
+.arcmap div b{display:block;font-size:12px;font-family:var(--f-mono);color:var(--gold);margin-bottom:4px;letter-spacing:.03em}
+.arcmap span{display:inline-block;font-family:var(--f-mono);font-size:12px;background:var(--soft);color:var(--accent);border-radius:4px;padding:1px 5px;margin:2px 2px 0 0}
+@media (max-width:620px){.arcmap{grid-template-columns:1fr 1fr}}
+.starters{font-size:14px;color:var(--muted);margin:0 0 10px;padding-left:18px}
+.check{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;font-size:13px}
+.check span{border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--faint)}
+.check span.on{border-color:var(--ok);color:var(--ok);background:var(--ok-bg)}
+.wc{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);margin-top:6px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
+.status{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+#copyOut{width:100%;min-height:160px;margin-top:10px;font-family:var(--f-mono);font-size:12.5px}
+.progress{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);padding:8px 0;border-bottom:1px solid var(--line);margin:8px 0 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.bar{height:4px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">English for Design · Mise-en-scène</p>
+  <h1>KENZO World</h1>
+  <p class="sub">A perfume ad that breaks the rules: a shot-by-shot reading</p>
+  <div class="intro">
+    <p>Spike Jonze's 2016 film for the perfume KENZO World, starring Margaret Qualley, starts like almost every perfume ad you've seen. Then it does something very different. Your job is to work out <b>what</b> changes, <b>how</b> the film shows it, and <b>what</b> it wants us to feel about the woman at its centre.</p>
+  </div>
+  <ol class="steps">
+    <li><b>Watch</b>the film once, then note your first reaction</li>
+    <li><b>Read ten shots</b>one focus each, then compare with a model reading</li>
+    <li><b>Map the story</b>place each shot on a five-stage arc</li>
+    <li><b>Step back</b>three big-picture questions and the film's afterlife</li>
+    <li><b>Write</b>a short paragraph of analysis</li>
+  </ol>
+  <div class="watch">
+    <a class="btn primary" href="https://www.youtube.com/watch?v=4pQhmDr6Mkk" target="_blank" rel="noopener">▶ Watch KENZO World</a>
+    <span class="note">Opens YouTube in a new tab (about 4 minutes). Your notes save in this browser only.</span>
+  </div>
+
+  <div class="progress"><span id="progText">0 of 18 answered</span><div class="bar"><i id="progBar"></i></div></div>
+
+  <h2><small>Step 1</small>First reaction</h2>
+  <div class="card plain"><div class="body">
+    <p class="q">What's the first word or feeling that comes to mind after watching? How is it different from how you usually feel after a perfume ad?</p>
+    <textarea data-k="first" placeholder="Your notes…"></textarea>
+  </div></div>
+
+  <h2><small>Step 2</small>Ten shots, five tools</h2>
+  <p class="lede">Mise-en-scène means everything placed in the frame. Each shot below has one focus. Write your own reading first; then open the model reading and compare.</p>
+  <div class="terms">
+    <div><b>Setting</b>Where are we, and what does the place expect of people?</div>
+    <div><b>Dress code</b>What does the costume say about status, era or role?</div>
+    <div><b>Props</b>Which objects are there on purpose, and what do they stand for?</div>
+    <div><b>Lighting &amp; colour</b>How is it lit, what palette, what mood?</div>
+    <div><b>Non-verbal</b>What are her face, gestures and body saying?</div>
+  </div>
+  <p class="icon"><b>Iconography:</b> images a genre trains us to recognise. Perfume ads have their own: evening gowns, chandeliers, soft music, a beautiful woman being admired. Watch how this film uses those images, and then turns them upside down.</p>
+  <div style="height:18px"></div>
+  <div id="shots"></div>
+
+  <h2><small>Step 3</small>The story arc</h2>
+  <p class="lede">Here's where you placed each shot. The film tells one of the oldest stories there is: someone stuck in a role, an escape, a testing of the rules, a gain in power, a breakthrough. Does your map show a clear line? Where were you unsure?</p>
+  <div class="arcmap" id="arcmap"></div>
+  <div class="card plain" style="margin-top:12px"><div class="body">
+    <p class="q">Where else have you seen this story shape: in films, myths, fairy tales or other ads? Why do you think it works so well for selling something?</p>
+    <textarea data-k="arc" placeholder="Your notes…"></textarea>
+  </div></div>
+
+  <h2><small>Step 4</small>Step back</h2>
+  <div id="big"></div>
+
+  <div class="card plain"><div class="body">
+    <span class="chip" style="background:var(--gold-soft);color:var(--gold)">Afterlife</span>
+    <p class="q" style="margin-top:8px">In 2018, Taylor Swift's music video for "Delicate", directed by Joseph Kahn, was accused online of copying KENZO World: a woman bored at a glamorous event becomes invisible and lets loose with silly faces and wild dancing. Why might this ad have become a template that others copy? Is being copied a compliment, a problem, or both?</p>
+    <textarea data-k="copy" placeholder="Your notes…"></textarea>
+    <p class="note" style="margin:8px 0 0">Read about it: <a href="https://www.itsnicethat.com/news/taylor-swift-delicate-video-accused-of-copying-spike-jonze-kenzo-ad-film-130318" target="_blank" rel="noopener">It's Nice That, March 2018</a></p>
+  </div></div>
+
+  <h2><small>Step 5</small>Write it up</h2>
+  <div class="card plain"><div class="body">
+    <p class="q">In 120–150 words: how does KENZO World present a young woman breaking away from traditional expectations? Refer to at least two shots and use at least three of the five tools.</p>
+    <ul class="starters">
+      <li>Although the film opens like a conventional perfume ad, …</li>
+      <li>In the first shot, she is positioned … , which suggests …</li>
+      <li>This contrasts sharply with … , where …</li>
+      <li>By the final shot, … . The film links the perfume with …</li>
+    </ul>
+    <textarea data-k="para" id="para" style="min-height:170px" placeholder="Your paragraph…"></textarea>
+    <div class="wc" id="wc">0 words</div>
+    <div class="check" id="check"></div>
+  </div></div>
+
+  <div class="toolbar">
+    <button class="btn" id="copyBtn" type="button">Copy all notes</button>
+    <button class="btn" id="clearBtn" type="button">Clear all notes</button>
+    <span class="status" id="status"></span>
+  </div>
+  <textarea id="copyOut" readonly hidden></textarea>
+  <footer>SimLearn Extras · Stills from KENZO World (dir. Spike Jonze, 2016), used for analysis and teaching.</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var ARC = ["Expected role", "Escape", "Breaking the rules", "Taking power", "Breakthrough"];
+  var SHOTS = [
+    { focus: "Dress code", arc: 0,
+      q: "Look at what everyone is wearing, and where she is placed: behind the flowers, between older men in black tie. What role does this dinner give her?",
+      model: "Evening gown, pearls, tuxedos: the dress code of a formal, old-fashioned world. She sits half-hidden behind pink flowers, framed by older men, polite and decorative, there to be looked at. It's the classic perfume-ad opening, and her face says she's bored by it." },
+    { focus: "Setting", arc: 1,
+      q: "She has walked out of the dinner alone into an empty, formal foyer: chandeliers, gold columns, flowers on stands. What is she leaving, and what does this space suggest about where she's going?",
+      model: "The rules of the dinner are still visible all around her (gold, chandeliers, arranged flowers), but nobody is there to enforce them. She looks small in the frame, yet she's the only thing moving. This is the moment she steps out of the role she was given." },
+    { focus: "Props", arc: 2,
+      q: "She pulls a face at a bronze bust and licks it. What kind of world does a bust like this stand for, and what is she doing to it?",
+      model: "A bronze bust stands for history, status and (usually male) authority: something you admire quietly and respectfully. Pulling faces at it and licking it is pure mockery. She refuses the respect that this world expects of her." },
+    { focus: "Non-verbal", arc: 2,
+      q: "Look at her face and hands, with a grand staircase behind her. Who is she looking at, and is she performing for someone or for herself?",
+      model: "She stares straight at the camera and pulls a grotesque face: the opposite of the flawless, serene face perfume ads usually sell. She isn't being looked at any more; she's looking back at us, and she doesn't care how she looks." },
+    { focus: "Non-verbal", arc: 3,
+      q: "A man in a tuxedo reacts to her gestures. Watch this shot and the next. Who has the power here, and what kind of power is it?",
+      model: "Her gestures seem to fire energy at him, and he's thrown backwards. In most perfume ads a woman's power is attraction: she draws men in. Here her power is physical and comic, and it's aimed at a man in evening dress, the uniform of the dinner she walked out of." },
+    { focus: "Dress code", arc: 3,
+      q: "She flexes like a bodybuilder while he lies on the floor. Compare the gown here with shot 01. What has changed, and what hasn't?",
+      model: "It's exactly the same elegant gown, but now she wears it with a strongman pose and a wide, planted stance. The costume hasn't changed; the way she inhabits it has. She keeps the femininity but rejects the passivity that came with it." },
+    { focus: "Lighting & colour", arc: 3,
+      q: "The light turns hazy and smoky in a long corridor. Compare it with the chandeliers at the dinner. How has the mood changed?",
+      model: "The polished, golden light of the dinner gives way to dust and haze in a back corridor, a space that feels hidden and dreamlike. She moves with total freedom through a building designed for formality. You could also argue this shot belongs to 'breaking the rules'." },
+    { focus: "Setting", arc: 4,
+      q: "She dances a ballet movement alone in an empty theatre. Who is the performance for now?",
+      model: "A theatre exists for an audience, but every seat is empty: she dances for herself. Ballet is the most disciplined, traditional dance form, and here it becomes just one part of her own, much wilder way of moving. She is making her own rules." },
+    { focus: "Props", arc: 4,
+      q: "Outside, at night, she leaps towards a huge eye made of flowers. Look at the perfume bottle at the end of the film. Why might the ad end with this image?",
+      model: "The eye is KENZO's symbol and the shape of the KENZO World bottle. The flowers that decorated the dinner table have become something bold, strange and enormous. She has left the building, and the brand places itself at exactly that moment of breakthrough: the film creating its own iconography." },
+    { focus: "Lighting & colour", arc: 4,
+      q: "Put this next to shot 01. Where is she in the frame, how is she lit, and who is watching whom now?",
+      model: "Centre-frame, outdoors, wind in her hair, natural night air instead of chandeliers, mouth open mid-shout. In shot 01 she was one guest among many, decorated and silent; now she's alone, loud and free. The ad wants us to link the perfume with that feeling of release." }
+  ];
+  var BIG = [
+    { k: "familiar", q: "Familiar or new? Which parts of this film look like a typical perfume ad, and where does it break the formula? Think about the music, the pace, her face and body, and the ending.",
+      model: "Familiar: a glamorous evening, an evening gown, a beautiful young woman, chandeliers, and the bottle at the end. New: a loud electronic track (\"Mutant Brain\" by Sam Spiegel & Ape Drums) instead of soft strings, comic faces, wild choreography by Ryan Heffington, and a woman who isn't trying to attract anyone. It keeps the iconography of perfume ads, and then makes fun of it." },
+    { k: "camera", q: "Music and camera: how do they change your relationship with her? Do you feel close to her, distant, or as if you're chasing her?",
+      model: "The camera mostly moves with her: tracking her walk, staying close to her face, keeping up as she runs and leaps. The music builds steadily and explodes as she breaks out. We aren't watching her from a distance as an object; we're pulled along with her, almost into her point of view." },
+    { k: "message", q: "Before and after: what view of femininity does she leave behind, and what does she become? Use evidence from at least two shots.",
+      model: "She starts as the decorative, silent woman at a table of older men: elegant, polite and watched. She ends loud, physical, funny and free, making her own way, out of the building and into the open air. The film presents this as a real breakthrough: smashing the expectations of a traditional, male-dominated world, and the perfume is sold as the feeling of that release." }
+  ];
+  var TERMS = [["setting", /\bsetting|location|space|room|foyer|theatre|corridor/i], ["dress code", /\bdress|costume|gown|tuxedo|clothes|outfit/i],
+    ["props", /\bprop|object|bust|flowers?|eye\b|bottle/i], ["lighting & colour", /\blight|lit\b|colou?r|palette|dark|bright/i],
+    ["non-verbal", /\bnon-verbal|gesture|face|facial|body|expression|pose|posture|movement/i]];
+
+  var KEY = "simlearn-extras:kenzo-world:v1:";
+  function get(k) { try { return localStorage.getItem(KEY + k) || ""; } catch (e) { return mem[k] || ""; } }
+  function set(k, v) { mem[k] = v; try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+  var mem = {};
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function modelBlock(key, text) {
+    var wrap = el("div", "reveal");
+    var b = el("button", "btn", "Compare with a model reading"); b.type = "button";
+    var m = el("div", "model"); m.hidden = true;
+    m.appendChild(el("b", null, "One reading")); m.appendChild(document.createTextNode(text));
+    b.addEventListener("click", function () { m.hidden = !m.hidden; b.textContent = m.hidden ? "Compare with a model reading" : "Hide the model reading"; });
+    wrap.appendChild(b); wrap.appendChild(m);
+    wrap.sync = function () { var ok = get(key).trim().length >= 15; b.disabled = !ok; b.title = ok ? "" : "Write your own reading first"; };
+    return wrap;
+  }
+
+  var syncs = [];
+  function noteBox(key, ph, onInput) {
+    var ta = el("textarea"); ta.placeholder = ph || "Your notes…"; ta.value = get(key);
+    ta.addEventListener("input", function () { set(key, ta.value); syncs.forEach(function (f) { f(); }); if (onInput) onInput(); });
+    return ta;
+  }
+
+  /* shots */
+  var box = document.getElementById("shots");
+  SHOTS.forEach(function (s, i) {
+    var n = i + 1, key = "shot" + n;
+    var card = el("div", "card"), row = el("div", "shot");
+    var img = el("img"); img.src = "img/shot" + pad(n) + ".jpg"; img.alt = "Shot " + n + " from KENZO World"; img.loading = "lazy";
+    var body = el("div", "body");
+    var tags = el("div", "tagrow"); tags.appendChild(el("span", "num", "SHOT " + pad(n) + " / 10")); tags.appendChild(el("span", "chip", s.focus));
+    body.appendChild(tags);
+    body.appendChild(el("p", "q", s.q));
+    body.appendChild(noteBox(key));
+    var arc = el("div", "arc"); arc.appendChild(el("div", "lbl", "Where does this shot sit in her story?"));
+    var btns = el("div", "arcbtns"), fb = el("div", "arcfb");
+    ARC.forEach(function (a, j) {
+      var b = el("button", null, a); b.type = "button";
+      b.addEventListener("click", function () { set("arc" + n, String(j)); paintArc(); renderMap(); syncs.forEach(function (f) { f(); }); });
+      btns.appendChild(b);
+    });
+    function paintArc() {
+      var v = get("arc" + n);
+      [].forEach.call(btns.children, function (b, j) { b.classList.toggle("sel", String(j) === v); });
+      if (v === "") { fb.textContent = ""; fb.className = "arcfb"; return; }
+      var same = +v === s.arc;
+      fb.className = "arcfb" + (same ? " ok" : "");
+      fb.textContent = same ? "Same as our reading." : "Our reading: " + ARC[s.arc] + ". Could you argue for yours?";
+    }
+    paintArc();
+    arc.appendChild(btns); arc.appendChild(fb); body.appendChild(arc);
+    var mb = modelBlock(key, s.model); body.appendChild(mb); syncs.push(mb.sync);
+    row.appendChild(img); row.appendChild(body); card.appendChild(row); box.appendChild(card);
+  });
+
+  /* arc map */
+  function renderMap() {
+    var map = document.getElementById("arcmap"); map.innerHTML = "";
+    ARC.forEach(function (a, j) {
+      var d = el("div"); d.appendChild(el("b", null, a));
+      SHOTS.forEach(function (_, i) { if (get("arc" + (i + 1)) === String(j)) d.appendChild(el("span", null, pad(i + 1))); });
+      map.appendChild(d);
+    });
+  }
+  renderMap();
+
+  /* other note boxes in the static HTML */
+  document.querySelectorAll("textarea[data-k]").forEach(function (ta) {
+    var k = ta.getAttribute("data-k"); ta.value = get(k);
+    ta.addEventListener("input", function () { set(k, ta.value); syncs.forEach(function (f) { f(); }); });
+  });
+
+  /* big-picture questions */
+  var big = document.getElementById("big");
+  BIG.forEach(function (b) {
+    var card = el("div", "card plain"), body = el("div", "body");
+    body.appendChild(el("p", "q", b.q)); body.appendChild(noteBox(b.k));
+    var mb = modelBlock(b.k, b.model); body.appendChild(mb); syncs.push(mb.sync);
+    card.appendChild(body); big.appendChild(card);
+  });
+
+  /* paragraph: word count and tool checklist */
+  function checkPara() {
+    var t = get("para"), words = (t.trim().match(/\S+/g) || []).length;
+    var wc = document.getElementById("wc");
+    wc.textContent = words + " words" + (words === 0 ? "" : words < 120 ? " · aim for 120–150" : words > 150 ? " · a little long: aim for 120–150" : " · good length");
+    var shots = (t.match(/\bshots?\s*(0?[1-9]|10)\b/gi) || []).length;
+    var c = document.getElementById("check"); c.innerHTML = "";
+    var used = 0;
+    TERMS.forEach(function (x) { var on = x[1].test(t); used += on; var s = el("span", on ? "on" : "", x[0]); c.appendChild(s); });
+    var s2 = el("span", shots >= 2 ? "on" : "", shots >= 2 ? "two shots named" : "name two shots (e.g. 'shot 01')"); c.appendChild(s2);
+  }
+  syncs.push(checkPara);
+
+  /* progress */
+  var ALL = ["first", "arc", "familiar", "camera", "message", "copy", "para"].concat(SHOTS.map(function (_, i) { return "shot" + (i + 1); }));
+  ALL.splice(ALL.indexOf("copy"), 1); // 'copy' is optional extra
+  var TOTAL = ALL.length + 1;
+  function progress() {
+    var n = ALL.filter(function (k) { return get(k).trim(); }).length + (get("copy").trim() ? 1 : 0);
+    document.getElementById("progText").textContent = Math.min(n, TOTAL) + " of " + TOTAL + " answered";
+    document.getElementById("progBar").style.width = Math.min(100, n / TOTAL * 100) + "%";
+  }
+  syncs.push(progress);
+  syncs.forEach(function (f) { f(); });
+
+  /* copy / clear */
+  function allText() {
+    var L = ["KENZO World: my notes", ""];
+    function add(title, k) { var v = get(k).trim(); if (v) { L.push(title); L.push(v); L.push(""); } }
+    add("First reaction", "first");
+    SHOTS.forEach(function (s, i) {
+      var n = i + 1, a = get("arc" + n);
+      add("Shot " + pad(n) + " (" + s.focus + ")" + (a !== "" ? " [arc: " + ARC[+a] + "]" : ""), "shot" + n);
+    });
+    add("Story shape", "arc");
+    BIG.forEach(function (b) { add(b.q.split(":")[0].split("?")[0], b.k); });
+    add("Afterlife: Delicate", "copy");
+    add("Paragraph", "para");
+    return L.length > 2 ? L.join("\n") : "";
+  }
+  var status = document.getElementById("status"), out = document.getElementById("copyOut");
+  document.getElementById("copyBtn").addEventListener("click", function () {
+    var t = allText(); if (!t) { status.textContent = "Nothing to copy yet."; return; }
+    function fallback() { out.value = t; out.hidden = false; out.select(); status.textContent = "Select and copy the text below."; }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { status.textContent = "Copied."; out.hidden = true; }, fallback);
+    else fallback();
+  });
+  var confirming = false, clearBtn = document.getElementById("clearBtn");
+  clearBtn.addEventListener("click", function () {
+    if (!confirming) { confirming = true; clearBtn.textContent = "Click again to clear everything"; setTimeout(function () { confirming = false; clearBtn.textContent = "Clear all notes"; }, 4000); return; }
+    try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf(KEY) === 0) localStorage.removeItem(k); }); } catch (e) {}
+    mem = {}; location.reload();
+  });
+})();
+</script>
+</body>
+</html>
