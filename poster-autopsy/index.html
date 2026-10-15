@@ -7,8 +7,8 @@
 <title>Poster Autopsy</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-/* Fifteen film posters in five families: each poster gets one focus tool, one question, a note box, a model reading
-   that opens once the student has written something, and a "what did your eye see first?" pick. Notes stay in this browser. */
+/* Before-the-video opinion check: one poster at a time, two taps (what kind of film? do you like the design?) and an
+   optional few words. A summary at the end. Notes stay in this browser. */
 :root{
   --bg:#F3F1EC; --surface:#FFFFFF; --ink:#18201C; --muted:#56605A; --faint:#7E877F; --line:#DAD6CC; --soft:#E9F1EC;
   --accent:#17694E; --accent-ink:#FFFFFF; --gold:#9A6E12; --gold-soft:#F4EAD2; --ok:#2C7A4C; --ok-bg:#E1F0E6;
@@ -27,380 +27,205 @@
 }
 *{box-sizing:border-box}
 html,body{background:var(--bg);color:var(--ink)}
-body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;padding:40px 16px 90px}
-button,textarea{font:inherit;color:inherit}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding:32px 16px 70px}
+button,input{font:inherit;color:inherit}
 button{cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.page{max-width:860px;margin:0 auto}
-a{color:var(--accent)}
-.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
-h1{font-family:var(--f-read);font-weight:600;font-size:clamp(38px,6vw,58px);line-height:1.02;margin:0 0 8px;letter-spacing:-.01em}
-.sub{font-family:var(--f-read);font-style:italic;color:var(--muted);font-size:19px;margin:0 0 22px}
-.intro p{max-width:64ch;margin:0 0 12px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:22px 0 10px;padding:0;list-style:none;counter-reset:s}
-.steps li{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:14px;color:var(--muted);counter-increment:s}
-.steps li::before{content:counter(s);display:block;font-family:var(--f-mono);font-size:12px;color:var(--gold);margin-bottom:2px}
-.steps b{color:var(--ink);display:block}
-.watch{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0 8px}
-.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.page{max-width:900px;margin:0 auto}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+h1{font-family:var(--f-read);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.02;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:60ch}
+.strip{display:flex;gap:6px;overflow-x:auto;padding:4px 2px 10px;margin:0 0 14px;scrollbar-width:thin}
+.strip button{flex:0 0 auto;border:2px solid transparent;border-radius:6px;padding:0;background:none;position:relative;line-height:0}
+.strip img{height:64px;width:auto;border-radius:4px;opacity:.55}
+.strip button.done img{opacity:1}
+.strip button.cur{border-color:var(--accent)}
+.strip button.done::after{content:"✓";position:absolute;right:2px;top:2px;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-size:10px;line-height:15px;width:15px;text-align:center}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid}
+@media (min-width:760px){.card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.pic{background:var(--line);display:flex;align-items:center;justify-content:center;padding:16px;min-height:300px}
+.pic img{display:block;max-width:100%;max-height:68vh;height:auto;border-radius:3px;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column}
+.num{font-family:var(--f-mono);font-size:12px;color:var(--faint);margin-bottom:6px}
+.ptitle{font-family:var(--f-read);font-weight:600;font-size:22px;line-height:1.2;margin:0 0 18px}
+.ptitle small{font-family:var(--f-ui);font-weight:400;font-size:14px;color:var(--muted)}
+.qlbl{font-weight:600;font-size:15px;margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
+.chips button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 13px;font-size:14.5px}
+.chips button:hover{border-color:var(--accent)}
+.chips button.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px}
+input[type=text]:focus{border-color:var(--accent);outline:none}
+input::placeholder{color:var(--faint);font-style:italic}
+.nav{display:flex;gap:10px;margin-top:auto;padding-top:22px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600;color:var(--ink)}
 .btn:hover{border-color:var(--accent)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);margin-left:auto}
 .btn:disabled{opacity:.4;cursor:default}
-.note{font-size:14px;color:var(--muted)}
-h2{font-family:var(--f-read);font-weight:600;font-size:28px;margin:56px 0 6px}
-h2 small{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:4px}
-.lede{color:var(--muted);max-width:64ch;margin:0 0 18px}
-.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:18px 0 8px}
-.terms div{background:var(--surface);padding:11px 13px;font-size:13.5px;color:var(--muted)}
-.terms b{display:block;color:var(--ink);font-size:14.5px}
-@media (max-width:620px){.terms div:last-child{grid-column:1/-1}}
-.icon{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 6px 6px 0;padding:12px 16px;font-size:14.5px;margin:14px 0 0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 18px}
-.tagrow{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
-.num{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
-.chip{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--accent)}
-.q{font-family:var(--f-read);font-size:17.5px;line-height:1.4;margin:0 0 12px}
-textarea{width:100%;min-height:86px;resize:vertical;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px;line-height:1.45}
-textarea:focus{border-color:var(--accent);outline:none}
-textarea::placeholder{color:var(--faint);font-style:italic}
-.arc{margin-top:12px}
-.arc .lbl{font-size:13px;color:var(--muted);margin-bottom:6px}
-.arcbtns{display:flex;flex-wrap:wrap;gap:6px}
-.arcbtns button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted)}
-.arcbtns button:hover{border-color:var(--accent);color:var(--ink)}
-.arcbtns button.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.arcfb{font-size:13px;margin-top:6px;min-height:1.2em;color:var(--muted)}
-.arcfb.ok{color:var(--ok)}
-.fam{margin:44px 0 14px;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;background:var(--surface)}
-.fam h3{font-family:var(--f-read);font-weight:600;font-size:24px;margin:2px 0 6px}
-.fam .years{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
-.thumbs{display:flex;gap:6px;margin:10px 0 12px;flex-wrap:wrap}
-.thumbs img{height:84px;width:auto;border-radius:4px;border:1px solid var(--line);background:var(--line)}
-.poster{display:grid}
-@media (min-width:760px){.poster{grid-template-columns:300px minmax(0,1fr)}}
-.poster .pic{background:var(--line);display:flex;align-items:center;justify-content:center;padding:14px}
-.poster .pic img{display:block;max-width:100%;max-height:72vh;height:auto;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.18)}
-@media (min-width:760px){.poster .pic img{max-height:none}}
-.poster .body{padding:18px 20px 20px}
-.ptitle{font-family:var(--f-read);font-weight:600;font-size:15px;color:var(--muted);margin-bottom:4px}
-.phrases{margin:14px 0 0;padding:12px 16px 12px 34px;background:var(--surface);border:1px solid var(--line);border-radius:8px;font-size:14.5px}
-.phrases li{margin:2px 0}
-.eyemap{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:6px 0 4px}
-.eyemap div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;font-size:12.5px;min-height:74px}
-.eyemap div b{display:block;font-size:12px;font-family:var(--f-mono);color:var(--gold);margin-bottom:4px;letter-spacing:.03em}
-.eyemap span{display:inline-block;font-size:12px;background:var(--soft);color:var(--accent);border-radius:4px;padding:1px 6px;margin:2px 2px 0 0}
-@media (max-width:620px){.eyemap{grid-template-columns:1fr 1fr}.eyemap div:last-child{grid-column:1/-1}}
-.reveal{margin-top:12px}
-.reveal button{font-size:13.5px;padding:7px 12px}
-.model{margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:12px 14px;font-size:14.5px}
-.model b{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:3px}
-.plain .body{padding:18px 20px 20px}
-.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
+.hint{font-size:13px;color:var(--faint);margin-top:8px}
+#summary h2{font-family:var(--f-read);font-weight:600;font-size:28px;margin:6px 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:16px 0}
+.cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:13px;cursor:pointer}
+.cell:hover{border-color:var(--accent)}
+.cell img{display:block;width:100%;height:150px;object-fit:contain;background:var(--line);border-radius:4px;margin-bottom:6px}
+.cell b{display:block;font-size:13px}
+.cell .g{color:var(--accent)}
+.cell .w{color:var(--muted);font-style:italic}
+.watch{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0}
+.watch p{margin:0 0 6px}
+.watch ul{margin:0;padding-left:20px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
 .status{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
-#copyOut{width:100%;min-height:160px;margin-top:10px;font-family:var(--f-mono);font-size:12.5px}
-.progress{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(6px);padding:8px 0;border-bottom:1px solid var(--line);margin:8px 0 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
-.bar{height:4px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:5px}
-.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
-footer{margin-top:40px;font-size:12.5px;color:var(--faint);text-align:center}
+#copyOut{width:100%;min-height:140px;margin-top:10px;font-family:var(--f-mono);font-size:12.5px}
+footer{margin-top:36px;font-size:12.5px;color:var(--faint);text-align:center}
 </style>
 </head>
 <body>
 <div class="page">
   <p class="eyebrow">English for Design · Widowlight warm-up</p>
   <h1>Poster Autopsy</h1>
-  <p class="sub">Fifteen film posters. Read the design before you read the film.</p>
-  <div class="intro">
-    <p>A film poster has about three seconds to tell you what kind of film it is, who it's for and how it will make you feel. Designers do it with a small set of tools, and with <b>genre codes</b>: looks that audiences have learned to recognise.</p>
-    <p>Here are fifteen posters from 1949 to 2014, sorted into five families. It doesn't matter whether you know the films. Read only the <b>design</b>.</p>
-  </div>
-  <ol class="steps">
-    <li><b>Warm up</b>the five tools and some useful phrases</li>
-    <li><b>Five families</b>what each group shares, then one focus per poster</li>
-    <li><b>Your eye map</b>what you noticed first, poster by poster</li>
-    <li><b>Step back</b>genre codes, stars and stories</li>
-  </ol>
-  <p class="note">Your notes save in this browser only. Write your own reading first; the model reading opens after that.</p>
+  <p class="sub">Fifteen film posters. Before the video, give your first impression of each one: two taps and, if you like, a few words. It doesn't matter if you know the film.</p>
 
-  <div class="progress"><span id="progText">0 answered</span><div class="bar"><i id="progBar"></i></div></div>
+  <div class="strip" id="strip"></div>
+  <div id="one"></div>
+  <div id="summary" hidden></div>
 
-  <h2><small>Step 1</small>Warm up</h2>
-  <div class="terms">
-    <div><b>Typography</b>Font style, weight, size and placement. What does the lettering feel like?</div>
-    <div><b>Colour</b>The palette, the contrast, one accent colour. What mood?</div>
-    <div><b>Composition</b>Where things sit, how big they are, where the lines lead your eye.</div>
-    <div><b>Imagery style</b>Painting, photo, silhouette, collage? Realistic or stylised?</div>
-    <div><b>Words</b>Tagline, quotes, names, dates. What do they add to the picture?</div>
-  </div>
-  <p class="icon"><b>Visual hierarchy:</b> the order your eye reads a poster in: first, second, third. On every poster below you'll say what you noticed first.</p>
-  <ul class="phrases">
-    <li>The first thing you notice is …, and then your eye moves to …</li>
-    <li>The warm / cool / limited palette creates a … mood.</li>
-    <li>The heavy, condensed / thin, elegant / hand-drawn lettering feels …</li>
-    <li>By placing … in the centre / at the bottom / inside …, the designer suggests …</li>
-    <li>This poster follows / bends the genre code by …</li>
-  </ul>
-  <div class="card plain" style="margin-top:18px"><div class="body">
-    <p class="q">Think of a film poster you remember: on a wall, at a bus stop, as a phone wallpaper. What do you remember about it: the image, the colours, the words? Why did it stick?</p>
-    <textarea data-k="first" placeholder="Your notes…"></textarea>
-  </div></div>
-
-  <h2><small>Step 2</small>Five families</h2>
-  <p class="lede">Start each family by looking at all its posters together. Then take them one at a time: each has one focus tool.</p>
-  <div id="fams"></div>
-
-  <h2><small>Step 3</small>Your eye map</h2>
-  <p class="lede">Here's what you noticed first on each poster. Which element wins most often? Where was it hardest to decide?</p>
-  <div class="eyemap" id="eyemap"></div>
-
-  <h2><small>Step 4</small>Step back</h2>
-  <div id="big"></div>
-
-  <div class="card plain"><div class="body">
-    <span class="chip" style="background:var(--gold-soft);color:var(--gold)">Before the sim</span>
-    <p class="q" style="margin-top:8px">In today's sim you'll choose the key art for <i>Widowlight: The Second Winter</i>, the sequel to a small horror film. Pick two of the five families. If a horror poster borrowed each family's code, what would it promise the audience, and who would it attract?</p>
-    <textarea data-k="widow" placeholder="Your notes…"></textarea>
-  </div></div>
-
-  <div class="toolbar">
-    <button class="btn" id="copyBtn" type="button">Copy all notes</button>
-    <button class="btn" id="clearBtn" type="button">Clear all notes</button>
-    <span class="status" id="status"></span>
-  </div>
-  <textarea id="copyOut" readonly hidden></textarea>
-  <footer>SimLearn Extras · Film posters reproduced for analysis and teaching.</footer>
+  <footer>SimLearn Extras · Film posters reproduced for analysis and teaching. Your answers save in this browser only.</footer>
 </div>
-
 <script>
 (function () {
   "use strict";
-  var EYE = ["Title", "Star names", "Face or figure", "Scene or object", "Tagline or words"];
-  var FAMS = [
-    { name: "Painted adventure", years: "1977–2014",
-      q: "Three of these are painted by hand (1977–85); one is a digital photo collage from 2014. What do all four share, and what do they promise the audience?",
-      model: "A hero in an active pose at the centre, a crowd of other characters or a huge symbol around them, warm glowing light and lots of detail. The promise: a big, exciting, family-friendly adventure, an event to see on the biggest screen. Guardians of the Galaxy copies the formula on purpose with photographs, borrowing the nostalgia of the painted posters.",
-      posters: [
-        { t: "Raiders of the Lost Ark", y: 1981, img: "raiders_of_the_lost_ark", focus: "Typography", eye: 2,
-          q: "Look at the title lettering: its shape, angle, colour and depth. What era and what kind of story does it suggest?",
-          model: "The title slants upwards in chunky, three-dimensional letters with a red-to-yellow gradient, as if carved and lit by fire. It recalls old adventure serials and comic books: danger, treasure, speed. Under it, Richard Amsel's painting puts the hero in the centre, whip raised, surrounded by friends and enemies: a whole story in one image." },
-        { t: "Back to the Future", y: 1985, img: "back_to_the_future", focus: "Composition", eye: 2,
-          q: "Follow the lines in the image: the car door, the beams of light, the fire trails. Where do they lead your eye, and what does that suggest?",
-          model: "The open car door and the beams of light frame the boy in the centre, who is checking his watch. The two fire trails run diagonally out of the frame, giving speed and direction. Drew Struzan's painting makes time feel like movement, and the tagline ('He was never in time for his classes…') adds comedy." },
-        { t: "Star Wars", y: 1977, img: "star_wars", focus: "Imagery style", eye: 2,
-          q: "A giant dark helmet fills the sky behind the two heroes. What is the effect of this scale, and of the single vertical line of light?",
-          model: "Tom Jung's painting looks like a classic adventure or sci-fi book cover: a young hero holding a glowing sword up, a princess beside him, and an enormous shadowy villain looming over them. The beam splits the poster vertically and leads the eye to the burst of light at the top. Good against evil, in one glance." },
-        { t: "Guardians of the Galaxy", y: 2014, img: "guardians_of_the_galaxy", focus: "Colour", eye: 2,
-          q: "Purple and blue space, orange and green laser light, a gold metallic title. How do these colours work together, and what kind of film do they promise?",
-          model: "Cool blues and purples for space, with hot orange and green light cutting through: the blue-and-orange contrast that blockbusters love. The heavy gold 3D title looks like a toy or a trophy. Five characters in hero poses repeat the painted-poster formula, and 'From the studio that brought you The Avengers' tells you it belongs to a franchise." }
-      ] },
-    { name: "Yellow", years: "1973–2006",
-      q: "Three films more than thirty years apart, all covered in yellow. What does the yellow do, and what kind of film does it signal?",
-      model: "Yellow is warm and cheerful, but here it's also flat and plain: lots of empty colour, small figures, simple type. It signals a smaller, human, slightly quirky film rather than a spectacle: indie, comedy-drama, character-driven. The Optimists (1973) shows the idea isn't new; by the 2000s, posters like Little Miss Sunshine had made yellow a familiar sign of an indie film." ,
-      posters: [
-        { t: "The Brown Bunny", y: 2003, img: "the_brown_bunny", focus: "Typography", eye: 0,
-          q: "Look at the title: font, weight, size, alignment. How is it different from the Raiders title, and what does that say about the film?",
-          model: "Tall, heavy, black sans-serif capitals, stacked and left-aligned, with no effects at all. Where the Raiders title is fiery and moving, this one is still and serious. With the grainy black-and-white photo and the tiny motorbike, it feels like an art-house film: personal and raw, not a crowd-pleaser. The 'Adults only' box adds a warning." },
-        { t: "Little Miss Sunshine", y: 2006, img: "little_miss_sunshine", focus: "Composition", eye: 3,
-          q: "The family and their bus take up only the bottom third. What fills the rest, and why might the designer leave so much empty space?",
-          model: "The top two-thirds is almost empty yellow, with small cast names and critics' quotes. The family run in a line to catch their own moving bus: a comic picture of a family who can't quite keep up. The empty space makes them look small and keeps the mood light, and the quotes ('the funniest laugh-out-loud audience pleaser at the Sundance Film Festival') tell you it's a festival hit." },
-        { t: "The Optimists", y: 1973, img: "the_optimists", focus: "Colour", eye: 4,
-          q: "The background shifts from purple and red to orange and yellow. How does this gradient connect with the tagline?",
-          model: "The colour moves from dark purple on the left to bright yellow on the right, like a sunrise, and the black silhouettes run towards the light. It matches the tagline: 'Sometimes – there's a brighter side of life to find – sometimes.' Hopeful, but the repeated 'sometimes' and the dark edge of the gradient make it bittersweet." }
-      ] },
-    { name: "Black, white and fire", years: "1988–2010",
-      q: "Three action thrillers. Compare their colours and the way each one shows its hero. What do they share?",
-      model: "A limited palette (mostly black, white or blue) with one hot accent: fire, an orange streak, red letters. The hero is one man, in close-up or mid-action, alone and under pressure. The promise: tension, danger and one man against the odds. The Next Three Days swaps fire for cold blue but keeps the face and the deadline." ,
-      posters: [
-        { t: "Die Hard", y: 1988, img: "die_hard", focus: "Words", eye: 2,
-          q: "Read all the text on the left. What story does it tell, and why might a poster tell so much of it?",
-          model: "'High above the city of L.A. a team of terrorists has seized a building… One man has managed to escape… He's alone, tired… and the only chance anyone has got.' It's a whole plot in short, dramatic lines, like a trailer voice-over. The burning tower and the sweating, half-lit face show the situation, and the words make it urgent: this poster sells the situation as much as the star." },
-        { t: "The Transporter", y: 2002, img: "the_transporter", focus: "Imagery style", eye: 2,
-          q: "A black-and-white photo on a white background, with one orange streak. What does this contrast do, and how does the image show speed?",
-          model: "The hero is a sharp black-and-white cut-out, mid-leap, firing two guns: the classic action pose. The only colour is a blurred orange-gold streak carrying the title, like a car racing through the frame. White space makes it clean and modern; motion blur gives speed. 'Rules are made to be broken' sums up the attitude." },
-        { t: "The Next Three Days", y: 2010, img: "the_next_three_days", focus: "Composition", eye: 2,
-          q: "Look inside his head. What is happening there, and what does the double image tell you about the story?",
-          model: "His profile becomes a frame for another scene: two people running down a lit corridor, inside his mind. The story is about what he's planning, or fearing. Cold, grainy blue creates tension, and the light inside his head is the only warmth. The tagline sets a deadline ('What if you had 72 hours to save everything you live for?'), and the star's name sits above everything." }
-      ] },
-    { name: "Bold and graphic", years: "1949–1971",
-      q: "Compare the typography and the use of space in these three. What do they share, and how are they different from the painted adventures in the first family?",
-      model: "Big flat shapes, huge heavy lettering and very few elements. Each relies on one strong idea (a shadowy figure in a burning city, a provocative photograph, a triangle) rather than a crowd of characters. They feel serious, adult and stylish: the poster as graphic design, not just advertising.",
-      posters: [
-        { t: "The Third Man", y: 1949, img: "the_third_man", focus: "Typography", eye: 1,
-          q: "The actors' names fill the top third; the title fills the bottom. What is the effect of this layout, and of the giant white letters?",
-          model: "Bright yellow names on black, stacked like a theatre billboard: the stars are the first selling point. The title is enormous, in chunky white letters that seem to break out over the painted city. Between them, a small figure with a gun hides in the shadows of a red-orange city: mystery and danger." },
-        { t: "Blow-Up", y: 1966, img: "blow_up", focus: "Imagery style", eye: 3,
-          q: "A black-and-white photograph on flat red. What is happening in the photo, and how does it make you feel?",
-          model: "A photographer stands over a woman lying on the floor, camera raised, as she stretches out beneath him. It's a striking, uncomfortable image about looking and being looked at, which is what the film is about. Flat red and tall, condensed white type make it bold and modern, and the Cannes prize line at the top tells you it's an art film." },
-        { t: "A Clockwork Orange", y: 1971, img: "a_clockwork_orange", focus: "Composition", eye: 2,
-          q: "The whole image sits inside a triangle. What is inside it, and what makes the poster feel unsettling?",
-          model: "The triangle (a giant letter A, or a blade) frames a young man's face: one eye with false eyelashes staring straight at us, a knife pointing up beside him. The smooth airbrushed style is almost playful, which makes the violence more disturbing. The tagline is deliberately shocking, and the bubbly, outlined title adds a pop-art strangeness." }
-      ] },
-    { name: "Faces on white", years: "1987–1996",
-      q: "Both put photographs of their cast on white. One is a 1987 holiday comedy; the other is a 1996 film about young heroin users in Edinburgh. How can the same idea feel so different?",
-      model: "Planes, Trains and Automobiles uses the classic comedy code: white background, two stars posed together, a joke tagline. Trainspotting takes the cast-photo idea and turns it into a cool line-up: black-and-white, numbered like footballers or mugshots, with a bold orange stripe. One promises warmth; the other, attitude. Trainspotting's look was copied so often that it became a style of its own.",
-      posters: [
-        { t: "Planes, Trains and Automobiles", y: 1987, img: "planes_trains_and_automobiles", focus: "Words", eye: 2,
-          q: "Read the tagline. How does it work as a joke, and how do the two men's clothes and faces support it?",
-          model: "'What he really wanted was to spend Thanksgiving with his family. What he got was three days with the turkey.' 'Turkey' is the joke: the holiday meal, and slang for an annoying, foolish person. The man in the stiff suit looks trapped; the man in the huge blue parka hugs him happily. The clash of styles is the whole comedy." },
-        { t: "Trainspotting", y: 1996, img: "trainspotting", focus: "Typography", eye: 0,
-          q: "Look at the numbers, the names and the orange title band. What does this design system remind you of, and why might so many later posters have copied it?",
-          model: "Each character gets a number and a name, like a football team, a band or a police line-up. The title sits in a solid orange bar in plain, heavy white sans-serif type: clean and confident. It feels more like music or fashion branding than a film poster. That simple, repeatable system (black-and-white photos, numbers, one colour bar) was easy to copy, and plenty of films and adverts did." }
-      ] }
+  var P = [
+    ["Raiders of the Lost Ark", 1981, "raiders_of_the_lost_ark"],
+    ["Back to the Future", 1985, "back_to_the_future"],
+    ["The Brown Bunny", 2003, "the_brown_bunny"],
+    ["Little Miss Sunshine", 2006, "little_miss_sunshine"],
+    ["Guardians of the Galaxy", 2014, "guardians_of_the_galaxy"],
+    ["The Third Man", 1949, "the_third_man"],
+    ["Star Wars", 1977, "star_wars"],
+    ["A Clockwork Orange", 1971, "a_clockwork_orange"],
+    ["Planes, Trains and Automobiles", 1987, "planes_trains_and_automobiles"],
+    ["Trainspotting", 1996, "trainspotting"],
+    ["Blow-Up", 1966, "blow_up"],
+    ["The Optimists", 1973, "the_optimists"],
+    ["Die Hard", 1988, "die_hard"],
+    ["The Transporter", 2002, "the_transporter"],
+    ["The Next Three Days", 2010, "the_next_three_days"]
   ];
-  var BIG = [
-    { k: "code", q: "Follow the code or break it? Find one poster that follows its family's code closely and one that bends it. What does a poster gain by looking like its genre, and what does it risk?",
-      model: "Following the code is fast and clear: one glance at Die Hard's fire or Little Miss Sunshine's yellow tells you what kind of evening you'll have, and fans of that genre feel at home. The risk is looking like every other poster in the cinema foyer. Bending the code (Trainspotting's line-up, A Clockwork Orange's triangle) can make a poster unforgettable, but it can also leave people unsure what kind of film it is. Most good posters do some of both: one familiar signal plus one surprise." },
-    { k: "billing", q: "Star or story? Which posters sell a famous name, which sell a face, and which sell a situation or an idea? Why might a designer choose each?",
-      model: "Names: The Third Man's stars fill the top third, and Russell Crowe's name sits above The Next Three Days. Faces: Die Hard, Planes, Trains and Automobiles. A situation or idea: Little Miss Sunshine's bus, A Clockwork Orange's triangle, Trainspotting's gang of unknowns. It depends on what the audience already knows: a famous name sells to people who know it; when they don't, the image or the idea has to do the work." },
-    { k: "eye", q: "Look at your eye map. What wins most often? Which posters were hardest to decide, and was that a weakness or a deliberate choice?",
-      model: "Faces and figures usually win: we're drawn to people, especially eyes looking back at us. Titles win when they're huge and heavy (The Brown Bunny, Trainspotting). The hardest are busy posters where several things compete. Sometimes that's a weakness; sometimes, as in the painted adventures, the crowd of characters is the point." }
-  ];
+  var GENRE = ["Comedy", "Action", "Thriller", "Sci-fi / adventure", "Indie / art film", "Drama"];
+  var LIKE = ["Love it", "It's OK", "Not for me"];
 
-  var KEY = "simlearn-extras:poster-autopsy:v1:";
-  var mem = {};
-  function get(k) { try { return localStorage.getItem(KEY + k) || ""; } catch (e) { return mem[k] || ""; } }
+  var KEY = "simlearn-extras:poster-autopsy:v2:", mem = {};
+  function get(k) { try { var v = localStorage.getItem(KEY + k); return v == null ? (mem[k] || "") : v; } catch (e) { return mem[k] || ""; } }
   function set(k, v) { mem[k] = v; try { localStorage.setItem(KEY + k, v); } catch (e) {} }
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
-  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function src(i) { return "img/" + P[i][2] + ".jpg"; }
+  function done(i) { return get("g" + i) !== "" && get("l" + i) !== ""; }
 
-  var syncs = [];
-  function syncAll() { syncs.forEach(function (f) { f(); }); }
-  function modelBlock(key, text) {
-    var wrap = el("div", "reveal");
-    var b = el("button", "btn", "Compare with a model reading"); b.type = "button";
-    var m = el("div", "model"); m.hidden = true;
-    m.appendChild(el("b", null, "One reading")); m.appendChild(document.createTextNode(text));
-    b.addEventListener("click", function () { m.hidden = !m.hidden; b.textContent = m.hidden ? "Compare with a model reading" : "Hide the model reading"; });
-    wrap.appendChild(b); wrap.appendChild(m);
-    wrap.sync = function () { var ok = get(key).trim().length >= 15; b.disabled = !ok; b.title = ok ? "" : "Write your own reading first"; };
-    syncs.push(wrap.sync);
-    return wrap;
-  }
-  function noteBox(key) {
-    var ta = el("textarea"); ta.placeholder = "Your notes…"; ta.value = get(key);
-    ta.addEventListener("input", function () { set(key, ta.value); syncAll(); });
-    return ta;
+  var cur = 0, strip = document.getElementById("strip"), one = document.getElementById("one"), sum = document.getElementById("summary");
+
+  P.forEach(function (p, i) {
+    var b = el("button"); b.type = "button"; b.title = p[0];
+    var im = el("img"); im.src = src(i); im.alt = p[0]; b.appendChild(im);
+    b.addEventListener("click", function () { show(i); });
+    strip.appendChild(b);
+  });
+  function paintStrip() {
+    [].forEach.call(strip.children, function (b, i) { b.classList.toggle("done", done(i)); b.classList.toggle("cur", i === cur && sum.hidden); });
   }
 
-  /* families and posters */
-  var ALLP = [], NOTE_KEYS = ["first"];
-  var fams = document.getElementById("fams");
-  FAMS.forEach(function (f, fi) {
-    var fk = "fam" + (fi + 1); NOTE_KEYS.push(fk);
-    var head = el("div", "fam");
-    head.appendChild(el("span", "years", "FAMILY " + (fi + 1) + " / 5 · " + f.years));
-    head.appendChild(el("h3", null, f.name));
-    var th = el("div", "thumbs");
-    f.posters.forEach(function (p) { var i = el("img"); i.src = "img/" + p.img + ".jpg"; i.alt = p.t; i.loading = "lazy"; th.appendChild(i); });
-    head.appendChild(th);
-    head.appendChild(el("p", "q", f.q));
-    head.appendChild(noteBox(fk));
-    head.appendChild(modelBlock(fk, f.model));
-    fams.appendChild(head);
-
-    f.posters.forEach(function (p) {
-      ALLP.push(p); var n = ALLP.length, key = "p" + n; NOTE_KEYS.push(key);
-      var card = el("div", "card"), row = el("div", "poster");
-      var pic = el("div", "pic"), img = el("img"); img.src = "img/" + p.img + ".jpg"; img.alt = "Poster for " + p.t; img.loading = "lazy"; pic.appendChild(img);
-      var body = el("div", "body");
-      var tags = el("div", "tagrow");
-      tags.appendChild(el("span", "num", "POSTER " + pad(n) + " / 15"));
-      tags.appendChild(el("span", "chip", p.focus));
-      body.appendChild(tags);
-      body.appendChild(el("div", "ptitle", p.t + " (" + p.y + ")"));
-      body.appendChild(el("p", "q", p.q));
-      body.appendChild(noteBox(key));
-      var arc = el("div", "arc"); arc.appendChild(el("div", "lbl", "What did your eye go to first?"));
-      var btns = el("div", "arcbtns"), fb = el("div", "arcfb");
-      EYE.forEach(function (a, j) {
-        var b = el("button", null, a); b.type = "button";
-        b.addEventListener("click", function () { set("eye" + n, String(j)); paint(); syncAll(); });
-        btns.appendChild(b);
-      });
-      function paint() {
-        var v = get("eye" + n);
-        [].forEach.call(btns.children, function (b, j) { b.classList.toggle("sel", String(j) === v); });
-        if (v === "") { fb.textContent = ""; fb.className = "arcfb"; return; }
-        var same = +v === p.eye;
-        fb.className = "arcfb" + (same ? " ok" : "");
-        fb.textContent = same ? "Ours too." : "Our eye went to: " + EYE[p.eye].toLowerCase() + ". What pulled yours somewhere else?";
-      }
-      paint();
-      arc.appendChild(btns); arc.appendChild(fb); body.appendChild(arc);
-      body.appendChild(modelBlock(key, p.model));
-      row.appendChild(pic); row.appendChild(body); card.appendChild(row); fams.appendChild(card);
+  function chipRow(key, opts) {
+    var row = el("div", "chips");
+    opts.forEach(function (o, j) {
+      var b = el("button", null, o); b.type = "button";
+      b.addEventListener("click", function () { set(key, String(j)); paint(); paintStrip(); });
+      row.appendChild(b);
     });
-  });
+    function paint() { var v = get(key); [].forEach.call(row.children, function (b, j) { b.classList.toggle("sel", String(j) === v); }); }
+    paint();
+    return row;
+  }
 
-  /* eye map */
-  function renderMap() {
-    var map = document.getElementById("eyemap"); map.innerHTML = "";
-    EYE.forEach(function (a, j) {
-      var d = el("div"), c = 0; var b = el("b", null, a); d.appendChild(b);
-      ALLP.forEach(function (p, i) { if (get("eye" + (i + 1)) === String(j)) { d.appendChild(el("span", null, p.t)); c++; } });
-      if (c) b.textContent = a + " · " + c;
-      map.appendChild(d);
+  function show(i) {
+    cur = i; sum.hidden = true; one.hidden = false; one.innerHTML = "";
+    var p = P[i], card = el("div", "card");
+    var pic = el("div", "pic"), im = el("img"); im.src = src(i); im.alt = "Poster for " + p[0]; pic.appendChild(im);
+    var body = el("div", "body");
+    body.appendChild(el("div", "num", "POSTER " + (i + 1) + " OF " + P.length));
+    var t = el("h2", "ptitle", p[0] + " "); t.appendChild(el("small", null, "(" + p[1] + ")")); body.appendChild(t);
+    body.appendChild(el("p", "qlbl", "What kind of film does the poster promise?"));
+    body.appendChild(chipRow("g" + i, GENRE));
+    body.appendChild(el("p", "qlbl", "Do you like the design?"));
+    body.appendChild(chipRow("l" + i, LIKE));
+    body.appendChild(el("p", "qlbl", "Why? A few words (optional)"));
+    var inp = el("input"); inp.type = "text"; inp.maxLength = 120; inp.placeholder = "e.g. the bright yellow, the huge title, his face…"; inp.value = get("w" + i);
+    inp.addEventListener("input", function () { set("w" + i, inp.value); });
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") next.click(); });
+    body.appendChild(inp);
+    var nav = el("div", "nav");
+    var prev = el("button", "btn", "← Back"); prev.type = "button"; prev.disabled = i === 0;
+    prev.addEventListener("click", function () { show(i - 1); });
+    var next = el("button", "btn primary", i === P.length - 1 ? "See my answers" : "Next →"); next.type = "button";
+    next.addEventListener("click", function () { if (i === P.length - 1) summary(); else show(i + 1); });
+    nav.appendChild(prev); nav.appendChild(next); body.appendChild(nav);
+    card.appendChild(pic); card.appendChild(body); one.appendChild(card);
+    paintStrip();
+    var sb = strip.children[i]; if (sb && sb.scrollIntoView) sb.scrollIntoView({ block: "nearest", inline: "center" });
+    set("cur", String(i));
+  }
+
+  function lineFor(i) {
+    var g = get("g" + i), l = get("l" + i), w = get("w" + i).trim();
+    return P[i][0] + ": " + (g !== "" ? GENRE[+g] : "?") + " · " + (l !== "" ? LIKE[+l] : "?") + (w ? " · " + w : "");
+  }
+
+  function summary() {
+    one.hidden = true; sum.hidden = false; sum.innerHTML = "";
+    [].forEach.call(strip.children, function (b) { b.classList.remove("cur"); });
+    var n = P.filter(function (_, i) { return done(i); }).length;
+    sum.appendChild(el("div", "num", n + " OF " + P.length + " ANSWERED"));
+    sum.appendChild(el("h2", null, "Your first impressions"));
+    var grid = el("div", "grid");
+    P.forEach(function (p, i) {
+      var c = el("div", "cell"), im = el("img"); im.src = src(i); im.alt = p[0]; c.appendChild(im);
+      c.appendChild(el("b", null, p[0]));
+      var g = get("g" + i), l = get("l" + i), w = get("w" + i).trim();
+      c.appendChild(el("div", "g", (g !== "" ? GENRE[+g] : "No genre yet") + (l !== "" ? " · " + LIKE[+l] : "")));
+      if (w) c.appendChild(el("div", "w", w));
+      c.addEventListener("click", function () { show(i); });
+      grid.appendChild(c);
     });
-  }
-  syncs.push(renderMap);
-
-  /* static note boxes */
-  document.querySelectorAll("textarea[data-k]").forEach(function (ta) {
-    var k = ta.getAttribute("data-k"); ta.value = get(k);
-    ta.addEventListener("input", function () { set(k, ta.value); syncAll(); });
-  });
-
-  /* step back */
-  var big = document.getElementById("big");
-  BIG.forEach(function (b) {
-    NOTE_KEYS.push(b.k);
-    var card = el("div", "card plain"), body = el("div", "body");
-    body.appendChild(el("p", "q", b.q)); body.appendChild(noteBox(b.k)); body.appendChild(modelBlock(b.k, b.model));
-    card.appendChild(body); big.appendChild(card);
-  });
-  NOTE_KEYS.push("widow");
-
-  /* progress */
-  var TOTAL = NOTE_KEYS.length;
-  function progress() {
-    var n = NOTE_KEYS.filter(function (k) { return get(k).trim(); }).length;
-    document.getElementById("progText").textContent = n + " of " + TOTAL + " answered";
-    document.getElementById("progBar").style.width = (n / TOTAL * 100) + "%";
-  }
-  syncs.push(progress);
-  syncAll();
-
-  /* copy / clear */
-  function allText() {
-    var L = ["Poster Autopsy: my notes", ""];
-    function add(title, k) { var v = get(k).trim(); if (v) { L.push(title); L.push(v); L.push(""); } }
-    add("A poster I remember", "first");
-    var n = 0;
-    FAMS.forEach(function (f, fi) {
-      add("Family " + (fi + 1) + ": " + f.name, "fam" + (fi + 1));
-      f.posters.forEach(function (p) {
-        n++; var e = get("eye" + n);
-        add(p.t + " (" + p.focus + ")" + (e !== "" ? " [first look: " + EYE[+e] + "]" : ""), "p" + n);
-      });
+    sum.appendChild(grid);
+    var box = el("div", "watch");
+    box.appendChild(el("p", null, "Now watch the video. A poster designer talks about these posters. Listen for:"));
+    var ul = el("ul");
+    ["Which of your genre guesses he agrees with, and which surprised you.",
+     "The colour he links with each kind of film.",
+     "Why he thinks a poster shows a face, a running figure or a big empty space."].forEach(function (x) { ul.appendChild(el("li", null, x)); });
+    box.appendChild(ul); sum.appendChild(box);
+    var tools = el("div", "tools");
+    var back = el("button", "btn", "← Back to the posters"); back.type = "button"; back.addEventListener("click", function () { show(0); });
+    var copy = el("button", "btn", "Copy my answers"); copy.type = "button";
+    var clear = el("button", "btn", "Start again"); clear.type = "button";
+    var st = el("span", "status"), out = el("textarea"); out.id = "copyOut"; out.readOnly = true; out.hidden = true;
+    copy.addEventListener("click", function () {
+      var t = "Poster Autopsy: my first impressions\n\n" + P.map(function (_, i) { return lineFor(i); }).join("\n");
+      function fb() { out.value = t; out.hidden = false; out.select(); st.textContent = "Select and copy the text below."; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { st.textContent = "Copied."; }, fb); else fb();
     });
-    add("Follow the code or break it?", "code");
-    add("Star or story?", "billing");
-    add("My eye map", "eye");
-    add("Before the sim: Widowlight", "widow");
-    return L.length > 2 ? L.join("\n") : "";
+    var conf = false;
+    clear.addEventListener("click", function () {
+      if (!conf) { conf = true; clear.textContent = "Click again to clear"; setTimeout(function () { conf = false; clear.textContent = "Start again"; }, 4000); return; }
+      try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf(KEY) === 0) localStorage.removeItem(k); }); } catch (e) {}
+      mem = {}; show(0);
+    });
+    tools.appendChild(back); tools.appendChild(copy); tools.appendChild(clear); tools.appendChild(st);
+    sum.appendChild(tools); sum.appendChild(out);
+    window.scrollTo(0, 0);
   }
-  var status = document.getElementById("status"), out = document.getElementById("copyOut");
-  document.getElementById("copyBtn").addEventListener("click", function () {
-    var t = allText(); if (!t) { status.textContent = "Nothing to copy yet."; return; }
-    function fallback() { out.value = t; out.hidden = false; out.select(); status.textContent = "Select and copy the text below."; }
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { status.textContent = "Copied."; out.hidden = true; }, fallback);
-    else fallback();
-  });
-  var confirming = false, clearBtn = document.getElementById("clearBtn");
-  clearBtn.addEventListener("click", function () {
-    if (!confirming) { confirming = true; clearBtn.textContent = "Click again to clear everything"; setTimeout(function () { confirming = false; clearBtn.textContent = "Clear all notes"; }, 4000); return; }
-    try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf(KEY) === 0) localStorage.removeItem(k); }); } catch (e) {}
-    mem = {}; location.reload();
-  });
+
+  var start = parseInt(get("cur"), 10);
+  show(start >= 0 && start < P.length ? start : 0);
 })();
 </script>
 </body>
