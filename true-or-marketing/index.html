@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>True or Marketing?</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Ten brands, two origin stories each: tap the one you think is true, see the answer and the marketing move
+   behind the other one. A score and a summary at the end. Progress stays in this browser. */
+:root{
+  --bg:#F3F1EC; --surface:#FFFFFF; --ink:#18201C; --muted:#56605A; --faint:#7E877F; --line:#DAD6CC; --soft:#E9F1EC;
+  --accent:#17694E; --accent-ink:#FFFFFF; --gold:#9A6E12; --gold-soft:#F4EAD2; --ok:#2C7A4C; --ok-bg:#E1F0E6;
+  --f-read:"Literata", Georgia, serif; --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111613; --surface:#19201C; --ink:#E5EAE6; --muted:#A1ABA4; --faint:#748079; --line:#2C3530; --soft:#1C2C24;
+    --accent:#5CC59B; --accent-ink:#0B1611; --gold:#DDB664; --gold-soft:#33291A; --ok:#62C08A; --ok-bg:#1A3024; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111613; --surface:#19201C; --ink:#E5EAE6; --muted:#A1ABA4; --faint:#748079; --line:#2C3530; --soft:#1C2C24;
+  --accent:#5CC59B; --accent-ink:#0B1611; --gold:#DDB664; --gold-soft:#33291A; --ok:#62C08A; --ok-bg:#1A3024; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding:32px 16px 70px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.page{max-width:900px;margin:0 auto}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+h1{font-family:var(--f-read);font-weight:600;font-size:clamp(34px,5.5vw,52px);line-height:1.02;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:60ch}
+.strip{display:flex;gap:6px;overflow-x:auto;padding:4px 2px 10px;margin:0 0 14px;scrollbar-width:thin}
+.strip button{flex:0 0 auto;border:2px solid transparent;border-radius:6px;padding:0;background:none;position:relative;line-height:0}
+.strip img{height:64px;width:auto;border-radius:4px;opacity:.55}
+.strip button.done img{opacity:1}
+.strip button.cur{border-color:var(--accent)}
+.strip button.done::after{content:"✓";position:absolute;right:2px;top:2px;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-size:10px;line-height:15px;width:15px;text-align:center}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid}
+@media (min-width:760px){.card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.pic{background:var(--line);display:flex;align-items:center;justify-content:center;padding:16px;min-height:300px}
+.pic img{display:block;max-width:100%;max-height:68vh;height:auto;border-radius:3px;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column}
+.num{font-family:var(--f-mono);font-size:12px;color:var(--faint);margin-bottom:6px}
+.ptitle{font-family:var(--f-read);font-weight:600;font-size:22px;line-height:1.2;margin:0 0 18px}
+.ptitle small{font-family:var(--f-ui);font-weight:400;font-size:14px;color:var(--muted)}
+.qlbl{font-weight:600;font-size:15px;margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px}
+.chips button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 13px;font-size:14.5px}
+.chips button:hover{border-color:var(--accent)}
+.chips button.sel{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:15px}
+input[type=text]:focus{border-color:var(--accent);outline:none}
+input::placeholder{color:var(--faint);font-style:italic}
+.nav{display:flex;gap:10px;margin-top:auto;padding-top:22px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);margin-left:auto}
+.btn:disabled{opacity:.4;cursor:default}
+.hint{font-size:13px;color:var(--faint);margin-top:8px}
+#summary h2{font-family:var(--f-read);font-weight:600;font-size:28px;margin:6px 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:16px 0}
+.cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:13px;cursor:pointer}
+.cell:hover{border-color:var(--accent)}
+.cell img{display:block;width:100%;height:150px;object-fit:contain;background:var(--line);border-radius:4px;margin-bottom:6px}
+.cell b{display:block;font-size:13px}
+.cell .g{color:var(--accent)}
+.cell .w{color:var(--muted);font-style:italic}
+.watch{border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0}
+.watch p{margin:0 0 6px}
+.watch ul{margin:0;padding-left:20px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.status{font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+#copyOut{width:100%;min-height:140px;margin-top:10px;font-family:var(--f-mono);font-size:12.5px}
+footer{margin-top:36px;font-size:12.5px;color:var(--faint);text-align:center}
+.stories{display:grid;gap:12px;margin:0 0 4px}
+@media (min-width:720px){.stories{grid-template-columns:1fr 1fr}}
+.story{text-align:left;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:16px 18px 18px;font-family:var(--f-read);font-size:17px;line-height:1.45;transition:border-color .15s}
+.story:hover:not(:disabled){border-color:var(--accent)}
+.story:disabled{cursor:default}
+.story .lab{display:block;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--faint);margin-bottom:6px}
+.story.true{border-color:var(--ok);background:var(--ok-bg)}
+.story.false{opacity:.75}
+.story .tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:2px 8px;margin-top:10px}
+.story.true .tag{background:var(--ok);color:#fff}
+.story.false .tag{background:var(--gold-soft);color:var(--gold)}
+.story .you{font-family:var(--f-ui);font-size:12.5px;color:var(--muted);margin-left:8px}
+.brand{font-family:var(--f-read);font-weight:600;font-size:30px;line-height:1.1;margin:0 0 4px}
+.prompt{color:var(--muted);margin:0 0 16px}
+.answer{margin-top:16px;border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 10px 10px 0;padding:14px 18px}
+.answer .verdict{font-weight:700;margin:0 0 4px}
+.answer p{margin:0}
+.answer .move{margin-top:10px;font-size:14px;color:var(--muted)}
+.answer .move b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:6px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin:0 0 14px;font-family:var(--f-mono);font-size:12.5px;color:var(--muted)}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.top>span{white-space:nowrap;padding-top:5px}
+.dots button{width:26px;height:26px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-family:var(--f-mono);font-size:11.5px;padding:0;color:var(--muted)}
+.dots button.cur{border-color:var(--accent);border-width:2px;color:var(--ink)}
+.dots button.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.dots button.no{background:var(--gold);border-color:var(--gold);color:#fff}
+.nav{display:flex;gap:10px;margin-top:20px}
+.score{font-family:var(--f-read);font-size:48px;font-weight:600;line-height:1;margin:6px 0 4px}
+.rows{margin:18px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.row{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:10px 14px;border-top:1px solid var(--line);font-size:14.5px;cursor:pointer}
+.row:first-child{border-top:none}
+.row:hover{background:var(--bg)}
+.row .m{color:var(--muted);font-size:13.5px}
+.row .ic{font-weight:700}
+.row .ic.ok{color:var(--ok)}
+.row .ic.no{color:var(--gold)}
+.talk{border-left:3px solid var(--accent);background:var(--soft);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0}
+.talk p{margin:0 0 6px}
+.talk ul{margin:0;padding-left:20px}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">English for Design · Cohen's warm-up</p>
+  <h1>True or Marketing?</h1>
+  <p class="sub">Ten real brands, two origin stories each. One is what really happened. The other is the version many people believe, often one that marketing created or helped to spread. In pairs, agree on your answer before you tap.</p>
+
+  <div id="quiz"></div>
+  <div id="summary" hidden></div>
+
+  <footer>SimLearn Extras · Your answers save in this browser only.</footer>
+</div>
+<script>
+(function () {
+  "use strict";
+  // t: index of the true story. move: what marketing did.
+  var ITEMS = [
+    { brand: "Levi's", t: 0,
+      s: ["In 1873, a tailor, Jacob Davis, and a San Francisco merchant, Levi Strauss, patented copper rivets for work trousers, to stop the pockets of miners and labourers from tearing.",
+          "In 1873, Levi Strauss, a former cattle drover, designed hard-wearing trousers for the cowboys driving herds across Texas, and the brand grew up on the cattle trails of the West."],
+      exp: "Levi's started as workwear for miners and labourers. The cowboy connection came about sixty years later, when 1930s Western films put cowboys in jeans and Levi's followed with cowboy-themed advertising.",
+      move: "Attached the product to a legend" },
+    { brand: "Marlboro", t: 1,
+      s: ["Philip Morris launched Marlboro in 1955 as a strong cigarette for working men, and used a cowboy in its advertising from the very first year.",
+          "Philip Morris launched Marlboro in 1924 as a luxury cigarette, and in the 1930s sold it to women as 'Mild as May', with a red tip to hide lipstick marks."],
+      exp: "The Marlboro Man arrived in the 1950s, when the company repositioned its filter cigarette for men. Leo Burnett's agency created the cowboy, and the brand rose from under 1% of the market to the fourth best-selling.",
+      move: "Changed the audience" },
+    { brand: "Listerine", t: 0,
+      s: ["A St Louis chemist, Joseph Lawrence, developed Listerine in 1879 as a surgical antiseptic. It was later sold as a floor cleaner too.",
+          "A St Louis dentist, Joseph Lawrence, developed Listerine in 1879 as a mouthwash for patients with bad breath, a problem he had been studying for years."],
+      exp: "It was an antiseptic for surgery, named after the surgeon Joseph Lister. Bad breath came in the 1920s, when advertising turned an obscure medical word, 'halitosis', into a social fear. As one writer put it, Listerine didn't make mouthwash so much as it made halitosis.",
+      move: "Sold a new problem" },
+    { brand: "Betty Crocker", t: 1,
+      s: ["Betty Crocker was a home economist who joined a Minneapolis flour company in 1921 and answered customers' baking questions under her own name.",
+          "Betty Crocker was invented in 1921 by a Minneapolis flour company as a friendly name to sign its replies to customers' baking questions. She never existed."],
+      exp: "'Betty' sounded cheerful; 'Crocker' came from a company director. In 1945 Fortune magazine called her the second most popular woman in America, after Eleanor Roosevelt.",
+      move: "Invented a person" },
+    { brand: "Quaker Oats", t: 0,
+      s: ["In 1877, a mill owner, Henry Seymour, chose the name 'Quaker' after reading about Quakers in an encyclopedia. He wanted his oats to suggest honesty and purity.",
+          "In 1877, a Quaker family, the Seymours, registered the name 'Quaker' for their mill's oats, and ran the business by the honest values of their faith."],
+      exp: "The company says it has never had any ties with the Quakers (the Religious Society of Friends). The name, and later the smiling man in the Quaker hat, borrowed the group's reputation for honesty.",
+      move: "Borrowed a reputation" },
+    { brand: "KFC's Colonel Sanders", t: 1,
+      s: ["Harland Sanders reached the rank of colonel after twenty years in the US Army, and kept the title and the military manner when he opened his restaurant.",
+          "Harland Sanders' title 'Colonel' is an honour from the Governor of Kentucky, given to him in 1935 for services to the state. It isn't a military rank."],
+      exp: "A 'Kentucky Colonel' is the state's highest honour. Sanders added the white suit and the goatee, and the title became a character that still sells chicken decades after his death.",
+      move: "Created a character" },
+    { brand: "Ivory Soap", t: 0,
+      s: ["In 1863, the company chemist James Gamble wrote in his notebook: 'I made floating soap today.' The soap was designed to float.",
+          "In 1879, a factory worker left a mixer running over lunch. Extra air got into the batch, and the soap that floated became a bestseller."],
+      exp: "For decades Procter & Gamble told the 'happy accident' story. In 2004 the company's archivist found Gamble's notebook. This time the marketing version was the fun one, and the truth was simply good design.",
+      move: "Turned design into a legend" },
+    { brand: "Coca-Cola", t: 1,
+      s: ["A chemist, John Pemberton, created Coca-Cola in Atlanta in 1886 as a refreshing drink for hot summer days. It was never sold as a medicine.",
+          "A chemist, John Pemberton, created Coca-Cola in Atlanta in 1886 as a medicine, sold at a pharmacy counter as a tonic for headaches and tiredness."],
+      exp: "Pemberton sold it as a 'brain tonic'. As the company grew, the medical claims disappeared and the advertising moved to refreshment, fun and happiness.",
+      move: "Changed the promise" },
+    { brand: "Wrigley's", t: 1,
+      s: ["William Wrigley Jr. started his Chicago company in 1891 to sell chewing gum, using a mint recipe he had perfected as a boy in Philadelphia.",
+          "William Wrigley Jr. started his Chicago company in 1891 selling soap, then baking powder, and gave away chewing gum free with every can."],
+      exp: "Customers liked the free gum more than the baking powder, so Wrigley switched to gum. The free gift became the business.",
+      move: "The free gift became the product" },
+    { brand: "Red Bull", t: 0,
+      s: ["Red Bull is based on Krating Daeng, a Thai energy drink created in 1976 for truck drivers and labourers. An Austrian businessman adapted it in the 1980s.",
+          "Red Bull was created in Salzburg in 1987 by a team of Austrian sports scientists, as a drink for skiers, climbers and other extreme-sports athletes who needed more energy."],
+      exp: "Dietrich Mateschitz found Krating Daeng on a business trip to Thailand and set up Red Bull with its creator, Chaleo Yoovidhya. The Thai origin doesn't feature much in Red Bull's extreme-sports marketing.",
+      move: "Played down the origin" }
+  ];
+
+  var KEY = "simlearn-extras:true-or-marketing:v1:", mem = {};
+  function get(k) { try { var v = localStorage.getItem(KEY + k); return v == null ? (mem[k] || "") : v; } catch (e) { return mem[k] || ""; } }
+  function set(k, v) { mem[k] = v; try { localStorage.setItem(KEY + k, v); } catch (e) {} }
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function pick(i) { var v = get("a" + i); return v === "" ? -1 : +v; }
+  function score() { return ITEMS.filter(function (it, i) { return pick(i) === it.t; }).length; }
+  function answered() { return ITEMS.filter(function (_, i) { return pick(i) >= 0; }).length; }
+
+  var quiz = document.getElementById("quiz"), sum = document.getElementById("summary");
+
+  function show(i) {
+    sum.hidden = true; quiz.hidden = false; quiz.innerHTML = ""; set("cur", String(i));
+    var it = ITEMS[i], p = pick(i);
+    var top = el("div", "top");
+    var dots = el("div", "dots");
+    ITEMS.forEach(function (x, j) {
+      var b = el("button", null, String(j + 1)); b.type = "button"; b.title = x.brand;
+      var pj = pick(j); if (pj >= 0) b.classList.add(pj === x.t ? "ok" : "no");
+      if (j === i) b.classList.add("cur");
+      b.addEventListener("click", function () { show(j); });
+      dots.appendChild(b);
+    });
+    top.appendChild(dots); top.appendChild(el("span", null, "Score " + score() + " / " + answered()));
+    quiz.appendChild(top);
+    quiz.appendChild(el("h2", "brand", it.brand));
+    quiz.appendChild(el("p", "prompt", p < 0 ? "Which story is true?" : "Brand " + (i + 1) + " of " + ITEMS.length));
+    var wrap = el("div", "stories");
+    it.s.forEach(function (txt, j) {
+      var b = el("button", "story"); b.type = "button";
+      var lab = el("span", "lab", "STORY " + "AB"[j]);
+      if (p >= 0 && p === j) lab.appendChild(el("span", "you", "your answer"));
+      b.appendChild(lab); b.appendChild(document.createTextNode(txt));
+      if (p >= 0) {
+        b.disabled = true;
+        b.classList.add(j === it.t ? "true" : "false");
+        b.appendChild(document.createElement("br"));
+        b.appendChild(el("span", "tag", j === it.t ? "True" : "Marketing"));
+      } else {
+        b.addEventListener("click", function () { set("a" + i, String(j)); show(i); });
+      }
+      wrap.appendChild(b);
+    });
+    quiz.appendChild(wrap);
+    if (p >= 0) {
+      var a = el("div", "answer");
+      a.appendChild(el("p", "verdict", p === it.t ? "Right!" : "Not this time."));
+      a.appendChild(el("p", null, it.exp));
+      var mv = el("div", "move"); mv.appendChild(el("b", null, "The marketing move")); mv.appendChild(document.createTextNode(it.move));
+      a.appendChild(mv);
+      quiz.appendChild(a);
+    }
+    var nav = el("div", "nav");
+    var prev = el("button", "btn", "← Back"); prev.type = "button"; prev.disabled = i === 0;
+    prev.addEventListener("click", function () { show(i - 1); });
+    var last = i === ITEMS.length - 1;
+    var next = el("button", "btn primary", last ? "See my score" : "Next →"); next.type = "button";
+    next.disabled = p < 0;
+    next.addEventListener("click", function () { if (last) summary(); else show(i + 1); });
+    nav.appendChild(prev); nav.appendChild(next); quiz.appendChild(nav);
+  }
+
+  function summary() {
+    quiz.hidden = true; sum.hidden = false; sum.innerHTML = ""; set("cur", "end");
+    sum.appendChild(el("div", "num", answered() + " OF " + ITEMS.length + " ANSWERED"));
+    sum.appendChild(el("div", "score", score() + " / " + ITEMS.length));
+    sum.appendChild(el("p", "prompt", "stories spotted correctly"));
+    var rows = el("div", "rows");
+    ITEMS.forEach(function (it, i) {
+      var p = pick(i), r = el("div", "row");
+      r.appendChild(el("span", "ic " + (p < 0 ? "" : p === it.t ? "ok" : "no"), p < 0 ? "–" : p === it.t ? "✓" : "✗"));
+      var d = el("div"); d.appendChild(el("b", null, it.brand)); d.appendChild(el("div", "m", it.move)); r.appendChild(d);
+      r.addEventListener("click", function () { show(i); });
+      rows.appendChild(r);
+    });
+    sum.appendChild(rows);
+    var t = el("div", "talk");
+    t.appendChild(el("p", null, "Talk about it with your partner:"));
+    var ul = el("ul");
+    ["Which marketing story surprised you most? Would you have believed it if nobody had told you?",
+     "Does it matter if a brand's origin story isn't true? When is it harmless, and when is it a problem?"].forEach(function (x) { ul.appendChild(el("li", null, x)); });
+    t.appendChild(ul); sum.appendChild(t);
+    var tools = el("div", "tools");
+    var back = el("button", "btn", "← Back to the brands"); back.type = "button"; back.addEventListener("click", function () { show(0); });
+    var again = el("button", "btn", "Start again"); again.type = "button";
+    var conf = false;
+    again.addEventListener("click", function () {
+      if (!conf) { conf = true; again.textContent = "Click again to clear"; setTimeout(function () { conf = false; again.textContent = "Start again"; }, 4000); return; }
+      try { Object.keys(localStorage).forEach(function (k) { if (k.indexOf(KEY) === 0) localStorage.removeItem(k); }); } catch (e) {}
+      mem = {}; show(0);
+    });
+    tools.appendChild(back); tools.appendChild(again); sum.appendChild(tools);
+    window.scrollTo(0, 0);
+  }
+
+  var c = get("cur");
+  if (c === "end") summary(); else { var n = parseInt(c, 10); show(n >= 0 && n < ITEMS.length ? n : 0); }
+})();
+</script>
+</body>
+</html>
