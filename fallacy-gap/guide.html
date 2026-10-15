@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Fallacy Guide</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Students' guide to the fallacies in Mind the Fallacy: eight cards, one column on a phone. */
+:root{
+  --bg:#F2EFE8; --surface:#FFFFFF; --ink:#1E1B16; --muted:#5D574C; --faint:#8A8377; --line:#DCD5C8; --hover:#EAE4D8;
+  --accent:#7A3E8C; --accent-ink:#FFFFFF; --soft:#F0E6F3;
+  --old:#2F5E8C; --old-bg:#E3ECF5; --young:#B4532A; --young-bg:#F7E6DD;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --gold:#9A6E12; --gold-soft:#F4EAD2;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+    --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+    --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+    --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+  --accent:#C99AD6; --accent-ink:#1A1020; --soft:#2C2132;
+  --old:#8DB6E0; --old-bg:#1C2836; --young:#E79A78; --young-bg:#36221A;
+  --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px 16px 48px}
+.page{max-width:1100px;margin:0 auto}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+h1{font-family:var(--f-read);font-weight:600;font-size:clamp(32px,5vw,48px);line-height:1.05;margin:0 0 10px}
+.lede{color:var(--muted);margin:0 0 22px;max-width:66ch}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fcard .n{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.fcard h3{font-family:var(--f-read);font-size:21px;font-weight:600;color:var(--accent)}
+.fcard .def{font-size:15px}
+.fcard .tell{font-size:13.5px;color:var(--muted)}
+.fcard .tell b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.fcard .ex{font-family:var(--f-read);font-style:italic;font-size:14.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+
+h3{margin:0}
+footer{margin-top:32px;font-size:12.5px;color:var(--faint);text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Mind the Fallacy · Guide</p>
+  <h1>Eight fallacies</h1>
+  <p class="lede">A fallacy is an argument that sounds convincing but has a flaw in its reasoning. These are the eight in today's game. Keep this open while you play.</p>
+  <div class="cards" id="cards"></div>
+  <footer>SimLearn Extras</footer>
+</div>
+<script>
+(function () {
+  var F = {
+    adhom:   { name: "Ad hominem", def: "Attacking the person making the argument instead of the argument itself.", tell: "Who said it, how old they are, what they've done: but nothing about whether they're right.", ex: "\"Of course she wants higher taxes. She's a teacher.\"" },
+    straw:   { name: "Straw man", def: "Twisting someone's point into a weaker or more extreme version, then attacking that.", tell: "\"So what you're saying is…\" followed by something they didn't say.", ex: "\"You want fewer cars in the city centre? So you want to ban driving.\"" },
+    hasty:   { name: "Hasty generalisation", def: "Drawing a big conclusion about a whole group from a few examples.", tell: "\"I know two people who…, so everyone…\"", ex: "\"My last two flights were late. That airline is always late.\"" },
+    dilemma: { name: "False dilemma", def: "Offering only two options when there are more.", tell: "\"Either… or…\", \"You're with us or against us.\"", ex: "\"Either we cut the library budget or we close the school.\"" },
+    slope:   { name: "Slippery slope", def: "Claiming one small step will lead, step by step, to disaster, without showing why.", tell: "\"Next…\", \"Before you know it…\", \"Where will it end?\"", ex: "\"If we allow one food truck in the park, soon it'll be a car park.\"" },
+    tradition: { name: "Appeal to tradition", def: "Saying something is right because it has always been done that way.", tell: "\"We've always…\", \"It was good enough for…\"", ex: "\"The company has always had a dress code, so we should keep it.\"" },
+    novelty: { name: "Appeal to novelty", def: "Saying something is better simply because it's new.", tell: "\"The latest…\", \"That's so old-fashioned.\"", ex: "\"It's the newest phone, so it must take better photos.\"" },
+    posthoc: { name: "False cause", def: "Assuming that because one thing came after another, the first caused the second.", tell: "\"Ever since…\", \"After X, Y happened, so…\"", ex: "\"I wore my lucky socks and we won. The socks work.\"" }
+  };
+  var ORDER = ["adhom", "straw", "hasty", "dilemma", "slope", "tradition", "novelty", "posthoc"];
+  var g = document.getElementById("cards");
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  ORDER.forEach(function (k, i) {
+    var f = F[k], c = el("div", "fcard"), tell = el("div", "tell");
+    c.appendChild(el("span", "n", String(i + 1).padStart(2, "0")));
+    c.appendChild(el("h3", null, f.name));
+    c.appendChild(el("div", "def", f.def));
+    tell.appendChild(el("b", null, "Listen for")); tell.appendChild(document.createTextNode(f.tell));
+    c.appendChild(tell);
+    c.appendChild(el("div", "ex", f.ex));
+    g.appendChild(c);
+  });
+})();
+</script>
+</body>
+</html>

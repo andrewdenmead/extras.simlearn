@@ -42,17 +42,6 @@ h1,h2,h3{text-wrap:balance;margin:0}
 
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .top .count{color:var(--ink);font-weight:500;white-space:nowrap}
-.topr{display:flex;align-items:center;gap:14px}
-.ref-btn{white-space:nowrap}
-@media (max-width:560px){.top>span:first-child{display:none}.top{justify-content:flex-end}}
-.ref-btn{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);color:var(--accent);border-radius:999px;padding:5px 12px}
-.ref-btn[aria-expanded="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.ref{position:fixed;z-index:20;top:52px;right:clamp(16px,4vw,44px);width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 80px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.18);padding:6px 18px}
-.ref div{padding:10px 0;border-top:1px solid var(--line)}
-.ref div:first-child{border-top:0}
-.ref b{font-family:var(--f-read);font-size:17px;color:var(--accent);display:block}
-.ref span{font-size:14.5px}
-.ref i{display:block;font-size:13px;color:var(--muted);font-style:normal}
 .track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
 .fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
 main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
@@ -65,6 +54,8 @@ main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
 .cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,6.5vw,72px);line-height:1;margin:0 0 18px}
 .cover p{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin:0 0 10px}
 .cover p.eyebrow{font-size:12px;color:var(--accent);margin:0 0 14px}
+.cover p.guide{margin-top:18px;padding:12px 16px;background:var(--soft);border-radius:10px;color:var(--ink);display:inline-block}
+.cover p.guide b{color:var(--accent)}
 .rules{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);max-width:70ch}
 .rules b{color:var(--ink)}
 .teams-set{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
@@ -138,10 +129,7 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
 </style>
 </head>
 <body>
-<div class="top"><span>SimLearn Extras · Mind the Fallacy</span>
-  <span class="topr"><button type="button" class="ref-btn" id="refBtn" aria-expanded="false" aria-controls="ref">The fallacies ▾</button><span class="count" id="count">Start</span></span>
-</div>
-<div class="ref" id="ref" hidden></div>
+<div class="top"><span>SimLearn Extras · Mind the Fallacy</span><span class="count" id="count">Start</span></div>
 <div class="track"><div class="fill" id="fill"></div></div>
 <main id="main"></main>
 <div class="controls">
@@ -220,24 +208,10 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
   var KEY = "simlearn-extras:mind-the-fallacy:v1", S;
   function fresh() { return { step: -1, phase: "q", teams: 4, scores: [0, 0, 0, 0], got: {}, fairShown: {} }; }
   try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
+  if (S.step === 0) S.step = -1;
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
-  // steps: -1 cover, 0 learn, 1..12 rounds, 13 end
+  // steps: -1 cover, 1..12 rounds, 13 end (the fallacies themselves are on guide.html, for students' phones)
   var lastWhere = null;
-
-  /* pull-down refresher, available on every screen */
-  var ref = document.getElementById("ref"), refBtn = document.getElementById("refBtn");
-  ORDER.forEach(function (k) {
-    var f = F[k], d = document.createElement("div"), b = document.createElement("b"), t = document.createElement("span"), i = document.createElement("i");
-    b.textContent = f.name; t.textContent = f.def; i.textContent = "Listen for: " + f.tell;
-    d.appendChild(b); d.appendChild(t); d.appendChild(i); ref.appendChild(d);
-  });
-  function toggleRef(open) {
-    open = open === undefined ? ref.hidden : open;
-    if (open) ref.style.top = Math.round(refBtn.getBoundingClientRect().bottom + 8) + "px";
-    ref.hidden = !open; refBtn.setAttribute("aria-expanded", String(open));
-  }
-  refBtn.onclick = function (e) { e.stopPropagation(); toggleRef(); };
-  document.addEventListener("click", function (e) { if (!ref.hidden && !ref.contains(e.target) && e.target !== refBtn) toggleRef(false); });
 
   var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev");
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
@@ -248,7 +222,6 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
     main.innerHTML = "";
     var v = el("div", "view");
     if (S.step < 0) cover(v);
-    else if (S.step === 0) learn(v);
     else if (S.step <= ROUNDS.length) round(v, S.step - 1);
     else end(v);
     var where = S.step + S.phase;
@@ -257,10 +230,10 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
     main.appendChild(v);
     // chrome
     var c = document.getElementById("count"), f = document.getElementById("fill");
-    c.textContent = S.step < 0 ? "Start" : S.step === 0 ? "The fallacies" : S.step > ROUNDS.length ? "Done" : "Round " + S.step + " / " + ROUNDS.length;
+    c.textContent = S.step < 0 ? "Start" : S.step > ROUNDS.length ? "Done" : "Round " + S.step + " / " + ROUNDS.length;
     f.style.width = (S.step < 0 ? 0 : Math.min(100, (S.step + (S.phase === "r" ? .5 : 0)) / (ROUNDS.length + 1) * 100)) + "%";
     prev.disabled = S.step < 0;
-    next.textContent = S.step < 0 ? "Begin →" : S.step === 0 ? "Start the game →" : S.step > ROUNDS.length ? "Play again ↻" :
+    next.textContent = S.step < 0 ? "Start the game →" : S.step > ROUNDS.length ? "Play again ↻" :
       S.phase === "q" ? "Reveal →" : (S.step === ROUNDS.length ? "Final scores →" : "Next round →");
     save();
   }
@@ -270,7 +243,8 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
     v.appendChild(el("p", "eyebrow", "Warm-up · Intergenerational differences"));
     v.appendChild(el("h1", null, "Mind the fallacy"));
     v.appendChild(el("p", null, "Young and old argue about work, homes, phones and the planet. Some of those arguments are good. Many contain a fallacy: a mistake in reasoning that can sound convincing."));
-    v.appendChild(el("p", null, "First, meet eight common fallacies. Then twelve things people say across the generation gap: spot the fallacy, then say it fairly."));
+    v.appendChild(el("p", null, "Twelve things people say across the generation gap: spot the fallacy, then say it fairly."));
+    v.appendChild(html("p", "guide", "Open the fallacy guide on your phone: <b>extras.simlearn.online/fallacy-gap/guide</b>"));
     var r = el("div", "rules");
     ["<b>1.</b> Read the quote. In your team, agree which fallacy it is.",
      "<b>2.</b> On three, hold up your card: A, B, C or D.",
@@ -288,23 +262,6 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
     reset.onclick = function () { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); render(); };
     t.appendChild(reset);
     v.appendChild(t);
-  }
-
-  function learn(v) {
-    v.appendChild(el("p", "eyebrow", "Before we play"));
-    v.appendChild(el("h2", "big", "Eight fallacies"));
-    v.appendChild(el("p", "lede", "A fallacy is an argument that sounds convincing but has a flaw in its reasoning. Read them in pairs; your teacher may ask you for an example of your own."));
-    var g = el("div", "cards");
-    ORDER.forEach(function (k, i) {
-      var f = F[k], c = el("div", "fcard");
-      c.appendChild(el("span", "n", String(i + 1).padStart(2, "0")));
-      c.appendChild(el("h3", null, f.name));
-      c.appendChild(el("div", "def", f.def));
-      c.appendChild(html("div", "tell", "<b>Listen for</b>" + f.tell.replace(/&/g, "&amp;").replace(/</g, "&lt;")));
-      c.appendChild(el("div", "ex", f.ex));
-      g.appendChild(c);
-    });
-    v.appendChild(g);
   }
 
   function round(v, i) {
@@ -387,18 +344,17 @@ h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px
     if (d > 0) {
       if (S.step > ROUNDS.length) { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); }
       else if (S.step >= 1 && S.phase === "q") S.phase = "r";
-      else { S.step++; S.phase = "q"; }
+      else { S.step = S.step < 0 ? 1 : S.step + 1; S.phase = "q"; }
     } else {
       if (S.step < 0) return;
       if (S.step >= 1 && S.step <= ROUNDS.length && S.phase === "r") S.phase = "q";
-      else { S.step--; S.phase = (S.step >= 1 && S.step <= ROUNDS.length) ? "r" : "q"; }
+      else { S.step = S.step <= 1 ? -1 : S.step - 1; S.phase = (S.step >= 1 && S.step <= ROUNDS.length) ? "r" : "q"; }
     }
     render(); window.scrollTo(0, 0);
   }
   next.onclick = function () { go(1); };
   prev.onclick = function () { go(-1); };
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !ref.hidden) { toggleRef(false); return; }
     if (e.target.closest && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
     if (e.key === " " || e.key === "ArrowRight") { e.preventDefault(); go(1); }
     else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
