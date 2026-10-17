@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Bias Check</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* A projector game for the whole class, the follow-up to Mind the Fallacy: twelve things people say about trusting
+   machines, apps and their own judgement. Teams hold up A–D for the cognitive bias, the teacher reveals it, then someone
+   thinks it through without the bias. The eight biases are on guide/ for students' phones. Simple team points. Progress
+   stays in this browser. */
+:root{
+  --bg:#F2EFE8; --surface:#FFFFFF; --ink:#1E1B16; --muted:#5D574C; --faint:#8A8377; --line:#DCD5C8; --hover:#EAE4D8;
+  --accent:#1F6B6B; --accent-ink:#FFFFFF; --soft:#E1F0EF;
+  --trust:#2F5E8C; --trust-bg:#E3ECF5; --doubt:#B4532A; --doubt-bg:#F7E6DD;
+  --ok:#2C7A4C; --ok-bg:#E1F0E6; --gold:#9A6E12; --gold-soft:#F4EAD2;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+    --accent:#7FCACA; --accent-ink:#0E1F1F; --soft:#1B2E2E;
+    --trust:#8DB6E0; --trust-bg:#1C2836; --doubt:#E79A78; --doubt-bg:#36221A;
+    --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130F; --surface:#1E1B16; --ink:#EEE8DD; --muted:#B0A897; --faint:#80796C; --line:#332E26; --hover:#28241D;
+  --accent:#7FCACA; --accent-ink:#0E1F1F; --soft:#1B2E2E;
+  --trust:#8DB6E0; --trust-bg:#1C2836; --doubt:#E79A78; --doubt-bg:#36221A;
+  --ok:#62C08A; --ok-bg:#1A3024; --gold:#DDB664; --gold-soft:#33291A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{margin:0;font-family:var(--f-ui);font-size:16px;line-height:1.5;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,4vw,44px) 0;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.top .count{color:var(--ink);font-weight:500;white-space:nowrap}
+.track{margin:10px clamp(16px,4vw,44px) 0;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);transition:width .5s cubic-bezier(.65,0,.35,1)}
+main{flex:1;padding:clamp(20px,4vh,40px) clamp(16px,4vw,44px)}
+.view{max-width:1200px;margin:0 auto}
+.view.anim{animation:rise .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.view.anim{animation:none}}
+
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.cover h1{font-family:var(--f-read);font-weight:600;font-size:clamp(40px,6.5vw,72px);line-height:1;margin:0 0 18px}
+.cover p{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:60ch;margin:0 0 10px}
+.cover p.eyebrow{font-size:12px;color:var(--accent);margin:0 0 14px}
+.cover p.guide{margin-top:18px;padding:12px 16px;background:var(--soft);border-radius:10px;color:var(--ink);display:inline-block}
+.cover p.guide b{color:var(--accent)}
+.rules{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px;color:var(--muted);max-width:70ch}
+.rules b{color:var(--ink)}
+.teams-set{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.stepper button{border:0;background:none;width:38px;height:38px;font-size:18px}
+.stepper span{min-width:28px;text-align:center;font-weight:600}
+
+h2.big{font-family:var(--f-read);font-weight:600;font-size:clamp(28px,3.4vw,40px);margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 20px;max-width:70ch}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fcard .n{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);letter-spacing:.06em}
+.fcard h3{font-family:var(--f-read);font-size:21px;font-weight:600;color:var(--accent)}
+.fcard .def{font-size:15px}
+.fcard .tell{font-size:13.5px;color:var(--muted)}
+.fcard .tell b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:4px}
+.fcard .ex{font-family:var(--f-read);font-style:italic;font-size:14.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px;margin-top:2px}
+
+.round{display:grid;gap:clamp(20px,3vw,44px);align-items:start}
+@media (min-width:980px){.round{grid-template-columns:minmax(0,1.6fr) minmax(240px,.7fr)}}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:0 0 14px}
+.who{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:4px 12px 4px 6px;font-size:14px;font-weight:600;margin-bottom:12px}
+.who .dot{width:24px;height:24px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.who.trust{background:var(--trust-bg);color:var(--trust)} .who.trust .dot{background:var(--trust)}
+.who.doubt{background:var(--doubt-bg);color:var(--doubt)} .who.doubt .dot{background:var(--doubt)}
+.reply{font-size:15.5px;color:var(--muted);margin:0 0 10px;padding-left:12px;border-left:3px solid var(--line)}
+.reply b{color:var(--ink);font-weight:600}
+.quote{font-family:var(--f-read);font-weight:600;font-size:clamp(24px,2.8vw,36px);line-height:1.25;margin:0 0 26px}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+@media (min-width:700px){.opts{grid-template-columns:1fr 1fr}}
+.opt{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 16px;font-size:18px}
+.opt .l{font-family:var(--f-mono);font-weight:500;font-size:14px;width:28px;height:28px;border-radius:6px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;color:var(--faint)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .l{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.dim{opacity:.45}
+.reveal{margin-top:20px;display:grid;gap:12px}
+.why{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:0 10px 10px 0;padding:14px 18px;font-size:17px}
+.why b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ok);display:block;margin-bottom:4px}
+.fair{background:var(--gold-soft);border-radius:10px;padding:14px 18px;font-size:17px}
+.fair b{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px}
+.fair .ask{color:var(--muted);margin:0 0 10px}
+.fair .model{font-family:var(--f-read);font-size:19px}
+
+.side{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.side h3{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:500;margin-bottom:10px}
+.team{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.team:first-of-type{border-top:0}
+.team .nm{font-weight:600}
+.team .pts{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:18px}
+.team button{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
+.team button.got{background:var(--ok);border-color:var(--ok);color:#fff}
+.side .hint{font-size:13px;color:var(--faint);margin-top:8px}
+
+.end h2{font-family:var(--f-read);font-weight:600;font-size:clamp(32px,4.5vw,52px);margin:0 0 16px}
+.end p{font-size:18px;color:var(--muted);max-width:62ch;margin:0 0 12px}
+.board{display:grid;gap:8px;max-width:520px;margin:20px 0}
+.board div{display:flex;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:18px}
+.board div.win{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.board span:last-child{font-family:var(--f-mono)}
+.tally{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.tally span{border-radius:999px;padding:4px 12px;font-size:14px}
+.tally .trust{background:var(--trust-bg);color:var(--trust)} .tally .doubt{background:var(--doubt-bg);color:var(--doubt)}
+
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(16px,4vw,44px) clamp(16px,3vh,28px)}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:10px 16px;font-size:14.5px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:disabled{opacity:.35;cursor:default}
+.kbd{font-family:var(--f-mono);font-size:11.5px;color:var(--faint);display:none}
+@media (min-width:760px){.kbd{display:inline}}
+</style>
+</head>
+<body>
+<div class="top"><span>SimLearn Extras · Bias Check</span><span class="count" id="count">Start</span></div>
+<div class="track"><div class="fill" id="fill"></div></div>
+<main id="main"></main>
+<div class="controls">
+  <button class="btn" id="prev" type="button">← Back</button>
+  <span class="kbd">Space or → to go on · ← to go back</span>
+  <button class="btn primary" id="next" type="button">Begin →</button>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var F = {
+    confirm: {"name": "Confirmation bias", "def": "Looking for, noticing and believing information that supports what you already think, and ignoring the rest.", "tell": "Only one side read, the other side dismissed without looking.", "ex": "\"I only follow accounts that agree with me, so I know I'm right.\""},
+    statusquo: {"name": "Status quo bias", "def": "Preferring things to stay as they are, simply because change feels risky.", "tell": "Change treated as the danger, the current way as safe by default.", "ex": "\"I've had the same bank for fifteen years. Switching isn't worth the risk.\""},
+    aversion: {"name": "Algorithm aversion", "def": "Losing trust in a machine after seeing it make one mistake, even when it makes fewer mistakes than people.", "tell": "One machine error remembered; human errors forgotten.", "ex": "\"The spam filter once binned an important email. I check everything myself now.\""},
+    automation: {"name": "Automation bias", "def": "Trusting a machine's answer too much, even when your own eyes or common sense say something is wrong.", "tell": "\"The app says…\", so the evidence in front of you is ignored.", "ex": "\"The spellchecker didn't complain, so the essay must be fine.\""},
+    avail: {"name": "Availability heuristic", "def": "Judging how common or likely something is by how easily examples come to mind.", "tell": "A vivid story, a viral video or the news, instead of numbers.", "ex": "\"After that plane crash on the news, I'm driving instead.\""},
+    anchor: {"name": "Anchoring", "def": "Letting the first number you hear shape every judgement that follows.", "tell": "A first figure becomes the yardstick for everything after it.", "ex": "\"It was €200 last week, so €150 is a bargain.\""},
+    loss: {"name": "Loss aversion", "def": "Feeling a loss much more strongly than a gain of the same size, so you avoid change even when it would leave you better off.", "tell": "What you'd give up looms larger than what you'd get.", "ex": "\"The new contract pays more, but I'd lose my parking space. No way.\""},
+    hindsight: {"name": "Hindsight bias", "def": "Believing, after something has happened, that you knew it would happen all along.", "tell": "\"I knew it…\", \"It was obvious…\", said only afterwards.", "ex": "\"Of course the start-up failed. I could have told you that.\""}
+  };
+  var ORDER = ["confirm", "statusquo", "aversion", "automation", "avail", "anchor", "loss", "hindsight"];
+
+  // side: "trust" (trusts the machine too much) or "doubt" (too little). opts: four bias keys; ans: the right one.
+  var ROUNDS = [
+    {"who": "Sam, 34, a commuter", "side": "doubt", "quote": "The self-checkout overcharged me once last year. I always queue for a real cashier now. Machines just can't be trusted.", "opts": ["anchor", "aversion", "statusquo", "hindsight"], "ans": "aversion", "why": "One mistake in a year of shopping, and Sam has given up on the machine, without asking how often cashiers make mistakes too.", "fair": "The self-checkout got it wrong once. Before I decide, I'd like to know how often it goes wrong compared with a cashier."},
+    {"who": "Dana, 41, a driver", "side": "trust", "quote": "The sat nav told me to turn left, so I turned left, straight into a road that was closed. The sign must have been out of date.", "opts": ["confirm", "loss", "avail", "automation"], "ans": "automation", "why": "Dana trusts the machine over the road sign in front of her, and even blames the sign when the machine turns out to be wrong.", "fair": "The sat nav is usually right, but when what I can see disagrees with it, I should go with my eyes."},
+    {"who": "Mike, 58, a local councillor", "side": "doubt", "quote": "The new bus timetable might be better, but any change is a risk. Better the system we know.", "opts": ["statusquo", "hindsight", "automation", "anchor"], "ans": "statusquo", "why": "Mike treats change itself as the danger and keeping things as they are as automatically safe. He doesn't compare the two timetables at all.", "fair": "Let's compare the two timetables on what matters, such as journey times and missed connections, and then decide."},
+    {"who": "Aisha, 23, a student", "side": "doubt", "quote": "Did you see that video of the self-driving taxi crashing? I'm never getting in one of those.", "opts": ["loss", "confirm", "avail", "aversion"], "ans": "avail", "why": "One dramatic video is easy to remember, so the risk feels huge. Aisha doesn't ask how often they crash compared with human drivers.", "fair": "That crash was frightening. Before I decide, I'd want to know how their accident rate compares with ordinary taxis."},
+    {"who": "Ollie, 29, a software tester", "side": "trust", "quote": "I only read the five-star reviews of the new banking app. The bad ones are just from people who didn't use it properly.", "opts": ["confirm", "anchor", "statusquo", "avail"], "ans": "confirm", "why": "Ollie has already decided the app is good, so he reads only what agrees with him and explains the rest away without reading it.", "fair": "I like the app, but let me read a few of the bad reviews too. If they all mention the same problem, it's probably real."},
+    {"who": "Ruth, 52, selling her flat", "side": "trust", "quote": "The valuation website said my flat was worth £400,000. So when the estate agent said £340,000, I knew she was way off.", "opts": ["hindsight", "automation", "loss", "anchor"], "ans": "anchor", "why": "The first number Ruth saw has become her measuring stick. The website's figure isn't evidence the agent is wrong; it's just the number she heard first.", "fair": "The website and the agent disagree. Let me look at what similar flats nearby actually sold for."},
+    {"who": "Jon, 45, a shop manager", "side": "doubt", "quote": "The new rota software gives me two more free weekends a year, but I'd lose my favourite Friday shift. Overall, I'm worse off.", "opts": ["avail", "loss", "confirm", "statusquo"], "ans": "loss", "why": "Losing one shift feels bigger to Jon than gaining two weekends, even though by his own account he gains more than he loses.", "fair": "I'd lose my Friday shift, which I'll miss, but I'd gain two weekends. On balance that's probably a good trade."},
+    {"who": "Grace, 66, a retired teacher", "side": "doubt", "quote": "A computer once marked my grandson's maths answer wrong when it was right. These automatic marking systems should be banned.", "opts": ["hindsight", "anchor", "aversion", "automation"], "ans": "aversion", "why": "Grace judges the whole system by one error. Human markers make mistakes too; the question is which makes fewer, and which mistakes are easier to correct.", "fair": "It got his answer wrong once. How often does that happen, and is it easy to appeal, compared with a human marker?"},
+    {"who": "Priya, 27, a runner", "side": "trust", "quote": "My smartwatch says my heart rate is normal, so this chest pain can't be anything serious.", "opts": ["automation", "statusquo", "confirm", "loss"], "ans": "automation", "why": "A watch measures a few things, and chest pain needs a doctor. Priya lets the device overrule what her body is telling her.", "fair": "My heart rate looks normal, but a watch can't check everything. Chest pain is worth getting checked by a doctor."},
+    {"who": "Chris, 37, a football fan", "side": "doubt", "quote": "The weather app said it would be sunny, and then it poured. I knew all along it was going to rain. Those apps are useless.", "opts": ["avail", "aversion", "anchor", "hindsight"], "ans": "hindsight", "why": "Chris didn't say it would rain before the match; he only \"knew\" afterwards. (He also writes off the app because of one bad forecast.)", "fair": "The forecast was wrong today. I'll check how often it's right before I decide whether to trust it."},
+    {"who": "Ben, 31, a parent", "side": "trust", "quote": "My feed is full of parents saying the new AI tutor transformed their kids' marks. It must work for nearly everyone.", "opts": ["hindsight", "avail", "automation", "statusquo"], "ans": "avail", "why": "Happy stories are the ones people post, so they come to mind easily. They tell Ben nothing about how many children it didn't help.", "fair": "Some parents love it. I'd like to see results for all the children who used it, not just the ones people post about."},
+    {"who": "Hannah, 48, a fitness fan", "side": "trust", "quote": "My fitness tracker says I sleep really well, so I've stopped reading articles saying those trackers aren't accurate. Why bother?", "opts": ["loss", "hindsight", "anchor", "confirm"], "ans": "confirm", "why": "Hannah avoids information that might challenge a reassuring number, so her belief can never be tested.", "fair": "The tracker says I sleep well. I'll read what the research says about its accuracy, so I know how much to trust it."}
+  ];
+
+  var KEY = "simlearn-extras:bias-check:v1", S;
+  function fresh() { return { step: -1, phase: "q", teams: 4, scores: [0, 0, 0, 0], got: {}, fairShown: {} }; }
+  try { S = JSON.parse(localStorage.getItem(KEY)) || fresh(); } catch (e) { S = fresh(); }
+  if (S.step === 0) S.step = -1;
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  // steps: -1 cover, 1..12 rounds, 13 end (the biases themselves are on guide/, for students' phones)
+  var lastWhere = null;
+
+  var main = document.getElementById("main"), next = document.getElementById("next"), prev = document.getElementById("prev");
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function html(t, c, h) { var e = el(t, c); e.innerHTML = h; return e; }
+  function initials(who) { return who.split(",")[0].trim().charAt(0); }
+
+  function render() {
+    main.innerHTML = "";
+    var v = el("div", "view");
+    if (S.step < 0) cover(v);
+    else if (S.step <= ROUNDS.length) round(v, S.step - 1);
+    else end(v);
+    var where = S.step + S.phase;
+    if (where !== lastWhere) v.classList.add("anim");   // animate only when the screen changes, not on every tap
+    lastWhere = where;
+    main.appendChild(v);
+    // chrome
+    var c = document.getElementById("count"), f = document.getElementById("fill");
+    c.textContent = S.step < 0 ? "Start" : S.step > ROUNDS.length ? "Done" : "Round " + S.step + " / " + ROUNDS.length;
+    f.style.width = (S.step < 0 ? 0 : Math.min(100, (S.step + (S.phase === "r" ? .5 : 0)) / (ROUNDS.length + 1) * 100)) + "%";
+    prev.disabled = S.step < 0;
+    next.textContent = S.step < 0 ? "Start the game →" : S.step > ROUNDS.length ? "Play again ↻" :
+      S.phase === "q" ? "Reveal →" : (S.step === ROUNDS.length ? "Final scores →" : "Next round →");
+    save();
+  }
+
+  function cover(v) {
+    v.classList.add("cover");
+    v.appendChild(el("p", "eyebrow", "Warm-up · Machines, experts and us"));
+    v.appendChild(el("h1", null, "Bias check"));
+    v.appendChild(el("p", null, "Last time we looked at fallacies: flaws in an argument. Cognitive biases are different. They are shortcuts in how our minds judge things, and they work on all of us, often without our noticing."));
+    v.appendChild(el("p", null, "Twelve people decide how far to trust a machine, an app or themselves. Spot the bias, then think it through."));
+    v.appendChild(html("p", "guide", "Open the bias guide on your phone: <b>extras.simlearn.online/bias-check/guide</b>"));
+    var r = el("div", "rules");
+    ["<b>1.</b> Read the quote. In your team, agree which bias is at work.",
+     "<b>2.</b> On three, hold up your card: A, B, C or D.",
+     "<b>3.</b> A point for every team that's right. Then one team thinks it through: the same situation, without the bias."]
+      .forEach(function (h) { r.appendChild(html("div", null, h)); });
+    v.appendChild(r);
+    var t = el("div", "teams-set"); t.appendChild(el("span", null, "Number of teams"));
+    var st = el("div", "stepper"), minus = el("button", null, "−"), n = el("span", null, String(S.teams)), plus = el("button", null, "+");
+    minus.type = plus.type = "button";
+    function setTeams(k) { S.teams = Math.max(2, Math.min(10, k)); while (S.scores.length < S.teams) S.scores.push(0); S.scores.length = S.teams; n.textContent = S.teams; save(); }
+    minus.onclick = function (e) { e.stopPropagation(); setTeams(S.teams - 1); };
+    plus.onclick = function (e) { e.stopPropagation(); setTeams(S.teams + 1); };
+    st.appendChild(minus); st.appendChild(n); st.appendChild(plus); t.appendChild(st);
+    var reset = el("button", "btn", "New game"); reset.type = "button";
+    reset.onclick = function () { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); render(); };
+    t.appendChild(reset);
+    v.appendChild(t);
+  }
+
+  function round(v, i) {
+    var R = ROUNDS[i], shown = S.phase === "r", wrap = el("div", "round"), left = el("div");
+    left.appendChild(el("p", "label", "Round " + (i + 1) + " of " + ROUNDS.length + " · Which bias?"));
+    var who = el("div", "who " + R.side); var d = el("span", "dot", initials(R.who)); who.appendChild(d); who.appendChild(document.createTextNode(R.who));
+    left.appendChild(who);
+    if (R.reply) left.appendChild(html("p", "reply", R.reply));
+    left.appendChild(el("p", "quote", "“" + R.quote + "”"));
+    var ul = el("ul", "opts");
+    R.opts.forEach(function (k, j) {
+      var li = el("li", "opt" + (shown ? (k === R.ans ? " right" : " dim") : ""));
+      li.appendChild(el("span", "l", "ABCD"[j])); li.appendChild(el("span", null, F[k].name));
+      ul.appendChild(li);
+    });
+    left.appendChild(ul);
+    if (shown) {
+      var rv = el("div", "reveal");
+      rv.appendChild(html("div", "why", "<b>" + F[R.ans].name + "</b>"));
+      rv.lastChild.appendChild(document.createTextNode(R.why));
+      var fair = el("div", "fair"); fair.appendChild(el("b", null, "Think it through"));
+      var fk = "r" + i;
+      if (S.fairShown[fk]) fair.appendChild(el("div", "model", "“" + R.fair + "”"));
+      else {
+        fair.appendChild(el("p", "ask", "One team: talk through the same situation without the bias. Then compare with one version."));
+        var b = el("button", "btn", "Show one version"); b.type = "button";
+        b.onclick = function (e) { e.stopPropagation(); S.fairShown[fk] = true; render(); };
+        fair.appendChild(b);
+      }
+      rv.appendChild(fair);
+      left.appendChild(rv);
+    }
+    wrap.appendChild(left);
+    wrap.appendChild(scoreSide(i, shown));
+    v.appendChild(wrap);
+  }
+
+  function scoreSide(i, shown) {
+    var side = el("div", "side"); side.appendChild(el("h3", null, shown ? "Who got it?" : "Points"));
+    var got = S.got["r" + i] || [];
+    for (var t = 0; t < S.teams; t++) {
+      (function (t) {
+        var row = el("div", "team"), nm = el("span", "nm", "Team " + (t + 1)), pts = el("span", "pts", String(S.scores[t] || 0));
+        row.appendChild(nm);
+        var right = el("span"); right.style.cssText = "display:flex;align-items:center;gap:10px";
+        if (shown) {
+          var has = got.indexOf(t) >= 0, b = el("button", has ? "got" : null, has ? "✓ +1" : "+1"); b.type = "button";
+          b.onclick = function (e) {
+            e.stopPropagation();
+            var g = S.got["r" + i] || (S.got["r" + i] = []), k = g.indexOf(t);
+            if (k >= 0) { g.splice(k, 1); S.scores[t]--; } else { g.push(t); S.scores[t] = (S.scores[t] || 0) + 1; }
+            render();
+          };
+          right.appendChild(b);
+        }
+        right.appendChild(pts); row.appendChild(right); side.appendChild(row);
+      })(t);
+    }
+    side.appendChild(el("p", "hint", shown ? "Tap each team that held up the right letter." : "On three, every team holds up a letter."));
+    return side;
+  }
+
+  function end(v) {
+    v.classList.add("end");
+    v.appendChild(el("p", "eyebrow", "Final scores"));
+    v.appendChild(el("h2", null, "Biases push both ways."));
+    var best = Math.max.apply(null, S.scores.slice(0, S.teams)), b = el("div", "board");
+    S.scores.slice(0, S.teams).map(function (s, t) { return [t, s]; }).sort(function (a, c) { return c[1] - a[1]; }).forEach(function (x) {
+      var r = el("div", x[1] === best && best > 0 ? "win" : null); r.appendChild(el("span", null, "Team " + (x[0] + 1))); r.appendChild(el("span", null, x[1] + " / " + ROUNDS.length)); b.appendChild(r);
+    });
+    v.appendChild(b);
+    var tr = ROUNDS.filter(function (r) { return r.side === "trust"; }).length;
+    var tl = el("div", "tally"); tl.appendChild(el("span", "trust", tr + " people trusted the machine too much")); tl.appendChild(el("span", "doubt", (ROUNDS.length - tr) + " trusted it too little"));
+    v.appendChild(tl);
+    v.appendChild(el("p", null, "Half of today's people trusted technology too much and half trusted it too little. The bias isn't in the machine or in the person who distrusts it: it's in judging without comparing."));
+    v.appendChild(el("p", null, "When you read and decide today, ask the questions these twelve people forgot: Compared with what? How often? What would change my mind? And name biases politely: \"Are we sure that's not just one vivid example?\""));
+  }
+
+  function go(d) {
+    if (d > 0) {
+      if (S.step > ROUNDS.length) { var k = S.teams; S = fresh(); S.teams = k; S.scores = new Array(k).fill(0); }
+      else if (S.step >= 1 && S.phase === "q") S.phase = "r";
+      else { S.step = S.step < 0 ? 1 : S.step + 1; S.phase = "q"; }
+    } else {
+      if (S.step < 0) return;
+      if (S.step >= 1 && S.step <= ROUNDS.length && S.phase === "r") S.phase = "q";
+      else { S.step = S.step <= 1 ? -1 : S.step - 1; S.phase = (S.step >= 1 && S.step <= ROUNDS.length) ? "r" : "q"; }
+    }
+    render(); window.scrollTo(0, 0);
+  }
+  next.onclick = function () { go(1); };
+  prev.onclick = function () { go(-1); };
+  document.addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("button") && (e.key === " " || e.key === "Enter")) return;
+    if (e.key === " " || e.key === "ArrowRight") { e.preventDefault(); go(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
