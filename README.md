@@ -11,3 +11,8 @@ Stand-alone classroom tools for SimLearn, served by GitHub Pages at <https://ext
   don't edit them by hand. The data lives in the private teacher repo (`studio/warmups/*.json`); run
   `python3 studio/warmups/build_warmups.py <this checkout>` there, then commit here. The generator also writes
   `warm-ups/index.html` and the single "Warm-ups" card on `index.html`, and refuses any page that names a simulation.
+- `confidence-bets/sets/` holds one Confidence Bets question set per simulation topic (eight real, sourced numbers),
+  played with `confidence-bets/?set=<slug>`; `confidence-bets/sets/index.html` lists them by course. They are
+  **generated** too: the data lives in the private teacher repo (`studio/bets/*.json`); run
+  `python3 studio/bets/build_bets.py <this checkout>` there, then commit here. The built-in sets stay inside
+  `confidence-bets/index.html`; a generated set may not reuse a built-in set's id.

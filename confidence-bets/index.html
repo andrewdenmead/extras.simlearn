@@ -52,7 +52,7 @@ main{flex:1;padding:clamp(20px,4vh,44px) clamp(16px,4vw,44px)}
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.view.on{animation:none}}
 
-.split{display:grid;gap:clamp(24px,4vw,56px);align-items:start}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
 @media (min-width:980px){.split{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}}
 
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
@@ -210,6 +210,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
         <label class="field"><span>Question set</span>
           <select class="inp" id="setPick"></select>
         </label>
+        <div class="msg" id="setMsg" role="status"></div>
         <details id="customBox">
           <summary>Use your own questions</summary>
           <p>Paste a question set in JSON. Each question needs <code>q</code>, four <code>options</code>, the index of the <code>correct</code> one (0 = A) and, optionally, <code>figure</code>, <code>sub</code>, <code>explain</code> and <code>source</code>.</p>
@@ -628,6 +629,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   var st = null;          // the live game
   var draft = {           // setup screen values, kept until the game starts
     setKey: "tour-money", custom: null,
+    remote: null,         // {slug, data}: the last set loaded from sets/<slug>.json (?set=<slug>)
     teams: ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6"],
     bank: 1000, cur: "€"
   };
@@ -638,8 +640,27 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   function load() {
     try { var raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
   }
-  function getSet(key, custom) { return key === "custom" && custom ? custom : (SETS[key] || SETS["tour-money"]); }
-  function set() { return getSet(st.setKey, st.custom); }
+  function getSet(key, custom) {
+    if (key === "custom" && custom) return custom;
+    if (SETS[key]) return SETS[key];
+    if (draft.remote && draft.remote.slug === key) return draft.remote.data;
+    return SETS["tour-money"];
+  }
+  /* A game keeps its own copy of a pasted or downloaded set, so a refresh or a changed file never breaks it. */
+  function set() { return st.custom || getSet(st.setKey); }
+
+  /* Checks a question set (pasted, or loaded from sets/<slug>.json) and returns it; throws a readable error. */
+  function normalise(data) {
+    if (Array.isArray(data)) data = { title: "Your questions", questions: data };
+    if (!data || typeof data !== "object" || !data.questions || !data.questions.length) throw new Error("No questions found.");
+    data.questions.forEach(function (q, i) {
+      if (!q || !q.q || !Array.isArray(q.options) || q.options.length < 2 || q.options.length > 6) throw new Error("Question " + (i + 1) + " needs q and 2–6 options.");
+      if (!(q.correct >= 0 && q.correct < q.options.length)) throw new Error("Question " + (i + 1) + ": correct must be 0 to " + (q.options.length - 1) + ".");
+    });
+    if (data.intro && !Array.isArray(data.intro)) data.intro = [String(data.intro)];
+    data.title = data.title || "Your questions";
+    return data;
+  }
   function money(n, cur) { cur = cur || st.cur; return (n < 0 ? "−" : "") + cur + Math.abs(n).toLocaleString("en-GB"); }
   function signed(n) { return n > 0 ? "+" + money(n) : n < 0 ? money(n) : "±0"; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -691,7 +712,9 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
 
     var pick = $("setPick"); pick.innerHTML = "";
     Object.keys(SETS).forEach(function (k) { var o = el("option", null, SETS[k].title + " (" + SETS[k].questions.length + " questions)"); o.value = k; pick.appendChild(o); });
+    if (draft.remote && !SETS[draft.remote.slug]) { var r = el("option", null, draft.remote.data.title + " (" + draft.remote.data.questions.length + " questions)"); r.value = draft.remote.slug; pick.appendChild(r); }
     if (draft.custom) { var o = el("option", null, (draft.custom.title || "Your questions") + " (" + draft.custom.questions.length + " questions)"); o.value = "custom"; pick.appendChild(o); }
+    if (!SETS[draft.setKey] && !(draft.setKey === "custom" && draft.custom) && !(draft.remote && draft.remote.slug === draft.setKey)) draft.setKey = "tour-money";
     pick.value = draft.setKey;
 
     var list = $("teamList"); list.innerHTML = "";
@@ -956,7 +979,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
     if (!(bank >= 10)) { $("setupMsg").className = "msg bad"; $("setupMsg").textContent = "Starting money must be at least 10."; return; }
     if (st && st.rounds.some(function (r) { return r && r.revealed; }) && !confirm("Start a new game? The saved game will be cleared.")) return;
     st = {
-      setKey: draft.setKey, custom: draft.setKey === "custom" ? draft.custom : null,
+      setKey: draft.setKey, custom: SETS[draft.setKey] ? null : getSet(draft.setKey, draft.custom),
       teams: names.map(function (n, i) { return { id: i + 1, order: i, name: n }; }),
       bank: bank, cur: ($("cur").value || "€").trim(),
       idx: 0, phase: "question", rounds: []
@@ -974,7 +997,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
     render();
   });
   $("addTeam").addEventListener("click", function () { draft.teams.push("Team " + (draft.teams.length + 1)); save(); renderSetup(); var all = $("teamList").querySelectorAll("input"); all[all.length - 1].select(); });
-  $("setPick").addEventListener("change", function (e) { draft.setKey = e.target.value; save(); renderSetup(); });
+  $("setPick").addEventListener("change", function (e) { draft.setKey = e.target.value; $("setMsg").textContent = ""; save(); renderSetup(); });
   $("bank").addEventListener("change", function (e) { draft.bank = Math.round(+e.target.value) || 1000; save(); renderSetup(); });
   $("cur").addEventListener("input", function (e) { draft.cur = e.target.value; save(); });
   $("cur").addEventListener("change", function () { renderSetup(); });
@@ -982,14 +1005,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   $("loadCustom").addEventListener("click", function () {
     var m = $("customMsg");
     try {
-      var data = JSON.parse($("customJson").value);
-      if (Array.isArray(data)) data = { title: "Your questions", questions: data };
-      if (!data.questions || !data.questions.length) throw new Error("No questions found.");
-      data.questions.forEach(function (q, i) {
-        if (!q.q || !Array.isArray(q.options) || q.options.length < 2 || q.options.length > 6) throw new Error("Question " + (i + 1) + " needs q and 2–6 options.");
-        if (!(q.correct >= 0 && q.correct < q.options.length)) throw new Error("Question " + (i + 1) + ": correct must be 0 to " + (q.options.length - 1) + ".");
-      });
-      data.title = data.title || "Your questions";
+      var data = normalise(JSON.parse($("customJson").value));
       draft.custom = data; draft.setKey = "custom"; save(); renderSetup();
       $("customBox").open = true; m.className = "msg ok"; m.textContent = "Loaded " + data.questions.length + " questions.";
     } catch (err) { m.className = "msg bad"; m.textContent = "Couldn't read that: " + err.message; }
@@ -1005,12 +1021,39 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
 
   var saved = load();
   if (saved) { if (saved.draft) draft = Object.assign(draft, saved.draft); if (saved.st) st = saved.st; }
-  var want = (location.search.match(/[?&]set=([\w-]+)/) || [])[1];   /* e.g. confidence-bets/?set=fashion-ethics */
-  if (want && SETS[want]) draft.setKey = want;
-  if (st && st.phase !== "setup") { /* show setup with a resume button so a refresh never jumps mid-reveal */
-    var keep = st; render(); st = keep; renderSetup(); show("setup");
-    $("prevBtn").disabled = true; $("nextBtn").hidden = true; $("topCount").textContent = "Setup";
-  } else render();
+
+  function start() {
+    if (st && st.phase !== "setup") { /* show setup with a resume button so a refresh never jumps mid-reveal */
+      var keep = st; render(); st = keep; renderSetup(); show("setup");
+      $("prevBtn").disabled = true; $("nextBtn").hidden = true; $("topCount").textContent = "Setup";
+    } else render();
+  }
+  /* A link picks the set: confidence-bets/?set=fashion-ethics (built in) or ?set=<slug> (sets/<slug>.json, same site).
+     A saved game from a different set is dropped, so the link always opens the set it names. */
+  function choose(key) {
+    if (st && st.setKey !== key) st = null;
+    draft.setKey = key;
+  }
+  var want = (location.search.match(/[?&]set=([\w-]+)/) || [])[1];
+  if (want && SETS[want]) { choose(want); start(); }
+  else if (want && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(want) && window.fetch) {
+    start(); $("setMsg").textContent = "Loading the question set…";
+    fetch("sets/" + want + ".json", { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        draft.remote = { slug: want, data: normalise(data) };
+        choose(want); $("setMsg").textContent = "";
+      })
+      .catch(function () {
+        if (draft.remote && draft.remote.slug === want) { choose(want); $("setMsg").textContent = ""; return; }  // offline: the copy from last time
+        $("setMsg").className = "msg bad";
+        $("setMsg").textContent = "We couldn't find the question set \u201c" + want + "\u201d. Check the link, or pick a set below.";
+      })
+      .then(start);
+  } else {
+    if (want) { $("setMsg").className = "msg bad"; $("setMsg").textContent = "We couldn't find the question set \u201c" + want + "\u201d. Check the link, or pick a set below."; }
+    start();
+  }
 })();
 </script>
 </body>
