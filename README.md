@@ -7,3 +7,7 @@ Stand-alone classroom tools for SimLearn, served by GitHub Pages at <https://ext
 - Progress is kept only in the student's own browser (`localStorage`).
 - Unless a tool says otherwise, authors, studies and figures are fictional, written for class. Confidence Bets and Beauty Bets use real, sourced figures and ratings (each answer cites its source; Fashion Ethics Ratings uses published brand ethics ratings as checked on 15 Oct 2026); the creators and posts in Beauty Bets are invented.
 - Add a link to each new tool in `index.html`.
+- `warm-ups/` holds the docket warm-ups (eight dockets of four discussion questions per topic). They are **generated**:
+  don't edit them by hand. The data lives in the private teacher repo (`studio/warmups/*.json`); run
+  `python3 studio/warmups/build_warmups.py <this checkout>` there, then commit here. The generator also writes
+  `warm-ups/index.html` and the single "Warm-ups" card on `index.html`, and refuses any page that names a simulation.

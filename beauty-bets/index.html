@@ -345,9 +345,9 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   /* Question sets. Add new ones here; each appears in the setup picker. */
   /* ------------------------------------------------------------------ */
   var SETS = {
-    "halo": {
+    "celebrity-beauty": {
       title: "Celebrity Beauty",
-      eyebrow: "EBC · Halo Cosmetics warm-up",
+      eyebrow: "EBC · Celebrity brands warm-up",
       heading: "Glow up or flop?",
       intro: [
         "Ten posts from your For You page about celebrity beauty brands: launches, sell-outs, billion-dollar deals and the rules that sit behind them.",
@@ -357,9 +357,9 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
         heading: "Hype is the easy part.",
         paras: [
           "A famous face can sell out a launch in a minute. What decides whether a celebrity brand lasts is everything behind the post: who makes the product, how much control the star keeps, how long the safety testing takes, and whether shoppers still care once the hype fades.",
-          "Those are exactly the calls Marisol Vega's team is about to make."
+          "Those are exactly the calls you are about to make."
         ],
-        cue: "Now open <b>Halo Cosmetics: The Market Entry Decision</b> and meet Marisol Vega's team."
+        cue: "Now open today's simulation."
       },
       questions: [
         { q: "In 2017 Rihanna launched Fenty Beauty with a foundation range that made the rest of the industry scramble. How many shades did it launch with?",
@@ -463,7 +463,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   /* ------------------------------ state ------------------------------ */
   var st = null;          // the live game
   var draft = {           // setup screen values, kept until the game starts
-    setKey: "halo", custom: null,
+    setKey: "celebrity-beauty", custom: null,
     teams: ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6"],
     bank: 1000, cur: "€"
   };
@@ -474,7 +474,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
   function load() {
     try { var raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
   }
-  function getSet(key, custom) { return key === "custom" && custom ? custom : (SETS[key] || SETS.halo); }
+  function getSet(key, custom) { return key === "custom" && custom ? custom : (SETS[key] || SETS["celebrity-beauty"]); }
   function set() { return getSet(st.setKey, st.custom); }
   function money(n, cur) { cur = cur || st.cur; return (n < 0 ? "−" : "") + cur + Math.abs(n).toLocaleString("en-GB"); }
   function signed(n) { return n > 0 ? "+" + money(n) : n < 0 ? money(n) : "±0"; }
@@ -873,6 +873,7 @@ table.hist td.up{color:var(--ok)} table.hist td.down{color:var(--bad)} table.his
 
   var saved = load();
   if (saved) { if (saved.draft) draft = Object.assign(draft, saved.draft); if (saved.st) st = saved.st; }
+  if (draft.setKey !== "custom" && !SETS[draft.setKey]) draft.setKey = "celebrity-beauty";   /* old saved ids */
   if (st && st.phase !== "setup") { /* show setup with a resume button so a refresh never jumps mid-reveal */
     var keep = st; render(); st = keep; renderSetup(); show("setup");
     $("prevBtn").disabled = true; $("nextBtn").hidden = true; $("topCount").textContent = "Setup";
