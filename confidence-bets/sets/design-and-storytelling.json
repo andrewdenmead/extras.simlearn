@@ -102,18 +102,18 @@
    "source": "Diageo, Johnnie Walker brand history; Whisky Magazine, 'Right foot forward'; sales: The Spirits Business / VinePair (2025–26)"
   },
   {
-   "q": "The IPA compared hundreds of award-entry advertising campaigns. How often did mainly emotional campaigns report very large profit gains, compared with mainly rational ones?",
+   "q": "Apple's '1984' advert, which launched the Macintosh as a story of one runner against a grey, controlled crowd, was shown nationally on US TV only once, during the 1984 Super Bowl. Which film director made it?",
    "options": [
-    "Less often",
-    "About as often",
-    "About twice as often",
-    "About ten times as often"
+    "Steven Spielberg",
+    "George Lucas",
+    "Ridley Scott",
+    "Francis Ford Coppola"
    ],
    "correct": 2,
-   "figure": "31% vs 16%",
-   "sub": "emotional vs rational",
-   "explain": "In the IPA's database of award-entry case studies, mainly emotional campaigns reported very large profit gains about twice as often as mainly rational ones (31% against 16%). Facts still matter, but feelings seem to do more of the long-term work.",
-   "source": "IPA dataBANK analysis by Les Binet and Peter Field, as reported in Pringle and Field, Brand Immortality (Kogan Page, 2008)"
+   "figure": "Ridley Scott",
+   "sub": "one national airing, 22 January 1984",
+   "explain": "Ridley Scott, who had just made Blade Runner, directed it. It ran nationally just once, in a Super Bowl break on 22 January 1984, after a single late-night local showing in Idaho so it could enter that year's advertising awards.",
+   "source": "Wikipedia, '1984 (advertisement)'; Mental Floss, 'How Apple's 1984 Super Bowl ad was almost canceled'"
   },
   {
    "q": "Joseph Campbell's 'hero's journey' (1949), used by many film-makers, divides a myth into how many stages?",

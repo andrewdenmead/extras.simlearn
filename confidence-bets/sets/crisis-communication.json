@@ -5,7 +5,7 @@
  "eyebrow": "Warm-up",
  "heading": "How far off is your gut?",
  "intro": [
-  "Eight real numbers about what happens when things go wrong for a business: shocks that stop trade, cyber-attacks, rumours that move markets, and how fast money, stories and shoppers react.",
+  "Eight real numbers about what happens when things go wrong for a business: shocks that stop trade, power cuts and storms, rumours that move markets, and how fast money, stories and shoppers react.",
   "Every figure is real and sourced. Bet on how sure you are."
  ],
  "outro": {
@@ -102,32 +102,32 @@
    "source": "Bloomberg, 'Fake report erasing $136 billion shows market's fragility', April 2013"
   },
   {
-   "q": "The German digital association Bitkom asks about 1,000 companies each year what theft, spying and sabotage cost them, online and offline. What is its 2026 estimate of the yearly damage to the German economy?",
+   "q": "On 14 August 2003 a power failure spread across the north-east of the United States and parts of Canada, including New York, Detroit and Toronto. About how many people lost power?",
    "options": [
-    "under €50 billion",
-    "€50–100 billion",
-    "€100–200 billion",
-    "over €200 billion"
+    "1 million",
+    "5 million",
+    "15 million",
+    "50 million"
    ],
    "correct": 3,
-   "figure": "€211–271bn",
-   "sub": "a year, survey-based estimate",
-   "explain": "Bitkom puts the damage at between €211 billion and €271 billion a year, depending on whether suspected attacks are counted, down from about €289 billion in 2025. Cyber-attacks make up about three-quarters of it, and 58% of the firms surveyed had suffered damage from one in the past year.",
-   "source": "Bitkom, Wirtschaftsschutz 2026"
+   "figure": "≈50 million",
+   "sub": "people in the US and Canada",
+   "explain": "About 50 million people lost power, from New York and Detroit to Toronto and Ottawa. Some areas had electricity back within hours; others waited more than a day.",
+   "source": "HISTORY.com, 'Blackout hits Northeast United States'; US–Canada Power System Outage Task Force, Final Report, 2004"
   },
   {
-   "q": "A cyber-attack in 2025 stopped production at Jaguar Land Rover's UK factories for more than a month. The Cyber Monitoring Centre estimated the cost to the UK economy, including thousands of suppliers. How much?",
+   "q": "The night before the Great Storm of October 1987, a BBC weather forecaster told viewers not to worry about a hurricane. About how many trees did the storm blow down in southern England?",
    "options": [
-    "£190 million",
-    "£1.9 billion",
-    "£4 billion",
-    "£9 billion"
+    "1.5 million",
+    "15 million",
+    "50 million",
+    "150 million"
    ],
    "correct": 1,
-   "figure": "£1.9bn",
-   "sub": "up to 5,000 firms affected",
-   "explain": "The CMC called it the most economically damaging cyber event ever to hit the UK, with up to 5,000 organisations affected, mostly in the carmaker's supply chain. It warned that the figure could rise if the return to full production was delayed. The estimate is a model, not an audited cost.",
-   "source": "Cyber Monitoring Centre, October 2025 (reported by Prolific North and others)"
+   "figure": "≈15 million",
+   "sub": "trees, 15–16 October 1987",
+   "explain": "About 15 million trees came down in one night. After the storm the Met Office held an inquiry and improved its observations over the sea to the south and west of the UK and its computer forecasts.",
+   "source": "Met Office, 'The Great Storm of 1987' case study"
   }
  ]
 }
