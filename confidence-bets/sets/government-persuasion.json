@@ -1,0 +1,133 @@
+{
+ "slug": "government-persuasion",
+ "course": "AE",
+ "title": "Government persuasion in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about governments trying to change what we do: posters, packaging, defaults and advertising.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Governments have always tried to persuade.",
+  "paras": [
+   "Posters, packaging, defaults and advertising budgets: some of these surprised the room more than others.",
+   "Where persuasion ends and manipulation begins is a line every society draws for itself."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The 'Keep Calm and Carry On' poster was designed by Britain's Ministry of Information in 1939. What happened to it?",
+   "options": [
+    "It was printed but almost never put up",
+    "It went up all over Britain",
+    "It was shown only in Scotland",
+    "It was banned as too gloomy"
+   ],
+   "correct": 0,
+   "figure": "≈2.45m",
+   "sub": "printed, almost none displayed",
+   "explain": "About 2.45 million copies were printed to be used in a crisis such as an invasion, but the poster was hardly ever displayed and most were pulped. A copy found in a bookshop in Alnwick in 2000 made it famous sixty years late.",
+   "source": "The National Archives; Imperial War Museums"
+  },
+  {
+   "q": "In 2020, which organisation was the biggest advertiser in the UK?",
+   "options": [
+    "Sky",
+    "Procter & Gamble",
+    "The UK government",
+    "Amazon"
+   ],
+   "correct": 2,
+   "figure": "Government",
+   "sub": "the UK's biggest advertiser, 2020",
+   "explain": "Its Covid-19 campaigns ('Stay home, protect the NHS, save lives') made the UK government the country's biggest advertiser in 2020, spending about £164m, ahead of Unilever, Sky and Procter & Gamble. Most of the money went on telling people what the rules were and why to follow them.",
+   "source": "Nielsen advertising spend data, reported by Campaign, January 2021"
+  },
+  {
+   "q": "Organ donation now works on an 'opt-out' basis across the UK: adults count as donors unless they say no. Which part of the UK made the switch first?",
+   "options": [
+    "England",
+    "Wales",
+    "Northern Ireland",
+    "Scotland"
+   ],
+   "correct": 1,
+   "figure": "Wales",
+   "sub": "opt-out since December 2015",
+   "explain": "Wales switched in December 2015, followed by England (May 2020), Scotland (March 2021) and Northern Ireland (June 2023). Changing the default is one of the quietest ways a government can change behaviour.",
+   "source": "NHS Blood and Transplant"
+  },
+  {
+   "q": "Which country was the first to require cigarettes to be sold in plain packs, with no logos or brand colours?",
+   "options": [
+    "Australia",
+    "Canada",
+    "Norway",
+    "The UK"
+   ],
+   "correct": 0,
+   "figure": "Australia",
+   "sub": "plain packs since December 2012",
+   "explain": "Australia's plain packaging rules took full effect on 1 December 2012, months after the tobacco industry lost a challenge in its High Court. The UK followed in 2016–17, and many countries have since copied it.",
+   "source": "Tobacco Tactics (University of Bath), Plain Packaging; High Court of Australia, August 2012"
+  },
+  {
+   "q": "What share of UK adults smoked cigarettes in 2025?",
+   "options": [
+    "4%",
+    "10%",
+    "18%",
+    "27%"
+   ],
+   "correct": 1,
+   "figure": "9.8%",
+   "sub": "of UK adults (about 4.9 million)",
+   "explain": "9.8% of adults smoked in 2025, about 4.9 million people and the lowest share since the current series began in 2011 (20.2%). In the mid-1970s it was around 45%. Taxes, bans, warnings and campaigns all played a part.",
+   "source": "ONS, Adult smoking habits in the UK: 2025 (October 2026); General Household Survey, 1974"
+  },
+  {
+   "q": "Since 2012, UK employers must put workers into a workplace pension automatically; workers can opt out. What share of eligible employees now save into one?",
+   "options": [
+    "48%",
+    "63%",
+    "76%",
+    "90%"
+   ],
+   "correct": 3,
+   "figure": "90%",
+   "sub": "of eligible employees (55% in 2012)",
+   "explain": "Participation rose from 55% of eligible employees in 2012 to 90% in 2025, about 22.6 million people. Nobody was forced to save: the government changed the default, and most people simply did not opt out.",
+   "source": "DWP, Workplace pension participation and savings trends, 2009 to 2025 (July 2026)"
+  },
+  {
+   "q": "After a 1998 paper falsely linked the MMR vaccine to autism, how low did MMR coverage for two-year-olds in England fall at its worst, in 2003–04?",
+   "options": [
+    "About 50%",
+    "About 65%",
+    "About 80%",
+    "About 90%"
+   ],
+   "correct": 2,
+   "figure": "≈80%",
+   "sub": "MMR coverage at age 2, 2003–04",
+   "explain": "Coverage fell from about 92% in the mid-1990s to 79.9% in 2003–04, and measles came back. The paper was retracted in 2010 and its lead author struck off the medical register.",
+   "source": "NHS Immunisation Statistics (COVER), 2003–04; The Lancet, retraction, 2010"
+  },
+  {
+   "q": "Which phrase did Collins Dictionary choose as its Word of the Year in 2017, after its use rose by 365%?",
+   "options": [
+    "Deepfake",
+    "Infodemic",
+    "Post-truth",
+    "Fake news"
+   ],
+   "correct": 3,
+   "figure": "Fake news",
+   "sub": "Collins Word of the Year 2017",
+   "explain": "Collins chose 'fake news', defined as false, often sensational information spread under the guise of news reporting. 'Post-truth' was Oxford's word of the year in 2016; 'infodemic' and 'deepfake' came into wide use later.",
+   "source": "Collins Dictionary, Word of the Year 2017"
+  }
+ ]
+}

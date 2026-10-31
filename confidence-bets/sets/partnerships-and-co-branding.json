@@ -1,0 +1,133 @@
+{
+ "slug": "partnerships-and-co-branding",
+ "course": "EBC",
+ "title": "Brand partnerships in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers and stories about brands that work together: who borrows what from whom, and what it is worth.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Partners borrow from each other.",
+  "paras": [
+   "Every partnership trades something: a name, a skill, an audience or a reputation. Some of these deals were small at the start and huge later.",
+   "Today, think about what each partner brings, and what each one risks."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Dr. Martens boots are a British icon. Where was their air-cushioned sole invented?",
+   "options": [
+    "Northamptonshire, England",
+    "Bavaria, Germany",
+    "Milan, Italy",
+    "Boston, USA"
+   ],
+   "correct": 1,
+   "figure": "Bavaria",
+   "sub": "by a German doctor",
+   "explain": "In Germany: Dr Klaus Märtens designed it in 1945 after hurting his foot skiing in the Bavarian Alps. In 1959 the Northamptonshire bootmaker R. Griggs bought the rights, and its first boot, the 1460, came off the line on 1 April 1960.",
+   "source": "Northampton Museums collection record; Dr. Martens brand history"
+  },
+  {
+   "q": "Since 1991 computer makers have put 'Intel Inside' stickers and logos on their PCs. What did Intel give them in return?",
+   "options": [
+    "Part of their advertising costs",
+    "Free processors",
+    "A share of Intel's profits",
+    "Priority delivery"
+   ],
+   "correct": 0,
+   "figure": "Advertising money",
+   "sub": "if the ads showed Intel's logo",
+   "explain": "Intel paid into a co-op fund that covered part of their advertising costs, but only if the adverts showed its logo. It turned a part nobody sees into one of the best-known names in technology, a classic case of 'ingredient branding'.",
+   "source": "Intel Inside co-op marketing programme, 1991; reported by Tedium, 2022"
+  },
+  {
+   "q": "For the 2023 film Barbie, Mattel signed product partnerships with other brands. Roughly how many?",
+   "options": [
+    "About 10",
+    "About 30",
+    "About 100",
+    "About 500"
+   ],
+   "correct": 2,
+   "figure": "About 100",
+   "sub": "from clothes to a Barbie Xbox",
+   "explain": "More than 100, from a Zara collection to a Barbie DreamHouse Xbox and a Malibu 'Dreamhouse' on Airbnb. The film took about $1.4 billion worldwide, more than any other film that year.",
+   "source": "Axios, July 2023; Bloomberg, September 2023"
+  },
+  {
+   "q": "For decades LEGO designed every set itself. In 1999 it launched its first theme based on someone else's film or brand. Which one?",
+   "options": [
+    "Star Wars",
+    "Harry Potter",
+    "Batman",
+    "Toy Story"
+   ],
+   "correct": 0,
+   "figure": "Star Wars",
+   "sub": "LEGO's first licensed theme, 1999",
+   "explain": "Star Wars was LEGO's first licensed theme, launched in 1999. Some LEGO executives were at first against it, because the company had long refused to make war toys, but first-year sales reportedly beat the forecast by 500%.",
+   "source": "The Brothers Brick, 'The story behind the 1999 launch of LEGO Star Wars', April 2019 (sales figure from Brick by Brick)"
+  },
+  {
+   "q": "The Converse 'Chuck Taylor All Star' trainer is named after a real person. Who was he?",
+   "options": [
+    "The company's founder",
+    "The shoe's designer",
+    "A US army general",
+    "A basketball player who sold the shoes"
+   ],
+   "correct": 3,
+   "figure": "A player-salesman",
+   "sub": "a 1920s deal",
+   "explain": "Chuck Taylor was a semi-professional basketball player who joined Converse as a salesman in 1921; his name went on the ankle patch soon after (1923 by most accounts, though some histories say 1932), one of the first athlete partnerships. Nike bought Converse in 2003.",
+   "source": "Smithsonian Magazine; Converse company history"
+  },
+  {
+   "q": "In April 2020 the rapper Travis Scott gave a virtual concert inside the game Fortnite. At its peak, how many players were watching at the same time?",
+   "options": [
+    "123,000",
+    "1.2 million",
+    "12.3 million",
+    "123 million"
+   ],
+   "correct": 2,
+   "figure": "12.3 million",
+   "sub": "at the same time",
+   "explain": "12.3 million at once, a record for the game at the time, and 27.7 million different players across the five shows. Music, games and fashion brands have copied the idea since.",
+   "source": "Epic Games figures, April 2020, reported by GameSpot"
+  },
+  {
+   "q": "In 2021 McDonald's sold 'The BTS Meal', a menu chosen by the K-pop band BTS, in purple packaging. In roughly how many countries did it go on sale?",
+   "options": [
+    "5",
+    "15",
+    "30",
+    "50"
+   ],
+   "correct": 3,
+   "figure": "Nearly 50",
+   "sub": "countries",
+   "explain": "Nearly 50 markets, from the US to Malaysia and Indonesia. The deal sold a band's favourite order rather than a new product: the brand added only two sauces and purple packaging.",
+   "source": "McDonald's, press release, 19 April 2021"
+  },
+  {
+   "q": "Pokémon is often called the world's highest-earning media franchise. Where has most of its money come from?",
+   "options": [
+    "Video games",
+    "Licensed merchandise",
+    "Films and TV",
+    "The Pokémon GO app"
+   ],
+   "correct": 1,
+   "figure": "Licensed goods",
+   "sub": "an industry estimate",
+   "explain": "Licensed merchandise: toys, clothes and countless products made by other companies carrying the characters. One industry estimate puts lifetime licensed-goods sales at about $92 billion, and $10.8 billion in 2023 alone; estimates of the whole franchise start at around $100 billion.",
+   "source": "License Global, Top Global Licensors 2024 (reported by PocketGamer.biz); Statista"
+  }
+ ]
+}

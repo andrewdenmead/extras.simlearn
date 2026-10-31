@@ -1,0 +1,133 @@
+{
+ "slug": "migration-and-welcome",
+ "course": "AE",
+ "title": "Moving to safety in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about people on the move: Europeans who left Europe, people who came to it, and the rules that decide who counts as a refugee.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "History moves in both directions.",
+  "paras": [
+   "Europe has sent out migrants on a vast scale, and taken them in. On several of these, the room's confident guess was a long way from the record.",
+   "Who is welcomed, where and on what terms has always depended on more than the numbers. But the numbers are a good place to start."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Between 1815 and 1930, roughly how many Europeans emigrated to other continents, mostly to the Americas?",
+   "options": [
+    "About 60 million",
+    "About 100 million",
+    "About 150 million",
+    "About 200 million"
+   ],
+   "correct": 0,
+   "figure": "≈60m",
+   "sub": "Europeans emigrated, 1815–1930",
+   "explain": "About 60 million Europeans left for other continents in this period, most of them for the United States, Canada, Argentina, Brazil and Australia. It was one of the largest movements of people in history.",
+   "source": "Dudley Baines, Emigration from Europe 1815–1930, Cambridge University Press, 1995"
+  },
+  {
+   "q": "Between 1825 and 1938, how many people left Scotland for destinations overseas?",
+   "options": [
+    "About 300,000",
+    "About 800,000",
+    "Over 2.3 million",
+    "Over 5 million"
+   ],
+   "correct": 2,
+   "figure": "2.3m+",
+   "sub": "left Scotland for overseas",
+   "explain": "More than 2.3 million people left Scotland for overseas in this period, and another 600,000 moved to England between 1841 and 1911. Scotland's whole population in 1901 was about 4.5 million: emigration on the scale of Europe's poorest societies, from one of the world's richest countries.",
+   "source": "T. M. Devine, To the Ends of the Earth: Scotland's Global Diaspora (2011), reported by the Otago Daily Times"
+  },
+  {
+   "q": "In 2024, how many times were people forced from their homes inside their own country by floods, storms, wildfires and other disasters?",
+   "options": [
+    "15.8 million",
+    "45.8 million",
+    "95 million",
+    "150 million"
+   ],
+   "correct": 1,
+   "figure": "45.8m",
+   "sub": "disaster displacements, 2024",
+   "explain": "There were 45.8 million displacements caused by disasters in 2024, the highest figure since records began in 2008, and more than twice the 20.1 million caused by conflict. Most people displaced by disasters never leave their own country.",
+   "source": "Internal Displacement Monitoring Centre, Global Report on Internal Displacement 2025"
+  },
+  {
+   "q": "In 1962, as Algeria became independent, people of European origin left for France. Roughly how many left that year, most of them between April and September?",
+   "options": [
+    "About 30,000",
+    "About 100,000",
+    "About 300,000",
+    "About 800,000"
+   ],
+   "correct": 3,
+   "figure": "≈800k",
+   "sub": "left in 1962, most in a few months",
+   "explain": "About 800,000 people left in 1962, most of them between April and September; about 480,000 arrived in June alone, just before independence. More followed over the next two or three years. France had to house them almost overnight.",
+   "source": "French Ministry of the Armed Forces, Chemins de mémoire (on the 1962 departures from Algeria)"
+  },
+  {
+   "q": "How many countries are parties to the 1951 Refugee Convention, the treaty that defines who is a refugee?",
+   "options": [
+    "146",
+    "166",
+    "176",
+    "193"
+   ],
+   "correct": 0,
+   "figure": "146",
+   "sub": "states parties to the 1951 Convention",
+   "explain": "146 states are parties to the Convention and 147 to its 1967 Protocol, out of 193 UN members. Several countries that host large numbers of refugees, such as India, Lebanon and Jordan, have never joined.",
+   "source": "UNHCR, States parties to the 1951 Convention and its 1967 Protocol"
+  },
+  {
+   "q": "How many Ukrainians who fled Russia's invasion held temporary protection in the EU in early 2026?",
+   "options": [
+    "1.1 million",
+    "4.3 million",
+    "8.6 million",
+    "12 million"
+   ],
+   "correct": 1,
+   "figure": "4.3m",
+   "sub": "under temporary protection in the EU",
+   "explain": "More than 4.3 million Ukrainians held temporary protection in the EU, about 60% of them in Germany, Poland and Czechia. Germany hosts the most, about 1.26 million.",
+   "source": "Eurostat, temporary protection statistics (January 2026 data), March 2026"
+  },
+  {
+   "q": "In 2015, the year of 'Wir schaffen das' ('We can do this'), roughly how many asylum seekers arrived in Germany?",
+   "options": [
+    "190,000",
+    "390,000",
+    "890,000",
+    "1.9 million"
+   ],
+   "correct": 2,
+   "figure": "≈890k",
+   "sub": "asylum seekers arrived in 2015",
+   "explain": "About 890,000 asylum seekers arrived in Germany in 2015. Early estimates of more than a million were revised down once double registrations had been removed.",
+   "source": "German Federal Ministry of the Interior, September 2016"
+  },
+  {
+   "q": "By the end of 2024, how many people worldwide had been forced from their homes by war, persecution, violence and human rights abuses?",
+   "options": [
+    "About 43 million",
+    "About 63 million",
+    "About 93 million",
+    "About 123 million"
+   ],
+   "correct": 3,
+   "figure": "123.2m",
+   "sub": "forcibly displaced people, end of 2024",
+   "explain": "UNHCR counted 123.2 million forcibly displaced people at the end of 2024, roughly one in every 67 people on Earth. The total includes refugees and asylum seekers, but the largest group are people displaced inside their own country.",
+   "source": "UNHCR, Global Trends: Forced Displacement in 2024, June 2025"
+  }
+ ]
+}

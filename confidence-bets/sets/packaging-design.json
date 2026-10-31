@@ -1,0 +1,133 @@
+{
+ "slug": "packaging-design",
+ "course": "EFD",
+ "title": "Packaging in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about packaging: how much we throw away, what it's made of, what comes back and the rules that shape the design.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Packaging is full of trade-offs.",
+  "paras": [
+   "A pack has to protect the product, sell it on a crowded shelf, follow the law and end up somewhere after it's used. Today's numbers showed how far apart our guesses and the real picture can be.",
+   "Bring that habit with you: when the team argues about a pack, ask what the evidence actually says."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "How much packaging waste did the average person in the EU produce in 2023?",
+   "options": [
+    "About 18 kg",
+    "About 60 kg",
+    "About 178 kg",
+    "About 400 kg"
+   ],
+   "correct": 2,
+   "figure": "177.8 kg",
+   "sub": "per person, per year",
+   "explain": "That's almost half a kilo a day for every person: 79.7 million tonnes across the EU. It was 8.7 kg less than in 2022, but 21.2 kg more than in 2013.",
+   "source": "Eurostat, Packaging waste statistics, 2025 (Packaging Gateway)"
+  },
+  {
+   "q": "Which material makes up the largest share of the EU's packaging waste?",
+   "options": [
+    "Plastic",
+    "Paper and cardboard",
+    "Glass",
+    "Wood"
+   ],
+   "correct": 1,
+   "figure": "40.4%",
+   "sub": "paper and cardboard",
+   "explain": "Paper and cardboard make up 40.4% of EU packaging waste, about twice as much as plastic (19.8%) and glass (18.8%). Online shopping boxes are part of the reason.",
+   "source": "Eurostat, Packaging waste statistics, 2025"
+  },
+  {
+   "q": "Germany puts a 25-cent deposit (Pfand) on most single-use drinks bottles and cans. What share of them come back?",
+   "options": [
+    "About 50%",
+    "About 70%",
+    "About 85%",
+    "More than 96%"
+   ],
+   "correct": 3,
+   "figure": "96%+",
+   "sub": "returned",
+   "explain": "Between 96 and 99% of single-use deposit bottles and cans are returned, depending on the source. The deposit started in 2003, and the logo on the label tells you a bottle is worth money.",
+   "source": "Umweltbundesamt, 2026 (via Euronews); DPG Deutsche Pfandsystem GmbH"
+  },
+  {
+   "q": "Scotland planned a 20p deposit on drinks containers, first due to start in 2022. When are UK deposit schemes now due to start?",
+   "options": [
+    "It started in 2023",
+    "October 2025",
+    "October 2027",
+    "It has been scrapped"
+   ],
+   "correct": 2,
+   "figure": "Oct 2027",
+   "sub": "1 October 2027",
+   "explain": "Scotland's scheme was delayed several times; in 2023 the UK government allowed it only without glass, and the company set up to run it went into administration. All four UK nations now plan to start on 1 October 2027; only Wales will include glass.",
+   "source": "Clarity, UK Deposit Return Scheme: Where Are We Now?, September 2026; Senedd Research, Deposit return scheme regulations in brief, 2026"
+  },
+  {
+   "q": "In 2023 Toblerone took the Matterhorn mountain off some of its packs. Why?",
+   "options": [
+    "Swiss rules: bars made partly in Slovakia can't use Swiss symbols",
+    "A copyright dispute with the town of Zermatt",
+    "Shoppers said it looked old-fashioned",
+    "To save ink and printing costs"
+   ],
+   "correct": 0,
+   "figure": "Swissness",
+   "sub": "the law behind the change",
+   "explain": "Under Switzerland's 'Swissness' law, a food can only use Swiss symbols if at least 80% of its raw materials are Swiss and its key processing happens in Switzerland. With some production moving to Bratislava, the Matterhorn was replaced by a simpler mountain logo.",
+   "source": "CBC News, March 2023"
+  },
+  {
+   "q": "What share of the plastic made for the European market goes into packaging?",
+   "options": [
+    "About 10%",
+    "Nearly 40%",
+    "About 55%",
+    "About 70%"
+   ],
+   "correct": 1,
+   "figure": "≈40%",
+   "sub": "the largest single use of plastic",
+   "explain": "Packaging made up about 39% of plastics demand in Europe in 2021, far more than building and construction (about 21%) or cars (about 9%). Much of it is designed to be used only once.",
+   "source": "European Environment Agency, Nearly 40 percent of plastic demand comes from packaging, 2023 (Plastics Europe data for 2021)"
+  },
+  {
+   "q": "Where on a glass bottle of Heinz ketchup does Heinz say you should tap to get the ketchup out?",
+   "options": [
+    "On the bottom",
+    "On the lid",
+    "On the side of the label",
+    "On the '57' on the neck"
+   ],
+   "correct": 3,
+   "figure": "57",
+   "sub": "the sweet spot",
+   "explain": "A Heinz spokesperson said the sweet spot is the embossed '57' on the neck: give it a firm tap where the bottle narrows. The design hides a user instruction in plain sight that many people never notice.",
+   "source": "Heinz spokesperson, reported by Shortlist and Refinery29, 2016"
+  },
+  {
+   "q": "Since 2022 UK firms have paid tax on plastic packaging that contains less than 30% recycled plastic. From April 2026, roughly how much per tonne?",
+   "options": [
+    "About £229",
+    "About £900",
+    "About £1,800",
+    "About £3,500"
+   ],
+   "correct": 0,
+   "figure": "£228.82",
+   "sub": "per tonne, from April 2026",
+   "explain": "The rate rose from £223.69 to £228.82 per tonne in April 2026. It's small per pack, but large across millions of packs, and it pushes firms towards recycled plastic.",
+   "source": "HM Revenue & Customs, Plastic Packaging Tax rates (reported by Rödl & Partner, March 2026)"
+  }
+ ]
+}

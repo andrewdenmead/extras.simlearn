@@ -1,0 +1,133 @@
+{
+ "slug": "age-checks-online",
+ "course": "AE",
+ "title": "Children online in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about children, phones and age limits online, from Britain, Germany and the United States.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Age limits on paper, and in practice.",
+  "paras": [
+   "On several of these, the room's confident guess and the evidence were some way apart: children are online younger, and in larger numbers, than the rules on paper suggest.",
+   "How far a society should go to make those rules real, and who pays for it, is a question with no free answer."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "What share of UK children aged 5 to 7 have their own smartphone?",
+   "options": [
+    "24%",
+    "44%",
+    "64%",
+    "84%"
+   ],
+   "correct": 0,
+   "figure": "24%",
+   "sub": "almost a quarter of 5- to 7-year-olds",
+   "explain": "Almost a quarter of 5- to 7-year-olds in the UK have their own smartphone, according to Ofcom's 2024 survey of children and parents. Ofcom also found that more and more children this young go online without a parent watching.",
+   "source": "Ofcom, Children and Parents: Media Use and Attitudes, April 2024"
+  },
+  {
+   "q": "YouTube, Instagram, Facebook, Snapchat and TikTok all set a minimum age of 13. What share of UK children aged 8 to 12 use the big platforms anyway?",
+   "options": [
+    "12%",
+    "32%",
+    "52%",
+    "72%"
+   ],
+   "correct": 3,
+   "figure": "72%",
+   "sub": "of 8- to 12-year-olds",
+   "explain": "Ofcom found that 72% of 8- to 12-year-olds use the big platforms' sites and apps, even though the minimum age on most of them is 13. In March 2026 it wrote to six of them, telling them to keep underage children off.",
+   "source": "Ofcom, 'Keep underage children off your platforms', March 2026"
+  },
+  {
+   "q": "Children who sign up for social media often give a false date of birth. What share of UK 8- to 17-year-olds claim to be 18 or over on social media?",
+   "options": [
+    "22%",
+    "35%",
+    "50%",
+    "65%"
+   ],
+   "correct": 0,
+   "figure": "22%",
+   "sub": "of 8- to 17-year-olds claim to be adults",
+   "explain": "About one in five (22%) of 8- to 17-year-olds say they are 18 or over on social media. The figure is what children say in a survey, so the real share may be higher or lower.",
+   "source": "Ofcom, Children's Online User Ages research, 2024"
+  },
+  {
+   "q": "In April 2024, WhatsApp changed its minimum age for users in the UK and the EU. What did it do?",
+   "options": [
+    "Raised it from 13 to 16",
+    "Raised it from 16 to 18",
+    "Lowered it from 16 to 13",
+    "Dropped it altogether"
+   ],
+   "correct": 2,
+   "figure": "16 → 13",
+   "sub": "WhatsApp's minimum age in the UK and EU",
+   "explain": "WhatsApp lowered its minimum age in the UK and the EU from 16 to 13, in line with most of the rest of the world. Campaigners such as Smartphone Free Childhood criticised the change.",
+   "source": "WhatsApp terms of service update, effective 11 April 2024 (reported by The Guardian and Gigazine)"
+  },
+  {
+   "q": "US researchers tracked the phones of 11- to 17-year-olds. On a typical day, how many notifications did the median teenager receive?",
+   "options": [
+    "37",
+    "87",
+    "237",
+    "537"
+   ],
+   "correct": 2,
+   "figure": "237",
+   "sub": "notifications a day (median)",
+   "explain": "Half the teenagers received 237 or more notifications a day, and the heaviest users got more than 4,000. About a quarter arrived during school hours, and on average the teenagers picked up their phones 51 times a day.",
+   "source": "Common Sense Media, Constant Companion, September 2023"
+  },
+  {
+   "q": "Germany's JIM study asks 12- to 19-year-olds how long they spend online on a normal day. What was the answer in 2025?",
+   "options": [
+    "About 1 hour",
+    "About 2 hours",
+    "About 3 hours",
+    "Almost 4 hours"
+   ],
+   "correct": 3,
+   "figure": "231 min",
+   "sub": "online a day, ages 12 to 19",
+   "explain": "German teenagers reported 231 minutes a day online in 2025, almost four hours, up from 201 minutes in 2024. The figure is what teenagers report themselves, so the real time may be higher or lower.",
+   "source": "mpfs, JIM-Studie 2025 (Germany)"
+  },
+  {
+   "q": "England's Children's Commissioner asked 16- to 21-year-olds about pornography online. On average, at what age had they first seen it?",
+   "options": [
+    "9",
+    "13",
+    "16",
+    "18"
+   ],
+   "correct": 1,
+   "figure": "13",
+   "sub": "average age; 1 in 10 had seen it by 9",
+   "explain": "The average age was 13, and one in ten had seen pornography online by the age of 9. Many had first come across it by accident.",
+   "source": "Children's Commissioner for England, pornography survey, January 2023"
+  },
+  {
+   "q": "In 2025, a survey asked German 14- to 17-year-olds whether there should be a minimum age of 16 for social media accounts. What share said yes?",
+   "options": [
+    "32%",
+    "47%",
+    "62%",
+    "77%"
+   ],
+   "correct": 1,
+   "figure": "47%",
+   "sub": "of 14- to 17-year-olds (adults: 85%)",
+   "explain": "A relative majority of teenagers, 47%, supported a minimum age of 16, while 42% were against. Among adults the figure was 85%. Most teenagers in the same survey still said they would rather live in a world with social media than without it.",
+   "source": "ifo Institute, ifo Bildungsbarometer 2025"
+  }
+ ]
+}

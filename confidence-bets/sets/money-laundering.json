@@ -1,0 +1,133 @@
+{
+ "slug": "money-laundering",
+ "course": "EIM",
+ "title": "Dirty money in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about money laundering: how much dirty money there might be, how many suspicions businesses report, what the biggest cases cost and how Europe is changing the rules on cash.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Most of the fight happens at ordinary desks.",
+  "paras": [
+   "Today's numbers show the gap between the scale of the problem and what the system sees: hundreds of thousands of reports a year, very large fines in a few cases, and estimates of the total that run into trillions.",
+   "Most of the people who first notice something odd are not police officers. They work in banks and businesses, and they have to decide what to do with what they see."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The UN Office on Drugs and Crime estimates how much money is laundered around the world each year. As a share of global GDP, how much?",
+   "options": [
+    "0.2–0.5%",
+    "2–5%",
+    "8–12%",
+    "15–20%"
+   ],
+   "correct": 1,
+   "figure": "2–5%",
+   "sub": "of global GDP, an estimate",
+   "explain": "The UNODC puts it at 2 to 5% of world GDP: roughly US$800 billion to US$2 trillion a year. It is only an estimate, because money that is laundered successfully is, by definition, hard to see.",
+   "source": "UNODC, money laundering estimate, cited in UNODC news release, November 2024"
+  },
+  {
+   "q": "In 2016 the European Central Bank decided to stop issuing the €500 note, citing fears that it could help illegal activity. Which two countries' central banks were the last to stop, in April 2019?",
+   "options": [
+    "Germany and Austria",
+    "France and Belgium",
+    "Italy and Spain",
+    "Netherlands and Luxembourg"
+   ],
+   "correct": 0,
+   "figure": "DE + AT",
+   "sub": "the others stopped in January 2019",
+   "explain": "Seventeen euro-area central banks stopped issuing the note on 27 January 2019; Germany's and Austria's carried on until 26 April 2019. Existing €500 notes are still legal tender and keep their value.",
+   "source": "European Central Bank press release, 4 May 2016; AFP report, January 2019"
+  },
+  {
+   "q": "In October 2024 the Canadian-owned TD Bank pleaded guilty in the US to money-laundering charges after failing to monitor its customers properly. Roughly how much did it agree to pay?",
+   "options": [
+    "US$30 million",
+    "US$300 million",
+    "US$3 billion",
+    "US$30 billion"
+   ],
+   "correct": 2,
+   "figure": "≈$3bn",
+   "sub": "in fines and forfeiture",
+   "explain": "TD Bank agreed to pay about US$3 billion, one of the largest penalties of its kind against a bank in the US. According to the Justice Department, at least three criminal networks had moved about US$670 million through its accounts over several years.",
+   "source": "US Department of Justice, October 2024, reported by NPR"
+  },
+  {
+   "q": "UK banks and businesses must report suspected money laundering to the UK Financial Intelligence Unit. How many suspicious activity reports did it receive in the year to March 2026?",
+   "options": [
+    "18,000",
+    "86,000",
+    "290,000",
+    "896,000"
+   ],
+   "correct": 3,
+   "figure": "896,414",
+   "sub": "about 2,450 a day",
+   "explain": "The UKFIU received 896,414 reports in 2025–26, up 3% on the year before. Most of them come from banks, and only a small share lead to a request to stop or delay a payment.",
+   "source": "National Crime Agency, UKFIU SARs Annual Report 2025–26, October 2026 (reported by LexisNexis)"
+  },
+  {
+   "q": "In 2021 NatWest became the first company prosecuted by the UK's Financial Conduct Authority in a criminal case under the Money Laundering Regulations. It pleaded guilty. What was it fined?",
+   "options": [
+    "£265 million",
+    "£650 million",
+    "£1.3 billion",
+    "£2.6 billion"
+   ],
+   "correct": 0,
+   "figure": "£264.8m",
+   "sub": "December 2021",
+   "explain": "NatWest was fined about £264.8 million for failing to monitor one business customer properly between 2012 and 2016. That customer paid in about £365 million, roughly £264 million of it in cash.",
+   "source": "Financial Conduct Authority press release, December 2021"
+  },
+  {
+   "q": "In 2023 the crypto exchange Binance agreed to pay US$4.3 billion in the US, and its founder pleaded guilty to failing to run an adequate anti-money-laundering programme. Prosecutors asked for three years in prison. What did he get?",
+   "options": [
+    "No prison",
+    "4 months",
+    "3 years",
+    "10 years"
+   ],
+   "correct": 1,
+   "figure": "4 months",
+   "sub": "plus a US$50 million fine",
+   "explain": "In April 2024 a judge in Seattle sentenced Changpeng Zhao to four months, far less than the 36 months prosecutors wanted. He was not charged with laundering money himself, but with letting his company operate without the checks the law requires.",
+   "source": "CNBC, report of the sentencing, 30 April 2024"
+  },
+  {
+   "q": "Germany's Financial Intelligence Unit received 265,708 suspicious transaction reports in 2024. How did the number change in 2025?",
+   "options": [
+    "−12%",
+    "+4%",
+    "+18%",
+    "+41%"
+   ],
+   "correct": 3,
+   "figure": "+41%",
+   "sub": "374,693 reports in 2025",
+   "explain": "After two years of falling numbers, reports jumped by about 41% to 374,693. Most came from banks, and digital banks and online payment providers alone sent about 108,000, nearly three in ten of all reports.",
+   "source": "FIU Deutschland, Jahresbericht 2025, summarised by PayTechLaw"
+  },
+  {
+   "q": "Germany has no general limit on paying in cash. Under new EU rules, what is the most a business anywhere in the EU may accept in cash for a single purchase from 10 July 2027?",
+   "options": [
+    "€1,000",
+    "€5,000",
+    "€10,000",
+    "€25,000"
+   ],
+   "correct": 2,
+   "figure": "€10,000",
+   "sub": "countries may set lower limits",
+   "explain": "From July 2027 businesses may not take or make cash payments above €10,000, and splitting a payment into smaller linked parts doesn't get round it. Private sales between individuals are not covered, and countries may keep or set lower limits of their own.",
+   "source": "EU Regulation 2024/1624 (AMLR), reported by Stuttgarter Zeitung, 2026"
+  }
+ ]
+}

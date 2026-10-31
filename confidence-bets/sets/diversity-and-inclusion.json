@@ -1,0 +1,133 @@
+{
+ "slug": "diversity-and-inclusion",
+ "course": "EIM",
+ "title": "Diversity in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about diversity at work: pay, top jobs, hiring and what people think of diversity programmes, from Germany, the UK and the US.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "The numbers start the argument.",
+  "paras": [
+   "Some of today's figures moved quickly over the last decade; others have barely changed. And people who agree on the numbers can still disagree sharply about what to do about them.",
+   "That's where the real debate begins: not whether there is a gap, but what a particular organisation, with its own people and its own limits, should do next."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "On average, how much less per hour did women in Germany earn than men in 2025 (the 'unadjusted' gender pay gap)?",
+   "options": [
+    "9%",
+    "16%",
+    "21%",
+    "28%"
+   ],
+   "correct": 1,
+   "figure": "16%",
+   "sub": "€22.81 vs €27.05 an hour",
+   "explain": "Women earned €4.24 less per hour on average, the same gap as in 2024. About 60% of it is explained by part-time work, sector and type of job; the remaining 'adjusted' gap is 6%, which Destatis calls an upper limit for possible discrimination.",
+   "source": "Destatis (Federal Statistical Office), December 2025"
+  },
+  {
+   "q": "The gap differs sharply inside Germany. What was the unadjusted gender pay gap in eastern Germany in 2025?",
+   "options": [
+    "5%",
+    "12%",
+    "17%",
+    "22%"
+   ],
+   "correct": 0,
+   "figure": "5%",
+   "sub": "in the east (17% in the west)",
+   "explain": "In eastern Germany the gap was 5%, against 17% in the west. In the public sector it was 4%, against 17% in the private sector. Where people work, and in what jobs, makes a large difference to the headline figure.",
+   "source": "Destatis (Federal Statistical Office), December 2025"
+  },
+  {
+   "q": "How many of the Fortune 500, America's largest companies by revenue, had a woman as chief executive in 2026?",
+   "options": [
+    "23",
+    "41",
+    "56",
+    "89"
+   ],
+   "correct": 2,
+   "figure": "56",
+   "sub": "11.2%, a record",
+   "explain": "56 women ran Fortune 500 companies in 2026, a record 11.2%. Still, nearly nine in ten are run by men. The two highest-ranked companies led by women are both health insurers: Elevance Health and Centene.",
+   "source": "Fortune, Fortune 500, June 2026"
+  },
+  {
+   "q": "Among the chief executives of Germany's 160 biggest listed companies (DAX, MDAX and SDAX), how do women compare with men called Christian?",
+   "options": [
+    "Women outnumber them 3 to 1",
+    "Women outnumber them 2 to 1",
+    "Roughly equal",
+    "Christians outnumber women almost 2 to 1"
+   ],
+   "correct": 3,
+   "figure": "11 vs 6",
+   "sub": "Christians vs women",
+   "explain": "There were 11 chief executives called Christian and six women. Across all executive-board seats in these companies, women held 20.6% (143 of 693). Christian, Thomas and Michael together held 67 seats.",
+   "source": "AllBright Foundation, AllBright Report, October 2026"
+  },
+  {
+   "q": "What share of full-time professors at German universities were women at the end of 2024?",
+   "options": [
+    "30%",
+    "38%",
+    "45%",
+    "53%"
+   ],
+   "correct": 0,
+   "figure": "30%",
+   "sub": "of professors",
+   "explain": "Three in ten professors were women, up one point on the year before. Women earned 53% of university degrees and 46% of doctorates, so the share shrinks at each step of the academic career.",
+   "source": "Destatis (Federal Statistical Office), December 2025"
+  },
+  {
+   "q": "In late 2024 Pew Research asked US workers whether focusing on diversity, equity and inclusion (DEI) at work is a good thing. What share said it is?",
+   "options": [
+    "32%",
+    "52%",
+    "68%",
+    "81%"
+   ],
+   "correct": 1,
+   "figure": "52%",
+   "sub": "down from 56% in 2023",
+   "explain": "Just over half said it is a good thing, down from 56% in early 2023, while the share calling it a bad thing rose to 21%. Views split strongly by party: 42% of Republican workers saw it negatively.",
+   "source": "Pew Research Center, November 2024"
+  },
+  {
+   "q": "What share of FTSE 100 board seats were held by people from ethnic minority backgrounds at the end of 2025?",
+   "options": [
+    "5%",
+    "10%",
+    "15%",
+    "20%"
+   ],
+   "correct": 3,
+   "figure": "20%",
+   "sub": "208 of 1,063 seats",
+   "explain": "One in five FTSE 100 board seats was held by someone from an ethnic minority background, and 98 of the 100 companies had at least one such director. In senior management below board level, though, the share was only 11%.",
+   "source": "The Parker Review, March 2026"
+  },
+  {
+   "q": "A 2024 study sent 83,000 fake job applications to 97 large US employers. How much more often were applicants with 'white-sounding' names contacted than those with 'Black-sounding' names?",
+   "options": [
+    "No difference",
+    "About 2%",
+    "About 9%",
+    "About 50%"
+   ],
+   "correct": 2,
+   "figure": "≈9%",
+   "sub": "more call-backs",
+   "explain": "The typical employer contacted presumed white applicants about 9% more often, although names were assigned at random to otherwise comparable applications. At the most biased companies the gap was about 24%, at the least biased only about 3%. A famous 2004 study had found a gap of about 50%.",
+   "source": "Kline, Rose and Walters, University of California, Berkeley and University of Chicago, 2024"
+  }
+ ]
+}

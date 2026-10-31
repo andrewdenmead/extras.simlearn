@@ -1,0 +1,133 @@
+{
+ "slug": "ai-in-politics",
+ "course": "AE",
+ "title": "AI and democracy in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about artificial intelligence meeting elections, parliaments and government.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "The machines are already in the room.",
+  "paras": [
+   "AI is already in campaigns, in voting advice and in the offices of government, and the evidence on what voters want is mixed.",
+   "Whether that is a hope or a warning depends on what we think democracy is for."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "2024 was called 'the year of elections'. Roughly what share of the world's population lived in countries that held a national election that year?",
+   "options": [
+    "About 1 in 10",
+    "About 1 in 5",
+    "About 1 in 3",
+    "About half"
+   ],
+   "correct": 3,
+   "figure": "≈half",
+   "sub": "lived in a country with a national vote in 2024",
+   "explain": "More than 60 countries plus the EU held national elections, from India and Indonesia to the US and the UK; together they were home to about half of the world's population. It was the first such year of the generative AI era.",
+   "source": "TIME, 'The Ultimate Election Year: All the Elections Around the World in 2024', 2023–24"
+  },
+  {
+   "q": "Two days before Slovakia's election in September 2023, during the pre-vote media silence, what spread across social media?",
+   "options": [
+    "A fake audio clip of a party leader apparently discussing how to rig the vote",
+    "A hacked list of voters' addresses",
+    "An AI candidate added to the ballot",
+    "False reports that polling stations had closed"
+   ],
+   "correct": 0,
+   "figure": "Deepfake",
+   "sub": "audio, two days before the vote",
+   "explain": "A fake audio clip appeared to have the leader of Progressive Slovakia and a well-known journalist discussing how to rig the election. Both quickly denied it was real, but the pre-election silence rules made it hard for the media to debunk it in time.",
+   "source": "Harvard Kennedy School Misinformation Review, 'Beyond the deepfake hype: AI, democracy, and \"the Slovak case\"', 2024"
+  },
+  {
+   "q": "In Tokyo's 2024 election for governor, a 33-year-old AI engineer let an AI avatar of himself answer voters' questions online around the clock. How many votes did he win?",
+   "options": [
+    "About 15,000",
+    "About 155,000",
+    "About 500,000",
+    "About 1.5 million"
+   ],
+   "correct": 1,
+   "figure": "154,638",
+   "sub": "votes, fifth place",
+   "explain": "Takahiro Anno won 154,638 votes and came fifth out of a record 56 candidates. In 2025 he founded a party, Team Mirai, which won an upper-house seat with about 2.6% of the national vote, and in February 2026 it was reported to have won 11 lower-house seats.",
+   "source": "Tokyo Metropolitan Election Administration Commission, 2024 gubernatorial election results; 2025–26 results as reported"
+  },
+  {
+   "q": "A 2021 survey asked Europeans whether they would support cutting the number of national MPs and giving those seats to an AI. What share said yes?",
+   "options": [
+    "11%",
+    "26%",
+    "38%",
+    "51%"
+   ],
+   "correct": 3,
+   "figure": "51%",
+   "sub": "of Europeans (UK: 31%)",
+   "explain": "51% of Europeans said they would support the idea. In Britain the figure was 31%.",
+   "source": "IE University Center for the Governance of Change, European Tech Insights 2021"
+  },
+  {
+   "q": "In 2022, a group of Danish artists founded a party, the Synthetic Party, to stand in the general election. Who was its leader?",
+   "options": [
+    "A chatbot called Leader Lars",
+    "A retired judge",
+    "An anonymous group of hackers",
+    "A citizen chosen by lottery"
+   ],
+   "correct": 0,
+   "figure": "Leader Lars",
+   "sub": "an AI chatbot",
+   "explain": "The Synthetic Party, set up by a Danish artists' collective, was led by an AI chatbot, Leader Lars, trained on the programmes of Danish fringe parties. It was nowhere near the roughly 20,000 signatures needed to get onto the ballot.",
+   "source": "Fortune and AFP reports on Det Syntetiske Parti, 2022"
+  },
+  {
+   "q": "In August 2025, which European leader caused a row by saying he regularly used AI chatbots for 'a second opinion' in his work?",
+   "options": [
+    "Germany's Chancellor",
+    "Spain's Prime Minister",
+    "Sweden's Prime Minister",
+    "The UK's Prime Minister"
+   ],
+   "correct": 2,
+   "figure": "Sweden",
+   "sub": "Prime Minister Ulf Kristersson",
+   "explain": "Ulf Kristersson told a Swedish business newspaper that he used tools such as ChatGPT to get a second opinion. The remarks drew sharp criticism in Sweden, and his office said no sensitive information was entered.",
+   "source": "Dagens Industri interview, reported by The Guardian, August 2025"
+  },
+  {
+   "q": "Before the Dutch election in October 2025, the data regulator asked four AI chatbots for voting advice. How often did one of just two parties come out as their first recommendation?",
+   "options": [
+    "In 26% of cases",
+    "In 56% of cases",
+    "In 76% of cases",
+    "In 91% of cases"
+   ],
+   "correct": 1,
+   "figure": "56%+",
+   "sub": "of first-place recommendations went to two parties",
+   "explain": "In just over 56% of cases, the chatbots' top recommendation was one of two parties, one on the right and one on the left (for one chatbot, over 80%), while some parties were almost never recommended. The regulator warned voters not to use chatbots for voting advice.",
+   "source": "Autoriteit Persoonsgegevens (Dutch Data Protection Authority), October 2025"
+  },
+  {
+   "q": "Dutch researchers asked voters before the same election whether they were likely to ask a chatbot for advice on how to vote. How many said yes?",
+   "options": [
+    "About 1 in 20",
+    "About 1 in 15",
+    "About 1 in 10",
+    "About 1 in 4"
+   ],
+   "correct": 2,
+   "figure": "≈1 in 10",
+   "sub": "(18- to 34-year-olds: 17%)",
+   "explain": "About one in ten said they were likely to, roughly 1.8 million people if scaled up; among 18- to 34-year-olds it was 17%. People tend to under-report things they think others would disapprove of, so the real figure may be higher.",
+   "source": "AlgoSoc consortium (Dutch universities), LISS panel survey, October 2025"
+  }
+ ]
+}

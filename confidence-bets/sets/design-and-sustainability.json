@@ -1,0 +1,133 @@
+{
+ "slug": "design-and-sustainability",
+ "course": "EFD",
+ "title": "Sustainability in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the environmental side of design: products, materials, waste and energy, in Germany, the UK and worldwide.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Design decides a lot.",
+  "paras": [
+   "Many of today's numbers come back to decisions made long before a product reaches a shop: what it's made of, how long it's meant to last and what happens when it's thrown away.",
+   "Today you'll make some of those decisions. Use the evidence, and look carefully at the trade-offs."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "According to the European Commission, how much of a product's environmental impact is decided at the design stage?",
+   "options": [
+    "About 10%",
+    "About 30%",
+    "About 50%",
+    "About 80%"
+   ],
+   "correct": 3,
+   "figure": "Up to 80%",
+   "sub": "decided at the design stage",
+   "explain": "The EU estimates that up to 80% of a product's environmental impact is decided during design, before anything is made. That's why EU ecodesign rules focus on designers, not only on recycling.",
+   "source": "European Parliament, circular economy press release, February 2021 (EU estimate)"
+  },
+  {
+   "q": "How much electronic waste did the world produce in 2022?",
+   "options": [
+    "6 million tonnes",
+    "20 million tonnes",
+    "62 million tonnes",
+    "200 million tonnes"
+   ],
+   "correct": 2,
+   "figure": "62m tonnes",
+   "sub": "of e-waste in one year",
+   "explain": "The world produced a record 62 million tonnes of e-waste in 2022, and the amount is growing about five times faster than documented recycling. Europeans produce the most per person, about 17.6 kg a year.",
+   "source": "UNITAR / ITU, Global E-waste Monitor 2024"
+  },
+  {
+   "q": "Earth Overshoot Day is the date when humanity has used a year's worth of nature's resources. If everyone lived like people in Germany, when would it fall in 2025?",
+   "options": [
+    "3 May",
+    "24 July",
+    "1 October",
+    "15 December"
+   ],
+   "correct": 0,
+   "figure": "3 May",
+   "sub": "Germany's overshoot day, 2025",
+   "explain": "If everyone lived like the average German, the world would use up a year's resources by 3 May; we would need about three Earths. The global date in 2025 was 24 July, and Germany's 2026 date was 10 May.",
+   "source": "Global Footprint Network, 2025"
+  },
+  {
+   "q": "Roughly how much water does it take to make one cotton T-shirt?",
+   "options": [
+    "About 70 litres",
+    "About 700 litres",
+    "About 1,200 litres",
+    "About 2,700 litres"
+   ],
+   "correct": 3,
+   "figure": "2,700 litres",
+   "sub": "for one T-shirt",
+   "explain": "Making one cotton T-shirt takes an estimated 2,700 litres of fresh water, mostly to grow the cotton: enough for one person to drink for about two and a half years.",
+   "source": "European Parliament, 2020 (WWF estimate)"
+  },
+  {
+   "q": "What share of global CO2 emissions comes from buildings and construction, counting both running buildings and making their materials?",
+   "options": [
+    "About 15%",
+    "About 37%",
+    "About 50%",
+    "About 65%"
+   ],
+   "correct": 1,
+   "figure": "≈37%",
+   "sub": "buildings and construction",
+   "explain": "Buildings and construction account for around 37% of global CO2 emissions: heating, cooling and powering buildings, plus making materials such as cement and steel. The sector also uses about 28% of the world's energy, so how buildings are designed is one of the biggest levers on climate.",
+   "source": "UNEP / GlobalABC, Global Status Report for Buildings and Construction 2025–2026, May 2026"
+  },
+  {
+   "q": "After England's 1990 World Cup penalty shoot-out on TV, millions of people in Britain switched on their kettles at once. How big was the jump in electricity demand?",
+   "options": [
+    "About 28 MW",
+    "About 280 MW",
+    "About 2,800 MW",
+    "About 28,000 MW"
+   ],
+   "correct": 2,
+   "figure": "2,800 MW",
+   "sub": "the UK's biggest 'TV pickup'",
+   "explain": "Demand jumped by about 2,800 megawatts when the shoot-out ended, the biggest 'TV pickup' ever recorded in Britain, roughly a million kettles boiling at once. Grid engineers still plan for big TV moments.",
+   "source": "National Grid, reported by BBC News, 2007"
+  },
+  {
+   "q": "In 2023, before the UK banned single-use vapes in June 2025, roughly how many were thrown away each week?",
+   "options": [
+    "About 5 million",
+    "About 10 million",
+    "About 20 million",
+    "About 50 million"
+   ],
+   "correct": 0,
+   "figure": "≈5m",
+   "sub": "a week (survey-based estimate)",
+   "explain": "About 5 million single-use vapes were thrown away every week in 2023, nearly four times the year before, each with a lithium battery inside. The estimate came from a YouGov survey; the government said the ban would cut litter and protect young people.",
+   "source": "Material Focus (YouGov survey), September 2023"
+  },
+  {
+   "q": "How many disposable hot-drink cups are used in Germany every year?",
+   "options": [
+    "About 500 million",
+    "About 2.8 billion",
+    "About 7 billion",
+    "About 15 billion"
+   ],
+   "correct": 1,
+   "figure": "2.8bn",
+   "sub": "about 320,000 an hour (estimate)",
+   "explain": "An estimated 2.8 billion disposable cups a year, roughly 320,000 every hour; the figure is from a 2016 study and is still the one most quoted. Since 2023, larger cafés and takeaways must also offer a reusable option.",
+   "source": "Deutsche Umwelthilfe, based on an Umweltbundesamt study (2016 data); German Packaging Act (VerpackG) 2023"
+  }
+ ]
+}

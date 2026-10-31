@@ -1,0 +1,133 @@
+{
+ "slug": "logos-and-branding",
+ "course": "EFD",
+ "title": "Logos and branding in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about logos, colours and brand value: what famous marks cost, how well we remember them and what they're worth.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "A logo is only the start.",
+  "paras": [
+   "Some of the most valuable marks in the world cost almost nothing, and some expensive ones were laughed at on launch day. What a mark is worth depends on far more than what it cost to draw.",
+   "Keep that in mind in today's discussion."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Twitter's first bird symbol wasn't commissioned from an agency. It was bought as a stock image. Roughly what did it cost?",
+   "options": [
+    "About $15",
+    "About $150",
+    "About $1,500",
+    "About $15,000"
+   ],
+   "correct": 0,
+   "figure": "≈$15",
+   "sub": "a stock image from iStock",
+   "explain": "Twitter bought the bird, drawn by the British designer Simon Oxley, from the stock-image site iStock for about $15; the designer reportedly received only a few dollars. Twitter later redrew it, and in 2023 replaced it with an X.",
+   "source": "Creative Bloq, The history of the Twitter logo; Wikipedia, Simon Oxley"
+  },
+  {
+   "q": "The London 2012 Olympics logo was widely mocked when it was launched in 2007. How much did it cost to design?",
+   "options": [
+    "£4,000",
+    "£40,000",
+    "£400,000",
+    "£4 million"
+   ],
+   "correct": 2,
+   "figure": "£400,000",
+   "sub": "designed by Wolff Olins",
+   "explain": "The logo cost £400,000, paid with private money, and Guinness lists it as the most expensive Olympic logo. Organisers called it 'edgy, dynamic and vibrant'; much of the public disagreed.",
+   "source": "Guinness World Records, Most expensive Olympic logo"
+  },
+  {
+   "q": "Who wrote the Coca-Cola name in the flowing script that is still the basis of its logo?",
+   "options": [
+    "A famous New York sign painter",
+    "The founder's bookkeeper and partner",
+    "A French type foundry",
+    "An advertising agency in the 1920s"
+   ],
+   "correct": 1,
+   "figure": "1886",
+   "sub": "Frank Mason Robinson",
+   "explain": "Frank Mason Robinson, bookkeeper and partner to the chemist John Pemberton, named the drink and wrote it in Spencerian script, the neat handwriting bookkeepers used at the time. No designer was involved.",
+   "source": "Coca-Cola Company history; Wikipedia, Frank Mason Robinson"
+  },
+  {
+   "q": "In 2019 Mastercard dropped its name from its logo, leaving just two circles. What share of people did it say already recognise the symbol without the word?",
+   "options": [
+    "Over 20%",
+    "Over 40%",
+    "Over 60%",
+    "Over 80%"
+   ],
+   "correct": 3,
+   "figure": "80%+",
+   "sub": "recognise the circles alone",
+   "explain": "Mastercard's marketing chief said more than 80% of people recognise the symbol with no name. Only a handful of brands, such as Apple, Target and Nike, use a symbol on its own.",
+   "source": "Mastercard press release, 7 January 2019"
+  },
+  {
+   "q": "When Google switched to its simpler sans-serif logo in 2015, how big was the smallest version of the new logo file? The old one was 14,000 bytes.",
+   "options": [
+    "305 bytes",
+    "3,000 bytes",
+    "7,000 bytes",
+    "12,000 bytes"
+   ],
+   "correct": 0,
+   "figure": "305 bytes",
+   "sub": "down from 14,000",
+   "explain": "A simple geometric logo can be drawn from a few lines of code, so a special version of the new logo was just 305 bytes. That matters when it has to load on billions of phones, some on slow connections.",
+   "source": "TechRadar, September 2015"
+  },
+  {
+   "q": "156 Americans drew ten famous logos from memory, including Apple, IKEA, Target and Starbucks. Which of these four was drawn almost perfectly least often?",
+   "options": [
+    "IKEA",
+    "Apple",
+    "Target",
+    "Starbucks"
+   ],
+   "correct": 3,
+   "figure": "6%",
+   "sub": "drew Starbucks almost perfectly",
+   "explain": "Only 6% drew the Starbucks siren almost perfectly; IKEA was best (30%), then Target (25%) and Apple (20%). We see some logos every day and still can't draw them: recognising is not the same as remembering.",
+   "source": "Signs.com, Branded in Memory (2017)"
+  },
+  {
+   "q": "Pantone's Colour of the Year influences fashion, packaging and interiors. 2025's was a brown, 'Mocha Mousse'. What did Pantone choose for 2026?",
+   "options": [
+    "A deep red",
+    "A white",
+    "A bright green",
+    "A dark blue"
+   ],
+   "correct": 1,
+   "figure": "Cloud Dancer",
+   "sub": "PANTONE 11-4201",
+   "explain": "Pantone chose Cloud Dancer, a soft white: the first white in the history of its Colour of the Year. Pantone called it a calm 'blank canvas'; many designers called it a non-choice.",
+   "source": "Pantone, December 2025 (Dezeen, Smithsonian)"
+  },
+  {
+   "q": "Interbrand values the Apple brand alone, not the whole company. Roughly what was the brand worth in 2026?",
+   "options": [
+    "$51 billion",
+    "$160 billion",
+    "$515 billion",
+    "$1.3 trillion"
+   ],
+   "correct": 2,
+   "figure": "$514.6bn",
+   "sub": "world's most valuable brand again",
+   "explain": "Interbrand valued Apple's brand at $514.6 billion, ahead of Microsoft ($443.7bn), Google and Amazon. Fifth-placed Samsung was worth $105.2 billion, about a fifth of Apple's figure.",
+   "source": "Interbrand, Best Global Brands 2026 (Mercado & Consumo, October 2026)"
+  }
+ ]
+}

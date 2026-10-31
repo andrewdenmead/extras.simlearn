@@ -1,0 +1,133 @@
+{
+ "slug": "technology-and-society",
+ "course": "EIM",
+ "title": "Technology in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about technology and the way we live and work with it: AI at work and at university, time online, energy, and who is still offline.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Our gut runs ahead of the data.",
+  "paras": [
+   "On several of today's questions, the confident guess and the evidence parted company: the results for new tools were mixed, and some numbers have grown faster than anyone noticed.",
+   "Technology changes quickly; good evidence about it arrives more slowly. Both matter when decisions are made."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In a 2025 study, 16 experienced software developers worked on 246 real tasks, some with AI coding tools allowed and some without. With AI, they were...",
+   "options": [
+    "19% slower",
+    "about the same speed",
+    "20% faster",
+    "55% faster"
+   ],
+   "correct": 0,
+   "figure": "19% slower",
+   "sub": "with AI tools",
+   "explain": "The developers took 19% longer when AI tools were allowed. Before the study they predicted AI would make them 24% faster, and afterwards they still believed it had made them about 20% faster. The researchers stress that the result may not apply to other kinds of work.",
+   "source": "METR, randomised controlled trial, July 2025"
+  },
+  {
+   "q": "In a 2025 survey of full-time UK undergraduates, what share said they use AI tools in some form in their studies?",
+   "options": [
+    "32%",
+    "54%",
+    "72%",
+    "92%"
+   ],
+   "correct": 3,
+   "figure": "92%",
+   "sub": "up from 66% in 2024",
+   "explain": "Use jumped from 66% to 92% in a single year, and 88% said they had used generative AI such as ChatGPT for assessed work. The most common uses were explaining ideas, summarising articles and suggesting research topics.",
+   "source": "HEPI and Kortext, Student Generative AI Survey 2025"
+  },
+  {
+   "q": "In 2025, what share of German companies with ten or more employees used some form of artificial intelligence?",
+   "options": [
+    "6%",
+    "26%",
+    "46%",
+    "66%"
+   ],
+   "correct": 1,
+   "figure": "26%",
+   "sub": "of German companies",
+   "explain": "About a quarter of German companies used AI, above the EU average of 20% (up from 13.5% in 2024). Denmark was highest in the EU, at about 42%. The most common use was analysing written text, reported by about 12% of EU companies.",
+   "source": "Eurostat, ICT usage in enterprises, 2025"
+  },
+  {
+   "q": "The International Energy Agency estimates how much of the world's electricity data centres use. What was their share in 2024?",
+   "options": [
+    "0.2%",
+    "1.5%",
+    "6%",
+    "12%"
+   ],
+   "correct": 1,
+   "figure": "1.5%",
+   "sub": "about 415 TWh",
+   "explain": "Data centres used about 415 terawatt-hours, around 1.5% of global electricity. The IEA expects that to more than double by 2030, to about 945 TWh, slightly more than Japan uses today, with AI the main driver.",
+   "source": "International Energy Agency (IEA), Energy and AI, 2025"
+  },
+  {
+   "q": "About 6 billion people used the internet in 2025. How many people still didn't?",
+   "options": [
+    "2.2 billion",
+    "3 billion",
+    "4 billion",
+    "5 billion"
+   ],
+   "correct": 0,
+   "figure": "2.2bn",
+   "sub": "still offline",
+   "explain": "Around three-quarters of the world is online, but 2.2 billion people are not. The gap is widest between town and country (85% of urban residents online, 58% in rural areas) and between rich and poor countries: in low-income countries only about 23% are online.",
+   "source": "International Telecommunication Union (ITU), Facts and Figures 2025"
+  },
+  {
+   "q": "Ofcom measures how long UK adults spend online each day, mostly on personal devices rather than for work. For 18- to 24-year-olds in 2025, what was the daily average?",
+   "options": [
+    "2h 10m",
+    "3h 40m",
+    "4h 50m",
+    "6h 20m"
+   ],
+   "correct": 3,
+   "figure": "6h 20m",
+   "sub": "a day, mostly personal use (May 2025)",
+   "explain": "Young adults spent 6 hours 20 minutes a day online. The average for all adults was 4 hours 30 minutes, ten minutes more than the year before, and 3 hours 20 minutes for those aged 65 and over. YouTube alone took 51 minutes a day.",
+   "source": "Ofcom, Online Nation 2025"
+  },
+  {
+   "q": "Economists studied more than 5,000 customer-support agents who were given an AI assistant. On average they solved 14% more problems per hour. For the newest, least experienced agents, the gain was...",
+   "options": [
+    "about 5%",
+    "about 15%",
+    "about 35%",
+    "about 75%"
+   ],
+   "correct": 2,
+   "figure": "34%",
+   "sub": "for the newest agents",
+   "explain": "Newer, less skilled agents improved by about 34%, while the most experienced barely improved at all: the tool seemed to pass on the habits of the best workers to everyone else. Customers' messages also became more positive, and fewer asked to speak to a manager.",
+   "source": "Brynjolfsson, Li and Raymond, 'Generative AI at Work', Quarterly Journal of Economics, 2025"
+  },
+  {
+   "q": "In 2024 an employee of the engineering firm Arup in Hong Kong joined a video call with senior 'colleagues' who were all deepfakes, and made the transfers they asked for. How much?",
+   "options": [
+    "US$250,000",
+    "US$2.5 million",
+    "US$25 million",
+    "US$250 million"
+   ],
+   "correct": 2,
+   "figure": "$25m",
+   "sub": "in 15 transfers",
+   "explain": "The employee sent HK$200 million, about US$25 million, in 15 transfers after a call in which everyone else was an AI-generated fake. Arup confirmed that fake voices and images were used. It is one of the most widely reported deepfake frauds against a company.",
+   "source": "Hong Kong Police; Arup statement to CNN, May 2024"
+  }
+ ]
+}

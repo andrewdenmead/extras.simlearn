@@ -1,0 +1,133 @@
+{
+ "slug": "graduate-jobs-and-ai",
+ "course": "AE",
+ "title": "Graduate jobs in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about degrees, first jobs and the AI tools arriving in the workplace.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Your first job is changing.",
+  "paras": [
+   "Degrees cost more than they did, workers are adopting AI faster than their employers, and the first step on the career ladder is getting more crowded. On several of these, the room's gut was some way off.",
+   "What that means for degrees, for firms and for the state is still being argued over, and the evidence is still arriving."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "What is the maximum tuition fee a university in England can charge a home undergraduate for the year 2025–26?",
+   "options": [
+    "£3,535",
+    "£5,535",
+    "£7,535",
+    "£9,535"
+   ],
+   "correct": 3,
+   "figure": "£9,535",
+   "sub": "a year, the first rise since 2017",
+   "explain": "The cap rose to £9,535 in 2025–26, the first increase since 2017, when it reached £9,250; it is set to reach £9,790 in 2026–27 and £10,050 in 2027–28, with the government committed to rises in line with inflation. In 1998, when fees were introduced, they were £1,000.",
+   "source": "Department for Education, fee limits for 2025 to 2026; DfE policy paper, November 2025"
+  },
+  {
+   "q": "By mid-2025, how much had UK job adverts for entry-level roles fallen since ChatGPT was launched in November 2022?",
+   "options": [
+    "About a third",
+    "About half",
+    "About two-thirds",
+    "About 80%"
+   ],
+   "correct": 0,
+   "figure": "≈−32%",
+   "sub": "entry-level job adverts",
+   "explain": "Entry-level adverts (apprenticeships, graduate jobs, internships and junior roles needing no degree) fell by about 32%, to a quarter of all UK adverts. How much of the fall is due to AI, and how much to a slow economy and higher hiring costs, is still disputed.",
+   "source": "Adzuna, UK Job Market Report, June 2025"
+  },
+  {
+   "q": "Large UK graduate employers report how many applications they receive. On average, how many applications did each graduate vacancy attract in 2024?",
+   "options": [
+    "14",
+    "40",
+    "140",
+    "400"
+   ],
+   "correct": 2,
+   "figure": "140",
+   "sub": "applications per graduate vacancy",
+   "explain": "Employers received an average of 140 applications for every graduate vacancy, the highest figure the survey has recorded. Large employers recruit graduates in competitive annual rounds, often more than a year before the start date.",
+   "source": "Institute of Student Employers, Student Recruitment Survey 2024"
+  },
+  {
+   "q": "In March 2025, the unemployment rate for all US workers was about 4%. What was the rate for recent college graduates aged 22 to 27?",
+   "options": [
+    "5.8%",
+    "7.8%",
+    "10.8%",
+    "14.8%"
+   ],
+   "correct": 0,
+   "figure": "5.8%",
+   "sub": "recent graduates, March 2025 (all workers: about 4%)",
+   "explain": "Recent graduates' unemployment was 5.8%, up from 4.4% at the start of 2024 and higher than for workers as a whole. For most of the period since 1990, when the data begin, it was the other way round: a recent degree meant a lower chance of being unemployed.",
+   "source": "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates, 2025"
+  },
+  {
+   "q": "In England, how much more does the median working-age graduate earn a year than the median non-graduate?",
+   "options": [
+    "About £3,500",
+    "About £11,500",
+    "About £21,500",
+    "About £31,500"
+   ],
+   "correct": 1,
+   "figure": "≈£11,500",
+   "sub": "£42,000 against £30,500",
+   "explain": "The median graduate aged 16 to 64 earned £42,000, against £30,500 for non-graduates; postgraduates earned £47,000. The premium varies hugely by subject and university.",
+   "source": "Department for Education, Graduate labour market statistics, calendar year 2024"
+  },
+  {
+   "q": "How much was owed in student loans in England in total at the end of March 2025?",
+   "options": [
+    "£67bn",
+    "£137bn",
+    "£267bn",
+    "£467bn"
+   ],
+   "correct": 2,
+   "figure": "≈£267bn",
+   "sub": "outstanding higher-education loans, England",
+   "explain": "About £267 billion of higher-education loans was owed, including interest, and the total is still rising. Much of it will never be repaid: loans are written off after 25 to 40 years, depending on the plan.",
+   "source": "Student Loans Company, Student loans in England: financial year 2024–25 (£266.6bn)"
+  },
+  {
+   "q": "In a 2024 survey of 31,000 people in 31 countries, what share of knowledge workers said they used generative AI at work?",
+   "options": [
+    "15%",
+    "35%",
+    "55%",
+    "75%"
+   ],
+   "correct": 3,
+   "figure": "75%",
+   "sub": "of knowledge workers",
+   "explain": "Three in four knowledge workers said they used generative AI at work, and most of them brought their own tools rather than waiting for their employer to provide them. The survey covered office and knowledge workers, not the whole workforce.",
+   "source": "Microsoft and LinkedIn, Work Trend Index 2024"
+  },
+  {
+   "q": "Several German states charged tuition fees of up to €500 a semester in the 2000s. When did the last of them abolish general tuition fees?",
+   "options": [
+    "2009",
+    "2014",
+    "2019",
+    "2024"
+   ],
+   "correct": 1,
+   "figure": "2014",
+   "sub": "Lower Saxony, the last to abolish",
+   "explain": "Lower Saxony abolished general tuition fees in 2014, after Bavaria in 2013, so a first degree at a public university in Germany is again free for most students. Baden-Württemberg has charged students from outside the EU since 2017.",
+   "source": "Lower Saxony Landtag vote, December 2013, reported by News4teachers; Heidelberg University (Baden-Württemberg fees)"
+  }
+ ]
+}

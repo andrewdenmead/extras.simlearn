@@ -1,0 +1,133 @@
+{
+ "slug": "managers-and-leaders",
+ "course": "EIM",
+ "title": "Leadership in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about managers and leaders: how engaged people are at work, how much of that depends on the boss, how bosses get the job and how often they leave it.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "The boss matters more than we think.",
+  "paras": [
+   "Several of today's numbers point the same way: how people feel about their work depends heavily on the person they report to, yet most managers are promoted without being trained for the job.",
+   "Good management is rarely taught, but almost everyone at work feels its effects."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Gallup surveys workers in more than 160 countries every year. What share of employees worldwide were 'engaged' in 2024: involved in and enthusiastic about their work?",
+   "options": [
+    "9%",
+    "21%",
+    "38%",
+    "54%"
+   ],
+   "correct": 1,
+   "figure": "21%",
+   "sub": "down from 23% in 2023",
+   "explain": "Only about one in five employees worldwide is engaged at work. Gallup says the fall in 2024 was driven mainly by managers, whose own engagement dropped, especially among younger and female managers.",
+   "source": "Gallup, State of the Global Workplace 2025"
+  },
+  {
+   "q": "Gallup also asked how much of the difference in engagement between one team and another comes down to a single person: the team's manager. How much?",
+   "options": [
+    "10%",
+    "30%",
+    "50%",
+    "70%"
+   ],
+   "correct": 3,
+   "figure": "70%",
+   "sub": "of the difference between teams",
+   "explain": "Gallup estimates that about 70% of the variance in team engagement is explained by the manager. Pay, office and company policy matter, but the person you report to matters most.",
+   "source": "Gallup, State of the Global Workplace 2025"
+  },
+  {
+   "q": "In Gallup's 2024 survey of employees in Germany, what share felt a strong emotional bond with their employer?",
+   "options": [
+    "9%",
+    "19%",
+    "31%",
+    "45%"
+   ],
+   "correct": 0,
+   "figure": "9%",
+   "sub": "a record low (14% in 2023)",
+   "explain": "Only 9% of employees in Germany felt highly committed to their employer, the lowest figure Gallup has recorded there. 78% said they do only what is required ('Dienst nach Vorschrift'). Gallup puts the cost in lost productivity at €113 to 135 billion a year.",
+   "source": "Gallup, Engagement Index Deutschland 2024"
+  },
+  {
+   "q": "The UK's Chartered Management Institute asked managers how they got the job. What share are 'accidental managers', promoted without any formal management training?",
+   "options": [
+    "22%",
+    "42%",
+    "62%",
+    "82%"
+   ],
+   "correct": 3,
+   "figure": "82%",
+   "sub": "of UK managers",
+   "explain": "More than four in five UK managers have had no formal training in management or leadership. They were usually promoted because they were good at their previous job, which is not the same thing as being good at managing people.",
+   "source": "Chartered Management Institute (CMI), research reported October 2023"
+  },
+  {
+   "q": "In the same CMI research, how many UK workers said they had already left a job because of bad management?",
+   "options": [
+    "1 in 20",
+    "1 in 10",
+    "1 in 3",
+    "2 in 3"
+   ],
+   "correct": 2,
+   "figure": "1 in 3",
+   "sub": "have already left a job over it",
+   "explain": "One in three workers had already left a job because of bad management or a negative work culture. About half of those who rated their current manager as ineffective planned to leave within a year, against fewer than a quarter of those with a good manager.",
+   "source": "Chartered Management Institute (CMI), YouGov surveys of UK managers and workers, October 2023"
+  },
+  {
+   "q": "By when in 2026 had the typical FTSE 100 chief executive earned as much as a typical UK full-time worker (£39,039) earns in the whole year?",
+   "options": [
+    "Midday, 6 January",
+    "31 January",
+    "1 March",
+    "30 June"
+   ],
+   "correct": 0,
+   "figure": "6 Jan",
+   "sub": "midday: 'Fat Cat Day'",
+   "explain": "Median FTSE 100 chief executive pay was £4.4 million (excluding pensions), about 113 times the median full-time worker's pay, so the boss 'catches up' by lunchtime on the third working day of the year: the same point as in 2025.",
+   "source": "High Pay Centre, Fat Cat Day 2026, January 2026"
+  },
+  {
+   "q": "The outplacement firm Challenger, Gray & Christmas counts US chief executives who leave their jobs. 2024 was a record year. Roughly how many left?",
+   "options": [
+    "220",
+    "720",
+    "2,200",
+    "6,200"
+   ],
+   "correct": 2,
+   "figure": "2,221",
+   "sub": "CEO exits in the US in 2024",
+   "explain": "2,221 US chief executives left their posts in 2024, a record, against 2,032 in 2025. The count includes companies, non-profits, hospitals and government bodies. Among listed companies, 2025 set a new record of 446 exits.",
+   "source": "Challenger, Gray & Christmas, 2025 year-end CEO Turnover Report, February 2026"
+  },
+  {
+   "q": "Gallup estimated what the two-point fall in global engagement in 2024 cost the world economy in lost productivity. How much?",
+   "options": [
+    "US$44 billion",
+    "US$438 billion",
+    "US$1.2 trillion",
+    "US$4.4 trillion"
+   ],
+   "correct": 1,
+   "figure": "$438bn",
+   "sub": "for a two-point drop",
+   "explain": "A drop of just two percentage points in engagement cost an estimated US$438 billion in lost productivity. Gallup's estimate for the total cost of low engagement is far larger still.",
+   "source": "Gallup, State of the Global Workplace 2025"
+  }
+ ]
+}

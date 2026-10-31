@@ -1,0 +1,133 @@
+{
+ "slug": "protest-and-policing",
+ "course": "AE",
+ "title": "Protest in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about protest in Britain and beyond: how big marches get, how often they succeed, and how the state responds.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Protest is older than the rules about it.",
+  "paras": [
+   "Marches, strikes and sit-ins have changed laws and lost causes, been tolerated and been put down. On several of these, the room's guess was further from the record than people expected.",
+   "Where the right to protest ends and the rights of everyone else begin is a line that keeps moving."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "On 15 February 2003, people marched in London against the coming war in Iraq. Roughly how many took part?",
+   "options": [
+    "About 50,000",
+    "About 150,000",
+    "About 400,000",
+    "Over 750,000"
+   ],
+   "correct": 3,
+   "figure": "750,000+",
+   "sub": "police estimate (organisers: 2 million)",
+   "explain": "The police estimated about 750,000 and the organisers about 2 million (other reports ranged in between), making it probably the largest protest in British history. The invasion of Iraq began five weeks later.",
+   "source": "Reported by RFE/RL and The Christian Science Monitor; London Museum, Stop the War 2003"
+  },
+  {
+   "q": "Between 1906 and 1914, about how many campaigners for women's votes were arrested, according to a Home Office list now kept at The National Archives?",
+   "options": [
+    "About 1,300",
+    "About 3,000",
+    "About 6,000",
+    "About 10,000"
+   ],
+   "correct": 0,
+   "figure": "≈1,330",
+   "sub": "arrested (1,224 women and 109 men on the list)",
+   "explain": "The list names 1,224 women and 109 men. Suffragettes who went on hunger strike in prison were force-fed. Women over 30 won the vote in 1918, and on equal terms with men in 1928.",
+   "source": "The National Archives, index of suffragettes arrested 1906–1914"
+  },
+  {
+   "q": "CIVICUS rates civic freedoms in every country as open, narrowed, obstructed, repressed or closed. Where did it put the UK in 2023?",
+   "options": [
+    "Open",
+    "Narrowed",
+    "Obstructed",
+    "Repressed"
+   ],
+   "correct": 2,
+   "figure": "Obstructed",
+   "sub": "downgraded in March 2023",
+   "explain": "CIVICUS downgraded the UK from 'narrowed' to 'obstructed' on 16 March 2023, citing new restrictions on protest among other concerns. The rating is one civil-society network's assessment, and it was unchanged on the Monitor's UK page in 2026.",
+   "source": "CIVICUS Monitor, People Power Under Attack 2022 (published March 2023)"
+  },
+  {
+   "q": "Research on resistance campaigns found that almost every campaign that drew a certain share of the population into its peak protest succeeded. What share?",
+   "options": [
+    "0.5%",
+    "3.5%",
+    "10%",
+    "25%"
+   ],
+   "correct": 1,
+   "figure": "3.5%",
+   "sub": "of the population, the '3.5% rule'",
+   "explain": "Almost every campaign that drew at least 3.5% of the population into active participation succeeded. Chenoweth notes exceptions, such as Bahrain in 2011–14, and calls it a tendency rather than a law: it describes the past, not a guarantee.",
+   "source": "Erica Chenoweth, Questions, Answers, and Some Cautionary Updates Regarding the 3.5% Rule, Carr Center, Harvard Kennedy School, 2020"
+  },
+  {
+   "q": "In a study of 323 campaigns from 1900 to 2006, how often did mainly nonviolent campaigns succeed, compared with violent ones?",
+   "options": [
+    "Half as often",
+    "About as often",
+    "About twice as often",
+    "Five times as often"
+   ],
+   "correct": 2,
+   "figure": "53% vs 26%",
+   "sub": "success rates, nonviolent vs violent",
+   "explain": "Nonviolent campaigns succeeded about 53% of the time, violent ones about 26%. Chenoweth has since found that both kinds have become less successful since 2010.",
+   "source": "Erica Chenoweth and Maria Stephan, Why Civil Resistance Works, Columbia University Press, 2011"
+  },
+  {
+   "q": "In January 1919, after strikers rallied in Glasgow's George Square for a 40-hour week and a riot broke out, how did the government respond?",
+   "options": [
+    "Sent troops and tanks",
+    "Sent police from London",
+    "Cut working hours",
+    "Banned all meetings"
+   ],
+   "correct": 0,
+   "figure": "≈10,000",
+   "sub": "troops sent; six tanks followed",
+   "explain": "About 10,000 troops, mostly Scottish, were sent to Glasgow, and six tanks arrived three days later. Historian Gordon Barclay found the troops arrived after the riot was over and were never used against the crowds, but 'Bloody Friday' is still remembered in the city.",
+   "source": "Gordon Barclay, Edinburgh University Press blog, 2018; Barclay, Tanks on the Streets? (Pen & Sword)"
+  },
+  {
+   "q": "In July 2024, a climate activist was sentenced for planning protests that blocked the M25 motorway. How long was the original sentence?",
+   "options": [
+    "6 months",
+    "18 months",
+    "3 years",
+    "5 years"
+   ],
+   "correct": 3,
+   "figure": "5 years",
+   "sub": "cut to 4 years on appeal",
+   "explain": "Roger Hallam of Just Stop Oil was sentenced to five years for conspiracy to cause a public nuisance, and four others to four years each. In March 2025 the Court of Appeal found his sentence manifestly excessive and cut it to four years. Supporters and critics disagreed sharply over whether it was proportionate.",
+   "source": "Court of Appeal, R v Hallam and others, judgment, March 2025 (judiciary.uk)"
+  },
+  {
+   "q": "On 20 September 2019, young people led a global climate strike. Roughly how many took part worldwide, according to the organisers?",
+   "options": [
+    "About 400,000",
+    "About 4 million",
+    "About 14 million",
+    "About 40 million"
+   ],
+   "correct": 1,
+   "figure": "≈4m",
+   "sub": "worldwide, organisers' estimate",
+   "explain": "Organisers counted more than 4 million people on the day; in Germany alone they claimed 1.4 million. Over the whole week of strikes, The Guardian reported about 6 million. Organisers' and police counts often differ widely, so these are best treated as estimates.",
+   "source": "Organisers' figures (Fridays for Future, 350.org), reported by EcoWatch and Vox, September 2019"
+  }
+ ]
+}

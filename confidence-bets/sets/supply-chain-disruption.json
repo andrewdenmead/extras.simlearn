@@ -1,0 +1,133 @@
+{
+ "slug": "supply-chain-disruption",
+ "course": "EIM",
+ "title": "Supply chains in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about supply chains under pressure: missing parts, late ships, freight prices, a canal short of water and a gas most people have never thought about.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Shocks travel further than we think.",
+  "paras": [
+   "Several of today's numbers show how a problem in one place, such as a drought, a war or a shortage of one small part, reached factories and shops thousands of kilometres away, and how long the effects lasted.",
+   "Few of these shocks were easy to predict. The harder question is what a business does once one has started."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In December 2021 the ifo Institute asked German manufacturers whether they were having trouble getting materials and parts. What share said yes?",
+   "options": [
+    "32%",
+    "52%",
+    "67%",
+    "82%"
+   ],
+   "correct": 3,
+   "figure": "81.9%",
+   "sub": "a record, up from 74.4% in November",
+   "explain": "More than four in five German manufacturers reported shortages of materials or parts, the highest share ifo had recorded. In some sectors it was almost everyone: 94% in electrical equipment, 93% in the car industry and 91% in mechanical engineering.",
+   "source": "ifo Institute, business survey, December 2021"
+  },
+  {
+   "q": "About 280 million shipping containers travelled the world's seas in 2025. How many does the shipping industry estimate were lost overboard?",
+   "options": [
+    "1,478",
+    "about 15,000",
+    "about 50,000",
+    "about 150,000"
+   ],
+   "correct": 0,
+   "figure": "1,478",
+   "sub": "about 0.0005% of containers shipped",
+   "explain": "Fewer than 1,500 containers were lost, and 640 of those came from a single ship. That was well above 2024's figure of 576, but still a tiny fraction of the total. Many people guess far higher, partly because each loss makes the news.",
+   "source": "World Shipping Council, Containers Lost at Sea report, 2026"
+  },
+  {
+   "q": "In September 2021 the consultancy AlixPartners forecast how many cars the global chip shortage would stop the world's carmakers from building that year. How many?",
+   "options": [
+    "0.8 million",
+    "2.5 million",
+    "7.7 million",
+    "21 million"
+   ],
+   "correct": 2,
+   "figure": "7.7m",
+   "sub": "vehicles not built in 2021 (forecast)",
+   "explain": "AlixPartners forecast that 7.7 million vehicles would not be built in 2021, costing the industry about US$210 billion in revenue. Only four months earlier it had expected 3.9 million vehicles and US$110 billion: the estimate almost doubled as the shortage dragged on.",
+   "source": "AlixPartners, press release, 23 September 2021"
+  },
+  {
+   "q": "The Panama Canal normally handles about 36 ships a day. In December 2023, after a drought lowered the lake that feeds its locks, how many ships a day were allowed through?",
+   "options": [
+    "14",
+    "22",
+    "28",
+    "33"
+   ],
+   "correct": 1,
+   "figure": "22",
+   "sub": "ships a day, down from about 36",
+   "explain": "A drought linked to El Niño lowered Gatun Lake, which supplies the water for the locks, so the canal authority cut daily crossings to 22. It had already cut them to 32 in July 2023, and raised the limit to 24 in January 2024 as conditions improved.",
+   "source": "Panama Canal Authority, advisory, 15 December 2023"
+  },
+  {
+   "q": "Sea-Intelligence tracks how many container ships arrive on schedule. In January 2022, what share of ships worldwide arrived on time?",
+   "options": [
+    "31%",
+    "48%",
+    "64%",
+    "79%"
+   ],
+   "correct": 0,
+   "figure": "30.9%",
+   "sub": "a record low since 2011",
+   "explain": "Fewer than one ship in three arrived on time, the lowest figure since the measure began in 2011. Ships that were late arrived, on average, more than seven days behind schedule.",
+   "source": "Sea-Intelligence, Global Liner Performance report, January 2022"
+  },
+  {
+   "q": "Chipmakers use ultra-pure neon gas in the lasers that etch microchips. In 2022, roughly what share of the world's neon came from Ukraine?",
+   "options": [
+    "5%",
+    "15%",
+    "30%",
+    "about half"
+   ],
+   "correct": 3,
+   "figure": "about 50%",
+   "sub": "of world neon supply (estimate)",
+   "explain": "Ukraine supplied an estimated half of the world's neon, and the two main Ukrainian suppliers of chip-grade neon stopped production in March 2022. The industry had seen the risk before: in 2014 Ukraine's share of chipmakers' neon was about 70%, and some buyers had already found other sources.",
+   "source": "US International Trade Commission, executive briefing on neon and semiconductors, 2022"
+  },
+  {
+   "q": "Drewry's index of the cost of shipping one 40-foot container averaged about US$1,420 in 2019. At its peak in September 2021, what did it reach?",
+   "options": [
+    "US$2,900",
+    "US$5,100",
+    "US$10,377",
+    "US$21,000"
+   ],
+   "correct": 2,
+   "figure": "$10,377",
+   "sub": "per 40ft container, about seven times 2019",
+   "explain": "The average cost of shipping a container rose to more than seven times its pre-pandemic level. It fell almost as fast: by July 2023 the index was back to about US$1,474, 86% below the peak.",
+   "source": "Drewry, World Container Index, July 2023"
+  },
+  {
+   "q": "In 2021 the UK's Road Haulage Association estimated the country's shortage of lorry (HGV) drivers. What figure did it give?",
+   "options": [
+    "30,000",
+    "100,000",
+    "200,000",
+    "400,000"
+   ],
+   "correct": 1,
+   "figure": "100,000",
+   "sub": "an industry estimate",
+   "explain": "The trade body put the shortage at about 100,000 drivers, adding fewer driving tests during the pandemic and fewer EU drivers to a shortage it said already existed. The fact-checker Full Fact pointed out that the older part of the estimate had never been fully explained, so treat the number as a rough guide.",
+   "source": "Road Haulage Association, 2021 (checked by Full Fact, September 2021)"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "market-entry",
+ "course": "EBC",
+ "title": "Beauty business in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the beauty business: who earns what, how big it is, and the rules every product has to meet.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Beauty is a serious business.",
+  "paras": [
+   "Behind the famous faces there are factories, regulators, retailers and investors, and the sums involved are often far bigger than people guess.",
+   "Today, think about everything that has to happen before a product reaches a shelf."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In 2024 Bloomberg reported that Selena Gomez had become a billionaire. Where did most of her wealth come from?",
+   "options": [
+    "Music and streaming",
+    "Acting and TV deals",
+    "Her make-up brand, Rare Beauty",
+    "Paid social media posts"
+   ],
+   "correct": 2,
+   "figure": "Rare Beauty",
+   "sub": "about $1.3bn in all",
+   "explain": "Rare Beauty, the make-up brand she launched in 2020, accounts for most of her estimated $1.3 billion. Music, acting and endorsements made up a much smaller share.",
+   "source": "Bloomberg Billionaires Index, September 2024"
+  },
+  {
+   "q": "Roughly how much does the world spend on beauty products (skincare, make-up, fragrance, hair care) in a year?",
+   "options": [
+    "$100bn",
+    "$200bn",
+    "$300bn",
+    "$450bn"
+   ],
+   "correct": 3,
+   "figure": "About $450bn",
+   "sub": "an estimate, 2025 report",
+   "explain": "About $450 billion, McKinsey estimates, after growing about 7% a year from 2022 to 2024. Online sales were about 26% of the total in 2024.",
+   "source": "McKinsey & Company, State of Beauty 2025"
+  },
+  {
+   "q": "How many substances are banned from cosmetics sold in the EU?",
+   "options": [
+    "About 100",
+    "About 400",
+    "Over 1,600",
+    "Over 5,000"
+   ],
+   "correct": 2,
+   "figure": "Over 1,600",
+   "sub": "US federal list: 11",
+   "explain": "More than 1,600, listed in Annex II of the EU Cosmetics Regulation, and the list keeps growing. The US FDA's federal list bans or restricts only 11, although many US states now have their own lists.",
+   "source": "EU Regulation (EC) No 1223/2009, Annex II; US FDA, Prohibited & Restricted Ingredients in Cosmetics"
+  },
+  {
+   "q": "Since which year has it been fully illegal to sell cosmetics in the EU if they, or their ingredients, were tested on animals anywhere in the world?",
+   "options": [
+    "2013",
+    "2018",
+    "2021",
+    "2024"
+   ],
+   "correct": 0,
+   "figure": "2013",
+   "sub": "a full marketing ban",
+   "explain": "Since March 2013. Testing finished products on animals in the EU was banned in 2004; in 2009 testing ingredients was banned and a sales ban began, but some safety tests were exempt until 2013, when the ban became complete.",
+   "source": "European Commission, Ban on animal testing (cosmetics)"
+  },
+  {
+   "q": "Sephora, the beauty chain owned by LVMH, opened a store at Westfield London in March 2023. How long had it been since it last had a shop in the UK?",
+   "options": [
+    "8 years",
+    "18 years",
+    "28 years",
+    "It had never been in the UK"
+   ],
+   "correct": 1,
+   "figure": "18 years",
+   "sub": "it left in 2005",
+   "explain": "About 18 years: Sephora left the UK in 2005 and reopened at Westfield London on 8 March 2023. Its return was one of the most talked-about openings in British beauty retail that year.",
+   "source": "Retail Dive, January 2023; Retail Gazette, February 2023"
+  },
+  {
+   "q": "L'Oréal is the world's biggest beauty company. What were its sales in 2024?",
+   "options": [
+    "€4.3bn",
+    "€13bn",
+    "€24bn",
+    "€43.5bn"
+   ],
+   "correct": 3,
+   "figure": "€43.5bn",
+   "sub": "from 37 international brands",
+   "explain": "About €43.5 billion, from 37 international brands ranging from Garnier and Maybelline to Lancôme. Most shoppers never see the L'Oréal group name on what they buy.",
+   "source": "L'Oréal, 2024 Annual Results, February 2025"
+  },
+  {
+   "q": "Kim Kardashian's shapewear and clothing brand Skims raised money from investors in late 2025. What were they told the company was worth?",
+   "options": [
+    "$5bn",
+    "$10bn",
+    "$15bn",
+    "$20bn"
+   ],
+   "correct": 0,
+   "figure": "$5bn",
+   "sub": "founded in 2019",
+   "explain": "About $5 billion, when it raised $225 million in November 2025 in a round led by Goldman Sachs Alternatives. The brand was only founded in 2019.",
+   "source": "Goldman Sachs Asset Management press release; Retail Gazette, November 2025"
+  },
+  {
+   "q": "Glossier began as a beauty blog, Into the Gloss, in 2010. What were investors told it was worth in 2021?",
+   "options": [
+    "$500m",
+    "$1.8bn",
+    "$4bn",
+    "$8bn"
+   ],
+   "correct": 1,
+   "figure": "$1.8bn",
+   "sub": "after a 2021 funding round",
+   "explain": "About $1.8 billion. It grew a loyal following mainly through social media, founder Emily Weiss's blog readers and word of mouth.",
+   "source": "Business of Fashion / The Fashion Law, July 2021"
+  }
+ ]
+}

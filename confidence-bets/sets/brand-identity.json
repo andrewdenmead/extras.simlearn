@@ -1,0 +1,133 @@
+{
+ "slug": "brand-identity",
+ "course": "EBC",
+ "title": "Brand identity in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the names, colours, logos and shapes that make a brand recognisable, and what people actually remember.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "What makes a brand stick?",
+  "paras": [
+   "Logos are cheap or expensive, loved or mocked, but none of that decides whether people remember them.",
+   "Today, think about which parts of a brand people really notice."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Nike's swoosh was designed in 1971 by Carolyn Davidson, a design student in Portland. What was she paid for it?",
+   "options": [
+    "$35",
+    "$350",
+    "$3,500",
+    "$35,000"
+   ],
+   "correct": 0,
+   "figure": "$35",
+   "sub": "Knight had offered $2 an hour",
+   "explain": "$35, for 17.5 hours' work. Phil Knight said he didn't love it but expected it to grow on him. In 1983 Nike gave Davidson a gold swoosh ring and some company shares as thanks.",
+   "source": "ESPN, 2016"
+  },
+  {
+   "q": "In 2008 Pepsi had its round logo redrawn by the Arnell Group, tilting the white band into a kind of smile. What was the agency reportedly paid?",
+   "options": [
+    "$10,000",
+    "$1 million",
+    "$10 million",
+    "$100 million"
+   ],
+   "correct": 1,
+   "figure": "$1 million",
+   "sub": "a reported fee",
+   "explain": "A reported $1 million, for a design that kept the red, white and blue circle and changed the angle of the white band. A 27-page agency document explaining the new design later leaked and was widely mocked online.",
+   "source": "CBS News, 2009; Fortune, May 2024"
+  },
+  {
+   "q": "Tiffany & Co.'s blue has its own Pantone colour, created in 2001 and called 1837 Blue. What does 1837 refer to?",
+   "options": [
+    "Its trademark number",
+    "The street number of its first shop",
+    "The year Tiffany was founded",
+    "The year the blue box appeared"
+   ],
+   "correct": 2,
+   "figure": "1837",
+   "sub": "Tiffany's founding year",
+   "explain": "1837 is the year Charles Lewis Tiffany and John Young opened their first shop in New York. Tiffany registered the colour as a trade mark in 1998, and Pantone makes 1837 Blue as a private colour, not one in its public range.",
+   "source": "CNN Style, The story behind Tiffany & Co.'s famous blue"
+  },
+  {
+   "q": "Cadbury tried to register its purple (Pantone 2685C) as a trade mark for chocolate. In 2013, after a challenge from Nestlé, what did the Court of Appeal decide?",
+   "options": [
+    "Cadbury owns the colour",
+    "Cadbury owns it only with its name",
+    "The application was too vague to register",
+    "No colour can ever be a trade mark"
+   ],
+   "correct": 2,
+   "figure": "Too vague",
+   "sub": "Nestlé won",
+   "explain": "The judges said a mark for purple as the 'predominant' colour covered too many possible uses to be registered. Owning a colour in law is hard: it has to be described precisely, and shoppers must link it with one brand.",
+   "source": "Court of Appeal, Nestlé v Cadbury [2013] EWCA Civ 1174; Confectionery News, October 2013"
+  },
+  {
+   "q": "In a 2015 UCLA study, 85 students were asked to draw the Apple logo from memory. How many drew it correctly?",
+   "options": [
+    "1",
+    "9",
+    "25",
+    "52"
+   ],
+   "correct": 0,
+   "figure": "1 of 85",
+   "sub": "fewer than half could even pick it out",
+   "explain": "Just one, although most of them used Apple products. Fewer than half could pick the correct logo from a line-up. Seeing a logo every day doesn't mean remembering its details.",
+   "source": "Blake, Nazarian & Castel, Quarterly Journal of Experimental Psychology, 2015 (UCLA)"
+  },
+  {
+   "q": "Registering a trade mark protects a brand's name or logo across the EU. How many EU trade mark applications did the EU's intellectual property office receive in 2025?",
+   "options": [
+    "About 20,000",
+    "About 50,000",
+    "About 100,000",
+    "About 200,000"
+   ],
+   "correct": 3,
+   "figure": "196,886",
+   "sub": "provisional figures, up 9.1%",
+   "explain": "196,886, up 9.1% on 2024, and with design applications added it was the busiest year in the office's history. German applicants filed 12.7% of them, more than any other EU country; applicants from China filed almost 16%.",
+   "source": "EUIPO, annual filing figures, January 2026 (via Trademark Lawyer Magazine)"
+  },
+  {
+   "q": "A large global study asks people which brands they would really miss. In 2025, what share of brands did it find could disappear without most people caring?",
+   "options": [
+    "30%",
+    "50%",
+    "65%",
+    "78%"
+   ],
+   "correct": 3,
+   "figure": "78%",
+   "sub": "of brands, across the markets surveyed",
+   "explain": "78%, up five points on the year before. The Havas study has found similar results for over a decade: most brands are noticed, but few are missed. The ones that are missed tend to make a real difference to people's lives.",
+   "source": "Havas Group, Meaningful Brands 2025 (via LBB Online, July 2025)"
+  },
+  {
+   "q": "In 1915 Coca-Cola asked glassmakers to design a new bottle. What did the brief say it must be?",
+   "options": [
+    "Cheap enough to throw away",
+    "Recognisable by touch in the dark",
+    "Strong enough to send by post",
+    "Shaped like a coca leaf"
+   ],
+   "correct": 1,
+   "figure": "Known in the dark",
+   "sub": "or from a broken piece",
+   "explain": "A bottle you could recognise by feel in the dark, or even lying broken on the ground. Eight to ten glassmakers took up the challenge, and a design from the Root Glass Company of Indiana was chosen in 1916.",
+   "source": "The Coca-Cola Company, history of the contour bottle"
+  }
+ ]
+}

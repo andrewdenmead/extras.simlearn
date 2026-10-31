@@ -1,0 +1,133 @@
+{
+ "slug": "automation-and-jobs",
+ "course": "EIM",
+ "title": "Automation in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about machines, software and work: how many jobs forecasters think are at risk, where the robots are, what happened when earlier inventions arrived, and who still bargains collectively over pay.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Forecasts are loud; history is quieter.",
+  "paras": [
+   "Some of today's numbers were far smaller or far larger than the headlines suggest, and the estimates of what automation will do to jobs differ widely depending on who is counting and how.",
+   "What actually happens to people's work is rarely decided by the technology alone. It depends on the choices that companies, employees and governments make around it."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "A famous 2013 Oxford study said 47% of US jobs were at high risk of automation. When the OECD looked at jobs task by task across its member countries, what share did it find at high risk?",
+   "options": [
+    "4%",
+    "14%",
+    "24%",
+    "47%"
+   ],
+   "correct": 1,
+   "figure": "14%",
+   "sub": "of jobs, at high risk",
+   "explain": "The OECD put about 14% of jobs at high risk, meaning a better than 70% chance that most of their tasks could be automated, and about 10% in the US. A further 32% were likely to change significantly. The gap with the 2013 estimate shows how much depends on whether you score whole occupations or the tasks inside them.",
+   "source": "OECD, Employment Outlook 2019: The Future of Work (reported by MIT Technology Review)"
+  },
+  {
+   "q": "Robot density counts industrial robots per 10,000 manufacturing workers. The world average in 2024 was 132, and Germany had 449. What was the figure for South Korea, the world leader?",
+   "options": [
+    "280",
+    "520",
+    "870",
+    "1,220"
+   ],
+   "correct": 3,
+   "figure": "1,220",
+   "sub": "robots per 10,000 workers",
+   "explain": "South Korea had 1,220 robots per 10,000 manufacturing workers, more than nine times the world average. Singapore came second with 818, and Germany third, just ahead of Japan. China, the world's largest buyer of robots, ranked only 22nd at 166, because its manufacturing workforce is so large.",
+   "source": "International Federation of Robotics (IFR), robot density press release, April 2026 (2024 data)"
+  },
+  {
+   "q": "As cash machines spread across the US, the average urban bank branch went from about 21 tellers to 13. Between 1970 and 2010, what happened to the total number of bank tellers?",
+   "options": [
+    "It roughly doubled",
+    "It stayed about the same",
+    "It fell by about a fifth",
+    "It fell by about half"
+   ],
+   "correct": 0,
+   "figure": "×2",
+   "sub": "US bank tellers, 1970–2010",
+   "explain": "Fewer tellers per branch made branches cheaper to run, so banks opened many more of them, and total teller numbers roughly doubled. The economist James Bessen made this a classic example of automation changing a job rather than ending it. The story has a second act, though: since about 2010, mobile banking has cut more than 100,000 US teller jobs.",
+   "source": "James Bessen, 'Toil and Technology', 2015; US Bureau of Labor Statistics (reported by Marketplace)"
+  },
+  {
+   "q": "In 1996, 79% of employees in Germany worked for a company covered by a collective agreement on pay and conditions. What was the share in 2025?",
+   "options": [
+    "29%",
+    "49%",
+    "64%",
+    "74%"
+   ],
+   "correct": 1,
+   "figure": "49%",
+   "sub": "down from 79% in 1996",
+   "explain": "Just under half of employees in Germany are now covered by a sector or company agreement. Coverage is lowest in sectors such as wholesale, transport and warehousing, and information and communication. An EU directive asks countries below 80% to draw up a plan to raise it.",
+   "source": "IAB Establishment Panel 2025, in WSI-Mitteilungen 4/2026 (Hans-Böckler-Stiftung, Böckler Impuls 16/2026)"
+  },
+  {
+   "q": "The World Economic Forum surveys large employers around the world. They expect technology and other trends to displace about 92 million jobs between 2025 and 2030. How many new jobs do they expect to be created?",
+   "options": [
+    "50 million",
+    "110 million",
+    "170 million",
+    "260 million"
+   ],
+   "correct": 2,
+   "figure": "170m",
+   "sub": "new jobs by 2030",
+   "explain": "Employers expect about 170 million new jobs, a net gain of about 78 million. But the people losing jobs and the people getting the new ones are often not the same: 63% of employers named skills gaps as a key barrier to change, and about four in ten expected to cut staff where AI can do the work.",
+   "source": "World Economic Forum, Future of Jobs Report 2025 (January 2025)"
+  },
+  {
+   "q": "John Shepherd-Barron, whose father was Scottish, designed the cash machine Barclays opened in north London in 1967. He planned six-digit PINs. Why did four digits become the standard?",
+   "options": [
+    "His wife could only remember four",
+    "The bank's computers could store only four",
+    "Four buttons fitted the first keypad",
+    "Police advised against longer codes"
+   ],
+   "correct": 0,
+   "figure": "4 digits",
+   "sub": "thanks to his wife",
+   "explain": "He said his wife told him she could remember only four numbers, so he cut the PIN to four, and the world followed. The first machines did not even take cards: customers fed in special cheques marked with a mildly radioactive substance. He died in the north of Scotland in 2010.",
+   "source": "Obituary reports, May 2010 (reported by Al Jazeera)"
+  },
+  {
+   "q": "Economists matched US census job titles from 1940 to 2018. What share of jobs people did in 2018 were in kinds of work that didn't exist in 1940?",
+   "options": [
+    "10%",
+    "25%",
+    "40%",
+    "60%"
+   ],
+   "correct": 3,
+   "figure": "6 in 10",
+   "sub": "of 2018 jobs were new since 1940",
+   "explain": "About six in ten jobs in 2018 were in kinds of work that hadn't been recorded in 1940, from conference planners to solar electricians. The share was highest in health services (85%) and professional jobs (74%), and lower in manufacturing (46%).",
+   "source": "Autor, Chin, Salomons and Seegmiller, 'New Frontiers', Quarterly Journal of Economics, 2024 (MIT News)"
+  },
+  {
+   "q": "The International Labour Organization compared the tasks in thousands of jobs with what generative AI can do. What share of the world's jobs are in occupations at least partly exposed to it?",
+   "options": [
+    "5%",
+    "12%",
+    "25%",
+    "50%"
+   ],
+   "correct": 2,
+   "figure": "1 in 4",
+   "sub": "of jobs worldwide",
+   "explain": "About a quarter of jobs worldwide are potentially exposed, rising to 34% in high-income countries, with clerical work the most exposed of all. In rich countries, women are almost three times as likely as men to work in the most exposed jobs. The ILO stresses that exposure means a job is likely to change, not that it will disappear.",
+   "source": "ILO and NASK, Generative AI and Jobs: A Refined Global Index of Occupational Exposure, May 2025"
+  }
+ ]
+}

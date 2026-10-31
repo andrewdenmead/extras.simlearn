@@ -1,0 +1,133 @@
+{
+ "slug": "market-research",
+ "course": "EBC",
+ "title": "Market research in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about how companies, and countries, find out what people do and want.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Numbers about people are everywhere.",
+  "paras": [
+   "Every figure here came from someone deciding what to measure and how to count. Some of the answers surprised the people who collected them.",
+   "Today, listen to every source carefully before you decide what happened."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "How big is the world's 'insights' industry, meaning market research, research software and data reporting, in a year?",
+   "options": [
+    "$150bn",
+    "$300bn",
+    "$600bn",
+    "$1tn"
+   ],
+   "correct": 0,
+   "figure": "$153bn",
+   "sub": "in 2024",
+   "explain": "About $153 billion in 2024, according to ESOMAR. Market research in the classic sense is only about $56 billion of it; software platforms and reporting now make up most of the industry.",
+   "source": "ESOMAR, Global Market Research 2025 (Research World, November 2025)"
+  },
+  {
+   "q": "Britain's official TV viewing figures come from meters in a panel of homes. How many homes are on the panel?",
+   "options": [
+    "7,000",
+    "20,000",
+    "50,000",
+    "100,000"
+   ],
+   "correct": 0,
+   "figure": "About 7,000",
+   "sub": "out of about 28.6 million UK households",
+   "explain": "About 7,000 homes since Barb expanded its panel from about 5,150 in 2024, in a country of about 28.6 million households. Barb is also adding data from set-top boxes and streaming services.",
+   "source": "Barb, via Advanced Television, July 2024; ONS, Families and households in the UK: 2024"
+  },
+  {
+   "q": "Germany's 2022 census was the first since 2011. How did its result compare with the official estimate?",
+   "options": [
+    "2.8 million fewer",
+    "1.4 million fewer",
+    "About the same",
+    "1.4 million more"
+   ],
+   "correct": 1,
+   "figure": "1.4 million fewer",
+   "sub": "82.7m, not 84.1m",
+   "explain": "1.4 million fewer people than estimated. The official figure had been rolled forward from the 2011 census, and errors had built up. Berlin alone shrank by about 129,000 on paper.",
+   "source": "Destatis, Zensus 2022 results, June 2024; Berliner Kurier"
+  },
+  {
+   "q": "Scotland held its census in 2022, a year after England and Wales. What share of Scottish households had returned it when collection closed?",
+   "options": [
+    "79%",
+    "84%",
+    "89%",
+    "94%"
+   ],
+   "correct": 2,
+   "figure": "89%",
+   "sub": "England and Wales, 2021: 97%",
+   "explain": "89%, even after the deadline was extended. England and Wales reached 97% in 2021. Statisticians used other government records to fill the gaps, and Audit Scotland later said lessons should be shared.",
+   "source": "National Records of Scotland; Audit Scotland, 2022"
+  },
+  {
+   "q": "UK government research looked at online reviews of electronics, home and kitchen, and sports and outdoors products. What share did it estimate were fake?",
+   "options": [
+    "1-2%",
+    "3-5%",
+    "11-15%",
+    "30-40%"
+   ],
+   "correct": 2,
+   "figure": "11-15%",
+   "sub": "of reviews",
+   "explain": "Between 11% and 15%. Since April 2025, under the Digital Markets, Competition and Consumers Act, writing, commissioning or publishing fake reviews is banned in the UK.",
+   "source": "Department for Business and Trade, Fake online reviews research, April 2023"
+  },
+  {
+   "q": "Google once tested 41 shades of blue for the links in its adverts to see which got the most clicks. How much extra revenue a year did the winning shade reportedly bring?",
+   "options": [
+    "$2m",
+    "$20m",
+    "$80m",
+    "$200m"
+   ],
+   "correct": 3,
+   "figure": "$200m",
+   "sub": "a year",
+   "explain": "About $200 million a year in ad revenue, Google's UK managing director said in 2014. The '41 shades' story comes from a former Google designer, who left partly because every small design decision was tested.",
+   "source": "The Guardian, February 2014 (Dan Cobley, Google UK)"
+  },
+  {
+   "q": "GfK, one of the world's best-known market research names, was founded in Nuremberg in 1934. Which future German chancellor helped to found it?",
+   "options": [
+    "Konrad Adenauer",
+    "Ludwig Erhard",
+    "Willy Brandt",
+    "Helmut Schmidt"
+   ],
+   "correct": 1,
+   "figure": "Ludwig Erhard",
+   "sub": "chancellor 1963-66",
+   "explain": "Ludwig Erhard, then an economist at a Nuremberg research institute, later the economics minister behind West Germany's post-war 'economic miracle' and chancellor from 1963 to 1966. GfK's consumer climate index is still one of Germany's most watched numbers.",
+   "source": "Nuremberg Institute for Market Decisions (NIM), history"
+  },
+  {
+   "q": "Every day, what share of the searches typed into Google have never been searched before?",
+   "options": [
+    "1%",
+    "5%",
+    "10%",
+    "15%"
+   ],
+   "correct": 3,
+   "figure": "15%",
+   "sub": "of daily searches",
+   "explain": "About 15%, a figure Google first gave in 2013 and was still repeating in 2025. New products, slang, typos and news keep the questions coming, which is one reason search data is watched so closely by marketers.",
+   "source": "Google, via Search Engine Land, 2017; Search Engine Journal, March 2025"
+  }
+ ]
+}

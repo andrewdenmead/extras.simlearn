@@ -1,0 +1,133 @@
+{
+ "slug": "design-for-entertainment",
+ "course": "EFD",
+ "title": "Entertainment in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the entertainment business: films, games, festivals, theme parks, and the few seconds an image gets to win us over.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "A few seconds to win.",
+  "paras": [
+   "Whether it's a streaming tile, a title sequence or a castle on the skyline, entertainment design has a very short time to make people stop, look and care.",
+   "Today's simulation is about one of those moments. Bring the numbers, and your doubts, with you."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Cinemas worldwide took about $33.6 billion in 2025. How much did video games earn worldwide that year?",
+   "options": [
+    "About $20 billion",
+    "About $60 billion",
+    "About $200 billion",
+    "About $600 billion"
+   ],
+   "correct": 2,
+   "figure": "$201.6bn",
+   "sub": "about six times the box office",
+   "explain": "Newzoo estimates games passed $200 billion for the first time, and mobile games alone ($113 billion) earned more than three times the global box office. Many people still picture cinema as the bigger business.",
+   "source": "Newzoo, Global Games Market Report, June 2026 (via PocketGamer.biz); Gower Street Analytics, January 2026"
+  },
+  {
+   "q": "Netflix found that artwork gets over 82% of members' attention while they browse. Roughly how long does a member spend considering each title?",
+   "options": [
+    "About 1.8 seconds",
+    "About 6 seconds",
+    "About 15 seconds",
+    "About 40 seconds"
+   ],
+   "correct": 0,
+   "figure": "1.8 s",
+   "sub": "per title",
+   "explain": "Members spent about 1.8 seconds on each title, and Netflix said it had around 90 seconds to catch their interest before they gave up. The research is from 2014, but it explains why streaming services test their artwork so carefully.",
+   "source": "Netflix, The Power of a Picture, 2016"
+  },
+  {
+   "q": "The Edinburgh Festival Fringe is often called the world's largest arts festival. How many tickets did it issue in 2025?",
+   "options": [
+    "About 260,000",
+    "About 900,000",
+    "About 1.5 million",
+    "About 2.6 million"
+   ],
+   "correct": 3,
+   "figure": "2.6m",
+   "sub": "tickets, 3,893 shows",
+   "explain": "The Fringe issued an estimated 2.6 million tickets for 3,893 shows in 301 venues, with performers from 62 countries. Each show has to compete for attention with thousands of others, often with just a flyer and a poster.",
+   "source": "Edinburgh Festival Fringe Society, August 2025"
+  },
+  {
+   "q": "Grand Theft Auto, one of the best-selling game series ever, was first made in 1997 by a studio in which Scottish city?",
+   "options": [
+    "Aberdeen",
+    "Dundee",
+    "Edinburgh",
+    "Glasgow"
+   ],
+   "correct": 1,
+   "figure": "Dundee",
+   "sub": "DMA Design, founded 1988",
+   "explain": "DMA Design, founded in Dundee in 1988, made the first GTA there. It became Rockstar North in 2002 and is now based in Edinburgh. Dundee is still one of the UK's main centres for game development.",
+   "source": "Wikipedia, Rockstar North"
+  },
+  {
+   "q": "How many cinema tickets were sold in Germany in 2025?",
+   "options": [
+    "About 9 million",
+    "About 35 million",
+    "About 89 million",
+    "About 250 million"
+   ],
+   "correct": 2,
+   "figure": "89.2m",
+   "sub": "tickets in 2025",
+   "explain": "Germans bought about 89.2 million tickets (preliminary figures), 2.2% more than in 2024, for box office of just under €900 million. That's about one cinema visit per person per year.",
+   "source": "HDF Kino, January 2026 (Comscore data)"
+  },
+  {
+   "q": "Cinderella Castle at Walt Disney World in Florida is 189 feet (58 m) tall. Why wasn't it built taller?",
+   "options": [
+    "To avoid needing an aircraft warning light",
+    "To stay smaller than the California castle",
+    "Because of Florida's hurricane rules",
+    "To fit in one photo from the entrance"
+   ],
+   "correct": 0,
+   "figure": "189 ft",
+   "sub": "just under the limit",
+   "explain": "At the time it was built, aviation rules required a flashing warning light on taller structures, which would have spoiled the fairy-tale effect. A regulation shaped one of the world's most photographed buildings.",
+   "source": "Inside the Magic, 2022"
+  },
+  {
+   "q": "US cinema owners set guidelines on how long a trailer shown in cinemas can be, with two exceptions per distributor a year. What is the limit?",
+   "options": [
+    "1 minute",
+    "2 minutes",
+    "3 minutes",
+    "4 minutes"
+   ],
+   "correct": 1,
+   "figure": "2 min",
+   "sub": "maximum trailer length",
+   "explain": "The National Association of Theatre Owners set a two-minute limit, about 30 seconds shorter than the usual length at the time; each distributor's two exceptions may run to three minutes. Studios have to fit a whole film's promise into that time.",
+   "source": "National Association of Theatre Owners, In-Theater Marketing Guidelines, January 2014"
+  },
+  {
+   "q": "Which typeface gives the title of Netflix's Stranger Things its 1980s look?",
+   "options": [
+    "Futura",
+    "Gill Sans",
+    "Helvetica",
+    "ITC Benguiat"
+   ],
+   "correct": 3,
+   "figure": "ITC Benguiat",
+   "sub": "the Stranger Things title face",
+   "explain": "The title uses ITC Benguiat, a 1970s typeface that appeared on many horror paperbacks of the time. The studio Imaginary Forces built the opening titles around it, and the font became popular again.",
+   "source": "Fonts In Use; Imaginary Forces"
+  }
+ ]
+}

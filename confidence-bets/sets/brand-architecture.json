@@ -1,0 +1,133 @@
+{
+ "slug": "brand-architecture",
+ "course": "EBC",
+ "title": "Brand families in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the big groups behind the brands we buy every day, and how they are organised.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Who owns what is rarely obvious.",
+  "paras": [
+   "Most shoppers never think about the company behind a name, but the way a group arranges its brands shapes prices, menus, shops and jobs.",
+   "Today, think about what shoppers, franchisees and owners each want from a brand."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Volkswagen Group owns many vehicle brands. Which of these does it NOT own?",
+   "options": [
+    "Bentley",
+    "Ducati",
+    "Lamborghini",
+    "Rolls-Royce"
+   ],
+   "correct": 3,
+   "figure": "Rolls-Royce",
+   "sub": "owned by BMW",
+   "explain": "Rolls-Royce cars belong to BMW, which also owns Mini. Volkswagen Group owns Audi, Porsche, Bentley, Lamborghini, Škoda, SEAT, Cupra and the motorbike maker Ducati, among others.",
+   "source": "Volkswagen Group / BMW Group company information"
+  },
+  {
+   "q": "Roughly how many brands does Nestlé own?",
+   "options": [
+    "About 50",
+    "About 2,000",
+    "About 5,000",
+    "About 10,000"
+   ],
+   "correct": 1,
+   "figure": "Over 2,000",
+   "sub": "from global to local",
+   "explain": "More than 2,000, from KitKat and Nescafé to brands sold in just one country. Only some of them carry the Nestlé name on the pack.",
+   "source": "Nestlé, company website"
+  },
+  {
+   "q": "What share of McDonald's restaurants worldwide are run by franchisees rather than by the company itself?",
+   "options": [
+    "About 35%",
+    "About 55%",
+    "About 75%",
+    "About 95%"
+   ],
+   "correct": 3,
+   "figure": "About 95%",
+   "sub": "of over 45,000 restaurants",
+   "explain": "About 95% of the 45,356 restaurants open at the end of 2025. McDonald's earns much of its money from franchisees' rent and royalties, not from selling burgers itself.",
+   "source": "McDonald's Corporation, Annual Report (Form 10-K) 2025"
+  },
+  {
+   "q": "In the UK, which chain has more outlets: the bakery Greggs or McDonald's?",
+   "options": [
+    "Greggs, by about 1,100",
+    "Greggs, by about 500",
+    "About the same",
+    "McDonald's, by about 1,000"
+   ],
+   "correct": 0,
+   "figure": "Greggs",
+   "sub": "about 2,700 v. about 1,600",
+   "explain": "Greggs, by a long way: about 2,740 shops at the end of 2025 (including about 600 run by franchise partners), against about 1,600 McDonald's restaurants in the UK and Ireland together.",
+   "source": "Greggs plc, 2025 full-year results (reported by The Caterer); McDonald's, Restaurants by Market 2025"
+  },
+  {
+   "q": "Marriott International runs hotels under many different brand names, from Ritz-Carlton to Moxy. Roughly how many?",
+   "options": [
+    "8",
+    "15",
+    "30+",
+    "60"
+   ],
+   "correct": 2,
+   "figure": "30+",
+   "sub": "brands in one group",
+   "explain": "More than 30 brands, each aimed at a different guest and price. Most guests never notice that so many belong to one group.",
+   "source": "Marriott International, brand portfolio"
+  },
+  {
+   "q": "In which year did Kentucky Fried Chicken officially shorten its name to KFC?",
+   "options": [
+    "1971",
+    "1991",
+    "2006",
+    "2014"
+   ],
+   "correct": 1,
+   "figure": "1991",
+   "sub": "officially, just a shorter name",
+   "explain": "1991. The company said it simply wanted a shorter name; many observers think it also helped to play down the word 'fried', though KFC never said so.",
+   "source": "KFC / Yum! Brands company history; The Takeout, 2025"
+  },
+  {
+   "q": "Pret A Manger, Panera Bread and Krispy Kreme (a large stake) have all belonged to the same investor. Who?",
+   "options": [
+    "JAB Holding, the Reimann family's firm",
+    "Nestlé",
+    "Yum! Brands",
+    "Starbucks"
+   ],
+   "correct": 0,
+   "figure": "JAB Holding",
+   "sub": "the German Reimann family",
+   "explain": "JAB, the investment firm of the German Reimann family. It bought Pret in 2018 for a reported £1.5 billion including debt, adding it to a portfolio that already included Panera and Krispy Kreme.",
+   "source": "BakeryAndSnacks.com / Bloomberg, May 2018 (price reported; terms not disclosed)"
+  },
+  {
+   "q": "In 2025 the US delivery company DoorDash completed its purchase of Deliveroo. For roughly how much?",
+   "options": [
+    "£290m",
+    "£900m",
+    "£2.9bn",
+    "£9bn"
+   ],
+   "correct": 2,
+   "figure": "About £2.9bn",
+   "sub": "180p a share",
+   "explain": "About £2.9 billion, agreed in May 2025 and completed in October. Deliveroo had floated on the London Stock Exchange in 2021 at a value of about £7.6 billion.",
+   "source": "DoorDash / Deliveroo, offer announcement, May 2025; ITV News, March 2021"
+  }
+ ]
+}

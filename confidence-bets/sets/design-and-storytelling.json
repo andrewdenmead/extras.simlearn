@@ -1,0 +1,133 @@
+{
+ "slug": "design-and-storytelling",
+ "course": "EFD",
+ "title": "Storytelling in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about stories: how they add value, how we remember them, how many shapes they come in and where some famous brand stories began.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Stories do real work.",
+  "paras": [
+   "A good story can multiply what an object is worth and stay in people's heads long after the numbers have gone.",
+   "Today you'll decide how a story should be told. Bring your evidence with you."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In 2009 two writers bought cheap junk-shop objects for $128.74 in total, asked writers to invent a story for each, and sold them on eBay with the stories. How much did they make?",
+   "options": [
+    "$190",
+    "$640",
+    "$1,500",
+    "$3,612"
+   ],
+   "correct": 3,
+   "figure": "$3,612.51",
+   "sub": "from $128.74 of objects",
+   "explain": "The Significant Objects project sold the same objects for $3,612.51, about 28 times what they cost. The objects didn't change; only the stories attached to them did. The money went to the writers.",
+   "source": "Rob Walker and Joshua Glenn, Significant Objects project, 2009 (NPR, 2009; The Marginalian, 2012)"
+  },
+  {
+   "q": "Stanford students gave one-minute talks with about 2.5 statistics each; only 1 in 10 told a story. Later, 63% of listeners remembered the stories. What share remembered any single statistic?",
+   "options": [
+    "5%",
+    "22%",
+    "41%",
+    "60%"
+   ],
+   "correct": 0,
+   "figure": "5%",
+   "sub": "remembered a statistic",
+   "explain": "Only 5% remembered any individual statistic, against 63% for the stories. The students who used numbers well were forgotten; the few who told a story weren't.",
+   "source": "Chip and Dan Heath, Made to Stick, 2007"
+  },
+  {
+   "q": "In 2011 Emma Coats, a Pixar story artist, tweeted the 'story basics' she had learned there, starting with 'You admire a character for trying more than for their successes.' How many were there?",
+   "options": [
+    "10",
+    "22",
+    "50",
+    "100"
+   ],
+   "correct": 1,
+   "figure": "22",
+   "sub": "rules of storytelling",
+   "explain": "Coats posted 22 'story basics'. She never called them official Pixar rules, but bloggers soon labelled them 'Pixar's 22 rules of storytelling', and they are still shared in design and film schools: most are about the character's choices, not the plot or the visuals.",
+   "source": "Emma Coats, 'story basics' tweets, 2011 (widely reprinted as 'Pixar's 22 rules of storytelling')"
+  },
+  {
+   "q": "Computer scientists measured the emotional ups and downs in 1,327 novels and stories. How many basic story shapes did they find?",
+   "options": [
+    "3",
+    "6",
+    "12",
+    "20"
+   ],
+   "correct": 1,
+   "figure": "6",
+   "sub": "core emotional arcs",
+   "explain": "They found six core shapes, including 'rags to riches', 'man in a hole' (fall, then rise) and 'Cinderella' (rise, fall, rise). The writer Kurt Vonnegut had sketched a similar idea decades earlier.",
+   "source": "Reagan et al., EPJ Data Science, 2016"
+  },
+  {
+   "q": "Penguin's first paperbacks (1935) told readers what kind of story they were buying through colour alone. Which colour meant crime?",
+   "options": [
+    "Orange",
+    "Dark blue",
+    "Green",
+    "Red"
+   ],
+   "correct": 2,
+   "figure": "Green",
+   "sub": "crime and mystery",
+   "explain": "Orange meant general fiction, green crime and blue biography. With a simple grid and one colour, the cover told you the type of story before you read a word, and the orange Penguin became a design classic.",
+   "source": "Penguin Books history; Phil Baines, Penguin by Design (2005); 99% Invisible, 'Classic Penguins'"
+  },
+  {
+   "q": "Johnnie Walker, which sells about 20 million cases a year, says its story began in 1820. As what?",
+   "options": [
+    "A grocer's shop in Kilmarnock",
+    "A distillery on Islay",
+    "A ship's supplier in Leith",
+    "A coaching inn in Glasgow"
+   ],
+   "correct": 0,
+   "figure": "1820",
+   "sub": "Kilmarnock, Ayrshire",
+   "explain": "John Walker opened a grocer's shop in Kilmarnock and sold his own whisky blends there. The 'Striding Man', sketched by the cartoonist Tom Browne in 1908 and on labels from 1909, is still used. Recent sales are reported at about 20 million cases a year.",
+   "source": "Diageo, Johnnie Walker brand history; Whisky Magazine, 'Right foot forward'; sales: The Spirits Business / VinePair (2025–26)"
+  },
+  {
+   "q": "The IPA compared hundreds of award-entry advertising campaigns. How often did mainly emotional campaigns report very large profit gains, compared with mainly rational ones?",
+   "options": [
+    "Less often",
+    "About as often",
+    "About twice as often",
+    "About ten times as often"
+   ],
+   "correct": 2,
+   "figure": "31% vs 16%",
+   "sub": "emotional vs rational",
+   "explain": "In the IPA's database of award-entry case studies, mainly emotional campaigns reported very large profit gains about twice as often as mainly rational ones (31% against 16%). Facts still matter, but feelings seem to do more of the long-term work.",
+   "source": "IPA dataBANK analysis by Les Binet and Peter Field, as reported in Pringle and Field, Brand Immortality (Kogan Page, 2008)"
+  },
+  {
+   "q": "Joseph Campbell's 'hero's journey' (1949), used by many film-makers, divides a myth into how many stages?",
+   "options": [
+    "5",
+    "9",
+    "12",
+    "17"
+   ],
+   "correct": 3,
+   "figure": "17",
+   "sub": "stages in Campbell's version",
+   "explain": "Campbell described 17 stages, from 'the call to adventure' to 'freedom to live'. The 12-stage version many screenwriters use is a later simplification by Christopher Vogler.",
+   "source": "Joseph Campbell, The Hero with a Thousand Faces, 1949"
+  }
+ ]
+}

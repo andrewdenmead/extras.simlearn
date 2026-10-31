@@ -1,0 +1,133 @@
+{
+ "slug": "housing-and-space",
+ "course": "AE",
+ "title": "Homes and space in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about housing: how much space we have, who owns it, who is waiting for it, and how much it costs.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Housing is about space, not just homes.",
+  "paras": [
+   "Britain and Germany both have housing shortages, but very different ideas about owning, renting and how much room a household needs. On several of these, the room's gut was well off.",
+   "Who should get the space there is, and how, is one of the hardest questions in politics."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In England, the typical home costs how many times the typical full-time salary (2024)?",
+   "options": [
+    "4.7",
+    "7.7",
+    "10.7",
+    "13.7"
+   ],
+   "correct": 1,
+   "figure": "7.7×",
+   "sub": "house prices to earnings, England",
+   "explain": "The median home in England cost about 7.7 times median full-time earnings in 2024 (£290,000 against £37,600), against about 3.6 times across England and Wales in 1997. In London the ratio is about 11.",
+   "source": "ONS, Housing affordability in England and Wales: 2024 (March 2025)"
+  },
+  {
+   "q": "The UK government has set a target for new homes in England during this Parliament (2024–29). How many?",
+   "options": [
+    "300,000",
+    "750,000",
+    "1.5 million",
+    "3 million"
+   ],
+   "correct": 2,
+   "figure": "1.5m",
+   "sub": "new homes in England by 2029",
+   "explain": "The target is 1.5 million homes, about 300,000 a year, a rate no government has managed year after year in half a century. Most new homes in England today are built by private developers.",
+   "source": "UK government, Plan for Change milestones, December 2024 (Labour manifesto pledge, 2024)"
+  },
+  {
+   "q": "How many households in England were on a council waiting list for social housing in 2024?",
+   "options": [
+    "330,000",
+    "1.33 million",
+    "3.3 million",
+    "5.3 million"
+   ],
+   "correct": 1,
+   "figure": "1.33m",
+   "sub": "households on waiting lists",
+   "explain": "About 1.33 million households were on council housing waiting lists in England in 2023–24, the highest since 2014. Many wait for years: only a fraction of social homes change hands each year.",
+   "source": "MHCLG, Local authority housing statistics, 2023–24"
+  },
+  {
+   "q": "How many homes in England had been empty for more than six months in autumn 2024?",
+   "options": [
+    "265,000",
+    "465,000",
+    "865,000",
+    "1.2 million"
+   ],
+   "correct": 0,
+   "figure": "≈265,000",
+   "sub": "long-term empty homes",
+   "explain": "About 265,000 homes were long-term empty, roughly 1 in 100 of all homes (25.7 million). The figure counts homes with nobody living in them, not unused rooms in homes that are lived in.",
+   "source": "MHCLG, Council Taxbase in England: 2024 (revised)"
+  },
+  {
+   "q": "On average, how much living space does each person in Germany have?",
+   "options": [
+    "20 m²",
+    "30 m²",
+    "40 m²",
+    "50 m²"
+   ],
+   "correct": 3,
+   "figure": "≈49.5 m²",
+   "sub": "living space per person, end of 2025",
+   "explain": "Germany had about 49.5 square metres of living space per person at the end of 2025, up from about 46 in 2015, as homes grew and households shrank. It is a theoretical average: all living space divided by the population, empty flats included.",
+   "source": "Destatis (Federal Statistical Office), housing stock at end of 2025, press release July 2026"
+  },
+  {
+   "q": "What share of German households consist of just one person?",
+   "options": [
+    "11%",
+    "26%",
+    "41%",
+    "56%"
+   ],
+   "correct": 2,
+   "figure": "≈41%",
+   "sub": "of households are one person",
+   "explain": "About 17 million of Germany's almost 41 million households, just over 41%, are a single person, one of the highest shares in Europe. About one person in five in Germany lives alone.",
+   "source": "Destatis, Microcensus 2025"
+  },
+  {
+   "q": "Which EU country has the lowest share of people living in a home they own?",
+   "options": [
+    "Germany",
+    "France",
+    "Netherlands",
+    "Sweden"
+   ],
+   "correct": 0,
+   "figure": "Germany",
+   "sub": "≈48% own their home (EU: 69%)",
+   "explain": "Germany: only about 48% of people live in a home they own, against 69% across the EU and 96% in Romania. It is the only EU country where renting is more common than owning.",
+   "source": "Eurostat, Housing in Europe, 2024 edition (2023 data)"
+  },
+  {
+   "q": "In Vienna, often praised for affordable housing, roughly what share of residents live in municipal or subsidised housing?",
+   "options": [
+    "About 1 in 20",
+    "About 1 in 10",
+    "About 1 in 4",
+    "About half"
+   ],
+   "correct": 3,
+   "figure": "≈half",
+   "sub": "of Viennese",
+   "explain": "About half of Vienna's residents live in council-owned or subsidised flats; the first big council-housing programme began in 1923. The city owns around 220,000 flats itself, and about 200,000 more co-operative flats were built with city subsidies.",
+   "source": "City of Vienna, International Newsletter 04/2025: Vienna housing; Wiener Wohnen"
+  }
+ ]
+}

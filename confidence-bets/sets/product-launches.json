@@ -1,0 +1,133 @@
+{
+ "slug": "product-launches",
+ "course": "EBC",
+ "title": "Product launches in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about launching new products: apps, games, gadgets and snacks, and what it takes to get noticed in the first days.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Launch day is only the start.",
+  "paras": [
+   "Some of these launches were far bigger than almost anyone guessed; others cost far more to get noticed than people expect.",
+   "What a launch has to get right depends on the product, the market and the moment. Keep that in mind today."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In July 2023 Meta launched Threads, a rival to Twitter (now X). How long did it take to reach 100 million sign-ups?",
+   "options": [
+    "5 days",
+    "5 weeks",
+    "5 months",
+    "1 year"
+   ],
+   "correct": 0,
+   "figure": "5 days",
+   "sub": "the fastest app ever to 100 million at the time",
+   "explain": "Threads passed 100 million sign-ups within about five days of its 5 July launch, far faster than ChatGPT, which took about two months. It helped that people could join straight from their Instagram account.",
+   "source": "Al Jazeera, 10 July 2023 (citing app-tracking data)"
+  },
+  {
+   "q": "Nintendo's Switch 2 games console went on sale on 5 June 2025. How many did Nintendo sell in the first four days?",
+   "options": [
+    "500,000",
+    "1 million",
+    "2 million",
+    "3.5 million"
+   ],
+   "correct": 3,
+   "figure": "3.5 million",
+   "sub": "Nintendo's fastest-selling console ever",
+   "explain": "More than 3.5 million units in four days: Nintendo's best start ever, and reportedly the biggest launch of any console. Demand had built for years: the original Switch, launched in 2017, sold over 150 million.",
+   "source": "Nintendo, June 2025 (via Video Games Chronicle and CNN, 11 June 2025)"
+  },
+  {
+   "q": "A 30-second advert during the US Super Bowl is the most expensive slot on television. Roughly what did NBC charge for one in February 2026?",
+   "options": [
+    "$2 million",
+    "$5 million",
+    "$8 million",
+    "$15 million"
+   ],
+   "correct": 2,
+   "figure": "$8 million",
+   "sub": "NBC said a handful of slots sold for over $10m",
+   "explain": "NBC sold 30-second slots at an average of about $8 million, and its ad chief said a handful went for more than $10 million. Brands pay it because the game still draws one of the biggest live audiences in the US, and the adverts themselves become news.",
+   "source": "Financial Times, via TVLine, February 2026; Sportico, 2025"
+  },
+  {
+   "q": "Stanley has made vacuum flasks since 1913. Its sales were $73 million in 2019. After its Quencher cup went viral on social media, what were they in 2023?",
+   "options": [
+    "$150m",
+    "$300m",
+    "$450m",
+    "$750m"
+   ],
+   "correct": 3,
+   "figure": "$750m",
+   "sub": "about ten times 2019 (a projection reported by CNBC)",
+   "explain": "A projected $750 million or more. The Quencher had been on sale since 2016; it took off when influencers, and later a viral video of one surviving a car fire, turned a cup into a status object.",
+   "source": "CNBC Make It, December 2023"
+  },
+  {
+   "q": "Grand Theft Auto V, made mainly by Rockstar North in Edinburgh, went on sale in September 2013. How long did it take to earn $1 billion?",
+   "options": [
+    "3 days",
+    "3 weeks",
+    "3 months",
+    "1 year"
+   ],
+   "correct": 0,
+   "figure": "3 days",
+   "sub": "a Guinness World Record",
+   "explain": "Three days: faster than any film, book or game before it. More than a decade later it has sold over 200 million copies, and Edinburgh is one of the centres of the UK games industry.",
+   "source": "Guinness World Records, Oct 2013; Take-Two Interactive results"
+  },
+  {
+   "q": "Apple's Vision Pro headset went on sale in the US in February 2024. What was its starting price?",
+   "options": [
+    "$999",
+    "$1,999",
+    "$3,499",
+    "$4,999"
+   ],
+   "correct": 2,
+   "figure": "$3,499",
+   "sub": "seven times the price of Meta's Quest 3",
+   "explain": "It started at $3,499, against $499 for Meta's Quest 3 headset. Apple has not published sales figures for it.",
+   "source": "Apple, announcement of 8 January 2024 (reported by CNBC)"
+  },
+  {
+   "q": "In November 2024 Lindt launched its own 'Dubai chocolate' (pistachio cream and crispy pastry) in Germany, after the trend went viral on TikTok. What did one bar cost at first?",
+   "options": [
+    "€7.99",
+    "€14.99",
+    "€19.99",
+    "€29.99"
+   ],
+   "correct": 1,
+   "figure": "€14.99",
+   "sub": "first batch: 1,000 hand-packed bars",
+   "explain": "About €14.99 a bar, and the first batch was only 1,000 numbered bars, sold first in its Düsseldorf shop. Queues formed anyway, and supermarket copies soon followed.",
+   "source": "inFranken, citing t-online, 23 November 2024"
+  },
+  {
+   "q": "Josh Wardle made Wordle for his partner and released it to the public in October 2021. In January 2022 The New York Times bought it. For how much?",
+   "options": [
+    "Low five figures",
+    "Low seven figures",
+    "About $30 million",
+    "About $100 million"
+   ],
+   "correct": 1,
+   "figure": "Low seven figures",
+   "sub": "i.e. at least $1 million",
+   "explain": "The Times said only that the price was in the low seven figures. On 1 November 2021 just 90 people had played; by late January millions were playing, almost all through word of mouth.",
+   "source": "The New York Times / CNBC, 31 January 2022"
+  }
+ ]
+}

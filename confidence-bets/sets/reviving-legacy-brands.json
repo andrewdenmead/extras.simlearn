@@ -1,0 +1,133 @@
+{
+ "slug": "reviving-legacy-brands",
+ "course": "EBC",
+ "title": "Comebacks in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers and stories about old products, sounds and designs that refused to disappear.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Old can be new again.",
+  "paras": [
+   "Some products disappear and come back; some never really leave. Nostalgia is powerful, but every comeback still needs people who want to buy it today.",
+   "Today, think about what people really miss about an old product."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "What share of UK adults listen to the radio at least once a week?",
+   "options": [
+    "27%",
+    "47%",
+    "67%",
+    "87%"
+   ],
+   "correct": 3,
+   "figure": "87%",
+   "sub": "adults 15+, about 51 million people",
+   "explain": "About 87% (86.6%), or around 51 million people, according to RAJAR. Most of that listening is now digital: about three-quarters of listening hours go through DAB, apps and smart speakers.",
+   "source": "RAJAR, Q2 2026 (reach); RAJAR, Q4 2025 (digital share)"
+  },
+  {
+   "q": "In 2017 one country became the first to switch off national FM radio and go digital (DAB). Which?",
+   "options": [
+    "Norway",
+    "UK",
+    "Germany",
+    "Switzerland"
+   ],
+   "correct": 0,
+   "figure": "Norway",
+   "sub": "13 December 2017",
+   "explain": "Norway completed the switch-off of national FM stations in December 2017; most local stations stayed on FM. The authorities said DAB cost about eight times less to run, but many listeners complained about coverage and the cost of new radios.",
+   "source": "WorldDAB; The Local Norway, December 2017"
+  },
+  {
+   "q": "In 2017 the Nokia 3310, a phone first sold in 2000, was relaunched with a colour screen and a new version of the game Snake. What did it cost in Europe?",
+   "options": [
+    "€19",
+    "€49",
+    "€149",
+    "€299"
+   ],
+   "correct": 1,
+   "figure": "€49",
+   "sub": "made by HMD under the Nokia name",
+   "explain": "About €49. The relaunch came from HMD Global, which licensed the Nokia name. More than 126 million of the original 3310 had been made.",
+   "source": "Reported from Mobile World Congress (AFP), February 2017"
+  },
+  {
+   "q": "Braun's SK 4 radio and record player (1956), by Dieter Rams and Hans Gugelot, had a clear plastic lid. What did Germans nickname it?",
+   "options": [
+    "Snow White's coffin",
+    "The aquarium",
+    "The glass box",
+    "The ice cube"
+   ],
+   "correct": 0,
+   "figure": "Schneewittchensarg",
+   "sub": "Snow White's coffin",
+   "explain": "'Schneewittchensarg', Snow White's coffin, because of its white metal casing and clear lid. Its plain box was radical when radios looked like furniture; it is now in the Museum of Modern Art in New York.",
+   "source": "MoMA collection, Radio-Phonograph (model SK 4/10)"
+  },
+  {
+   "q": "Philips launched the compact cassette in 1963. What did it charge other manufacturers to use the format?",
+   "options": [
+    "1% of each sale",
+    "10% of each sale",
+    "Nothing: the licence was free",
+    "It didn't license it"
+   ],
+   "correct": 2,
+   "figure": "Nothing",
+   "sub": "a free licence",
+   "explain": "Nothing: Philips gave a free licence to makers who kept to its technical rules, so the format would spread, and it became the world standard for decades. UK cassette sales have recently risen again, from a small base.",
+   "source": "Philips Museum; BPI"
+  },
+  {
+   "q": "The last original Volkswagen Beetle was made in Puebla, Mexico, in 2003. How many had been built in total?",
+   "options": [
+    "2.1 million",
+    "8.5 million",
+    "15 million",
+    "21.5 million"
+   ],
+   "correct": 3,
+   "figure": "21.5 million",
+   "sub": "after the Second World War, to 2003",
+   "explain": "21,529,464, built from after the war until 30 July 2003. The retro-styled 'New Beetle' of 1998 was a different, modern car underneath; its successor ended production in 2019.",
+   "source": "History.com; Volkswagen, 2003 and 2019"
+  },
+  {
+   "q": "Bandai's Tamagotchi digital pet first went on sale in 1996 and has been relaunched many times. Roughly how many have been sold worldwide?",
+   "options": [
+    "10 million",
+    "30 million",
+    "100 million",
+    "300 million"
+   ],
+   "correct": 2,
+   "figure": "100 million",
+   "sub": "shipped worldwide, by August 2025",
+   "explain": "Bandai said in August 2025 that it had shipped more than 100 million worldwide (shipments, not necessarily sold to customers). Each new generation has added colour screens, connectivity and new characters, but the basic idea hasn't changed.",
+   "source": "Bandai, announcement, 28 August 2025"
+  },
+  {
+   "q": "Kodak discontinued its Ektachrome slide film in 2012–13. What happened next?",
+   "options": [
+    "It never came back",
+    "It returned in 2018",
+    "Fujifilm bought the name",
+    "It returned only as an app filter"
+   ],
+   "correct": 1,
+   "figure": "Back in 2018",
+   "sub": "announced in 2017",
+   "explain": "It came back: announced in January 2017, it reached shops in 2018 after the film had to be reformulated. Interest in film photography has grown since, especially among people too young to remember it.",
+   "source": "Kodak Alaris announcements, January 2017 and September 2018"
+  }
+ ]
+}

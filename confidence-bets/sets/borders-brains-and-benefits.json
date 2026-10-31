@@ -1,0 +1,133 @@
+{
+ "slug": "borders-brains-and-benefits",
+ "course": "EIM",
+ "title": "Health workers in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about the people who keep health systems running: how many nurses the world is short of, where they work, how many have moved countries to do it, and the money that flows back home.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Health care is a global labour market.",
+  "paras": [
+   "Several of today's numbers point the same way: nurses and doctors are trained in one place and very often work in another, and rich health systems, including Germany's and Switzerland's, depend on them more than most patients realise.",
+   "Who gains and who loses from that movement is one of the harder questions in international management. The numbers alone don't settle it."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The World Health Organization counted 29.8 million nurses worldwide in 2023. How many more did it estimate the world needed?",
+   "options": [
+    "1.2 million",
+    "2.9 million",
+    "5.8 million",
+    "11.6 million"
+   ],
+   "correct": 2,
+   "figure": "5.8m",
+   "sub": "nurses short worldwide in 2023",
+   "explain": "The WHO put the global shortfall at about 5.8 million nurses in 2023, down from 6.2 million in 2020. The workforce is growing, and the WHO expects the gap to narrow to about 4.1 million by 2030, but not to close.",
+   "source": "World Health Organization, State of the World's Nursing 2025"
+  },
+  {
+   "q": "The WHO found that nurses are concentrated in a group of countries that together hold 49% of the world's population. What share of the world's nurses work in those countries?",
+   "options": [
+    "34%",
+    "49%",
+    "63%",
+    "78%"
+   ],
+   "correct": 3,
+   "figure": "78%",
+   "sub": "of nurses, for 49% of people",
+   "explain": "About 78% of the world's nurses work in countries that are home to just under half of its people. The other half of humanity shares barely a fifth of the nurses, which is why the global average hides very different realities.",
+   "source": "World Health Organization, State of the World's Nursing 2025"
+  },
+  {
+   "q": "Worldwide, how many nurses were born in a different country from the one they work in?",
+   "options": [
+    "1 in 7",
+    "1 in 4",
+    "1 in 3",
+    "1 in 2"
+   ],
+   "correct": 0,
+   "figure": "1 in 7",
+   "sub": "nurses worldwide are foreign-born",
+   "explain": "About one nurse in seven is foreign-born, but the average hides a huge gap: in high-income countries the share is 23%, in low-income countries 3%, and in lower-middle-income countries just 1%. Nurses tend to move one way.",
+   "source": "World Health Organization, State of the World's Nursing 2025"
+  },
+  {
+   "q": "Migrants send money home to their families. The World Bank estimates how much reached low- and middle-income countries this way in 2024. How much?",
+   "options": [
+    "US$160 billion",
+    "US$685 billion",
+    "US$1.4 trillion",
+    "US$2.9 trillion"
+   ],
+   "correct": 1,
+   "figure": "$685bn",
+   "sub": "in 2024, up 5.8%",
+   "explain": "Recorded remittances came to about US$685 billion, more than foreign direct investment and development aid combined. India alone received about US$129 billion. The World Bank says the true total is higher, because much money travels through informal channels.",
+   "source": "World Bank, Migration and Development Brief / People Move blog, 2025"
+  },
+  {
+   "q": "About 1.76 million people worked in nursing and elderly care in Germany in 2025. What share of them did not have German citizenship?",
+   "options": [
+    "5%",
+    "10%",
+    "20%",
+    "30%"
+   ],
+   "correct": 2,
+   "figure": "20%",
+   "sub": "about 352,600 people",
+   "explain": "One care worker in five in Germany is a foreign national, roughly five times as many as in 2013. The share is higher in elderly care (about 23%) than in hospital nursing (about 18%). The largest group comes from the Western Balkan countries.",
+   "source": "Mediendienst Integration, Factsheet Pflege 2026"
+  },
+  {
+   "q": "About 16% of practising doctors in Germany have a foreign nationality. Which nationality was the largest group at the end of 2025?",
+   "options": [
+    "Austrian",
+    "Syrian",
+    "Romanian",
+    "Turkish"
+   ],
+   "correct": 1,
+   "figure": "Syrian",
+   "sub": "nearly 8,000 doctors",
+   "explain": "Syrian doctors are the largest group, ahead of Romanian, Turkish, Russian and Austrian doctors. In total about 71,500 doctors in Germany come from abroad, roughly twice as many as ten years earlier.",
+   "source": "Bundesärztekammer, Ärztestatistik zum 31.12.2025"
+  },
+  {
+   "q": "In the year to March 2026, 3,462 nurses, midwives and nursing associates joined the professional register in Scotland. How many of them had been educated outside the UK?",
+   "options": [
+    "About 1 in 10",
+    "About 1 in 4",
+    "About 1 in 3",
+    "About 1 in 2"
+   ],
+   "correct": 0,
+   "figure": "1 in 10",
+   "sub": "at least 342 of 3,462 joiners",
+   "explain": "Only about one Scottish joiner in ten was educated abroad, and their number was 36.5% lower than the year before. India was the largest source. Scotland's register reached 77,471 people.",
+   "source": "Nursing and Midwifery Council (NMC), Scotland data report, March 2026"
+  },
+  {
+   "q": "What share of the doctors practising in Switzerland in 2025 had completed their medical degree abroad?",
+   "options": [
+    "9%",
+    "19%",
+    "31%",
+    "43%"
+   ],
+   "correct": 3,
+   "figure": "43%",
+   "sub": "of 44,612 practising doctors",
+   "explain": "Of 44,612 practising doctors in Switzerland, 43% had studied medicine in another country. For one of the world's richest health systems, that is a striking reliance on doctors whose training was paid for elsewhere.",
+   "source": "FMH (Swiss Medical Association), Ärztestatistik 2025, April 2026"
+  }
+ ]
+}

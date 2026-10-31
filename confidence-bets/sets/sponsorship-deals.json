@@ -1,0 +1,133 @@
+{
+ "slug": "sponsorship-deals",
+ "course": "EBC",
+ "title": "Sponsorship in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about what brands pay to be part of sport, music and big events, and what they get for it.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Every deal is a trade.",
+  "paras": [
+   "Sponsors buy attention, trust and access; the people and events they sponsor get money and reach. The prices are rarely what people guess, and nor are the side effects.",
+   "Today, ask what each side really wants from a deal before you judge the price."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Slazenger supplies the tennis balls for Wimbledon. Since when?",
+   "options": [
+    "1877",
+    "1902",
+    "1948",
+    "1968"
+   ],
+   "correct": 1,
+   "figure": "1902",
+   "sub": "one of the longest partnerships in sport",
+   "explain": "Since 1902, when leading players asked for its balls; Slazenger calls it the longest partnership in sporting goods history. The balls have only been yellow, rather than white, since 1986.",
+   "source": "Slazenger Heritage, Wimbledon tennis balls; The All England Club"
+  },
+  {
+   "q": "Coca-Cola is one of the Olympic Games' top worldwide sponsors. Since which Games has it been involved?",
+   "options": [
+    "Amsterdam 1928",
+    "London 1948",
+    "Munich 1972",
+    "Los Angeles 1984"
+   ],
+   "correct": 0,
+   "figure": "1928",
+   "sub": "nearly a century",
+   "explain": "Since Amsterdam 1928, when it shipped 1,000 cases of Coke with the US team. In 2019 it extended its deal to 2032, jointly with China's Mengniu Dairy, in a package reported at about $3 billion.",
+   "source": "IOC / The Coca-Cola Company; Fox Business and Al Jazeera, June 2019"
+  },
+  {
+   "q": "In 2021 the Staples Center in Los Angeles, home of the Lakers, was renamed Crypto.com Arena. What was the 20-year naming deal reportedly worth?",
+   "options": [
+    "$70m",
+    "$200m",
+    "$450m",
+    "$700m"
+   ],
+   "correct": 3,
+   "figure": "$700m",
+   "sub": "over 20 years",
+   "explain": "About $700 million, one of the biggest arena naming deals ever, signed at the height of the crypto boom. The crypto market crashed the following year; the name stayed.",
+   "source": "Al Jazeera / ESPN, November 2021"
+  },
+  {
+   "q": "Apple Music reportedly pays the NFL about $50 million a year to sponsor the Super Bowl half-time show. What does the headline performer get paid?",
+   "options": [
+    "Union minimum (about $1,000)",
+    "$1 million",
+    "$5 million",
+    "$15 million"
+   ],
+   "correct": 0,
+   "figure": "Union scale",
+   "sub": "around $1,000 a day",
+   "explain": "Only the union minimum, roughly $1,000 a day. The league covers production costs, but the stars come for the audience: more than 100 million viewers, and a jump in streams the week after.",
+   "source": "Sportcal, 2022; CBS News, 2025"
+  },
+  {
+   "q": "Berlin's big arena near Ostbahnhof opened in 2008 as the O2 World and later became the Mercedes-Benz Arena. What has it been called since 2024?",
+   "options": [
+    "Telekom Arena",
+    "Uber Arena",
+    "Zalando Arena",
+    "Amazon Arena"
+   ],
+   "correct": 1,
+   "figure": "Uber Arena",
+   "sub": "and the Uber Eats Music Hall next door",
+   "explain": "Uber Arena. The owner, AEG, called the deal the largest naming-rights partnership in Germany; the music hall next door became the Uber Eats Music Hall.",
+   "source": "AEG Europe, press release, January 2024"
+  },
+  {
+   "q": "At the 2010 World Cup a Dutch beer brand that was not an official sponsor dressed fans in orange mini-dresses at a match. How many women in the group did officials detain?",
+   "options": [
+    "2",
+    "12",
+    "36",
+    "120"
+   ],
+   "correct": 2,
+   "figure": "36",
+   "sub": "an 'ambush marketing' stunt",
+   "explain": "Thirty-six. FIFA called it ambush marketing, and two of the women were arrested as alleged organisers (the charges were dropped after a settlement with FIFA). The story went round the world, giving the brand far more coverage than the dresses alone.",
+   "source": "Mail & Guardian, 16 June 2010; DutchNews, June 2010"
+  },
+  {
+   "q": "In 2024 Formula 1 signed a ten-year global partnership with the luxury group LVMH (Louis Vuitton, Moët Hennessy, TAG Heuer). What was it reported to be worth each year?",
+   "options": [
+    "$10m",
+    "$30m",
+    "$100m+",
+    "$500m"
+   ],
+   "correct": 2,
+   "figure": "$100m+",
+   "sub": "a year, about $1bn in total",
+   "explain": "More than $100 million a year, about $1 billion over ten years, according to Bloomberg's sources; neither side published the figure. It replaced Rolex, which had sponsored F1 since 2013.",
+   "source": "Bloomberg, via Fortune, October 2024"
+  },
+  {
+   "q": "Front-of-shirt gambling sponsors are banned in the Premier League from 2026-27. In 2025-26, the last season they were allowed, how many of the 20 clubs had one?",
+   "options": [
+    "5",
+    "7",
+    "9",
+    "11"
+   ],
+   "correct": 3,
+   "figure": "11 of 20",
+   "sub": "more than half the league",
+   "explain": "Eleven, the same number as the season before, as clubs signed a last round of deals before the ban. Gambling brands can still appear on sleeves and on boards around the pitch.",
+   "source": "Sportcal, 2025; iGaming Business, 2024"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "social-media-design",
+ "course": "EFD",
+ "title": "Social media in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about social media: how long we spend on it, what goes viral, who controls our feeds and how the rules are changing.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Feeds are designed.",
+  "paras": [
+   "Everything in a feed, from the shape of a thumbnail to the label on a sponsored post, is a design decision, and it shapes what billions of people see every day.",
+   "Today's numbers showed how easy it is to misjudge that world. Bring the same care to today's simulation."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "How long does the average social media user spend on social platforms each day?",
+   "options": [
+    "About 50 minutes",
+    "About 1 hour 30",
+    "About 2 hours",
+    "About 2 hours 40"
+   ],
+   "correct": 3,
+   "figure": "2h 39m",
+   "sub": "a day (survey-based estimate): over 40 days a year",
+   "explain": "DataReportal puts the average at about 18 hours 36 minutes a week, roughly 2 hours 39 minutes a day once video platforms such as YouTube and TikTok are included: more than 40 full days a year. There are about 5.66 billion social media user identities, about 68% of the world's population.",
+   "source": "DataReportal, Meltwater and We Are Social, Digital 2026 Global Overview Report, October 2025"
+  },
+  {
+   "q": "In a 2024 EU check of 576 influencers, 97% posted commercial content. What share consistently labelled it as advertising?",
+   "options": [
+    "20%",
+    "45%",
+    "70%",
+    "90%"
+   ],
+   "correct": 0,
+   "figure": "20%",
+   "sub": "flagged ads consistently",
+   "explain": "Only one in five consistently told followers that a post was advertising, and almost 40% didn't use the platforms' own labels. 358 influencers were passed on for further investigation.",
+   "source": "European Commission and national consumer authorities, influencer sweep, 14 February 2024 (Law Society Gazette)"
+  },
+  {
+   "q": "What is the most-liked Instagram post of all time?",
+   "options": [
+    "A photo of an egg",
+    "Lionel Messi lifting the World Cup",
+    "Ronaldo and Messi playing chess",
+    "A Taylor Swift announcement"
+   ],
+   "correct": 1,
+   "figure": "≈75m",
+   "sub": "likes, posted December 2022",
+   "explain": "Messi's World Cup post overtook the famous egg, which had held the record since January 2019 and now has about 60 million likes. The egg was a campaign to beat Kylie Jenner's record, and for almost four years it did.",
+   "source": "Wikipedia, List of most-liked Instagram posts (2026)"
+  },
+  {
+   "q": "In January 2025 Instagram changed its profile grid, which designers had planned their feeds around for years. What changed?",
+   "options": [
+    "The grid went from three columns to four",
+    "Posts became circles",
+    "The grid became one scrolling column",
+    "Square thumbnails became taller rectangles"
+   ],
+   "correct": 3,
+   "figure": "3:4",
+   "sub": "the new thumbnail shape",
+   "explain": "Instagram replaced the square thumbnails on profiles with taller rectangles, because most photos and videos are now shot vertically. Brands that had designed 'puzzle' grids of square tiles saw them cut apart.",
+   "source": "Business Today, January 2025; Kapwing"
+  },
+  {
+   "q": "Ofcom found that UK adults spend about 4.5 hours a day online. What share of that time goes to services owned by just Alphabet (Google, YouTube) and Meta (Facebook, Instagram, WhatsApp)?",
+   "options": [
+    "About 10%",
+    "About 25%",
+    "About 50%",
+    "About 75%"
+   ],
+   "correct": 2,
+   "figure": "51%",
+   "sub": "of UK online time",
+   "explain": "Two companies take just over half (51%) of all UK online time. YouTube alone gets about 51 minutes a day per adult, not counting viewing on a TV set.",
+   "source": "Ofcom, Online Nation 2025"
+  },
+  {
+   "q": "Oxford's Word of the Year for 2024 was 'brain rot'. What was its Word of the Year for 2025?",
+   "options": [
+    "Doomscrolling",
+    "Rage bait",
+    "Vibe coding",
+    "Main character"
+   ],
+   "correct": 1,
+   "figure": "rage bait",
+   "sub": "Oxford Word of the Year 2025",
+   "explain": "'Rage bait' means online content designed to make people angry so they engage with it. Like 'brain rot', it shows how much people now talk about what feeds do to us.",
+   "source": "Oxford University Press, December 2025 (Euronews)"
+  },
+  {
+   "q": "Australia banned social media accounts for under-16s from 10 December 2025. Roughly how many accounts did platforms remove in about the first month?",
+   "options": [
+    "47,000",
+    "470,000",
+    "4.7 million",
+    "47 million"
+   ],
+   "correct": 2,
+   "figure": "4.7m",
+   "sub": "accounts removed",
+   "explain": "Platforms reported removing about 4.7 million accounts. Critics say many teenagers simply moved to other apps or got round the age checks; the government called it a success. Other countries, such as Denmark, have announced plans for similar rules.",
+   "source": "eSafety Commissioner figures, 16 January 2026 (PBS, Al Jazeera)"
+  },
+  {
+   "q": "Ofcom asked UK adults in 2025 whether they think the internet is good for society. What share said yes?",
+   "options": [
+    "33%",
+    "48%",
+    "61%",
+    "75%"
+   ],
+   "correct": 0,
+   "figure": "33%",
+   "sub": "down from 40% a year before",
+   "explain": "Only a third said the internet is good for society, down from 40% the year before. Yet time online keeps rising: we use it more while trusting it less.",
+   "source": "Ofcom, Online Nation 2025"
+  }
+ ]
+}

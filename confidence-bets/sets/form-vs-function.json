@@ -1,0 +1,133 @@
+{
+ "slug": "form-vs-function",
+ "course": "EFD",
+ "title": "Form vs function in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about how things look and how well they work: websites, gadgets, a famous Scottish house and a slogan every design student knows.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Looks and use are both evidence.",
+  "paras": [
+   "Some of today's answers rewarded good looks, and some punished them. People judge a design in a fraction of a second, but they keep using it, or give up on it, for very practical reasons.",
+   "Designers have argued about form and function for more than a century, and both sides can point to real cases."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The slogan 'form follows function' is often linked to the Bauhaus. When did the American architect Louis Sullivan first write 'form ever follows function'?",
+   "options": [
+    "1850s",
+    "1890s",
+    "1920s",
+    "1960s"
+   ],
+   "correct": 1,
+   "figure": "1896",
+   "sub": "Lippincott's Magazine, March 1896",
+   "explain": "Sullivan wrote it in an essay about tall office buildings in 1896, 23 years before the Bauhaus opened in Weimar in 1919. The Bauhaus made the idea famous, but it didn't invent it.",
+   "source": "Lippincott's Monthly Magazine, March 1896 (smow design calendar)"
+  },
+  {
+   "q": "How long does it take people to form a first impression of how visually appealing a web page is?",
+   "options": [
+    "About 50 milliseconds",
+    "About 1 second",
+    "About 5 seconds",
+    "About 30 seconds"
+   ],
+   "correct": 0,
+   "figure": "50 ms",
+   "sub": "one-twentieth of a second",
+   "explain": "Researchers at Carleton University in Canada found that people judge a page's visual appeal in about 50 milliseconds, and that these flash judgements matched their later, slower ones. It's an older study (2006), but it's still widely quoted.",
+   "source": "Lindgaard et al., Behaviour & Information Technology, 2006 (reported by Nature)"
+  },
+  {
+   "q": "Juicero sold a $400 Wi-Fi juicer that pressed sealed packs of chopped fruit. Then reporters found the packs could be squeezed by hand just as well. How much had investors put in?",
+   "options": [
+    "$1.2 million",
+    "$12 million",
+    "$40 million",
+    "$120 million"
+   ],
+   "correct": 3,
+   "figure": "$120m",
+   "sub": "raised, including from Google's investment arm",
+   "explain": "Juicero raised about $120 million. After Bloomberg reported that the packs could be squeezed without the machine, the company was widely mocked as a symbol of clever engineering for a problem few people had.",
+   "source": "Fortune / Bloomberg, April 2017"
+  },
+  {
+   "q": "Google tested 41 shades of blue for the ad links in Gmail and search. How much extra a year did the head of Google UK say the winning blue earned?",
+   "options": [
+    "$2 million",
+    "$20 million",
+    "$200 million",
+    "$2 billion"
+   ],
+   "correct": 2,
+   "figure": "$200m",
+   "sub": "extra a year, from one shade of blue",
+   "explain": "Google chose a slightly purpler blue because people clicked it more. A tiny visual detail, repeated billions of times, was worth a fortune.",
+   "source": "The Guardian, February 2014 (via Manchester Digital)"
+  },
+  {
+   "q": "Charles Rennie Mackintosh's Hill House (1904) in Helensburgh, west of Glasgow, now stands inside a giant see-through chainmail 'box'. Why?",
+   "options": [
+    "To let its walls dry out",
+    "To stop visitors touching the walls",
+    "To protect it after a fire",
+    "So it can be taken apart and moved"
+   ],
+   "correct": 0,
+   "figure": "165 tonnes",
+   "sub": "of steel, plus 8.3 tonnes of chainmail",
+   "explain": "Mackintosh used a modern, untested Portland cement render that let water into the walls but not out, so the house soaked up rain for over a century. The National Trust for Scotland built the see-through box, which opened in June 2019, so the walls can dry before repairs.",
+   "source": "National Trust for Scotland, Opening the Hill House Box, June 2019"
+  },
+  {
+   "q": "Of every 100 online shopping baskets that people fill, roughly how many are left without buying?",
+   "options": [
+    "About 20",
+    "About 45",
+    "About 70",
+    "About 90"
+   ],
+   "correct": 2,
+   "figure": "≈70%",
+   "sub": "of online baskets are abandoned",
+   "explain": "Baymard Institute's average across about 50 studies is about 70%. Many people are only browsing, but a long or complicated checkout is one of the main reasons shoppers give.",
+   "source": "Baymard Institute, 2026 (via Contentsquare)"
+  },
+  {
+   "q": "To make MacBooks thinner, Apple used a very flat 'butterfly' keyboard on models released from 2015 to 2019. Owners reported keys sticking. How much did Apple agree to pay in a 2022 US settlement?",
+   "options": [
+    "$5 million",
+    "$50 million",
+    "$500 million",
+    "$5 billion"
+   ],
+   "correct": 1,
+   "figure": "$50m",
+   "sub": "Apple denied wrongdoing",
+   "explain": "Apple settled a US class action for $50 million, with payouts of up to $395 per customer. It denied that the laptops were defective, and later went back to a more conventional keyboard.",
+   "source": "CNN, July 2022"
+  },
+  {
+   "q": "Deloitte measured mobile sites for 37 European and American brands. When pages loaded just 0.1 seconds faster, what happened to retail conversions (visitors who buy)?",
+   "options": [
+    "No change",
+    "+0.5%",
+    "+2%",
+    "+8%"
+   ],
+   "correct": 3,
+   "figure": "+8.4%",
+   "sub": "from one-tenth of a second",
+   "explain": "A tenth of a second faster meant 8.4% more retail conversions, and shoppers spent 9.2% more. Speed is invisible in a screenshot, but users feel it.",
+   "source": "Deloitte / Google, Milliseconds Make Millions, 2020"
+  }
+ ]
+}

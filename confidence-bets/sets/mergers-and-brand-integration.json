@@ -1,0 +1,133 @@
+{
+ "slug": "mergers-and-brand-integration",
+ "course": "EBC",
+ "title": "Takeovers in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about companies buying companies, and about the coffee business that so many of them want a piece of.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "A price is only the beginning.",
+  "paras": [
+   "Takeovers make headlines with their prices. What happens to the people, products and brands afterwards decides whether those prices were worth paying.",
+   "Keep these numbers in mind in today's discussion."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In 2000 Britain's Vodafone bought Germany's Mannesmann, a record that stood for over 25 years. Roughly what was the deal worth?",
+   "options": [
+    "$20bn",
+    "$60bn",
+    "$110bn",
+    "$200bn"
+   ],
+   "correct": 3,
+   "figure": "About $200bn",
+   "sub": "including debt",
+   "explain": "About $200 billion including debt (around €190 billion). It stayed the biggest takeover ever until SpaceX's merger with xAI in February 2026. Mannesmann, founded in 1890 to make steel pipes, fought the hostile bid for about three months.",
+   "source": "CNN Money, February 2000; Reuters (LSEG data), February 2026"
+  },
+  {
+   "q": "When Facebook agreed to buy Instagram for $1 billion in April 2012, how many people worked at Instagram?",
+   "options": [
+    "13",
+    "130",
+    "600",
+    "1,300"
+   ],
+   "correct": 0,
+   "figure": "13",
+   "sub": "and no revenue",
+   "explain": "Thirteen. Instagram had about 30 million users and was not yet making money. In September 2025 Meta said Instagram had 3 billion monthly users.",
+   "source": "City A.M. / KQED, April 2012; Meta, September 2025"
+  },
+  {
+   "q": "Whitbread sold Costa Coffee to Coca-Cola in a deal announced in 2018. What did Coca-Cola pay?",
+   "options": [
+    "£390m",
+    "£1.3bn",
+    "£3.9bn",
+    "£9bn"
+   ],
+   "correct": 2,
+   "figure": "£3.9bn",
+   "sub": "completed January 2019",
+   "explain": "£3.9 billion, for more than 3,800 coffee shops in over 30 countries plus more than 8,000 Costa Express self-serve machines. The deal was completed in January 2019.",
+   "source": "Whitbread plc, sale announcement, August 2018; The Coca-Cola Company, January 2019"
+  },
+  {
+   "q": "In 2018 Nestlé paid Starbucks for the right to sell Starbucks coffee in shops worldwide, without buying the company. How much did it pay upfront?",
+   "options": [
+    "$0.7bn",
+    "$7bn",
+    "$15bn",
+    "$30bn"
+   ],
+   "correct": 1,
+   "figure": "$7.15bn",
+   "sub": "for a 'global coffee alliance'",
+   "explain": "$7.15 billion. The Starbucks capsules and bags in supermarkets are marketed and sold by Nestlé; the deal covered packaged coffee and tea, not the cafés.",
+   "source": "Starbucks / Nestlé, joint press release, May 2018"
+  },
+  {
+   "q": "In 2017 Amazon bought the US organic supermarket chain Whole Foods Market. Roughly how much did it pay?",
+   "options": [
+    "$1.4bn",
+    "$13.7bn",
+    "$30bn",
+    "$60bn"
+   ],
+   "correct": 1,
+   "figure": "$13.7bn",
+   "sub": "Amazon's biggest deal at the time",
+   "explain": "About $13.7 billion, by far Amazon's biggest purchase at the time. On its first day as owner, Amazon cut some prices by up to 43%.",
+   "source": "NPR, June 2017; Bloomberg, August 2017"
+  },
+  {
+   "q": "How many cups of coffee do people in the UK drink each day?",
+   "options": [
+    "25 million",
+    "50 million",
+    "100 million",
+    "200 million"
+   ],
+   "correct": 2,
+   "figure": "About 100 million",
+   "sub": "a day",
+   "explain": "About 103 million a day, according to the British Coffee Association: around 5 million more than in 2018.",
+   "source": "British Coffee Association, 2026"
+  },
+  {
+   "q": "Coffee is one of Germany's most popular drinks. Roughly how much does the average German drink in a year?",
+   "options": [
+    "About 160 litres",
+    "About 250 litres",
+    "About 350 litres",
+    "About 450 litres"
+   ],
+   "correct": 0,
+   "figure": "About 160 litres",
+   "sub": "roughly three cups a day",
+   "explain": "About 161 litres per person in 2025, roughly three cups a day (a cup is about 150 ml). That puts Germany among the bigger coffee-drinking countries in Europe.",
+   "source": "Deutscher Kaffeeverband, Deutscher Kaffeemarkt 2025"
+  },
+  {
+   "q": "Microsoft completed its purchase of the games company Activision Blizzard (Call of Duty, Candy Crush) in October 2023. What was the price?",
+   "options": [
+    "$6.9bn",
+    "$19bn",
+    "$40bn",
+    "$69bn"
+   ],
+   "correct": 3,
+   "figure": "$69bn",
+   "sub": "after nearly two years of reviews",
+   "explain": "About $69 billion ($68.7 billion), completed in October 2023 after nearly two years of reviews by competition regulators, including the UK's Competition and Markets Authority, which moved to block it in April 2023.",
+   "source": "Microsoft / SiliconANGLE, October 2023"
+  }
+ ]
+}

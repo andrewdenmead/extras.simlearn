@@ -1,0 +1,133 @@
+{
+ "slug": "brands-and-identity",
+ "course": "EIM",
+ "title": "Brands in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real facts and figures about brands: what they are worth, where their names and symbols come from, and who buys them where.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "A brand lives in other people's heads.",
+  "paras": [
+   "Fake branded goods are worth hundreds of billions in world trade; some of the best-known names began as a founder's initials or a family quarrel; and the country that buys the most bottles of a famous product isn't always the one you'd expect.",
+   "Brands are often worth more, and known less well, than we assume."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The German sweet brand Haribo, maker of the gold bears, takes its name from...",
+   "options": [
+    "its founder's name and home town",
+    "a children's word for 'gummy'",
+    "a river in Bavaria",
+    "a Danish word for 'sweet'"
+   ],
+   "correct": 0,
+   "figure": "HA-RI-BO",
+   "sub": "Hans Riegel, Bonn",
+   "explain": "Hans Riegel founded the company in Bonn in 1920 and built its name from the first two letters of each: HAns RIegel BOnn. His first gummy bear, the 'Dancing Bear', followed in 1922; the Goldbears name arrived in 1960.",
+   "source": "HARIBO, company history (haribo.com)"
+  },
+  {
+   "q": "Adidas and Puma were both founded by two brothers, Adi and Rudolf Dassler, who fell out and split their shoe company. In which town are both still based?",
+   "options": [
+    "Herzogenaurach",
+    "Munich",
+    "Nuremberg",
+    "Stuttgart"
+   ],
+   "correct": 0,
+   "figure": "Herzogenaurach",
+   "sub": "a small town in Franconia",
+   "explain": "The Dassler brothers split their company in 1948. Rudolf founded Puma that year, and in 1949 Adi named his own firm after himself: adidas, from ADI DASsler. Both companies still have their headquarters in the same small town near Nuremberg.",
+   "source": "adidas and Puma company histories"
+  },
+  {
+   "q": "Louis Vuitton's parent group, LVMH, is the world's largest luxury company. How many separate brands ('Maisons') does it own?",
+   "options": [
+    "12",
+    "30",
+    "75",
+    "150"
+   ],
+   "correct": 2,
+   "figure": "75",
+   "sub": "Maisons in one group",
+   "explain": "LVMH counts 75 Maisons, among them Louis Vuitton, Dior, Moët & Chandon, Hennessy, Sephora and Tiffany. Together they had revenue of €80.8 billion in 2025, with more than 211,000 employees and about 6,300 shops.",
+   "source": "LVMH, Letter to shareholders, January 2026 (2025 key figures)"
+  },
+  {
+   "q": "Brand Finance values the world's brands every year. In its 2026 ranking, which is Germany's most valuable brand?",
+   "options": [
+    "Mercedes-Benz",
+    "BMW",
+    "SAP",
+    "Deutsche Telekom"
+   ],
+   "correct": 3,
+   "figure": "$96bn",
+   "sub": "11th in the world",
+   "explain": "Deutsche Telekom's brand was valued at US$96.2 billion, a record, and it was the only European brand in the global top 20. Mercedes-Benz came 36th and BMW 41st, and SAP entered the top 50 for the first time. Many people guess a car maker.",
+   "source": "Brand Finance Global 500 2026"
+  },
+  {
+   "q": "Scotland exported about 1.3 billion bottles of Scotch whisky in 2025: around 43 every second. Which country bought the most bottles?",
+   "options": [
+    "United States",
+    "France",
+    "India",
+    "Germany"
+   ],
+   "correct": 2,
+   "figure": "220m",
+   "sub": "bottles: India",
+   "explain": "India bought 220 million bottles, ahead of France (152m) and the United States (120m); Germany was fourth (59m). By value, though, the US is still the biggest market (£933m), because it buys more expensive whisky.",
+   "source": "Scotch Whisky Association, 2025 export figures (HMRC data)"
+  },
+  {
+   "q": "The OECD and the EU's intellectual property office estimate how much of world trade is in fake branded goods. What share of all world imports is counterfeit?",
+   "options": [
+    "0.3%",
+    "2.3%",
+    "8%",
+    "15%"
+   ],
+   "correct": 1,
+   "figure": "2.3%",
+   "sub": "about US$467 billion",
+   "explain": "Counterfeit goods made up an estimated 2.3% of world imports, worth about US$467 billion, in 2021, the latest year studied. Clothing, footwear and leather goods made up about 62% of seizures. The figure is an estimate based on customs seizure data.",
+   "source": "OECD and EUIPO, Mapping Global Trade in Fakes 2025"
+  },
+  {
+   "q": "The Austrian energy-drink company Red Bull publishes its sales every year. How many cans did it sell worldwide in 2025?",
+   "options": [
+    "400 million",
+    "1.4 billion",
+    "4 billion",
+    "14 billion"
+   ],
+   "correct": 3,
+   "figure": "13.97bn",
+   "sub": "cans in 2025",
+   "explain": "Red Bull sold 13.969 billion cans in 2025, up about 10% on 2024: more than one and a half for every person on Earth. Turnover rose to about €12.2 billion. The company also runs two Formula 1 teams.",
+   "source": "Red Bull, company figures 2025"
+  },
+  {
+   "q": "Daimler applied to protect the Mercedes-Benz three-pointed star as a trademark in 1909. What do its three points stand for?",
+   "options": [
+    "The company's three founders",
+    "Engines for land, sea and air",
+    "Its first three factories",
+    "Speed, comfort and safety"
+   ],
+   "correct": 1,
+   "figure": "Land, sea, air",
+   "sub": "Daimler's ambition",
+   "explain": "The star stands for Daimler's aim to build engines for use on land, at sea and in the air. It goes back to a star Gottlieb Daimler drew on an 1872 postcard to mark his home; his sons later turned it into the company's trademark.",
+   "source": "Mercedes-Benz Group brand history, as reported by Motor1"
+  }
+ ]
+}

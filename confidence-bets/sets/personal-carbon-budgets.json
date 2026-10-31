@@ -1,0 +1,133 @@
+{
+ "slug": "personal-carbon-budgets",
+ "course": "AE",
+ "title": "Carbon budgets in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about carbon: how much we emit, how fast it is falling, and what the world has left to spend.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "The budget is the hard part.",
+  "paras": [
+   "Emissions in Britain and Germany have fallen further than many people think, and the remaining global budget is smaller than many people think. Both surprised the room.",
+   "How to share what is left, between countries and between people, is where the real argument starts."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Burning fossil fuels emits CO₂. On average, how much does each person in the world emit in a year?",
+   "options": [
+    "0.7 tonnes",
+    "2.7 tonnes",
+    "4.7 tonnes",
+    "9.7 tonnes"
+   ],
+   "correct": 2,
+   "figure": "≈4.7 t",
+   "sub": "fossil CO₂ per person, 2024",
+   "explain": "The world average was about 4.7 tonnes of fossil CO₂ per person in 2024, and it has stayed just under five tonnes for over a decade. The range is enormous: the US emits about three times the average, India less than half. Methane, farming and land use add more on top.",
+   "source": "Global Carbon Project, Global Carbon Budget 2025 (via Statista and Our World in Data)"
+  },
+  {
+   "q": "Which sector produces the most greenhouse gases in the UK?",
+   "options": [
+    "Transport",
+    "Power stations",
+    "Farming",
+    "Heating homes"
+   ],
+   "correct": 0,
+   "figure": "Transport",
+   "sub": "largest sector since 2014",
+   "explain": "Domestic transport, mostly cars, vans and lorries, has been the UK's largest-emitting sector since 2014, at about 30% of the total in 2024. Emissions from power stations have fallen fastest as coal disappeared.",
+   "source": "DESNZ, 2024 final UK greenhouse gas emissions statistics; DfT, Transport and environment statistics 2024"
+  },
+  {
+   "q": "By 2025, how far below their 1990 level were Germany's greenhouse gas emissions?",
+   "options": [
+    "12%",
+    "24%",
+    "36%",
+    "48%"
+   ],
+   "correct": 3,
+   "figure": "−48%",
+   "sub": "on 1990 (649 Mt in 2025)",
+   "explain": "Germany emitted about 649 million tonnes in 2025, 48% less than in 1990 but barely below 2024. Its legal target is a 65% cut by 2030 and climate neutrality by 2045.",
+   "source": "Umweltbundesamt (German Environment Agency), press release 08/2026, March 2026"
+  },
+  {
+   "q": "To keep warming to 1.5°C, researchers calculated an average 'lifestyle carbon footprint' each person would need by 2030. What was it?",
+   "options": [
+    "0.5 tonnes",
+    "2.5 tonnes",
+    "6 tonnes",
+    "10 tonnes"
+   ],
+   "correct": 1,
+   "figure": "2.5 t",
+   "sub": "per person a year by 2030",
+   "explain": "The target was 2.5 tonnes per person by 2030, falling to 0.7 by 2050. Germany's greenhouse gas emissions alone already work out at more than 7 tonnes per person, and consumption footprints in rich countries are higher still.",
+   "source": "Hot or Cool Institute, 1.5-Degree Lifestyles, 2021 (targets restated in its 2025 update)"
+  },
+  {
+   "q": "Scientists estimated the CO₂ the world could still emit, from the start of 2025, for a 50% chance of keeping warming to 1.5°C. At today's rate, how long would that last?",
+   "options": [
+    "About 3 years",
+    "About 10 years",
+    "About 25 years",
+    "About 50 years"
+   ],
+   "correct": 0,
+   "figure": "≈3 years",
+   "sub": "130 billion tonnes left",
+   "explain": "The remaining budget was about 130 billion tonnes of CO₂, roughly three years of current emissions. Scientists now expect the 1.5°C limit to be passed, at least for a time.",
+   "source": "Forster et al., Indicators of Global Climate Change 2024, Earth System Science Data, June 2025"
+  },
+  {
+   "q": "Since 2021, Germany has charged a carbon price on fuel for heating and road transport. What was it per tonne of CO₂ in 2025?",
+   "options": [
+    "€5",
+    "€15",
+    "€30",
+    "€55"
+   ],
+   "correct": 3,
+   "figure": "€55",
+   "sub": "per tonne of CO₂, 2025",
+   "explain": "The price was €55 a tonne in 2025, up from €25 when it began in 2021, and in 2026 it is sold within a range of €55 to €65.",
+   "source": "German Fuel Emissions Trading Act (BEHG); prices reported by Rödl & Partner and enter.de, 2025"
+  },
+  {
+   "q": "The EU is building a second carbon market for fuel used in buildings and road transport across all member states. When is it now due to start?",
+   "options": [
+    "2025",
+    "2026",
+    "2028",
+    "2032"
+   ],
+   "correct": 2,
+   "figure": "2028",
+   "sub": "delayed from 2027",
+   "explain": "The new market was due to start in 2027. EU governments pushed for a one-year delay in November 2025; Parliament approved it in February 2026 and the Council gave final approval on 5 March 2026.",
+   "source": "Amended European Climate Law (2040 target), adopted March 2026; reported by Argus Media and ESG Today"
+  },
+  {
+   "q": "The UK's Climate Change Committee advised in 2025 how far UK emissions should fall below their 1990 level by 2040. What did it recommend?",
+   "options": [
+    "67%",
+    "87%",
+    "95%",
+    "100%"
+   ],
+   "correct": 1,
+   "figure": "87%",
+   "sub": "below 1990 by 2040",
+   "explain": "The committee recommended an 87% cut by 2040, on the way to net zero in 2050. By 2024, UK emissions were already 53% below their 1990 level.",
+   "source": "Climate Change Committee, The Seventh Carbon Budget, February 2025"
+  }
+ ]
+}

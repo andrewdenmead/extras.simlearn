@@ -1,0 +1,133 @@
+{
+ "slug": "white-collar-fraud",
+ "course": "EIM",
+ "title": "Fraud in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about white-collar fraud: how common it is, how much it costs, how often anyone is caught, and what happens afterwards to the fraudsters and their victims.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Fraud is bigger, and quieter, than it looks.",
+  "paras": [
+   "Several of today's numbers were larger than most guesses: fraud is now one of the most common crimes people experience, and the sums behind the best-known cases run into billions.",
+   "Yet the outcomes vary widely. Some fraudsters receive long sentences and some victims get almost everything back, while most everyday cases are never solved at all."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The Crime Survey for England and Wales asks adults which crimes they have experienced, whether or not they told the police. In the year to June 2026, what share of all incidents were fraud?",
+   "options": [
+    "12%",
+    "27%",
+    "46%",
+    "65%"
+   ],
+   "correct": 2,
+   "figure": "46%",
+   "sub": "4.5 million of 9.7 million incidents",
+   "explain": "The survey estimated about 4.5 million fraud incidents out of 9.7 million crimes in total, which makes fraud the single most common crime adults experience. Fraud rose by 11% in a year, driven mainly by bank and credit account fraud.",
+   "source": "Office for National Statistics (ONS), Crime in England and Wales: year ending June 2026 (October 2026)"
+  },
+  {
+   "q": "In June 2020 Wirecard, then a member of Germany's DAX index, admitted that €1.9 billion of cash in its accounts probably did not exist. Roughly what share of its total assets was that?",
+   "options": [
+    "10%",
+    "25%",
+    "40%",
+    "60%"
+   ],
+   "correct": 1,
+   "figure": "About 25%",
+   "sub": "of the company's assets",
+   "explain": "The missing money was about a quarter of everything Wirecard said it owned. Its shares had already lost around three-quarters of their value in a week, and the company filed for insolvency days later.",
+   "source": "Irish Times, 'Wirecard fights for survival as it says missing €1.9bn may not exist', 22 June 2020"
+  },
+  {
+   "q": "UK Finance collects figures from banks and card companies on payment fraud. How much did criminals steal from UK customers through card, bank-transfer and other payment fraud in 2025?",
+   "options": [
+    "£130 million",
+    "£480 million",
+    "£1.28 billion",
+    "£4.8 billion"
+   ],
+   "correct": 2,
+   "figure": "£1.28bn",
+   "sub": "in a single year",
+   "explain": "Losses were almost £1.3 billion, across more than four million cases. Scams in which victims are tricked into sending a bank transfer themselves cost £576 million, an average of over £2,300 per case, and most of them started online or by phone.",
+   "source": "UK Finance, Annual Fraud Report 2026 (reported by Which? and Financier Worldwide)"
+  },
+  {
+   "q": "Police Scotland recorded about 16,600 frauds in 2023-24, more than double the number ten years earlier. What share of them were solved ('cleared up')?",
+   "options": [
+    "16.5%",
+    "33%",
+    "50%",
+    "66%"
+   ],
+   "correct": 0,
+   "figure": "16.5%",
+   "sub": "about one in six",
+   "explain": "Only about one fraud in six was cleared up, down from just over half (50.6%) a decade earlier, while the number of recorded frauds rose by 140%. Many frauds are now run from abroad, which makes them much harder to solve.",
+   "source": "Police Scotland recorded-crime figures, reported by PA Media (Inverness Courier), January 2025"
+  },
+  {
+   "q": "Researchers at the University of Mannheim estimated how much tax Germany lost between 2000 and 2020 to the share-trading schemes known as 'cum-ex' and 'cum-cum'. At least how much?",
+   "options": [
+    "€1.2 billion",
+    "€5 billion",
+    "€14 billion",
+    "€36 billion"
+   ],
+   "correct": 3,
+   "figure": "€35.9bn",
+   "sub": "at least, 2000–2020",
+   "explain": "The team led by Christoph Spengel put Germany's loss at a minimum of €35.9 billion, making it one of the largest tax scandals in Europe. Germany's highest criminal court ruled in 2021 that cum-ex deals were criminal tax evasion, and prosecutions are still going on.",
+   "source": "University of Mannheim and Correctiv, CumEx-Files 2.0, October 2021"
+  },
+  {
+   "q": "In 2023 the UK's audit regulator fined KPMG for its audits of Carillion, a construction company that collapsed in 2018 owing about £2 billion to 30,000 suppliers. It was a record fine. How much?",
+   "options": [
+    "£21 million",
+    "£45 million",
+    "£90 million",
+    "£160 million"
+   ],
+   "correct": 0,
+   "figure": "£21m",
+   "sub": "a record for the FRC",
+   "explain": "The Financial Reporting Council fined KPMG £21 million, the largest fine it had ever imposed, and also sanctioned two former partners. KPMG had approved Carillion's accounts without reservation before the collapse, which cost thousands of jobs.",
+   "source": "Financial Reporting Council decision, October 2023 (reported by Bloomberg and CPA Practice Advisor)"
+  },
+  {
+   "q": "In March 2024 FTX founder Sam Bankman-Fried was sentenced in New York for defrauding the crypto exchange's customers. His lawyers had asked for six and a half years. What did he get?",
+   "options": [
+    "11 years",
+    "25 years",
+    "40 years",
+    "110 years"
+   ],
+   "correct": 1,
+   "figure": "25 years",
+   "sub": "plus US$11bn forfeiture",
+   "explain": "Judge Lewis Kaplan gave him 25 years and ordered him to forfeit US$11 billion. Prosecutors had asked for 40 to 50 years; the legal maximum was 110. For comparison, Theranos founder Elizabeth Holmes had received just over 11 years.",
+   "source": "Stanford Daily and Bloomberg Law, reports of the sentencing, 28–29 March 2024"
+  },
+  {
+   "q": "Bernard Madoff's investment fraud collapsed in 2008. The US Justice Department's Madoff Victim Fund made its final payment at the end of 2024. What share of their losses had its 40,000-plus victims got back?",
+   "options": [
+    "9%",
+    "34%",
+    "61%",
+    "94%"
+   ],
+   "correct": 3,
+   "figure": "94%",
+   "sub": "after 16 years",
+   "explain": "The fund paid out about US$4.3 billion in ten rounds, returning 93.7% of eligible victims' losses, which is unusually high for a fraud of this size. A separate court-appointed trustee has recovered billions more for Madoff's former customers.",
+   "source": "US Department of Justice, December 2024 (reported by Crowdfund Insider)"
+  }
+ ]
+}

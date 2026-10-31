@@ -1,0 +1,133 @@
+{
+ "slug": "inertia-and-disruption",
+ "course": "EIM",
+ "title": "Disruption in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about how markets change: old technologies that refuse to die, new ones that take over, and the market leaders caught in between.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Change is rarely as fast, or as slow, as we expect.",
+  "paras": [
+   "Some of today's numbers moved much faster than most people guessed: whole product categories shrank to a fraction of their size within a decade. Others barely moved at all, and old habits are still with us years after they were declared dead.",
+   "Telling the two apart in advance is one of the hardest jobs in business, and confident predictions in either direction are often wrong."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In 1964, a company in America's S&P 500 index of large firms stayed in it for 33 years on average. For companies in the index by 2027, the consultancy Innosight forecast an average of...",
+   "options": [
+    "6 years",
+    "12 years",
+    "20 years",
+    "27 years"
+   ],
+   "correct": 1,
+   "figure": "12 years",
+   "sub": "a forecast, down from 33 in 1964",
+   "explain": "Innosight forecast that the average stay would shrink to about 12 years by 2027, roughly a third of the 1964 figure. Firms leave the index when they are overtaken, taken over or bought by private equity, so a place among the giants is far less secure than it used to be. This is a forecast based on past trends, not a measured result.",
+   "source": "Innosight, 2018 Corporate Longevity Forecast (reported by Governance Intelligence)"
+  },
+  {
+   "q": "What share of the world's recorded music revenue came from streaming in 2025?",
+   "options": [
+    "31%",
+    "48%",
+    "70%",
+    "88%"
+   ],
+   "correct": 2,
+   "figure": "69.6%",
+   "sub": "more than US$22 billion",
+   "explain": "Streaming brought in more than US$22 billion of the industry's US$31.7 billion, almost 70% of the total. Global revenue grew for the eleventh year in a row, after a long collapse in CD sales in the 2000s. Physical formats grew too: vinyl sales rose for the 19th year running.",
+   "source": "IFPI, Global Music Report 2026"
+  },
+  {
+   "q": "Bitkom, Germany's digital industry association, surveyed companies with 20 or more employees in 2025. What share still use a fax machine regularly?",
+   "options": [
+    "18%",
+    "36%",
+    "52%",
+    "67%"
+   ],
+   "correct": 0,
+   "figure": "18%",
+   "sub": "down from 33% in 2023",
+   "explain": "Fewer than one in five German companies still fax regularly, a sharp fall from 33% in 2023 and 30% in 2024. For years the fax survived in Germany long after most countries had moved on, often because public offices, doctors or legal rules still expected it.",
+   "source": "Bitkom, survey of 603 companies, June 2025"
+  },
+  {
+   "q": "In 2025, what share of new passenger cars registered in Norway were fully electric?",
+   "options": [
+    "65%",
+    "78%",
+    "88%",
+    "96%"
+   ],
+   "correct": 3,
+   "figure": "95.9%",
+   "sub": "172,233 of 179,550 new cars",
+   "explain": "Almost every new car sold in Norway in 2025 was battery-electric: 172,233 out of 179,550. Norway had set a target that all new cars should be zero-emission by 2025, and it used heavy taxes on petrol and diesel cars, with exemptions for electric ones, to get there.",
+   "source": "Norwegian Road Federation (OFV), registrations 2025, reported by electrive, January 2026"
+  },
+  {
+   "q": "In 2010, a record 121.5 million digital cameras were shipped worldwide. How many were shipped in 2025?",
+   "options": [
+    "9.4 million",
+    "24 million",
+    "47 million",
+    "73 million"
+   ],
+   "correct": 0,
+   "figure": "9.4m",
+   "sub": "down from 121.5m in 2010",
+   "explain": "Shipments fell by more than 90% in fifteen years, as smartphone cameras became good enough for almost everyone. Surprisingly, 2025 was a six-year high, up 11% on 2024, and the value of shipments was the highest in ten years: fewer cameras are sold, but they are more expensive.",
+   "source": "Camera & Imaging Products Association (CIPA), shipment statistics 2010 and 2025"
+  },
+  {
+   "q": "The Bundesbank records how people in Germany pay for everyday purchases. In 2025, what share of payments (by number) were made in cash?",
+   "options": [
+    "18%",
+    "29%",
+    "37%",
+    "45%"
+   ],
+   "correct": 3,
+   "figure": "45%",
+   "sub": "down from 51% in 2023",
+   "explain": "Cash was still used for 45% of purchases, more than any other single method, but for the first time most payments (55%) were cashless. Debit cards came second with 26% and mobile payments reached 10%. Two years earlier cash had still been used for just over half of all payments.",
+   "source": "Deutsche Bundesbank, Payment behaviour in Germany 2025 (published June 2026)"
+  },
+  {
+   "q": "In 2008, a year after the first iPhone went on sale, what share of all mobile phones sold worldwide were made by Nokia?",
+   "options": [
+    "21%",
+    "39%",
+    "54%",
+    "68%"
+   ],
+   "correct": 1,
+   "figure": "38.6%",
+   "sub": "about four phones in ten",
+   "explain": "Nokia sold almost four in ten of the 1.2 billion or so phones sold worldwide in 2008, far more than any rival. Within a few years smartphones had changed the market, and in 2014 Nokia sold its phone business to Microsoft.",
+   "source": "ABI Research, 2008 market share figures (reported by All About Symbian); Gartner, 2008 handset sales"
+  },
+  {
+   "q": "How many people paid for a music streaming subscription worldwide in 2025?",
+   "options": [
+    "237 million",
+    "437 million",
+    "837 million",
+    "1.6 billion"
+   ],
+   "correct": 2,
+   "figure": "837m",
+   "sub": "paid subscription accounts",
+   "explain": "IFPI counted 837 million users of paid subscription accounts, and paid subscriptions alone made up more than half of all recorded music revenue. Twenty years ago, paying a monthly fee for music you never own would have sounded like a strange business model.",
+   "source": "IFPI, Global Music Report 2026"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "brand-positioning",
+ "course": "EBC",
+ "title": "Luxury in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about luxury: what people pay, how much is really made, and who buys it.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Luxury is a careful balance.",
+  "paras": [
+   "Luxury brands sell quality, but also a story about the people who buy them. Some of these numbers show how high the prices go; others show how much bigger the business is than it looks.",
+   "Today, think about what makes customers willing to pay a premium."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In July 2025 the original Hermès Birkin bag, made for the singer Jane Birkin in 1985, was sold at auction in Paris. For how much?",
+   "options": [
+    "€86,000",
+    "€860,000",
+    "€2.6m",
+    "€8.6m"
+   ],
+   "correct": 3,
+   "figure": "€8.6m",
+   "sub": "about $10m",
+   "explain": "€8.6 million including fees, about $10 million: the most ever paid for a handbag. The bag began with a sketch Jane Birkin made for Hermès's boss on a flight in the early 1980s.",
+   "source": "Sotheby's / CNN, July 2025"
+  },
+  {
+   "q": "Between 2022 and 2024, how many customers did the luxury goods industry lose worldwide, according to Bain?",
+   "options": [
+    "5 million",
+    "20 million",
+    "50 million",
+    "100 million"
+   ],
+   "correct": 2,
+   "figure": "50 million",
+   "sub": "from about 400 million",
+   "explain": "About 50 million, from a base of roughly 400 million in 2022, as prices rose faster than many occasional buyers could follow. Sales fell about 2% in 2024, one of the weakest years on record; by 2025 Bain put the base at about 340 million.",
+   "source": "Bain & Company / Altagamma, Luxury Goods Worldwide Market Study, November 2024 and November 2025"
+  },
+  {
+   "q": "Rolex doesn't publish figures. Morgan Stanley estimated how many watches it made in 2023?",
+   "options": [
+    "120,000",
+    "400,000",
+    "800,000",
+    "1.2 million"
+   ],
+   "correct": 3,
+   "figure": "About 1.24 million",
+   "sub": "an estimate",
+   "explain": "About 1.24 million, with sales of roughly CHF 10 billion: more in sales than its next five rivals combined. Waiting lists come from demand, not tiny production.",
+   "source": "Morgan Stanley & LuxeConsult, February 2024 (via Fortune)"
+  },
+  {
+   "q": "In April 2025 Hermès became the world's most valuable luxury company on the stock market. Which group did it overtake?",
+   "options": [
+    "Kering (Gucci)",
+    "LVMH (Louis Vuitton, Dior)",
+    "Prada",
+    "Richemont (Cartier)"
+   ],
+   "correct": 1,
+   "figure": "LVMH",
+   "sub": "owner of more than 75 brands",
+   "explain": "LVMH, which owns more than 75 brands; Hermès earns most of its money from one name. LVMH had quietly built a stake of over 20% in Hermès by 2011, and agreed in 2014 to hand it to its own shareholders.",
+   "source": "Bloomberg, 15 April 2025; LVMH website; The Fashion Law (LVMH–Hermès timeline)"
+  },
+  {
+   "q": "By law, where must genuine Harris Tweed be handwoven?",
+   "options": [
+    "In islanders' homes in the Outer Hebrides",
+    "In any mill on Harris or Lewis",
+    "Anywhere in Scotland, from Hebridean wool",
+    "Anywhere, if Scottish wool is used"
+   ],
+   "correct": 0,
+   "figure": "At home",
+   "sub": "in the Outer Hebrides",
+   "explain": "In the weavers' own homes in the Outer Hebrides, under the Harris Tweed Act 1993; the wool must also be dyed, spun and finished there. Its Orb mark, registered in 1909, is the oldest British certification mark.",
+   "source": "Harris Tweed Authority; WIPO Magazine"
+  },
+  {
+   "q": "In 2019 a Patek Philippe Grandmaster Chime, sold at a charity auction in Geneva, became the most expensive wristwatch ever sold. What did it fetch?",
+   "options": [
+    "CHF 3.1m",
+    "CHF 11m",
+    "CHF 31m",
+    "CHF 60m"
+   ],
+   "correct": 2,
+   "figure": "CHF 31m",
+   "sub": "about $31m",
+   "explain": "CHF 31 million, at the Only Watch charity auction. It was a one-off steel version of a watch Patek makes only a handful of times.",
+   "source": "Christie's Geneva, Only Watch auction, 9 November 2019"
+  },
+  {
+   "q": "How much did the world spend on personal luxury goods (fashion, bags, watches, jewellery and luxury beauty) in 2024?",
+   "options": [
+    "€160bn",
+    "€360bn",
+    "€560bn",
+    "€960bn"
+   ],
+   "correct": 1,
+   "figure": "€363bn",
+   "sub": "down about 2%",
+   "explain": "About €363 billion. Including luxury cars, hotels, food and wine, total luxury spending is far higher, at well over €1 trillion.",
+   "source": "Bain & Company / Altagamma, November 2024"
+  },
+  {
+   "q": "How many cars did Ferrari ship to customers worldwide in 2024?",
+   "options": [
+    "13,750",
+    "27,500",
+    "55,000",
+    "110,000"
+   ],
+   "correct": 0,
+   "figure": "13,752",
+   "sub": "up 0.7% on 2023",
+   "explain": "13,752, up just 0.7% on 2023, yet its net profit rose by about a fifth that year. Fewer cars than people expect, and a lot of money per car.",
+   "source": "Ferrari N.V., full-year 2024 results, February 2025"
+  }
+ ]
+}

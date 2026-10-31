@@ -1,0 +1,133 @@
+{
+ "slug": "crisis-communication",
+ "course": "EIM",
+ "title": "Crises in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about what happens when things go wrong for a business: shocks that stop trade, cyber-attacks, rumours that move markets, and how fast money, stories and shoppers react.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Crises move faster than our instincts.",
+  "paras": [
+   "Several of today's answers were bigger or faster than most of us expected: money, rumours and shoppers now move in minutes or days, and a single blocked canal or volcano can stop trade across a continent.",
+   "Numbers like these are why companies plan for crises long before one starts, and why people argue so much about what to do when one does."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In March 2023 customers of the US lender Silicon Valley Bank withdrew US$42 billion in one day, and asked to move more the next. Over those two days, what share of its deposits did they try to take out?",
+   "options": [
+    "21%",
+    "41%",
+    "61%",
+    "81%"
+   ],
+   "correct": 3,
+   "figure": "81%",
+   "sub": "of deposits, in two days",
+   "explain": "About US$42 billion left on 9 March and roughly US$100 billion more was queued for the next morning: about 81% of the bank's US$175 billion in deposits. Regulators closed the bank on 10 March. Many of its customers were tech start-ups, connected through the same investors and group chats.",
+   "source": "Michael Barr, Federal Reserve, testimony to the US Senate, March 2023 (reported by CNBC)"
+  },
+  {
+   "q": "MIT researchers studied about 126,000 stories shared on Twitter between 2006 and 2017. Compared with true news, how much more likely was false news to be retweeted?",
+   "options": [
+    "about the same",
+    "20% more likely",
+    "70% more likely",
+    "five times more likely"
+   ],
+   "correct": 2,
+   "figure": "70%",
+   "sub": "more likely to be retweeted",
+   "explain": "False stories were about 70% more likely to be shared than true ones, even after allowing for the size and age of the accounts that posted them. Bots were not the main reason: people were. The researchers suggest novelty helps, since false stories tend to be more surprising.",
+   "source": "Vosoughi, Roy and Aral, 'The spread of true and false news online', Science, 2018"
+  },
+  {
+   "q": "In April 2010 ash from an Icelandic volcano, Eyjafjallajökull, closed much of Europe's airspace for about a week. Roughly how many flights were cancelled?",
+   "options": [
+    "104,000",
+    "260,000",
+    "520,000",
+    "1.1 million"
+   ],
+   "correct": 0,
+   "figure": "104,000",
+   "sub": "flights cancelled, almost 8 million passengers stranded",
+   "explain": "Eurocontrol counts about 104,000 cancelled flights and almost 8 million stranded passengers, and the aviation industry lost an estimated €2.7 billion. The rules then were to close airspace at any risk of ash; today most countries assess the risk instead, and Eurocontrol estimates a similar eruption would cancel up to about half as many flights.",
+   "source": "Eurocontrol, '11 years after the eruption of Icelandic volcano Eyjafjallajökull', 2021"
+  },
+  {
+   "q": "In March 2021 the container ship Ever Given blocked the Suez Canal for six days. The shipping journal Lloyd's List estimated the value of goods held up. Roughly how much per day?",
+   "options": [
+    "US$960 million",
+    "US$3.2 billion",
+    "US$9.6 billion",
+    "US$29 billion"
+   ],
+   "correct": 2,
+   "figure": "US$9.6bn",
+   "sub": "of goods held up each day, a rough estimate",
+   "explain": "Lloyd's List put westbound traffic at about US$5.1 billion a day and eastbound at about US$4.5 billion, and called its figures rough calculations. Within days well over 150 ships were waiting at either end of the canal.",
+   "source": "Lloyd's List estimate, reported by Bloomberg and Al Jazeera, March 2021"
+  },
+  {
+   "q": "In the four weeks before the UK's first Covid lockdown in March 2020, how much did supermarket grocery sales rise compared with a year earlier?",
+   "options": [
+    "8%",
+    "21%",
+    "35%",
+    "50%"
+   ],
+   "correct": 1,
+   "figure": "20.6%",
+   "sub": "the biggest month of grocery sales ever recorded",
+   "explain": "Sales grew by 20.6%, and the average household spent an extra £62.92 in four weeks, making March 2020 the biggest month for UK grocery sales on record. Kantar counted 42 million extra shopping trips over just four days.",
+   "source": "Kantar, 'Record grocery sales in UK as shoppers prepare for lockdown', March 2020"
+  },
+  {
+   "q": "In 2013 hackers took over a news agency's Twitter account and posted that there had been explosions at the White House. About US$136 billion was wiped off the S&P 500. How long did it take shares to recover?",
+   "options": [
+    "about 3 minutes",
+    "about 30 minutes",
+    "about 3 hours",
+    "until the next day"
+   ],
+   "correct": 0,
+   "figure": "3 minutes",
+   "sub": "for US$136bn to return",
+   "explain": "The index fell about 15 points within moments and recovered in roughly three minutes, once the agency said its account had been hacked. Much of the selling was done by trading programs that react automatically to headlines. It has often been reported as the most expensive tweet ever sent.",
+   "source": "Bloomberg, 'Fake report erasing $136 billion shows market's fragility', April 2013"
+  },
+  {
+   "q": "The German digital association Bitkom asks about 1,000 companies each year what theft, spying and sabotage cost them, online and offline. What is its 2026 estimate of the yearly damage to the German economy?",
+   "options": [
+    "under €50 billion",
+    "€50–100 billion",
+    "€100–200 billion",
+    "over €200 billion"
+   ],
+   "correct": 3,
+   "figure": "€211–271bn",
+   "sub": "a year, survey-based estimate",
+   "explain": "Bitkom puts the damage at between €211 billion and €271 billion a year, depending on whether suspected attacks are counted, down from about €289 billion in 2025. Cyber-attacks make up about three-quarters of it, and 58% of the firms surveyed had suffered damage from one in the past year.",
+   "source": "Bitkom, Wirtschaftsschutz 2026"
+  },
+  {
+   "q": "A cyber-attack in 2025 stopped production at Jaguar Land Rover's UK factories for more than a month. The Cyber Monitoring Centre estimated the cost to the UK economy, including thousands of suppliers. How much?",
+   "options": [
+    "£190 million",
+    "£1.9 billion",
+    "£4 billion",
+    "£9 billion"
+   ],
+   "correct": 1,
+   "figure": "£1.9bn",
+   "sub": "up to 5,000 firms affected",
+   "explain": "The CMC called it the most economically damaging cyber event ever to hit the UK, with up to 5,000 organisations affected, mostly in the carmaker's supply chain. It warned that the figure could rise if the return to full production was delayed. The estimate is a model, not an audited cost.",
+   "source": "Cyber Monitoring Centre, October 2025 (reported by Prolific North and others)"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "ageing-and-work",
+ "course": "AE",
+ "title": "Ageing and pensions in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about growing older, working longer and paying for pensions, in Britain, Germany and beyond.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Retirement keeps being redefined.",
+  "paras": [
+   "The age at which a state pension starts, and how long people live after it, have both moved a long way since the first pensions were paid. On several of these, the room's gut was decades out of date.",
+   "How long people should work, and who pays for the years after, is a question every generation answers again."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "When Britain's first state old-age pension was paid in January 1909, from what age could people claim it?",
+   "options": [
+    "60",
+    "65",
+    "67",
+    "70"
+   ],
+   "correct": 3,
+   "figure": "70",
+   "sub": "means-tested, 5 shillings a week",
+   "explain": "The first state pension was paid from the age of 70, and only to people with low incomes and good character, at up to 5 shillings a week. Life expectancy at birth was then far lower than it is today.",
+   "source": "Old Age Pensions Act 1908 (first payments 1 January 1909)"
+  },
+  {
+   "q": "Until 2010, women in the UK could draw the state pension earlier than men. From what age?",
+   "options": [
+    "55",
+    "60",
+    "63",
+    "65"
+   ],
+   "correct": 1,
+   "figure": "60",
+   "sub": "women's state pension age until 2010",
+   "explain": "Women could claim at 60 and men at 65. Women's pension age rose between 2010 and 2018 to match men's, and both reached 66 in 2020.",
+   "source": "Pensions Act 1995 and Pensions Act 2011; Parliamentary and Health Service Ombudsman, Women's State Pension age findings"
+  },
+  {
+   "q": "On average, how many more years can a 65-year-old woman in the UK expect to live?",
+   "options": [
+    "11",
+    "16",
+    "21",
+    "26"
+   ],
+   "correct": 2,
+   "figure": "≈21 years",
+   "sub": "life expectancy at 65 (men: ≈18.7)",
+   "explain": "A woman of 65 can expect to live about 21.2 more years, and a man about 18.7, on average. Both have risen slightly since the pandemic years.",
+   "source": "ONS, National life tables – life expectancy in the UK: 2022 to 2024"
+  },
+  {
+   "q": "Germany's official pension age is rising to 67 by 2031. On average, at what age do Germans actually start drawing their old-age pension?",
+   "options": [
+    "64.7",
+    "65.7",
+    "66.7",
+    "67.7"
+   ],
+   "correct": 0,
+   "figure": "64.7",
+   "sub": "average age, new old-age pensions in 2025",
+   "explain": "In 2025 the average age was 64.7, well below the official age, because many people with long working lives can retire early with or without deductions. In 2000 it was 62.3. The official age and the real age are rarely the same.",
+   "source": "Deutsche Rentenversicherung, Jahresbericht 2025; reported by ihre-vorsorge.de, September 2026"
+  },
+  {
+   "q": "How much is the full new UK state pension a week in 2026–27?",
+   "options": [
+    "£181",
+    "£241",
+    "£301",
+    "£361"
+   ],
+   "correct": 1,
+   "figure": "£241.30",
+   "sub": "a week, from April 2026",
+   "explain": "The full new state pension rose by 4.8% to £241.30 a week in April 2026, in line with earnings growth. Not everyone gets the full amount: it depends on your National Insurance record.",
+   "source": "DWP, Benefit and pension rates 2026 to 2027 (announced November 2025)"
+  },
+  {
+   "q": "Which large country has the world's highest share of people aged 65 and over?",
+   "options": [
+    "Germany",
+    "Italy",
+    "Japan",
+    "South Korea"
+   ],
+   "correct": 2,
+   "figure": "29.6%",
+   "sub": "of Japan's population is 65+",
+   "explain": "Japan: 29.6% of its population was 65 or older in September 2026, a record and the highest of any country with 40 million people or more. Italy came second at 25.6% and Germany third at 24.2%.",
+   "source": "Japan Ministry of Internal Affairs and Communications, September 2026; reported by The Star / Jiji Press"
+  },
+  {
+   "q": "In 2023 France raised its minimum pension age from 62 to 64, after months of strikes and protests. What happened to the reform in late 2025?",
+   "options": [
+    "Suspended until 2028",
+    "Brought forward",
+    "Struck down by the courts",
+    "Raised to 67"
+   ],
+   "correct": 0,
+   "figure": "Suspended",
+   "sub": "frozen until 2028",
+   "explain": "To win Socialist support for its 2026 social security budget, a minority government suspended the reform: the age is frozen at 62 and 9 months until 1 January 2028, after the next presidential election.",
+   "source": "French social security budget for 2026 (passed December 2025); reported by Connexion France"
+  },
+  {
+   "q": "In the EU at the start of 2025, for every 100 people of working age (15 to 64), how many people were 65 or over?",
+   "options": [
+    "8",
+    "15",
+    "24",
+    "34"
+   ],
+   "correct": 3,
+   "figure": "≈34.5",
+   "sub": "per 100 of working age",
+   "explain": "There were about 34.5 people aged 65 and over for every 100 of working age, up from about 25 twenty years earlier. Eurostat projects close to 60 by 2100.",
+   "source": "Eurostat, Population structure and ageing (data extracted February 2026); World Bank data for 2005"
+  }
+ ]
+}

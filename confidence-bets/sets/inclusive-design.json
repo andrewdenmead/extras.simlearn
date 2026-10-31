@@ -1,0 +1,133 @@
+{
+ "slug": "inclusive-design",
+ "course": "EFD",
+ "title": "Inclusive design in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about disability, accessibility and who designs get made for: in Germany, the UK, the EU and online.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Exclusion is often invisible.",
+  "paras": [
+   "Today's numbers were about who has a disability, how most disabilities begin, who uses subtitles, and how many websites still fail basic checks. The people a design leaves out are often not the people we picture.",
+   "Keep those numbers in mind today."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "What share of people in Germany have an officially recognised severe disability?",
+   "options": [
+    "About 2%",
+    "About 5%",
+    "About 9%",
+    "About 20%"
+   ],
+   "correct": 2,
+   "figure": "9.4%",
+   "sub": "7.8 million people",
+   "explain": "At the end of 2025, just over 7.8 million people in Germany had a recognised severe disability: 9.4% of the population, almost one in ten. Most of them are over 55.",
+   "source": "Destatis, press release, July 2026 (data at 31 December 2025)"
+  },
+  {
+   "q": "Of those severe disabilities in Germany, what share were present from birth or appeared in the first year of life?",
+   "options": [
+    "3%",
+    "15%",
+    "35%",
+    "60%"
+   ],
+   "correct": 0,
+   "figure": "3%",
+   "sub": "present from birth",
+   "explain": "Only 3% were present from birth; just over 91% were caused by illness. Most disabilities arrive during a person's life, which means any of us may need accessible design one day.",
+   "source": "Destatis, press release, July 2026 (data at 31 December 2025)"
+  },
+  {
+   "q": "WebAIM tests the home pages of the world's top one million websites every year. In 2026, what share had detectable accessibility failures?",
+   "options": [
+    "About 25%",
+    "About 50%",
+    "About 75%",
+    "About 96%"
+   ],
+   "correct": 3,
+   "figure": "95.9%",
+   "sub": "of home pages fail",
+   "explain": "95.9% of home pages failed, with an average of about 56 detected errors per page. Automated tests only find some problems, so the real picture is probably worse.",
+   "source": "WebAIM, The WebAIM Million, 2026 (tested February 2026)"
+  },
+  {
+   "q": "What was the most common accessibility error on those home pages?",
+   "options": [
+    "Missing image descriptions (alt text)",
+    "Low-contrast text",
+    "Links with no text",
+    "Form fields with no labels"
+   ],
+   "correct": 1,
+   "figure": "83.9%",
+   "sub": "of home pages had low-contrast text",
+   "explain": "Low-contrast text appeared on 83.9% of home pages; missing alt text on 53.1%. Contrast is a visual design choice, often made for style, and it shuts out people with low vision, and anyone reading a phone in sunlight.",
+   "source": "WebAIM, The WebAIM Million, 2026"
+  },
+  {
+   "q": "A 2019 University of Virginia study looked at frontal car crashes. Compared with a man wearing a seatbelt, how much higher were a belted woman's odds of serious injury?",
+   "options": [
+    "About the same",
+    "17% higher",
+    "73% higher",
+    "Three times higher"
+   ],
+   "correct": 2,
+   "figure": "+73%",
+   "sub": "odds of serious injury",
+   "explain": "Belted women had 73% higher odds of serious injury, even after the researchers allowed for age, height, weight and crash severity. For decades, the standard crash-test dummy was based on an average man.",
+   "source": "University of Virginia, Center for Applied Biomechanics, study in Traffic Injury Prevention, 2019"
+  },
+  {
+   "q": "Colour blindness affects about 1 in 12 men. Roughly how many women does it affect?",
+   "options": [
+    "1 in 12",
+    "1 in 25",
+    "1 in 50",
+    "1 in 200"
+   ],
+   "correct": 3,
+   "figure": "1 in 200",
+   "sub": "women (1 in 12 men)",
+   "explain": "The common red–green forms are passed on through the X chromosome, so men are affected far more often. Red–green colour coding in charts, maps and buttons can make information disappear for them.",
+   "source": "nidirect (NHS Northern Ireland), Colour vision deficiency; Colour Blind Awareness"
+  },
+  {
+   "q": "In a 2021 survey, 80% of UK 18–24-year-olds said they use subtitles some or all of the time. What share of those subtitle users were deaf or hard of hearing?",
+   "options": [
+    "10%",
+    "30%",
+    "50%",
+    "80%"
+   ],
+   "correct": 0,
+   "figure": "10%",
+   "sub": "of young subtitle users",
+   "explain": "Only 10% of the young subtitle users were deaf, deafened or hard of hearing. Subtitles were designed for one group, and now help noisy flats, non-native speakers and people watching on phones.",
+   "source": "Stagetext survey, 2021"
+  },
+  {
+   "q": "Since which date have many new products and services sold in the EU, such as e-books, banking apps, online shops and ticket machines, had to meet accessibility rules?",
+   "options": [
+    "June 2021",
+    "June 2025",
+    "June 2028",
+    "June 2030"
+   ],
+   "correct": 1,
+   "figure": "28 June 2025",
+   "sub": "European Accessibility Act",
+   "explain": "The European Accessibility Act has applied since 28 June 2025. Germany put it into law as the Barrierefreiheitsstärkungsgesetz, so accessibility is now a legal requirement for many digital products, not just good practice.",
+   "source": "Directive (EU) 2019/882, European Accessibility Act"
+  }
+ ]
+}

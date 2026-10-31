@@ -1,0 +1,133 @@
+{
+ "slug": "creator-collaborations",
+ "course": "EBC",
+ "title": "Creators in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about online creators, the brands they build, and the hills many of them film in.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Attention is the new currency.",
+  "paras": [
+   "Creators can reach more people than many TV channels, and some have turned that reach into businesses worth billions. Most never get close.",
+   "Today, think about what a creator really brings to a product, and what they risk."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In 2025 MrBeast became the first YouTuber to pass a new subscriber milestone. Which one?",
+   "options": [
+    "100 million",
+    "200 million",
+    "300 million",
+    "400 million"
+   ],
+   "correct": 3,
+   "figure": "400 million",
+   "sub": "the most-subscribed channel",
+   "explain": "400 million, at the start of June 2025, the first individual creator to get there. A year later, in June 2026, the channel passed 500 million.",
+   "source": "YouTube Official Blog, June 2026; press reports, June 2025"
+  },
+  {
+   "q": "The YouTubers KSI and Logan Paul launched the drink Prime in 2022. Roughly what were its sales in 2023 expected to reach, according to Bloomberg?",
+   "options": [
+    "$120m",
+    "$300m",
+    "$600m",
+    "$1.2bn"
+   ],
+   "correct": 3,
+   "figure": "$1.2bn",
+   "sub": "a reported projection, not audited accounts",
+   "explain": "More than $1.2 billion, Bloomberg reported in November 2023, less than two years after launch. In the UK, some supermarkets limited how many bottles each customer could buy.",
+   "source": "Bloomberg, November 2023; The Scotsman, 2023"
+  },
+  {
+   "q": "Scotland's Munros are its mountains over 3,000 feet (914 metres). How many are there?",
+   "options": [
+    "182",
+    "282",
+    "382",
+    "482"
+   ],
+   "correct": 1,
+   "figure": "282",
+   "sub": "since a 2012 revision",
+   "explain": "282. They are named after Sir Hugh Munro, who listed them in 1891. Climbing all of them, 'compleating', is a goal for thousands of walkers.",
+   "source": "Scottish Mountaineering Club"
+  },
+  {
+   "q": "In November 2020 Charli D'Amelio became the first person to reach 100 million followers on which platform?",
+   "options": [
+    "TikTok",
+    "Instagram",
+    "YouTube",
+    "Twitch"
+   ],
+   "correct": 0,
+   "figure": "TikTok",
+   "sub": "aged 16",
+   "explain": "TikTok, about 18 months after she started posting dance videos there in May 2019. Brands such as Dunkin', Hollister and Morphe worked with her as her following grew.",
+   "source": "Guinness World Records, 2020; Tubefilter, November 2020"
+  },
+  {
+   "q": "In March 2020, after UK schools closed, Joe Wicks streamed a live PE lesson on YouTube every weekday morning. On day two, how many households watched live?",
+   "options": [
+    "9,500",
+    "95,000",
+    "955,000",
+    "9.5 million"
+   ],
+   "correct": 2,
+   "figure": "About 955,000",
+   "sub": "24 March 2020",
+   "explain": "About 955,000 (955,185), a Guinness World Record for a live-streamed workout on YouTube. He said he would give the YouTube income from the lessons to NHS charities.",
+   "source": "Guinness World Records, April 2020"
+  },
+  {
+   "q": "Hailey Bieber launched the skincare brand Rhode in 2022. In 2025 the beauty company e.l.f. agreed to buy it. For up to how much?",
+   "options": [
+    "$300m",
+    "$1bn",
+    "$2.5bn",
+    "$5bn"
+   ],
+   "correct": 1,
+   "figure": "Up to $1bn",
+   "sub": "three years after launch",
+   "explain": "Up to $1 billion: $800 million on completion plus up to $200 million more if the brand kept growing over the next three years. Rhode had launched in 2022, helped by Bieber's huge social media following.",
+   "source": "e.l.f. Beauty, press release (SEC filing), May 2025"
+  },
+  {
+   "q": "Gymshark began in 2012 in a garage near Birmingham and grew through fitness creators on social media. In 2020 an investor valued it at what?",
+   "options": [
+    "£10m",
+    "£100m",
+    "£1bn",
+    "£5bn"
+   ],
+   "correct": 2,
+   "figure": "Over £1bn",
+   "sub": "founder Ben Francis was 28",
+   "explain": "More than £1 billion (about £1.25bn), when General Atlantic bought a 21% stake. Ben Francis had started it at 19, in his parents' garage, while delivering pizzas.",
+   "source": "BBC News, August 2020"
+  },
+  {
+   "q": "Huda Kattan's Huda Beauty is one of the best-known creator-led make-up brands. How did it begin, in 2010?",
+   "options": [
+    "As a beauty blog",
+    "As a TV show",
+    "As a shop in Dubai",
+    "As a make-up school"
+   ],
+   "correct": 0,
+   "figure": "A blog",
+   "sub": "products followed in 2013",
+   "explain": "As a beauty blog. Her first product, false eyelashes, followed in 2013, and the brand grew through her huge online following.",
+   "source": "Huda Beauty, company website (About Huda)"
+  }
+ ]
+}

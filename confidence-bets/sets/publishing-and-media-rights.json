@@ -1,0 +1,133 @@
+{
+ "slug": "publishing-and-media-rights",
+ "course": "EBC",
+ "title": "Music and media rights in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about who earns what when songs and stories find an audience: streams, records, songs and books.",
+  "Every figure is real and sourced. Bet on how sure you are, not just on what you think."
+ ],
+ "outro": {
+  "heading": "Rights are where the money is.",
+  "paras": [
+   "Behind every hit, old or new, there are contracts that decide who gets paid and who gets a say. The sums are often bigger, or smaller, than people expect.",
+   "Today, keep asking who holds which right, and why it matters to them."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Mariah Carey's 'All I Want for Christmas Is You' came out in 1994. In which year did it first reach No. 1 in the UK?",
+   "options": [
+    "1994",
+    "2004",
+    "2020",
+    "2024"
+   ],
+   "correct": 2,
+   "figure": "2020",
+   "sub": "26 years after release",
+   "explain": "December 2020, 26 years after release. Streaming brings the song back every winter, and it climbed a little higher each year until it reached the top.",
+   "source": "Official Charts Company, December 2020"
+  },
+  {
+   "q": "Spotify paid more than $11 billion to the music industry in 2025. Roughly how many artists generated more than $1 million each from it?",
+   "options": [
+    "150",
+    "400",
+    "800",
+    "1,500"
+   ],
+   "correct": 3,
+   "figure": "Over 1,500",
+   "sub": "over 80% never had a global Top 50 hit",
+   "explain": "More than 1,500 (about 1,540), up from 460 in 2017, and more than 80% of them never had a song in Spotify's Global Daily Top 50. The money goes to rights holders (labels, publishers, distributors), who then pay artists under their own contracts.",
+   "source": "Spotify, Loud & Clear report, March 2026 (via Music Business Worldwide)"
+  },
+  {
+   "q": "Since 2024 a track on Spotify must reach a minimum number of streams in the previous 12 months before it earns any royalties at all. What is the minimum?",
+   "options": [
+    "10",
+    "100",
+    "500",
+    "1,000"
+   ],
+   "correct": 3,
+   "figure": "1,000",
+   "sub": "streams a year",
+   "explain": "1,000 streams a year. Spotify argued that tracks below it earned only a few cents, often too little ever to reach a payout, and that the money should go to other artists. Critics said it hit small artists hardest.",
+   "source": "Music Business Worldwide, November 2023 and April 2024"
+  },
+  {
+   "q": "In a 2023 US survey, people who had bought a vinyl record in the past year were asked about their equipment. What share did not own a record player?",
+   "options": [
+    "30%",
+    "50%",
+    "70%",
+    "90%"
+   ],
+   "correct": 1,
+   "figure": "About 50%",
+   "sub": "half of vinyl buyers",
+   "explain": "About half. Many buyers treat a record as a souvenir, a poster or a way to support an artist, and listen to the music on a streaming service instead.",
+   "source": "Luminate, 2023 (via Consequence, April 2023)"
+  },
+  {
+   "q": "How many hardback copies were in Bloomsbury's first print run of Harry Potter and the Philosopher's Stone in 1997?",
+   "options": [
+    "500",
+    "5,000",
+    "50,000",
+    "500,000"
+   ],
+   "correct": 0,
+   "figure": "500",
+   "sub": "about 300 went to libraries",
+   "explain": "Just 500, and about 300 of those went to libraries. Several publishers, reportedly a dozen, had turned the book down. A first-edition hardback can now sell for tens of thousands of pounds.",
+   "source": "Sotheby's, auction lot note, 2025"
+  },
+  {
+   "q": "Until a US court ruled in 2015 that its copyright claim was invalid, how much did a music publisher reportedly earn each year from 'Happy Birthday to You'?",
+   "options": [
+    "$200,000",
+    "$2 million",
+    "$10 million",
+    "$25 million"
+   ],
+   "correct": 1,
+   "figure": "About $2m",
+   "sub": "a year, mostly from films and TV",
+   "explain": "About $2 million a year for Warner/Chappell, mainly from films, TV shows and adverts that used the song. After a judge ruled its claim invalid in September 2015, it agreed in 2016 to pay $14 million to settle the case, and the song is now free to use in the US.",
+   "source": "Reuters, February 2016"
+  },
+  {
+   "q": "In 2024 Sony Music agreed to buy the rights to Queen's music catalogue. What was the deal widely reported to be worth?",
+   "options": [
+    "£1bn",
+    "£1.5bn",
+    "£2bn",
+    "£3bn"
+   ],
+   "correct": 0,
+   "figure": "About £1bn",
+   "sub": "the price was not officially confirmed",
+   "explain": "About £1 billion, reported as the biggest music catalogue deal ever. Investors pay for income they expect to last for decades: Queen's songs still earn from streams, films and adverts.",
+   "source": "Widely reported (e.g. Radio X, Hypebeast), June 2024"
+  },
+  {
+   "q": "Before buying back the original master recordings of her first six albums in May 2025, how many of them had Taylor Swift re-recorded and released as 'Taylor's Version'?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "6"
+   ],
+   "correct": 2,
+   "figure": "4",
+   "sub": "Fearless, Red, Speak Now, 1989",
+   "explain": "Four. The re-recordings gave fans versions she owned, and made the old masters less valuable to their owners. In May 2025 she bought the originals from the private equity firm Shamrock Capital.",
+   "source": "Associated Press (via PBS NewsHour), 30 May 2025"
+  }
+ ]
+}

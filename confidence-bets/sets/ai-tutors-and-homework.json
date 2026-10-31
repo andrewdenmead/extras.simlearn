@@ -1,0 +1,133 @@
+{
+ "slug": "ai-tutors-and-homework",
+ "course": "AE",
+ "title": "Homework and AI in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about homework, school time and AI arriving in classrooms and bedrooms, in Britain, Germany and beyond.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "School is changing faster than the rules.",
+  "paras": [
+   "Pupils took up AI faster than most schools wrote rules for it, and some countries have been rethinking homework, screens and the school day. On several of these, the room's gut was well off.",
+   "What school is for, and what should happen inside it and outside it, is an argument every generation reopens."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In late 2024, what share of US teenagers aged 13 to 17 said they had used ChatGPT for their schoolwork?",
+   "options": [
+    "13%",
+    "26%",
+    "39%",
+    "52%"
+   ],
+   "correct": 1,
+   "figure": "26%",
+   "sub": "of US teens (13% in 2023)",
+   "explain": "About a quarter (26%) had used ChatGPT for schoolwork, double the 13% of a year earlier. Just over half said using it to research a topic was fine, but far fewer thought it was acceptable for writing essays.",
+   "source": "Pew Research Center, survey of US teens (Sept–Oct 2024), January 2025"
+  },
+  {
+   "q": "What share of UK children aged 9 to 17 said in 2025 that they had used AI chatbots?",
+   "options": [
+    "14%",
+    "34%",
+    "49%",
+    "64%"
+   ],
+   "correct": 3,
+   "figure": "64%",
+   "sub": "of 9- to 17-year-olds",
+   "explain": "Almost two thirds of children had used AI chatbots, and 42% of those users had used them for help with schoolwork. About a third of users (35%) said chatting to one feels like talking to a friend.",
+   "source": "Internet Matters, Me, myself & AI (survey of 1,000 UK children), July 2025"
+  },
+  {
+   "q": "In 2021, China's 'double reduction' policy cut pupils' workload. What did it do to homework for children in the first two years of primary school?",
+   "options": [
+    "Banned written homework",
+    "Capped it at an hour a day",
+    "Moved it into school",
+    "Replaced it with apps"
+   ],
+   "correct": 0,
+   "figure": "Banned",
+   "sub": "written homework, grades 1 and 2",
+   "explain": "Written homework was banned for grades 1 and 2, limited to an average of 60 minutes a day for older primary pupils and 90 minutes in lower secondary school. The aim was to reduce pressure on pupils and costs for families.",
+   "source": "General Office of the CPC Central Committee and State Council, 'double reduction' guidelines, 24 July 2021"
+  },
+  {
+   "q": "Science teachers in England were trained to use ChatGPT to plan lessons, and compared with teachers who were not. How much less time did they spend planning?",
+   "options": [
+    "3%",
+    "13%",
+    "31%",
+    "61%"
+   ],
+   "correct": 2,
+   "figure": "−31%",
+   "sub": "time spent on planning",
+   "explain": "Teachers using ChatGPT with a guide spent 31% less time planning lessons and resources, about 25 minutes a week, and a panel of teachers found no noticeable fall in quality. The trial measured time saved, not pupils' results.",
+   "source": "Education Endowment Foundation, ChatGPT in lesson preparation (Teacher Choices trial, 259 KS3 science teachers), December 2024"
+  },
+  {
+   "q": "What official guidance on how much homework to set do schools in England now have?",
+   "options": [
+    "None at all",
+    "Up to 30 minutes a day",
+    "One hour a day",
+    "Two hours a day for GCSE pupils"
+   ],
+   "correct": 0,
+   "figure": "None",
+   "sub": "national guidelines scrapped in 2012",
+   "explain": "The national homework guidelines of 1998 (from an hour a week for the youngest pupils to up to 2.5 hours a night for 14- to 16-year-olds) were scrapped in 2012. Head teachers decide how much homework to set, if any.",
+   "source": "Department for Education announcement, March 2012 (reported by the Yorkshire Post)"
+  },
+  {
+   "q": "From which school year do children starting primary school in Germany have a legal right to all-day schooling or care?",
+   "options": [
+    "2014–15",
+    "2018–19",
+    "2022–23",
+    "2026–27"
+   ],
+   "correct": 3,
+   "figure": "2026–27",
+   "sub": "first graders, then one year group a year",
+   "explain": "The right started on 1 August 2026 with first graders and is extended one year group at a time until all primary pupils are covered from August 2029: eight hours a day, five days a week, lessons included. It was passed in 2021, giving states five years to prepare.",
+   "source": "Ganztagsförderungsgesetz 2021; Bundesregierung"
+  },
+  {
+   "q": "In 2023, Sweden's government decided to spend hundreds of millions of kronor on what?",
+   "options": [
+    "Tablets for every pupil",
+    "Printed textbooks",
+    "AI tutors",
+    "Longer school days"
+   ],
+   "correct": 1,
+   "figure": "Textbooks",
+   "sub": "SEK 685m in 2023",
+   "explain": "Sweden set aside 685 million kronor in 2023 to bring back printed textbooks, and similar sums in the following years, after a debate about falling reading scores and screen-based learning. Sweden had been one of Europe's most digital school systems.",
+   "source": "Swedish Government; reported by AP, September 2023"
+  },
+  {
+   "q": "In the same Pew survey, what share of US teenagers said it was acceptable to use ChatGPT to write essays?",
+   "options": [
+    "6%",
+    "12%",
+    "18%",
+    "30%"
+   ],
+   "correct": 2,
+   "figure": "18%",
+   "sub": "say it's fine for essays (research: 54%)",
+   "explain": "Only 18% said using ChatGPT to write essays was acceptable, against 54% for researching new topics and 29% for solving maths problems. Teenagers draw their own lines between help and cheating.",
+   "source": "Pew Research Center, survey of US teens (Sept–Oct 2024), January 2025"
+  }
+ ]
+}

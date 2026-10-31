@@ -1,0 +1,133 @@
+{
+ "slug": "drones-games-and-service",
+ "course": "AE",
+ "title": "Drones and defence in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about armed forces, drones and video games, from Britain, Germany and beyond.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Defence is changing fast.",
+  "paras": [
+   "Armies are smaller than many people think, spending is rising, drones turn up over airports, and games draw audiences bigger than most sports. On several of these, the room's gut was well off.",
+   "Who should serve, how they should be recruited and what we ask of them are questions every country now has to answer again."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In December 2018, drone sightings closed London's Gatwick Airport for about 33 hours. Roughly how many passengers were affected?",
+   "options": [
+    "About 1,400",
+    "About 14,000",
+    "About 140,000",
+    "About 1.4 million"
+   ],
+   "correct": 2,
+   "figure": "≈140,000",
+   "sub": "passengers, about 1,000 flights",
+   "explain": "About 140,000 passengers and around 1,000 flights were affected, just before Christmas. Nobody was ever convicted, and airports across Europe, including Munich and Copenhagen in 2025, have since been closed by drone sightings.",
+   "source": "Gatwick Airport and Sussex Police, as reported in the UK press, December 2018"
+  },
+  {
+   "q": "At their 2025 summit, NATO members agreed to spend a new share of GDP on defence and security by 2035. What share?",
+   "options": [
+    "2%",
+    "2.5%",
+    "3.5%",
+    "5%"
+   ],
+   "correct": 3,
+   "figure": "5%",
+   "sub": "of GDP by 2035 (3.5% core defence)",
+   "explain": "Members agreed to 5% of GDP by 2035: at least 3.5% on core defence and up to 1.5% on related security such as infrastructure and resilience. The old target, agreed at the 2014 Wales summit, was 2%.",
+   "source": "NATO, The Hague Summit Declaration, June 2025"
+  },
+  {
+   "q": "Roughly how many full-time trained soldiers does the British Army have?",
+   "options": [
+    "About 30,000",
+    "About 70,000",
+    "About 150,000",
+    "About 250,000"
+   ],
+   "correct": 1,
+   "figure": "≈71,000",
+   "sub": "full-time trained soldiers, July 2026",
+   "explain": "In July 2026 the Army had about 70,950 full-time trained soldiers, or 66,730 counting fully trained regulars only. Full Fact found that the regular Army was last smaller than that in 1799.",
+   "source": "Ministry of Defence, Quarterly service personnel statistics, 1 July 2026; Full Fact, 'What size are the UK's armed forces?', updated October 2026"
+  },
+  {
+   "q": "Under Germany's new military service law, in force since January 2026, what must every 18-year-old man do?",
+   "options": [
+    "Fill in a questionnaire",
+    "Serve for six months",
+    "Join a reserve unit for one weekend a month",
+    "Nothing: the law applies only to volunteers"
+   ],
+   "correct": 0,
+   "figure": "Questionnaire",
+   "sub": "compulsory for men, voluntary for women",
+   "explain": "Every 18-year-old receives a questionnaire, which men must answer and women may. Men born from 2008 also face compulsory medical checks, due to be fully running by mid-2027. Service itself stays voluntary for now, but the Bundestag can bring in compulsory service if too few volunteer.",
+   "source": "Bundesregierung, questions and answers on the new military service, 2026"
+  },
+  {
+   "q": "Roughly how many people around the world play video games?",
+   "options": [
+    "3.6 billion",
+    "4.6 billion",
+    "5.6 billion",
+    "6.6 billion"
+   ],
+   "correct": 0,
+   "figure": "≈3.6bn",
+   "sub": "players worldwide, 2025 (industry estimate)",
+   "explain": "Newzoo estimates about 3.6 billion players in 2025, more than four in ten people on the planet, most of them on mobile phones. Over half of all players are in the Asia-Pacific region.",
+   "source": "Newzoo, Global Games Market Report 2025"
+  },
+  {
+   "q": "How many active soldiers does Germany's Bundeswehr have?",
+   "options": [
+    "About 84,000",
+    "About 184,000",
+    "About 284,000",
+    "About 484,000"
+   ],
+   "correct": 1,
+   "figure": "≈184,000",
+   "sub": "active soldiers, end of 2025",
+   "explain": "The Bundeswehr had about 184,000 active soldiers at the end of 2025, its highest in over a decade. The government wants 260,000 by 2035, plus 200,000 reservists. During the Cold War, West Germany alone had about 495,000 in peacetime.",
+   "source": "Bundeswehr personnel figures, reported January 2026; Bundesregierung, 2026"
+  },
+  {
+   "q": "The 2024 League of Legends World Championship final was streamed live. How many people watched at the peak, not counting Chinese platforms?",
+   "options": [
+    "690,000",
+    "2.9 million",
+    "6.9 million",
+    "29 million"
+   ],
+   "correct": 2,
+   "figure": "6.9m",
+   "sub": "peak viewers, Worlds 2024",
+   "explain": "Peak viewing reached about 6.9 million, the most-watched esports match on record by this count. The figure leaves out Chinese platforms such as Huya and Bilibili, so the true total was higher.",
+   "source": "Esports Charts, League of Legends Worlds 2024"
+  },
+  {
+   "q": "In 2024, Ukraine did something it describes as a world first. What was it?",
+   "options": [
+    "Ban civilian drones",
+    "Train every school leaver to fly drones",
+    "Hold a world drone-racing championship",
+    "Create a separate branch of its armed forces for drones"
+   ],
+   "correct": 3,
+   "figure": "First",
+   "sub": "Unmanned Systems Forces, 2024",
+   "explain": "President Zelensky ordered the Unmanned Systems Forces in February 2024, and parliament passed the law in September. Ukraine describes it as the world's first separate armed-forces branch for drones, alongside its army, navy and air force.",
+   "source": "President of Ukraine, Decree No. 51/2024, February 2024; Verkhovna Rada, September 2024"
+  }
+ ]
+}

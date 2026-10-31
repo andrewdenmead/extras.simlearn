@@ -1,0 +1,133 @@
+{
+ "slug": "buying-national",
+ "course": "AE",
+ "title": "Buying national in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about where the things we buy come from: food, steel, solar panels, and what governments spend.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Closer to home than we think, and further.",
+  "paras": [
+   "Some of what we assume is made at home comes from far away, and some of what we assume is imported is not. The confident guess was often wrong in both directions.",
+   "Where things are made is a question of cost, security, jobs and climate all at once, and those goals do not always point the same way."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Roughly what share of all the food eaten in the UK is produced in the UK?",
+   "options": [
+    "32%",
+    "47%",
+    "62%",
+    "87%"
+   ],
+   "correct": 2,
+   "figure": "62%",
+   "sub": "of all food consumed (2023)",
+   "explain": "The UK produced 62% of the food it consumed in 2023, a share that has barely moved for a decade or more. For foods that can be grown in the UK the figure is 75%, and the UK produces more milk than it drinks.",
+   "source": "Defra, United Kingdom Food Security Report 2024"
+  },
+  {
+   "q": "And what share of the fresh fruit eaten in the UK is grown in the UK?",
+   "options": [
+    "16%",
+    "31%",
+    "46%",
+    "61%"
+   ],
+   "correct": 0,
+   "figure": "16%",
+   "sub": "of fresh fruit is grown in the UK",
+   "explain": "Only 16% of fresh fruit is grown in the UK, although that is double the 8% of 2003. For strawberries the figure is 66%, for apples 38%. For tomatoes, a vegetable in the statistics, it is just 15%.",
+   "source": "Defra, United Kingdom Food Security Report 2024"
+  },
+  {
+   "q": "In Germany, what share of shoppers say regional origin matters to them when they buy meat and sausages?",
+   "options": [
+    "26%",
+    "46%",
+    "61%",
+    "76%"
+   ],
+   "correct": 3,
+   "figure": "76%",
+   "sub": "say regional origin matters",
+   "explain": "About three in four German shoppers say regional origin matters to them when they buy meat and sausages. About two thirds say they look for the voluntary 'Regionalfenster' label.",
+   "source": "BMEL, Ernährungsreport 2022 (as cited by Verbraucherzentrale Hamburg, 2023)"
+  },
+  {
+   "q": "In October 2019 the US put a 25% tariff on single malt Scotch whisky, in a trade dispute about aircraft subsidies. How far had Scotch exports to the US fallen by early 2021?",
+   "options": [
+    "35%",
+    "50%",
+    "65%",
+    "80%"
+   ],
+   "correct": 0,
+   "figure": "−35%",
+   "sub": "Scotch exports to the US",
+   "explain": "Exports to the US fell by 35%, and the Scotch Whisky Association put the lost sales at over £500 million. The tariff had nothing to do with whisky: it was retaliation in a dispute over Airbus and Boeing. It was suspended in 2021.",
+   "source": "Scotch Whisky Association, reported by Scottish Financial News, February 2021"
+  },
+  {
+   "q": "What share of the world's steel was made in China in 2024?",
+   "options": [
+    "28%",
+    "53%",
+    "68%",
+    "83%"
+   ],
+   "correct": 1,
+   "figure": "53%",
+   "sub": "of world crude steel, 2024",
+   "explain": "China made about 1,005 million tonnes of the world's 1,882 million tonnes of crude steel in 2024: more than half. Britain's share is a small fraction of one per cent.",
+   "source": "World Steel Association, 2024 global crude steel production, January 2025"
+  },
+  {
+   "q": "Solar panels are made in several stages, from polysilicon to wafers, cells and finished modules. What share of the world's capacity at each stage is in China?",
+   "options": [
+    "About 30%",
+    "About 50%",
+    "About 65%",
+    "Over 80%"
+   ],
+   "correct": 3,
+   "figure": "80%+",
+   "sub": "of every stage of solar manufacturing",
+   "explain": "China has more than 80% of the world's capacity at every stage of making solar panels, and the IEA expected its share of polysilicon and wafers to reach almost 95% soon after. Its data covered up to 2021–22.",
+   "source": "International Energy Agency, Solar PV Global Supply Chains, 2022"
+  },
+  {
+   "q": "How much do UK public bodies (government departments, the NHS, councils, schools) spend each year buying goods, services and works?",
+   "options": [
+    "About £40bn",
+    "About £150bn",
+    "Over £400bn",
+    "Over £1 trillion"
+   ],
+   "correct": 2,
+   "figure": "£400bn+",
+   "sub": "public procurement a year",
+   "explain": "Public bodies in the UK spend more than £400 billion a year buying goods, services and works. New rules for how they buy, the Procurement Act 2023, came into force in February 2025.",
+   "source": "Building, 'New legislation on £400bn public procurement spend comes into force', February 2025"
+  },
+  {
+   "q": "Across the EU, public authorities spend about €2.6 trillion a year buying services, works and supplies. Roughly what share of the EU's GDP is that?",
+   "options": [
+    "5%",
+    "15%",
+    "25%",
+    "35%"
+   ],
+   "correct": 1,
+   "figure": "≈15%",
+   "sub": "of EU GDP",
+   "explain": "More than 250,000 public authorities spend around €2.6 trillion a year, about 15% of the EU's GDP. That is more than the whole economy of most member states.",
+   "source": "European Commission, Public procurement (Single Market and Economy), 2025"
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "slug": "business-ethics",
+ "course": "EIM",
+ "title": "Business ethics in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about business ethics: who people trust, how often green claims hold up, and what it costs when companies get caught, or when someone speaks up.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Ethics comes with a price tag.",
+  "paras": [
+   "Today's numbers covered trust, claims, fines and rewards. Some of the numbers were far bigger than most people guessed.",
+   "Ethical questions in business are rarely abstract. They come with costs attached on every side, and someone has to decide which ones to pay."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "The 2025 Edelman Trust Barometer asked people in 28 countries how much they trust four kinds of institution. Which was trusted most?",
+   "options": [
+    "Business",
+    "Government",
+    "The media",
+    "NGOs (charities and campaign groups)"
+   ],
+   "correct": 0,
+   "figure": "62%",
+   "sub": "trust business",
+   "explain": "Business came top, with 62%, ahead of NGOs (58%), government (52%) and the media (52%). People trust their own employer more still. Trust is high, but so are expectations.",
+   "source": "Edelman Trust Barometer 2025"
+  },
+  {
+   "q": "A large bank's sales targets led staff to open accounts that customers hadn't asked for. Its own review found up to how many potentially unauthorised accounts?",
+   "options": [
+    "3.5 million",
+    "8 million",
+    "15 million",
+    "30 million"
+   ],
+   "correct": 0,
+   "figure": "3.5m",
+   "sub": "potentially unauthorised accounts",
+   "explain": "Wells Fargo staff, under pressure to sell several products to every customer, opened up to 3.5 million accounts that customers may not have agreed to. In 2020 the bank paid US$3 billion to settle US criminal and civil investigations.",
+   "source": "Wells Fargo review, 2017; US Department of Justice settlement, 2020"
+  },
+  {
+   "q": "In a 2020 European Commission study of environmental claims on products sold in the EU, what share were vague, misleading or unfounded?",
+   "options": [
+    "13%",
+    "33%",
+    "53%",
+    "73%"
+   ],
+   "correct": 2,
+   "figure": "53%",
+   "sub": "vague, misleading or unfounded",
+   "explain": "More than half of the green claims examined (53.3%) were vague, misleading or unfounded, and 40% had no supporting evidence at all. The study also counted about 230 different 'green' labels on the EU market.",
+   "source": "European Commission, study on environmental claims, 2020 (cited in its 2023 Green Claims proposal)"
+  },
+  {
+   "q": "In 2025 German prosecutors fined DWS, Deutsche Bank's fund manager, for overstating how 'green' its investments were. How much did it pay?",
+   "options": [
+    "€2.5 million",
+    "€25 million",
+    "€75 million",
+    "€250 million"
+   ],
+   "correct": 1,
+   "figure": "€25m",
+   "sub": "Germany's largest greenwashing fine",
+   "explain": "DWS accepted a €25 million fine from the Frankfurt public prosecutor in April 2025, described as a record for greenwashing in Germany. It had already settled a related case with the US Securities and Exchange Commission in 2023.",
+   "source": "Frankfurt public prosecutor's office, April 2025 (reported by Reuters and others)"
+  },
+  {
+   "q": "In 2015 Volkswagen admitted cheating emissions tests on diesel cars. By 2020, roughly what had 'Dieselgate' cost the company in fines, compensation and repairs?",
+   "options": [
+    "€1 billion",
+    "€5 billion",
+    "€12 billion",
+    "More than €30 billion"
+   ],
+   "correct": 3,
+   "figure": "€30bn+",
+   "sub": "and still rising",
+   "explain": "Volkswagen's own accounts show that the scandal cost it more than €30 billion in fines, settlements, buy-backs and repairs, most of it in the United States. Court cases from investors and car owners continued for years afterwards.",
+   "source": "Volkswagen annual reports; Reuters, 2020"
+  },
+  {
+   "q": "The International Labour Organization estimates the illegal profits made each year from forced labour worldwide. How much?",
+   "options": [
+    "US$24 billion",
+    "US$86 billion",
+    "US$236 billion",
+    "US$640 billion"
+   ],
+   "correct": 2,
+   "figure": "$236bn",
+   "sub": "a year, up 37% since 2014",
+   "explain": "Forced labour generates an estimated US$236 billion in illegal profits a year, nearly US$10,000 for every person in forced labour. The total has grown by about 37% since the ILO's previous estimate, for 2014.",
+   "source": "International Labour Organization (ILO), Profits and Poverty, 2024"
+  },
+  {
+   "q": "Transparency International's 2025 Corruption Perceptions Index ranks 182 countries from least to most corrupt. Where does Germany come?",
+   "options": [
+    "2nd",
+    "10th",
+    "20th",
+    "35th"
+   ],
+   "correct": 1,
+   "figure": "10th",
+   "sub": "score 77 out of 100",
+   "explain": "Germany rose from 15th to 10th, mainly because other countries fell. Denmark came first again (89). The UK was 20th (70), its lowest score since the current method began in 2012.",
+   "source": "Transparency International, Corruption Perceptions Index 2025"
+  },
+  {
+   "q": "In 2023 the US Securities and Exchange Commission paid its largest-ever reward to a single whistleblower. How much?",
+   "options": [
+    "US$2.8 million",
+    "US$28 million",
+    "US$100 million",
+    "US$279 million"
+   ],
+   "correct": 3,
+   "figure": "$279m",
+   "sub": "to one whistleblower",
+   "explain": "The SEC pays whistleblowers 10–30% of the sanctions collected when their tip leads to a successful case. The 2023 award of US$279 million beat the previous record of US$114 million, from 2020. The whistleblower's name was not released.",
+   "source": "US Securities and Exchange Commission, May 2023"
+  }
+ ]
+}

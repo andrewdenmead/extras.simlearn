@@ -1,0 +1,133 @@
+{
+ "slug": "dark-patterns-and-ethical-ux",
+ "course": "EFD",
+ "title": "Dark patterns in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about deceptive design online: how common it is, what regulators have done about it, and what happens when choices are made fair.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Design choices have consequences.",
+  "paras": [
+   "Regulators are now treating interface design as something companies can be fined for, and researchers keep measuring how common deceptive design is.",
+   "Today you'll look closely at a problem. Be as careful with the evidence as you were with your bets."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In early 2024 consumer authorities from 26 countries checked 642 subscription websites and apps. What share used at least one possible dark pattern?",
+   "options": [
+    "56%",
+    "76%",
+    "86%",
+    "96%"
+   ],
+   "correct": 1,
+   "figure": "76%",
+   "sub": "used at least one",
+   "explain": "Nearly 76% used at least one possible dark pattern, and nearly 67% used several. The most common were hiding or delaying key information, such as the real price, and pre-selected options.",
+   "source": "ICPEN international review, reported by the US FTC, July 2024"
+  },
+  {
+   "q": "A 2020 study checked the cookie pop-ups on top UK websites that used the five most popular consent tools. What share met the minimum requirements of EU data law?",
+   "options": [
+    "About 12%",
+    "About 35%",
+    "About 60%",
+    "About 85%"
+   ],
+   "correct": 0,
+   "figure": "11.8%",
+   "sub": "met minimum requirements",
+   "explain": "Only 11.8% met minimal requirements based on EU law, such as no pre-ticked boxes and refusing being as easy as accepting. The study also found that removing the 'reject' button from the first screen raised consent by 22–23 percentage points.",
+   "source": "Nouwens et al., 'Dark Patterns after the GDPR', CHI 2020"
+  },
+  {
+   "q": "In December 2025 the EU issued its first fine under the Digital Services Act, partly because X's paid blue tick deceived users. How much was it?",
+   "options": [
+    "€20 million",
+    "€60 million",
+    "€90 million",
+    "€120 million"
+   ],
+   "correct": 3,
+   "figure": "€120m",
+   "sub": "first DSA fine",
+   "explain": "The Commission fined X €120 million on 5 December 2025. It said anyone could buy a 'verified' tick without real checks, which misleads users about who they're dealing with. X has appealed to the EU's General Court.",
+   "source": "European Commission, 5 December 2025 (reported by eucrim)"
+  },
+  {
+   "q": "In 2022 the US FTC said Fortnite's design tricked players, including children, into unwanted purchases. How much did Epic Games agree to pay back to customers?",
+   "options": [
+    "$2.45 million",
+    "$24.5 million",
+    "$245 million",
+    "$2.45 billion"
+   ],
+   "correct": 2,
+   "figure": "$245m",
+   "sub": "refunds to players",
+   "explain": "Epic agreed to $245 million in refunds over design tricks and billing practices that led to unwanted purchases, plus a separate $275 million penalty over children's privacy. The FTC also said Epic blocked some customers from content they had already paid for.",
+   "source": "US Federal Trade Commission, 19 December 2022"
+  },
+  {
+   "q": "In 2021 Apple made every app ask 'Allow tracking?' with two equally clear buttons. In the first weeks, what share of US users allowed tracking?",
+   "options": [
+    "About 4%",
+    "About 30%",
+    "About 60%",
+    "About 85%"
+   ],
+   "correct": 0,
+   "figure": "≈4%",
+   "sub": "of US users opted in (Flurry estimate, first weeks)",
+   "explain": "Flurry reported that only about 4% of US users were allowing tracking in the first two weeks (about 12% worldwide). When saying no was as easy as saying yes, almost everyone said no.",
+   "source": "Flurry Analytics, May 2021"
+  },
+  {
+   "q": "Since April 2025, how large a fine can the UK's Competition and Markets Authority impose itself for breaking consumer law, for example with misleading online design?",
+   "options": [
+    "Up to £10,000",
+    "Up to £1 million",
+    "Up to 1% of global turnover",
+    "Up to 10% of global turnover"
+   ],
+   "correct": 3,
+   "figure": "10%",
+   "sub": "of global turnover",
+   "explain": "Under the Digital Markets, Competition and Consumers Act, since 6 April 2025 the CMA can fine firms up to 10% of global turnover (or £300,000 if higher) without going to court. Before, it had to take companies to court.",
+   "source": "UK Digital Markets, Competition and Consumers Act 2024; CMA, April 2025"
+  },
+  {
+   "q": "A 2019 Princeton study crawled about 11,000 shopping websites. On roughly what share did it find dark patterns, such as fake countdown timers?",
+   "options": [
+    "About 1%",
+    "About 11%",
+    "About 35%",
+    "About 60%"
+   ],
+   "correct": 1,
+   "figure": "≈11%",
+   "sub": "1,254 of ~11,000 sites",
+   "explain": "It found 1,818 dark patterns on 1,254 sites, about 11%, including countdown timers that reset or kept the offer after they ran out. The researchers called this a lower bound, because their crawler could only spot some types.",
+   "source": "Mathur et al., 'Dark Patterns at Scale', Princeton University, CSCW 2019"
+  },
+  {
+   "q": "In 2022 France's data regulator, the CNIL, fined Google because rejecting cookies took more clicks than accepting them. How much was the fine?",
+   "options": [
+    "€1.5 million",
+    "€15 million",
+    "€150 million",
+    "€1.5 billion"
+   ],
+   "correct": 2,
+   "figure": "€150m",
+   "sub": "plus €60m for Facebook",
+   "explain": "The CNIL fined Google €150 million and Facebook €60 million. On Google, accepting took one click but refusing took several; the CNIL said refusing must be as easy as accepting.",
+   "source": "CNIL decisions, 6 January 2022"
+  }
+ ]
+}

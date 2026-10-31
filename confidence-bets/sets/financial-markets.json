@@ -1,0 +1,133 @@
+{
+ "slug": "financial-markets",
+ "course": "EIM",
+ "title": "Stock markets in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about stock markets: who owns the shares, how professional fund managers do against the market, how much money changes hands, and one record-breaking Scottish loss.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Markets are not what they used to be.",
+  "paras": [
+   "Several of today's numbers surprised the room: who owns a country's companies has changed a great deal in a generation, and the experts who are paid to beat the market mostly don't.",
+   "Markets are full of numbers that sound obvious until someone checks them."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "In October 2025 one company became the first ever to be valued at US$5 trillion on the stock market. Which?",
+   "options": [
+    "Apple",
+    "Microsoft",
+    "Nvidia",
+    "Alphabet (Google)"
+   ],
+   "correct": 2,
+   "figure": "Nvidia",
+   "sub": "first to US$5 trillion, October 2025",
+   "explain": "The chipmaker Nvidia passed US$5 trillion at the end of October 2025, driven by demand for the chips that train and run AI models. At the time Microsoft and Apple were each worth a little over US$4 trillion.",
+   "source": "AFP, reported by Dawn, 30 October 2025"
+  },
+  {
+   "q": "At the end of 2024, what share of the value of UK-listed companies' shares was owned by investors outside the UK?",
+   "options": [
+    "18%",
+    "33%",
+    "45%",
+    "59%"
+   ],
+   "correct": 3,
+   "figure": "58.8%",
+   "sub": "a record high",
+   "explain": "Overseas investors owned 58.8% of UK-listed shares, up from 57.7% in 2022 and the highest share on record. UK private individuals held just 11.6%.",
+   "source": "Office for National Statistics (ONS), Ownership of UK quoted shares: 2024"
+  },
+  {
+   "q": "In 1996 more than 8,000 US companies were listed on American stock exchanges. In the years after the 2008 financial crisis, roughly how many were?",
+   "options": [
+    "about 4,000",
+    "about 6,500",
+    "about 9,500",
+    "about 13,000"
+   ],
+   "correct": 0,
+   "figure": "about 4,000",
+   "sub": "roughly half the 1996 peak",
+   "explain": "The number of US-listed companies roughly halved, settling at about 4,100 to 4,400 after 2008. Fewer young firms went public, many listed firms were bought, and more companies chose to stay private for longer.",
+   "source": "Harvard Law School Forum on Corporate Governance, 'Looking Behind the Declining Number of Public Companies', 2017"
+  },
+  {
+   "q": "Every three years the Bank for International Settlements measures currency trading. In April 2025 about US$9.6 trillion changed hands every day. What share was traded in the UK?",
+   "options": [
+    "12%",
+    "38%",
+    "55%",
+    "71%"
+   ],
+   "correct": 1,
+   "figure": "38%",
+   "sub": "the world's largest currency-trading centre",
+   "explain": "The UK handled 38% of all currency trading, unchanged since 2022 and far ahead of any other country. Daily turnover was up 28% in three years, and the US dollar was on one side of about 89% of all trades.",
+   "source": "Bank for International Settlements (BIS), Triennial Central Bank Survey, September 2025"
+  },
+  {
+   "q": "In February 2009 the Edinburgh-based Royal Bank of Scotland reported its result for 2008. How much did it lose?",
+   "options": [
+    "£2.4 billion",
+    "£8.1 billion",
+    "£24.1 billion",
+    "£61 billion"
+   ],
+   "correct": 2,
+   "figure": "£24.1bn",
+   "sub": "the largest annual loss in UK corporate history",
+   "explain": "RBS lost £24.1 billion, the biggest loss any British company had ever reported. The government had already taken a stake of about 70% in the bank in its October 2008 rescue.",
+   "source": "RBS 2008 results, reported by CNN, 26 February 2009"
+  },
+  {
+   "q": "UK pension funds and insurance companies together owned 45.7% of UK-listed shares in 1997. What share did they own at the end of 2024?",
+   "options": [
+    "Under 5%",
+    "About 12%",
+    "About 24%",
+    "About 36%"
+   ],
+   "correct": 0,
+   "figure": "Under 5%",
+   "sub": "down from 45.7% in 1997",
+   "explain": "Their combined share fell from almost half in 1997 to 4.2% in 2022, and the ONS figures for 2024 put it lower still, the lowest on record. Over the same period British pension funds moved much of their money into bonds and into shares listed abroad.",
+   "source": "Office for National Statistics (ONS), Ownership of UK quoted shares: 2022 and 2024 datasets"
+  },
+  {
+   "q": "S&P compares actively managed US large-company funds with the S&P 500 index, which simply tracks the market. In 2025, what share of those funds did worse than the index?",
+   "options": [
+    "48%",
+    "79%",
+    "93%",
+    "99%"
+   ],
+   "correct": 1,
+   "figure": "79%",
+   "sub": "of active large-cap funds (65% in 2024)",
+   "explain": "About four in five active large-cap fund managers failed to beat the index in 2025, up from 65% in 2024 and the fourth-worst year in the scorecard's 25-year history. The managers charge fees for trying; an index fund does not try and charges very little.",
+   "source": "S&P Dow Jones Indices, SPIVA U.S. Year-End 2025 (reported by InvestmentNews)"
+  },
+  {
+   "q": "How many people in Germany owned shares, equity funds or ETFs in 2025, according to the Deutsches Aktieninstitut?",
+   "options": [
+    "5.3 million",
+    "8.2 million",
+    "11.0 million",
+    "14.1 million"
+   ],
+   "correct": 3,
+   "figure": "14.1m",
+   "sub": "a record, up about 2 million in a year",
+   "explain": "A record 14.1 million people in Germany held shares, equity funds or ETFs, about 2 million more than in 2024. Much of the growth came from people under 40, half of whom now hold an ETF. In 2016 the figure was about 9 million.",
+   "source": "Deutsches Aktieninstitut (DAI), Aktionärszahlen 2025, January 2026"
+  }
+ ]
+}

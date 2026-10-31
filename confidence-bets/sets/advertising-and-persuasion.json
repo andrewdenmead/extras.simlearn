@@ -1,0 +1,133 @@
+{
+ "slug": "advertising-and-persuasion",
+ "course": "EFD",
+ "title": "Advertising in numbers",
+ "eyebrow": "Warm-up",
+ "heading": "How far off is your gut?",
+ "intro": [
+  "Eight real numbers about advertising: how much is spent, who blocks it, who polices it and where it's no longer allowed.",
+  "Every figure is real and sourced. Bet on how sure you are."
+ ],
+ "outro": {
+  "heading": "Attention is expensive.",
+  "paras": [
+   "Advertisers spend more than ever, while a large share of people block ads and regulators keep adding rules. Every advert has to earn attention from an audience that is often trying to avoid it.",
+   "Today you'll argue about how a campaign should do that. Use the evidence your team brings."
+  ],
+  "cue": "Now open today's simulation."
+ },
+ "questions": [
+  {
+   "q": "Roughly how much was spent on advertising worldwide in 2025?",
+   "options": [
+    "$120 billion",
+    "$400 billion",
+    "$650 billion",
+    "$1.2 trillion"
+   ],
+   "correct": 3,
+   "figure": "$1.19tn",
+   "sub": "8.9% up on 2024",
+   "explain": "WARC estimates $1.19 trillion for 2025. Most of the growth goes to three companies, Meta, Amazon and Alphabet, which are expected to take almost 59% of the market outside China by 2027.",
+   "source": "WARC global ad forecast, December 2025 (Advanced Television)"
+  },
+  {
+   "q": "On YouTube, many video adverts show a 'Skip' button. After how many seconds can viewers usually skip?",
+   "options": [
+    "2 seconds",
+    "3 seconds",
+    "5 seconds",
+    "10 seconds"
+   ],
+   "correct": 2,
+   "figure": "5 s",
+   "sub": "before 'Skip ad' appears",
+   "explain": "Skippable in-stream ads can be skipped after 5 seconds, and on view-based bidding advertisers pay only if people watch 30 seconds or click. So the first five seconds have to do most of the work: brand, hook and reason to stay.",
+   "source": "Google Ads Help, About video ad formats"
+  },
+  {
+   "q": "What share of internet users worldwide use an ad blocker at least some of the time?",
+   "options": [
+    "About 10%",
+    "About 30%",
+    "About 45%",
+    "About 60%"
+   ],
+   "correct": 1,
+   "figure": "29.5%",
+   "sub": "about 1.8 billion people",
+   "explain": "About 29.5% of internet users block ads, according to GWI data for Q2 2025. In Germany it's 31.5% and in the UK about 28.5%. Blocking is now a normal habit, not something only tech fans do.",
+   "source": "GWI, Q2 2025 data, via DataReportal (Backlinko summary, 2025)"
+  },
+  {
+   "q": "In 2024 the UK's Advertising Standards Authority got 33,903 ads changed or withdrawn. What share did it find with its own AI monitoring, rather than through public complaints?",
+   "options": [
+    "14%",
+    "38%",
+    "61%",
+    "94%"
+   ],
+   "correct": 3,
+   "figure": "94%",
+   "sub": "found by AI monitoring",
+   "explain": "The ASA's Active Ad Monitoring system scanned about 28 million online ads in 2024 and found 94% of the problem ads. The public still sent 37,284 complaints, most of them about online ads.",
+   "source": "ASA, Annual Report 2024"
+  },
+  {
+   "q": "Since January 2026, adverts for less healthy food and drink have been banned on UK TV before what time?",
+   "options": [
+    "6pm",
+    "9pm",
+    "10pm",
+    "11pm"
+   ],
+   "correct": 1,
+   "figure": "9pm",
+   "sub": "and no paid online ads at all",
+   "explain": "Since 5 January 2026, these ads can't run on UK TV between 5.30am and 9pm, and can't appear in paid-for online advertising at any time. The aim is to cut children's exposure to junk food marketing.",
+   "source": "Pinsent Masons Out-Law, January 2026"
+  },
+  {
+   "q": "In 2024 Edinburgh banned high-carbon adverts on council-owned advertising sites. Which cars may still be advertised there?",
+   "options": [
+    "Battery-electric cars that aren't SUVs",
+    "Any car with a top safety rating",
+    "Hybrid and electric cars",
+    "No cars at all"
+   ],
+   "correct": 0,
+   "figure": "Edinburgh",
+   "sub": "high-carbon ad ban, 2024",
+   "explain": "Adverts for petrol, diesel, hybrid and plug-in hybrid cars are banned, along with airlines, cruises and fossil fuel firms. Battery-electric and hydrogen cars are allowed, but not SUVs.",
+   "source": "Air Quality News; PA Media, May 2024"
+  },
+  {
+   "q": "What share of new cars registered in the EU in 2025 were fully battery-electric?",
+   "options": [
+    "About 17%",
+    "About 28%",
+    "About 40%",
+    "About 55%"
+   ],
+   "correct": 0,
+   "figure": "17.4%",
+   "sub": "up from 13.6% in 2024",
+   "explain": "Battery-electric cars took 17.4% of the EU market in 2025. Hybrids sold even more, and petrol and diesel cars together still had over a third of the market.",
+   "source": "ACEA, New car registrations 2025, January 2026"
+  },
+  {
+   "q": "UK advertisers spend the most in the run-up to Christmas. How much was forecast for October to December 2025?",
+   "options": [
+    "£1.2 billion",
+    "£4 billion",
+    "£12 billion",
+    "£40 billion"
+   ],
+   "correct": 2,
+   "figure": "£12bn",
+   "sub": "in one quarter",
+   "explain": "The Advertising Association and WARC forecast £12.0 billion for the 'golden quarter', 7.3% more than a year before. That's about £130 million a day.",
+   "source": "Advertising Association / WARC Expenditure Report, October 2025 (Marketing Week)"
+  }
+ ]
+}
