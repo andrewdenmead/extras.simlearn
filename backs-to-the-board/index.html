@@ -124,16 +124,37 @@ kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border
 <script>
 (() => {
 /* ---------- the deck: change these lists for another topic ---------- */
-const TOPIC = "White-collar crime";
-const WORDS = ["Embezzlement","Bribe","Kickback","Ponzi scheme","Money laundering","Insider trading","Shell company",
+const D_TOPIC = "White-collar crime";
+const D_WORDS = ["Embezzlement","Bribe","Kickback","Ponzi scheme","Money laundering","Insider trading","Shell company",
   "Offshore account","Cooking the books","Forgery","Cover-up","Accomplice","Shredder","Loophole","The small print",
   "Red flag","Paper trail","Smoking gun","Private equity","Takeover","Golden handshake","Hush money","Tax evasion",
   "Fake invoice","Expense claim","Conflict of interest","Plea deal","Fraud squad","Annual report","Share price",
   "Whistleblower","Tip-off","Auditor","Due diligence","Side letter"];
-const SILLY = ["Giraffe","Taylor Swift","The TV Tower","A penguin","A rubber duck","Spaghetti","Döner kebab","Socks"];
+const D_SILLY = ["Giraffe","Taylor Swift","The TV Tower","A penguin","A rubber duck","Spaghetti","Döner kebab","Socks"];
 /* -------------------------------------------------------------------- */
+const DEFAULT = {topic:D_TOPIC, words:D_WORDS, silly:D_SILLY};
+/* ---------- sets: ?set=<slug> loads sets/<slug>.json from this site; without it, the example above ---------- */
+const SLUG = (new URLSearchParams(location.search).get("set") || "").toLowerCase();
+function loadSet(def, go){
+  if (!SLUG) return go(def, "");
+  if (!/^[a-z0-9-]{1,80}$/.test(SLUG)) return go(def, "missing");
+  fetch("sets/" + SLUG + ".json", {cache:"no-cache"})
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => go(Object.assign({}, def, j), ""))
+    .catch(() => go(def, "missing"));
+}
+function setNotice(err){
+  if (err !== "missing") return;
+  const d = document.createElement("div");
+  d.setAttribute("role", "status");
+  d.style.cssText = "position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1b1f24;color:#fff;padding:10px 16px;border-radius:10px;font:14px system-ui,sans-serif;z-index:99;max-width:calc(100% - 32px)";
+  d.textContent = "We couldn't find that set, so this is the example version.";
+  document.body.appendChild(d); setTimeout(() => d.remove(), 6000);
+}
+loadSet(DEFAULT, (SET, setErr) => {
+const TOPIC = SET.topic, WORDS = SET.words, SILLY = SET.silly;
 
-const KEY = "backs-to-the-board-v1";
+const KEY = "backs-to-the-board-v1" + (SLUG ? "-" + SLUG : "");
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 function newDeck(){
   // real words shuffled, then one silly word dropped in roughly every four or five
@@ -302,7 +323,8 @@ document.addEventListener("keydown", e => {
   if (S.screen === "ready" && (e.key === " " || e.key === "Enter")) { e.preventDefault(); $("#go").click(); }
 });
 
-render();
+render(); setNotice(setErr);
+});
 })();
 </script>
 </body>

@@ -102,8 +102,8 @@ svg .cnt{fill:var(--ink);font-family:var(--mono);font-size:13px;font-weight:500}
 <script>
 (() => {
 /* ---------- the trip: change these for another topic (four statements a round) ---------- */
-const TOPIC = "Market research";
-const ROUNDS = [
+const D_TOPIC = "Market research";
+const D_ROUNDS = [
   ["Customers usually know what they want.",
    "A survey of 2,000 people is more useful than a long conversation with ten.",
    "Asking your friends what they think of your idea is a waste of time.",
@@ -113,12 +113,33 @@ const ROUNDS = [
    "A good manager trusts their gut feeling more than the data.",
    "AI will soon make market researchers unnecessary."],
 ];
-const CITIES = ["Lisbon","Oslo","Montreal","Seoul","Edinburgh","Nairobi","Lima","Osaka",
+const D_CITIES = ["Lisbon","Oslo","Montreal","Seoul","Edinburgh","Nairobi","Lima","Osaka",
                 "Vienna","Havana","Dubai","Melbourne","Prague","Reykjavik","Marrakesh","Vancouver"];
 /* ---------------------------------------------------------------------------------------- */
+const DEFAULT = {topic:D_TOPIC, rounds:D_ROUNDS, cities:D_CITIES};
+/* ---------- sets: ?set=<slug> loads sets/<slug>.json from this site; without it, the example above ---------- */
+const SLUG = (new URLSearchParams(location.search).get("set") || "").toLowerCase();
+function loadSet(def, go){
+  if (!SLUG) return go(def, "");
+  if (!/^[a-z0-9-]{1,80}$/.test(SLUG)) return go(def, "missing");
+  fetch("sets/" + SLUG + ".json", {cache:"no-cache"})
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => go(Object.assign({}, def, j), ""))
+    .catch(() => go(def, "missing"));
+}
+function setNotice(err){
+  if (err !== "missing") return;
+  const d = document.createElement("div");
+  d.setAttribute("role", "status");
+  d.style.cssText = "position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1b1f24;color:#fff;padding:10px 16px;border-radius:10px;font:14px system-ui,sans-serif;z-index:99;max-width:calc(100% - 32px)";
+  d.textContent = "We couldn't find that set, so this is the example version.";
+  document.body.appendChild(d); setTimeout(() => d.remove(), 6000);
+}
+loadSet(DEFAULT, (SET, setErr) => {
+const TOPIC = SET.topic, ROUNDS = SET.rounds, CITIES = SET.cities;
 
 const TEACHER = new URLSearchParams(location.search).has("teacher");
-const KEY = "going-for-a-drive-v2" + (TEACHER ? "-teacher" : "");
+const KEY = "going-for-a-drive-v2" + (SLUG ? "-" + SLUG : "") + (TEACHER ? "-teacher" : "");
 const fresh = () => TEACHER ? {round:0, tally:[{}, {}]} : {screen:"start", round:0, paths:[[], []]};
 let S = fresh();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
@@ -229,7 +250,8 @@ document.addEventListener("click", e => {
   if (b.id === "clearNo") render();
   if (b.id === "clearYes") { S = fresh(); save(); render(); }
 });
-render();
+render(); setNotice(setErr);
+});
 })();
 </script>
 </body>

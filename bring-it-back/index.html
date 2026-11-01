@@ -190,43 +190,79 @@ kbd{font-family:var(--mono);font-size:.85em;background:var(--bg);border:1px soli
 
 <script>
 (() => {
+/* ---------- the example set (a sim's own set comes from ?set=<slug>) ---------- */
+const DEFAULT = {
+  name: "Bring It Back!",
+  pick: {label:"Pick a brand", eyebrow:"Up to you!", heading:"Pick a brand and bring it back",
+    lead:["Every country has brands that everybody’s grandparents knew. Some have disappeared, some are still around but only old people buy them, and every now and then one makes a surprise comeback.",
+          "Choose a brand that has died, or is quietly gathering dust, and bring it back. Here are some ideas, but you can choose your own. A few of these have already tried a comeback. *You can do it better.*"],
+    button:"Pick one for me", hint:"Or click one to choose it.",
+    note:"Obviously I am not looking for an amazing business plan here, this is just for a bit of fun. Some comebacks make total sense, and some only make sense at two in the morning. Both are welcome."},
+  shelf: [
+    {head:"Made in Germany", items:["Quelle","Neckermann","Afri-Cola","Grundig","Trabant"]},
+    {head:"Tech", items:["Nokia","BlackBerry","MySpace","Atari","Walkman"]},
+    {head:"Shops and travel", items:["Woolworths (UK)","Blockbuster","Toys “R” Us","Schlecker","Pan Am"]},
+    {head:"Toys and treats", items:["Tamagotchi","Raleigh Chopper","Bonanzarad","Commodore 64","Spangles"]},
+  ],
+  rows: [
+    ["brand","My brand is:","Which old brand are you bringing back?"],
+    ["remember","What people remember about it:","The logo, the jingle, the smell of the shop, what your parents say about it…"],
+    ["idea","My big idea is:","What exactly are you launching? A product, a shop, a service, something completely mad?"],
+    ["who","It’s for (first):","Who buys it first? People who remember it, people who have never heard of it, someone else?"],
+    ["never","The one thing I would never change:","What has to stay exactly as it was, or nobody will recognise the brand?"],
+    ["promote","I would promote it by:","Who do you get to talk about it, and where?"],
+  ],
+  example: {heading:"Here’s one I made earlier", values:{
+    brand:"Blockbuster",
+    remember:"Friday nights, the blue and yellow ticket logo, spending 40 minutes arguing about what to watch, and late fees.",
+    idea:"Blockbuster Nights: a video shop with a bar, in Friedrichshain. You can’t stream anything. You pick a film off a real shelf and it gets shown in a little booth with a sofa and popcorn.",
+    who:"People in their thirties who miss arguing about films with their friends, and students who have never held a DVD and think it’s retro.",
+    never:"The ticket logo. Also the late fees, but now they go to charity, so you can feel good about being disorganised.",
+    promote:"Getting someone from a big Netflix series photographed leaving the shop with a stack of DVDs. The irony does the marketing for you."}},
+  words: ["heritage","nostalgia","loyal customers","brand equity","relaunch"],
+  yours: {label:"Your comeback", heading:"Your idea", lead:"Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your comeback in a few sentences."},
+  rank: {label:"The ranking", heading:"Which comeback wins?", noun:"comeback", placeholder:"The comeback, e.g. Blockbuster Nights",
+    lead:"Each student tells us about their comeback in a few sentences. Add it, then argue it into place until everybody agrees."},
+};
+/* ---------- sets: ?set=<slug> loads sets/<slug>.json from this site; without it, the example above ---------- */
+const SLUG = (new URLSearchParams(location.search).get("set") || "").toLowerCase();
+function loadSet(def, go){
+  if (!SLUG) return go(def, "");
+  if (!/^[a-z0-9-]{1,80}$/.test(SLUG)) return go(def, "missing");
+  fetch("sets/" + SLUG + ".json", {cache:"no-cache"})
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => go(Object.assign({}, def, j), ""))
+    .catch(() => go(def, "missing"));
+}
+function setNotice(err){
+  if (err !== "missing") return;
+  const d = document.createElement("div");
+  d.setAttribute("role", "status");
+  d.style.cssText = "position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1b1f24;color:#fff;padding:10px 16px;border-radius:10px;font:14px system-ui,sans-serif;z-index:99;max-width:calc(100% - 32px)";
+  d.textContent = "We couldn't find that set, so this is the example version.";
+  document.body.appendChild(d); setTimeout(() => d.remove(), 6000);
+}
+loadSet(DEFAULT, (SET, setErr) => {
+document.title = SET.name; document.querySelector(".brandmark h1").textContent = SET.name;
+const COLS = [["var(--mustard)","#24201b"],["var(--orange)","#fff"],["var(--rust)","#fff"],["var(--teal)","#fff"]];
+const BRANDS = SET.shelf.map((b, i) => ({head:b.head, items:b.items, c:COLS[i % 4][0], ink:COLS[i % 4][1]}));
+const ROWS = SET.rows, EXAMPLE = SET.example.values, WORDS = SET.words;
+const md = t => esc(t).replace(/\*([^*]+)\*/g, "<em>$1</em>");
 // The ranking is for the teacher's screen only: open the page with ?teacher (remembered for this tab).
 const TEACHER = (() => {
+  const k = "bring-it-back-teacher" + (SLUG ? "-" + SLUG : "");
   let t = new URLSearchParams(location.search).has("teacher");
-  try { if (t) sessionStorage.setItem("bring-it-back-teacher", "1"); else t = sessionStorage.getItem("bring-it-back-teacher") === "1"; } catch (e) {}
+  try { if (t) sessionStorage.setItem(k, "1"); else t = sessionStorage.getItem(k) === "1"; } catch (e) {}
   return t;
 })();
 const STEPS = [
-  {id:"brands", short:"Pick a brand"},
+  {id:"brands", short:SET.pick.label},
   {id:"example", short:"Example"},
-  {id:"yours", short:"Your comeback"},
-  {id:"vote", short:"The ranking", teacher:true},
+  {id:"yours", short:SET.yours.label},
+  {id:"vote", short:SET.rank.label, teacher:true},
 ].filter(s => TEACHER || !s.teacher);
-const BRANDS = [
-  {head:"Made in Germany", c:"var(--mustard)", ink:"#24201b", items:["Quelle","Neckermann","Afri-Cola","Grundig","Trabant"]},
-  {head:"Tech", c:"var(--orange)", items:["Nokia","BlackBerry","MySpace","Atari","Walkman"]},
-  {head:"Shops and travel", c:"var(--rust)", items:["Woolworths (UK)","Blockbuster","Toys “R” Us","Schlecker","Pan Am"]},
-  {head:"Toys and treats", c:"var(--teal)", items:["Tamagotchi","Raleigh Chopper","Bonanzarad","Commodore 64","Spangles"]},
-];
-const ROWS = [
-  ["brand","My brand is:","Which old brand are you bringing back?"],
-  ["remember","What people remember about it:","The logo, the jingle, the smell of the shop, what your parents say about it…"],
-  ["idea","My big idea is:","What exactly are you launching? A product, a shop, a service, something completely mad?"],
-  ["who","It’s for (first):","Who buys it first? People who remember it, people who have never heard of it, someone else?"],
-  ["never","The one thing I would never change:","What has to stay exactly as it was, or nobody will recognise the brand?"],
-  ["promote","I would promote it by:","Who do you get to talk about it, and where?"],
-];
-const EXAMPLE = {
-  brand:"Blockbuster",
-  remember:"Friday nights, the blue and yellow ticket logo, spending 40 minutes arguing about what to watch, and late fees.",
-  idea:"Blockbuster Nights: a video shop with a bar, in Friedrichshain. You can’t stream anything. You pick a film off a real shelf and it gets shown in a little booth with a sofa and popcorn.",
-  who:"People in their thirties who miss arguing about films with their friends, and students who have never held a DVD and think it’s retro.",
-  never:"The ticket logo. Also the late fees, but now they go to charity, so you can feel good about being disorganised.",
-  promote:"Getting someone from a big Netflix series photographed leaving the shop with a stack of DVDs. The irony does the marketing for you.",
-};
-const WORDS = ["heritage","nostalgia","loyal customers","brand equity","relaunch"];
 
-const KEY = "bring-it-back-v1";
+const KEY = "bring-it-back-v1" + (SLUG ? "-" + SLUG : "");
 let S = {pitches:[], draft:{}, picked:null};
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch (e) {}
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
@@ -248,36 +284,36 @@ function footnav(i){
 
 /* ---------- views ---------- */
 function viewBrands(){
-  return band(`<span class="label">Step 1 · Up to you!</span><h2>Pick a brand and bring it back</h2>`,
-    `<p class="lead">Every country has brands that everybody’s grandparents knew. Some have disappeared, some are still around but only old people buy them, and every now and then one makes a surprise comeback.</p><p class="lead">Choose a brand that has died, or is quietly gathering dust, and bring it back. Here are some ideas, but you can choose your own. A few of these have already tried a comeback. <em>You can do it better.</em></p>`)
-  + `<div class="row"><button class="btn" type="button" id="spin">Pick one for me</button><span class="note" id="spinNote">${S.picked ? "Picked: <strong>"+esc(S.picked)+"</strong>" : "Or click a brand to choose it."}</span></div>
+  return band(`<span class="label">Step 1 · ${esc(SET.pick.eyebrow)}</span><h2>${esc(SET.pick.heading)}</h2>`,
+    SET.pick.lead.map(p => `<p class="lead">${md(p)}</p>`).join(""))
+  + `<div class="row"><button class="btn" type="button" id="spin">${esc(SET.pick.button)}</button><span class="note" id="spinNote">${S.picked ? "Picked: <strong>"+esc(S.picked)+"</strong>" : esc(SET.pick.hint)}</span></div>
      <div class="shelf">${BRANDS.map(b => `<div class="col"><div class="colhead" style="background:${b.c};color:${b.ink||"#fff"}">${esc(b.head)}</div>
        ${b.items.map(n => `<button type="button" class="tagbtn${S.picked===n?" picked":""}" data-brand="${esc(n)}">${esc(n)}</button>`).join("")}</div>`).join("")}</div>
-     <p class="note">Obviously I am not looking for an amazing business plan here, this is just for a bit of fun. Some comebacks make total sense, and some only make sense at two in the morning. Both are welcome.</p>` + footnav(0);
+     <p class="note">${md(SET.pick.note)}</p>` + footnav(0);
 }
 function viewExample(){
-  return band(`<span class="label">Step 2 · Example</span><h2>Here’s one I made earlier</h2>`, "")
-  + `<div class="tmpl">${ROWS.map(([k,l]) => `<div class="r"><div class="k">${l}</div><div class="v">${esc(EXAMPLE[k])}</div></div>`).join("")}</div>` + footnav(1);
+  return band(`<span class="label">Step 2 · Example</span><h2>${esc(SET.example.heading)}</h2>`, "")
+  + `<div class="tmpl">${ROWS.map(([k,l]) => `<div class="r"><div class="k">${esc(l)}</div><div class="v">${esc(EXAMPLE[k])}</div></div>`).join("")}</div>` + footnav(1);
 }
 function viewYours(){
   const d = S.draft || {};
-  return band(`<span class="label">Step 3 · Your comeback</span><h2>Your idea</h2>`,
-    `<p class="lead">Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your comeback in a few sentences.</p>`)
-  + `<div class="tmpl">${ROWS.map(([k,l,hint]) => `<div class="r"><label class="k" for="f-${k}">${l}</label><div class="v"><textarea id="f-${k}" data-k="${k}" rows="2" placeholder="${esc(k==="brand" && S.picked ? S.picked + " (or choose your own)" : hint)}">${esc(d[k]||"")}</textarea></div></div>`).join("")}</div>
+  return band(`<span class="label">Step 3 · ${esc(SET.yours.label)}</span><h2>${esc(SET.yours.heading)}</h2>`,
+    `<p class="lead">${md(SET.yours.lead)}</p>`)
+  + `<div class="tmpl">${ROWS.map(([k,l,hint]) => `<div class="r"><label class="k" for="f-${k}">${esc(l)}</label><div class="v"><textarea id="f-${k}" data-k="${k}" rows="2" placeholder="${esc(k===ROWS[0][0] && S.picked ? S.picked + " (or choose your own)" : hint)}">${esc(d[k]||"")}</textarea></div></div>`).join("")}</div>
      <div class="panel"><h3>Try to use some of these words when you tell us about it</h3><div class="words" id="words">${WORDS.map(w => `<span class="chip" data-w="${esc(w)}">${esc(w)}</span>`).join("")}</div></div>
      <div class="row"><button class="btn ghost small" type="button" id="clearDraft">Start again</button></div>` + footnav(2);
 }
 function viewVote(){
-  return band(`<span class="label">Step 4 · The ranking</span><h2>Which comeback wins?</h2>`,
-    `<p class="lead">Each student tells us about their comeback in a few sentences. Add it, then argue it into place until everybody agrees. Only you see this step: students\u2019 copies of the page stop at Your comeback.</p>`)
+  return band(`<span class="label">Step 4 · ${esc(SET.rank.label)}</span><h2>${esc(SET.rank.heading)}</h2>`,
+    `<p class="lead">${md(SET.rank.lead)} Only you see this step: students\u2019 copies of the page stop at ${esc(SET.yours.label)}.</p>`)
   + `<div class="panel">
       <form class="addrow" id="addPitch">
-        <label for="pName" hidden>The comeback</label>
-        <input id="pName" type="text" placeholder="The comeback, e.g. Blockbuster Nights" autocomplete="off">
+        <label for="pName" hidden>${esc(SET.rank.noun)}</label>
+        <input id="pName" type="text" placeholder="${esc(SET.rank.placeholder)}" autocomplete="off">
         <label for="pWho" hidden>Whose idea</label>
         <input id="pWho" type="text" placeholder="Whose idea? (optional)" autocomplete="off" style="max-width:15em">
         <button class="btn" type="submit">Add</button></form>
-      <p class="how">New ones go to the bottom. Drag a comeback up or down, or use the arrows, until the class agrees.</p>
+      <p class="how">New ones go to the bottom. Drag a ${esc(SET.rank.noun)} up or down, or use the arrows, until the class agrees.</p>
       <ol class="board" id="board"></ol>
       <div class="row"><button class="btn ghost small" type="button" id="clearAll">Clear the list for the next class</button><span id="clearConfirm" class="note" hidden>Clear the whole list? <button class="btn small" type="button" id="clearYes">Yes, clear</button> <button class="btn ghost small" type="button" id="clearNo">Keep</button></span></div>
     </div>` + footnav(3);
@@ -287,7 +323,7 @@ function viewVote(){
 function renderBoard(focusId, focusAct){
   const el = $("#board"); if (!el) return;
   const L = S.pitches;
-  if (!L.length) { el.innerHTML = `<li class="empty">Nothing here yet. Add the first comeback above as the student tells you about it.</li>`; return; }
+  if (!L.length) { el.innerHTML = `<li class="empty">Nothing here yet. Add the first ${esc(SET.rank.noun)} above as the student tells you about it.</li>`; return; }
   el.innerHTML = L.map((c, i) => `<li class="item${i < 3 ? " t" + (i+1) : ""}" data-id="${c.id}" draggable="true">
       <span class="grip" aria-hidden="true"></span>
       <span class="rank">${i+1}</span>
@@ -397,7 +433,8 @@ function spin(){
   };
   tick();
 }
-render();
+render(); setNotice(setErr);
+});
 })();
 </script>
 </body>

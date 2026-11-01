@@ -6,7 +6,7 @@
 <title>Guess the Brand</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-/* Layout: a brand-guidelines document, played alone on a phone or laptop. Each brand is a page; its six clues arrive as numbered guideline sections, from vague (tone of voice) to giveaway (the name), while a six-swatch meter shows what a correct guess is still worth. */
+/* Layout: a guidelines-style document (brand guidelines by default), played alone on a phone or laptop. Each brand is a page; its six clues arrive as numbered guideline sections, from vague (tone of voice) to giveaway (the name), while a six-swatch meter shows what a correct guess is still worth. */
 :root{
   --bg:#f4f4f1; --paper:#ffffff; --ink:#191c22; --muted:#626873; --line:#dcdcd6;
   --cobalt:#2747c8; --c1:#2747c8; --c2:#3d7fd6; --c3:#2f9e8f; --c4:#e0b43c; --c5:#e57a3a; --c6:#c9433c;
@@ -144,44 +144,44 @@ kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border
 <script>
 (() => {
 /* ---------- the brands: change these for another topic. Six clues each, vaguest first. ---------- */
-const FACETS = ["Tone of voice","Customers","Origin story","The look","Distinctive asset","The name"];
-const BRANDS = [
-  {name:"innocent", clues:[
+const D_FACETS = ["Tone of voice","Customers","Origin story","The look","Distinctive asset","The name"];
+const D_BRANDS = [
+  {name:"innocent", aliases:["innocent drinks", "innocent smoothies"], clues:[
     "Chatty and jokey, like a friend leaving you little notes. It never sounds like a company.",
     "Office workers who want to feel a bit healthier about their lunch.",
     "Three friends sold drinks at a London music festival in 1999 and asked people to vote with their empty bottles: one bin said YES, the other said NO.",
     "Plain bottles, lots of white space, and everything written in lowercase letters.",
     "A little face with a halo above its head. Every winter, some of the bottles wear tiny knitted woolly hats for charity.",
     "An adjective that means “not guilty”."]},
-  {name:"Ritter Sport", clues:[
+  {name:"Ritter Sport", aliases:["ritter", "rittersport"], clues:[
     "Practical, cheerful and very colourful. It says exactly what it is and why that's good.",
     "Pretty much everyone, but especially people who want something that fits in a pocket.",
     "A family firm near Stuttgart. In 1932 Clara, the founder's wife, suggested a shape that would fit into a sports jacket pocket without breaking.",
     "Every flavour has its own bright colour, so its part of the shelf looks like a rainbow.",
     "You open the packet by snapping it in the middle.",
     "Its slogan describes its shape: “Quadratisch. Praktisch. Gut.”"]},
-  {name:"Red Bull", clues:[
+  {name:"Red Bull", aliases:["redbull"], clues:[
     "Loud, extreme and a bit of a show-off. It would rather talk about adventure than about how it tastes.",
     "Students in exam week, long-distance drivers and people at parties.",
     "In the 1980s an Austrian marketing manager tried a Thai drink on a business trip and turned it into a product for Europe.",
     "A slim blue-and-silver can that looks almost the same everywhere in the world.",
     "Two animals charging at each other in front of a yellow sun.",
     "It promises to give you wings."]},
-  {name:"Oatly", clues:[
+  {name:"Oatly", aliases:["oatly oat drink"], clues:[
     "Cheeky and self-aware. Its packs talk to you like a slightly strange friend who never stops writing.",
     "City coffee drinkers, baristas and people who avoid dairy.",
     "It started with food science research at a university in southern Sweden in the 1990s.",
     "Hand-drawn-looking lettering and a lot of text all over the carton.",
     "A three-word slogan about a missing farm animal: “Wow no cow!”",
     "Its main ingredient, with a short ending added."]},
-  {name:"Nivea", clues:[
+  {name:"Nivea", aliases:["nivea creme"], clues:[
     "Calm, gentle and reassuring. It has been in your family's bathroom for as long as you can remember.",
     "Literally everyone, from babies to grandparents.",
     "A Hamburg company launched it in 1911 as the first cream of its kind that didn't separate.",
     "Dark blue and white, and almost nothing else.",
     "A flat, round, blue tin.",
     "It comes from a Latin word meaning “snow-white”."]},
-  {name:"Haribo", clues:[
+  {name:"Haribo", aliases:["haribo goldbears", "haribo gold bears"], clues:[
     "Happy, childish and a little bit silly, but it insists that adults love it too.",
     "Children, parents who say it's for the children, and students at two in the morning.",
     "In 1920 a confectioner started making sweets in his kitchen in a German city, with a sack of sugar and a copper pot.",
@@ -190,8 +190,31 @@ const BRANDS = [
     "It's made from the first letters of the founder's first name, surname and home town."]},
 ];
 /* ------------------------------------------------------------------------------------------------ */
+const DEFAULT = {name:"Guess the Brand", what:"brand", whats:"brands", doc:"Brand guidelines", facets:D_FACETS, items:D_BRANDS};
+/* ---------- sets: ?set=<slug> loads sets/<slug>.json from this site; without it, the example above ---------- */
+const SLUG = (new URLSearchParams(location.search).get("set") || "").toLowerCase();
+function loadSet(def, go){
+  if (!SLUG) return go(def, "");
+  if (!/^[a-z0-9-]{1,80}$/.test(SLUG)) return go(def, "missing");
+  fetch("sets/" + SLUG + ".json", {cache:"no-cache"})
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => go(Object.assign({}, def, j), ""))
+    .catch(() => go(def, "missing"));
+}
+function setNotice(err){
+  if (err !== "missing") return;
+  const d = document.createElement("div");
+  d.setAttribute("role", "status");
+  d.style.cssText = "position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:#1b1f24;color:#fff;padding:10px 16px;border-radius:10px;font:14px system-ui,sans-serif;z-index:99;max-width:calc(100% - 32px)";
+  d.textContent = "We couldn't find that set, so this is the example version.";
+  document.body.appendChild(d); setTimeout(() => d.remove(), 6000);
+}
+loadSet(DEFAULT, (SET, setErr) => {
+const FACETS = SET.facets, BRANDS = SET.items, WHAT = SET.what, WHATS = SET.whats, DOC = SET.doc;
+const ALIASES = Object.fromEntries(BRANDS.map(b => [b.name, b.aliases || []]));
+const Cap = w => w.charAt(0).toUpperCase() + w.slice(1);
+document.title = SET.name; document.querySelector(".title h1").textContent = SET.name;
 
-const ALIASES = {"innocent":["innocent drinks","innocent smoothies"], "Ritter Sport":["ritter","rittersport"], "Red Bull":["redbull"], "Oatly":["oatly oat drink"], "Nivea":["nivea creme"], "Haribo":["haribo goldbears","haribo gold bears"]};
 
 /* ---------- forgiving answer check: "strabucks" counts as "Starbucks" ---------- */
 const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]/g, "");
@@ -216,7 +239,7 @@ function isRight(guess, brand){
   });
 }
 
-const KEY = "guess-the-brand-solo-v1";
+const KEY = "guess-the-brand-solo-v1" + (SLUG ? "-" + SLUG : "");
 const fresh = () => ({b:0, shown:1, guesses:[], results:[], screen:"intro"});
 let S = fresh();
 try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && Array.isArray(o.results)) S = Object.assign(fresh(), o); } } catch (e) {}
@@ -230,15 +253,15 @@ let fresh1 = 0;
 
 function info(){
   $("#scores").innerHTML = S.screen === "intro" ? "" : `<div class="score">Your score<b>${total()}</b></div>`;
-  $("#info").textContent = (S.screen === "brand" || S.screen === "reveal") ? `Brand ${S.b + 1} of ${BRANDS.length}` : "";
+  $("#info").textContent = (S.screen === "brand" || S.screen === "reveal") ? `${Cap(WHAT)} ${S.b + 1} of ${BRANDS.length}` : "";
 }
 function intro(){
-  return `<h2>Six clues. One brand. Guess early, score big.</h2>
+  return `<h2>Six clues. One ${esc(WHAT)}. Guess early, score big.</h2>
   <div class="setup">
     <div class="panel">
       <h3>How it works</h3>
       <ol class="rules">
-        <li>You play on your own phone or laptop. You see one clue about a mystery brand.</li>
+        <li>You play on your own phone or laptop. You see one clue about a mystery ${esc(WHAT)}.</li>
         <li><strong>Type a guess to get the next clue.</strong> Every wrong guess opens another clue, from vague to obvious.</li>
         <li>Right after the first clue: <strong>6 points</strong>. After the second: 5, and so on down to <strong>1 point</strong> after the last clue.</li>
         <li>Don't worry about spelling. Close enough counts.</li>
@@ -246,8 +269,8 @@ function intro(){
       <div class="points-key">${[1,2,3,4,5,6].map(n => `<span style="background:${COL(n)}">Clue ${n}: ${7-n} pts</span>`).join("")}</div>
     </div>
     <div class="panel">
-      <h3>${BRANDS.length} brands, up to ${BRANDS.length * 6} points</h3>
-      <p>When you finish, your teacher will ask for your score. Be ready to say which clue gave each brand away.</p>
+      <h3>${BRANDS.length} ${esc(WHATS)}, up to ${BRANDS.length * 6} points</h3>
+      <p>When you finish, your teacher will ask for your score. Be ready to say which clue gave each ${esc(WHAT)} away.</p>
       <div><button class="btn big" type="button" id="begin">${S.results.length ? "Carry on" : "Start"}</button></div>
     </div>
   </div>`;
@@ -264,13 +287,13 @@ function brand(){
   const w = worth();
   return `<div class="page playing">
     <article class="doc">
-      <div class="doc-head"><span class="who mystery">Brand ${S.b + 1}: ? ? ?</span><span class="label">Brand guidelines</span></div>
+      <div class="doc-head"><span class="who mystery">${esc(Cap(WHAT))} ${S.b + 1}: ? ? ?</span><span class="label">${esc(DOC)}</span></div>
       ${cluesHTML(false)}
     </article>
     <aside class="side">
       <form class="guess" id="guessForm" autocomplete="off">
         <label for="g" class="label">Your guess</label>
-        <div class="gi"><input id="g" type="text" placeholder="Which brand is it?" autocapitalize="off" spellcheck="false" enterkeyhint="go"><button class="btn" type="submit">Guess</button></div>
+        <div class="gi"><input id="g" type="text" placeholder="Which ${esc(WHAT)} is it?" autocapitalize="off" spellcheck="false" enterkeyhint="go"><button class="btn" type="submit">Guess</button></div>
         <p class="hint">Right now: <strong>${w} pt${w === 1 ? "" : "s"}</strong>. ${S.shown < 6 ? "A wrong guess opens the next clue." : "Last clue: one more guess."}</p>
       </form>
       ${S.guesses.length ? `<div class="tried">${S.guesses.map(g => `<span class="chip no">✗ ${esc(g)}</span>`).join("")}</div>` : ""}
@@ -285,14 +308,14 @@ function reveal(){
   const res = r.pts ? `<strong>Yes!</strong> You got it after clue ${r.clue}: <b>+${r.pts}</b>` : `Not this time. No points for this one.`;
   return `<div class="page">
     <article class="doc">
-      <div class="doc-head"><span class="label">Brand ${S.b + 1} was</span><span class="label">Brand guidelines</span></div>
+      <div class="doc-head"><span class="label">${esc(Cap(WHAT))} ${S.b + 1} was</span><span class="label">${esc(DOC)}</span></div>
       <div class="answer">${esc(B.name)}</div>
       ${cluesHTML(true)}
     </article>
     <aside class="side">
       <div class="worth ${r.pts ? "won" : ""}"><span class="label">Result</span><p class="result">${res}</p></div>
       <p class="note">Which clue gave it away for you?</p>
-      <div class="row"><button class="btn big" type="button" id="next">${last ? "See my score" : "Next brand"}</button></div>
+      <div class="row"><button class="btn big" type="button" id="next">${last ? "See my score" : "Next " + esc(WHAT)}</button></div>
     </aside>
   </div>`;
 }
@@ -300,7 +323,7 @@ function final(){
   return `<span class="label">Your score</span>
   <h2>${total()} out of ${BRANDS.length * 6}</h2>
   <div class="podium">${S.results.map((r, k) => `<div class="pod${r.pts ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(BRANDS[k].name)}<span class="sub">${r.pts ? `after clue ${r.clue}` : "not guessed"}</span></span><span class="pts">${r.pts}</span></div>`).join("")}</div>
-  <p class="note">Tell your teacher your score, and which brand was the easiest to spot.</p>
+  <p class="note">Tell your teacher your score, and which ${esc(WHAT)} was the easiest to spot.</p>
   <div class="row"><button class="btn ghost" type="button" id="reset">Play again</button></div>`;
 }
 function render(){
@@ -324,7 +347,7 @@ function startBrand(i){ S.b = i; S.shown = 1; S.guesses = []; S.screen = "brand"
 const KEYVIEW = new URLSearchParams(location.search).has("key");
 function keyView(){
   return `<span class="label">Answer key · keep this on your phone</span>
-  <h2>The brands, in order</h2>
+  <h2>The ${esc(WHATS)}, in order</h2>
   <ol class="keylist">${BRANDS.map(b => `<li><span class="kn">${esc(b.name)}</span><span class="kc">${esc(b.clues[5])}</span></li>`).join("")}</ol>`;
 }
 
@@ -343,7 +366,8 @@ document.addEventListener("click", e => {
   if (b.id === "next") { if (S.b < BRANDS.length - 1) startBrand(S.b + 1); else { S.screen = "final"; save(); render(); } }
   if (b.id === "reset") { S = fresh(); save(); startBrand(0); }
 });
-render();
+render(); setNotice(setErr);
+});
 })();
 </script>
 </body>
