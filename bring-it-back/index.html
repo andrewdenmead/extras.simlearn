@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bring It Back!</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+[hidden]{display:none!important}
+
+/* Layout: a four-step classroom run-through for the projector; a band of 1970s packaging stripes heads each step, content sits on a calm ground below. */
+:root{
+  --bg:#f2f1ec; --panel:#fbfaf6; --ink:#24201b; --muted:#6c655c; --line:#d9d4c9;
+  --mustard:#e2a72e; --orange:#d9662b; --rust:#9c3b22; --teal:#1f6f6b;
+  --accent:var(--teal); --on-accent:#fbfaf6; --tag:#f6e7b8; --tag-ink:#4a3410;
+  --shadow:0 1px 0 rgba(36,32,27,.06),0 6px 18px rgba(36,32,27,.07);
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Rethink Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1b1815; --panel:#24201c; --ink:#f1ebe0; --muted:#b0a596; --line:#3d3630;
+  --mustard:#e9b443; --orange:#e8763a; --rust:#c2553a; --teal:#4fa8a1;
+  --accent:#4fa8a1; --on-accent:#14110e; --tag:#4a3a1a; --tag-ink:#f6e3b0;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1b1815; --panel:#24201c; --ink:#f1ebe0; --muted:#b0a596; --line:#3d3630;
+  --mustard:#e9b443; --orange:#e8763a; --rust:#c2553a; --teal:#4fa8a1;
+  --accent:#4fa8a1; --on-accent:#14110e; --tag:#4a3a1a; --tag-ink:#f6e3b0;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(17px,1.15vw + 10px,21px);line-height:1.55;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+h1,h2{font-family:var(--display);font-weight:400;line-height:1.02;text-wrap:balance;margin:0;letter-spacing:.005em}
+p{margin:0;max-width:64ch}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+.label{font-family:var(--mono);font-size:.68em;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.brandmark{display:flex;align-items:center;gap:12px}
+.brandmark h1{font-size:clamp(28px,3vw,40px)}
+.mini-stripes{display:grid;grid-template-rows:repeat(4,5px);gap:2px;width:34px}
+.mini-stripes i{display:block;border-radius:3px}
+.s1{background:var(--mustard)}.s2{background:var(--orange)}.s3{background:var(--rust)}.s4{background:var(--teal)}
+nav.steps{display:flex;gap:6px;flex-wrap:wrap}
+nav.steps a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);padding:7px 12px 7px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:.8em;font-weight:600}
+nav.steps a b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--line);font-family:var(--mono);font-size:.8em;font-weight:500}
+nav.steps a[aria-current="step"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+nav.steps a[aria-current="step"] b{background:var(--on-accent);color:var(--accent)}
+
+/* step band */
+.band{position:relative;border-radius:18px;overflow:hidden;background:var(--panel);box-shadow:var(--shadow);margin-bottom:22px}
+.band .stripes{display:grid;grid-template-rows:repeat(4,12px)}
+.band .stripes i{display:block}
+.band .inner{padding:22px clamp(18px,3vw,36px) 26px;display:grid;gap:12px}
+.band h2{font-size:clamp(34px,5vw,66px)}
+.band .lead{font-size:1.08em;color:var(--ink)}
+.band .lead em{font-style:normal;background:var(--tag);color:var(--tag-ink);padding:0 .25em;border-radius:4px}
+
+section.step{display:grid;gap:22px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:12px;min-width:0}
+.panel h3{margin:0;font-size:1em;font-weight:700}
+.examples{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.74em;background:var(--tag);color:var(--tag-ink);padding:5px 10px;border-radius:6px;border:1px dashed color-mix(in srgb,var(--tag-ink) 35%,transparent)}
+.dont{display:flex;gap:12px;align-items:flex-start}
+.dont .x{flex:none;font-family:var(--display);color:var(--rust);font-size:1.4em;line-height:1}
+
+/* buttons and inputs */
+.btn{border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;background:var(--accent);color:var(--on-accent);display:inline-flex;align-items:center;gap:8px;text-decoration:none;line-height:1.2}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:6px 11px;font-size:.78em;border-radius:8px}
+.btn:hover{filter:brightness(1.06)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=text],textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+textarea{resize:vertical;min-height:2.8em}
+.addrow{display:flex;gap:10px}
+.addrow input{flex:1}
+@media (max-width:520px){.addrow{flex-direction:column}}
+
+/* picture wall */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{position:relative;background:var(--panel);border:2px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0;cursor:default}
+.card.active{border-color:var(--accent)}
+.card .pic{aspect-ratio:4/3;max-width:100%;display:grid;place-items:center;background:repeating-linear-gradient(-45deg,var(--bg) 0 10px,color-mix(in srgb,var(--line) 55%,var(--bg)) 10px 20px);text-align:center;padding:10px;color:var(--muted);font-size:.78em;cursor:pointer}
+.card .pic img{width:100%;height:100%;object-fit:contain;background:var(--bg)}
+.card .pic.has{padding:0;background:var(--bg)}
+.card.drag .pic{outline:3px dashed var(--accent);outline-offset:-8px}
+.card .meta{padding:12px 14px;display:grid;gap:8px;align-content:start}
+.card .name{font-weight:700;line-height:1.25;overflow-wrap:anywhere}
+.card .who{font-size:.78em;color:var(--muted)}
+.card .tools{display:flex;gap:6px;flex-wrap:wrap}
+.card .del{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:50%;border:0;background:color-mix(in srgb,var(--panel) 85%,transparent);color:var(--ink);cursor:pointer;font-weight:700}
+.empty{border:2px dashed var(--line);border-radius:14px;padding:26px;color:var(--muted);text-align:center}
+.how{font-size:.82em;color:var(--muted)}
+.how ol{margin:.3em 0 0;padding-left:1.3em;display:grid;gap:2px}
+kbd{font-family:var(--mono);font-size:.85em;background:var(--bg);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 .35em}
+
+/* brand shelf */
+.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.shelf{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.shelf{grid-template-columns:minmax(0,1fr)}}
+.shelf .colhead{font-family:var(--mono);font-size:.7em;letter-spacing:.09em;text-transform:uppercase;padding:6px 10px;border-radius:8px 8px 0 0;color:#fff}
+.shelf .col{display:grid;gap:8px;align-content:start}
+.tagbtn{position:relative;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:6px 12px 12px 6px;padding:10px 14px 10px 30px;font-weight:600;cursor:pointer;transition:transform .15s}
+.tagbtn::before{content:"";position:absolute;left:11px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.tagbtn:hover{transform:translateX(3px)}
+.tagbtn.picked{background:var(--mustard);border-color:var(--mustard);color:#24201b}
+.tagbtn.lit{background:var(--tag);color:var(--tag-ink)}
+.note{font-size:.85em;color:var(--muted)}
+
+/* template tables */
+.tmpl{display:grid;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.tmpl .r{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);border-top:1px solid var(--line)}
+.tmpl .r:first-child{border-top:0}
+.tmpl .k{padding:14px 16px;background:color-mix(in srgb,var(--teal) 13%,var(--panel));font-weight:700;font-size:.9em}
+.tmpl .v{padding:14px 16px;min-width:0}
+.tmpl .v textarea{background:transparent;border:0;padding:0;border-radius:0;min-height:2.6em}
+.tmpl .v textarea:focus{outline:none}
+.tmpl .v textarea::placeholder{font-style:italic;color:var(--muted);opacity:1}
+.tmpl .r:focus-within{box-shadow:inset 4px 0 0 var(--accent)}
+@media (max-width:620px){.tmpl .r{grid-template-columns:minmax(0,1fr)}.tmpl .k{padding-bottom:8px}}
+.words{display:flex;gap:8px;flex-wrap:wrap}
+.words .chip.used{background:var(--teal);color:var(--on-accent);border-style:solid;border-color:transparent}
+
+/* votes */
+.votes{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.vote{display:flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid var(--line);border-radius:10px;padding:4px 4px 4px 10px;font-size:.78em}
+.vote b{font-family:var(--mono);font-size:1.25em;font-variant-numeric:tabular-nums}
+.vote button{border:0;background:var(--bg);border-radius:7px;width:30px;height:30px;font-weight:700;cursor:pointer}
+.crown{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:.62em;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:var(--mustard);color:#24201b;display:flex;gap:6px}
+.crown.f{background:var(--orange);color:#fff}
+.crowns{position:absolute;top:8px;left:8px;display:grid;gap:4px}
+.crowns .crown{position:static}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(15,12,10,.92);display:grid;grid-template-rows:1fr auto;padding:max(20px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));gap:14px}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;margin:auto;border-radius:8px}
+.lightbox .cap{color:#f1ebe0;text-align:center;font-family:var(--display);font-size:clamp(24px,3vw,44px)}
+.lightbox button{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:max(14px,env(safe-area-inset-right,0px));background:#f1ebe0;color:#1b1815;border:0;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}
+
+.toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:.85em;z-index:60;max-width:calc(100% - 32px)}
+.footnav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+/* ranking board */
+.board{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.board .empty{list-style:none}
+.item{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px 12px 10px;cursor:grab;transition:transform .18s,box-shadow .18s,background .3s;position:relative}
+.item:active{cursor:grabbing}
+.item.dragging{opacity:.45}
+.item.over-top::before,.item.over-bottom::after{content:"";position:absolute;left:10px;right:10px;height:4px;border-radius:2px;background:var(--accent)}
+.item.over-top::before{top:-7px}.item.over-bottom::after{bottom:-7px}
+.item.landed{background:color-mix(in srgb,var(--mustard) 22%,var(--panel))}
+.grip{width:10px;height:26px;background:radial-gradient(circle,var(--muted) 1.4px,transparent 1.6px) 0 0/5px 6.5px;opacity:.6}
+.rank{font-family:var(--display);font-size:clamp(28px,3vw,42px);line-height:1;min-width:1.4em;text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+.item .name{font-weight:700;font-size:1.08em;line-height:1.25;overflow-wrap:anywhere}
+.item .who{font-size:.8em;color:var(--muted)}
+.item.t1{border:2px solid var(--mustard);box-shadow:var(--shadow)}
+.item.t1 .rank{color:var(--mustard)}
+.item.t2 .rank{color:var(--teal)}
+.item.t3 .rank{color:var(--orange)}
+.item.t1 .name{font-size:1.25em}
+.moves{display:flex;gap:6px}
+.mv{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--bg);font-weight:700;font-size:1.05em;cursor:pointer;color:var(--ink)}
+.mv:disabled{opacity:.3;cursor:default}
+.mv.del{color:var(--rust)}
+@media (max-width:560px){.item{grid-template-columns:auto minmax(0,1fr);gap:10px}.grip{display:none}.moves{grid-column:1/-1;justify-content:flex-end}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@keyframes flick{0%,100%{transform:none}50%{transform:translateX(4px)}}
+.tagbtn.spin{animation:flick .12s}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brandmark">
+      <div class="mini-stripes" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i></div>
+      <h1>Bring It Back!</h1>
+    </div>
+    <nav class="steps" aria-label="Steps" id="nav"></nav>
+  </header>
+
+  <main id="main"></main>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script>
+(() => {
+const STEPS = [
+  {id:"brands", short:"Pick a brand"},
+  {id:"example", short:"Example"},
+  {id:"yours", short:"Your comeback"},
+  {id:"vote", short:"The ranking"},
+];
+const BRANDS = [
+  {head:"Made in Germany", c:"var(--mustard)", ink:"#24201b", items:["Quelle","Neckermann","Afri-Cola","Grundig","Trabant"]},
+  {head:"Tech", c:"var(--orange)", items:["Nokia","BlackBerry","MySpace","Atari","Walkman"]},
+  {head:"Shops and travel", c:"var(--rust)", items:["Woolworths (UK)","Blockbuster","Toys “R” Us","Schlecker","Pan Am"]},
+  {head:"Toys and treats", c:"var(--teal)", items:["Tamagotchi","Raleigh Chopper","Bonanzarad","Commodore 64","Spangles"]},
+];
+const ROWS = [
+  ["brand","My brand is:","Which old brand are you bringing back?"],
+  ["remember","What people remember about it:","The logo, the jingle, the smell of the shop, what your parents say about it…"],
+  ["idea","My big idea is:","What exactly are you launching? A product, a shop, a service, something completely mad?"],
+  ["who","It’s for (first):","Who buys it first? People who remember it, people who have never heard of it, someone else?"],
+  ["never","The one thing I would never change:","What has to stay exactly as it was, or nobody will recognise the brand?"],
+  ["promote","I would promote it by:","Who do you get to talk about it, and where?"],
+];
+const EXAMPLE = {
+  brand:"Blockbuster",
+  remember:"Friday nights, the blue and yellow ticket logo, spending 40 minutes arguing about what to watch, and late fees.",
+  idea:"Blockbuster Nights: a video shop with a bar, in Friedrichshain. You can’t stream anything. You pick a film off a real shelf and it gets shown in a little booth with a sofa and popcorn.",
+  who:"People in their thirties who miss arguing about films with their friends, and students who have never held a DVD and think it’s retro.",
+  never:"The ticket logo. Also the late fees, but now they go to charity, so you can feel good about being disorganised.",
+  promote:"Getting someone from a big Netflix series photographed leaving the shop with a stack of DVDs. The irony does the marketing for you.",
+};
+const WORDS = ["heritage","nostalgia","loyal customers","brand equity","relaunch"];
+
+const KEY = "bring-it-back-v1";
+let S = {pitches:[], draft:{}, picked:null};
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch (e) {}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const uid = () => Math.random().toString(36).slice(2, 9);
+const $ = (s, el=document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let toastT;
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 3200); }
+
+function band(title, lead){
+  return `<div class="band"><div class="stripes" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i></div>
+  <div class="inner">${title}${lead}</div></div>`;
+}
+function footnav(i){
+  const prev = i > 0 ? `<a class="btn ghost" href="#${STEPS[i-1].id}">← ${STEPS[i-1].short}</a>` : "<span></span>";
+  const next = i < STEPS.length-1 ? `<a class="btn" href="#${STEPS[i+1].id}">${STEPS[i+1].short} →</a>` : "";
+  return `<div class="footnav">${prev}${next}</div>`;
+}
+
+/* ---------- views ---------- */
+function viewBrands(){
+  return band(`<span class="label">Step 1 · Up to you!</span><h2>Pick a brand and bring it back</h2>`,
+    `<p class="lead">Every country has brands that everybody’s grandparents knew. Some have disappeared, some are still around but only old people buy them, and every now and then one makes a surprise comeback.</p><p class="lead">Choose a brand that has died, or is quietly gathering dust, and bring it back. Here are some ideas, but you can choose your own. A few of these have already tried a comeback. <em>You can do it better.</em></p>`)
+  + `<div class="row"><button class="btn" type="button" id="spin">Pick one for me</button><span class="note" id="spinNote">${S.picked ? "Picked: <strong>"+esc(S.picked)+"</strong>" : "Or click a brand to choose it."}</span></div>
+     <div class="shelf">${BRANDS.map(b => `<div class="col"><div class="colhead" style="background:${b.c};color:${b.ink||"#fff"}">${esc(b.head)}</div>
+       ${b.items.map(n => `<button type="button" class="tagbtn${S.picked===n?" picked":""}" data-brand="${esc(n)}">${esc(n)}</button>`).join("")}</div>`).join("")}</div>
+     <p class="note">Obviously I am not looking for an amazing business plan here, this is just for a bit of fun. Some comebacks make total sense, and some only make sense at two in the morning. Both are welcome.</p>` + footnav(0);
+}
+function viewExample(){
+  return band(`<span class="label">Step 2 · Example</span><h2>Here’s one I made earlier</h2>`, "")
+  + `<div class="tmpl">${ROWS.map(([k,l]) => `<div class="r"><div class="k">${l}</div><div class="v">${esc(EXAMPLE[k])}</div></div>`).join("")}</div>` + footnav(1);
+}
+function viewYours(){
+  const d = S.draft || {};
+  return band(`<span class="label">Step 3 · Your comeback</span><h2>Your idea</h2>`,
+    `<p class="lead">Fill it in on your own phone or laptop. It stays on your device.</p>`)
+  + `<div class="tmpl">${ROWS.map(([k,l,hint]) => `<div class="r"><label class="k" for="f-${k}">${l}</label><div class="v"><textarea id="f-${k}" data-k="${k}" rows="2" placeholder="${esc(k==="brand" && S.picked ? S.picked + " (or choose your own)" : hint)}">${esc(d[k]||"")}</textarea></div></div>`).join("")}</div>
+     <div class="panel"><h3>Try to use some of these words when you tell us about it</h3><div class="words" id="words">${WORDS.map(w => `<span class="chip" data-w="${esc(w)}">${esc(w)}</span>`).join("")}</div></div>
+     <div class="row"><button class="btn ghost small" type="button" id="clearDraft">Start again</button></div>` + footnav(2);
+}
+function viewVote(){
+  return band(`<span class="label">Step 4 · The ranking</span><h2>Which comeback wins?</h2>`,
+    `<p class="lead">Tell us about your comeback in a few sentences, using your table. Then we argue about the ranking until everybody agrees.</p>`)
+  + `<div class="panel">
+      <form class="addrow" id="addPitch">
+        <label for="pName" hidden>The comeback</label>
+        <input id="pName" type="text" placeholder="The comeback, e.g. Blockbuster Nights" autocomplete="off">
+        <label for="pWho" hidden>Whose idea</label>
+        <input id="pWho" type="text" placeholder="Whose idea? (optional)" autocomplete="off" style="max-width:15em">
+        <button class="btn" type="submit">Add</button></form>
+      <p class="how">New ones go to the bottom. Drag a comeback up or down, or use the arrows, until the class agrees.</p>
+      <ol class="board" id="board"></ol>
+      <div class="row"><button class="btn ghost small" type="button" id="clearAll">Clear the list for the next class</button><span id="clearConfirm" class="note" hidden>Clear the whole list? <button class="btn small" type="button" id="clearYes">Yes, clear</button> <button class="btn ghost small" type="button" id="clearNo">Keep</button></span></div>
+    </div>` + footnav(3);
+}
+
+/* ---------- ranking board ---------- */
+function renderBoard(focusId, focusAct){
+  const el = $("#board"); if (!el) return;
+  const L = S.pitches;
+  if (!L.length) { el.innerHTML = `<li class="empty">Nothing here yet. Add the first comeback above as the student tells you about it.</li>`; return; }
+  el.innerHTML = L.map((c, i) => `<li class="item${i < 3 ? " t" + (i+1) : ""}" data-id="${c.id}" draggable="true">
+      <span class="grip" aria-hidden="true"></span>
+      <span class="rank">${i+1}</span>
+      <div class="what"><div class="name">${esc(c.label)}</div>${c.who ? `<div class="who">${esc(c.who)}</div>` : ""}</div>
+      <div class="moves">
+        <button type="button" class="mv" data-act="up" aria-label="Move ${esc(c.label)} up"${i === 0 ? " disabled" : ""}>↑</button>
+        <button type="button" class="mv" data-act="down" aria-label="Move ${esc(c.label)} down"${i === L.length-1 ? " disabled" : ""}>↓</button>
+        <button type="button" class="mv del" data-act="del" aria-label="Remove ${esc(c.label)}">×</button>
+      </div></li>`).join("");
+  if (focusId) { const b = el.querySelector(`[data-id="${focusId}"] [data-act="${focusAct}"]`); if (b && !b.disabled) b.focus(); else el.querySelector(`[data-id="${focusId}"] [data-act]`)?.focus(); }
+}
+function move(id, to){
+  const L = S.pitches, from = L.findIndex(c => c.id === id); if (from < 0) return;
+  const [c] = L.splice(from, 1); L.splice(Math.max(0, Math.min(to, L.length)), 0, c); save();
+}
+
+/* ---------- routing and events ---------- */
+function current(){ const h = location.hash.slice(1); return Math.max(0, STEPS.findIndex(s => s.id === h)); }
+function render(){
+  const i = current();
+  $("#nav").innerHTML = STEPS.map((s, j) => `<a href="#${s.id}"${j===i?' aria-current="step"':""}><b>${j+1}</b>${s.short}</a>`).join("");
+  const v = [viewBrands, viewExample, viewYours, viewVote][i]();
+  $("#main").innerHTML = `<section class="step">${v}</section>`;
+  if (i === 3) renderBoard();
+  if (i === 2) markWords();
+}
+function markWords(){
+  const text = Object.values(S.draft || {}).join(" ").toLowerCase();
+  document.querySelectorAll("#words .chip").forEach(ch => ch.classList.toggle("used", text.includes(ch.dataset.w)));
+}
+window.addEventListener("hashchange", () => { render(); window.scrollTo({top:0}); });
+
+document.addEventListener("submit", e => {
+  e.preventDefault();
+  if (e.target.id !== "addPitch") return;
+  const nameEl = $("#pName"), whoEl = $("#pWho");
+  const label = nameEl.value.trim(); if (!label) { nameEl.focus(); return; }
+  S.pitches.push({id:uid(), label, who:whoEl.value.trim()}); save();
+  nameEl.value = ""; whoEl.value = ""; renderBoard(); nameEl.focus();
+});
+document.addEventListener("click", e => {
+  const item = e.target.closest(".item");
+  const actEl = e.target.closest("[data-act]");
+  if (item && actEl) {
+    const id = item.dataset.id, act = actEl.dataset.act, i = S.pitches.findIndex(c => c.id === id);
+    if (act === "up") { move(id, i-1); renderBoard(id, "up"); }
+    if (act === "down") { move(id, i+1); renderBoard(id, "down"); }
+    if (act === "del") { S.pitches.splice(i, 1); save(); renderBoard(); }
+    return;
+  }
+  const t = e.target.closest("button, .tagbtn"); if (!t) return;
+  if (t.dataset.brand) { S.picked = t.dataset.brand; save(); render(); }
+  if (t.id === "spin") spin();
+  if (t.id === "clearDraft") { S.draft = {}; save(); render(); }
+  if (t.id === "clearAll") $("#clearConfirm").hidden = false;
+  if (t.id === "clearNo") $("#clearConfirm").hidden = true;
+  if (t.id === "clearYes") { S.pitches = []; save(); render(); toast("The list is empty and ready for the next class."); }
+});
+
+let dragId = null;
+document.addEventListener("dragstart", e => {
+  const item = e.target.closest && e.target.closest(".item"); if (!item) return;
+  dragId = item.dataset.id; item.classList.add("dragging");
+  try { e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", item.querySelector(".name").textContent); } catch (err) {}
+});
+document.addEventListener("dragend", () => { dragId = null; document.querySelectorAll(".item").forEach(x => x.classList.remove("dragging","over-top","over-bottom")); });
+document.addEventListener("dragover", e => {
+  if (!dragId) return;
+  const item = e.target.closest && e.target.closest(".item"); if (!item) return;
+  e.preventDefault();
+  const r = item.getBoundingClientRect(), top = e.clientY < r.top + r.height/2;
+  document.querySelectorAll(".item").forEach(x => x.classList.remove("over-top","over-bottom"));
+  if (item.dataset.id !== dragId) item.classList.add(top ? "over-top" : "over-bottom");
+});
+document.addEventListener("drop", e => {
+  if (!dragId) return;
+  const item = e.target.closest && e.target.closest(".item"); if (!item) return;
+  e.preventDefault();
+  if (item.dataset.id !== dragId) {
+    const r = item.getBoundingClientRect(), top = e.clientY < r.top + r.height/2;
+    const from = S.pitches.findIndex(c => c.id === dragId);
+    let to = S.pitches.findIndex(c => c.id === item.dataset.id) + (top ? 0 : 1);
+    if (from < to) to--;
+    move(dragId, to);
+  }
+  const id = dragId; dragId = null; renderBoard();
+  const moved = document.querySelector(`.item[data-id="${id}"]`);
+  if (moved) { moved.classList.add("landed"); setTimeout(() => moved.classList.remove("landed"), 700); }
+});
+
+document.addEventListener("input", e => {
+  if (e.target.dataset && e.target.dataset.k) { S.draft[e.target.dataset.k] = e.target.value; save(); markWords(); }
+});
+
+function spin(){
+  const all = [...document.querySelectorAll(".tagbtn")]; if (!all.length) return;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const end = all[Math.floor(Math.random()*all.length)];
+  if (reduce) { S.picked = end.dataset.brand; save(); render(); return; }
+  let n = 0, last; const total = 16;
+  const tick = () => {
+    if (last) last.classList.remove("lit","spin");
+    last = n < total-1 ? all[Math.floor(Math.random()*all.length)] : end;
+    last.classList.add("lit","spin"); n++;
+    if (n < total) setTimeout(tick, 50 + n*12); else setTimeout(() => { S.picked = end.dataset.brand; save(); render(); }, 450);
+  };
+  tick();
+}
+render();
+})();
+</script>
+</body>
+</html>
