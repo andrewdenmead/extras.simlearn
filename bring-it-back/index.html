@@ -190,12 +190,18 @@ kbd{font-family:var(--mono);font-size:.85em;background:var(--bg);border:1px soli
 
 <script>
 (() => {
+// The ranking is for the teacher's screen only: open the page with ?teacher (remembered for this tab).
+const TEACHER = (() => {
+  let t = new URLSearchParams(location.search).has("teacher");
+  try { if (t) sessionStorage.setItem("bring-it-back-teacher", "1"); else t = sessionStorage.getItem("bring-it-back-teacher") === "1"; } catch (e) {}
+  return t;
+})();
 const STEPS = [
   {id:"brands", short:"Pick a brand"},
   {id:"example", short:"Example"},
   {id:"yours", short:"Your comeback"},
-  {id:"vote", short:"The ranking"},
-];
+  {id:"vote", short:"The ranking", teacher:true},
+].filter(s => TEACHER || !s.teacher);
 const BRANDS = [
   {head:"Made in Germany", c:"var(--mustard)", ink:"#24201b", items:["Quelle","Neckermann","Afri-Cola","Grundig","Trabant"]},
   {head:"Tech", c:"var(--orange)", items:["Nokia","BlackBerry","MySpace","Atari","Walkman"]},
@@ -256,14 +262,14 @@ function viewExample(){
 function viewYours(){
   const d = S.draft || {};
   return band(`<span class="label">Step 3 · Your comeback</span><h2>Your idea</h2>`,
-    `<p class="lead">Fill it in on your own phone or laptop. It stays on your device.</p>`)
+    `<p class="lead">Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your comeback in a few sentences.</p>`)
   + `<div class="tmpl">${ROWS.map(([k,l,hint]) => `<div class="r"><label class="k" for="f-${k}">${l}</label><div class="v"><textarea id="f-${k}" data-k="${k}" rows="2" placeholder="${esc(k==="brand" && S.picked ? S.picked + " (or choose your own)" : hint)}">${esc(d[k]||"")}</textarea></div></div>`).join("")}</div>
      <div class="panel"><h3>Try to use some of these words when you tell us about it</h3><div class="words" id="words">${WORDS.map(w => `<span class="chip" data-w="${esc(w)}">${esc(w)}</span>`).join("")}</div></div>
      <div class="row"><button class="btn ghost small" type="button" id="clearDraft">Start again</button></div>` + footnav(2);
 }
 function viewVote(){
   return band(`<span class="label">Step 4 · The ranking</span><h2>Which comeback wins?</h2>`,
-    `<p class="lead">Tell us about your comeback in a few sentences, using your table. Then we argue about the ranking until everybody agrees.</p>`)
+    `<p class="lead">Each student tells us about their comeback in a few sentences. Add it, then argue it into place until everybody agrees. Only you see this step: students\u2019 copies of the page stop at Your comeback.</p>`)
   + `<div class="panel">
       <form class="addrow" id="addPitch">
         <label for="pName" hidden>The comeback</label>
@@ -303,10 +309,11 @@ function current(){ const h = location.hash.slice(1); return Math.max(0, STEPS.f
 function render(){
   const i = current();
   $("#nav").innerHTML = STEPS.map((s, j) => `<a href="#${s.id}"${j===i?' aria-current="step"':""}><b>${j+1}</b>${s.short}</a>`).join("");
-  const v = [viewBrands, viewExample, viewYours, viewVote][i]();
+  const id = STEPS[i].id;
+  const v = {brands:viewBrands, example:viewExample, yours:viewYours, vote:viewVote}[id]();
   $("#main").innerHTML = `<section class="step">${v}</section>`;
-  if (i === 3) renderBoard();
-  if (i === 2) markWords();
+  if (id === "vote") renderBoard();
+  if (id === "yours") markWords();
 }
 function markWords(){
   const text = Object.values(S.draft || {}).join(" ").toLowerCase();
