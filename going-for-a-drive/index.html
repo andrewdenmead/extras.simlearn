@@ -6,95 +6,92 @@
 <title>Going for a Drive</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-/* Layout: a road trip on the student's phone. Each junction is a blue motorway sign with two exits; the route draws itself on a not-to-scale map; the destination city tells the class which choices you made. ?teacher shows every route and a city tally. */
+/* Layout: an agree/disagree road trip on the student's phone. Each statement is a blue motorway sign: disagree, turn left; agree, turn right. Four turns end in one of sixteen cities, and the city tells the class how you answered. ?teacher shows the whole map, what each city means, and a tally. */
 :root{
   --bg:#eef1ee; --paper:#ffffff; --ink:#1b1f24; --muted:#636b73; --line:#d4d9d5;
-  --sign:#1f5aa6; --sign-ink:#ffffff; --road:#c9cfca; --route:#f2b632; --green:#2b7a4b; --accent:#1f5aa6;
+  --sign:#1f5aa6; --sign-ink:#ffffff; --road:#c3cac5; --route:#f2b632; --green:#2b7a4b; --accent:#1f5aa6; --dis:#3b4148;
   --sans:"Rethink Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#111518; --paper:#1a1f23; --ink:#ecf0f2; --muted:#a0a9b0; --line:#2f363c;
-  --sign:#2c6cc4; --road:#3a4248; --route:#f4c04a; --green:#4caf78; --accent:#6aa3f0; color-scheme:dark}}
+  --sign:#2c6cc4; --road:#3a4248; --route:#f4c04a; --green:#4caf78; --accent:#6aa3f0; --dis:#c9d0d6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111518; --paper:#1a1f23; --ink:#ecf0f2; --muted:#a0a9b0; --line:#2f363c;
-  --sign:#2c6cc4; --road:#3a4248; --route:#f4c04a; --green:#4caf78; --accent:#6aa3f0; color-scheme:dark}
+  --sign:#2c6cc4; --road:#3a4248; --route:#f4c04a; --green:#4caf78; --accent:#6aa3f0; --dis:#c9d0d6; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,.8vw + 11px,20px);line-height:1.5}
 button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--route);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 40px;display:grid;gap:18px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px 40px;display:grid;gap:18px}
 .label{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.head h1{margin:0;font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
-.plate{font-family:var(--mono);font-size:.5em;font-weight:500;border:2px solid var(--ink);border-radius:5px;padding:1px 6px;letter-spacing:.06em}
+.head h1{margin:0;font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.01em}
 h2{margin:0;font-size:clamp(24px,3.2vw,42px);line-height:1.12;font-weight:700;letter-spacing:-.015em;text-wrap:balance}
 p{margin:0;max-width:62ch}
 .btn{border:0;border-radius:11px;padding:12px 20px;font-weight:700;cursor:pointer;background:var(--accent);color:#fff;line-height:1.2}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .btn.small{padding:7px 12px;font-size:.8em;border-radius:9px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px;align-items:start}
 @media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}}
-
-/* dashboard: budget and time */
-.dash{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gauge{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:grid;gap:6px}
-.gauge b{font-family:var(--mono);font-weight:500;font-size:1.15em;font-variant-numeric:tabular-nums}
-.gauge .track{height:8px;border-radius:4px;background:var(--bg);overflow:hidden}
-.gauge .fill{height:100%;background:var(--sign);border-radius:4px;transition:width .4s}
-.gauge.over .fill{background:#c4473f}
+.col{display:grid;gap:14px}
 
 /* the sign */
-.sign{background:var(--sign);color:var(--sign-ink);border-radius:14px;padding:18px 18px 16px;display:grid;gap:14px;box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--sign),0 14px 30px rgba(20,40,80,.18)}
-.sign .q{font-weight:700;font-size:1.12em;line-height:1.35}
-.sign .ctx{font-size:.9em;opacity:.92}
-.exits{display:grid;gap:10px}
-.exit{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;text-align:left;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.75);border-radius:10px;padding:12px 14px;cursor:pointer;color:inherit;transition:background .15s}
-.exit:hover{background:rgba(255,255,255,.2)}
-.arrow{width:38px;height:38px;border-radius:8px;background:#fff;color:var(--sign);display:grid;place-items:center;font-weight:700;font-size:1.2em}
-.exit .et{font-weight:700;line-height:1.3}
-.exit .ed{display:block;font-size:.84em;opacity:.9;margin-top:3px}
-.exit .cost{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:.74em;background:rgba(0,0,0,.22);border-radius:5px;padding:2px 7px}
+.sign{background:var(--sign);color:var(--sign-ink);border-radius:14px;padding:18px 18px 16px;display:grid;gap:16px;box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--sign),0 14px 30px rgba(20,40,80,.18)}
+.sign .n{font-family:var(--mono);font-size:.7em;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.sign .q{font-weight:700;font-size:clamp(21px,1.6vw + 12px,32px);line-height:1.25;text-wrap:balance}
+.turns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.turn{display:grid;justify-items:center;gap:2px;border-radius:11px;padding:14px 8px;cursor:pointer;font-weight:700;border:2px solid #fff;transition:transform .1s,filter .15s}
+.turn:active{transform:scale(.97)}
+.turn .a{font-size:1.6em;line-height:1}
+.turn .s{font-weight:600;font-size:.78em;opacity:.9}
+.turn.l{background:transparent;color:#fff}
+.turn.r{background:#fff;color:var(--sign)}
+.turn:hover{filter:brightness(1.06)}
 
 /* map */
 .mapbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px;display:grid;gap:6px}
 .mapbox svg{width:100%;height:auto;display:block}
 .mapbox .note{font-size:.75em;color:var(--muted);text-align:right}
-svg .road{stroke:var(--road);stroke-width:7;fill:none;stroke-linecap:round}
-svg .driven{stroke:var(--route);stroke-width:8;fill:none;stroke-linecap:round}
-svg .node{fill:var(--paper);stroke:var(--road);stroke-width:3}
-svg .node.on{stroke:var(--route);fill:var(--route)}
-svg .city{fill:var(--muted);font-family:var(--sans);font-size:15px;font-weight:600}
-svg .city.on{fill:var(--ink);font-weight:700}
-svg .start{fill:var(--ink);font-family:var(--sans);font-size:16px;font-weight:700}
-svg .dot{fill:var(--paper);stroke:var(--muted);stroke-width:2.5}
-svg .dot.on{fill:var(--route);stroke:var(--ink)}
-svg .car{fill:var(--ink)}
+svg .road{stroke:var(--road);stroke-width:4;fill:none;stroke-linecap:round}
+svg .driven{stroke:var(--route);stroke-width:6;fill:none;stroke-linecap:round}
+svg .node{fill:var(--paper);stroke:var(--road);stroke-width:2}
+svg .node.on{fill:var(--route);stroke:var(--route)}
+svg .dot{fill:var(--paper);stroke:var(--muted);stroke-width:2}
+svg .dot.on{fill:var(--route);stroke:var(--ink);stroke-width:2.5}
+svg .city{fill:var(--muted);font-family:var(--sans);font-size:13px;font-weight:600}
+svg .city.on{fill:var(--ink);font-size:16px;font-weight:700}
+svg .start{fill:var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+svg .lr{fill:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+svg .cnt{fill:var(--ink);font-family:var(--mono);font-size:13px;font-weight:500}
 
 /* arrival */
 .arrive{background:var(--green);color:#fff;border-radius:14px;padding:18px 20px;display:grid;gap:6px;box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--green)}
 .arrive .city{font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;gap:10px}
 .panel h3{margin:0;font-size:1em}
-.trip{margin:0;padding-left:1.3em;display:grid;gap:6px}
-.know{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media (max-width:560px){.know{grid-template-columns:1fr}}
-.know div{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:.92em}
-.know b{display:block;font-family:var(--mono);font-size:.68em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:2px}
+.recap{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.recap li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--bg);border-radius:10px;padding:9px 12px;font-size:.92em}
+.tag{font-family:var(--mono);font-size:.72em;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.tag.y{background:var(--sign);color:#fff}
+.tag.n{border:1.5px solid var(--dis);color:var(--dis)}
 
 /* teacher */
-.routes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.rcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;align-content:start}
-.rcard.top{border:2px solid var(--route)}
-.rcard .rc{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.rcard .rn{font-weight:700;font-size:1.2em}
-.rcard ol{margin:0;padding-left:1.2em;font-size:.82em;color:var(--muted);display:grid;gap:2px}
-.rcard .k{font-size:.82em}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px;font-weight:700;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--sign);border-color:var(--sign);color:#fff}
+.stmts{margin:0;padding-left:1.4em;display:grid;gap:4px}
+.cities{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.ccard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:6px}
+.ccard.top{border:2px solid var(--route)}
+.ccard .ch{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.ccard .cn{font-weight:700}
+.pattern{display:flex;gap:4px;flex-wrap:wrap}
 .count{display:flex;align-items:center;gap:6px}
-.count b{font-family:var(--mono);font-weight:500;font-size:1.3em;min-width:1.5em;text-align:center;font-variant-numeric:tabular-nums}
-.count button{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--bg);font-weight:700;cursor:pointer}
+.count b{font-family:var(--mono);font-weight:500;font-size:1.2em;min-width:1.5em;text-align:center;font-variant-numeric:tabular-nums}
+.count button{width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:var(--bg);font-weight:700;cursor:pointer}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -104,144 +101,131 @@ svg .car{fill:var(--ink)}
 
 <script>
 (() => {
-/* ---------- the trip: change these for another topic ---------- */
+/* ---------- the trip: change these for another topic (four statements a round) ---------- */
 const TOPIC = "Market research";
-const INTRO = "Your company launches a new high-protein snack bar in four months. You have <strong>€60,000</strong> and <strong>eight weeks</strong> for research. Three junctions, three decisions. Where will you end up?";
-const BUDGET = 60000, WEEKS = 8;
-// Each junction: id, question, context, and two exits (a = left, b = right) with cost (euros) and weeks.
-const J = {
-  "": {q:"First junction: do you start by asking people, or by watching what they do?", ctx:"",
-       a:{t:"Ask people", d:"Find out what they think of the idea.", eur:0, wk:0},
-       b:{t:"Watch people", d:"Find out what they actually buy and do.", eur:0, wk:0}},
-  "a": {q:"Who do you ask?", ctx:"You're asking. Now you need the right people.",
-       a:{t:"An online panel of 2,000 people", d:"A representative sample: chosen to match your target market in age, income and habits.", eur:25000, wk:3},
-       b:{t:"Your own followers and newsletter list", d:"A convenience sample: they're easy to reach and they already know you.", eur:0, wk:1}},
-  "b": {q:"Where do you watch?", ctx:"You're watching. Real behaviour, not opinions.",
-       a:{t:"Sell it in one city first", d:"A test market: real shops, real prices, real money, for six weeks.", eur:40000, wk:6},
-       b:{t:"Buy sales data and watch shoppers", d:"Sales figures for rival bars, plus a day in three supermarkets watching the aisle.", eur:15000, wk:2}},
-  "aa": {q:"What do you show the panel?", ctx:"2,000 people are waiting for your questions.",
-       a:{t:"A picture and a description", d:"A concept test: “How likely are you to buy this?” on a five-point scale.", eur:5000, wk:1},
-       b:{t:"The real bar, with the brand hidden", d:"A blind product test: they taste it at home and rate it.", eur:15000, wk:3}},
-  "ab": {q:"82% of your followers say they'd buy it. What next?", ctx:"That's a great number. You've spent almost nothing.",
-       a:{t:"Trust it and move on", d:"Use the result in your launch plan and keep the budget for marketing.", eur:0, wk:0},
-       b:{t:"Spend the savings on strangers", d:"A blind taste test with people who have never heard of your brand.", eur:30000, wk:3}},
-  "ba": {q:"How do you read the test market?", ctx:"The bar is on the shelves in one city.",
-       a:{t:"Count first-time buyers after three weeks", d:"Quick: how many people tried it?", eur:0, wk:0},
-       b:{t:"Wait six weeks and look at who comes back", d:"Slower: how many people bought it a second time?", eur:0, wk:0}},
-  "bb": {q:"Rival bars sell best near gyms and at petrol stations. Why?", ctx:"You know what sells and where. Not why.",
-       a:{t:"Run two focus groups", d:"Sixteen people, a moderator and a lot of free snacks.", eur:10000, wk:2},
-       b:{t:"Ask an AI chatbot", d:"Feed it 5,000 online reviews of rival bars and ask for a summary.", eur:0, wk:0}},
-};
-// The eight destinations: what you know now, and what you still don't know. No route is perfect.
-const END = {
-  "aaa": {city:"Hamburg", know:"Lots of people like the idea, and you have a big number to show the board.", dont:"Whether they like the taste, and whether people who say they'll buy it really will (the say–do gap)."},
-  "aab": {city:"Munich", know:"A fair picture of how the real bar tastes to people like your future customers.", dont:"How they'll behave in a real shop next to cheaper rivals. And it cost two-thirds of your budget."},
-  "aba": {city:"Rostock", know:"Your fans are excited, and you still have almost all your budget.", dont:"What people who have never heard of you think. Fans are friendlier than strangers."},
-  "abb": {city:"Leipzig", know:"How fans and strangers compare, so you can see how much the brand is doing for you.", dont:"How either group behaves at the till."},
-  "baa": {city:"Cologne", know:"How many people try it when it's really on sale.", dont:"Whether they liked it enough to buy it again. First purchases can come from curiosity."},
-  "bab": {city:"Dresden", know:"Who buys it once and who comes back, in real shops with real money.", dont:"Why. And it took six of your eight weeks and two-thirds of the money."},
-  "bba": {city:"Frankfurt", know:"Where rival bars sell, and how a small group explains why.", dont:"Whether sixteen talkative people speak for everyone, or anything about your own bar."},
-  "bbb": {city:"Stuttgart", know:"Where rival bars sell, quickly and very cheaply.", dont:"Whether the summary is right: a chatbot can sound sure about things it has made up."},
-};
-const START = "Berlin";
-/* ------------------------------------------------------------------ */
+const ROUNDS = [
+  ["Customers usually know what they want.",
+   "A survey of 2,000 people is more useful than a long conversation with ten.",
+   "Asking your friends what they think of your idea is a waste of time.",
+   "If people say they would buy a product, they probably will."],
+  ["Companies should test new products in one city before they launch everywhere.",
+   "Online reviews tell you more than any focus group.",
+   "A good manager trusts their gut feeling more than the data.",
+   "AI will soon make market researchers unnecessary."],
+];
+const CITIES = ["Lisbon","Oslo","Montreal","Seoul","Edinburgh","Nairobi","Lima","Osaka",
+                "Vienna","Havana","Dubai","Melbourne","Prague","Reykjavik","Marrakesh","Vancouver"];
+/* ---------------------------------------------------------------------------------------- */
 
 const TEACHER = new URLSearchParams(location.search).has("teacher");
-const KEY = "going-for-a-drive-v1" + (TEACHER ? "-teacher" : "");
-const fresh = () => TEACHER ? {tally:{}} : {path:"", started:false};
+const KEY = "going-for-a-drive-v2" + (TEACHER ? "-teacher" : "");
+const fresh = () => TEACHER ? {round:0, tally:[{}, {}]} : {screen:"start", round:0, paths:[[], []]};
 let S = fresh();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const eur = n => "€" + n.toLocaleString("en-GB");
-function spent(path){
-  let e = 0, w = 0;
-  for (let i = 0; i < path.length; i++) { const x = J[path.slice(0, i)][path[i]]; e += x.eur; w += x.wk; }
-  return {e, w};
-}
-function choices(path){ return [...path].map((c, i) => J[path.slice(0, i)][c].t); }
+const leaf = path => path.reduce((a, b) => a * 2 + b, 0);           // left = 0 (disagree), right = 1 (agree)
+const pathOf = i => [3, 2, 1, 0].map(k => (i >> k) & 1);
 
-/* ---------- the map: a not-to-scale road tree from Berlin to eight cities ---------- */
-function mapSVG(path, all){
-  const W = 640, H = 330, top = 40, rows = [40, 120, 200, 285];
-  const pos = {};
-  const place = (p, depth, x0, x1) => { pos[p] = {x:(x0 + x1) / 2, y:rows[depth]}; if (depth < 3) { const m = (x0 + x1) / 2; place(p + "a", depth + 1, x0, m); place(p + "b", depth + 1, m, x1); } };
-  place("", 0, 20, W - 20);
-  const roads = [], driven = [];
-  const curve = (a, b) => `M${a.x},${a.y} C${a.x},${(a.y + b.y) / 2} ${b.x},${(a.y + b.y) / 2} ${b.x},${b.y}`;
-  Object.keys(pos).forEach(p => { if (p.length) { const d = curve(pos[p.slice(0, -1)], pos[p]); roads.push(d); if (path.startsWith(p)) driven.push(d); } });
-  const ends = Object.keys(END);
-  const here = pos[path] || pos[""];
-  return `<svg viewBox="0 0 ${W} ${H + 24}" role="img" aria-label="Map of the routes from ${START}${path.length === 3 ? " to " + END[path].city : ""}">
-    ${roads.map(d => `<path class="road" d="${d}"/>`).join("")}
-    ${driven.map(d => `<path class="driven" d="${d}"/>`).join("")}
-    ${Object.keys(pos).filter(p => p.length > 0 && p.length < 3).map(p => `<circle class="node${path.startsWith(p) ? " on" : ""}" cx="${pos[p].x}" cy="${pos[p].y}" r="7"/>`).join("")}
-    <circle class="node on" cx="${pos[""].x}" cy="${pos[""].y}" r="9"/>
-    <text class="start" x="${pos[""].x + 16}" y="${pos[""].y + 5}">${START}</text>
-    ${ends.map(p => { const on = path === p || all; const mine = path === p; return `<circle class="dot${mine ? " on" : ""}" cx="${pos[p].x}" cy="${pos[p].y}" r="${mine ? 10 : 7}"/><text class="city${mine ? " on" : ""}" x="${pos[p].x}" y="${pos[p].y + 28}" text-anchor="middle">${esc(END[p].city)}</text>`; }).join("")}
-    ${path.length < 3 && !all ? `<g transform="translate(${here.x - 11},${here.y - 30})"><rect class="car" x="0" y="6" width="22" height="10" rx="3"/><rect class="car" x="4" y="1" width="14" height="8" rx="3"/><circle cx="6" cy="17" r="3" fill="var(--route)"/><circle cx="16" cy="17" r="3" fill="var(--route)"/></g>` : ""}
+/* ---------- the map: start at the bottom, sixteen cities at the top ---------- */
+function mapSVG(path, opts = {}){
+  const W = opts.wide ? 1000 : 520, H = opts.wide ? 330 : 300;
+  const ys = opts.wide ? [300, 240, 180, 120, 70] : [272, 214, 156, 98, 50];
+  const x = (d, i) => W * (i + .5) / Math.pow(2, d);
+  const curve = (x1, y1, x2, y2) => `M${x1},${y1} C${x1},${(y1 + y2) / 2} ${x2},${(y1 + y2) / 2} ${x2},${y2}`;
+  let roads = "", driven = "", nodes = "";
+  for (let d = 0; d < 4; d++) for (let p = 0; p < Math.pow(2, d); p++) for (const c of [0, 1])
+    roads += `<path class="road" d="${curve(x(d, p), ys[d], x(d + 1, 2 * p + c), ys[d + 1])}"/>`;
+  let idx = 0, cx = x(0, 0), cy = ys[0];
+  path.forEach((bit, k) => { idx = idx * 2 + bit; const nx = x(k + 1, idx), ny = ys[k + 1]; driven += `<path class="driven" d="${curve(cx, cy, nx, ny)}"/>`; cx = nx; cy = ny; if (k < 3) nodes += `<circle class="node on" cx="${nx}" cy="${ny}" r="5"/>`; });
+  const done = path.length === 4, mine = done ? leaf(path) : -1;
+  let leaves = "";
+  for (let i = 0; i < 16; i++) {
+    const lx = x(4, i), on = i === mine;
+    leaves += `<circle class="dot${on ? " on" : ""}" cx="${lx}" cy="${ys[4]}" r="${on ? 8 : 5}"/>`;
+    if (opts.wide) {
+      leaves += `<text class="city" x="${lx}" y="${ys[4] - 14 - (i % 2 ? 18 : 0)}" text-anchor="middle">${esc(CITIES[i])}</text>`;
+      if (opts.counts && opts.counts[i]) leaves += `<text class="cnt" x="${lx}" y="${ys[4] + 24}" text-anchor="middle">${opts.counts[i]}</text>`;
+    } else if (on) {
+      const anchor = lx < 70 ? "start" : lx > W - 70 ? "end" : "middle";
+      leaves += `<text class="city on" x="${anchor === "start" ? 4 : anchor === "end" ? W - 4 : lx}" y="${ys[4] - 16}" text-anchor="${anchor}">${esc(CITIES[i])}</text>`;
+    }
+  }
+  const car = !done && !opts.wide ? `<g transform="translate(${cx - 11},${cy - 26})"><rect fill="var(--ink)" x="0" y="6" width="22" height="10" rx="3"/><rect fill="var(--ink)" x="4" y="1" width="14" height="8" rx="3"/><circle cx="6" cy="17" r="3" fill="var(--route)"/><circle cx="16" cy="17" r="3" fill="var(--route)"/></g>` : "";
+  return `<svg viewBox="0 0 ${W} ${H + 24}" role="img" aria-label="Road map with sixteen destinations${done ? "; you are in " + CITIES[mine] : ""}">
+    ${roads}${driven}${nodes}
+    <circle class="node on" cx="${x(0, 0)}" cy="${ys[0]}" r="7"/>
+    <text class="start" x="${x(0, 0)}" y="${ys[0] + 24}" text-anchor="middle">START</text>
+    <text class="lr" x="${x(0, 0) - 70}" y="${ys[0] + 4}" text-anchor="end">← DISAGREE</text>
+    <text class="lr" x="${x(0, 0) + 70}" y="${ys[0] + 4}">AGREE →</text>
+    ${leaves}${car}
   </svg>`;
 }
 
-function head(sub){ return `<header class="head"><h1>Going for a Drive <span class="plate">B · SIM 26</span></h1><span class="label">${esc(sub)}</span></header>`; }
-function dash(path){
-  const s = spent(path);
-  return `<div class="dash">
-    <div class="gauge${s.e > BUDGET ? " over" : ""}"><span class="label">Budget used</span><b>${eur(s.e)} of ${eur(BUDGET)}</b><div class="track"><div class="fill" style="width:${Math.min(100, s.e / BUDGET * 100)}%"></div></div></div>
-    <div class="gauge${s.w > WEEKS ? " over" : ""}"><span class="label">Time used</span><b>${s.w} of ${WEEKS} weeks</b><div class="track"><div class="fill" style="width:${Math.min(100, s.w / WEEKS * 100)}%"></div></div></div>
-  </div>`;
-}
+function head(sub){ return `<header class="head"><h1>Going for a Drive</h1><span class="label">${esc(sub)}</span></header>`; }
+const mapBox = (path, opts) => `<div class="mapbox">${mapSVG(path, opts)}<span class="note">Not to scale. Not even slightly.</span></div>`;
+
 function start(){
-  return head(TOPIC) + `<div class="layout"><div style="display:grid;gap:16px">
-      <h2>Where will your research take you?</h2><p>${INTRO}</p>
-      <p>Everyone plays alone. When you arrive, you'll find out which city you ended up in. <strong>Remember it:</strong> your teacher will ask.</p>
+  return head(TOPIC) + `<div class="layout"><div class="col">
+      <h2>Agree? Turn right. Disagree? Turn left.</h2>
+      <p>You'll get ${ROUNDS.length} rounds of four statements about ${esc(TOPIC.toLowerCase())}. Decide fast. After four turns you'll arrive in a city. <strong>Remember it:</strong> your teacher will ask who ended up where.</p>
       <div><button class="btn" type="button" id="go">Start the engine</button></div></div>
-    <div class="mapbox">${mapSVG("", false)}<span class="note">Not to scale. Not even slightly.</span></div></div>`;
+    ${mapBox([], {})}</div>`;
 }
-function junction(){
-  const p = S.path, j = J[p], n = p.length + 1;
-  const exit = (k, x) => `<button class="exit" type="button" data-exit="${k}"><span class="arrow" aria-hidden="true">${k === "a" ? "↖" : "↗"}</span><span><span class="et">${esc(x.t)}</span><span class="ed">${esc(x.d)}</span>${x.eur || x.wk ? `<span class="cost">${x.eur ? eur(x.eur) : "free"}${x.wk ? " · " + x.wk + " week" + (x.wk > 1 ? "s" : "") : ""}</span>` : ""}</span></button>`;
-  return head(`Junction ${n} of 3`) + `<div class="layout"><div style="display:grid;gap:14px">
-      ${dash(p)}
-      <div class="sign">${j.ctx ? `<span class="ctx">${esc(j.ctx)}</span>` : ""}<span class="q">${esc(j.q)}</span><div class="exits">${exit("a", j.a)}${exit("b", j.b)}</div></div>
-      ${p.length ? `<div><button class="btn ghost small" type="button" id="back">← Back one junction</button></div>` : ""}
-    </div><div class="mapbox">${mapSVG(p, false)}<span class="note">Not to scale. Not even slightly.</span></div></div>`;
+function question(){
+  const r = S.round, path = S.paths[r], q = path.length;
+  return head(`Round ${r + 1} · turn ${q + 1} of 4`) + `<div class="layout"><div class="col">
+      <div class="sign"><span class="n">Statement ${q + 1} of 4</span><span class="q">${esc(ROUNDS[r][q])}</span>
+        <div class="turns"><button class="turn l" type="button" data-turn="0"><span class="a" aria-hidden="true">↰</span>Turn left<span class="s">I disagree</span></button>
+        <button class="turn r" type="button" data-turn="1"><span class="a" aria-hidden="true">↱</span>Turn right<span class="s">I agree</span></button></div></div>
+      ${q ? `<div><button class="btn ghost small" type="button" id="back">← Change my last answer</button></div>` : ""}
+    </div>${mapBox(path, {})}</div>`;
 }
-function arrive(){
-  const p = S.path, e = END[p], s = spent(p);
-  return head("You've arrived") + `<div class="layout"><div style="display:grid;gap:14px">
-      <div class="arrive"><span class="label" style="color:inherit;opacity:.85">You ended up in</span><span class="city">${esc(e.city)}</span><span>Tell your teacher. Then find someone who ended up somewhere else.</span></div>
-      <div class="panel"><h3>Your route</h3><ol class="trip">${choices(p).map(c => `<li>${esc(c)}</li>`).join("")}</ol>
-        <p class="label" style="margin-top:2px">${eur(s.e)} and ${s.w} week${s.w === 1 ? "" : "s"} used</p></div>
-      <div class="panel"><div class="know"><div><b>What you know now</b>${esc(e.know)}</div><div><b>What you still don't know</b>${esc(e.dont)}</div></div></div>
-      <div class="row"><button class="btn ghost small" type="button" id="again">Drive again</button></div>
-    </div><div class="mapbox">${mapSVG(p, false)}<span class="note">Not to scale. Not even slightly.</span></div></div>`;
+function recap(r){
+  return `<ul class="recap">${ROUNDS[r].map((s, i) => `<li><span>${esc(s)}</span>${S.paths[r][i] ? '<span class="tag y">Agreed</span>' : '<span class="tag n">Disagreed</span>'}</li>`).join("")}</ul>`;
+}
+function arrived(){
+  const r = S.round, last = r === ROUNDS.length - 1;
+  return head(`Round ${r + 1} · arrived`) + `<div class="layout"><div class="col">
+      <div class="arrive"><span class="label" style="color:inherit;opacity:.85">You ended up in</span><span class="city">${esc(CITIES[leaf(S.paths[r])])}</span><span>Tell your teacher when they ask. Who else is here?</span></div>
+      <div class="panel"><h3>How you got here</h3>${recap(r)}</div>
+      <div><button class="btn" type="button" id="next">${last ? "See both trips" : "Start round " + (r + 2)}</button></div>
+    </div>${mapBox(S.paths[r], {})}</div>`;
+}
+function final(){
+  return head("Journey complete") + `<h2>${ROUNDS.map((_, r) => esc(CITIES[leaf(S.paths[r])])).join(" → ")}</h2>
+    <p>Find a classmate who ended up somewhere else. Where did your routes split? Talk through one statement where you turned different ways.</p>
+    ${ROUNDS.map((_, r) => `<div class="panel"><h3>Round ${r + 1}: ${esc(CITIES[leaf(S.paths[r])])}</h3>${recap(r)}</div>`).join("")}
+    <div><button class="btn ghost small" type="button" id="again">Drive again</button></div>`;
 }
 function teacher(){
-  const t = S.tally, max = Math.max(0, ...Object.values(t));
+  const r = S.round, t = S.tally[r], max = Math.max(0, ...Object.values(t));
   return head("Teacher · " + TOPIC) + `<h2>Who ended up where?</h2>
-    <p>Ask for hands, city by city, and tap in the numbers. Then talk about the busiest city and the emptiest one: what did those drivers choose, and what do they still not know?</p>
-    <div class="mapbox">${mapSVG("", true)}</div>
-    <div class="routes">${Object.keys(END).map(p => `<div class="rcard${t[p] && t[p] === max ? " top" : ""}">
-        <div class="rc"><span class="rn">${esc(END[p].city)}</span><span class="count"><button type="button" data-dn="${p}" aria-label="One fewer in ${esc(END[p].city)}">−</button><b>${t[p] || 0}</b><button type="button" data-up="${p}" aria-label="One more in ${esc(END[p].city)}">+</button></span></div>
-        <ol>${choices(p).map(c => `<li>${esc(c)}</li>`).join("")}</ol>
-        <div class="k"><strong>Knows:</strong> ${esc(END[p].know)}</div><div class="k"><strong>Doesn't know:</strong> ${esc(END[p].dont)}</div>
-      </div>`).join("")}</div>
+    <div class="tabs" role="group" aria-label="Round">${ROUNDS.map((_, i) => `<button type="button" data-round="${i}" aria-pressed="${i === r}">Round ${i + 1}</button>`).join("")}</div>
+    <ol class="stmts">${ROUNDS[r].map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+    ${mapBox([], {wide:true, counts:t})}
+    <p class="label">Ask for hands city by city and tap them in. Each city shows how its drivers answered: A = agreed, D = disagreed, statements 1 to 4.</p>
+    <div class="cities">${CITIES.map((c, i) => `<div class="ccard${t[i] && t[i] === max ? " top" : ""}"><div class="ch"><span class="cn">${esc(c)}</span>
+        <span class="count"><button type="button" data-dn="${i}" aria-label="One fewer in ${esc(c)}">−</button><b>${t[i] || 0}</b><button type="button" data-up="${i}" aria-label="One more in ${esc(c)}">+</button></span></div>
+        <div class="pattern">${pathOf(i).map((b, k) => `<span class="tag ${b ? "y" : "n"}" title="Statement ${k + 1}">${k + 1} ${b ? "A" : "D"}</span>`).join("")}</div></div>`).join("")}</div>
     <div class="row"><span id="clr"><button class="btn ghost small" type="button" id="clear">Clear the tally for the next class</button></span></div>`;
 }
 function render(){
-  $("#app").innerHTML = TEACHER ? teacher() : !S.started ? start() : S.path.length === 3 ? arrive() : junction();
+  $("#app").innerHTML = TEACHER ? teacher() : ({start, question, arrived, final})[S.screen]();
 }
+const top = () => window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
 document.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
-  if (b.id === "go") { S.started = true; S.path = ""; save(); render(); }
-  if (b.dataset.exit) { S.path += b.dataset.exit; save(); render(); window.scrollTo({top:0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); }
-  if (b.id === "back") { S.path = S.path.slice(0, -1); save(); render(); }
-  if (b.id === "again") { S = fresh(); save(); render(); }
-  if (b.dataset.up) { S.tally[b.dataset.up] = (S.tally[b.dataset.up] || 0) + 1; save(); render(); }
-  if (b.dataset.dn) { S.tally[b.dataset.dn] = Math.max(0, (S.tally[b.dataset.dn] || 0) - 1); save(); render(); }
-  if (b.id === "clear") $("#clr").innerHTML = `Clear the tally? <button class="btn small" type="button" id="clearYes">Yes, clear</button> <button class="btn ghost small" type="button" id="clearNo">Keep</button>`;
+  if (b.id === "go") { S = fresh(); S.screen = "question"; save(); render(); }
+  if (b.dataset.turn) { const p = S.paths[S.round]; p.push(+b.dataset.turn); if (p.length === 4) S.screen = "arrived"; save(); render(); }
+  if (b.id === "back") { S.paths[S.round].pop(); save(); render(); }
+  if (b.id === "next") { if (S.round < ROUNDS.length - 1) { S.round++; S.screen = "question"; } else S.screen = "final"; save(); render(); top(); }
+  if (b.id === "again") { S = fresh(); save(); render(); top(); }
+  if (b.dataset.round) { S.round = +b.dataset.round; save(); render(); }
+  if (b.dataset.up) { const t = S.tally[S.round]; t[b.dataset.up] = (t[b.dataset.up] || 0) + 1; save(); render(); }
+  if (b.dataset.dn) { const t = S.tally[S.round]; t[b.dataset.dn] = Math.max(0, (t[b.dataset.dn] || 0) - 1); save(); render(); }
+  if (b.id === "clear") $("#clr").innerHTML = `Clear both rounds? <button class="btn small" type="button" id="clearYes">Yes, clear</button> <button class="btn ghost small" type="button" id="clearNo">Keep</button>`;
   if (b.id === "clearNo") render();
   if (b.id === "clearYes") { S = fresh(); save(); render(); }
 });
