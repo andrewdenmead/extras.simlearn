@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Which Is Cooler?</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: a split-screen face-off on the projector. Two brand names stand on opposite halves; the class votes with hands, one person from the smaller side gets 45 seconds to win people over, then everyone votes again and the swing is shown. */
+:root{
+  --bg:#f1f0ec; --paper:#ffffff; --ink:#18181b; --muted:#66666e; --line:#d8d7d0;
+  --l:#e2553b; --r:#2b66d6; --on:#ffffff; --hi:#f2c84b;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --sans:"Rethink Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121214; --paper:#1c1c20; --ink:#f0f0f2; --muted:#a3a3ab; --line:#34343a;
+  --l:#ee6c52; --r:#5a8ff0; --on:#ffffff; --hi:#e9bf45; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121214; --paper:#1c1c20; --ink:#f0f0f2; --muted:#a3a3ab; --line:#34343a;
+  --l:#ee6c52; --r:#5a8ff0; --on:#ffffff; --hi:#e9bf45; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,1vw + 10px,20px);line-height:1.5}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.app{min-height:100%;max-width:1260px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 28px;display:grid;grid-template-rows:auto 1fr;gap:18px}
+.label{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.bar h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:.01em}
+.bar h1 i{font-style:normal;color:var(--l)}.bar h1 em{font-style:normal;color:var(--r)}
+.screen{display:grid;align-content:start;gap:18px}
+h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,52px);line-height:1.05;text-wrap:balance}
+p{margin:0;max-width:62ch}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-weight:700;cursor:pointer;background:var(--ink);color:var(--bg);display:inline-flex;align-items:center;justify-content:center;gap:10px;line-height:1.2}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:7px 12px;font-size:.8em;border-radius:9px}
+.btn.big{padding:16px 28px;font-size:1.12em;border-radius:14px}
+.btn:hover{filter:brightness(1.1)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.note{font-size:.82em;color:var(--muted)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;gap:14px;align-content:start}
+.rules{margin:0;padding-left:1.25em;display:grid;gap:8px}
+.intro{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.intro{grid-template-columns:minmax(0,1fr)}}
+
+/* face-off */
+.vs{position:relative;display:grid;grid-template-columns:1fr 1fr;border-radius:22px;overflow:hidden;min-height:clamp(220px,34vh,360px)}
+.side{display:grid;align-content:center;justify-items:center;gap:8px;padding:26px 18px 30px;color:var(--on);text-align:center}
+.side.L{background:var(--l)}.side.R{background:var(--r)}
+.side .nm{font-family:var(--display);font-weight:400;font-size:clamp(30px,5.4vw,78px);line-height:1;overflow-wrap:anywhere;text-wrap:balance}
+.side .sub{font-size:.85em;opacity:.9;max-width:28ch}
+.badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(54px,6vw,84px);height:clamp(54px,6vw,84px);border-radius:50%;background:var(--paper);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:clamp(18px,2vw,28px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.tallies{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.tal{display:flex;align-items:center;gap:10px;justify-content:center}
+.tal b{font-family:var(--mono);font-weight:500;font-size:clamp(30px,3.6vw,52px);min-width:1.6em;text-align:center;font-variant-numeric:tabular-nums}
+.tal button{width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-size:1.2em;cursor:pointer}
+.tal.L b{color:var(--l)}.tal.R b{color:var(--r)}
+.split{height:16px;border-radius:8px;overflow:hidden;display:flex;background:var(--line)}
+.split .a{background:var(--l);transition:width .35s}.split .b{background:var(--r);transition:width .35s}
+.words{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{font-family:var(--mono);font-size:.78em;padding:5px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.clock{display:grid;gap:6px;justify-items:center}
+.clock .t{font-family:var(--mono);font-size:clamp(46px,6vw,84px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.clock .track{width:min(100%,520px);height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.clock .fill{height:100%;background:var(--hi);transform-origin:left;transition:transform .25s linear}
+.swing{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sw{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;display:grid;gap:4px}
+.sw .big{font-family:var(--mono);font-size:1.6em;font-weight:500;font-variant-numeric:tabular-nums}
+.center{display:grid;justify-items:center;gap:12px;text-align:center}
+.center p{margin-inline:auto}
+table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:14px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+th{font-family:var(--mono);font-size:.68em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.num{font-family:var(--mono)}
+tr.top td{background:color-mix(in srgb,var(--hi) 25%,var(--paper))}
+.tablewrap{overflow-x:auto}
+@media (max-width:600px){.vs{grid-template-columns:1fr}.badge{top:50%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="bar"><h1>Which is <i>cool</i><em>er</em>?</h1><span class="label" id="info"></span></header>
+  <main class="screen" id="screen"></main>
+</div>
+
+<script>
+(() => {
+/* ---------- the face-offs: change these for another topic ---------- */
+const TOPIC = "Brand positioning";
+const PAIRS = [
+  ["Adidas", "Nike"],
+  ["Apple", "Samsung"],
+  ["Patagonia", "The North Face"],
+  ["A Rolex", "An Apple Watch"],
+  ["Zara", "Uniqlo"],
+  ["Dr. Martens", "Converse"],
+  ["Aperol Spritz", "Hugo Spritz"],
+  ["Aldi", "Lidl"],
+];
+const WORDS = ["exclusive","mainstream","heritage","authentic","timeless","overexposed","try-hard","status symbol","everyone has one","good value"];
+const ARGUE = 45;   // seconds to win people over
+/* ------------------------------------------------------------------- */
+
+const KEY = "which-is-cooler-v1";
+const fresh = () => ({screen:"intro", i:0, phase:"vote1", v:PAIRS.map(() => ({a1:0, b1:0, a2:0, b2:0}))});
+let S = fresh();
+try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.v && o.v.length === PAIRS.length) S = Object.assign(fresh(), o); } } catch (e) {}
+if (S.phase === "argue") S.phase = "vote1";
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let timer = null, endAt = 0;
+
+function info(){ $("#info").textContent = S.screen === "pair" ? `${TOPIC} · face-off ${S.i + 1} of ${PAIRS.length}` : TOPIC; }
+function intro(){
+  return `<h2>Two brands. One room. Which is cooler?</h2>
+  <div class="intro"><div class="panel"><ol class="rules">
+      <li>Two brands go head to head. Hands up for the one you think is <strong>cooler</strong>. No sitting on the fence.</li>
+      <li>Someone from the <strong>smaller side</strong> gets ${ARGUE} seconds to win people over.</li>
+      <li>Then everyone votes again. Did anyone change sides? Why?</li>
+    </ol></div>
+    <div class="panel"><span class="label">Words that might help</span><div class="words" style="justify-content:flex-start">${WORDS.map(w => `<span class="chip">${esc(w)}</span>`).join("")}</div>
+      <div><button class="btn big" type="button" id="begin">${S.v.some(x => x.a1 || x.b1) ? "Carry on" : "First face-off"}</button></div>
+      <p class="note">${PAIRS.length} face-offs, about two minutes each.</p></div></div>`;
+}
+function tally(side, f){
+  const v = S.v[S.i];
+  return `<div class="tal ${side}"><button type="button" data-dn="${f}" aria-label="One fewer">−</button><b>${v[f]}</b><button type="button" data-up="${f}" aria-label="One more">+</button></div>`;
+}
+function splitBar(a, b){ const t = a + b || 1; return `<div class="split" aria-hidden="true"><div class="a" style="width:${a / t * 100}%"></div><div class="b" style="width:${b / t * 100}%"></div></div>`; }
+function pair(){
+  const [A, B] = PAIRS[S.i], v = S.v[S.i], ph = S.phase;
+  const vs = `<div class="vs"><div class="side L"><span class="nm">${esc(A)}</span></div><div class="side R"><span class="nm">${esc(B)}</span></div><span class="badge">VS</span></div>`;
+  if (ph === "vote1") return vs + `<div class="center"><p><strong>Hands up:</strong> who thinks ${esc(A)} is cooler? Now ${esc(B)}? Count and tap.</p></div>
+      <div class="tallies">${tally("L", "a1")}<span class="label">first vote</span>${tally("R", "b1")}</div>${splitBar(v.a1, v.b1)}
+      <div class="row" style="justify-content:center"><button class="btn big" type="button" id="toArgue">Smaller side, convince them (${ARGUE}s)</button><button class="btn ghost" type="button" id="skipArgue">Skip to the next face-off</button><button class="btn ghost small" type="button" id="finish">End now</button></div>`;
+  if (ph === "argue") {
+    const small = v.a1 === v.b1 ? "either side" : v.a1 < v.b1 ? A : B;
+    return vs + `<div class="center"><p><strong>${esc(small)}</strong> fans: one of you has ${ARGUE} seconds to win people over.</p>
+      <div class="clock"><span class="t" id="t">${ARGUE}</span><div class="track"><div class="fill" id="fill"></div></div></div>
+      <div class="words">${WORDS.map(w => `<span class="chip">${esc(w)}</span>`).join("")}</div>
+      <button class="btn" type="button" id="toVote2">Time's up: vote again</button></div>`;
+  }
+  if (ph === "vote2") return vs + `<div class="center"><p><strong>Vote again.</strong> Same question: which is cooler?</p></div>
+      <div class="tallies">${tally("L", "a2")}<span class="label">second vote</span>${tally("R", "b2")}</div>${splitBar(v.a2, v.b2)}
+      <div class="row" style="justify-content:center"><button class="btn big" type="button" id="toSwing">Show the swing</button></div>`;
+  // swing
+  const d = v.a2 - v.a1, who = d === 0 ? "Nobody moved." : `${Math.abs(d)} vote${Math.abs(d) === 1 ? "" : "s"} swung to ${esc(d > 0 ? A : B)}.`;
+  const last = S.i === PAIRS.length - 1;
+  return vs + `<div class="swing"><div class="sw"><span class="label">First vote</span><span class="big">${v.a1} : ${v.b1}</span>${splitBar(v.a1, v.b1)}</div><div class="sw"><span class="label">Second vote</span><span class="big">${v.a2} : ${v.b2}</span>${splitBar(v.a2, v.b2)}</div></div>
+    <div class="center"><p><strong>${who}</strong> ${d !== 0 ? "Whoever changed sides: what convinced you?" : "Was it the argument, or are people just loyal?"}</p>
+    <div class="row"><button class="btn big" type="button" id="next">${last ? "See all the results" : "Next face-off"}</button><button class="btn ghost small" type="button" id="finish">End now</button></div></div>`;
+}
+function final(){
+  const rows = PAIRS.map(([A, B], i) => { const v = S.v[i]; return {A, B, ...v, sw:Math.abs(v.a2 - v.a1), win:(v.a2 + v.b2 ? (v.a2 >= v.b2 ? A : B) : (v.a1 >= v.b1 ? A : B)), played: v.a1 + v.b1 > 0}; }).filter(r => r.played);
+  const maxSw = Math.max(0, ...rows.map(r => r.sw));
+  return `<h2>The results</h2>
+    <div class="tablewrap"><table><thead><tr><th>Face-off</th><th>First vote</th><th>Second vote</th><th>Swing</th><th>Cooler</th></tr></thead>
+    <tbody>${rows.map(r => `<tr class="${r.sw && r.sw === maxSw ? "top" : ""}"><td>${esc(r.A)} vs ${esc(r.B)}</td><td class="num">${r.a1} : ${r.b1}</td><td class="num">${r.a2 + r.b2 ? r.a2 + " : " + r.b2 : "–"}</td><td class="num">${r.a2 + r.b2 ? r.sw : "–"}</td><td><strong>${esc(r.win)}</strong></td></tr>`).join("") || `<tr><td colspan="5">No votes yet.</td></tr>`}</tbody></table></div>
+    <p class="note">The biggest swing is highlighted. What made those arguments work?</p>
+    <div class="row"><button class="btn ghost" type="button" id="reset">Clear everything for the next class</button></div>`;
+}
+function render(){
+  info(); clearInterval(timer);
+  $("#screen").innerHTML = S.screen === "intro" ? intro() : S.screen === "final" ? final() : pair();
+  if (S.screen === "pair" && S.phase === "argue") { endAt = Date.now() + ARGUE * 1000; tick(); timer = setInterval(tick, 200); }
+}
+function tick(){
+  const left = Math.max(0, endAt - Date.now()), t = $("#t"); if (!t) return;
+  t.textContent = Math.ceil(left / 1000); $("#fill").style.transform = `scaleX(${left / (ARGUE * 1000)})`;
+  if (left <= 0) clearInterval(timer);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const v = S.v[S.i];
+  if (b.id === "begin") { const first = S.v.findIndex(x => !(x.a1 || x.b1)); S.i = first < 0 ? 0 : first; S.phase = "vote1"; S.screen = "pair"; save(); render(); }
+  if (b.dataset.up) { v[b.dataset.up]++; save(); render(); }
+  if (b.dataset.dn) { v[b.dataset.dn] = Math.max(0, v[b.dataset.dn] - 1); save(); render(); }
+  if (b.id === "toArgue") { S.phase = "argue"; save(); render(); }
+  if (b.id === "toVote2") { S.phase = "vote2"; if (!v.a2 && !v.b2) { v.a2 = v.a1; v.b2 = v.b1; } save(); render(); }
+  if (b.id === "toSwing") { S.phase = "swing"; save(); render(); }
+  if (b.id === "skipArgue" || b.id === "next") { if (S.i < PAIRS.length - 1) { S.i++; S.phase = "vote1"; } else S.screen = "final"; save(); render(); }
+  if (b.id === "finish") { S.screen = "final"; save(); render(); }
+  if (b.id === "reset") { S = fresh(); save(); render(); }
+});
+render();
+})();
+</script>
+</body>
+</html>

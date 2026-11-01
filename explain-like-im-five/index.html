@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Explain Like I'm Five</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: a children's picture-book page on the projector. A grown-up word sits on a big card with three crayon-crossed "banned" words; a team explains it to an imaginary five-year-old against the clock, the class judges, then the page shows a five-year-old version set at a lemonade stand. */
+:root{
+  --bg:#fbf7ef; --paper:#ffffff; --ink:#22201c; --muted:#6d675e; --line:#e3dccd;
+  --lemon:#f5cf3a; --lemon-ink:#3d3205; --berry:#d2465c; --sky:#3d8bd4; --leaf:#3f9a5c; --on:#ffffff;
+  --sans:"Rethink Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --round:"Bowlby One","Arial Black",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#17150f; --paper:#221f18; --ink:#f3eee2; --muted:#b2aa9b; --line:#3a352b;
+  --lemon:#f2cd45; --lemon-ink:#2a2204; --berry:#ea6378; --sky:#6aa9e8; --leaf:#5cb877; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17150f; --paper:#221f18; --ink:#f3eee2; --muted:#b2aa9b; --line:#3a352b;
+  --lemon:#f2cd45; --lemon-ink:#2a2204; --berry:#ea6378; --sky:#6aa9e8; --leaf:#5cb877; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,1vw + 10px,20px);line-height:1.5}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.app{min-height:100%;max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 28px;display:grid;grid-template-rows:auto 1fr;gap:18px}
+.label{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.title h1{margin:0;font-family:var(--round);font-weight:400;font-size:clamp(22px,2.4vw,32px);letter-spacing:.01em}
+.title h1 .five{display:inline-grid;place-items:center;width:1.25em;height:1.25em;border-radius:50%;background:var(--lemon);color:var(--lemon-ink);font-size:.9em;transform:rotate(-8deg)}
+.scores{display:flex;gap:8px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:10px;padding:6px 8px 6px 12px;border-radius:999px;background:var(--paper);border:2px solid var(--line);font-weight:700;font-size:.85em}
+.score b{font-family:var(--mono);font-size:1.15em;min-width:1.6em;text-align:center;background:var(--bg);border-radius:999px;padding:0 6px;font-variant-numeric:tabular-nums}
+.score.now{border-color:var(--sky);background:var(--sky);color:var(--on)}
+.score.now b{background:rgba(255,255,255,.2)}
+.screen{display:grid;align-content:start;gap:20px}
+h2{margin:0;font-family:var(--round);font-weight:400;font-size:clamp(30px,4.4vw,58px);line-height:1.05;text-wrap:balance}
+p{margin:0;max-width:62ch}
+.btn{border:0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer;background:var(--sky);color:var(--on);display:inline-flex;align-items:center;justify-content:center;gap:10px;line-height:1.2}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn.small{padding:7px 14px;font-size:.8em}
+.btn.big{padding:16px 30px;font-size:1.12em}
+.btn:hover{filter:brightness(1.07)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border-bottom-width:2px;border-radius:5px;padding:0 .35em;opacity:.75}
+.note{font-size:.82em;color:var(--muted)}
+
+.setup{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.setup{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--paper);border:2px solid var(--line);border-radius:20px;padding:20px 22px;display:grid;gap:14px;align-content:start;min-width:0}
+.panel h3{margin:0;font-size:1em}
+.rules{margin:0;padding-left:1.25em;display:grid;gap:8px}
+.teams{display:grid;gap:8px}
+.team-in{display:flex;gap:8px}
+.team-in input{flex:1;min-width:0;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:9px 12px}
+.team-in button{width:44px;border-radius:12px;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-weight:700}
+.seg{display:inline-flex;justify-self:start;border:2px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{border:0;background:var(--bg);padding:8px 14px;cursor:pointer;font-weight:700;font-family:var(--mono);font-size:.85em}
+.seg button[aria-pressed="true"]{background:var(--sky);color:var(--on)}
+
+/* the term card */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,300px);gap:22px;align-items:start}
+@media (max-width:880px){.stage{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--paper);border:3px solid var(--ink);border-radius:26px;padding:26px clamp(18px,3vw,36px) 28px;display:grid;gap:18px;box-shadow:8px 8px 0 var(--lemon)}
+.term{font-family:var(--round);font-weight:400;font-size:clamp(40px,7vw,96px);line-height:1;overflow-wrap:anywhere}
+.grown{font-size:.95em;color:var(--muted)}
+.banned{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ban{position:relative;font-weight:700;font-size:1.15em;padding:4px 12px;border-radius:10px;background:var(--bg)}
+.ban::after{content:"";position:absolute;left:4px;right:4px;top:50%;height:4px;margin-top:-2px;background:var(--berry);border-radius:2px;transform:rotate(-6deg)}
+.kid{background:var(--lemon);color:var(--lemon-ink);border-radius:20px;padding:18px 20px;display:grid;gap:6px}
+.kid .k{font-family:var(--mono);font-size:.7em;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.kid p{font-size:clamp(19px,1.4vw + 10px,28px);line-height:1.35;max-width:none}
+.side{display:grid;gap:14px;align-content:start}
+.clock{background:var(--sky);color:var(--on);border-radius:22px;padding:14px 18px;display:grid;gap:8px}
+.clock .t{font-family:var(--mono);font-size:clamp(46px,5.6vw,80px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.clock .track{height:8px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+.clock .fill{height:100%;background:var(--lemon);transform-origin:left;transition:transform .25s linear}
+.clock.low .fill{background:var(--berry)}
+.judge{display:grid;gap:8px}
+.jb{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;border:2px solid var(--line);background:var(--paper);border-radius:16px;padding:10px 14px;cursor:pointer;font-weight:700}
+.jb .face{font-size:1.5em;line-height:1}
+.jb .pts{font-family:var(--mono);font-weight:500;color:var(--muted)}
+.jb:hover{border-color:var(--sky)}
+.result{font-weight:700}
+
+.podium{display:grid;gap:10px}
+.pod{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:14px 18px}
+.pod .n{font-family:var(--mono);font-size:1.6em;color:var(--muted);min-width:1.4em}
+.pod .nm{font-weight:700;font-size:1.15em;overflow-wrap:anywhere}
+.pod .pts{font-family:var(--mono);font-size:1.6em;font-variant-numeric:tabular-nums}
+.pod.win{border-color:var(--lemon);box-shadow:5px 5px 0 var(--lemon)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="bar">
+    <div class="title"><h1>Explain Like I'm <span class="five">5</span></h1><span class="label" id="info"></span></div>
+    <div class="scores" id="scores"></div>
+  </header>
+  <main class="screen" id="screen"></main>
+</div>
+
+<script>
+(() => {
+/* ---------- the terms: change these for another topic ---------- */
+const TOPIC = "Going public";
+const STORY = "a lemonade stand";
+const TERMS = [
+  {t:"IPO", grown:"Initial public offering: a company's first sale of shares on a stock exchange.", ban:["initial","public","offering"],
+   kid:"Your lemonade stand is so popular that you want to build a bigger one. So for the first time, you let anyone in the park buy a little piece of your stand. They give you money now, and you build the big stand."},
+  {t:"Share", grown:"One of the equal parts that the ownership of a company is divided into.", ban:["part","company","own"],
+   kid:"Imagine cutting your lemonade stand into 100 tiny pieces, like a pizza. If your friend has one piece, a tiny bit of the stand is hers, and so is a tiny bit of the money it makes."},
+  {t:"Stock exchange", grown:"A market where shares in companies are bought and sold.", ban:["market","buy","sell"],
+   kid:"A big playground where everybody brings their pieces of lemonade stands and swaps them for pocket money. Anyone can come and see what a piece costs today."},
+  {t:"Prospectus", grown:"The legal document that describes a company and its risks before it sells shares.", ban:["document","risk","legal"],
+   kid:"Before anyone gives you money, you have to write a very long, very honest letter: how many lemons you sell, what could go wrong, and what happens if it rains all summer."},
+  {t:"Underwriter", grown:"A bank that organises a share sale and helps decide the price.", ban:["bank","price","organise"],
+   kid:"A grown-up who knows lots of people with pocket money. She helps you find buyers for your pieces and tells you how much they're worth, and she gets a few sweets for helping."},
+  {t:"Oversubscribed", grown:"When investors want more shares than are on offer.", ban:["more","demand","shares"],
+   kid:"You have 100 pieces of your stand to give out, but 300 children are queuing for one. Some of them are going home without a piece."},
+  {t:"Dividend", grown:"A share of a company's profit, paid to its shareholders.", ban:["profit","pay","money"],
+   kid:"At the end of a good summer, you've got coins left over after buying lemons and sugar. Everyone who owns a piece of the stand gets a few of those coins."},
+  {t:"Voting rights", grown:"The right of shareholders to vote on important company decisions.", ban:["vote","decide","right"],
+   kid:"When it's time to decide whether to sell orange juice too, everyone with a piece of the stand gets to put their hand up. Sometimes your piece gives you one hand, and sometimes it gives you none at all."},
+  {t:"Anchor investor", grown:"A large investor who agrees early to buy a big part of a share sale.", ban:["investor","large","early"],
+   kid:"Before anyone else hears about it, the richest kid in the park promises to buy lots of pieces. When the other children hear that, they want some too."},
+  {t:"Lock-up period", grown:"A time after the IPO when early owners are not allowed to sell their shares.", ban:["lock","sell","time"],
+   kid:"You and your best friend started the stand. After the big day, the rule is that you both have to keep your pieces until the end of the summer, so nobody thinks you're running away."},
+];
+/* ---------------------------------------------------------------- */
+
+const KEY = "eli5-v1";
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const fresh = () => ({screen:"setup", teams:[{name:"Team A",pts:0},{name:"Team B",pts:0}], seconds:60, turn:0, order:shuffle(TERMS.map((_, i) => i)), pos:0, last:null});
+let S = fresh();
+try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.teams) S = Object.assign(fresh(), o); } } catch (e) {}
+if (S.screen === "explain") S.screen = "ready";
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let timer = null, endAt = 0;
+const team = () => S.teams[S.turn % S.teams.length];
+const term = () => TERMS[S.order[S.pos]];
+
+function scores(){
+  $("#scores").innerHTML = S.screen === "setup" ? "" : S.teams.map((t, i) => `<div class="score${i === S.turn % S.teams.length && S.screen !== "final" ? " now" : ""}">${esc(t.name)}<b>${t.pts}</b></div>`).join("");
+  $("#info").textContent = S.screen === "setup" || S.screen === "final" ? TOPIC : `${TOPIC} · word ${S.pos + 1} of ${TERMS.length}`;
+}
+function setup(){
+  return `<h2>Grown-up words. Five-year-old explanations.</h2>
+  <div class="setup">
+    <div class="panel"><h3>How it works</h3>
+      <ol class="rules">
+        <li>Each team gets a grown-up word. Explain it so that a <strong>five-year-old</strong> would understand.</li>
+        <li>You can't use the three <strong>crossed-out words</strong>, or the word itself. Use things a child knows: sweets, pocket money, the playground, ${esc(STORY)}.</li>
+        <li>When the time is up, the class decides: would a five-year-old get it? Up to <strong>2 points</strong>.</li>
+        <li>Then see how a five-year-old version could sound.</li>
+      </ol></div>
+    <div class="panel"><h3>Teams</h3>
+      <div class="teams">${S.teams.map((t, i) => `<div class="team-in"><label for="tn${i}" hidden>Team ${i+1} name</label><input id="tn${i}" data-team="${i}" type="text" value="${esc(t.name)}" maxlength="24">${S.teams.length > 2 ? `<button type="button" data-rm="${i}" aria-label="Remove ${esc(t.name)}">×</button>` : ""}</div>`).join("")}</div>
+      ${S.teams.length < 6 ? `<div><button class="btn ghost small" type="button" id="addTeam">Add a team</button></div>` : ""}
+      <h3>Thinking and explaining time</h3>
+      <div class="seg" role="group" aria-label="Time per word">${[45,60,90].map(n => `<button type="button" data-sec="${n}" aria-pressed="${S.seconds === n}">${n}s</button>`).join("")}</div>
+      <div><button class="btn big" type="button" id="begin">Start</button></div>
+      <p class="note">${TERMS.length} words. Play as many as you have time for.</p></div>
+  </div>`;
+}
+function cardHTML(showKid){
+  const x = term();
+  return `<div class="card"><span class="label">${esc(team().name)}, explain this to a five-year-old</span>
+    <div class="term">${esc(x.t)}</div>
+    <div class="banned"><span class="label">Don't say</span>${x.ban.map(b => `<span class="ban">${esc(b)}</span>`).join("")}</div>
+    ${showKid ? `<div class="grown"><strong>Grown-up version:</strong> ${esc(x.grown)}</div>
+    <div class="kid"><span class="k">A five-year-old version</span><p>${esc(x.kid)}</p></div>` : ""}</div>`;
+}
+function ready(){
+  return `<div class="stage">${cardHTML(false)}
+    <div class="side"><p><strong>${esc(team().name)}</strong>: talk it over, then one of you explains it out loud to the class.</p>
+      <div class="row"><button class="btn big" type="button" id="go">Start the clock (${S.seconds}s)</button></div><span class="note">or press <kbd>Space</kbd></span>
+      <button class="btn ghost small" type="button" id="skipWord">Swap this word</button>
+      <button class="btn ghost small" type="button" id="finish">End the game</button></div></div>`;
+}
+function explain(){
+  return `<div class="stage">${cardHTML(false)}
+    <div class="side"><div class="clock" id="clock"><span class="label" style="color:inherit;opacity:.8">Time left</span><span class="t" id="t">${S.seconds}</span><div class="track"><div class="fill" id="fill"></div></div></div>
+      <button class="btn" type="button" id="stop">Done: judge it now</button></div></div>`;
+}
+function judge(){
+  return `<div class="stage">${cardHTML(false)}
+    <div class="side"><p><strong>Class, you decide:</strong> would a five-year-old understand that?</p>
+      <div class="judge">
+        <button class="jb" type="button" data-pts="2"><span class="face" aria-hidden="true">\u{1F603}</span>Yes, totally<span class="pts">+2</span></button>
+        <button class="jb" type="button" data-pts="1"><span class="face" aria-hidden="true">\u{1F914}</span>Sort of<span class="pts">+1</span></button>
+        <button class="jb" type="button" data-pts="0"><span class="face" aria-hidden="true">\u{1F635}</span>Huh?<span class="pts">0</span></button>
+      </div><p class="note">A crossed-out word slipped out? That's a <strong>Huh?</strong></p></div></div>`;
+}
+function reveal(){
+  const last = S.pos >= TERMS.length - 1;
+  return `<div class="stage">${cardHTML(true)}
+    <div class="side"><p class="result">${esc(team().name)}: +${S.last}</p><p class="note">Was theirs better or worse than this one? Why?</p>
+      <div class="row"><button class="btn big" type="button" id="next">${last ? "See the final scores" : "Next team"}</button></div>
+      <button class="btn ghost small" type="button" id="finish">End the game</button></div></div>`;
+}
+function final(){
+  const ranked = S.teams.map(t => ({...t})).sort((a, b) => b.pts - a.pts), top = ranked[0].pts;
+  return `<span class="label">Final scores</span><h2>${ranked.filter(t => t.pts === top).length > 1 ? "It's a draw!" : esc(ranked[0].name) + " win!"}</h2>
+  <div class="podium">${ranked.map((t, k) => `<div class="pod${t.pts === top ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(t.name)}</span><span class="pts">${t.pts}</span></div>`).join("")}</div>
+  <div class="row"><button class="btn" type="button" id="again">Play again with the same teams</button><button class="btn ghost" type="button" id="reset">New game</button></div>`;
+}
+function render(){
+  scores();
+  $("#screen").innerHTML = ({setup, ready, explain, judge, reveal, final})[S.screen]();
+  if (S.screen === "explain") { clearInterval(timer); endAt = Date.now() + S.seconds * 1000; tick(); timer = setInterval(tick, 200); }
+}
+function tick(){
+  const left = Math.max(0, endAt - Date.now()), s = Math.ceil(left / 1000), t = $("#t"); if (!t) return;
+  t.textContent = s; $("#fill").style.transform = `scaleX(${left / (S.seconds * 1000)})`; $("#clock").classList.toggle("low", s <= 10);
+  if (left <= 0) { clearInterval(timer); S.screen = "judge"; save(); render(); }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.sec) { S.seconds = +b.dataset.sec; save(); render(); }
+  if (b.dataset.rm) { S.teams.splice(+b.dataset.rm, 1); save(); render(); }
+  if (b.id === "addTeam") { S.teams.push({name:"Team " + "ABCDEF"[S.teams.length], pts:0}); save(); render(); }
+  if (b.id === "begin") { S.teams = S.teams.map(t => ({name: t.name.trim() || "A team", pts:0})); S.turn = 0; S.pos = 0; S.order = shuffle(TERMS.map((_, i) => i)); S.screen = "ready"; save(); render(); }
+  if (b.id === "go") { S.screen = "explain"; save(); render(); }
+  if (b.id === "stop") { clearInterval(timer); S.screen = "judge"; save(); render(); }
+  if (b.id === "skipWord") { const cur = S.order.splice(S.pos, 1)[0]; S.order.push(cur); save(); render(); }
+  if (b.dataset.pts !== undefined) { S.last = +b.dataset.pts; team().pts += S.last; S.screen = "reveal"; save(); render(); }
+  if (b.id === "next") { if (S.pos >= TERMS.length - 1) S.screen = "final"; else { S.pos++; S.turn++; S.screen = "ready"; } save(); render(); }
+  if (b.id === "finish") { clearInterval(timer); S.screen = "final"; save(); render(); }
+  if (b.id === "again") { S.teams.forEach(t => t.pts = 0); S.turn = 0; S.pos = 0; S.order = shuffle(TERMS.map((_, i) => i)); S.screen = "ready"; save(); render(); }
+  if (b.id === "reset") { S = fresh(); save(); render(); }
+});
+document.addEventListener("input", e => { if (e.target.dataset.team) { S.teams[+e.target.dataset.team].name = e.target.value; save(); } });
+document.addEventListener("keydown", e => {
+  if (e.target.closest && e.target.closest("input")) return;
+  if (S.screen === "ready" && e.key === " ") { e.preventDefault(); $("#go").click(); }
+});
+render();
+})();
+</script>
+</body>
+</html>
