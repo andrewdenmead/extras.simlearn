@@ -1,0 +1,116 @@
+{
+ "name": "Fix the Flop!",
+ "pick": {
+  "label": "Pick a flop",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a famous flop and fix it",
+  "lead": [
+   "Every big company has a product it would rather we all forgot: the drink nobody wanted, the gadget everyone laughed at, the launch that went horribly wrong. Some of them cost a fortune, and a few nearly sank the company.",
+   "Choose a famous flop and give it a second chance. Here are some ideas, but you can choose your own. *Your job is to win the public back.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This isn't a serious business plan, it's just for a bit of fun. Some rescues will be clever, and some will be the kind of idea you have at two in the morning after a long week. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Gadgets",
+   "items": [
+    "Google Glass",
+    "Segway",
+    "Nintendo Virtual Boy",
+    "Amazon Fire Phone",
+    "Microsoft's Clippy"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "New Coke",
+    "Heinz green ketchup",
+    "Burger King Satisfries",
+    "McDonald's Arch Deluxe"
+   ]
+  },
+  {
+   "head": "Getting about",
+   "items": [
+    "Sinclair C5",
+    "DeLorean",
+    "Ford Edsel",
+    "Concorde"
+   ]
+  },
+  {
+   "head": "Screens",
+   "items": [
+    "Quibi",
+    "Google+",
+    "Cats (the 2019 film)",
+    "Vine"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "flop",
+   "My flop is:",
+   "Which famous flop are you rescuing?"
+  ],
+  [
+   "wrong",
+   "What went wrong:",
+   "Too expensive, too weird, too early, laughed at, nobody understood it…"
+  ],
+  [
+   "fix",
+   "My fix is:",
+   "What exactly do you change? The product, the price, the name, the whole idea?"
+  ],
+  [
+   "who",
+   "It's for (first):",
+   "Who do you win back first? The people who laughed, the few fans, someone new?"
+  ],
+  [
+   "slogan",
+   "My slogan is:",
+   "One line that admits the past, ignores it, or makes a joke of it."
+  ],
+  [
+   "launch",
+   "I would relaunch it by:",
+   "Where does it appear again, and who gets people talking about it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here's one I made earlier",
+  "values": {
+   "flop": "Sinclair C5",
+   "wrong": "A tiny electric tricycle from 1985 where you sat about as high as a lorry's tyres, in the rain, with no roof. People called it a joke on wheels.",
+   "fix": "C5 Kiez: a sharing scheme in Friedrichshain, now with a roof, a cup holder and a speaker. It's still slower than an e-scooter, so it's officially the safest way home from Berghain.",
+   "who": "People who are too old for e-scooters but too proud to take a taxi. Also children, who think it's a car for cats.",
+   "slogan": "“Forty years ahead of its time. Sorry about the wait.”",
+   "launch": "Getting a famous DJ to arrive at a festival in one, very slowly, while the whole crowd waits. The clip goes viral, and then everybody wants a go."
+  }
+ },
+ "words": [
+  "relaunch",
+  "reputation",
+  "backlash",
+  "win back",
+  "second chance"
+ ],
+ "yours": {
+  "label": "Your rescue",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your rescue in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which rescue wins?",
+  "noun": "rescue",
+  "placeholder": "The rescue, e.g. C5 Kiez",
+  "lead": "Each student tells us about their rescue in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "name": "Take It to the Streets!",
+ "pick": {
+  "eyebrow": "Up to you!",
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "label": "Pick a grievance",
+  "heading": "Pick a small annoyance and start a movement",
+  "lead": [
+   "History is full of great causes. This isn’t one of them. Everybody has a small, daily annoyance that makes them quietly furious: the lecture at 8 a.m., the printer that jams before every deadline, the Bürgeramt appointment you can only get in three months’ time in Marzahn.",
+   "Choose one and turn it into a campaign: a demand, a slogan and a plan for getting noticed. Here are some ideas, but you can choose your own. *The more trivial, the better.*"
+  ],
+  "note": "Obviously nobody is actually marching anywhere. Keep it kind: campaign against a thing, not against a group of people."
+ },
+ "shelf": [
+  {
+   "head": "At university",
+   "items": [
+    "8 a.m. lectures",
+    "Group projects",
+    "Moodle crashing before a deadline",
+    "Printers that never work",
+    "Reading lists of 40 books"
+   ]
+  },
+  {
+   "head": "In Berlin",
+   "items": [
+    "Bürgeramt appointments",
+    "Rail replacement buses",
+    "E-scooters on the pavement",
+    "Spätis that only take cash",
+    "Drilling on a Sunday morning"
+   ]
+  },
+  {
+   "head": "Everyday life",
+   "items": [
+    "Reply-all emails",
+    "Autocorrect",
+    "Self-service checkouts",
+    "Subscriptions you can’t cancel",
+    "Pineapple on pizza"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "grievance",
+   "My cause is:",
+   "Which small thing makes you quietly furious?"
+  ],
+  [
+   "demand",
+   "We demand:",
+   "What exactly should change, and who has to change it?"
+  ],
+  [
+   "slogan",
+   "Our slogan is:",
+   "Short enough for a placard, catchy enough to chant"
+  ],
+  [
+   "how",
+   "We’ll get noticed by:",
+   "A march, a petition, a sit-in, a hashtag, something stranger?"
+  ],
+  [
+   "who",
+   "Who joins us first:",
+   "Who suffers most from this, and who would you have to win over?"
+  ],
+  [
+   "line",
+   "The line we won’t cross:",
+   "What would make you lose public support?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "grievance": "Bürgeramt appointments",
+   "demand": "Any appointment, anywhere in Berlin, within two weeks. If the city can’t manage that, the Bürgeramt comes to you, in a van.",
+   "slogan": "“What do we want? An appointment! When do we want it? Some time in the next eleven weeks!”",
+   "how": "A queue-in: five hundred people standing politely in a perfect line round the Rotes Rathaus from 7 a.m., each holding a little paper number. Very German, and very hard to object to.",
+   "who": "Every Erasmus student who has ever tried to register an address, and anyone who has refreshed the booking page at midnight.",
+   "line": "Blocking the trams. Berliners will forgive almost anything, but not making them late."
+  }
+ },
+ "words": [
+  "grievance",
+  "petition",
+  "disruption",
+  "public support",
+  "demonstration"
+ ],
+ "yours": {
+  "label": "Your movement",
+  "heading": "Your campaign",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your movement in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which movement wins?",
+  "noun": "movement",
+  "placeholder": "The cause, e.g. Appointments for all",
+  "lead": "Each student tells us about their movement in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

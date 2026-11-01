@@ -1,0 +1,109 @@
+{
+ "name": "Take It Abroad!",
+ "pick": {
+  "label": "Pick something German",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something very German and launch it in another country",
+  "lead": [
+   "Some things are so German that nobody outside Germany has ever heard of them. Others have travelled the world, and some had to change quite a lot on the way.",
+   "Choose something from the shelf (or your own idea), choose a country, and work out how to make people there love it. *What changes, and what stays the same?*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a perfect export strategy here, this is just for a bit of fun. Some launches will make total sense, and some will be a beautiful disaster. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Characters",
+   "items": [
+    "Sandmännchen",
+    "Die Maus",
+    "Pumuckl",
+    "Benjamin Blümchen",
+    "The Ampelmännchen"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "Currywurst",
+    "Club-Mate",
+    "Spezi",
+    "Brezeln",
+    "Spaghettieis"
+   ]
+  },
+  {
+   "head": "Traditions",
+   "items": [
+    "The Schultüte",
+    "Advent calendars",
+    "Garden gnomes",
+    "Christmas markets",
+    "Feuerzangenbowle"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "I am taking abroad:",
+   "Which German thing are you exporting?"
+  ],
+  [
+   "where",
+   "To:",
+   "Which country, and why there?"
+  ],
+  [
+   "change",
+   "What I would change:",
+   "The name, the look, the taste, the story… What would confuse people there?"
+  ],
+  [
+   "keep",
+   "What stays exactly the same:",
+   "What has to stay, or it isn’t really German any more?"
+  ],
+  [
+   "name",
+   "It’s called:",
+   "Its new name, if it needs one. Is it easy to say there?"
+  ],
+  [
+   "launch",
+   "I would launch it by:",
+   "Where does it appear first, and who talks about it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "Sandmännchen, the little man who has been sending German children to bed since 1959.",
+   "where": "Scotland, because Scottish children are just as good at refusing to go to bed.",
+   "change": "He comes on just before seven in the evening, but in June it’s still light in Edinburgh at ten o’clock. So he brings blackout curtains and a very good excuse.",
+   "keep": "The beard, the pointy hat and the sand. Also the slightly strange vehicles: he arrives on a ferry from Orkney.",
+   "name": "The Wee Sandman. Easy to say, and nobody needs to try “Männchen”.",
+   "launch": "On children’s TV, and with a stuffed toy at every station, so tired parents can buy him on the way home."
+  }
+ },
+ "words": [
+  "localise",
+  "adapt",
+  "target market",
+  "familiar",
+  "lost in translation"
+ ],
+ "yours": {
+  "label": "Your launch",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your launch in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which launch wins?",
+  "noun": "launch",
+  "placeholder": "The launch, e.g. The Wee Sandman",
+  "lead": "Each student tells us about their launch in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

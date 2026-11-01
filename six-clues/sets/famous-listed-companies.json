@@ -1,0 +1,107 @@
+{
+ "name": "Guess the Stock",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Investor fact sheet",
+ "facets": [
+  "What it sells",
+  "Who buys it",
+  "Origin story",
+  "On the stock market",
+  "The look",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Ferrari",
+   "aliases": [
+    "ferrari n.v.",
+    "ferari"
+   ],
+   "clues": [
+    "It sells something very few people need and a lot of people want, and it makes sure there are never quite enough to go round.",
+    "Very rich people, many of whom have to show they are loyal customers before they are allowed to buy the newest models.",
+    "A former racing driver founded it in northern Italy in the 1940s. Its factory is still in a small town near Modena.",
+    "It joined the New York Stock Exchange in October 2015, with a four-letter ticker symbol that describes what it does best: RACE.",
+    "A black horse standing on its back legs on a yellow background, and a lot of red.",
+    "The founder’s surname, a common Italian one that comes from the word for a blacksmith."
+   ]
+  },
+  {
+   "name": "Nike",
+   "aliases": [
+    "nike inc",
+    "niké"
+   ],
+   "clues": [
+    "It sells clothes and shoes for sport, but most of its customers have never run a marathon.",
+    "Runners, basketball fans, sneaker collectors who never take theirs out of the box, and people who wear tracksuits to the supermarket.",
+    "A young accountant and his old running coach started it in Oregon in 1964, and at first he sold Japanese running shoes from the boot of his car.",
+    "It joined the stock market in December 1980, and since 2013 it has been one of the 30 companies in the Dow Jones index.",
+    "A logo like a tick, which a design student drew for $35 in 1971.",
+    "It’s named after the Greek goddess of victory."
+   ]
+  },
+  {
+   "name": "Netflix",
+   "aliases": [
+    "netflix inc",
+    "net flix"
+   ],
+   "clues": [
+    "It sells you hours and hours of something for a fixed price every month, and then asks if you’re still there.",
+    "Students who say they’ll watch just one episode, couples who can’t agree what to watch, and anyone who has shared a password with an ex.",
+    "Two Americans started it in California in 1997, posting DVDs to people’s homes. In 2000 they offered to sell it to the biggest video-rental chain for $50 million, and were turned down.",
+    "It joined the Nasdaq in May 2002 at $15 a share. It started streaming in 2007, and its DVD-by-post service finally closed in 2023.",
+    "A red letter N on a black screen, and a deep “ta-dum” before every show.",
+    "“Net”, as in the internet, plus “flix”, slang for films."
+   ]
+  },
+  {
+   "name": "Tesla",
+   "aliases": [
+    "tesla motors",
+    "tesla inc"
+   ],
+   "clues": [
+    "It sells cars, but investors have often valued it more like a technology company than a carmaker.",
+    "People who want to show they care about the planet, and people who just like going very fast, very quietly.",
+    "Two engineers founded it in California in 2003. Its most famous boss joined the next year, as an investor.",
+    "It went public in June 2010 at $17 a share. In 2021 it became worth more than a trillion dollars.",
+    "A logo shaped like a T, and a factory in Grünheide, just outside Berlin, that opened in 2022.",
+    "It’s named after a Serbian-American inventor who worked on electricity."
+   ]
+  },
+  {
+   "name": "Coca-Cola",
+   "aliases": [
+    "coca cola",
+    "coke",
+    "the coca-cola company"
+   ],
+   "clues": [
+    "It sells something that is mostly water and sugar, in more than 200 countries.",
+    "Everyone, at least once. Especially at Christmas, if you believe the adverts.",
+    "A pharmacist created the drink in Atlanta in 1886.",
+    "The world’s most famous investor, Warren Buffett, started buying its shares in 1988 and has never sold them.",
+    "Red and white, with letters that look like old-fashioned handwriting, and a curvy glass bottle designed to be recognised even in the dark.",
+    "Its name comes from two of its original ingredients: coca leaves and kola nuts."
+   ]
+  },
+  {
+   "name": "GameStop",
+   "aliases": [
+    "game stop",
+    "gme"
+   ],
+   "clues": [
+    "It sells video games and consoles in shops, which is now a slightly old-fashioned way to buy them.",
+    "Gamers, collectors and, in 2021, a huge crowd of small investors, many of whom had never bought a share before.",
+    "An American chain of shops, based near Dallas in Texas.",
+    "In January 2021 users of an online forum bought so many of its shares that the price rose more than tenfold in a few weeks, and hedge funds that had bet against it lost billions.",
+    "A man who called himself “Roaring Kitty” became the hero of the story, and in 2023 it was turned into the film Dumb Money.",
+    "Two words: what you play, and a place where you stop."
+   ]
+  }
+ ]
+}

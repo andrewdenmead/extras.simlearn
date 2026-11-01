@@ -1,0 +1,119 @@
+{
+ "name": "Make It Scary!",
+ "pick": {
+  "label": "Pick a nightmare",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something ordinary and make it a horror film",
+  "lead": [
+   "The best horror films take something completely normal, a hotel, a phone call, a weekend with your partner’s parents, and make it terrifying. One good poster is enough to give people nightmares before they have even seen the film.",
+   "Choose something from everyday life and turn it into a horror film. Here are some ideas, but you can choose your own. *Your job is the poster, not the film.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Nobody is going to make this film (probably). This is just for a bit of fun. Some ideas are genuinely scary, and some are only scary if you live in Berlin. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Berlin life",
+   "items": [
+    "The Bürgeramt",
+    "The Ringbahn at 3 a.m.",
+    "Sunday (everything’s closed)",
+    "Finding a flat",
+    "BER airport"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "The group chat",
+    "Your flatmate’s washing-up",
+    "IKEA flatpack",
+    "The washing machine that beeps",
+    "The neighbour’s drill"
+   ]
+  },
+  {
+   "head": "Uni life",
+   "items": [
+    "Deadlines",
+    "Group projects",
+    "The printer",
+    "Moodle at 23:59",
+    "Presentations"
+   ]
+  },
+  {
+   "head": "Nature",
+   "items": [
+    "Pigeons",
+    "Wasps at a picnic",
+    "Seagulls in Edinburgh",
+    "Mosquitoes",
+    "The Baltic Sea in May"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "My nightmare is:",
+   "What ordinary thing is your horror film about?"
+  ],
+  [
+   "title",
+   "The film is called:",
+   "Short, dark and easy to remember."
+  ],
+  [
+   "tagline",
+   "The tagline:",
+   "One line on the poster that makes people nervous."
+  ],
+  [
+   "image",
+   "On the poster:",
+   "The one image people see. What is it, and where is it?"
+  ],
+  [
+   "scene",
+   "The scariest scene:",
+   "The moment that makes the whole cinema scream."
+  ],
+  [
+   "where",
+   "The poster hangs:",
+   "Where do people see it first? A U-Bahn station, a billboard, a phone screen…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "The Bürgeramt",
+   "title": "NO APPOINTMENTS",
+   "tagline": "The next free date is in March. Nobody knows which year.",
+   "image": "An empty waiting room, lit by one flickering screen that shows your number: 666.",
+   "scene": "You finally get to the desk after four hours, and the man asks for a form you have never heard of. Then the lights go out.",
+   "where": "Inside the Bürgeramt itself, so people see it while they wait. They will have plenty of time."
+  }
+ },
+ "words": [
+  "tagline",
+  "key art",
+  "teaser poster",
+  "eye-catching",
+  "atmosphere"
+ ],
+ "yours": {
+  "label": "Your film",
+  "heading": "Your poster",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your film in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which film would you queue for?",
+  "noun": "film",
+  "placeholder": "The film, e.g. NO APPOINTMENTS",
+  "lead": "Each student tells us about their film in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

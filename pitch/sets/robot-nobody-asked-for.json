@@ -1,0 +1,117 @@
+{
+ "name": "The Robot Nobody Asked For",
+ "pick": {
+  "label": "Pick a job",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a job and hand it to a machine",
+  "lead": [
+   "Everyone says AI and robots are coming for our jobs. So far they mostly write emails and vacuum the floor (badly). There must be better things for them to do.",
+   "Choose a job or a chore from the shelf, or your own, and invent the machine that takes it over. *Then decide what's left for the humans.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "It doesn't have to work, and it definitely doesn't have to be legal. It just has to be something you'd secretly like to own. Total nonsense is welcome."
+ },
+ "shelf": [
+  {
+   "head": "Student jobs",
+   "items": [
+    "Barista",
+    "Späti cashier",
+    "Pizza delivery",
+    "Lifeguard",
+    "Club bouncer"
+   ]
+  },
+  {
+   "head": "Chores",
+   "items": [
+    "Washing up",
+    "Folding fitted sheets",
+    "Building IKEA furniture",
+    "Sorting the recycling",
+    "Getting a Bürgeramt appointment"
+   ]
+  },
+  {
+   "head": "University",
+   "items": [
+    "Writing the bibliography",
+    "Group work",
+    "Finding a seat in the library",
+    "Answering emails from lecturers"
+   ]
+  },
+  {
+   "head": "Out and about",
+   "items": [
+    "Splitting the bill",
+    "Choosing a restaurant",
+    "Walking the dog",
+    "Finding a parking space"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "job",
+   "The job I'm automating:",
+   "Which job or chore are you handing over?"
+  ],
+  [
+   "hate",
+   "Why humans hate it:",
+   "Boring, slow, stressful, embarrassing, or all four?"
+  ],
+  [
+   "machine",
+   "My machine:",
+   "What is it, what does it look like, and how does it do the job?"
+  ],
+  [
+   "who",
+   "Who buys it first:",
+   "Students, parents, companies, the city of Berlin?"
+  ],
+  [
+   "human",
+   "What a human still has to do:",
+   "What can't the machine do, or what should it never be allowed to do?"
+  ],
+  [
+   "name",
+   "Its name and slogan:",
+   "What's written on the box?"
+  ]
+ ],
+ "example": {
+  "heading": "Here's one I made earlier",
+  "values": {
+   "job": "Getting a Bürgeramt appointment",
+   "hate": "You refresh the website at 7 a.m. every day for three weeks, and when a slot finally appears it's in Spandau, on a Tuesday, at 7:15.",
+   "machine": "A small robot on your desk that refreshes the website all night, grabs the first slot in Berlin and then rings a little bell. It's shaped like a tiger because it pounces.",
+   "who": "Everybody who has ever moved flat in Berlin, which is everybody.",
+   "human": "Actually going to the appointment, with all the right documents, in person. The robot tried once and was sent away for not having a passport.",
+   "name": "“TerminTiger: It waits so you don't have to.”"
+  }
+ },
+ "words": [
+  "automate",
+  "routine tasks",
+  "productivity",
+  "replace",
+  "the human touch"
+ ],
+ "yours": {
+  "label": "Your machine",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your machine in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which machine wins?",
+  "noun": "machine",
+  "placeholder": "The machine, e.g. TerminTiger",
+  "lead": "Each student tells us about their machine in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

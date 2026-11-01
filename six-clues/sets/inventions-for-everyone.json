@@ -1,0 +1,125 @@
+{
+ "name": "Guess the Invention",
+ "what": "invention",
+ "whats": "inventions",
+ "doc": "Design file",
+ "facets": [
+  "First made for",
+  "When and where",
+  "How it works",
+  "Who uses it now",
+  "Fun fact",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Bendy straw",
+   "aliases": [
+    "Bendy straws",
+    "Flexible straw",
+    "Bendable straw",
+    "Straw",
+    "Drinking straw",
+    "Flexi straw"
+   ],
+   "clues": [
+    "A little girl who couldn’t reach the top of her tall glass.",
+    "A sweet shop in San Francisco. Her father patented his idea in 1937.",
+    "Ridges let it bend over the edge of a glass without closing. He made the first one with a screw and some dental floss.",
+    "Almost everyone, but its very first sale, in 1947, was to a hospital.",
+    "Single-use plastic ones have been banned in the EU since 2021.",
+    "A straw with a bend in it."
+   ]
+  },
+  {
+   "name": "Electric toothbrush",
+   "aliases": [
+    "Electric toothbrushes",
+    "Electronic toothbrush",
+    "Power toothbrush",
+    "Toothbrush"
+   ],
+   "clues": [
+    "At first, dentists mainly recommended it to patients who found it hard to move their hands and fingers well.",
+    "Switzerland, 1954.",
+    "A small motor moves the head, so your hand doesn’t have to do all the work.",
+    "Millions of people, twice a day, in the bathroom.",
+    "The first ones had a cable and plugged into the wall.",
+    "It buzzes while you clean your teeth."
+   ]
+  },
+  {
+   "name": "Braille",
+   "aliases": [
+    "Braille alphabet",
+    "Braille writing",
+    "Brail",
+    "Blindenschrift"
+   ],
+   "clues": [
+    "People who are blind or can’t see well.",
+    "Paris, in the 1820s. The inventor was only 15.",
+    "Six raised dots in different patterns, one pattern for each letter, read with the fingertips.",
+    "You can find it on medicine packets in the EU and next to the buttons in many lifts.",
+    "It grew out of a military code that soldiers could read in the dark without a light.",
+    "It’s named after its inventor, Louis, who lost his sight as a small child."
+   ]
+  },
+  {
+   "name": "Audiobook",
+   "aliases": [
+    "Audiobooks",
+    "Audio book",
+    "Talking book",
+    "Hörbuch",
+    "Hoerbuch"
+   ],
+   "clues": [
+    "Blind readers in the USA, in the 1930s.",
+    "The American Foundation for the Blind, which called them ‘Talking Books’.",
+    "Someone reads the whole book aloud, and you listen.",
+    "Commuters, joggers, people doing the washing-up, and anyone who wants a story at bedtime.",
+    "Some of the very first long-playing records (LPs) weren’t music: they were these, because speech sounded clear enough on them.",
+    "A book you listen to instead of reading."
+   ]
+  },
+  {
+   "name": "Tactile paving",
+   "aliases": [
+    "Tactile paving stones",
+    "Tactile tiles",
+    "Tenji blocks",
+    "Blindenleitsystem",
+    "Tactile pavement",
+    "Guidance paving",
+    "Bumpy tiles",
+    "Tactile strips"
+   ],
+   "clues": [
+    "A friend of the inventor who was losing his sight.",
+    "Japan: invented in 1965 and first laid outside a school for the blind in Okayama in 1967.",
+    "Raised bumps or lines that you can feel through your shoes or with a cane.",
+    "You walk over it on most train platforms in Germany.",
+    "In 2021 Google celebrated the inventor, Seiichi Miyake, with a Google Doodle.",
+    "The bumpy, usually white or yellow lines along the edge of train platforms."
+   ]
+  },
+  {
+   "name": "Typewriter",
+   "aliases": [
+    "Typewriters",
+    "Type writer",
+    "Schreibmaschine",
+    "Writing machine"
+   ],
+   "clues": [
+    "A friend of the inventor who had lost her sight and wanted to write her own letters.",
+    "Italy, in the early 1800s. Some of the letters she wrote with it still exist.",
+    "You press a key and a letter is printed on the paper. The inventor also came up with carbon paper for the ink.",
+    "Writers and offices for over a hundred years. Today mostly collectors and fans of vintage things.",
+    "The letter layout on your laptop keyboard (QWERTZ in Germany) comes from it.",
+    "A machine you type on that prints straight onto paper: clack, clack, ding!"
+   ]
+  }
+ ]
+}

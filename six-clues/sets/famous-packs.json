@@ -1,0 +1,123 @@
+{
+ "name": "Guess the Pack",
+ "what": "pack",
+ "whats": "packs",
+ "doc": "Packaging file",
+ "facets": [
+  "What's inside",
+  "Who buys it",
+  "Where it began",
+  "Shape and material",
+  "Famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Coca-Cola bottle",
+   "aliases": [
+    "Coke bottle",
+    "Coca Cola bottle",
+    "contour bottle",
+    "Coca-Cola",
+    "Coca Cola",
+    "Coke"
+   ],
+   "clues": [
+    "A sweet, fizzy drink. Most people in the world could recognise its pack with their eyes closed.",
+    "Pretty much everyone, in almost every country on Earth.",
+    "In 1915 a glass company in Indiana, USA, won a competition to design it.",
+    "Green-tinted glass with curves and ribs. The designer got the idea from a picture of a cocoa bean.",
+    "The brief said people should recognise it in the dark just by touch, or even lying broken on the ground.",
+    "A curvy glass bottle for the world's most famous cola."
+   ]
+  },
+  {
+   "name": "Pringles",
+   "aliases": [
+    "Pringles can",
+    "Pringles tube",
+    "Pringle"
+   ],
+   "clues": [
+    "Salty snacks, stacked neatly on top of each other, all exactly the same shape.",
+    "Snack lovers, party hosts, and anyone whose hand has ever got stuck at the bottom.",
+    "An American company first sold it in 1968.",
+    "A tall cardboard tube with a plastic lid. Inside, the crisps are curved like a saddle.",
+    "The chemist who designed the tube asked for some of his ashes to be buried in one, and his children did it.",
+    "Its mascot is a man with a huge moustache called Mr. P."
+   ]
+  },
+  {
+   "name": "Kinder Surprise",
+   "aliases": [
+    "Kinder egg",
+    "Kinder Surprise egg",
+    "Kinder Überraschung",
+    "Kinder Ueberraschung",
+    "Überraschungsei",
+    "Ueberraschungsei",
+    "Ü-Ei",
+    "U-Ei",
+    "Kinder"
+   ],
+   "clues": [
+    "Chocolate on the outside, and something you definitely can't eat on the inside.",
+    "Children, and adults who collect what's inside.",
+    "An Italian family company launched it in 1974.",
+    "An egg made of milk chocolate with a white layer inside, wrapped in thin, shiny foil.",
+    "Inside there's a yellow plastic capsule with a small toy that you often have to build yourself.",
+    "In Germany it's called the Überraschungsei, or Ü-Ei."
+   ]
+  },
+  {
+   "name": "Club-Mate",
+   "aliases": [
+    "Club Mate",
+    "Clubmate",
+    "Mate"
+   ],
+   "clues": [
+    "A fizzy drink that tastes a bit strange the first time, a little like tea.",
+    "Berlin clubbers, computer hackers, and students in exam week.",
+    "Its recipe goes back to 1924, and today it's made by a small family brewery in Bavaria.",
+    "A glass bottle, often bought by the crate, with a drawing of a South American cowboy on the label.",
+    "Its slogan is “You'll get used to it”. It has about twice as much caffeine as cola.",
+    "It's made from yerba mate, and the first part of its name is a place where people go dancing."
+   ]
+  },
+  {
+   "name": "Maggi Würze",
+   "aliases": [
+    "Maggi",
+    "Maggi Wuerze",
+    "Maggi Wurze",
+    "Maggi seasoning",
+    "Maggi sauce"
+   ],
+   "clues": [
+    "A few drops of a dark, salty liquid. Your grandparents probably put it in their soup.",
+    "Home cooks, especially in German-speaking countries.",
+    "A Swiss businessman launched it in 1886.",
+    "A tall, dark brown bottle with a narrow neck, so it comes out drop by drop, and a red and yellow label.",
+    "In German, a garden herb that smells just like it is nicknamed after it.",
+    "The brand name is also the surname of its founder, Julius Maggi."
+   ]
+  },
+  {
+   "name": "Absolut",
+   "aliases": [
+    "Absolut Vodka",
+    "Absolute",
+    "Absolute Vodka"
+   ],
+   "clues": [
+    "A clear drink with no colour, very little smell, and quite a lot of attitude.",
+    "Party people, cocktail bars, and art fans who love its old adverts.",
+    "It was launched in Sweden in 1979.",
+    "A short glass bottle with round shoulders and no paper label: the writing is printed straight onto the glass.",
+    "The shape came from an old Swedish medicine bottle. For years its adverts were just that bottle shape, hidden in pictures.",
+    "A Swedish vodka whose name is the Swedish word for “absolute”."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "name": "Guess the Trailblazer",
+ "what": "trailblazer",
+ "whats": "trailblazers",
+ "doc": "Biography",
+ "facets": [
+  "Early life",
+  "Their field",
+  "Famous moment",
+  "The first",
+  "Legacy",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Ada Lovelace",
+   "aliases": [
+    "lovelace",
+    "ada byron",
+    "augusta ada king",
+    "countess of lovelace"
+   ],
+   "clues": [
+    "Born in London in 1815. Her famous father left when she was a baby, and she never really knew him.",
+    "A mathematician who got very excited about a machine that was never actually built.",
+    "In 1843 she published long notes about that machine, including a step-by-step method for it to calculate a series of numbers.",
+    "She is often called the first computer programmer.",
+    "A programming language is named after her, and a day every October celebrates women in science and technology in her honour.",
+    "Her father was the poet Lord Byron. Her title starts with the word “love”."
+   ]
+  },
+  {
+   "name": "Yuri Gagarin",
+   "aliases": [
+    "gagarin",
+    "juri gagarin",
+    "jurij gagarin",
+    "yuri gagarin",
+    "yury gagarin"
+   ],
+   "clues": [
+    "Born in 1934 in a small village west of Moscow. As a teenager he trained to work in a steel foundry, and learnt to fly at a local flying club.",
+    "A fighter pilot, chosen in 1960 as one of twenty pilots for a secret training programme.",
+    "Just before take-off he said “Poyekhali!”, which means “Let’s go!”. The whole trip took 108 minutes.",
+    "On 12 April 1961 he became the first human to travel into space and orbit the Earth.",
+    "The UN marks 12 April as the International Day of Human Space Flight. He died in a training flight in 1968, aged 34.",
+    "His first name is Yuri, and he flew for the Soviet Union in a capsule called Vostok 1."
+   ]
+  },
+  {
+   "name": "Katherine Johnson",
+   "aliases": [
+    "johnson",
+    "katherine g. johnson",
+    "katherine goble",
+    "katherine coleman johnson"
+   ],
+   "clues": [
+    "Born in West Virginia in 1918. She was so good at maths that she started high school at the age of ten.",
+    "She worked as a “computer”: in those days, that was a job title for a person who did difficult calculations by hand.",
+    "In 1962 an astronaut asked for her to check the new electronic computer’s numbers by hand before he flew around the Earth.",
+    "One of the Black women mathematicians at NASA whose work was ignored by most history books for decades.",
+    "Her story, and the story of two of her colleagues, became the 2016 film Hidden Figures. In 2015 Barack Obama gave her the Presidential Medal of Freedom.",
+    "Her surname is one of the most common in the USA, and the same as a former British prime minister’s."
+   ]
+  },
+  {
+   "name": "Lewis Hamilton",
+   "aliases": [
+    "hamilton",
+    "sir lewis hamilton"
+   ],
+   "clues": [
+    "He grew up in Stevenage, a town north of London, and started racing go-karts at the age of eight.",
+    "A sportsman who spends his working life going round in circles, very fast.",
+    "At ten he walked up to a team boss at an awards evening and told him he would drive for him one day. A few years later, the team signed him.",
+    "The first, and so far the only, Black driver in Formula 1.",
+    "Seven world championships, a record he shares with Michael Schumacher. In 2025 he moved to Ferrari.",
+    "His first name is the English form of Ludwig, and he is allowed to put “Sir” in front of it."
+   ]
+  },
+  {
+   "name": "Malala Yousafzai",
+   "aliases": [
+    "malala",
+    "yousafzai",
+    "malala yousufzai",
+    "malala yousafsai"
+   ],
+   "clues": [
+    "Born in 1997 in the Swat Valley in northern Pakistan, where her father ran a school.",
+    "At eleven she wrote an anonymous online diary for the BBC about life in a valley where girls were being banned from going to school.",
+    "In 2012, aged 15, she survived an attack on her school bus and was flown to Birmingham for treatment. She stayed in England.",
+    "In 2014, at 17, she became the youngest person ever to win a Nobel Prize.",
+    "She graduated from Oxford University in 2020, and runs a fund that campaigns for every girl’s right to twelve years of school.",
+    "The UN named her birthday, 12 July, after her. She shares her first name with a famous Pashtun folk heroine, Malalai."
+   ]
+  },
+  {
+   "name": "Amelia Earhart",
+   "aliases": [
+    "earhart",
+    "amelia earheart"
+   ],
+   "clues": [
+    "Born in Kansas in 1897. As a girl, she kept a scrapbook of newspaper stories about women doing jobs usually done by men.",
+    "She took her first flying lesson in 1921. Her first plane was bright yellow, and she called it “The Canary”.",
+    "In 1932 she landed in a field in Northern Ireland, and a surprised farm worker asked her if she had come far.",
+    "The first woman to fly alone, without stopping, across the Atlantic.",
+    "In 1937 she disappeared over the Pacific while trying to fly around the world. Her plane has never been found.",
+    "Her surname sounds like “air heart”, which suits a pilot."
+   ]
+  }
+ ]
+}

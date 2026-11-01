@@ -1,0 +1,112 @@
+{
+ "name": "Guess the Leader",
+ "what": "leader",
+ "whats": "leaders",
+ "doc": "Leadership profile",
+ "facets": [
+  "Leadership style",
+  "Where they led",
+  "How it started",
+  "Known for",
+  "How it ended",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Alex Ferguson",
+   "aliases": [
+    "Sir Alex Ferguson",
+    "Ferguson",
+    "Fergie",
+    "Sir Alex",
+    "Alex Fergusson"
+   ],
+   "clues": [
+    "Fierce, demanding and very loyal. Players who crossed him rarely stayed long.",
+    "Took a Scottish club to a European trophy in 1983, beating Real Madrid in the final, then moved to England.",
+    "Grew up in Govan, in Glasgow. While playing football part-time he worked in a shipyard and trained as a toolmaker.",
+    "Furious half-time talks: he once kicked a tea urn across the dressing room.",
+    "Retired in 2013 after more than 26 years at the same club, with 13 league titles.",
+    "Knighted in 1999, the year he won the first of his two Champions League titles with Manchester United."
+   ]
+  },
+  {
+   "name": "Nelson Mandela",
+   "aliases": [
+    "Mandela",
+    "Madiba",
+    "Nelson Madela"
+   ],
+   "clues": [
+    "Patient, dignified and forgiving. He believed you make peace with your enemies by working with them.",
+    "A country at the southern tip of Africa, from 1994 to 1999.",
+    "Trained as a lawyer and, in 1952, opened his country’s first Black-run law firm with his friend Oliver Tambo.",
+    "Spending 27 years in prison, 18 of them on Robben Island, then walking free in 1990 without seeking revenge.",
+    "Stepped down after a single term in 1999. He died in 2013, aged 95.",
+    "South Africa’s first Black president, known to many as ‘Madiba’."
+   ]
+  },
+  {
+   "name": "Jürgen Klopp",
+   "aliases": [
+    "Klopp",
+    "Jurgen Klopp",
+    "Juergen Klopp",
+    "Kloppo"
+   ],
+   "clues": [
+    "Loud, emotional and a big hugger. He builds teams that feel like a family.",
+    "Three football clubs in two countries, and at least seven years at each.",
+    "Spent most of his playing career at one German second-division club, then became its manager almost overnight in 2001.",
+    "Calling his style ‘heavy metal football’, and introducing himself to English journalists in 2015 as ‘the Normal One’.",
+    "Left his last club in 2024, saying he was running out of energy. In 2025 he went to work for Red Bull.",
+    "Won the Bundesliga twice with Borussia Dortmund, then the Champions League and the Premier League with Liverpool."
+   ]
+  },
+  {
+   "name": "Steve Jobs",
+   "aliases": [
+    "Jobs",
+    "Steven Jobs"
+   ],
+   "clues": [
+    "Demanding, impatient and obsessed with detail. Colleagues said he could make the impossible seem possible.",
+    "A technology company that became one of the most valuable in the world.",
+    "Dropped out of college, then co-founded a computer company with a friend in 1976.",
+    "Wearing almost the same thing every day: a black polo-neck jumper, jeans and trainers.",
+    "Pushed out of his own company in 1985, he ran the animation studio Pixar, came back in 1997 and led the company until shortly before his death in 2011.",
+    "In 2007 he walked on stage and presented ‘an iPod, a phone and an internet communicator’ in one device: the first iPhone."
+   ]
+  },
+  {
+   "name": "Jacinda Ardern",
+   "aliases": [
+    "Ardern",
+    "Jacinda"
+   ],
+   "clues": [
+    "Warm, open and calm on camera. She believed that kindness is a strength, not a weakness.",
+    "A country in the South Pacific, from 2017 to 2023.",
+    "Became her party’s leader less than two months before an election, and head of government at 37.",
+    "Having a baby while in office, then taking her daughter to the UN General Assembly in New York in 2018.",
+    "Resigned in 2023, saying she no longer had ‘enough in the tank’ to do the job properly.",
+    "The third woman to be prime minister of New Zealand."
+   ]
+  },
+  {
+   "name": "Jeff Bezos",
+   "aliases": [
+    "Bezos",
+    "Jeffrey Bezos"
+   ],
+   "clues": [
+    "Relentless, data-driven and obsessed with the customer. He liked to say that every day should feel like the first day of a start-up.",
+    "A company that started with one product and now employs well over a million people.",
+    "In 1994 he left a well-paid job at a New York investment firm and started selling books online from a rented house near Seattle.",
+    "Banning slide presentations from top meetings: managers write a six-page memo, and everyone reads it in silence before they talk.",
+    "Stepped down as chief executive in July 2021, and two weeks later flew to the edge of space in a rocket from his own space company.",
+    "Founder of Amazon."
+   ]
+  }
+ ]
+}

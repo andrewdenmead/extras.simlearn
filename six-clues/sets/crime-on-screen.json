@@ -1,0 +1,108 @@
+{
+ "name": "Guess the Crime Story",
+ "what": "title",
+ "whats": "titles",
+ "doc": "Case file",
+ "facets": [
+  "The mood",
+  "Where it's set",
+  "The money",
+  "The main character",
+  "Famous detail",
+  "The title"
+ ],
+ "items": [
+  {
+   "name": "Breaking Bad",
+   "aliases": [
+    "Breaking Bad series"
+   ],
+   "clues": [
+    "Dark, slow-burning and sometimes very funny. Many people call it the best TV series ever made.",
+    "The desert around Albuquerque, New Mexico.",
+    "The family buys a car wash so that the money from crime can look like ordinary takings.",
+    "A shy chemistry teacher with cancer starts making drugs to leave money for his family.",
+    "He calls himself Heisenberg, and his lawyer, Saul, later got his own series.",
+    "The title is an American expression for when a good person turns to crime."
+   ]
+  },
+  {
+   "name": "Ozark",
+   "aliases": [
+    "Ozark series",
+    "Ozarks"
+   ],
+   "clues": [
+    "Tense and grey. Even the colour of the pictures looks a bit blue and cold.",
+    "A holiday area around a big lake in Missouri.",
+    "A financial adviser has to clean millions of dollars for a drug cartel through local businesses.",
+    "The father of an ordinary family from Chicago, played by Jason Bateman, who also directed some of the episodes.",
+    "A Netflix series from 2017 to 2022. The family is called Byrde.",
+    "It's named after the mountains and the lake where the family hides."
+   ]
+  },
+  {
+   "name": "The Wolf of Wall Street",
+   "aliases": [
+    "Wolf of Wall Street",
+    "The Wolf"
+   ],
+   "clues": [
+    "Loud, long and completely over the top: three hours of parties and bad decisions.",
+    "An office on Long Island, New York, in the late 1980s and 1990s.",
+    "Brokers sell almost worthless shares on the phone, and the boss hides his millions in Swiss bank accounts.",
+    "A real stockbroker, played by Leonardo DiCaprio in a 2013 film by Martin Scorsese.",
+    "Matthew McConaughey thumps his chest and hums at a business lunch. And: “Sell me this pen.”",
+    "The title is the main character's nickname: a wild animal, plus New York's financial district."
+   ]
+  },
+  {
+   "name": "Peaky Blinders",
+   "aliases": [
+    "Peaky Blinder",
+    "The Peaky Blinders",
+    "Peaky"
+   ],
+   "clues": [
+    "Dark, stylish and moody, with slow-motion walks and modern rock music over old-fashioned streets.",
+    "Small Heath, a poor part of Birmingham, just after the First World War.",
+    "A family gang runs illegal betting on horse races, then slowly turns its money into a legal business empire.",
+    "Tommy Shelby, a cool, scarred war veteran, played by Cillian Murphy, who later won an Oscar for “Oppenheimer”.",
+    "A BBC series from 2013 to 2022. The gang hide razor blades in their flat caps.",
+    "The title is the gang's name: “peaky” for the peak of their caps, and “blinders” for what the blades could do."
+   ]
+  },
+  {
+   "name": "Money Heist",
+   "aliases": [
+    "La Casa de Papel",
+    "Casa de Papel",
+    "Haus des Geldes"
+   ],
+   "clues": [
+    "Fast, emotional and very dramatic. Everyone seems to fall in love with someone.",
+    "Madrid, mostly inside one building.",
+    "The plan isn't to steal money: it's to print billions of euros of brand-new notes inside the Royal Mint of Spain.",
+    "A quiet genius called the Professor, and a gang who use the names of cities, like Tokyo, Berlin and Nairobi.",
+    "Red overalls, masks of the painter Salvador Dalí, and everybody singing “Bella ciao”.",
+    "A Spanish Netflix hit whose English title is two words: what they take, and the crime."
+   ]
+  },
+  {
+   "name": "Ocean's Eleven",
+   "aliases": [
+    "Oceans Eleven",
+    "Ocean's 11",
+    "Oceans 11"
+   ],
+   "clues": [
+    "Cool, relaxed and very pleased with itself. Everyone wears a nice suit.",
+    "Las Vegas.",
+    "A gang plans to empty the vault under three casinos on the night of a big boxing match.",
+    "A charming thief just out of prison, played by George Clooney. Brad Pitt plays his friend, who is always eating.",
+    "A 2001 remake of a 1960 film with Frank Sinatra. The casino owner is going out with the thief's ex-wife, played by Julia Roberts.",
+    "The title is the main character's surname plus the number of people in the gang."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "name": "Guess the Character",
+ "what": "character",
+ "whats": "characters",
+ "doc": "Character file",
+ "facets": [
+  "Personality",
+  "Fans",
+  "Where it began",
+  "The look",
+  "Around the world",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Peppa Pig",
+   "aliases": [
+    "peppa",
+    "peppa wutz"
+   ],
+   "clues": [
+    "Cheeky, a bit bossy and very sure of herself. She thinks she knows best.",
+    "Pre-school children, and parents who know every episode by heart.",
+    "A British cartoon, first shown on TV in 2004.",
+    "Pink, round and drawn very simply, with both eyes on the same side of her head.",
+    "In 2021 parents in the USA said their children had started speaking with a British accent after watching her.",
+    "Her favourite thing is jumping in muddy puddles. In German, her surname is “Wutz”."
+   ]
+  },
+  {
+   "name": "Hello Kitty",
+   "aliases": [
+    "kitty",
+    "kitty white"
+   ],
+   "clues": [
+    "Sweet, kind and quiet. Fans say she never needs to say anything.",
+    "Children, teenagers and adult collectors all over the world.",
+    "A Japanese company created her in 1974. A year later, the first product was a small plastic purse for coins.",
+    "White, with a red bow by her left ear, and no mouth.",
+    "Although she comes from Japan, her official story says she was born near London.",
+    "Her name is a friendly English greeting plus a word for a young cat."
+   ]
+  },
+  {
+   "name": "Paddington",
+   "aliases": [
+    "paddington bear"
+   ],
+   "clues": [
+    "Polite, curious and always getting into trouble without meaning to.",
+    "Children, parents, and in 2022 even the Queen, who had tea with him on TV.",
+    "His first book came out in London in 1958.",
+    "A duffel coat, an old hat and a label round his neck that says “Please look after this bear. Thank you.”",
+    "His writer first wanted him to come from Africa, but was told there were no bears there. So he comes from Peru.",
+    "He is named after a big railway station in London."
+   ]
+  },
+  {
+   "name": "The Moomins",
+   "aliases": [
+    "moomins",
+    "moomin",
+    "moomintroll",
+    "mumins",
+    "mumin",
+    "die mumins"
+   ],
+   "clues": [
+    "Gentle, thoughtful and a little bit sad sometimes. Everyone is welcome in their house.",
+    "Children, but also adults who buy the mugs and the tote bags.",
+    "A Finnish artist who wrote in Swedish published the first book about them in 1945.",
+    "White, round and soft, with big snouts. Some people think they look like small hippos.",
+    "They are hugely popular in Japan, where a theme park about them opened near Tokyo in 2019.",
+    "A family of trolls who live in a valley named after them. In German, they are the Mumins."
+   ]
+  },
+  {
+   "name": "Miffy",
+   "aliases": [
+    "nijntje",
+    "miffy rabbit"
+   ],
+   "clues": [
+    "Simple, calm and friendly. Nothing about her is ever complicated.",
+    "Very small children, and lots of designers who love her style.",
+    "A Dutch artist from Utrecht drew her for the first time in 1955.",
+    "A few thick black lines and a small number of bright colours. Her mouth is a little cross, and she always looks straight at you.",
+    "There is a museum just for her in her home city in the Netherlands.",
+    "A little white rabbit. In Dutch she is Nijntje, from the word for “little rabbit”."
+   ]
+  },
+  {
+   "name": "Pippi Longstocking",
+   "aliases": [
+    "pippi",
+    "pippi langstrumpf",
+    "pippi longstockings"
+   ],
+   "clues": [
+    "Wild, funny and completely free. She doesn’t follow anyone’s rules.",
+    "Children who want to be brave, and adults who remember wanting to be brave.",
+    "A Swedish writer published her first book about her in 1945.",
+    "Red hair in two plaits that stick out sideways, freckles and stockings that don’t match.",
+    "She is the strongest girl in the world and can lift her own horse. In the German TV theme song, she sings that two times three makes four.",
+    "Her surname in English describes her very long socks. In German, she is Langstrumpf."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "name": "Once Upon a Brand",
+ "pick": {
+  "label": "Pick a product",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a product and give it a story",
+  "lead": [
+   "Some brands sell a thing. Others sell a story: a founder, a place, a year, a moment that everybody tells again and again, and suddenly a jar of jam costs seven euros.",
+   "Choose a completely ordinary product and give it a brand with an origin story. Here are some ideas, but you can choose your own. *The more boring the product, the better the story has to be.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Your story doesn’t have to be true, or even possible. This is just for a bit of fun. Some stories would sell in a Mitte concept store, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Things you wear",
+   "items": [
+    "Socks",
+    "A bobble hat",
+    "A raincoat",
+    "Slippers",
+    "A tote bag"
+   ]
+  },
+  {
+   "head": "Things you eat",
+   "items": [
+    "Crisps",
+    "Hot sauce",
+    "Porridge oats",
+    "Strawberry jam",
+    "Mustard"
+   ]
+  },
+  {
+   "head": "For your flat",
+   "items": [
+    "A candle",
+    "A doormat",
+    "A kettle",
+    "A houseplant",
+    "Shower gel"
+   ]
+  },
+  {
+   "head": "Completely random",
+   "items": [
+    "A paper clip",
+    "A traffic cone",
+    "A rubber band",
+    "A bicycle bell"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "product",
+   "My product is:",
+   "What ordinary thing are you turning into a brand?"
+  ],
+  [
+   "brand",
+   "The brand is called:",
+   "Give it a name that already sounds like it has a history."
+  ],
+  [
+   "founder",
+   "It was started by:",
+   "Who? Where? When? A grandmother in 1952, two students in a Neukölln kitchen…"
+  ],
+  [
+   "moment",
+   "The moment everybody tells:",
+   "The one scene from the story that people remember and repeat."
+  ],
+  [
+   "proof",
+   "On the pack you’ll see:",
+   "One detail on the packaging that shows the story: a date, a face, a map, a signature…"
+  ],
+  [
+   "slogan",
+   "Our slogan:",
+   "A few words that tell the whole story in one go."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "product": "Porridge oats",
+   "brand": "Granny Morag’s Storm Oats",
+   "founder": "Morag, a fisherman’s wife on a very windy island off the west coast of Scotland, in 1952.",
+   "moment": "The night of the big storm, when her porridge was so thick that the fishermen used it to fill a hole in their boat and got home safely. I am not saying this is true. I am saying I would buy it.",
+   "proof": "A little wooden stick in every box, called a spurtle (that’s what Scots stir porridge with), and a drawing of Morag looking very unimpressed.",
+   "slogan": "Thick enough to sail home on."
+  }
+ },
+ "words": [
+  "heritage",
+  "origin story",
+  "founder",
+  "authentic",
+  "brand story"
+ ],
+ "yours": {
+  "label": "Your brand",
+  "heading": "Your story",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your brand in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which story sells?",
+  "noun": "brand",
+  "placeholder": "The brand, e.g. Granny Morag’s Storm Oats",
+  "lead": "Each student tells us about their brand in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

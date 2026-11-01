@@ -1,0 +1,113 @@
+{
+ "name": "Guess the Flop",
+ "what": "flop",
+ "whats": "flops",
+ "doc": "Post-mortem",
+ "facets": [
+  "When",
+  "The big idea",
+  "The hype",
+  "What went wrong",
+  "Who made it",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Apple Vision Pro",
+   "aliases": [
+    "vision pro",
+    "apple vision",
+    "apple headset",
+    "visionpro"
+   ],
+   "clues": [
+    "February 2024, in the United States.",
+    "A headset that mixes apps and films with the room around you, controlled with your eyes, hands and voice.",
+    "It was the company's first big new kind of product in almost ten years, and reviewers raved about the screens.",
+    "It cost $3,499, felt heavy on the face and had few apps. Within a year, reports said production had been cut because sales were so slow.",
+    "The company behind the iPhone.",
+    "The iPhone company's name, plus a word for eyesight, plus “Pro”."
+   ]
+  },
+  {
+   "name": "Google Glass",
+   "aliases": [
+    "glass",
+    "google glasses"
+   ],
+   "clues": [
+    "First sold to a small group of testers in 2013.",
+    "A tiny computer and camera that you wear on your face, with a little screen just above one eye.",
+    "Models wore it on the catwalk, and early “Explorers” paid $1,500 to be among the first to try it.",
+    "People worried about being filmed without knowing it, and the people wearing it got a rude nickname. Sales to the public stopped in January 2015.",
+    "The search engine company.",
+    "The search engine's name, plus the material that windows are made of."
+   ]
+  },
+  {
+   "name": "Segway",
+   "aliases": [
+    "segway pt",
+    "segway scooter"
+   ],
+   "clues": [
+    "Unveiled on American breakfast television in December 2001.",
+    "A machine that would change how people move around cities.",
+    "Before it was unveiled, Steve Jobs was quoted as saying it was as big a deal as the PC.",
+    "It cost thousands of dollars, many cities didn't know whether it belonged on the road or the pavement, and it ended up mostly in tourist tours and shopping centres. The original model was stopped in 2020.",
+    "The inventor Dean Kamen. A Chinese company, Ninebot, bought the business in 2015.",
+    "A two-wheeled scooter you stand on and steer by leaning. Its name sounds like the word for a smooth change from one thing to the next."
+   ]
+  },
+  {
+   "name": "Galaxy Note 7",
+   "aliases": [
+    "samsung galaxy note 7",
+    "note 7",
+    "note7",
+    "galaxy note7",
+    "samsung note 7"
+   ],
+   "clues": [
+    "August 2016.",
+    "A big, powerful phone with a pen, launched just before its biggest rival's new model.",
+    "Reviewers loved it, and early sales were strong.",
+    "Some of the batteries caught fire. Even replacement phones had problems, so production stopped after about two months, and the US banned it on all flights.",
+    "The biggest company in South Korea.",
+    "Part of the Galaxy family, and its number is the one after 6."
+   ]
+  },
+  {
+   "name": "Wii U",
+   "aliases": [
+    "wiiu",
+    "nintendo wii u",
+    "wii-u"
+   ],
+   "clues": [
+    "Launched in November 2012.",
+    "A games console with a controller that has its own touchscreen, so you could keep playing when someone else wanted the TV.",
+    "It followed one of the best-selling consoles of all time, so expectations were enormous.",
+    "Many shoppers thought it was just an accessory for the old console. It sold only about 13.5 million and production stopped in January 2017.",
+    "A Japanese company famous for Mario and Zelda.",
+    "Its predecessor's three-letter name, plus one more letter."
+   ]
+  },
+  {
+   "name": "Fire Phone",
+   "aliases": [
+    "amazon fire phone",
+    "firephone",
+    "amazon phone"
+   ],
+   "clues": [
+    "Summer 2014, in the United States.",
+    "A smartphone that tracked your face, so the screen seemed 3D when you tilted it.",
+    "A big launch event with the boss himself presenting it on stage.",
+    "Six weeks after launch, the price on a two-year contract fell from $199 to 99 cents. A few months later the company took a $170 million charge for it.",
+    "The online shop that also makes Kindles and Echo speakers.",
+    "Its name is the same word the company already used for its tablets: the thing that is hot and burns."
+   ]
+  }
+ ]
+}

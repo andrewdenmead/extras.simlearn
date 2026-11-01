@@ -1,0 +1,108 @@
+{
+ "name": "Lights, Camera, Laundering!",
+ "pick": {
+  "label": "Pick a front",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a front and pitch the film",
+  "lead": [
+   "In crime films, dirty money always hides somewhere boring: a car wash, a bar, a little shop that never seems to have any customers but somehow makes a fortune.",
+   "Choose a business from the shelf, or your own, and pitch a film about the money hiding behind it. *You need a scheme, a villain, a hero and a twist.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This doesn't have to be realistic: no bank would fall for most film plots. It just has to be a film people would watch on a Sunday night. The sillier the better."
+ },
+ "shelf": [
+  {
+   "head": "Somewhere ordinary",
+   "items": [
+    "A laundrette",
+    "An ice-cream van",
+    "A sock shop",
+    "A dog-grooming salon",
+    "A currywurst stand"
+   ]
+  },
+  {
+   "head": "Somewhere fancy",
+   "items": [
+    "An art gallery",
+    "A vintage-car dealer",
+    "A racehorse stable",
+    "A wine auction house"
+   ]
+  },
+  {
+   "head": "Somewhere silly",
+   "items": [
+    "A crazy-golf course",
+    "A Christmas market stall",
+    "A karaoke bar",
+    "A bouncy-castle hire firm",
+    "An escape room"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "front",
+   "The front business is:",
+   "Where does the money hide?"
+  ],
+  [
+   "scheme",
+   "How the money gets cleaned:",
+   "Roughly! Fake customers, invoices for things that never happened, very expensive ice cream…"
+  ],
+  [
+   "villain",
+   "The person behind it:",
+   "Who is really in charge, and why does nobody suspect them?"
+  ],
+  [
+   "hero",
+   "The person who notices:",
+   "An auditor, a bank clerk, a nosy neighbour, a bored intern? What was the first red flag?"
+  ],
+  [
+   "twist",
+   "The twist:",
+   "What does nobody see coming?"
+  ],
+  [
+   "title",
+   "The title and the tagline:",
+   "What's on the poster?"
+  ]
+ ],
+ "example": {
+  "heading": "Here's one I made earlier",
+  "values": {
+   "front": "A dog-grooming salon",
+   "scheme": "A dog salon in Friedrichshain that charges €900 for a “luxury poodle cut” and has sixty bookings a day. The whole street has about four dogs.",
+   "villain": "Baron von Fluff, the salon's very calm poodle, who sits next to the till all day. Nobody suspects a dog.",
+   "hero": "A tax inspector who lives upstairs and can't sleep. She counts the dogs from her balcony for three weeks and gets to eleven. They're all the same dog in different hats.",
+   "twist": "The poodle really is in charge. His owner just signs whatever he barks at.",
+   "title": "“The Poodle Job”: Every cut is a clean cut."
+  }
+ },
+ "words": [
+  "front business",
+  "launder",
+  "red flag",
+  "paper trail",
+  "cover story"
+ ],
+ "yours": {
+  "label": "Your film",
+  "heading": "Your film",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to pitch your film to the class in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which film gets made?",
+  "noun": "film",
+  "placeholder": "The film, e.g. The Poodle Job",
+  "lead": "Each student pitches their film in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

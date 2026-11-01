@@ -1,0 +1,120 @@
+{
+ "name": "Guess the Protest",
+ "what": "protest",
+ "whats": "protests",
+ "doc": "History file",
+ "facets": [
+  "The cause",
+  "Who took part",
+  "How they did it",
+  "When and where",
+  "What happened next",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Salt March",
+   "aliases": [
+    "Dandi March",
+    "Salt Satyagraha",
+    "Gandhi's Salt March",
+    "The Salt March",
+    "Salt March to Dandi"
+   ],
+   "clues": [
+    "A colonial monopoly and tax on something that every household needed to cook.",
+    "A lawyer turned independence leader set off with 78 followers. Thousands more joined along the way.",
+    "They walked about 390 kilometres in 24 days to the sea, and then made exactly what the law said they couldn’t.",
+    "March and April 1930, from Ahmedabad to the coast at Dandi, in India.",
+    "More than 60,000 people were arrested in the campaign that followed, including its leader.",
+    "Gandhi’s march, named after the stuff you shake onto your chips."
+   ]
+  },
+  {
+   "name": "Monday demonstrations",
+   "aliases": [
+    "Montagsdemonstrationen",
+    "Montagsdemos",
+    "Montagsdemo",
+    "Monday demos",
+    "Leipzig Monday demonstrations",
+    "Monday demonstration",
+    "Leipzig demonstrations"
+   ],
+   "clues": [
+    "The freedom to travel, free elections and the end of a one-party state.",
+    "It started with a few people leaving a weekly prayer for peace in a city-centre church.",
+    "Every week, crowds walked round the city’s ring road carrying candles and chanting “We are the people”.",
+    "Autumn 1989, Leipzig, East Germany. On 9 October, about 70,000 people took part, and the security forces held back.",
+    "A month later, the Berlin Wall opened.",
+    "Named after the day of the week they were held on: in German, the Montagsdemonstrationen."
+   ]
+  },
+  {
+   "name": "Boston Tea Party",
+   "aliases": [
+    "The Boston Tea Party",
+    "Boston Tea-Party",
+    "Tea Party"
+   ],
+   "clues": [
+    "A tax imposed by a parliament in which the people paying it had no say.",
+    "Colonists, some of them in disguise, organised by a group called the Sons of Liberty.",
+    "At night, they boarded three ships and threw 342 chests of cargo into the water.",
+    "December 1773, in a harbour in Massachusetts.",
+    "Britain closed the port as a punishment. Less than two years later, the War of Independence began.",
+    "Named after the city, and a very British drink."
+   ]
+  },
+  {
+   "name": "Occupy Wall Street",
+   "aliases": [
+    "Occupy",
+    "Occupy movement",
+    "OWS",
+    "Occupy Wallstreet"
+   ],
+   "clues": [
+    "Inequality, and the banks that had been rescued with public money after the financial crisis.",
+    "Students, activists and unemployed people who said they spoke for “the 99%”.",
+    "Instead of marching, they camped: tents, a kitchen, a library, and a “human microphone” that repeated speeches without loudspeakers.",
+    "It began on 17 September 2011 in a small park in New York’s financial district.",
+    "Similar camps spread to hundreds of cities, including one outside the European Central Bank in Frankfurt.",
+    "Its name tells you to take over the New York street where the big banks are."
+   ]
+  },
+  {
+   "name": "Montgomery bus boycott",
+   "aliases": [
+    "Montgomery",
+    "Montgomery boycott",
+    "bus boycott",
+    "Montgomery bus strike"
+   ],
+   "clues": [
+    "Rules on city buses that forced Black passengers to give up their seats to white passengers.",
+    "Almost the whole Black community of one city, led by a 26-year-old pastor who later became world-famous.",
+    "For more than a year, they walked or shared cars, often in car pools organised by churches, rather than ride.",
+    "December 1955 to December 1956, Alabama.",
+    "The US Supreme Court upheld a ruling that segregated seating on the buses was unconstitutional.",
+    "It started when Rosa Parks refused to give up her seat, and it’s named after Alabama’s capital."
+   ]
+  },
+  {
+   "name": "March on Washington",
+   "aliases": [
+    "The March on Washington",
+    "March on Washington for Jobs and Freedom",
+    "Washington march"
+   ],
+   "clues": [
+    "Jobs and freedom, said its official name, for people who were still treated as second-class citizens.",
+    "About 250,000 people, Black and white, plus singers such as Bob Dylan and Joan Baez.",
+    "They gathered at the memorial to a president and filled the space around a long reflecting pool.",
+    "28 August 1963, in the US capital.",
+    "The Civil Rights Act followed in 1964, and the Voting Rights Act in 1965.",
+    "Famous for Dr King’s “I have a dream” speech, and named after the city where it happened."
+   ]
+  }
+ ]
+}

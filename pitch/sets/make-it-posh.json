@@ -1,0 +1,118 @@
+{
+ "name": "Make It Posh!",
+ "pick": {
+  "label": "Pick something ordinary",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something ordinary and turn it into a luxury brand",
+  "lead": [
+   "Luxury brands can sell almost anything for a fortune: a T-shirt, a candle, a paper clip. The product often matters less than the story, the shop, the price and the people who are seen with it.",
+   "Choose something completely ordinary and turn it into a luxury brand. Here are some ideas, but you can choose your own. *The more boring the thing, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious business plan, this is just for fun. Some of the best luxury brands in history started with something just as ordinary, so who knows."
+ },
+ "shelf": [
+  {
+   "head": "From the kitchen",
+   "items": [
+    "Tap water",
+    "Toast",
+    "Potatoes",
+    "Instant noodles",
+    "Tunnock’s Teacakes"
+   ]
+  },
+  {
+   "head": "From the bathroom",
+   "items": [
+    "Toilet roll",
+    "A bar of soap",
+    "Cotton buds",
+    "Rubber gloves"
+   ]
+  },
+  {
+   "head": "From the office",
+   "items": [
+    "Paper clips",
+    "Post-it notes",
+    "Bubble wrap",
+    "Biros",
+    "A stapler"
+   ]
+  },
+  {
+   "head": "From Berlin",
+   "items": [
+    "Currywurst",
+    "Club-Mate",
+    "Pfand bottles",
+    "Bike bells",
+    "A BVG ticket"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "I’m making this posh:",
+   "Which ordinary thing are you turning into luxury?"
+  ],
+  [
+   "name",
+   "The luxury brand is called:",
+   "Something that sounds expensive. French, Italian, a made-up family name, one mysterious word…"
+  ],
+  [
+   "story",
+   "The story behind it:",
+   "Every luxury brand needs a heritage story. Invent one."
+  ],
+  [
+   "price",
+   "It costs:",
+   "How much? Remember, if it’s too cheap, nobody will believe it’s luxury."
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who would pay that much, and why? Be honest, but kind."
+  ],
+  [
+   "where",
+   "You can buy it:",
+   "Where? A boutique on Kurfürstendamm, a secret shop with no sign, by invitation only…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "Tap water",
+   "name": "Leitung. One word, no explanation, small grey letters on a very heavy glass bottle with a cork.",
+   "story": "It has flowed through the same Berlin pipes since the days of the Kaiser, according to me, which I am choosing to call heritage.",
+   "price": "€14 a bottle, or €40 if you want it from one particular district. Friedrichshain is the most expensive, obviously, because that’s where I live.",
+   "who": "People with lots of money and little sense, and anybody trying to impress a date who knows nothing about wine.",
+   "where": "A tiny shop in Mitte with no sign and one bottle in the window. You need an appointment, and they will make you wait twenty minutes anyway."
+  }
+ },
+ "words": [
+  "exclusivity",
+  "price premium",
+  "heritage",
+  "positioning",
+  "status symbol"
+ ],
+ "yours": {
+  "label": "Your luxury brand",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your luxury brand in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which luxury brand wins?",
+  "noun": "luxury brand",
+  "placeholder": "The luxury brand, e.g. Leitung",
+  "lead": "Each student tells us about their luxury brand in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

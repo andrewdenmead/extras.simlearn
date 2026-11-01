@@ -1,0 +1,107 @@
+{
+ "name": "Guess the Luxury Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Brand book",
+ "facets": [
+  "Founded",
+  "Signature product",
+  "The look",
+  "A famous story",
+  "A detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Chanel",
+   "aliases": [
+    "coco chanel",
+    "chanel paris",
+    "shanel"
+   ],
+   "clues": [
+    "Paris, 1910, starting with a small shop that sold hats.",
+    "A perfume from 1921 that is still one of the most famous in the world, and a quilted handbag named after a month in 1955.",
+    "Black and white, tweed jackets, pearls and the little black dress.",
+    "Marilyn Monroe once said that the only thing she wore in bed was a few drops of its perfume.",
+    "Karl Lagerfeld, the designer from Hamburg, ran its fashion from 1983 until he died in 2019.",
+    "Named after its founder, whose nickname was Coco."
+   ]
+  },
+  {
+   "name": "Tiffany & Co.",
+   "aliases": [
+    "tiffany",
+    "tiffany and co",
+    "tiffany & co",
+    "tiffanys",
+    "tiffany's"
+   ],
+   "clues": [
+    "New York, 1837.",
+    "Diamond engagement rings. In 1886 it introduced a ring with six thin metal claws that lift the diamond up towards the light.",
+    "A special shade of light blue, on every box and every bag.",
+    "At the start of a 1961 film, Audrey Hepburn eats breakfast on the pavement while she looks into its shop window.",
+    "The founder's son, Louis Comfort, became famous for colourful glass lamps.",
+    "The founder's surname, plus “& Co.”"
+   ]
+  },
+  {
+   "name": "Rimowa",
+   "aliases": [
+    "rimova"
+   ],
+   "clues": [
+    "Cologne, 1898.",
+    "Something almost every traveller owns, made from a light metal that was also used to build early aeroplanes.",
+    "Shiny silver metal with parallel grooves.",
+    "In 2016 it built replicas of an early all-metal aeroplane, the Junkers F 13.",
+    "Owners say the dents it collects at airports over the years are part of the charm.",
+    "Six letters, usually written in capitals, starting with RIM."
+   ]
+  },
+  {
+   "name": "Montblanc",
+   "aliases": [
+    "mont blanc"
+   ],
+   "clues": [
+    "Hamburg, 1906.",
+    "A pen called the Meisterstück, German for “masterpiece”, first made in 1924.",
+    "Black and gold, with a small white six-pointed star on top, meant to look like a snowy mountain peak.",
+    "Its most famous pen is about a hundred years old and still looks almost the same.",
+    "The number 4810 is engraved on its nibs: roughly the height, in metres, of the highest mountain in the Alps.",
+    "The French name of that mountain, written as one word."
+   ]
+  },
+  {
+   "name": "Moncler",
+   "aliases": [
+    "monclear"
+   ],
+   "clues": [
+    "1952, in a mountain village near Grenoble, in France.",
+    "Quilted jackets filled with down, first made for mountaineers and skiers.",
+    "Shiny and puffy, with a little round badge on the sleeve.",
+    "In 1954 its jackets went up K2 with the Italian expedition that was the first to reach the top.",
+    "An Italian businessman, Remo Ruffini, bought it in 2003 and turned it into a fashion brand based in Milan.",
+    "A short form of Monestier-de-Clermont, the village where it started."
+   ]
+  },
+  {
+   "name": "Versace",
+   "aliases": [
+    "gianni versace",
+    "versachi"
+   ],
+   "clues": [
+    "Milan, 1978.",
+    "Bold, glamorous clothes with bright prints and gold baroque patterns.",
+    "Gold and black, and a logo of a woman from Greek myth with snakes for hair.",
+    "In 2000 Jennifer Lopez wore its green jungle-print dress to the Grammys. So many people searched for photos of it that Google decided to create Google Images.",
+    "After its founder died in 1997, his sister Donatella became its creative director.",
+    "The founder's surname: Gianni ___."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,132 @@
+{
+ "name": "Guess the Building",
+ "what": "building",
+ "whats": "buildings",
+ "doc": "Visitor guide",
+ "facets": [
+  "Who works here",
+  "When it was built",
+  "A dramatic moment",
+  "What it looks like",
+  "A strange fact",
+  "Where it is"
+ ],
+ "items": [
+  {
+   "name": "Reichstag",
+   "aliases": [
+    "reichstag building",
+    "reichstagsgebäude",
+    "reichstagsgebaude",
+    "bundestag",
+    "german parliament",
+    "reichstagsgebäude berlin"
+   ],
+   "clues": [
+    "A national parliament meets here, in a chamber with a huge eagle on the wall.",
+    "It was finished in 1894. The words “Dem deutschen Volke” were added above the entrance in 1916.",
+    "In February 1933 it was badly damaged by fire, a turning point in the Nazis’ rise to power.",
+    "A glass dome by Norman Foster opened on top in 1999. Visitors walk up a spiral ramp and look down on the politicians.",
+    "In 1995 two artists wrapped the whole building in silver fabric for two weeks, and millions of people came to look.",
+    "In Berlin, right next to the Brandenburg Gate. Its old name is used far more than its official one."
+   ]
+  },
+  {
+   "name": "Palace of Westminster",
+   "aliases": [
+    "houses of parliament",
+    "westminster",
+    "westminster palace",
+    "big ben",
+    "uk parliament",
+    "british parliament",
+    "the houses of parliament"
+   ],
+   "clues": [
+    "Two chambers meet here: one has green benches, the other red.",
+    "Most of it was built after a fire in 1834 destroyed the old palace.",
+    "In 1605 a group of plotters hid barrels of gunpowder in a cellar underneath it.",
+    "A long Gothic building beside a river, with a famous clock tower at one end.",
+    "No monarch has entered one of its two chambers since 1642, when a king burst in to arrest five members.",
+    "On the Thames in London. Its clock tower is usually called Big Ben, although that is really the name of the bell."
+   ]
+  },
+  {
+   "name": "Scottish Parliament",
+   "aliases": [
+    "holyrood",
+    "scottish parliament building",
+    "parliament of scotland",
+    "holyrood parliament",
+    "the scottish parliament"
+   ],
+   "clues": [
+    "A parliament with 129 members, which first met again in 1999, nearly 300 years after its predecessor’s last meeting.",
+    "It was opened in October 2004. Its Catalan architect had died four years earlier, before it was finished.",
+    "The first estimate said it would cost £10 to £40 million. The final bill, announced in 2007, was £414 million.",
+    "Leaf and boat shapes everywhere, and members’ offices with oddly angled bay windows, each with a seat for quiet thinking.",
+    "A long wall on the street side is built from the country’s own rocks and carved with 24 quotations.",
+    "At the bottom of the Royal Mile in Edinburgh, next to the palace of Holyroodhouse, which gives it its nickname."
+   ]
+  },
+  {
+   "name": "US Capitol",
+   "aliases": [
+    "capitol",
+    "the capitol",
+    "united states capitol",
+    "capitol building",
+    "capitol hill",
+    "u.s. capitol",
+    "us capitol building"
+   ],
+   "clues": [
+    "A national congress meets here: the Senate in one wing, the House of Representatives in the other.",
+    "Building began in 1793, and its huge cast-iron dome was finished in 1866.",
+    "On 6 January 2021 a crowd stormed it to try to stop the count of a presidential election result.",
+    "A white building with a great dome, topped by a bronze statue of a woman called Freedom.",
+    "In 1814, during a war, British troops set fire to it.",
+    "On a hill in Washington, D.C., at the end of the National Mall. The hill shares its name."
+   ]
+  },
+  {
+   "name": "European Parliament",
+   "aliases": [
+    "eu parliament",
+    "louise weiss building",
+    "european parliament strasbourg",
+    "europaparlament",
+    "europäisches parlament",
+    "europaisches parlament",
+    "parlement européen"
+   ],
+   "clues": [
+    "Its 720 members are elected by voters in 27 countries and may speak in any of 24 official languages.",
+    "This building opened in 1999. Its Paris architects took their inspiration from Roman amphitheatres.",
+    "In June 1979, voters in nine countries elected its members directly for the first time.",
+    "A round hall of glass and steel beside a tall tower that has deliberately been left looking unfinished on one side.",
+    "Twelve times a year, members, staff and crates of files travel here from another city for a session of about four days.",
+    "In Strasbourg, on the French side of the Rhine. Its other home is in Brussels."
+   ]
+  },
+  {
+   "name": "Hungarian Parliament",
+   "aliases": [
+    "hungarian parliament building",
+    "budapest parliament",
+    "budapest parliament building",
+    "parliament of hungary",
+    "országház",
+    "orszaghaz"
+   ],
+   "clues": [
+    "A national assembly in central Europe meets here, and the country’s ancient crown is on display in its central hall.",
+    "Work began in 1885, and the building was completed in 1904.",
+    "It was inaugurated in 1896, for the 1,000th anniversary of the country’s founding, years before it was finished.",
+    "A long neo-Gothic building with spires and a red dome, clearly inspired by London’s Houses of Parliament.",
+    "It is 96 metres high, a reference to the year 896, and it is the largest building in the country.",
+    "On the bank of the Danube in Budapest."
+   ]
+  }
+ ]
+}

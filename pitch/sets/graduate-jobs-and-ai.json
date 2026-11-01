@@ -1,0 +1,109 @@
+{
+ "name": "We’re Hiring!",
+ "pick": {
+  "label": "Pick a perk",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a perk and write the job ad",
+  "lead": [
+   "Employers fight hard for good graduates, and their job ads promise everything: a fast-paced environment, a young dynamic team, free fruit on Tuesdays.",
+   "Choose a perk from the shelf, or invent your own, and build a graduate job ad around it. The perk can be generous, strange or slightly worrying. *Every perk has a catch.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a real HR strategy here, this is just for a bit of fun. If your ad would make a careers adviser cry, you’re doing it right."
+ },
+ "shelf": [
+  {
+   "head": "At the office",
+   "items": [
+    "Nap pods",
+    "A slide between floors",
+    "Dogs at work",
+    "A ball pit",
+    "Unlimited Club-Mate"
+   ]
+  },
+  {
+   "head": "Time and money",
+   "items": [
+    "Unlimited holiday",
+    "A four-day week",
+    "Your birthday off",
+    "A bonus paid in shares",
+    "Free rent for a year"
+   ]
+  },
+  {
+   "head": "Strange but true-ish",
+   "items": [
+    "A personal life coach",
+    "Free haircuts",
+    "A company band",
+    "Lunch with the boss every week",
+    "Work from anywhere, even a beach"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "perk",
+   "My perk is:",
+   "Which perk from the shelf (or your own) are you offering?"
+  ],
+  [
+   "firm",
+   "My firm is:",
+   "What kind of company are you, and what kind of company do you pretend to be?"
+  ],
+  [
+   "headline",
+   "My job ad headline:",
+   "The first line graduates see. It has to beat 400 other ads."
+  ],
+  [
+   "who",
+   "I want to hire:",
+   "Who exactly are you trying to attract? What do they want, and what are they tired of?"
+  ],
+  [
+   "catch",
+   "The catch:",
+   "Every perk has one. What is it?"
+  ],
+  [
+   "post",
+   "I’d post the ad:",
+   "Where, and how do you make sure the right people see it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "perk": "Nap pods",
+   "firm": "A very serious tax-advice firm in Mitte that would quite like you to think it’s a start-up.",
+   "headline": "Wanted: junior tax adviser. Must be able to sleep on the job.",
+   "who": "Graduates who have read the words ‘fast-paced environment’ in 400 job ads and now need a lie-down.",
+   "catch": "There are two pods for 300 staff, and the partners book them from one till three every afternoon.",
+   "post": "On TikTok, with a video of the managing partner trying to climb out of a nap pod. It takes him four minutes."
+  }
+ },
+ "words": [
+  "entry-level",
+  "graduate scheme",
+  "employer branding",
+  "talent",
+  "career progression"
+ ],
+ "yours": {
+  "label": "Your job ad",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your job ad in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which job would you apply for?",
+  "noun": "job ad",
+  "placeholder": "The job ad, e.g. Sleep on the job",
+  "lead": "Each student tells us about their job ad in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,107 @@
+{
+ "name": "Guess the Takeover",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Deal file",
+ "facets": [
+  "What it does",
+  "Where it started",
+  "Before the deal",
+  "After the deal",
+  "The buyer and the price",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Pixar",
+   "aliases": [
+    "Pixar Animation Studios",
+    "Pixar Studios"
+   ],
+   "clues": [
+    "It makes things that take years to finish and about ninety minutes to enjoy.",
+    "It began as the computer graphics group of the film company behind Star Wars.",
+    "In 1986 a tech boss who had just been pushed out of his own company bought it for about ten million dollars.",
+    "After the deal, its own bosses were also put in charge of the buyer’s famous animation studio.",
+    "Disney bought it in 2006 for about 7.4 billion dollars, which made Steve Jobs Disney’s biggest single shareholder.",
+    "Its logo has a little jumping desk lamp, and its first feature film was Toy Story (1995)."
+   ]
+  },
+  {
+   "name": "WhatsApp",
+   "aliases": [
+    "Whats App",
+    "WhatsApp Messenger"
+   ],
+   "clues": [
+    "You have probably used it today, possibly to complain about this class.",
+    "Two former Yahoo engineers started it in California in 2009.",
+    "One of the founders had once applied for a job at the company that later bought it, and been turned down.",
+    "Both founders left the buyer within about four years, and one of them later tweeted that it was time to delete the buyer’s main app.",
+    "Facebook paid about 19 billion dollars for it in 2014, when it had around 55 employees.",
+    "Its name is a pun on a casual way of saying hello, and its logo is a white phone in a green speech bubble."
+   ]
+  },
+  {
+   "name": "YouTube",
+   "aliases": [
+    "You Tube"
+   ],
+   "clues": [
+    "People open it to watch one thing and end up, two hours later, somewhere completely different.",
+    "Three former employees of the online payment company PayPal started it in 2005.",
+    "The first thing anybody uploaded to it was 19 seconds long and filmed at a zoo in San Diego.",
+    "Many people thought the buyer had paid far too much for a company that made almost no money and was facing copyright complaints.",
+    "Google bought it for 1.65 billion dollars in shares in 2006, less than two years after it started.",
+    "Its logo is a red play button, and people who make a living on it are named after it."
+   ]
+  },
+  {
+   "name": "Minecraft",
+   "aliases": [
+    "Mojang",
+    "Minecraft Mojang"
+   ],
+   "clues": [
+    "Millions of children have spent more time in it than in their own garden.",
+    "A Swedish programmer started it on his own in 2009, in his spare time.",
+    "It became so popular that its creator set up a small company in Stockholm to look after it.",
+    "When it was sold, its creator left and wrote online: “It’s not about the money. It’s about my sanity.”",
+    "In 2014 Microsoft bought the company behind it for 2.5 billion dollars.",
+    "Everything in it is made of blocks, there’s a green monster called a Creeper, and it’s the best-selling video game of all time."
+   ]
+  },
+  {
+   "name": "Beats",
+   "aliases": [
+    "Beats by Dre",
+    "Beats by Dr. Dre",
+    "Beats Electronics",
+    "Beats headphones"
+   ],
+   "clues": [
+    "You’ve probably seen footballers wearing its products as they get off the team bus.",
+    "A rapper and a record company boss started it in the late 2000s because they thought most people heard music badly.",
+    "At first its products were made with a cable company called Monster, until the partners split.",
+    "After the deal, both founders went to work for the buyer, and its streaming service became the starting point for the buyer’s own music service.",
+    "Apple paid about 3 billion dollars for it in 2014, more than it had ever paid for a company.",
+    "Headphones with a red “b” logo, started by Dr. Dre."
+   ]
+  },
+  {
+   "name": "Volvo",
+   "aliases": [
+    "Volvo Cars",
+    "Volvo Car"
+   ],
+   "clues": [
+    "Its customers are famous for caring more about safety than speed.",
+    "It started in Gothenburg, Sweden, in 1927, as part of a ball-bearing company.",
+    "In 1959 one of its engineers invented the modern three-point seatbelt, and the company let every carmaker use the design for free.",
+    "An American carmaker bought it in 1999 and sold it again about ten years later.",
+    "Since 2010 it has belonged to Geely, a Chinese car company, but it is still based in Sweden.",
+    "Its name is Latin for “I roll”, and its logo is a circle with an arrow."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "name": "Guess the Breakthrough",
+ "what": "breakthrough",
+ "whats": "breakthroughs",
+ "doc": "Medical file",
+ "facets": [
+  "Its reputation",
+  "Where and when",
+  "Who’s behind it",
+  "How it happened",
+  "Famous moment",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Penicillin",
+   "aliases": [
+    "penicilin",
+    "penicillium"
+   ],
+   "clues": [
+    "Often called the luckiest accident in the history of medicine. Before it, an infected cut could kill you.",
+    "A laboratory at St Mary’s Hospital in London, in 1928.",
+    "A scientist from a farm in Ayrshire, in Scotland, who was famously not the tidiest person in the lab.",
+    "He came back from a summer holiday and found mould growing on one of his dishes of bacteria. Around the mould, the bacteria had died.",
+    "It was mass-produced during the Second World War, and its discoverer shared the Nobel Prize in 1945.",
+    "The first antibiotic, named after the Penicillium mould."
+   ]
+  },
+  {
+   "name": "Aspirin",
+   "aliases": [
+    "aspirine",
+    "acetylsalicylic acid",
+    "ass"
+   ],
+   "clues": [
+    "One of the most used medicines in history: for headaches, for fevers and, in small daily doses, for some people’s hearts.",
+    "A chemical company in Elberfeld, now part of Wuppertal, in 1897.",
+    "A young chemist called Felix Hoffmann. The story goes that he wanted something gentler for his father’s rheumatism.",
+    "People had used willow bark and meadowsweet against pain for thousands of years. The chemist made a stable form of their active ingredient.",
+    "Its maker registered the name as a trademark in March 1899. The company is now based in Leverkusen.",
+    "A for acetyl, spir for the meadowsweet plant, and -in because drug names ending in -in were fashionable."
+   ]
+  },
+  {
+   "name": "X-rays",
+   "aliases": [
+    "x-ray",
+    "xray",
+    "xrays",
+    "x rays",
+    "x ray",
+    "röntgen",
+    "rontgen",
+    "roentgen"
+   ],
+   "clues": [
+    "For the first time, doctors could see inside a living body without cutting it open.",
+    "Würzburg, November 1895.",
+    "A physics professor who went on to win the very first Nobel Prize in Physics, in 1901.",
+    "He was experimenting with a glass tube in a darkened room when a screen nearby began to glow.",
+    "One of the first pictures showed his wife’s hand, bones and wedding ring. When she saw it, she said: “I have seen my death.”",
+    "He named them after the letter mathematicians use for an unknown. In German they are named after him."
+   ]
+  },
+  {
+   "name": "Smallpox vaccine",
+   "aliases": [
+    "vaccine",
+    "vaccination",
+    "vaccines",
+    "smallpox vaccination",
+    "the smallpox vaccine",
+    "jenner's vaccine"
+   ],
+   "clues": [
+    "The reason one of humanity’s deadliest diseases no longer exists anywhere except in a couple of laboratories.",
+    "A village in Gloucestershire, in England, in 1796.",
+    "A country doctor who had heard that milkmaids hardly ever caught a terrible disease.",
+    "He took material from a sore on a milkmaid’s hand and put it into a small cut on the arm of his gardener’s eight-year-old son.",
+    "In 1980 the World Health Organization declared the disease it prevents completely gone: the first human disease ever eradicated.",
+    "The word comes from vacca, Latin for cow, because it all started with cowpox."
+   ]
+  },
+  {
+   "name": "Insulin",
+   "aliases": [
+    "insuline",
+    "insulin injection",
+    "insulin injections"
+   ],
+   "clues": [
+    "It turned an illness that killed children within months or a few years into one that people live with for decades.",
+    "The University of Toronto, 1921 to 1922.",
+    "A young surgeon and a medical student, working through one hot summer, mostly on experiments with dogs.",
+    "In January 1922 a 14-year-old boy who was close to death received the first injection.",
+    "Its discoverers sold the patent to their university for one dollar each. One of them said it belonged to the world.",
+    "A hormone made in the pancreas that controls blood sugar. People with type 1 diabetes inject it."
+   ]
+  },
+  {
+   "name": "Stethoscope",
+   "aliases": [
+    "stethoskop",
+    "stethescope",
+    "the stethoscope"
+   ],
+   "clues": [
+    "Probably the best-known symbol of a doctor, even though many doctors now use other machines more.",
+    "Necker Hospital, Paris, 1816.",
+    "A French doctor, René Laennec, who later died of tuberculosis, a disease his invention helped doctors to recognise.",
+    "Too embarrassed to put his ear to a young woman’s chest, he rolled a sheet of paper into a tube and listened through it.",
+    "His first versions were single wooden tubes. Today’s version has two earpieces and hangs round the doctor’s neck.",
+    "From the Greek words for ‘chest’ and ‘to look at’."
+   ]
+  }
+ ]
+}

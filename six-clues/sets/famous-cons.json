@@ -1,0 +1,128 @@
+{
+ "name": "Guess the Con",
+ "what": "con",
+ "whats": "cons",
+ "doc": "Case file",
+ "facets": [
+  "When and where",
+  "The big idea",
+  "The trick",
+  "How it fell apart",
+  "Afterwards",
+  "Last chance"
+ ],
+ "items": [
+  {
+   "name": "The Captain of Köpenick",
+   "aliases": [
+    "Captain of Köpenick",
+    "Captain of Kopenick",
+    "Captain of Koepenick",
+    "Hauptmann von Köpenick",
+    "Hauptmann von Kopenick",
+    "Hauptmann von Koepenick",
+    "Wilhelm Voigt",
+    "Voigt",
+    "Köpenick",
+    "Kopenick",
+    "Koepenick"
+   ],
+   "clues": [
+    "A town just outside Berlin (today part of the city), 16 October 1906.",
+    "A shoemaker with a criminal record decided that people would do anything for a man in the right clothes.",
+    "He bought pieces of an army captain's uniform second-hand, then ordered about ten real soldiers to follow him, and they did.",
+    "They occupied the town hall, arrested the mayor and took just over 4,000 marks. Ten days later he was caught, and he was sentenced to four years in prison.",
+    "The Kaiser himself pardoned him in 1908, and he became a celebrity. A famous play about him appeared in 1931.",
+    "Today a statue of him in uniform stands outside the town hall, and Germans still call a cheeky trick like this a “Köpenickiade”."
+   ]
+  },
+  {
+   "name": "Milli Vanilli",
+   "aliases": [
+    "Milli Vanili",
+    "Mili Vanilli",
+    "Milli Vanilly"
+   ],
+   "clues": [
+    "Munich, 1988. A German record producer put together a new pop act.",
+    "Two young dancers with great looks and even better hair would be the faces of the music.",
+    "The voices on the records belonged to other studio singers. The two stars only moved their lips.",
+    "In July 1989, at a live show in the United States, the backing track jumped and kept repeating the same line.",
+    "In 1990 they won a Grammy for Best New Artist. Once the producer admitted the truth, the award was taken away.",
+    "Their biggest hit was “Girl You Know It's True”, and their name sounds like a flavour of ice cream."
+   ]
+  },
+  {
+   "name": "Theranos",
+   "aliases": [
+    "Elizabeth Holmes",
+    "Theranos scandal"
+   ],
+   "clues": [
+    "Silicon Valley, 2003. A 19-year-old Stanford student started a company, and soon dropped out to run it.",
+    "A whole range of medical tests from just a few drops of blood from your finger, cheaper and faster than any lab.",
+    "Its own machines didn't work as promised, so many tests were quietly run on ordinary machines made by other companies.",
+    "In 2015 the Wall Street Journal published an investigation into whether its tests really worked.",
+    "In 2022 the founder was found guilty of fraud and sentenced to more than eleven years in prison.",
+    "Its founder wore black polo necks like Steve Jobs, and the TV series about her is called The Dropout."
+   ]
+  },
+  {
+   "name": "Fyre Festival",
+   "aliases": [
+    "Fyre",
+    "Fyre Fest",
+    "Fire Festival",
+    "Fire Fest"
+   ],
+   "clues": [
+    "The Bahamas, April 2017.",
+    "A luxury music festival on a Caribbean island, with villas, gourmet food and celebrities.",
+    "Famous models promoted it on Instagram by all posting the same plain orange square.",
+    "Guests arrived to find disaster-relief tents instead of villas, and a cheese sandwich in a polystyrene box.",
+    "In 2018 the organiser was sentenced to six years in prison for fraud.",
+    "In 2019 two documentaries about it came out at almost the same time. Its name is an unusual spelling of something hot."
+   ]
+  },
+  {
+   "name": "Anna Delvey",
+   "aliases": [
+    "Anna Sorokin",
+    "Delvey",
+    "Sorokin",
+    "Anna Delvy"
+   ],
+   "clues": [
+    "New York, 2013 to 2017.",
+    "A young woman told everyone she was a German heiress with a fortune of around €60 million waiting for her abroad, and planned a private art club for the rich.",
+    "She lived in expensive hotels, left bills unpaid and applied to banks for a $22 million loan.",
+    "The unpaid bills piled up, and in 2017 she was arrested.",
+    "In 2019 she was sentenced to four to twelve years. She was really born near Moscow and grew up in a small town in North Rhine-Westphalia.",
+    "In 2022 Netflix told her story in a series called Inventing Anna."
+   ]
+  },
+  {
+   "name": "Dieselgate",
+   "aliases": [
+    "VW emissions scandal",
+    "Volkswagen emissions scandal",
+    "Volkswagen",
+    "VW",
+    "VW scandal",
+    "Volkswagen scandal",
+    "emissions scandal",
+    "diesel scandal",
+    "Abgasskandal",
+    "Diesel gate"
+   ],
+   "clues": [
+    "The United States first, then the rest of the world. It became public in September 2015.",
+    "A big carmaker sold its diesel cars as clean, eco-friendly and cheap to run.",
+    "Secret software noticed when a car was being tested and only then switched the full emissions controls on. On the road, some cars produced up to 40 times the legal limit of nitrogen oxides.",
+    "A small university lab in West Virginia tested the cars on real roads and found the numbers didn't match.",
+    "About 11 million cars worldwide were affected, the chief executive resigned and the company paid more than $30 billion in fines and settlements.",
+    "The scandal is named after the fuel, plus the ending of a famous American political scandal of the 1970s."
+   ]
+  }
+ ]
+}

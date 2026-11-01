@@ -1,0 +1,96 @@
+{
+ "name": "Guess the Sponsor",
+ "what": "sponsor",
+ "whats": "sponsors",
+ "doc": "Sponsorship file",
+ "facets": [
+  "The image",
+  "Where it started",
+  "A famous deal",
+  "Where you see it",
+  "Fun fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Allianz",
+   "aliases": [
+    "Allianz Arena",
+    "Allianz insurance"
+   ],
+   "clues": [
+    "Serious, safe and reliable: the company you call when something goes wrong.",
+    "Founded in Berlin in 1890. Its headquarters are now in Munich.",
+    "A worldwide partner of the Olympic and Paralympic Games since 2021.",
+    "Its name is on a Munich stadium that glows red on match nights. In UEFA competitions, the stadium has to use a different name.",
+    "Stadiums in Sydney and São Paulo carry its name too.",
+    "It's an insurance company, and Bayern Munich play in the ___ Arena."
+   ]
+  },
+  {
+   "name": "Adidas",
+   "aliases": [
+    "adidas originals"
+   ],
+   "clues": [
+    "Sporty, German and a bit retro: your dad's tracksuit and your favourite trainers.",
+    "Registered in Herzogenaurach, Bavaria, in 1949. The founder's brother started a rival company in the same town.",
+    "In 1986 a hip-hop trio wrote a song about its trainers and got a deal worth $1.6 million: the first big shoe deal for musicians, not athletes.",
+    "On the shirts of Bayern Munich, Manchester United and Juventus.",
+    "Its three-leaf trefoil logo now marks its classic 'Originals' range.",
+    "Named after its founder, Adi Dassler. Think three stripes."
+   ]
+  },
+  {
+   "name": "Rolex",
+   "aliases": [],
+   "clues": [
+    "Expensive, classic and calm: what people buy when they finally get the big promotion.",
+    "Founded in London in 1905, before it moved to Geneva.",
+    "Official timekeeper at Wimbledon since 1978.",
+    "Its clocks sit beside the courts at big tennis tournaments, and on the scoreboards at golf's biggest events.",
+    "Roger Federer has advertised its watches for years.",
+    "A five-letter Swiss watch brand with a crown as its logo."
+   ]
+  },
+  {
+   "name": "Emirates",
+   "aliases": [
+    "Fly Emirates",
+    "Emirates airline"
+   ],
+   "clues": [
+    "Glamorous and international: huge planes, cabin crew in red hats and a lot of gold.",
+    "Founded in Dubai in 1985.",
+    "Since 2006 Arsenal have played in a London stadium named after it.",
+    "On the front of Real Madrid's and AC Milan's shirts, and on the side of its planes.",
+    "Its slogan, 'Fly Better', is printed on football shirts.",
+    "An airline named after the country it comes from: the United Arab ___."
+   ]
+  },
+  {
+   "name": "Spotify",
+   "aliases": [],
+   "clues": [
+    "Young, green and always in your ears.",
+    "Founded in Stockholm in 2006.",
+    "In 2022 it signed a deal with FC Barcelona for the shirts and the name of the stadium.",
+    "On Barcelona's shirts, it has sometimes swapped its logo for a musician's: Drake's owl in 2022, the Rolling Stones' tongue in 2023.",
+    "Every December, millions of people post their year in music from it on Instagram.",
+    "The biggest music streaming service: Barcelona now play at ___ Camp Nou."
+   ]
+  },
+  {
+   "name": "Heineken",
+   "aliases": [],
+   "clues": [
+    "Friendly, international and green: it likes to be seen with football fans and racing fans.",
+    "Founded in Amsterdam in 1864.",
+    "It has sponsored the UEFA Champions League since 2005, after another beer from the same group did it before.",
+    "On the boards at Formula 1 races since 2016, often with a message not to drink and drive.",
+    "In the 2012 James Bond film Skyfall, 007 drinks it on screen, as part of a big product-placement deal.",
+    "A Dutch beer in a green bottle with a red star, named after the family that founded it."
+   ]
+  }
+ ]
+}

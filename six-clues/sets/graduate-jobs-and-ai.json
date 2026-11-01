@@ -1,0 +1,122 @@
+{
+ "name": "Guess the Invention",
+ "what": "invention",
+ "whats": "inventions",
+ "doc": "Patent file",
+ "facets": [
+  "What it changed",
+  "Where and when",
+  "Who’s behind it",
+  "How it began",
+  "A famous first",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Barcode",
+   "aliases": [
+    "bar code",
+    "barcodes",
+    "upc",
+    "upc code"
+   ],
+   "clues": [
+    "It made supermarket queues faster and gave the people at the till a lot less to type.",
+    "Thought up on a beach in Miami in 1949 and patented in 1952.",
+    "Two American engineers. One of them had learned Morse code as a Boy Scout.",
+    "Sitting on the beach, he pushed his fingers into the sand and pulled them towards him: Morse code’s dots and dashes became long lines.",
+    "The first product scanned at a till, in a supermarket in Ohio in June 1974, was a pack of chewing gum.",
+    "Black stripes of different widths above a row of numbers, on almost everything you buy."
+   ]
+  },
+  {
+   "name": "Post-it",
+   "aliases": [
+    "post it",
+    "post-it note",
+    "post-it notes",
+    "post-its",
+    "postit",
+    "sticky note",
+    "sticky notes"
+   ],
+   "clues": [
+    "It made offices more colourful and fridge doors more crowded.",
+    "A big American company in Minnesota, between 1968 and 1980.",
+    "A chemist who was trying to make a super-strong glue and made a very weak one instead.",
+    "Years later, a colleague used the weak glue to stop his bookmarks falling out of his hymn book.",
+    "It was first tested under the name “Press ’n Peel”. Its classic yellow was chosen by chance: the lab next door had yellow scrap paper.",
+    "A little square of paper that sticks, unsticks and sticks again. Its name tells you what to do with it."
+   ]
+  },
+  {
+   "name": "Email",
+   "aliases": [
+    "e-mail",
+    "electronic mail",
+    "mail",
+    "emails"
+   ],
+   "clues": [
+    "It changed office work for ever, and most people now spend hours every week dealing with it.",
+    "The United States, 1971, on a network that connected a few computers at universities and research labs.",
+    "An American engineer called Ray Tomlinson, who later said he couldn't remember what the first message said.",
+    "He wanted a way to send a note from one computer to a person on another, and picked a symbol to join the person's name to the machine's.",
+    "That symbol was @, and it is now on every keyboard and in billions of addresses.",
+    "Electronic mail: the messages in your inbox."
+   ]
+  },
+  {
+   "name": "Assembly line",
+   "aliases": [
+    "the assembly line",
+    "moving assembly line",
+    "production line",
+    "conveyor belt",
+    "fordism"
+   ],
+   "clues": [
+    "It turned the car from a toy for the rich into something ordinary families could afford.",
+    "Highland Park, Michigan, October 1913.",
+    "An American car maker who wanted to build “a motor car for the great multitude”.",
+    "Part of the idea came from meatpacking plants in Chicago, where carcasses moved past the workers on overhead trolleys.",
+    "Within a year, putting together the frame of a Model T took about an hour and a half of work instead of many hours.",
+    "Instead of the workers walking round the car, the car moves past the workers, and each of them adds one part."
+   ]
+  },
+  {
+   "name": "Printing press",
+   "aliases": [
+    "the printing press",
+    "gutenberg press",
+    "printing",
+    "printing machine",
+    "press"
+   ],
+   "clues": [
+    "It made books cheap, spread new ideas across Europe and made the people who copied books by hand rather nervous.",
+    "Mainz, around 1450.",
+    "A German metalworker who borrowed a lot of money, lost a court case to the man who had lent it, and had to hand over his equipment.",
+    "He combined small metal letters that could be used again and again with a screw press like the ones used for making wine.",
+    "His most famous book, a Bible, was produced in about 180 copies. Fewer than fifty survive.",
+    "Gutenberg’s machine for putting ink on paper."
+   ]
+  },
+  {
+   "name": "Microwave",
+   "aliases": [
+    "microwave oven",
+    "microwaves",
+    "mikrowelle"
+   ],
+   "clues": [
+    "It made dinner faster and student kitchens smell of popcorn.",
+    "A defence company near Boston, 1945.",
+    "A self-taught engineer who left school young and worked on radar during the Second World War.",
+    "The story goes that he was standing next to a working radar part when the chocolate bar in his pocket melted. Next he tried popcorn.",
+    "The first one on sale, in 1947, was about 1.8 metres tall and weighed about 340 kilos.",
+    "Named after the short radio waves it uses to heat your food."
+   ]
+  }
+ ]
+}

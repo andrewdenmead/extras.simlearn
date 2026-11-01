@@ -1,0 +1,138 @@
+{
+ "name": "Guess the Collab",
+ "what": "collab",
+ "whats": "collabs",
+ "doc": "Press release",
+ "facets": [
+  "What it is",
+  "When",
+  "Who it’s for",
+  "The look",
+  "The partners",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Omega x Swatch",
+   "aliases": [
+    "Swatch x Omega",
+    "MoonSwatch",
+    "Moon Swatch",
+    "Omega Swatch",
+    "Swatch Omega",
+    "Omega and Swatch",
+    "Swatch and Omega"
+   ],
+   "clues": [
+    "A watch that people queued round the block for, in several countries at once.",
+    "It came out in March 2022, in eleven versions named after the Sun, the Moon and the planets.",
+    "People who could never afford a luxury watch, and collectors who already own one.",
+    "It copies the shape of a famous watch worn on the Moon, but it’s made of a ceramic-and-plastic mix and costs about 250 euros.",
+    "Both brands belong to the same Swiss group. One is a luxury watchmaker; the other makes cheap, colourful plastic watches.",
+    "The MoonSwatch."
+   ]
+  },
+  {
+   "name": "Ray-Ban x Meta",
+   "aliases": [
+    "Meta x Ray-Ban",
+    "Ray-Ban Meta",
+    "Meta Ray-Ban",
+    "Rayban Meta",
+    "Ray Ban Meta",
+    "Ray-Ban Stories",
+    "Ray-Ban and Meta",
+    "Meta and Ray-Ban",
+    "Ray-Ban x Facebook",
+    "Facebook x Ray-Ban",
+    "Ray-Ban Facebook"
+   ],
+   "clues": [
+    "Sunglasses that can listen to you, film for you and talk back.",
+    "The first pair came out in September 2021, a few weeks before one of the partners changed its company name.",
+    "People who want to film their bike ride or a concert without holding up a phone.",
+    "They look like ordinary classic sunglasses, apart from two tiny cameras and a little light that shows people nearby when they are recording.",
+    "One partner is a sunglasses brand first made for American pilots in the 1930s; the other owns Facebook and Instagram.",
+    "Smart glasses from Mark Zuckerberg's company, in the brand famous for Aviators and Wayfarers."
+   ]
+  },
+  {
+   "name": "Puma x Rihanna",
+   "aliases": [
+    "Rihanna x Puma",
+    "Fenty x Puma",
+    "Puma x Fenty",
+    "Fenty Puma",
+    "Puma Fenty",
+    "Puma Rihanna",
+    "Rihanna Puma",
+    "Fenty"
+   ],
+   "clues": [
+    "A pop star became creative director of a sportswear brand, instead of just appearing in its adverts.",
+    "She took the job in December 2014, and her first shoe came out the following autumn.",
+    "Young fans of her music who were far more interested in fashion than in sport.",
+    "Her first shoe had a thick, ridged sole and was called the Creeper. The first batch sold out in three hours.",
+    "In 2016 the Creeper was named Shoe of the Year by Footwear News.",
+    "The German sportswear brand with the leaping cat and the singer of “Umbrella”, under the name Fenty."
+   ]
+  },
+  {
+   "name": "IKEA x Sonos",
+   "aliases": [
+    "Sonos x IKEA",
+    "IKEA Sonos",
+    "Sonos IKEA",
+    "IKEA and Sonos",
+    "Sonos and IKEA",
+    "Symfonisk"
+   ],
+   "clues": [
+    "Furniture that plays music.",
+    "The first products came out in 2019.",
+    "People who want good sound at home but don’t want ugly black boxes everywhere.",
+    "A speaker that is also a bookshelf, a speaker that is also a table lamp, and later one that hangs on the wall like a picture.",
+    "A Swedish furniture giant and an American wireless speaker company. The range has a Swedish name meaning “symphonic”.",
+    "Flat-pack furniture meets wireless speakers: the SYMFONISK range."
+   ]
+  },
+  {
+   "name": "Absolut x Andy Warhol",
+   "aliases": [
+    "Absolut x Warhol",
+    "Andy Warhol x Absolut",
+    "Warhol x Absolut",
+    "Absolut Warhol",
+    "Absolut Vodka x Andy Warhol",
+    "Absolut and Andy Warhol",
+    "Absolut and Warhol"
+   ],
+   "clues": [
+    "A drinks bottle turned into a work of art.",
+    "It happened in New York in the mid-1980s.",
+    "People at parties who like to think they have good taste.",
+    "The artist painted the brand’s bottle, the painting became an advert, and it started a long series with other artists.",
+    "The drink is from Sweden. The artist is famous for soup cans and portraits of Marilyn Monroe.",
+    "A Swedish vodka and the king of pop art."
+   ]
+  },
+  {
+   "name": "Milka x Oreo",
+   "aliases": [
+    "Oreo x Milka",
+    "Milka Oreo",
+    "Oreo Milka",
+    "Milka and Oreo",
+    "Oreo and Milka"
+   ],
+   "clues": [
+    "Two snacks your little brother or sister would fight you for, in one.",
+    "Both brands belong to the same big American snack company.",
+    "Anyone in a supermarket queue who can’t decide between biscuits and chocolate.",
+    "A lilac wrapper with a black-and-white biscuit on it.",
+    "One is a chocolate brand from the Alps with a lilac cow. The other is an American sandwich biscuit first sold in 1912.",
+    "Lilac-cow chocolate with pieces of the world’s best-known black-and-white cream biscuit inside."
+   ]
+  }
+ ]
+}

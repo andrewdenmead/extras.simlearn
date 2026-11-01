@@ -1,0 +1,118 @@
+{
+ "name": "Guess the Game",
+ "what": "game",
+ "whats": "games",
+ "doc": "Game manual",
+ "facets": [
+  "The feel",
+  "Who plays it",
+  "Where it came from",
+  "How you play",
+  "A famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Minecraft",
+   "aliases": [
+    "Mine craft",
+    "Minecraft Java",
+    "Minecraft Bedrock"
+   ],
+   "clues": [
+    "Peaceful and creative by day, quite frightening by night.",
+    "Children, their parents and even their teachers. It’s the best-selling video game of all time.",
+    "A Swedish programmer released an early version in 2009. Microsoft bought his company in 2014 for $2.5 billion.",
+    "You dig for materials and build anything you can imagine, in a world made entirely of cubes.",
+    "A film version in 2025 starred Jack Black and was one of the biggest hits of the year.",
+    "Its name: digging for treasure, plus making things."
+   ]
+  },
+  {
+   "name": "Pac-Man",
+   "aliases": [
+    "Pacman",
+    "Pac Man",
+    "Puck-Man",
+    "Puckman"
+   ],
+   "clues": [
+    "Simple, cheerful and slightly stressful: eat or be eaten.",
+    "Arcade fans in the 1980s, and now anyone with a retro console.",
+    "A Japanese company released it in 1980. Its designer said a pizza with one slice missing gave him the idea for the hero.",
+    "You steer round a maze eating dots, while four enemies chase you, until you eat a power pellet and chase them.",
+    "The enemies are ghosts called Blinky, Pinky, Inky and Clyde.",
+    "A yellow circle with a big mouth. The name comes from “paku-paku”, the Japanese sound for munching."
+   ]
+  },
+  {
+   "name": "The Sims",
+   "aliases": [
+    "Sims",
+    "The Sims 4",
+    "Sims 4",
+    "The Sims 2",
+    "The Sims 3"
+   ],
+   "clues": [
+    "A doll’s house for adults: there’s no way to win, and nobody seems to mind.",
+    "Millions of players who would never call themselves gamers.",
+    "It was designed by the man behind a famous city-building game and came out in 2000.",
+    "You control little people’s lives: their jobs, homes, friendships and romances.",
+    "The characters speak a made-up language and have a green diamond floating above their heads.",
+    "Its little people are short for “simulated”, and their language is called Simlish."
+   ]
+  },
+  {
+   "name": "Angry Birds",
+   "aliases": [
+    "Angry Bird",
+    "Angrybirds"
+   ],
+   "clues": [
+    "Simple, satisfying and cartoonishly destructive.",
+    "Almost everybody who owned a smartphone around 2010.",
+    "A small Finnish studio released it in 2009.",
+    "You use a slingshot to fire round, flightless heroes at wobbly towers.",
+    "The villains are green pigs who stole some eggs. Films followed in 2016 and 2019.",
+    "The heroes have feathers, and they are very, very cross."
+   ]
+  },
+  {
+   "name": "Pokémon",
+   "aliases": [
+    "Pokemon",
+    "Pokémon Go",
+    "Pokemon Go",
+    "Pokémon Red",
+    "Pokemon Red and Blue"
+   ],
+   "clues": [
+    "Cute, competitive and a bit obsessive: you have to collect them all.",
+    "Children in the late 1990s, and the same people now, as adults, still playing.",
+    "It first came out in Japan in 1996, for a handheld console. Its creator had loved collecting insects as a boy.",
+    "You catch creatures in small balls, train them and send them to battle other trainers’ creatures.",
+    "In 2016, a mobile version sent millions of people walking round parks and streets, staring at their phones.",
+    "Short for “pocket monsters”. Its mascot is a yellow electric mouse called Pikachu."
+   ]
+  },
+  {
+   "name": "Super Mario",
+   "aliases": [
+    "Mario",
+    "Super Mario Bros",
+    "Super Mario Bros.",
+    "Super Mario Brothers",
+    "Mario Bros"
+   ],
+   "clues": [
+    "Bouncy, colourful and impossibly cheerful, with music you can hum after one listen.",
+    "Everyone, from small children to their grandparents. Its hero is the face of the company that made it.",
+    "The hero first appeared in 1981 in an arcade game about a giant ape, under the name Jumpman.",
+    "You run, jump on enemies’ heads, collect coins and try to rescue a princess from a spiky turtle king.",
+    "The hero is a plumber with a red cap and a moustache. His taller brother wears green.",
+    "Nintendo’s famous plumber, Luigi’s brother."
+   ]
+  }
+ ]
+}

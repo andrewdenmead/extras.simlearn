@@ -1,0 +1,118 @@
+{
+ "name": "Fix It for Everyone",
+ "pick": {
+  "label": "Pick something annoying",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something annoying and fix it for everyone",
+  "lead": [
+   "Lots of everyday things are hard to use, and not only for some people. Try opening a jar with wet hands, using a ticket machine in bright sunshine, or reading tiny instructions without your glasses.",
+   "Choose something that annoys you and redesign it so that more people can use it. Here are some ideas, but you can choose your own. *If it’s easier for one person, it’s often easier for lots of people.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "I am not looking for a finished product here, this is just for a bit of fun. Some fixes are genuinely clever, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Out and about",
+   "items": [
+    "Ticket machines",
+    "Revolving doors",
+    "Parcel lockers",
+    "Festival toilets",
+    "Crossing buttons"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "Jam jar lids",
+    "IKEA instructions",
+    "The TV remote",
+    "A shower you don’t know",
+    "Crisp packets"
+   ]
+  },
+  {
+   "head": "On your phone",
+   "items": [
+    "Cookie banners",
+    "CAPTCHAs",
+    "A tiny ‘Unsubscribe’ link",
+    "QR-code menus",
+    "Passwords"
+   ]
+  },
+  {
+   "head": "Travel",
+   "items": [
+    "Suitcases",
+    "Station stairs",
+    "Hotel key cards",
+    "Airport security trays"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "I’m fixing:",
+   "Which annoying thing are you redesigning?"
+  ],
+  [
+   "problem",
+   "What goes wrong:",
+   "What exactly makes it hard to use? Be specific."
+  ],
+  [
+   "who",
+   "It’s hardest for:",
+   "Who has the most trouble? Think of people in a hurry, carrying shopping, wearing gloves, in bright sunlight…"
+  ],
+  [
+   "fix",
+   "My fix:",
+   "What do you change? The shape, the size, the colour, the words, the whole idea?"
+  ],
+  [
+   "name",
+   "It’s called:",
+   "Give your new version a name."
+  ],
+  [
+   "everyone",
+   "Who else it helps:",
+   "Who else does your fix help, apart from the people you started with?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "Jam jar lids",
+   "problem": "The lid is small and smooth, and it was screwed on by a machine much stronger than me. I lose this fight every Sunday morning.",
+   "who": "People with weak or sore hands, anyone whose hands are wet or covered in butter, and me.",
+   "fix": "A lid with a little fold-out lever, like a tiny handle, so you turn it with your whole hand and not just your fingertips.",
+   "name": "The Lid Lad",
+   "everyone": "Kids can make their own breakfast, nobody has to bang the jar on the table, and I keep a little bit of dignity."
+  }
+ },
+ "words": [
+  "accessible",
+  "user-friendly",
+  "barrier",
+  "leave people out",
+  "for everyone"
+ ],
+ "yours": {
+  "label": "Your fix",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your fix in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which fix wins?",
+  "noun": "fix",
+  "placeholder": "The fix, e.g. The Lid Lad",
+  "lead": "Each student tells us about their fix in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

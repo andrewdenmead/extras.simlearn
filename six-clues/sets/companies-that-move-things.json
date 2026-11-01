@@ -1,0 +1,113 @@
+{
+ "name": "Guess the Company",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Company file",
+ "facets": [
+  "What it does",
+  "Customers",
+  "Origin story",
+  "Behind the scenes",
+  "The look",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Maersk",
+   "aliases": [
+    "a.p. moller-maersk",
+    "ap moller maersk",
+    "moller-maersk",
+    "mærsk",
+    "maersk line"
+   ],
+   "clues": [
+    "It moves boxes. Very big boxes, quite slowly, across very big oceans.",
+    "Factories, supermarkets and online shops that need their goods brought from the other side of the world.",
+    "A Danish sea captain and his son started it in 1904, in a small harbour town in the south of Denmark.",
+    "In June 2017 a cyberattack shut down its computers worldwide. It reinstalled 45,000 PCs and 4,000 servers in about ten days.",
+    "A white seven-pointed star on a light blue background, painted on hundreds of ships and countless containers.",
+    "A Danish family name that begins with “Mae” and ends in “rsk”."
+   ]
+  },
+  {
+   "name": "FedEx",
+   "aliases": [
+    "federal express",
+    "fed ex",
+    "fedex express"
+   ],
+   "clues": [
+    "It moves parcels overnight, mostly by plane, while you are asleep.",
+    "Businesses sending urgent documents and spare parts, and anyone who has ever paid extra for “next day”.",
+    "An American founded it in 1971. On its first big night, in April 1973, 14 small jets carried 186 packages between 25 US cities.",
+    "Every night its planes fly into one giant hub in Memphis, Tennessee, where the parcels are sorted before dawn and flown out again.",
+    "Purple and orange letters, with a white arrow hidden between the last two. In the film Cast Away, Tom Hanks plays one of its employees.",
+    "A short form of its original name, Federal Express."
+   ]
+  },
+  {
+   "name": "DHL",
+   "aliases": [
+    "dhl express",
+    "deutsche post dhl",
+    "dhl group"
+   ],
+   "clues": [
+    "It promises to get your package anywhere in the world, quickly. Then it leaves a card saying you weren’t at home.",
+    "Online shoppers, companies sending urgent documents, and Formula 1 teams.",
+    "Three Americans started it in San Francisco in 1969, flying ships’ papers to Honolulu themselves so customs could start work before the ship arrived.",
+    "Today it belongs to what used to be Germany’s national post office, with its head office in Bonn.",
+    "Bright yellow vans with red letters.",
+    "Three letters: the first letters of the three founders’ surnames."
+   ]
+  },
+  {
+   "name": "Aldi",
+   "aliases": [
+    "aldi nord",
+    "aldi süd",
+    "aldi sud",
+    "aldi sued",
+    "albrecht diskont"
+   ],
+   "clues": [
+    "It sells food, and lots of things you didn’t know you needed, as cheaply as it possibly can.",
+    "Students, families, and people who pop in for milk and come out with a tent and a drill.",
+    "Two brothers took over their mother’s small shop in Essen after the Second World War. In 1960 they split the business in two, north and south.",
+    "Many products go on the shelf in the cardboard boxes they were delivered in, and there are far fewer brands than in an ordinary supermarket.",
+    "A big letter A on a blue background, a small car park and a weekly leaflet of special offers.",
+    "The first two letters of the family name, Albrecht, plus the first two of the German word for discount, Diskont."
+   ]
+  },
+  {
+   "name": "Zara",
+   "aliases": [
+    "zara fashion"
+   ],
+   "clues": [
+    "It sells clothes that look a lot like what was on the catwalk a few weeks ago.",
+    "Young people who want the latest look without paying designer prices.",
+    "Its first shop opened in 1975 in A Coruña, in the north-west of Spain.",
+    "It is famous for speed: a new design can go from the drawing board to its shops in a few weeks.",
+    "Simple black-and-white shops, very little advertising, and long queues for the changing rooms.",
+    "The founder wanted to call it Zorba, after a film, but a bar nearby already had that name, so he rearranged the letters."
+   ]
+  },
+  {
+   "name": "Apple",
+   "aliases": [
+    "apple inc",
+    "apple computer"
+   ],
+   "clues": [
+    "It makes expensive things that people have queued outside shops all night to buy.",
+    "Students with stickers on their laptops, designers, and people who like everyone to see their phone.",
+    "Three men started it in California in 1976. The third sold his share after twelve days, for $800.",
+    "The back of many of its phones said where they were designed and where they were assembled: two different countries. Its current boss used to run its supply chain.",
+    "A piece of fruit with a bite taken out of it.",
+    "The fruit that is said to have fallen on Isaac Newton’s head."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "name": "Guess the Company",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Company history",
+ "facets": [
+  "Where and when",
+  "How it started",
+  "Along the way",
+  "The big change",
+  "Today",
+  "Last chance"
+ ],
+ "items": [
+  {
+   "name": "Nintendo",
+   "aliases": [
+    "Nintendo Co.",
+    "Nintento"
+   ],
+   "clues": [
+    "Founded in Kyoto, Japan, in 1889.",
+    "It started out making hand-painted playing cards.",
+    "In the 1960s it tried all sorts of things, including a taxi company and instant rice.",
+    "In 1989 it launched a small grey handheld machine, sold in many countries with a puzzle game of falling blocks.",
+    "It still makes playing cards in Japan, but most people know it for a console you can play on the TV or in your hands.",
+    "Its most famous character is a plumber with a moustache and a red cap."
+   ]
+  },
+  {
+   "name": "IKEA",
+   "aliases": [
+    "Ikea"
+   ],
+   "clues": [
+    "Founded in 1943 in a farming area of southern Sweden, by a 17-year-old.",
+    "At first it sold pens, wallets, picture frames and nylon stockings by post.",
+    "In the late 1940s it started selling furniture, and in the 1950s it printed its first catalogue.",
+    "In 1956 an employee took the legs off a table so it would fit in his car. The company still tells this as the start of its most famous idea.",
+    "Today it has huge blue stores in dozens of countries, and some people only go for the meatballs.",
+    "Its name is the founder's initials plus the first letters of his family's farm and his home village."
+   ]
+  },
+  {
+   "name": "Samsung",
+   "aliases": [
+    "Samsung Group",
+    "Samsung Electronics",
+    "Samsumg"
+   ],
+   "clues": [
+    "Founded in 1938 in the city of Daegu.",
+    "It began as a small trading company selling dried fish, local groceries and noodles.",
+    "Over the next decades it went into sugar, textiles, insurance and shops.",
+    "In the late 1960s it moved into electronics. Its first product was a black-and-white TV.",
+    "Today it is one of the world's biggest makers of smartphones and memory chips.",
+    "Its name means “three stars” in Korean, and its phones are called Galaxy."
+   ]
+  },
+  {
+   "name": "LEGO",
+   "aliases": [
+    "Lego",
+    "The Lego Group",
+    "Legos"
+   ],
+   "clues": [
+    "Founded in 1932 in a small town in Denmark, by a carpenter.",
+    "It began by making wooden toys such as ducks and yo-yos.",
+    "In 1949 it started making plastic bricks, and in 1958 it patented the design it still uses today.",
+    "In the early 2000s it had grown in too many directions and came close to bankruptcy, so it went back to basics.",
+    "Today it is one of the world's biggest toy companies, and in 2014 it had a hit film.",
+    "Its name comes from two Danish words meaning “play well”."
+   ]
+  },
+  {
+   "name": "Peugeot",
+   "aliases": [
+    "Peugot",
+    "Puegeot"
+   ],
+   "clues": [
+    "Founded in 1810, when two brothers turned a family mill in eastern France into a steel works.",
+    "Its early products included saws and coffee grinders.",
+    "In the 1850s it made steel hoops for the huge crinoline skirts that were in fashion, and in 1874 its first pepper mill.",
+    "In the late 19th century it started making bicycles, and then cars.",
+    "Its pepper mills are still sold today, under the same name as the cars.",
+    "Its logo is a lion, and its car models have a zero in the middle of the number, like the 208 and the 3008."
+   ]
+  },
+  {
+   "name": "Amazon",
+   "aliases": [
+    "Amazon.com"
+   ],
+   "clues": [
+    "Founded in 1994 in a garage near Seattle.",
+    "It started out selling books online.",
+    "Its founder almost called it Cadabra, but a lawyer said it sounded too much like “cadaver”.",
+    "In 2006 it started renting out computing power to other companies, and that is now one of its most profitable businesses.",
+    "Today it sells almost everything, streams films and series, and makes its own smart speakers.",
+    "It is named after the biggest river in South America, and its logo has an arrow from A to Z."
+   ]
+  }
+ ]
+}

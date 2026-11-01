@@ -1,0 +1,107 @@
+{
+ "name": "Guess the Star’s Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Brand file",
+ "facets": [
+  "What it sells",
+  "How it started",
+  "The money",
+  "The details",
+  "The star behind it",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Casamigos",
+   "aliases": [
+    "Casamigos Tequila",
+    "Casa Amigos"
+   ],
+   "clues": [
+    "A strong drink made from a plant that grows in Mexico.",
+    "Its founders had holiday homes next to each other in Mexico and made it for themselves and their friends, before selling it from 2013.",
+    "In 2017 a British drinks giant bought it for up to 1 billion dollars.",
+    "One founder is married to a supermodel; another is a Hollywood actor.",
+    "The actor is George Clooney, star of Ocean’s Eleven and the coffee-capsule adverts.",
+    "George Clooney’s tequila, whose name means “house of friends” in Spanish."
+   ]
+  },
+  {
+   "name": "Fenty Beauty",
+   "aliases": [
+    "Fenty",
+    "Fenty Beauty by Rihanna",
+    "Fenty make-up",
+    "Fenty makeup"
+   ],
+   "clues": [
+    "Make-up that was famous from day one for how many skin tones it catered for.",
+    "It launched in September 2017, made with the luxury group behind Louis Vuitton and Dior.",
+    "According to Forbes, it took about 570 million dollars in its first 15 months.",
+    "Its first foundation came in 40 shades, and other make-up brands soon rushed to offer more.",
+    "Its founder is a singer from Barbados who touched up her make-up with it live on stage at the 2023 Super Bowl.",
+    "Rihanna’s make-up brand, named after her surname."
+   ]
+  },
+  {
+   "name": "Skims",
+   "aliases": [
+    "Skims shapewear"
+   ],
+   "clues": [
+    "Underwear and loungewear, in lots of different skin tones.",
+    "It launched in 2019, after its first planned name was dropped following criticism.",
+    "In 2023 investors valued it at about 4 billion dollars.",
+    "It has made clothes for the US team at the Olympic Games.",
+    "Its founder is a reality-TV star and one of the most-followed people on Instagram.",
+    "Kim Kardashian’s brand, whose name is also what you do to milk to take the cream off."
+   ]
+  },
+  {
+   "name": "Rare Beauty",
+   "aliases": [
+    "Rare",
+    "Rare Beauty by Selena Gomez"
+   ],
+   "clues": [
+    "Make-up which, its founder says, is about feeling good rather than looking perfect.",
+    "It launched in September 2020, sold through Sephora.",
+    "It promised to raise 100 million dollars over ten years for mental health.",
+    "Its liquid blush went viral on TikTok in 2022.",
+    "Its founder was a Disney Channel child star who became a singer, and has talked openly about her own mental health.",
+    "Selena Gomez’s make-up brand; its first word means “unusual”."
+   ]
+  },
+  {
+   "name": "Haig Club",
+   "aliases": [
+    "Haig Club whisky",
+    "Haig"
+   ],
+   "clues": [
+    "A Scottish drink in a bottle you might mistake for perfume.",
+    "It launched in 2014, made by a British drinks giant with a famous footballer and a pop music manager.",
+    "It’s a single grain Scotch whisky from Cameronbridge in Fife, Scotland’s oldest grain whisky distillery.",
+    "The square bottle is made of blue glass, inspired by the blue glasses that whisky blenders taste from.",
+    "The footballer is a former England captain who played for Manchester United and Real Madrid.",
+    "David Beckham’s whisky, named after one of Scotland’s oldest whisky-making families."
+   ]
+  },
+  {
+   "name": "Naturally Pam",
+   "aliases": [
+    "Naturally Pam snacks",
+    "Pam"
+   ],
+   "clues": [
+    "Snacks and muesli for people who read the back of the packet.",
+    "You can buy it in one of Germany’s big drugstore chains.",
+    "Its products are organic, and the range has grown from snacks to an advent calendar.",
+    "Its founder is a fitness creator from Karlsruhe with more than ten million YouTube subscribers.",
+    "During lockdown, millions of people did her workout videos in their living rooms.",
+    "Pamela Reif’s snack brand."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "name": "Shopping Spree!",
+ "pick": {
+  "label": "Pick a buyer",
+  "eyebrow": "Money is no object",
+  "heading": "Pick a buyer and go shopping",
+  "lead": [
+   "Every few weeks a big company buys something and the internet explodes. Sometimes it makes sense. Sometimes it looks like people with lots of money and little sense went shopping on a Friday night.",
+   "Today you are the boss of one of these companies, and you have a few billion to spend. Pick a buyer, then decide what it buys: another company, a football club, a festival, a bakery, a whole city district. *The less sense it makes, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously nobody is going to check your maths. Some takeovers make total sense, and some only make sense to the boss. Both are welcome, as long as you can explain them with a straight face."
+ },
+ "shelf": [
+  {
+   "head": "Shops",
+   "items": [
+    "IKEA",
+    "Lidl",
+    "dm",
+    "Zalando",
+    "Primark"
+   ]
+  },
+  {
+   "head": "Tech and media",
+   "items": [
+    "Apple",
+    "Spotify",
+    "Nintendo",
+    "Netflix",
+    "Samsung"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "Haribo",
+    "Ferrero",
+    "Dr. Oetker",
+    "Irn-Bru",
+    "McDonald’s"
+   ]
+  },
+  {
+   "head": "Germany’s finest",
+   "items": [
+    "Deutsche Bahn",
+    "ADAC",
+    "FC Bayern",
+    "Lufthansa",
+    "Deutsche Post"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "buyer",
+   "The buyer is:",
+   "Which company is going shopping?"
+  ],
+  [
+   "buys",
+   "It buys:",
+   "A company, a club, a place, a brand… anything that’s for sale (or isn’t)."
+  ],
+  [
+   "official",
+   "The official reason:",
+   "What the press release says. Big words like “synergies” are very welcome."
+  ],
+  [
+   "real",
+   "The real reason:",
+   "What the boss actually said in the lift."
+  ],
+  [
+   "headline",
+   "The headline the next day:",
+   "What does Bild, the BBC or your group chat say about it?"
+  ],
+  [
+   "furious",
+   "Who’s furious, and how I calm them down:",
+   "Fans, staff, customers, your mum… and what you tell them."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "buyer": "IKEA",
+   "buys": "The BVG. All of it: the U-Bahn, the buses, the trams and the ticket machines that only take coins.",
+   "official": "Strong synergies in moving large numbers of tired people through confusing spaces. Also a shared love of yellow.",
+   "real": "The CEO got lost in Alexanderplatz station for forty minutes and thought: we already do this, but with lamps.",
+   "headline": "“Köttbullar statt Kontrolleure!” Every station gets a showroom, and you can’t reach the exit without walking past the candles.",
+   "furious": "Berliners, obviously, who complain about the BVG every day but love its grumpy social media posts. I promise to keep the grumpy posts, and the meatballs are free with a monthly ticket."
+  }
+ },
+ "words": [
+  "acquisition",
+  "takeover",
+  "synergies",
+  "integration",
+  "stakeholders"
+ ],
+ "yours": {
+  "label": "Your takeover",
+  "heading": "Your deal",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your takeover in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which takeover wins?",
+  "noun": "takeover",
+  "placeholder": "The takeover, e.g. IKEA buys the BVG",
+  "lead": "Each student tells us about their deal in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

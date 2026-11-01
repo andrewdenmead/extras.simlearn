@@ -1,0 +1,119 @@
+{
+ "name": "Hire a Famous Boss!",
+ "pick": {
+  "label": "Pick a boss",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a famous boss and put them in charge",
+  "lead": [
+   "Everybody has an opinion about what makes a good boss. So let’s test it. Take a famous leader (real or invented, from sport, TV, film or the kitchen) and put them in charge of something they have no business running.",
+   "Here are some ideas, but you can choose your own. Some of these people would be brilliant managers. Some would be a disaster. *Your job is to imagine which.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious management theory here, this is just for a bit of fun. Some bosses make total sense, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "TV and film bosses",
+   "items": [
+    "Miranda Priestly",
+    "Michael Scott",
+    "Ted Lasso",
+    "Logan Roy",
+    "Leslie Knope"
+   ]
+  },
+  {
+   "head": "Sport",
+   "items": [
+    "Pep Guardiola",
+    "Carlo Ancelotti",
+    "Sarina Wiegman",
+    "Julian Nagelsmann",
+    "Andy Murray"
+   ]
+  },
+  {
+   "head": "Kitchens and stages",
+   "items": [
+    "Gordon Ramsay",
+    "Heidi Klum",
+    "Dieter Bohlen",
+    "Beyoncé",
+    "Simon Cowell"
+   ]
+  },
+  {
+   "head": "Fiction and fantasy",
+   "items": [
+    "Mary Poppins",
+    "Gandalf",
+    "Professor McGonagall",
+    "Captain Picard",
+    "Darth Vader"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "boss",
+   "My new boss is:",
+   "Which famous leader are you hiring?"
+  ],
+  [
+   "team",
+   "I’m putting them in charge of:",
+   "A Späti, a football team, your flatshare, the university canteen, a whole country…"
+  ],
+  [
+   "style",
+   "Their leadership style:",
+   "Strict? Inspiring? Chaotic? Do they tell people what to do, or ask them first?"
+  ],
+  [
+   "rule",
+   "Their first new rule:",
+   "What changes on day one?"
+  ],
+  [
+   "wrong",
+   "What goes wrong first:",
+   "Who complains, and about what?"
+  ],
+  [
+   "works",
+   "Why it works anyway:",
+   "Why does the team end up loving them, or at least respecting them?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "boss": "Mary Poppins",
+   "team": "My old flatshare in Friedrichshain: four people, one kitchen, zero clean spoons.",
+   "style": "Firm but kind. Practically perfect in every way, and she knows it. She never explains herself, which is annoying, but she’s always right, which is worse.",
+   "rule": "Every chore must have an element of fun. The washing-up now has a song. It has its own WhatsApp group, and nobody is allowed to leave.",
+   "wrong": "Jonas refuses to sing. He says he is an adult with a job in IT. Mary Poppins gives him the small room with no window.",
+   "works": "After a week the kitchen is spotless, the fridge has a rota and somebody has bought a plant. Nobody knows who. Nobody dares to ask."
+  }
+ },
+ "words": [
+  "delegate",
+  "authority",
+  "morale",
+  "hands-on",
+  "consult"
+ ],
+ "yours": {
+  "label": "Your boss",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your new boss in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which boss gets the job?",
+  "noun": "boss",
+  "placeholder": "The boss, e.g. Mary Poppins runs the flatshare",
+  "lead": "Each student tells us about their new boss in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

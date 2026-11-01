@@ -1,0 +1,116 @@
+{
+ "name": "Guess the Green Idea",
+ "what": "idea",
+ "whats": "ideas",
+ "doc": "Briefing note",
+ "facets": [
+  "The big idea",
+  "Who was behind it",
+  "When and where",
+  "How it works",
+  "A famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Earth Hour",
+   "aliases": [
+    "Earth Hour WWF",
+    "Earthhour"
+   ],
+   "clues": [
+    "Once a year, millions of people around the world do something very simple, for exactly sixty minutes.",
+    "It was started by the conservation charity with a panda as its logo.",
+    "It began in Sydney on 31 March 2007, and it is usually held on the last Saturday in March.",
+    "From half past eight to half past nine in the evening, local time, people switch off their lights.",
+    "Landmarks such as the Eiffel Tower and the Brandenburg Gate have gone dark for it.",
+    "Its name: our planet, plus sixty minutes."
+   ]
+  },
+  {
+   "name": "Kyoto Protocol",
+   "aliases": [
+    "Kyoto",
+    "Kioto",
+    "Kioto Protocol",
+    "Kyoto Agreement"
+   ],
+   "clues": [
+    "The first global deal with legally binding cuts in emissions, but only for rich, industrialised countries.",
+    "Governments negotiated it at a UN conference. The USA signed it but never ratified it.",
+    "It was agreed in December 1997, but it only came into force in 2005, after Russia ratified it.",
+    "Countries that had cut more than their target could sell the difference to countries that hadn’t.",
+    "Canada pulled out in 2011, saying it made little sense without the USA and China.",
+    "It’s named after Japan’s old imperial capital, a city famous for its temples."
+   ]
+  },
+  {
+   "name": "Pfand",
+   "aliases": [
+    "Pfandsystem",
+    "Flaschenpfand",
+    "Einwegpfand",
+    "bottle deposit",
+    "deposit",
+    "deposit return scheme"
+   ],
+   "clues": [
+    "You pay a little extra, and you get it back later, if you can be bothered.",
+    "Almost every German supermarket takes part, and so does everyone who has ever been to a party.",
+    "Since 2003, Germany has used it on many one-way plastic bottles and cans.",
+    "You feed your empties into a machine at the supermarket, and it prints a receipt you can spend at the till.",
+    "It’s 25 cents for a plastic bottle or a can, so some people collect the ones that others leave in parks.",
+    "A campaign asks people to leave empty bottles next to the bin, not in it: “Pfand gehört daneben”."
+   ]
+  },
+  {
+   "name": "Montreal Protocol",
+   "aliases": [
+    "Montreal",
+    "Montreal Agreement",
+    "Montreal Treaty"
+   ],
+   "clues": [
+    "It’s often called the most successful environmental treaty ever, and it isn’t mainly about climate change.",
+    "In 2009 it became the first treaty in UN history to be ratified by every member country.",
+    "It was signed in 1987, two years after British scientists in Antarctica reported that something high in the sky was disappearing.",
+    "It phased out chemicals that used to be in fridges and spray cans.",
+    "UN scientists expect the hole over Antarctica to have closed by about 2066.",
+    "It saved the ozone layer, and it’s named after a Canadian city famous for bagels and its Formula 1 race."
+   ]
+  },
+  {
+   "name": "An Inconvenient Truth",
+   "aliases": [
+    "Inconvenient Truth",
+    "The Inconvenient Truth"
+   ],
+   "clues": [
+    "It made a slideshow famous. Really.",
+    "It’s presented by a man who came within a few hundred votes of becoming US president.",
+    "It came out in 2006 and won an Academy Award for best documentary.",
+    "Its presenter tours the world giving a lecture with graphs and photos, and at one point rides a lift to show how high one line on a graph has climbed.",
+    "The next year, the presenter shared the Nobel Peace Prize with the UN’s climate panel.",
+    "Al Gore’s climate film. Its title says the facts are true, but awkward to hear."
+   ]
+  },
+  {
+   "name": "Paris Agreement",
+   "aliases": [
+    "Paris",
+    "Paris Accord",
+    "Paris climate agreement",
+    "Paris Climate Accord",
+    "Paris Agreement on climate change"
+   ],
+   "clues": [
+    "Instead of being told what to cut, every country sets its own target and promises to raise it every five years.",
+    "Almost every government in the world signed up, after years of failed talks.",
+    "It was agreed at a UN climate summit in December 2015, held at an old airfield just outside a European capital.",
+    "Countries aim to keep global warming “well below 2°C” and to try to stop it at 1.5°C.",
+    "The USA has walked out of it twice, both times under the same president.",
+    "It’s named after the city of the Eiffel Tower."
+   ]
+  }
+ ]
+}

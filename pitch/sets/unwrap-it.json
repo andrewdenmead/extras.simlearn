@@ -1,0 +1,119 @@
+{
+ "name": "Unwrap It!",
+ "pick": {
+  "label": "Pick a product",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a product and fix its packaging",
+  "lead": [
+   "Most of what we buy comes in packaging nobody really thinks about, until it leaks, refuses to open or fills the recycling bin by Wednesday.",
+   "Choose a product with annoying, wasteful or just plain silly packaging and give it a completely new one. Cleverer, greener, funnier or just weirder. Here are some ideas, but you can choose your own. *Surprise us.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "I'm not looking for a real engineering plan here, this is just for a bit of fun. Some ideas will be genuinely clever and some will only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "In the kitchen",
+   "items": [
+    "Ketchup",
+    "Nutella",
+    "Instant noodles",
+    "Eggs",
+    "Ice cream"
+   ]
+  },
+  {
+   "head": "In the bathroom",
+   "items": [
+    "Toothpaste",
+    "Shampoo",
+    "Deodorant",
+    "Cotton buds",
+    "Sun cream"
+   ]
+  },
+  {
+   "head": "Out and about",
+   "items": [
+    "Chewing gum",
+    "Coffee to go",
+    "Döner kebab",
+    "Cinema popcorn",
+    "Sushi"
+   ]
+  },
+  {
+   "head": "Ordered online",
+   "items": [
+    "A phone charger",
+    "Trainers",
+    "Pizza",
+    "Flowers",
+    "Contact lenses"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "product",
+   "My product is:",
+   "What are you repacking? From the shelf or your own idea."
+  ],
+  [
+   "now",
+   "What's wrong with the pack now:",
+   "Too much plastic, impossible to open, always leaks, ends up in the wrong bin…"
+  ],
+  [
+   "newpack",
+   "My new pack is:",
+   "What is it made of? What shape is it? How do you open it? Can you refill it, eat it, return it?"
+  ],
+  [
+   "who",
+   "It's for (first):",
+   "Who buys it first? People who care about the planet, people who are just lazy, someone else?"
+  ],
+  [
+   "wrong",
+   "What could go wrong:",
+   "Leaks, costs, a factory that can't make it, customers who just don't get it…"
+  ],
+  [
+   "shelf",
+   "Why people pick it up:",
+   "Why would someone choose it instead of the one next to it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "product": "Heinz Ketchup",
+   "now": "A plastic squeezy bottle that makes a rude noise and still hides the last ten per cent of the ketchup somewhere you can never reach.",
+   "newpack": "Ketchup on tap: a big steel tank in every Späti in Friedrichshain. You bring your own glass bottle, fill it up and pay by weight.",
+   "who": "Students who put ketchup on everything, and people who already take their own jars to the unpackaged shop.",
+   "wrong": "Somebody leaves the tap open at 2 a.m. and the Späti floor turns red. Also, nobody brings their bottle back a second time.",
+   "shelf": "It isn't on a shelf at all, which is either genius or the reason it fails. The first bottle is free, and the queue becomes the advert."
+  }
+ },
+ "words": [
+  "single-use",
+  "recyclable",
+  "refill",
+  "carbon footprint",
+  "shelf appeal"
+ ],
+ "yours": {
+  "label": "Your new pack",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your new pack in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which new pack wins?",
+  "noun": "new pack",
+  "placeholder": "The pack, e.g. Ketchup on tap",
+  "lead": "Each student tells us about their new pack in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

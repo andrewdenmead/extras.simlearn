@@ -1,0 +1,121 @@
+{
+ "name": "The Tie-in Nobody Needed",
+ "pick": {
+  "label": "Pick a film",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a film and give it a collab",
+  "lead": [
+   "Big films don’t just come to the cinema any more. They come to your supermarket, your trainers, your phone case and your breakfast cereal, and half the internet posts about it.",
+   "Choose a film and team it up with a brand that has absolutely no business being anywhere near it. Here are some ideas, but you can choose your own. *The stranger the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "I am not looking for a marketing plan that would survive a meeting with real people. This is just for a bit of fun. Some collabs make total sense, and some only make sense at two in the morning on TikTok. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Classics",
+   "items": [
+    "Star Wars",
+    "The Lion King",
+    "Home Alone",
+    "Mamma Mia!",
+    "Harry Potter",
+    "The Matrix"
+   ]
+  },
+  {
+   "head": "Animated",
+   "items": [
+    "Shrek",
+    "Finding Nemo",
+    "Toy Story",
+    "Frozen",
+    "Inside Out",
+    "Spirited Away"
+   ]
+  },
+  {
+   "head": "Recent hits",
+   "items": [
+    "Dune",
+    "Oppenheimer",
+    "Top Gun: Maverick",
+    "Wicked",
+    "Wonka"
+   ]
+  },
+  {
+   "head": "Made in Europe",
+   "items": [
+    "Good Bye, Lenin!",
+    "Run Lola Run",
+    "Amélie",
+    "Trainspotting",
+    "Paddington"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "film",
+   "My film is:",
+   "Which film are you teaming up?"
+  ],
+  [
+   "partner",
+   "My brand partner is:",
+   "A brand, a shop, a food, a Berlin institution… the more surprising the better."
+  ],
+  [
+   "product",
+   "We’re launching:",
+   "What exactly can people buy, eat, wear or do?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who buys it first? Fans of the film, people who have never seen it, someone else?"
+  ],
+  [
+   "post",
+   "The first post shows:",
+   "What’s in the first video or picture that makes everyone share it?"
+  ],
+  [
+   "slogan",
+   "Our slogan:",
+   "A few words for the poster, the packet or the hashtag."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "film": "Shrek",
+   "partner": "Spreewald gherkins",
+   "product": "Swamp Gurken: Spreewald gherkins in a big green jar with a little ogre on the label. The lid makes a loud burping noise when you open it.",
+   "who": "People who were children when the film came out and now buy their own pickles, and anyone who has ever eaten gherkins straight from the jar at midnight.",
+   "post": "Me, on the U-Bahn, trying to open the jar quietly. It is not quiet. The whole carriage turns round.",
+   "slogan": "Better out than in."
+  }
+ },
+ "words": [
+  "tie-in",
+  "collab",
+  "go viral",
+  "target audience",
+  "hype"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your collab in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which collab wins?",
+  "noun": "collab",
+  "placeholder": "The collab, e.g. Swamp Gurken",
+  "lead": "Each student tells us about their collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

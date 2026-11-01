@@ -1,0 +1,119 @@
+{
+ "name": "Rubbish to Riches!",
+ "pick": {
+  "label": "Pick some rubbish",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something people throw away and make it into a product",
+  "lead": [
+   "Every day, Berlin throws away mountains of stuff that still has some life in it. Some designers have built whole brands out of other people’s rubbish: bags from old lorry covers, trainers from old seat fabric, furniture from old pallets.",
+   "Choose something from the shelf (or your own idea) and turn it into a product people would actually pay for. *The sillier the rubbish, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is not a business plan, it’s just for a bit of fun. Some ideas will make total sense, and some will only make sense to you. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "From the street",
+   "items": [
+    "Christmas trees in January",
+    "Old bike tyres",
+    "Broken umbrellas",
+    "Old street signs",
+    "E-scooters fished out of the Spree"
+   ]
+  },
+  {
+   "head": "From the kitchen",
+   "items": [
+    "Coffee grounds",
+    "Orange peel",
+    "Old bread",
+    "Wine corks",
+    "Eggshells"
+   ]
+  },
+  {
+   "head": "From the wardrobe",
+   "items": [
+    "Odd socks",
+    "Old jeans",
+    "Festival wristbands",
+    "Football shirts nobody wants",
+    "Bridesmaid dresses"
+   ]
+  },
+  {
+   "head": "From the office",
+   "items": [
+    "Old keyboards",
+    "Lanyards",
+    "Shredded paper",
+    "Conference tote bags",
+    "Broken office chairs"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "rubbish",
+   "My rubbish is:",
+   "What are you rescuing from the bin?"
+  ],
+  [
+   "product",
+   "I am turning it into:",
+   "What exactly is the product? A bag, a lamp, a snack, something completely mad?"
+  ],
+  [
+   "look",
+   "It looks and feels like:",
+   "Colours, finish, size, smell… What does it look like in the shop?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who buys it first? Students, tourists, your grandmother, someone else?"
+  ],
+  [
+   "price",
+   "It costs:",
+   "How much, and why is it worth it?"
+  ],
+  [
+   "promote",
+   "I would sell it by:",
+   "Where is it sold, and who do you get to talk about it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "rubbish": "Tents that people leave behind after music festivals.",
+   "product": "The Morning After: a raincoat made from an abandoned festival tent. Every coat still has the tent’s pockets, and some still have a bit of glitter you will never get out.",
+   "look": "Bright and a bit crumpled, with a matt finish, and a few of them still smell faintly of cider.",
+   "who": "People who go to festivals and forget to pack a jacket, which, in my experience, is everyone.",
+   "price": "€89, which is more than the tent cost, but the tent didn’t come with a story.",
+   "promote": "A stand at the same festival the next summer, so people can buy back their own tent as a coat. In the Scottish rain, it sells itself."
+  }
+ },
+ "words": [
+  "upcycled",
+  "raw material",
+  "durable",
+  "life cycle",
+  "matt finish"
+ ],
+ "yours": {
+  "label": "Your product",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your product in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which product wins?",
+  "noun": "product",
+  "placeholder": "The product, e.g. The Morning After",
+  "lead": "Each student tells us about their product in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

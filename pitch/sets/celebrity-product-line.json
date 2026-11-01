@@ -1,0 +1,119 @@
+{
+ "name": "Famous Name, New Product!",
+ "pick": {
+  "label": "Pick a celebrity",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a celebrity and launch their product line",
+  "lead": [
+   "These days it seems every famous person has a product line: make-up, tequila, hot sauce, headphones, socks. Some of them are brilliant. Some of them make you wonder who on earth said yes.",
+   "Choose a famous person (or a famous not-quite-person) and launch a product line with their name on it. Here are some ideas, but you can choose your own. *The less obvious the product, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is just for fun, not a business plan. Be kind to your celebrity: we’re laughing with them, not at them."
+ },
+ "shelf": [
+  {
+   "head": "Music",
+   "items": [
+    "Dua Lipa",
+    "Bad Bunny",
+    "Billie Eilish",
+    "Ed Sheeran",
+    "Lewis Capaldi"
+   ]
+  },
+  {
+   "head": "Sport",
+   "items": [
+    "Cristiano Ronaldo",
+    "Serena Williams",
+    "Lewis Hamilton",
+    "Simone Biles",
+    "Toni Kroos"
+   ]
+  },
+  {
+   "head": "Screen",
+   "items": [
+    "Zendaya",
+    "Pedro Pascal",
+    "Timothée Chalamet",
+    "Heidi Klum",
+    "Mr Bean"
+   ]
+  },
+  {
+   "head": "Not even human",
+   "items": [
+    "SpongeBob",
+    "Shrek",
+    "Peppa Pig",
+    "Barbie",
+    "Das Sandmännchen"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "celeb",
+   "My celebrity is:",
+   "Who is putting their name on it?"
+  ],
+  [
+   "product",
+   "The product line is:",
+   "What exactly are they selling? Make-up, food, clothes, something nobody has ever sold before?"
+  ],
+  [
+   "name",
+   "It’s called:",
+   "Every celebrity line needs a name. A pun, a nickname, a catchphrase…"
+  ],
+  [
+   "why",
+   "Why it makes sense:",
+   "Why would fans believe this person really uses it? (Or why does it make no sense at all, in a good way?)"
+  ],
+  [
+   "ad",
+   "The advert:",
+   "Where is it, who’s in it, and what happens?"
+  ],
+  [
+   "price",
+   "It costs:",
+   "How much, and is that a bargain or a rip-off?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "celeb": "Thomas Müller",
+   "product": "Football socks, plus a matching pair for the sofa, for people who watch a lot more football than they play.",
+   "name": "Raumdeuter Socks. Nobody outside Germany will understand the name, and that’s the point.",
+   "why": "He is famous for always being in exactly the right place without anybody quite knowing how. Lost socks are exactly the same.",
+   "ad": "Müller on a sofa in Friedrichshain, looking for the remote control. He finds it straight away, obviously.",
+   "price": "€19.99 for three pairs, which is a rip-off, but they come in a little box shaped like a goal."
+  }
+ },
+ "words": [
+  "endorsement",
+  "fan base",
+  "product line",
+  "brand ambassador",
+  "sell out"
+ ],
+ "yours": {
+  "label": "Your product line",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your product line in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which product line wins?",
+  "noun": "product line",
+  "placeholder": "The product line, e.g. Raumdeuter Socks",
+  "lead": "Each student tells us about their celebrity’s product line in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

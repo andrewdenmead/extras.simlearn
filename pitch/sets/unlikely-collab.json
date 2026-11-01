@@ -1,0 +1,119 @@
+{
+ "name": "The Unlikely Collab!",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and find it a partner",
+  "lead": [
+   "Fila x Chupa Chups. Crocs x KFC. Adidas x the BVG. Brand collabs used to be rare. Now two brands from completely different worlds team up every week, and somehow people queue for them.",
+   "Choose a brand from the shelf, then find it a partner that has no business being anywhere near it. Here are some ideas, but you can choose your own. *The stranger the pair, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious brand strategy here, this is just for a bit of fun. Some collabs make total sense, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Fashion and sport",
+   "items": [
+    "Birkenstock",
+    "Fila",
+    "Crocs",
+    "New Balance",
+    "Supreme"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "Club-Mate",
+    "Irn-Bru",
+    "Chupa Chups",
+    "Ritter Sport",
+    "Pringles"
+   ]
+  },
+  {
+   "head": "Toys and tech",
+   "items": [
+    "Nintendo",
+    "Polaroid",
+    "Dyson",
+    "Braun",
+    "Tamagotchi"
+   ]
+  },
+  {
+   "head": "Cars and travel",
+   "items": [
+    "Porsche",
+    "Vespa",
+    "Mini",
+    "Deutsche Bahn",
+    "BVG"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My first brand is:",
+   "Which brand did you pick from the shelf?"
+  ],
+  [
+   "partner",
+   "It teams up with:",
+   "A second brand from a completely different world"
+  ],
+  [
+   "product",
+   "The collab product is:",
+   "What exactly are you selling? Give it a name."
+  ],
+  [
+   "brings",
+   "What each brand brings:",
+   "The colours, the logo, the attitude, the thing everyone recognises…"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who wants this? Fans of one brand, fans of both, or people who just like a queue?"
+  ],
+  [
+   "launch",
+   "We launch it with:",
+   "Where, how, and who’s first in the queue on day one?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "Irn-Bru",
+   "partner": "Birkenstock",
+   "product": "The Ginger Sandal: bright orange cork sandals with a blue strap. They smell faintly of bubblegum. Nobody knows why, which is also true of the drink.",
+   "brings": "Irn-Bru brings the orange-and-blue look and its cheeky Scottish humour (it once claimed to be ‘made in Scotland from girders’). Birkenstock brings comfort, and the idea that ugly can be cool.",
+   "who": "Scottish people in Berlin pretending it’s warm enough for sandals in April, and festival-goers who want to be seen from space.",
+   "launch": "A pop-up stall at the Mauerpark flea market on a Sunday, free cans for the first hundred people, and a very long queue that is mostly my friends."
+  }
+ },
+ "words": [
+  "brand identity",
+  "brand equity",
+  "positioning",
+  "target market",
+  "limited edition"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your collab in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which collab wins?",
+  "noun": "collab",
+  "placeholder": "The collab, e.g. Irn-Bru x Birkenstock",
+  "lead": "Each student tells us about their collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

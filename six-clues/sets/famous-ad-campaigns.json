@@ -1,0 +1,125 @@
+{
+ "name": "Guess the Campaign",
+ "what": "campaign",
+ "whats": "campaigns",
+ "doc": "Case study",
+ "facets": [
+  "The mood",
+  "Who it talks to",
+  "Where it began",
+  "What you see",
+  "Famous moment",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Just Do It",
+   "aliases": [
+    "Nike Just Do It",
+    "Nike",
+    "just do it campaign"
+   ],
+   "clues": [
+    "Short, tough and motivating. It makes you feel lazy for still sitting on the sofa.",
+    "Athletes, but mostly ordinary people who would like to be a bit more sporty.",
+    "An agency in Portland, Oregon, came up with it in 1988.",
+    "The very first TV ad showed an 80-year-old man running across the Golden Gate Bridge in San Francisco.",
+    "It's one of the most famous slogans in the world, and it has been used for more than 35 years.",
+    "Three words from a sports brand with a tick-shaped logo."
+   ]
+  },
+  {
+   "name": "Share a Coke",
+   "aliases": [
+    "Share a Coca-Cola",
+    "Share a Coke with",
+    "Coca-Cola names",
+    "Coke names",
+    "names on bottles",
+    "Coca-Cola",
+    "Coke"
+   ],
+   "clues": [
+    "Friendly and personal. It made people dig through the fridge at the supermarket.",
+    "Teenagers, young adults, and anyone looking for a friend's name to give as a little present.",
+    "It started in Australia in 2011.",
+    "Bottles and cans where the famous logo was replaced by people's first names.",
+    "The first version used the 150 most popular first names in the country.",
+    "A red cola can with your name on it, and an invitation to give it to someone else."
+   ]
+  },
+  {
+   "name": "Real Beauty Sketches",
+   "aliases": [
+    "Dove Real Beauty Sketches",
+    "Dove Sketches",
+    "Dove Real Beauty",
+    "Real Beauty",
+    "Campaign for Real Beauty",
+    "Dove"
+   ],
+   "clues": [
+    "Quiet, emotional and a bit uncomfortable. Lots of people cried when they watched it.",
+    "Women, and anyone who has ever been too hard on themselves about how they look.",
+    "A soap and skincare brand released it in 2013, as part of a long campaign about self-esteem.",
+    "An artist sits behind a curtain and draws women only from the way they describe themselves.",
+    "The artist was trained by the FBI. Then strangers describe the same women, and the strangers' drawings are kinder.",
+    "It ends with the line “You are more beautiful than you think.” The brand's logo is a bird."
+   ]
+  },
+  {
+   "name": "Heimkommen",
+   "aliases": [
+    "#heimkommen",
+    "Edeka Heimkommen",
+    "Edeka",
+    "Edeka Christmas ad",
+    "Edeka Weihnachtsspot",
+    "coming home"
+   ],
+   "clues": [
+    "Very sad, then a bit happy. It isn't funny at all, but people shared it everywhere.",
+    "Families in Germany, especially grown-up children who are always too busy to visit their parents.",
+    "A German supermarket chain released it a few weeks before Christmas 2015. The Hamburg agency Jung von Matt made it.",
+    "An old man sits alone at Christmas while his children cancel their visits on the phone, one message after another.",
+    "He pretends to be dead so that the whole family finally comes home. It was the most shared German online ad of 2015.",
+    "Its title is a German hashtag that means “coming home”."
+   ]
+  },
+  {
+   "name": "You're not you when you're hungry",
+   "aliases": [
+    "Snickers",
+    "You're not you",
+    "You are not you when you are hungry",
+    "Youre not you when youre hungry",
+    "Not you when you're hungry",
+    "Snickers hungry"
+   ],
+   "clues": [
+    "Funny and a bit silly. It's about what happens to your personality just before lunch.",
+    "Mostly young men, but really anyone who gets grumpy when they need a snack.",
+    "It started with an ad in 2010, during the Super Bowl, America's biggest TV event of the year.",
+    "A young man playing American football in the mud is shown as a much older Hollywood actress, until he eats something.",
+    "The actress was Betty White, who was 88 at the time.",
+    "A chocolate bar with peanuts and caramel says that hunger turns you into someone else."
+   ]
+  },
+  {
+   "name": "Priceless",
+   "aliases": [
+    "Mastercard Priceless",
+    "Mastercard",
+    "Priceless campaign"
+   ],
+   "clues": [
+    "Warm and sentimental. It reminds you that the best moments in life aren't for sale.",
+    "Pretty much everyone with a wallet. It has been running since the 1990s.",
+    "The New York agency McCann created it in 1997.",
+    "The first ad showed a father and son at a baseball game, with a price for each little thing they paid for.",
+    "Its famous line: “There are some things money can't buy. For everything else, there's…” and then a credit card company.",
+    "One word that means “worth more than any amount of money”."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "name": "Guess the Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Brand history",
+ "facets": [
+  "The founder",
+  "Where it began",
+  "The early days",
+  "The product",
+  "The look",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Dr. Martens",
+   "aliases": [
+    "Dr Martens",
+    "Doc Martens",
+    "Docs",
+    "DMs",
+    "Doc Marten",
+    "Dr. Marten"
+   ],
+   "clues": [
+    "A German army doctor who hurt his ankle skiing in 1945.",
+    "Bavaria first. Later, a family shoe company in the English Midlands made them famous.",
+    "Normal boots hurt his foot, so he designed a shoe with a soft sole full of air.",
+    "The most famous boot is named after the day it was launched: 1 April 1960.",
+    "Yellow stitching around the sole, and a loop at the back of the heel.",
+    "The founder’s surname (in English spelling), with ‘Dr.’ in front."
+   ]
+  },
+  {
+   "name": "adidas",
+   "aliases": [
+    "Adidas AG",
+    "addidas",
+    "adiddas"
+   ],
+   "clues": [
+    "A shoemaker who started making sports shoes in his mother’s laundry room in the 1920s.",
+    "A small town in Franconia. His brother started a rival brand in the same town, and they never made up.",
+    "Jesse Owens wore his shoes when he won four gold medals at the 1936 Olympics in Berlin.",
+    "Football boots with screw-in studs, worn by West Germany when they won the 1954 World Cup.",
+    "Three stripes.",
+    "The founder’s nickname, Adi, plus the first three letters of his surname."
+   ]
+  },
+  {
+   "name": "Nike",
+   "aliases": [
+    "Nike Inc",
+    "Nikey"
+   ],
+   "clues": [
+    "A university running coach and one of his former runners, in the 1960s.",
+    "Oregon, in the north-west of the USA.",
+    "At first they imported Japanese running shoes and sold them from a car at athletics events.",
+    "The coach poured rubber into his wife’s waffle iron to make a new kind of sole.",
+    "A logo like a tick, designed by a student in 1971 for $35.",
+    "Named after the Greek goddess of victory."
+   ]
+  },
+  {
+   "name": "Nutella",
+   "aliases": [
+    "Nutela"
+   ],
+   "clues": [
+    "A pastry maker in northern Italy, just after the Second World War.",
+    "Alba, in Piedmont, a region famous for its hazelnuts.",
+    "Chocolate was very expensive after the war, so he mixed it with lots of hazelnuts to make it go further.",
+    "The first version was a solid block that you cut with a knife. Later it became soft enough to spread.",
+    "A glass jar with a white lid, and on the label a slice of bread covered in the spread, with some hazelnuts.",
+    "An English word for what hazelnuts are, plus a sweet Italian-sounding ending."
+   ]
+  },
+  {
+   "name": "Louis Vuitton",
+   "aliases": [
+    "LV",
+    "Vuitton",
+    "Louis Vitton",
+    "Louis Vuiton"
+   ],
+   "clues": [
+    "A teenager who walked from the French mountains to Paris in the 1830s to find work.",
+    "Paris, where he packed luggage for rich travellers before opening his own shop in 1854.",
+    "His trunks had flat tops, so they could be stacked on trains and ships. Round-topped trunks couldn’t.",
+    "Luxury suitcases and handbags. Some of them cost more than a small car.",
+    "A brown pattern of initials and flowers, created in 1896 by the founder’s son to stop people copying the bags.",
+    "Two initials, L and V."
+   ]
+  },
+  {
+   "name": "Converse",
+   "aliases": [
+    "Converse All Star",
+    "Chucks",
+    "Chuck Taylor",
+    "Chuck Taylors",
+    "Converse Chucks"
+   ],
+   "clues": [
+    "A businessman in Massachusetts who started a rubber shoe company in 1908.",
+    "Near Boston, in the north-east of the USA.",
+    "It made a basketball shoe in 1917, and a basketball player who sold the shoes later got his name on them.",
+    "Canvas trainers with a rubber toe, high-top or low.",
+    "A round star on a patch on the ankle.",
+    "The founder’s surname, which is also a word for having a conversation. Many people call the shoes ‘Chucks’."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "name": "Safety First!",
+ "pick": {
+  "label": "Pick a danger",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a danger and run a campaign",
+  "lead": [
+   "Governments have spent decades warning us about things: smoking, speeding, sunburn, not washing our hands. Some of those campaigns are so famous that people still quote them.",
+   "Choose an everyday danger from the shelf, or find your own, and design a public safety campaign about it. Most of these dangers are very small. *Treat them as if they were enormous.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious public health strategy here, this is just for a bit of fun. The more dramatically you warn people about something tiny, the better."
+ },
+ "shelf": [
+  {
+   "head": "Everyday dangers",
+   "items": [
+    "Untied shoelaces",
+    "Hot coffee lids",
+    "Walking while texting",
+    "Wet floors",
+    "Paper cuts"
+   ]
+  },
+  {
+   "head": "Berlin hazards",
+   "items": [
+    "E-scooters left on the pavement",
+    "The U-Bahn doors closing",
+    "Stopping at the top of the escalator",
+    "Broken glass after New Year’s Eve",
+    "Pigeons at Alexanderplatz"
+   ]
+  },
+  {
+   "head": "Student life",
+   "items": [
+    "All-nighters before exams",
+    "Cereal for dinner",
+    "Forgetting your laundry in the machine",
+    "Hitting ‘Reply all’",
+    "Leaving everything until Sunday night"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "danger",
+   "My danger is:",
+   "Which danger from the shelf (or your own) are you warning people about?"
+  ],
+  [
+   "who",
+   "Who needs to hear it:",
+   "Who keeps doing it? Be precise: where, when, and why they never learn."
+  ],
+  [
+   "slogan",
+   "My slogan is:",
+   "Short enough to remember, and ideally a bit annoying, so it sticks."
+  ],
+  [
+   "mascot",
+   "The face of my campaign:",
+   "A cartoon animal, a celebrity, a very serious man in a suit?"
+  ],
+  [
+   "where",
+   "Where people will see it:",
+   "Posters, a TikTok, a jingle on the radio, stickers on the escalator, somewhere nobody expects?"
+  ],
+  [
+   "worked",
+   "How I’d know it worked:",
+   "What would you count, and who would do the counting?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "danger": "Stopping at the top of the escalator",
+   "who": "Everyone at Alexanderplatz between 8 and 9am, especially people who have just realised they don’t know which exit they need.",
+   "slogan": "Don’t stop at the top.",
+   "mascot": "Klaus, a very polite penguin who stops at the top of every escalator to check Google Maps and causes a ten-penguin pile-up every morning.",
+   "where": "On the escalator steps themselves, so you read the slogan one step at a time. The last step says: KEEP WALKING, KLAUS.",
+   "worked": "I’d stand at the top of the escalator at Alex with a clipboard and count the pile-ups. I would cause several of them myself."
+  }
+ },
+ "words": [
+  "public awareness",
+  "behaviour change",
+  "target audience",
+  "deterrent",
+  "catchy"
+ ],
+ "yours": {
+  "label": "Your campaign",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your campaign in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which campaign wins?",
+  "noun": "campaign",
+  "placeholder": "The campaign, e.g. Don’t stop at the top",
+  "lead": "Each student tells us about their campaign in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

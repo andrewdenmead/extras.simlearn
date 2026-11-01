@@ -1,0 +1,104 @@
+{
+ "name": "Guess the Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Brand file",
+ "facets": [
+  "The attitude",
+  "Who uses it",
+  "Where it began",
+  "The design",
+  "A famous moment",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Freitag",
+   "aliases": [
+    "freitag bags"
+   ],
+   "clues": [
+    "Practical, urban and a little bit rough. It likes things that have already had a hard life.",
+    "Cyclists, couriers and design students who want a bag nobody else has.",
+    "In 1993 two brothers in Zurich made their first bag at home, in their flat.",
+    "Old lorry covers, used bike inner tubes and car seat belts. Because of this, every bag is different.",
+    "Its shop in Zurich is a tall tower made of old shipping containers.",
+    "It’s the German word for a day of the week, the one just before the weekend."
+   ]
+  },
+  {
+   "name": "Patagonia",
+   "aliases": [
+    "patagonia clothing"
+   ],
+   "clues": [
+    "Outdoorsy and serious about the planet. It sometimes tells customers to buy less of its own products.",
+    "Climbers, surfers, hikers, and people in cities who dress like they might go climbing.",
+    "It was started in California by a rock climber who first made climbing equipment.",
+    "Warm jackets and fleeces, and a programme that repairs old clothes and sells them again.",
+    "On Black Friday in 2011 it printed an advert in the New York Times that said “Don’t buy this jacket”. In 2022 its founder gave the company away to protect the planet.",
+    "It’s named after a wild region at the southern end of South America."
+   ]
+  },
+  {
+   "name": "Bialetti",
+   "aliases": [
+    "moka express",
+    "bialetti moka"
+   ],
+   "clues": [
+    "Old-fashioned, reliable and very Italian. It hasn’t really changed for almost a hundred years.",
+    "Students in shared flats, grandparents in Italy, and anyone who doesn’t want an expensive machine.",
+    "An Italian engineer invented its most famous product in 1933, after watching his wife use an old washing machine that boiled water.",
+    "Shiny aluminium with eight sides. You put it on the cooker and wait for it to bubble.",
+    "Its logo is a cartoon of a little man with a big moustache, drawn in 1953. He was based on the founder’s son.",
+    "The family name of the man who invented the Moka Express."
+   ]
+  },
+  {
+   "name": "Nokia",
+   "aliases": [
+    "nokia 3310",
+    "3310"
+   ],
+   "clues": [
+    "Tough, simple and a bit of a legend. People still make jokes about how hard it is to break.",
+    "In 2000, almost everybody: teenagers, parents and business people.",
+    "The company started in Finland in the 1800s, making paper, long before it made electronics.",
+    "Its most famous phone had small buttons, a tiny screen and a battery that lasted for days. It was launched in 2000.",
+    "That phone came with the game Snake II, and it was relaunched in a new version in 2017.",
+    "A Finnish brand. Its most famous phone is the 3310."
+   ]
+  },
+  {
+   "name": "Vinted",
+   "aliases": [
+    "vinted app"
+   ],
+   "clues": [
+    "Friendly and practical. It wants people to see old clothes as a good thing, not a sad thing.",
+    "Students, young parents and anyone with a wardrobe that is far too full.",
+    "It started in Lithuania in 2008, when one of the founders was moving house and wanted to sell clothes she didn’t need.",
+    "A simple app: take a photo, add a price, and wait for someone to buy it.",
+    "It became the first Lithuanian start-up worth more than a billion dollars.",
+    "It sounds like “vintage” with a different ending."
+   ]
+  },
+  {
+   "name": "Too Good To Go",
+   "aliases": [
+    "toogoodtogo",
+    "too good to go app",
+    "tgtg"
+   ],
+   "clues": [
+    "Cheerful and a bit cheeky. It hates waste more than anything.",
+    "Students, bargain hunters and people who like surprises.",
+    "It was started in Copenhagen, Denmark, in 2015.",
+    "An app where bakeries, cafés and supermarkets sell food they couldn’t sell that day.",
+    "You never know exactly what you will get: you pay about a third of the normal price for a surprise bag.",
+    "Its name says the food is far too nice to throw away."
+   ]
+  }
+ ]
+}

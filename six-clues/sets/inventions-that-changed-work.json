@@ -1,0 +1,123 @@
+{
+ "name": "Guess the Invention",
+ "what": "invention",
+ "whats": "inventions",
+ "doc": "Patent file",
+ "facets": [
+  "Who it worried",
+  "What it changed",
+  "Where it began",
+  "The inventor",
+  "Famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Printing press",
+   "aliases": [
+    "printing",
+    "the printing press",
+    "Gutenberg press",
+    "movable type",
+    "printing machine"
+   ],
+   "clues": [
+    "The people whose job was to copy books by hand.",
+    "Ideas could spread faster and further than ever before, and books got much cheaper.",
+    "Mainz, on the Rhine, in the middle of the 15th century.",
+    "A goldsmith called Johannes Gutenberg, who used small letters made of metal that could be moved around and used again.",
+    "His most famous book was a Bible. Only around fifty copies survive, and they're worth millions.",
+    "A machine that presses ink onto paper."
+   ]
+  },
+  {
+   "name": "Steam engine",
+   "aliases": [
+    "steam engines",
+    "the steam engine",
+    "steam",
+    "Watt engine",
+    "Watt steam engine"
+   ],
+   "clues": [
+    "Anyone who did heavy work with their muscles, or with horses.",
+    "It powered factories, mines, trains and ships, and started the Industrial Revolution.",
+    "Earlier versions pumped water out of English mines, but the big improvement came from a workshop at the University of Glasgow.",
+    "James Watt, from Greenock in Scotland, who patented a separate condenser in 1769 and later went into business with Matthew Boulton in Birmingham.",
+    "A unit of power is named after the inventor: you'll find it on every light bulb.",
+    "It runs on boiling water."
+   ]
+  },
+  {
+   "name": "Assembly line",
+   "aliases": [
+    "the assembly line",
+    "moving assembly line",
+    "production line",
+    "conveyor belt"
+   ],
+   "clues": [
+    "Skilled workers who used to build a whole product themselves.",
+    "Each worker did one small task again and again, and the work came to them.",
+    "A factory in Highland Park, near Detroit, in 1913.",
+    "Henry Ford.",
+    "Building one Model T went from about twelve and a half hours to about an hour and a half.",
+    "A line where parts are put together as they move past the workers."
+   ]
+  },
+  {
+   "name": "Shipping container",
+   "aliases": [
+    "container",
+    "containers",
+    "the container",
+    "the shipping container",
+    "intermodal container"
+   ],
+   "clues": [
+    "Dockworkers, who used to load and unload ships by hand, one sack or crate at a time.",
+    "Moving goods around the world became so cheap that it made globalisation possible.",
+    "A ship sailed from Newark, near New York, to Houston in April 1956 with 58 of them on board.",
+    "Malcom McLean, an American lorry-company owner who was tired of waiting at the docks.",
+    "Today the biggest ships can carry more than twenty thousand of them. People also turn them into cafés and student flats.",
+    "A big steel box that fits on a ship, a train or a lorry."
+   ]
+  },
+  {
+   "name": "Barcode",
+   "aliases": [
+    "bar code",
+    "barcodes",
+    "UPC",
+    "the barcode",
+    "barcode scanner"
+   ],
+   "clues": [
+    "Shop staff who stuck a price label on every item and typed every price into the till.",
+    "Shops could suddenly know exactly what they had sold and what they had left.",
+    "The idea came on a beach in Miami, when the inventor drew dots and dashes from Morse code in the sand and pulled them down into lines.",
+    "Norman Woodland and Bernard Silver patented it in 1952, but the technology to read it took another twenty years.",
+    "The first product ever scanned at a checkout was a pack of Juicy Fruit chewing gum, in Ohio, in June 1974.",
+    "Black and white stripes on almost everything you buy."
+   ]
+  },
+  {
+   "name": "Spreadsheet",
+   "aliases": [
+    "spreadsheets",
+    "electronic spreadsheet",
+    "the spreadsheet",
+    "VisiCalc",
+    "Excel"
+   ],
+   "clues": [
+    "Clerks and accountants who added up long columns of numbers by hand.",
+    "It turned the personal computer from a hobby into a serious business tool.",
+    "A student at Harvard Business School watched a professor change one number in a table on the blackboard and then rub out and rewrite everything that depended on it.",
+    "Dan Bricklin and Bob Frankston, whose program came out for the Apple II in 1979.",
+    "It was the first “killer app”: people bought the computer just to run it. Microsoft's best-known version came out in 1985.",
+    "Rows, columns and cells, like Excel or Google Sheets."
+   ]
+  }
+ ]
+}

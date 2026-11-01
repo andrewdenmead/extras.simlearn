@@ -1,0 +1,118 @@
+{
+ "name": "Guess the Crisis",
+ "what": "crisis",
+ "whats": "crises",
+ "doc": "Crisis file",
+ "facets": [
+  "The mood",
+  "Who was upset",
+  "What went wrong",
+  "How it ended",
+  "Famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "KFC",
+   "aliases": [
+    "Kentucky Fried Chicken",
+    "KFC UK",
+    "KFC chicken shortage"
+   ],
+   "clues": [
+    "Embarrassing, and for about a week the whole country was talking about it.",
+    "Hungry customers all over the UK. Some even complained to the police.",
+    "In February 2018 a new delivery company took over the deliveries, and hundreds of restaurants ran out of their one main ingredient.",
+    "The company apologised with a full-page newspaper advert that made people laugh, and the advert won awards.",
+    "On the advert, the letters on the famous red-and-white bucket were rearranged into a rude word.",
+    "The Colonel's restaurants ran out of chicken."
+   ]
+  },
+  {
+   "name": "Pepsi",
+   "aliases": [
+    "Pepsi ad",
+    "Pepsi Kendall Jenner",
+    "Kendall Jenner ad",
+    "PepsiCo"
+   ],
+   "clues": [
+    "A big, glossy advert that was meant to bring people together. It didn't.",
+    "People who had marched in real protests, and pretty much everyone on Twitter.",
+    "In 2017 the advert seemed to suggest that a fizzy drink could solve a tense stand-off between protesters and the police.",
+    "The company pulled the advert about a day after it came out and said it had “missed the mark”.",
+    "A reality-TV star and model walks out of a photo shoot, joins a march and hands a police officer a can.",
+    "The drink in the can was Coca-Cola's biggest rival."
+   ]
+  },
+  {
+   "name": "The Oscars",
+   "aliases": [
+    "Oscars",
+    "Academy Awards",
+    "Oscars 2017",
+    "La La Land Moonlight",
+    "Oscar envelope"
+   ],
+   "clues": [
+    "Live on television, in front of millions of people, and nobody on stage knew what to do.",
+    "The people who had just been told they'd won, and then told they hadn't.",
+    "In February 2017 two famous actors were handed the wrong envelope and read out the wrong winner.",
+    "Somebody came on stage during the winners' speeches and said there had been a mistake. The accountancy firm in charge of the envelopes apologised.",
+    "“La La Land” was announced as the best film of the year, but the real winner was “Moonlight”.",
+    "It's Hollywood's biggest night, and the prize is a small golden statue."
+   ]
+  },
+  {
+   "name": "Boaty McBoatface",
+   "aliases": [
+    "Boaty",
+    "Boaty Mc Boatface",
+    "Boatie McBoatface"
+   ],
+   "clues": [
+    "It started as a friendly idea and ended with an organisation looking slightly silly in front of the whole country.",
+    "Scientists who had hoped for a serious name, and the government minister who had to sort it out.",
+    "In 2016 a UK research council let the public suggest and vote on a name for its new £200 million polar research ship.",
+    "The ship got a famous naturalist's name in the end, and the winning name went on a small yellow robot submarine instead.",
+    "A radio presenter suggested the winning name as a joke, and it got more than 124,000 votes.",
+    "Its name is the word “boat” turned into a Scottish-sounding surname and first name."
+   ]
+  },
+  {
+   "name": "Galaxy Note 7",
+   "aliases": [
+    "Samsung Galaxy Note 7",
+    "Note 7",
+    "Galaxy Note7",
+    "Samsung Note 7",
+    "Samsung"
+   ],
+   "clues": [
+    "A brand-new product that was supposed to be the company's best ever, and lasted only a few weeks.",
+    "Airlines, and anybody who had just bought one.",
+    "Soon after its launch in August 2016, some of its batteries overheated and caught fire.",
+    "The company recalled every one it had sold, even the replacements, and stopped making it in October 2016.",
+    "For a while, before every flight, passengers were told it was not allowed on board.",
+    "A big-screen smartphone from South Korea's biggest company."
+   ]
+  },
+  {
+   "name": "Cyberpunk 2077",
+   "aliases": [
+    "Cyberpunk",
+    "Cyberpunk2077",
+    "CD Projekt",
+    "CD Projekt Red"
+   ],
+   "clues": [
+    "Years of excitement, and then a huge disappointment on the first day.",
+    "Gamers, especially people who played on older consoles.",
+    "When it finally came out in December 2020, it was so full of bugs that it was almost unplayable on some machines.",
+    "Sony removed it from its online store and offered refunds. It only went back on sale there in June 2021, and many fans now say it's great.",
+    "Keanu Reeves is in it.",
+    "A video game from Poland, set in Night City in the future."
+   ]
+  }
+ ]
+}

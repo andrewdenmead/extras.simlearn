@@ -1,0 +1,109 @@
+{
+ "name": "Make Space!",
+ "pick": {
+  "eyebrow": "Up to you!",
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "label": "Pick a space",
+  "heading": "Pick an empty space and give it a new life",
+  "lead": [
+   "Every city is full of space that nobody uses: the department store that closed, the car park that’s empty all night, the old phone box that hasn’t had a phone in it since 2005.",
+   "Choose a space that’s empty, half-used or forgotten, and turn it into something people would queue for. Here are some ideas, but you can choose your own. *Bonus points if it’s in Berlin.*"
+  ],
+  "note": "This isn’t a planning application. Some ideas will make total sense and some will need a lot of imagination and a very relaxed Bauamt. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Around Berlin",
+   "items": [
+    "An empty department store",
+    "A multi-storey car park",
+    "An old phone box",
+    "A disused U-Bahn station",
+    "A closed swimming pool"
+   ]
+  },
+  {
+   "head": "Big and odd",
+   "items": [
+    "An empty office tower",
+    "A disused railway line",
+    "An old cruise ship",
+    "A former bank vault",
+    "A church with twelve people in it on Sundays"
+   ]
+  },
+  {
+   "head": "Out of town",
+   "items": [
+    "A castle",
+    "A lighthouse on Skye",
+    "A ski jump",
+    "A motorway service station",
+    "A disused coal mine"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "space",
+   "My space is:",
+   "Which empty or forgotten space are you rescuing?"
+  ],
+  [
+   "now",
+   "What it’s like now:",
+   "The smell, the dust, the pigeons, what the neighbours say about it…"
+  ],
+  [
+   "idea",
+   "I’m turning it into:",
+   "A shop, a home, a club, a school, something completely mad?"
+  ],
+  [
+   "who",
+   "It’s for (first):",
+   "Who comes first? Neighbours, tourists, students, someone else?"
+  ],
+  [
+   "keep",
+   "The one thing I’d keep:",
+   "What stays exactly as it was, so people remember what it used to be?"
+  ],
+  [
+   "promote",
+   "I’d get people there by:",
+   "Who do you get to talk about it, and where?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "space": "A multi-storey car park",
+   "now": "Concrete, puddles that never dry, a smell of old petrol, and a ticket machine that has hated everyone since 1994.",
+   "idea": "Level Six: every floor is something different. Floor one is a flea market, floor three is a padel court, floor five is an open-air cinema, and the roof is a beer garden with the best sunset in Neukölln.",
+   "who": "Neighbours who have complained about the car park for thirty years, and anyone who has ever wanted a rooftop bar that doesn’t charge fourteen euros for a cocktail.",
+   "keep": "The ramps. You go up on the old car ramp, ideally on an e-scooter, which is finally a good use for one.",
+   "promote": "A secret party on the roof on opening night, announced only by fake parking tickets left on people’s bikes."
+  }
+ },
+ "words": [
+  "under-used",
+  "conversion",
+  "demand",
+  "planning permission",
+  "local residents"
+ ],
+ "yours": {
+  "label": "Your space",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your space in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which space wins?",
+  "noun": "space",
+  "placeholder": "The idea, e.g. Level Six, the car park",
+  "lead": "Each student tells us about their new space in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

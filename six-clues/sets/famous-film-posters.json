@@ -1,0 +1,103 @@
+{
+ "name": "Guess the Poster",
+ "what": "film",
+ "whats": "films",
+ "doc": "Poster brief",
+ "facets": [
+  "Genre",
+  "When",
+  "Who's in it",
+  "The image",
+  "Famous detail",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "The Silence of the Lambs",
+   "aliases": [
+    "Silence of the Lambs",
+    "Das Schweigen der Lämmer"
+   ],
+   "clues": [
+    "A psychological thriller: a young trainee needs help from a very dangerous prisoner.",
+    "Early 1990s. It won the five biggest Oscars, including Best Picture.",
+    "Jodie Foster and Anthony Hopkins.",
+    "A pale woman’s face, looking straight at you, with a moth covering her mouth.",
+    "Look closely at the skull on the moth’s back: it’s made of human bodies, copied from a 1951 photo with Salvador Dalí.",
+    "Hannibal Lecter. The title is about young sheep going quiet."
+   ]
+  },
+  {
+   "name": "Jurassic Park",
+   "aliases": [
+    "Jurassic park 1"
+   ],
+   "clues": [
+    "Adventure and science fiction, with lots of running and screaming.",
+    "1993, directed by Steven Spielberg.",
+    "The real stars of the poster aren’t people at all.",
+    "A black skeleton of a huge animal inside a red and yellow circle.",
+    "The logo first appeared on the cover of the novel, designed by Chip Kidd, and the film kept it. Usually it’s the other way round.",
+    "A theme park on an island, full of dinosaurs. What could go wrong?"
+   ]
+  },
+  {
+   "name": "Pulp Fiction",
+   "aliases": [
+    "Pulp fiction"
+   ],
+   "clues": [
+    "Crime, violence, lots of talking, and stories told out of order.",
+    "1994. It won the top prize at the Cannes Film Festival.",
+    "John Travolta, Samuel L. Jackson and Uma Thurman.",
+    "A woman with a black bob lies on a bed, smoking, with a book in front of her.",
+    "It’s made to look like a cheap old crime magazine, with a price on it and worn edges, as if it’s been in someone’s pocket.",
+    "Directed by Quentin Tarantino. Its title is another name for cheap crime stories."
+   ]
+  },
+  {
+   "name": "It (2017)",
+   "aliases": [
+    "It",
+    "It 2017",
+    "Es"
+   ],
+   "clues": [
+    "Horror, based on a famous Stephen King novel.",
+    "2017. It became one of the most successful horror films ever.",
+    "A group of kids who call themselves ‘the Losers’ Club’.",
+    "A small boy in a yellow raincoat holds a red balloon. Behind the balloon you can see a face.",
+    "The teaser poster’s tagline: ‘You’ll float too.’",
+    "Pennywise, the clown who lives in the sewers. The title has only two letters."
+   ]
+  },
+  {
+   "name": "Get Out",
+   "aliases": [
+    "Getout"
+   ],
+   "clues": [
+    "Horror, but also a sharp satire, and very funny in places.",
+    "2017. Jordan Peele’s first film as director, and it won the Oscar for Best Original Screenplay.",
+    "Daniel Kaluuya.",
+    "A young man’s face, eyes wide open, with tears running down his cheeks.",
+    "In the film, the sound of a spoon in a teacup is enough to send him to ‘the sunken place’.",
+    "A weekend visiting his girlfriend’s parents goes very wrong. The title is what the audience shouts at the screen: leave!"
+   ]
+  },
+  {
+   "name": "Titanic",
+   "aliases": [
+    "The Titanic"
+   ],
+   "clues": [
+    "A romance and a disaster film, and over three hours long.",
+    "1997. It won 11 Oscars.",
+    "Leonardo DiCaprio and Kate Winslet.",
+    "Two faces above the front of a huge ship.",
+    "The tagline: ‘Nothing on Earth could come between them.’",
+    "A ship that hit an iceberg in 1912, and Celine Dion singing ‘My Heart Will Go On’."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "name": "Automate It!",
+ "pick": {
+  "label": "Pick a job",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a boring job and build an AI to do it",
+  "lead": [
+   "Everybody says AI is going to take over the boring jobs. Fine. Let’s choose which ones.",
+   "Pick a task you would happily never do again, and invent the AI that does it for you. Here are some ideas, but you can choose your own. *Bonus points if it would definitely go wrong.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a real product here, this is just for a bit of fun. Some of these AIs would make you a fortune, and some would get you banned from the Bürgeramt. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "University",
+   "items": [
+    "Writing the group-project email",
+    "Finding a free seat in the library",
+    "Reading the whole course reader",
+    "Remembering everyone’s name in the seminar",
+    "Choosing a thesis topic"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "The WG cleaning rota",
+    "Sorting the rubbish into five bins",
+    "Answering your mum’s messages",
+    "Deciding what to watch tonight",
+    "Sending parcels back"
+   ]
+  },
+  {
+   "head": "Berlin admin",
+   "items": [
+    "Getting a Bürgeramt appointment",
+    "Finding a flat",
+    "Getting past the club bouncer",
+    "Doing your tax return",
+    "Reading the terms and conditions"
+   ]
+  },
+  {
+   "head": "At work",
+   "items": [
+    "Booking a meeting room",
+    "Writing the minutes",
+    "Out-of-office replies",
+    "Expense claims",
+    "Laughing at the boss’s jokes"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "task",
+   "My job for the AI:",
+   "Which boring job are you never doing again?"
+  ],
+  [
+   "name",
+   "It’s called:",
+   "Give your AI a name. Something friendly, or something terrifying."
+  ],
+  [
+   "how",
+   "How it works:",
+   "What does it actually do, step by step? Does it talk, watch, listen, send emails…?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who would pay for it? Students, landlords, tired parents, the whole of Berlin?"
+  ],
+  [
+   "wrong",
+   "What could possibly go wrong:",
+   "The day it makes a mistake. What happens, and who has to sort it out?"
+  ],
+  [
+   "promote",
+   "I would promote it by:",
+   "Who do you get to talk about it, and where?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "task": "Getting a Bürgeramt appointment",
+   "name": "BürgerBot",
+   "how": "It sits on the Bürgeramt booking website 24 hours a day, refreshing the page every three seconds, and grabs the first free appointment anywhere in Berlin. Then it sends you a calendar invitation and a little message of congratulations.",
+   "who": "Everyone who has just moved to Berlin, and everyone who has lived here for ten years and still hasn’t registered their new address.",
+   "wrong": "It gets a bit too good at its job and books 400 appointments, all in Marzahn at 7.15 on a Tuesday. The city blocks my account, and I have to go in person to apologise. Without an appointment.",
+   "promote": "Posters in every U-Bahn station, and a free appointment for the first hundred people who sign up. Word of mouth does the rest: in Berlin, nobody keeps a free appointment secret."
+  }
+ },
+ "words": [
+  "automate",
+  "algorithm",
+  "human oversight",
+  "false positive",
+  "productivity"
+ ],
+ "yours": {
+  "label": "Your AI",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your AI in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which AI wins?",
+  "noun": "AI",
+  "placeholder": "The AI, e.g. BürgerBot",
+  "lead": "Each student tells us about their AI in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "name": "Guess the Design Classic",
+ "what": "design classic",
+ "whats": "design classics",
+ "doc": "Museum label",
+ "facets": [
+  "What it does",
+  "Who uses it",
+  "Where it began",
+  "The look",
+  "Famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Ampelmännchen",
+   "aliases": [
+    "Ampelmann",
+    "Ampelmannchen",
+    "Ampelmaennchen",
+    "traffic light man",
+    "traffic-light man",
+    "east german traffic light man"
+   ],
+   "clues": [
+    "It tells you when to stop and when to go, but it never says a word.",
+    "Everyone who walks around eastern Germany, and lots of tourists who take it home as a souvenir.",
+    "A traffic psychologist suggested it in East Berlin in 1961, and his secretary drew it.",
+    "A little figure with a short body, a big nose and a hat. It comes in red and in green.",
+    "Its hat came from a photo of the East German leader Erich Honecker in a summer straw hat. In the 1990s people campaigned to save it.",
+    "Its German name means “little traffic-light man”."
+   ]
+  },
+  {
+   "name": "London Underground map",
+   "aliases": [
+    "Tube map",
+    "the tube map",
+    "London tube map",
+    "underground map",
+    "London Underground",
+    "Harry Beck map",
+    "Beck map"
+   ],
+   "clues": [
+    "It helps millions of people get from A to B every day, but it isn't really true.",
+    "Commuters, tourists, and anyone who has ever been lost under a big city.",
+    "An engineering draughtsman drew it in his free time in 1931, after losing his job. It became the official map in 1933.",
+    "Only straight lines and 45-degree angles, and a different colour for every line.",
+    "It ignores real distances. The idea came from electrical circuit diagrams.",
+    "It shows every station on the world's oldest underground railway, in the British capital."
+   ]
+  },
+  {
+   "name": "Juicy Salif",
+   "aliases": [
+    "Juicy Salif lemon squeezer",
+    "Starck lemon squeezer",
+    "Philippe Starck lemon squeezer",
+    "Alessi lemon squeezer",
+    "Starck juicer",
+    "lemon squeezer"
+   ],
+   "clues": [
+    "It does one small job in the kitchen, but it looks as if it came from outer space.",
+    "Design fans who want something to talk about on their kitchen counter.",
+    "A French designer sketched it on a napkin while he was eating a plate of squid and squeezing lemon over it. It came out around 1990.",
+    "Shiny aluminium, a pointed body and three long, thin legs, a bit like a spider or a rocket.",
+    "Its designer said it was “not meant to squeeze lemons” but “to start conversations”.",
+    "A lemon squeezer by Philippe Starck for the Italian company Alessi."
+   ]
+  },
+  {
+   "name": "Moka pot",
+   "aliases": [
+    "Moka Express",
+    "Bialetti",
+    "Bialetti Moka",
+    "Bialetti Moka Express",
+    "moka",
+    "stovetop espresso maker",
+    "espresso pot",
+    "Espressokocher",
+    "Mokkakanne",
+    "Caffettiera"
+   ],
+   "clues": [
+    "Every morning it makes a noise like a tiny steam train, and then everyone in the flat wakes up.",
+    "Millions of Italian families, and pretty much every student kitchen in Berlin.",
+    "It was born in a metal workshop in northern Italy in the 1930s.",
+    "An eight-sided aluminium body, a black handle and a little lid on top.",
+    "Its logo is a cartoon of a little man with a big moustache. When the boss of the company died in 2016, his ashes were put in one.",
+    "An Italian stovetop coffee maker by Bialetti: water in the bottom, coffee in the middle."
+   ]
+  },
+  {
+   "name": "Rubik's Cube",
+   "aliases": [
+    "Rubiks Cube",
+    "Rubik Cube",
+    "Rubiks",
+    "Rubik's",
+    "Magic Cube",
+    "Zauberwürfel"
+   ],
+   "clues": [
+    "It's a toy, a puzzle and a sport. The fastest people finish it in a few seconds.",
+    "Children, maths fans, and people who leave it on their desk to look clever.",
+    "A Hungarian teacher of design and architecture made the first one in Budapest in 1974.",
+    "A small block with six sides: white, red, blue, orange, green and yellow.",
+    "It has about 43 quintillion possible positions, but only one of them is right.",
+    "A twisting colour puzzle named after its inventor, Ernő Rubik."
+   ]
+  },
+  {
+   "name": "Lego brick",
+   "aliases": [
+    "Lego",
+    "Lego bricks",
+    "Legos",
+    "Lego block",
+    "Legostein"
+   ],
+   "clues": [
+    "It's very small and very simple, and it really hurts if you step on it with bare feet.",
+    "Children, and adults who buy the biggest sets “for their children”.",
+    "A carpenter started making wooden toys in a small Danish town in 1932.",
+    "A plastic block with round studs on top and tubes underneath.",
+    "Bricks made in 1958 still click together with bricks made today.",
+    "Its name comes from the Danish words “leg godt”, which mean “play well”."
+   ]
+  }
+ ]
+}

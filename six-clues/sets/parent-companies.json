@@ -1,0 +1,110 @@
+{
+ "name": "Guess the Parent Company",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Company profile",
+ "facets": [
+  "Headquarters",
+  "How it started",
+  "Big picture",
+  "Brands you might not know",
+  "Brands you definitely know",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Inditex",
+   "aliases": [
+    "inditex group",
+    "industria de diseno textil",
+    "industria de diseño textil"
+   ],
+   "clues": [
+    "Arteixo, near A Coruña, in north-west Spain.",
+    "Its founder, Amancio Ortega, opened his first fashion shop in 1975 and became one of the richest people in Europe.",
+    "It is famous for getting new designs from the drawing board into its shops in just a few weeks.",
+    "Pull&Bear, Bershka, Stradivarius, Massimo Dutti and Oysho.",
+    "Its biggest brand is a fast-fashion chain with a four-letter name, starting with Z.",
+    "A short form of the Spanish words “Industria de Diseño Textil”."
+   ]
+  },
+  {
+   "name": "Ferrero",
+   "aliases": [
+    "ferrero group",
+    "ferrero spa"
+   ],
+   "clues": [
+    "Alba, a small town in Piedmont, in northern Italy.",
+    "In 1946 a pastry maker started selling a cheap sweet spread made with hazelnuts, because chocolate was so expensive after the war.",
+    "Still owned by the family that founded it. In 2025 it bought a big American breakfast cereal company.",
+    "Hanuta, duplo, Raffaello and Tic Tac.",
+    "Nutella, Kinder Surprise and Kinder Bueno.",
+    "The family's surname, which is also the first word in the name of its gold-wrapped chocolates."
+   ]
+  },
+  {
+   "name": "Alphabet",
+   "aliases": [
+    "alphabet inc",
+    "alphabet inc."
+   ],
+   "clues": [
+    "Mountain View, California.",
+    "Created in 2015 as a new parent company for a famous internet business and all its side projects.",
+    "One of the most valuable companies in the world.",
+    "Waymo self-driving taxis, the AI lab DeepMind and the fitness tracker Fitbit.",
+    "YouTube, Android and, above all, the world's biggest search engine.",
+    "Another word for all the letters from A to Z. Its website is abc.xyz."
+   ]
+  },
+  {
+   "name": "Mars",
+   "aliases": [
+    "mars inc",
+    "mars incorporated",
+    "mars wrigley"
+   ],
+   "clues": [
+    "McLean, Virginia, in the United States.",
+    "A family sweet business. In 1932 the founder's son started making his own chocolate bar in Slough, in England.",
+    "Still owned by the founding family, and one of the biggest pet-food companies in the world.",
+    "Whiskas, Pedigree and Royal Canin, and the chewing-gum company Wrigley.",
+    "M&M's, Twix, Bounty, and Snickers, which was named after one of the family's horses.",
+    "The family's surname, which is also the name of a planet."
+   ]
+  },
+  {
+   "name": "Schwarz Gruppe",
+   "aliases": [
+    "schwarz group",
+    "schwarz",
+    "schwarz-gruppe",
+    "schwarzgruppe"
+   ],
+   "clues": [
+    "Neckarsulm, in Baden-Württemberg.",
+    "It grew out of a wholesale business in Heilbronn, where the founder became a partner in 1930.",
+    "It is Europe's biggest retailer, but its owner almost never gives interviews.",
+    "A recycling company and a German cloud computing business.",
+    "Two supermarket chains: Kaufland, and a discounter that bought its name from a retired teacher for 1,000 marks.",
+    "The family name, which is German for “black”, plus the German word for “group”."
+   ]
+  },
+  {
+   "name": "Unilever",
+   "aliases": [
+    "unilever plc",
+    "uni lever"
+   ],
+   "clues": [
+    "London.",
+    "Formed in 1929, when a Dutch margarine company joined forces with a British soap company.",
+    "Its products are sold in around 190 countries.",
+    "Knorr, Hellmann's mayonnaise and the toilet cleaner Domestos.",
+    "Dove soap, and Axe, the body spray that is called Lynx in Britain.",
+    "A mix of “Unie”, from the Dutch company's name, and “Lever”, from the British one."
+   ]
+  }
+ ]
+}

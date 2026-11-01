@@ -1,0 +1,101 @@
+{
+ "name": "Guess the Song",
+ "what": "song",
+ "whats": "songs",
+ "doc": "Rights file",
+ "facets": [
+  "The sound",
+  "When",
+  "The breakthrough",
+  "The rights story",
+  "The artist",
+  "The title"
+ ],
+ "items": [
+  {
+   "name": "Bitter Sweet Symphony",
+   "aliases": [
+    "Bittersweet Symphony",
+    "Bitter Sweet"
+   ],
+   "clues": [
+    "Sweeping strings that loop again and again. In the video, the singer walks down a London street, bumping into people.",
+    "1997, at the height of Britpop.",
+    "It made the band famous around the world and was nominated for a Grammy.",
+    "The loop came from an orchestral version of a 1960s Rolling Stones song, so for over 20 years Mick Jagger and Keith Richards were named as its writers, and the songwriting royalties went to the Stones' side.",
+    "Richard Ashcroft of The Verve, who finally got the rights back in 2019.",
+    "The title puts two opposite tastes in front of a piece of orchestral music."
+   ]
+  },
+  {
+   "name": "Uptown Funk",
+   "aliases": [
+    "Uptown Funk!"
+   ],
+   "clues": [
+    "Bright horns, a funky guitar and lots of shouting: impossible not to dance to at a wedding.",
+    "Released at the end of 2014, and everywhere in 2015.",
+    "It spent 14 weeks at number one in the US.",
+    "After a claim that it sounded like an old funk hit, members of the Gap Band were added to its list of songwriters.",
+    "A British producer, Mark Ronson, with Bruno Mars singing.",
+    "The first word of the title is the opposite of 'downtown'."
+   ]
+  },
+  {
+   "name": "Old Town Road",
+   "aliases": [
+    "Old Town Road remix"
+   ],
+   "clues": [
+    "A banjo loop, a trap beat and a lot of cowboy hats.",
+    "Released at the end of 2018; it ruled the summer of 2019.",
+    "It went viral on TikTok with the 'Yeehaw Challenge', then spent a then-record 19 weeks at number one in the US.",
+    "The beat cost $30 online from a Dutch producer, and it samples a Nine Inch Nails track. Billboard then removed it from its country chart.",
+    "Lil Nas X, and a remix with Billy Ray Cyrus.",
+    "In the title, he's taking his horse down a road in an old town."
+   ]
+  },
+  {
+   "name": "Shape of You",
+   "aliases": [],
+   "clues": [
+    "A marimba-style loop and a love story that starts in a bar.",
+    "January 2017.",
+    "In December 2021 it became the first song to reach three billion streams on Spotify.",
+    "In 2022 the High Court in London ruled that it had not copied a grime artist's song called 'Oh Why'.",
+    "A singer-songwriter from Suffolk who builds songs with a loop pedal on stage, and once appeared in Game of Thrones.",
+    "The singer says he's 'in love with' this, meaning someone's body."
+   ]
+  },
+  {
+   "name": "Stay With Me",
+   "aliases": [
+    "Stay with me"
+   ],
+   "clues": [
+    "A slow, gospel-style ballad with a choir, asking someone not to leave in the morning.",
+    "2014.",
+    "It won Record of the Year and Song of the Year at the Grammys in 2015.",
+    "Its chorus was so close to Tom Petty's 'I Won't Back Down' that Petty and Jeff Lynne were added as co-writers, with a 12.5% share.",
+    "Sam Smith, from the debut album In the Lonely Hour.",
+    "Three words: a request not to go. The first word is 'Stay'."
+   ]
+  },
+  {
+   "name": "Never Gonna Give You Up",
+   "aliases": [
+    "Never Gonna Give U Up",
+    "Rickroll",
+    "Rick roll"
+   ],
+   "clues": [
+    "Bouncy 1980s synth-pop, sung in a surprisingly deep voice.",
+    "1987.",
+    "Twenty years later it became an internet joke: you click a link and get this video instead. In 2021 the video passed one billion views on YouTube.",
+    "In 2023 the singer sued an American rapper for copying his voice on a new song. They settled out of court.",
+    "Rick Astley, produced by Stock Aitken Waterman.",
+    "The title is a promise never to abandon someone, in five words."
+   ]
+  }
+ ]
+}

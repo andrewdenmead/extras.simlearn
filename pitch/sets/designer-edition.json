@@ -1,0 +1,119 @@
+{
+ "name": "Designer Edition!",
+ "pick": {
+  "label": "Pick an object",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a boring object and give it a designer makeover",
+  "lead": [
+   "Some objects do their job perfectly and nobody has ever looked at them twice. Nobody has ever posted a photo of their cheese grater on Instagram. Yet.",
+   "Choose something ordinary and turn it into a designer object that people would pay far too much for. It can work better than before, or it can look amazing and work terribly. *Your choice.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is not a real design brief, it’s just for a bit of fun. Your object can be beautiful and useless, useful and ugly, or, if you’re very clever, both."
+ },
+ "shelf": [
+  {
+   "head": "In the kitchen",
+   "items": [
+    "Cheese grater",
+    "Washing-up brush",
+    "Toaster",
+    "Ice-cube tray",
+    "Tin opener"
+   ]
+  },
+  {
+   "head": "In the street",
+   "items": [
+    "Bin",
+    "Bus shelter",
+    "Ticket machine",
+    "Park bench",
+    "Traffic cone"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "Radiator",
+    "Extension lead",
+    "Drying rack",
+    "Toilet brush",
+    "Doormat"
+   ]
+  },
+  {
+   "head": "Student life",
+   "items": [
+    "Bike lock",
+    "Umbrella",
+    "Phone charger",
+    "Lanyard",
+    "Pencil case"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "object",
+   "My object is:",
+   "Which boring object are you giving a makeover?"
+  ],
+  [
+   "problem",
+   "What’s wrong with it now:",
+   "Ugly, boring, hard to use, always lost, a bit disgusting…"
+  ],
+  [
+   "makeover",
+   "My designer version:",
+   "What does it look like now? Materials, colours, shape, a fancy name if you like."
+  ],
+  [
+   "works",
+   "Does it still work?",
+   "Better than before, worse, or not at all? Be honest."
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who buys it, and where do they buy it?"
+  ],
+  [
+   "show",
+   "I would show it off by:",
+   "A shop window, a museum, an influencer, a famous kitchen…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "object": "Washing-up brush",
+   "problem": "It’s ugly, it’s a bit gross, and it sits next to the sink where everybody can see it.",
+   "makeover": "La Spazzola: a hand-blown glass handle, brass bristles and its own little marble stand. It comes with a certificate.",
+   "works": "Not really. The brass scratches the pans and the handle is too short to reach the bottom of a glass. But it looks fantastic on the windowsill.",
+   "who": "People with enormous open-plan kitchens in Mitte who order a takeaway every night anyway.",
+   "show": "A pop-up shop on Torstraße with one single brush in the window, lit like a diamond. No price tag. If you have to ask, you can’t afford it."
+  }
+ },
+ "words": [
+  "form",
+  "function",
+  "user-friendly",
+  "eye-catching",
+  "practical"
+ ],
+ "yours": {
+  "label": "Your makeover",
+  "heading": "Your design",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your designer object in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which makeover wins?",
+  "noun": "makeover",
+  "placeholder": "The makeover, e.g. La Spazzola",
+  "lead": "Each student tells us about their designer object in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,109 @@
+{
+ "name": "Float It!",
+ "pick": {
+  "label": "Pick a company",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something you love and take it to the stock market",
+  "lead": [
+   "When a company goes public, it sells shares to anyone who wants them, and it has to convince investors that it has a great future.",
+   "Choose something from your life, turn it into a company and float it on the stock market. Here are some ideas, but you can choose your own. *Investors love a good story.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously this isn’t financial advice, and please don’t actually sell shares in your flatmates. It’s just for a bit of fun."
+ },
+ "shelf": [
+  {
+   "head": "Berlin legends",
+   "items": [
+    "The Späti on your corner",
+    "Mauerpark flea market",
+    "Your favourite Döner place",
+    "Tempelhof Field",
+    "A techno club"
+   ]
+  },
+  {
+   "head": "Close to home",
+   "items": [
+    "Your WG",
+    "Your football team",
+    "Your grandma’s cake recipe",
+    "Your pet",
+    "Your group chat"
+   ]
+  },
+  {
+   "head": "Little luxuries",
+   "items": [
+    "A Sunday brunch café",
+    "A vintage clothes shop",
+    "A plant shop",
+    "A bubble tea bar",
+    "A climbing gym"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "company",
+   "My company is:",
+   "What are you taking to the stock market?"
+  ],
+  [
+   "does",
+   "What it does:",
+   "What does it sell, or what does it do all day?"
+  ],
+  [
+   "ticker",
+   "Ticker symbol:",
+   "Three or four letters that will appear on the screens on the trading floor."
+  ],
+  [
+   "story",
+   "The big story for investors:",
+   "Why will it be worth more in ten years? Dream big."
+  ],
+  [
+   "risk",
+   "One risk in the small print:",
+   "Every prospectus has to admit what could go wrong. What could?"
+  ],
+  [
+   "launch",
+   "Launch-day stunt:",
+   "How do you celebrate your first day of trading?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "company": "Your WG",
+   "does": "Four flatmates, one fridge and a cleaning rota that nobody has looked at since March. We produce noise, pasta and a remarkable number of empty bottles.",
+   "ticker": "DISH (for the dishes that nobody does).",
+   "story": "Huge growth potential: the empty bottles on the balcony are worth at least €40 at the supermarket machine, and the number grows every weekend. Also, our rent hasn’t gone up since 2019, which in Berlin makes us basically a gold mine.",
+   "risk": "Our most valuable asset, Lukas, may move to Leipzig. Also, the landlord may read this prospectus.",
+   "launch": "Instead of ringing the bell at the stock exchange, we bang on the bathroom door until Lukas comes out."
+  }
+ },
+ "words": [
+  "shareholder",
+  "prospectus",
+  "valuation",
+  "investor",
+  "go public"
+ ],
+ "yours": {
+  "label": "Your company",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your company in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which company would you invest in?",
+  "noun": "company",
+  "placeholder": "The company, e.g. WG Holdings (DISH)",
+  "lead": "Each student tells us about their company in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "name": "Guess the Comeback",
+ "what": "comeback",
+ "whats": "comebacks",
+ "doc": "Comeback file",
+ "facets": [
+  "The feeling",
+  "The first time round",
+  "The low point",
+  "The way back",
+  "The look",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Ampelmännchen",
+   "aliases": [
+    "Ampelmann",
+    "Ampelmaennchen",
+    "Ampelmannchen",
+    "Ampelmännchen Berlin",
+    "traffic light man",
+    "East German traffic light man"
+   ],
+   "clues": [
+    "Tourists in Berlin photograph it every day. Most Berliners walk past it without looking.",
+    "A traffic psychologist in East Berlin designed it in 1961.",
+    "After reunification, many were replaced with a western version, until people started campaigning to save it.",
+    "In the 1990s a designer started turning old ones into lamps. Today his company has several shops in Berlin.",
+    "A little man in a hat, in red and green. The story goes that the designer added the hat after seeing Erich Honecker in a straw hat on TV.",
+    "You see him at pedestrian crossings all over Berlin: green means go, red means stop."
+   ]
+  },
+  {
+   "name": "Motorola Razr",
+   "aliases": [
+    "Razr",
+    "Razr V3",
+    "Motorola Razr V3",
+    "Moto Razr",
+    "Motorola Razor",
+    "Razor"
+   ],
+   "clues": [
+    "In the mid-2000s, it was the coolest thing you could pull out of your pocket.",
+    "It came out in 2004, with a metal body that was amazingly thin for its time.",
+    "It sold more than 130 million, but its maker fell far behind when smartphones arrived.",
+    "Its maker’s phone business was bought by Google in 2012 and sold on to Lenovo two years later.",
+    "It came back in 2019 as a smartphone that folds in half, with a bendable screen.",
+    "A Motorola flip phone whose name sounds like something you shave with."
+   ]
+  },
+  {
+   "name": "Crocs",
+   "aliases": [
+    "Croc",
+    "Crocs clogs"
+   ],
+   "clues": [
+    "Some people think they are the ugliest shoes ever made. Plenty of those people own a pair.",
+    "Three friends from Colorado launched them in 2002 at a boat show in Florida.",
+    "After a boom, sales collapsed around the 2008 financial crisis and the company made huge losses.",
+    "They came back with fashion collabs, including platform versions on a Paris catwalk in 2017.",
+    "Made of soft, light foam, with holes in the top and a strap at the back.",
+    "Holey foam clogs that people decorate with little charms called Jibbitz."
+   ]
+  },
+  {
+   "name": "Fila",
+   "aliases": [
+    "Fila sportswear",
+    "Fila Disruptor"
+   ],
+   "clues": [
+    "Your parents might have worn it to the gym. You might wear it to a party.",
+    "Two brothers started it in 1911 in a town at the foot of the Italian Alps.",
+    "By the 2000s it looked old-fashioned, and in 2007 its Korean branch bought the whole brand.",
+    "In 2018 a chunky white trainer it first made in the 1990s was named Shoe of the Year by Footwear News.",
+    "In the 1970s a Swedish tennis star won Wimbledon again and again wearing its clothes.",
+    "An Italian sports brand with a red and navy “F” logo."
+   ]
+  },
+  {
+   "name": "VW ID. Buzz",
+   "aliases": [
+    "ID. Buzz",
+    "ID Buzz",
+    "VW ID Buzz",
+    "Volkswagen ID. Buzz",
+    "Volkswagen ID Buzz",
+    "VW Bus",
+    "Volkswagen Bus",
+    "VW Bulli",
+    "Bulli",
+    "VW camper van",
+    "VW Camper"
+   ],
+   "clues": [
+    "Surfers, hippies and families with too many children have all loved the original.",
+    "The original first rolled out of a factory in Wolfsburg in 1950.",
+    "Production of the old design stopped in Germany long ago, but a version was still being built in Brazil until 2013.",
+    "A concept for its return was shown in 2017, and the new one went on sale in 2022.",
+    "From the front it looks like the old one, with two-tone paint, but it runs on batteries.",
+    "Volkswagen’s electric version of its famous camper van, the Bulli."
+   ]
+  },
+  {
+   "name": "Adidas Samba",
+   "aliases": [
+    "Samba",
+    "Sambas",
+    "Adidas Sambas"
+   ],
+   "clues": [
+    "In 2023 it felt as if everyone in Berlin under thirty was wearing a pair.",
+    "It first appeared around 1950, made to help footballers train on frozen, icy pitches.",
+    "For decades it was mostly an indoor football shoe, cheap and practical.",
+    "Around 2022 it jumped from the football shelf to the fashion pages, and soon it was everywhere from Paris to Neukölln.",
+    "Low and flat, with a light-brown gum sole and a T-shaped panel of leather over the toes.",
+    "A trainer with three stripes that shares its name with a Brazilian dance."
+   ]
+  }
+ ]
+}

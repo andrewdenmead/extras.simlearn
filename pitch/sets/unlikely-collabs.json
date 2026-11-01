@@ -1,0 +1,119 @@
+{
+ "name": "The Unlikely Collab",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and find it a partner",
+  "lead": [
+   "Brands love working together. Some pairs make perfect sense, like a phone and a music app. Others look like two people who met at three in the morning and decided to start a business.",
+   "Choose a brand from the shelf, or one of your own, and find it the most unlikely partner you can. Then tell us what they make together and why it works. *The stranger the couple, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious marketing plan here, this is just for a bit of fun. Some collabs are genius, and some are just a T-shirt with two logos on it. Both are welcome, but genius gets more points."
+ },
+ "shelf": [
+  {
+   "head": "Fashion and shoes",
+   "items": [
+    "Birkenstock",
+    "Jack Wolfskin",
+    "Uniqlo",
+    "Eastpak",
+    "Zara"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "Ritter Sport",
+    "Club-Mate",
+    "Knoppers",
+    "Nutella",
+    "Spreewald gherkins"
+   ]
+  },
+  {
+   "head": "Very Berlin",
+   "items": [
+    "BSR (the bin people)",
+    "Hertha BSC",
+    "Rotkäppchen Sekt",
+    "Späti",
+    "KaDeWe"
+   ]
+  },
+  {
+   "head": "Not exactly cool",
+   "items": [
+    "Tempo tissues",
+    "Duden",
+    "Tupperware",
+    "Playmobil",
+    "Brita"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My brand is:",
+   "Which brand did you pick?"
+  ],
+  [
+   "partner",
+   "My unlikely partner is:",
+   "Another brand from a completely different world."
+  ],
+  [
+   "product",
+   "Together we make:",
+   "What exactly is it? A product, a menu, a shop, a range, something completely mad?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who buys it? Fans of one brand, fans of both, people who’ve never heard of either?"
+  ],
+  [
+   "brings",
+   "What each brand brings:",
+   "Why do they need each other? Fame, cool, quality, a laugh…"
+  ],
+  [
+   "launch",
+   "We launch it by:",
+   "Where and how does it go on sale, and how do people find out?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "BSR (the bin people)",
+   "partner": "Birkenstock",
+   "product": "The Bin Day Sandal: an orange cork sandal with a reflective strap, for people who take the bins out in their socks at seven in the morning.",
+   "who": "Berliners who are secretly proud of their bin collection, and tourists who already bought the orange T-shirt.",
+   "brings": "The BSR brings the jokes and the orange; Birkenstock brings the comfort and a grown-up price.",
+   "launch": "From the back of a bin lorry that drives round Kreuzberg all day. You find it by following the bin people on Instagram."
+  }
+ },
+ "words": [
+  "co-branded",
+  "brand fit",
+  "target audience",
+  "limited edition",
+  "credibility"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your collab in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which collab wins?",
+  "noun": "collab",
+  "placeholder": "The collab, e.g. BSR x Birkenstock",
+  "lead": "Each student tells us about their collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

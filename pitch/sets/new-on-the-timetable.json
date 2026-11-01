@@ -1,0 +1,109 @@
+{
+ "name": "New on the Timetable!",
+ "pick": {
+  "eyebrow": "Up to you!",
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "label": "Pick a skill",
+  "heading": "Pick a skill and make it a school subject",
+  "lead": [
+   "School taught you the dates of battles and how to work out the area of a triangle. Nobody taught you how to do your tax return, cook something that isn’t pasta, or survive the family group chat.",
+   "Choose a skill that schools ignore and turn it into a proper subject, with lessons, a teacher and a test. Here are some ideas, but you can choose your own. *The stranger, the better*, as long as you can say why children need it."
+  ],
+  "note": "I’m not asking you to write a curriculum. Some subjects will sound sensible and some will sound like a sitcom. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Life skills",
+   "items": [
+    "Doing your tax return",
+    "Cooking on a student budget",
+    "Reading a rental contract",
+    "Fixing a bike",
+    "Reading the small print"
+   ]
+  },
+  {
+   "head": "People skills",
+   "items": [
+    "Small talk",
+    "Saying no",
+    "Arguing without shouting",
+    "Making friends as an adult",
+    "Apologising properly"
+   ]
+  },
+  {
+   "head": "Odd skills",
+   "items": [
+    "Parallel parking",
+    "Whistling",
+    "Folding a fitted sheet",
+    "Spotting fake news",
+    "Juggling"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "subject",
+   "My new subject is:",
+   "Which skill are you putting on the timetable?"
+  ],
+  [
+   "why",
+   "Why children need it:",
+   "What goes wrong in adult life without it?"
+  ],
+  [
+   "lesson",
+   "A typical lesson:",
+   "What happens in the room? Who talks, who practises, what’s on the board?"
+  ],
+  [
+   "teacher",
+   "Who teaches it:",
+   "A teacher, a guest, an app, someone’s grandmother?"
+  ],
+  [
+   "test",
+   "How you’d test it:",
+   "An exam, a performance, a real-life task, something completely mad?"
+  ],
+  [
+   "sell",
+   "How I’d sell it to parents:",
+   "What would make a sceptical parent say yes?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "subject": "Folding a fitted sheet",
+   "why": "Because no adult in history has ever done it properly. We all just roll it into a ball and hide it at the back of the cupboard, and the shame stays with us for life.",
+   "lesson": "Pupils work in pairs, one sheet between two, while the teacher demonstrates very slowly, like someone defusing a bomb. The last ten minutes are free folding, with relaxing music.",
+   "teacher": "Someone who has worked in a hotel for thirty years and has seen things.",
+   "test": "A fitted sheet, a timer and the head teacher watching. Anything that goes into a drawer without falling open is a pass.",
+   "sell": "Every child brings home a perfectly folded sheet at the end of term. Parents will cry."
+  }
+ },
+ "words": [
+  "curriculum",
+  "assessment",
+  "practice",
+  "independent learning",
+  "skills gap"
+ ],
+ "yours": {
+  "label": "Your subject",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your subject in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which subject makes the timetable?",
+  "noun": "subject",
+  "placeholder": "The subject, e.g. Fitted Sheets 101",
+  "lead": "Each student tells us about their subject in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

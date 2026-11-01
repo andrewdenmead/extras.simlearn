@@ -1,0 +1,109 @@
+{
+ "name": "Guess the Company",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Company profile",
+ "facets": [
+  "The mission",
+  "Where it started",
+  "What it sells",
+  "A famous move",
+  "Ups and downs",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Ben & Jerry's",
+   "aliases": [
+    "Ben and Jerry's",
+    "Ben & Jerrys",
+    "Ben and Jerrys",
+    "Ben & Jerry"
+   ],
+   "clues": [
+    "Its founders said a business should look after its staff and its community, not just its profits.",
+    "Two old school friends opened their first shop in a converted petrol station in Vermont, USA, in 1978.",
+    "Ice cream, with big chunks in it and silly flavour names.",
+    "It keeps a ‘flavour graveyard’, with a headstone for every flavour it has stopped making.",
+    "A huge consumer-goods group bought it in 2000. In 2025 one of the founders quit, saying the company had lost its independence.",
+    "Named after its two founders: Mr Cohen and Mr Greenfield, using their first names."
+   ]
+  },
+  {
+   "name": "The Body Shop",
+   "aliases": [
+    "Body Shop",
+    "Bodyshop"
+   ],
+   "clues": [
+    "One of the first big beauty brands to campaign against testing cosmetics on animals.",
+    "Its first shop opened in Brighton, on the south coast of England, in 1976.",
+    "Body butters, shower gels, creams and perfume oils.",
+    "Its founder became one of Britain’s most famous businesswomen and was made a dame.",
+    "Sold to L’Oréal in 2006. After several more owners, its UK business went into administration in 2024.",
+    "In American English its name is also a place that repairs cars. Its founder was Anita Roddick."
+   ]
+  },
+  {
+   "name": "Ecosia",
+   "aliases": [
+    "Ecosia search"
+   ],
+   "clues": [
+    "Wants to turn something you do dozens of times a day into climate action.",
+    "Started in 2009, and is based in Berlin.",
+    "Nothing, really: it’s free. It makes its money from adverts, like the big tech companies.",
+    "In 2018 its founder gave up the right to sell the company or take its profits out.",
+    "Spends most of its profits on planting trees (more than 200 million so far) and has built its own solar plants.",
+    "A search engine and an alternative to Google. Its name starts with ‘eco’."
+   ]
+  },
+  {
+   "name": "Lush",
+   "aliases": [
+    "Lush Cosmetics",
+    "Lush Fresh Handmade Cosmetics"
+   ],
+   "clues": [
+    "Wants to sell beauty products with as little packaging as possible, ideally none at all.",
+    "Started in the mid-1990s in Poole, a seaside town in the south of England.",
+    "Handmade soap, solid shampoo bars and colourful bath bombs.",
+    "In 2021 it closed its Facebook, Instagram, TikTok and Snapchat accounts, saying social media was bad for mental health.",
+    "Says it tests its products on human volunteers and won’t buy from companies that test on animals. One of its founders is called ‘the mother of the bath bomb’.",
+    "Its name is a British word for ‘gorgeous’ or ‘lovely’, and it also describes very green, rich grass."
+   ]
+  },
+  {
+   "name": "TOMS",
+   "aliases": [
+    "Toms",
+    "Toms Shoes",
+    "TOMS Shoes",
+    "Toms shoes"
+   ],
+   "clues": [
+    "Wanted shopping to feel like giving.",
+    "Started in 2006, after its American founder visited Argentina.",
+    "Simple canvas slip-on shoes, based on a traditional Argentinian shoe called the alpargata.",
+    "Trademarked the phrase ‘One for One’: for every pair you bought, a child in need got a free pair.",
+    "Critics said free shoes did little about poverty and could hurt local shoemakers. In 2019 it dropped its famous model and moved to giving grants.",
+    "Its short name comes from the word ‘tomorrow’."
+   ]
+  },
+  {
+   "name": "Fairphone",
+   "aliases": [
+    "Fair Phone",
+    "Fairphone 5"
+   ],
+   "clues": [
+    "Wants to change how a whole industry makes the thing most people never put down.",
+    "Started as a campaign, then became a company in the Netherlands in 2013.",
+    "Smartphones built from modules, so you can replace broken parts yourself.",
+    "The repair website iFixit gives its phones 10 out of 10 for repairability.",
+    "Its 2023 model came with a five-year warranty, far longer than the usual two.",
+    "Its name puts an ethical word in front of the thing it sells."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "name": "The Law Nobody Asked For",
+ "pick": {
+  "label": "Pick a law",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a law and win an election with it",
+  "lead": [
+   "Some parties are founded to fight for big causes: climate, housing, the economy. Others are founded because a few people got very, very annoyed about one small thing.",
+   "Start a one-issue party with a law nobody asked for, and persuade the country to vote for it. Here are some ideas, but you can choose your own. *Nothing about real parties or real politicians, please: make up your own.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I’m not looking for a serious manifesto. Some of these laws would be quietly popular, and some would start a riot in the Späti queue. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Everyday life",
+   "items": [
+    "A ban on reply-all emails",
+    "A compulsory afternoon nap",
+    "Phones off at dinner",
+    "Free Wi-Fi in every forest",
+    "A national pancake day"
+   ]
+  },
+  {
+   "head": "Getting around",
+   "items": [
+    "A fast lane for pedestrians",
+    "Night trains everywhere, every night",
+    "Stand on the right, walk on the left, or else",
+    "Free bikes on every corner",
+    "No more replacement buses"
+   ]
+  },
+  {
+   "head": "Big ideas",
+   "items": [
+    "A day off on your birthday",
+    "A Ministry of Fun",
+    "Dogs allowed in every office",
+    "A beach in every city",
+    "Free ice cream when it’s over 30 degrees"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "law",
+   "My law is:",
+   "Which law are you campaigning for?"
+  ],
+  [
+   "says",
+   "What the law actually says:",
+   "Be precise: who has to do what, and from when?"
+  ],
+  [
+   "fans",
+   "Who will love it:",
+   "Which voters will queue round the block for this?"
+  ],
+  [
+   "enemies",
+   "Who will fight it:",
+   "Who will be furious, and what will they say about you?"
+  ],
+  [
+   "campaign",
+   "How I’ll win:",
+   "Rallies, TikTok, a celebrity, a catchy song, door-to-door with free cake…"
+  ],
+  [
+   "slogan",
+   "My slogan:",
+   "Three to five words that will be on every poster in Berlin."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "law": "A fast lane for pedestrians",
+   "says": "Every pavement in Berlin gets a fast lane and a slow lane, like a motorway. Dawdling in the fast lane, or stopping dead at the top of the U-Bahn stairs to look at your phone, costs 15 euros.",
+   "fans": "Anyone who has ever missed a train stuck behind four people walking side by side. So, everyone, including the four people.",
+   "enemies": "Tourists on Unter den Linden, and every couple in love. They’ll call me a heartless monster, and they’ll have a point.",
+   "campaign": "A video of me overtaking slow walkers on Friedrichstraße to dramatic music. It will go viral for the wrong reasons, but that still counts.",
+   "slogan": "Walk Fast, Vote Faster."
+  }
+ },
+ "words": [
+  "manifesto",
+  "landslide",
+  "grassroots",
+  "mandate",
+  "swing voters"
+ ],
+ "yours": {
+  "label": "Your law",
+  "heading": "Your campaign",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your law in a few sentences."
+ },
+ "rank": {
+  "label": "The election",
+  "heading": "Which law wins the election?",
+  "noun": "law",
+  "placeholder": "The law, e.g. A fast lane for pedestrians",
+  "lead": "Each student makes their pitch in a few sentences. Add it, then argue it into place: the landslide winner at the top, the lost deposit at the bottom."
+ }
+}

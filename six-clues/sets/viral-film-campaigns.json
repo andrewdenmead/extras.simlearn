@@ -1,0 +1,104 @@
+{
+ "name": "Guess the Film",
+ "what": "film",
+ "whats": "films",
+ "doc": "Campaign file",
+ "facets": [
+  "Genre",
+  "The story",
+  "The big idea",
+  "Online",
+  "The stunt",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "The Blair Witch Project",
+   "aliases": [
+    "Blair Witch",
+    "The Blair Witch",
+    "Blair Witch Project"
+   ],
+   "clues": [
+    "Horror, filmed like a shaky home video. You hardly ever see what everyone is afraid of.",
+    "Three film students walk into a forest with their cameras to make a documentary. They never come back.",
+    "The marketing pretended it was all real: the students had really disappeared, and this was the film they left behind.",
+    "Long before most studios took the internet seriously, its website told the local legend as if it were true history.",
+    "‘Missing’ posters for the three actors went up, as if they were real missing people.",
+    "A witch from a small town called Blair, in the woods of Maryland."
+   ]
+  },
+  {
+   "name": "Deadpool",
+   "aliases": [
+    "Dead pool",
+    "Deadpool 1"
+   ],
+   "clues": [
+    "A superhero film, but rude, violent and very funny. Definitely not one for the children.",
+    "A man gets the power to heal from almost anything, but the experiment ruins his skin, and he wants revenge.",
+    "It came out just before Valentine’s Day 2016, so one billboard pretended it was a romantic film.",
+    "Another billboard had just three symbols: a skull, a pile of poo and the letter L.",
+    "The star wore the costume for months of jokes on TV and online, and once pretended to kill a TV presenter as an April Fool’s joke.",
+    "Ryan Reynolds in a red suit, a hero who never stops talking."
+   ]
+  },
+  {
+   "name": "Smile",
+   "aliases": [
+    "Smile 2022"
+   ],
+   "clues": [
+    "Horror about a curse that passes from one person to the next.",
+    "A therapist keeps seeing people with a strange, frightening expression, and it seems to be following her.",
+    "The studio put the scary thing from the film into real life, where fans would see it by accident.",
+    "Clips from live TV spread fast online, and everyone asked: who are those people?",
+    "In September 2022, actors sat behind home plate at baseball games and stared into the TV cameras for innings at a time.",
+    "Its one-word title is what you do when you’re happy, but here it means something terrible."
+   ]
+  },
+  {
+   "name": "Cloverfield",
+   "aliases": [
+    "Clover field"
+   ],
+   "clues": [
+    "A monster film, told entirely through one person’s handheld camera.",
+    "A going-away party in New York is interrupted when something huge attacks the city.",
+    "Before it came out, the marketing never showed you what the monster looked like.",
+    "Fans searched online for clues, and even a made-up Japanese drink got its own mysterious website.",
+    "In 2007 a teaser played in cinemas before Transformers with no title at all: just the producer’s name and a release date.",
+    "Produced by J.J. Abrams. In the trailer, the head of the Statue of Liberty crashes down a New York street."
+   ]
+  },
+  {
+   "name": "Paranormal Activity",
+   "aliases": [
+    "Paranormal Activities"
+   ],
+   "clues": [
+    "Horror filmed with a home video camera, mostly at night, in one ordinary house.",
+    "A young couple put a camera in their bedroom to find out what is happening while they sleep.",
+    "It cost about $15,000 and was shot in the director’s own home, then a big studio bought it.",
+    "The studio asked fans to ‘demand’ it online. When enough people in a city asked, it opened there.",
+    "Its trailer showed the audience in the cinema, filmed with night vision, screaming and hiding their faces.",
+    "A word for ghostly, unexplained things, plus a word for things happening."
+   ]
+  },
+  {
+   "name": "The Dark Knight",
+   "aliases": [
+    "Dark Knight",
+    "Batman The Dark Knight"
+   ],
+   "clues": [
+    "A dark crime film and a superhero sequel. Many people still call it the best of its kind.",
+    "A criminal in clown make-up wants to prove that anyone in the city can become bad.",
+    "A huge game for fans ran for 15 months before the film came out, with over 11 million players in more than 75 countries.",
+    "Fans campaigned online for one of the film’s characters to win an election as the city’s top lawyer.",
+    "Players followed GPS clues to find mobile phones baked inside birthday cakes.",
+    "The Joker asks: ‘Why so serious?’, and Batman has to stop him."
+   ]
+  }
+ ]
+}

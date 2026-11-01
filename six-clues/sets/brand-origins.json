@@ -1,0 +1,109 @@
+{
+ "name": "Guess the Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Brand passport",
+ "facets": [
+  "The vibe",
+  "Customers",
+  "Origin story",
+  "Signature product",
+  "A surprising fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Häagen-Dazs",
+   "aliases": [
+    "Haagen-Dazs",
+    "Haagen Dazs",
+    "Häagen Dazs",
+    "Hagen Dazs",
+    "Haagendazs"
+   ],
+   "clues": [
+    "Rich, indulgent and a little bit grown-up. It sounds expensive before you even taste it.",
+    "People treating themselves on the sofa, and anyone who thinks ordinary supermarket tubs are beneath them.",
+    "A family that had sold ice cream around the Bronx from a horse-drawn cart since the 1920s started it there around 1960.",
+    "Small, expensive tubs of ice cream. It began with just three flavours: vanilla, chocolate and coffee.",
+    "The name means nothing in any language. The founder made it up to sound Danish, and the first tubs showed a map of Denmark.",
+    "A double name with a hyphen in the middle and an umlaut, even though Danish doesn’t use umlauts."
+   ]
+  },
+  {
+   "name": "Superdry",
+   "aliases": [
+    "Super Dry",
+    "Superdry Japan"
+   ],
+   "clues": [
+    "Relaxed and sporty, with a bit of vintage America and a lot of Japan.",
+    "Students, festival-goers and people who like a big logo across the chest.",
+    "Started in Cheltenham, England, in 2003, after its founders came back from a trip to Tokyo.",
+    "Hoodies, T-shirts and windcheater jackets covered in Japanese writing.",
+    "The Japanese on the clothes isn’t supposed to make sense: the company admitted it came from a machine translator. David Beckham was an early fan.",
+    "Its English name sounds like a weather forecast for a desert."
+   ]
+  },
+  {
+   "name": "Hollister",
+   "aliases": [
+    "Hollister Co",
+    "Hollister Co.",
+    "Hollister California"
+   ],
+   "clues": [
+    "Sunny, sporty and laid-back: endless summer, even in a German February.",
+    "Teenagers, mostly, and their parents’ bank cards.",
+    "Its official story says it was founded in 1922. In fact an American fashion company invented it in 2000.",
+    "Hoodies, T-shirts and shorts with a Californian surf look.",
+    "Its first shop opened in a shopping centre in Columbus, Ohio, hundreds of kilometres from the nearest ocean.",
+    "The little sister of Abercrombie & Fitch, named after an invented founder. There’s also a real town in California with the same name."
+   ]
+  },
+  {
+   "name": "Bacardi",
+   "aliases": [
+    "Bacardí",
+    "Bacardi rum",
+    "Barcardi"
+   ],
+   "clues": [
+    "Sunny, sociable and a bit loud. It wants you to think of beaches and dancing, not of the morning after.",
+    "Students at house parties, people on holiday and anyone ordering a mojito at happy hour.",
+    "A man who had emigrated from Spain bought a small distillery in Santiago de Cuba in 1862.",
+    "White rum, the main ingredient in a mojito.",
+    "After the Cuban revolution, all its Cuban assets were confiscated in 1960. The family company now has its headquarters in Bermuda, not Cuba.",
+    "Its logo is a bat: the founder’s wife saw fruit bats living in the roof of the first distillery. The name is the founder’s surname."
+   ]
+  },
+  {
+   "name": "Nutella",
+   "aliases": [
+    "Nutela"
+   ],
+   "clues": [
+    "Sweet, family-friendly and comforting. It’s all about breakfast and happiness.",
+    "Children, students and anyone eating it straight from the jar with a spoon.",
+    "After the Second World War cocoa was scarce and expensive in north-west Italy, so a pastry maker used local hazelnuts instead.",
+    "A chocolate-and-hazelnut spread in a glass jar, launched in 1964.",
+    "An American blogger started a ‘World Day’ for it in 2007. It’s on 5 February every year.",
+    "Made by Ferrero, the company behind Kinder and Rocher. Its name starts with the English word for what’s inside."
+   ]
+  },
+  {
+   "name": "Fanta",
+   "aliases": [
+    "Fanta Orange"
+   ],
+   "clues": [
+    "Bright, bubbly and silly. Its adverts are loud and colourful, and it never takes itself seriously.",
+    "Children at birthday parties, and adults who find cola a bit too serious.",
+    "Created in Germany in 1940, during the Second World War, when the German branch of an American drinks company could no longer get the syrup for its famous cola.",
+    "A fizzy orange drink in a bright orange bottle, though there are dozens of other flavours around the world.",
+    "The first version wasn’t orange at all: it was made from what wartime Germany had, including whey and apple pulp left over from juice-making.",
+    "Its name comes from the German word ‘Fantasie’: the boss told his team to use their imagination. Today it belongs to Coca-Cola."
+   ]
+  }
+ ]
+}

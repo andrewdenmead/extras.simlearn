@@ -1,0 +1,107 @@
+{
+ "name": "Guess the Pack",
+ "what": "pack",
+ "whats": "packs",
+ "doc": "Packaging brief",
+ "facets": [
+  "First impression",
+  "What it's made of",
+  "Origin story",
+  "The shape",
+  "Famous for",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Capri-Sun",
+   "aliases": [
+    "Capri-Sonne",
+    "Capri Sun",
+    "Caprisun",
+    "Capri Sonne"
+   ],
+   "clues": [
+    "Bright, sunny and a bit childish. It's what was in your school bag on a hot day.",
+    "Thin layers of plastic and aluminium, opened with a straw. EU rules on single-use plastic turned the straw into paper in 2021.",
+    "Launched in Germany in 1969 by a flavour company from Heidelberg. In the late 1970s, a world-famous boxer appeared in its adverts.",
+    "A little silver bag that stands up on its own.",
+    "The battle to push the straw through the tiny hole without spraying juice everywhere. In 2024 its boss said paper straws annoy many customers.",
+    "German speakers grew up with its old name, Capri-Sonne."
+   ]
+  },
+  {
+   "name": "Toblerone",
+   "aliases": [],
+   "clues": [
+    "Swiss, proud and a bit pointy. It's what people buy at the airport at the very last minute.",
+    "Milk chocolate with honey and almond nougat, in a cardboard box.",
+    "Created in Bern in 1908. In 2023 part of its production moved to Slovakia, so under Swiss rules it had to remove a famous picture from its pack.",
+    "A long triangle that never fits flat in your bag, and the bar inside is a row of little peaks.",
+    "A Swiss mountain on the old box, with a bear hidden in it. In 2016 British fans were furious when the gaps between the peaks got wider.",
+    "Its name joins the founder's surname, Tobler, to torrone, the Italian word for nougat."
+   ]
+  },
+  {
+   "name": "Tetra Pak",
+   "aliases": [
+    "Tetrapak",
+    "Tetra Pack",
+    "Tetra Brik"
+   ],
+   "clues": [
+    "Practical and almost invisible: you've held one thousands of times without thinking about its name.",
+    "Mostly paperboard, with very thin layers of plastic and aluminium inside, so recyclers have to separate the layers.",
+    "A Swedish company from Lund, founded in 1951. Its first pack, in 1952, was for cream.",
+    "The first ones had four triangular sides, like a pyramid. Later came a famous brick shape.",
+    "In German supermarkets, a lot of the milk, juice and oat drinks come in its cartons.",
+    "Its name starts with the Greek word for 'four', after that first four-sided shape."
+   ]
+  },
+  {
+   "name": "PEZ",
+   "aliases": [
+    "Pez dispenser",
+    "Pez sweets"
+   ],
+   "clues": [
+    "Cheerful and collectable: half sweet, half toy.",
+    "Small hard sweets in a paper wrapper, which you load into a plastic dispenser.",
+    "Invented in Vienna in 1927 as a peppermint for adults, sold as an alternative to smoking.",
+    "The first dispensers looked like a cigarette lighter. You tip the top back and one sweet slides out.",
+    "From 1955 the dispensers got heads, like Santa Claus, Popeye and Mickey Mouse, and people now collect them.",
+    "Its three-letter name comes from the German word PfeffErminZ."
+   ]
+  },
+  {
+   "name": "Nespresso",
+   "aliases": [
+    "Nespresso capsules",
+    "Nespresso pods"
+   ],
+   "clues": [
+    "Elegant, a bit posh and very pleased with itself. It wants your kitchen to feel like a boutique.",
+    "Small aluminium capsules, which critics say create a mountain of waste for one cup of coffee.",
+    "A Swiss food giant launched it in 1986.",
+    "A tiny metal cup with a sealed lid that you drop into a machine.",
+    "A Hollywood actor has starred in its adverts since 2006, with the line 'What else?'",
+    "Its name joins the company that owns it, Nestlé, to a short, strong Italian coffee."
+   ]
+  },
+  {
+   "name": "Tupperware",
+   "aliases": [
+    "Tupper",
+    "Tupperdose",
+    "Tupper ware"
+   ],
+   "clues": [
+    "Practical and a bit old-fashioned: the thing your parents fill with leftovers and never give back.",
+    "Strong, reusable plastic with a lid that seals.",
+    "An American inventor started the company in 1946. It became famous for selling at home parties instead of in shops, and in 2024 it filed for bankruptcy.",
+    "Boxes and bowls in every size, often in bright colours, that stack inside each other.",
+    "You press the middle of the lid to let the air out, and it makes a little 'burp'.",
+    "Germans often just say 'eine Tupperdose', using its first syllable."
+   ]
+  }
+ ]
+}

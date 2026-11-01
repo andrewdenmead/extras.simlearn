@@ -1,0 +1,114 @@
+{
+ "name": "Guess the Campaign",
+ "what": "campaign",
+ "whats": "campaigns",
+ "doc": "Campaign file",
+ "facets": [
+  "First impressions",
+  "Where and when",
+  "The look",
+  "Behind the scenes",
+  "Claim to fame",
+  "The giveaway"
+ ],
+ "items": [
+  {
+   "name": "Smokey Bear",
+   "aliases": [
+    "smokey",
+    "smokey the bear",
+    "smoky bear",
+    "smoky the bear"
+   ],
+   "clues": [
+    "A mascot who has been telling people off, very politely, for more than eighty years.",
+    "The US Forest Service, with help from the advertising industry’s wartime council, in 1944.",
+    "The first poster showed him in jeans and a ranger’s hat, pouring a bucket of water on a campfire.",
+    "In 1950 a real cub with burned paws was rescued after a fire in New Mexico. He lived for 26 years at the National Zoo in Washington.",
+    "In 2001 his famous line changed by one word so that it covered grassland too: “Only you can prevent wildfires.”",
+    "He’s a bear, his name sounds like what a fire makes, and he says: “Only you can prevent forest fires.”"
+   ]
+  },
+  {
+   "name": "Dumb Ways to Die",
+   "aliases": [
+    "dumb ways",
+    "dumb ways 2 die"
+   ],
+   "clues": [
+    "Cute, catchy and full of deaths. It looks like a children’s cartoon until you listen to the words.",
+    "A railway company in Melbourne, Australia, in November 2012.",
+    "Little colourful blobs who come to silly ends, like keeping a rattlesnake as a pet or poking a stick at a grizzly bear.",
+    "The video keeps the dumbest ways for last: the ones that happen on station platforms and level crossings.",
+    "It won a record five Grand Prix at the Cannes Lions advertising festival in 2013, and became a mobile game.",
+    "Its song’s title: “Dumb … to …”. Fill in the two missing words."
+   ]
+  },
+  {
+   "name": "I Want You",
+   "aliases": [
+    "uncle sam",
+    "i want you for us army",
+    "i want you for u.s. army",
+    "uncle sam poster",
+    "i want you poster"
+   ],
+   "clues": [
+    "Possibly the most copied poster in history. Wherever you stand in the room, it seems to be talking to you.",
+    "The United States, 1917, the year the country entered the First World War.",
+    "A stern older man with a white goatee, pointing his finger straight at you.",
+    "The illustrator had no time to hire a model, so he drew his own face in a mirror and added some wrinkles.",
+    "About four million copies were printed in the First World War. It was inspired by a British poster from 1914 of Britain’s war minister pointing at you.",
+    "A man in a top hat covered in stars, the symbol of the USA, says three words to you."
+   ]
+  },
+  {
+   "name": "We Can Do It!",
+   "aliases": [
+    "we can do it",
+    "rosie the riveter",
+    "rosie"
+   ],
+   "clues": [
+    "Today it’s on T-shirts, mugs and protest signs. When it was made, hardly anyone saw it.",
+    "Pittsburgh, 1943, in the middle of the Second World War.",
+    "A woman in a blue work shirt and a red polka-dot headscarf rolls up her sleeve and shows you her muscles.",
+    "An electrical company’s war production committee put it up in its own factories, for just two weeks.",
+    "It was forgotten for almost forty years, rediscovered in the early 1980s and turned into a feminist icon.",
+    "People call her “Rosie the Riveter”, although she only got that name later. Her speech bubble has three words."
+   ]
+  },
+  {
+   "name": "Movember",
+   "aliases": [
+    "mo-vember",
+    "mo vember",
+    "movember foundation"
+   ],
+   "clues": [
+    "Every year, for one month, lots of men look slightly different, and that's the whole point.",
+    "It started with a small group of friends in Melbourne, Australia, in 2003.",
+    "Office photos, team selfies and charity pages full of men with new hair on their faces.",
+    "The money raised goes to men's health: prostate and testicular cancer, and mental health.",
+    "You grow a moustache for thirty days and ask friends to sponsor it.",
+    "Its name mixes “moustache” with the eleventh month of the year."
+   ]
+  },
+  {
+   "name": "Ice Bucket Challenge",
+   "aliases": [
+    "ice bucket",
+    "als ice bucket challenge",
+    "ice bucket challange"
+   ],
+   "clues": [
+    "For a few weeks one summer, it seemed as if every famous person in the world was getting very cold on camera.",
+    "Social media, in July and August 2014, starting in the United States.",
+    "Shaky phone videos of people standing in their gardens, bracing themselves and then screaming.",
+    "Once someone nominated you, you had 24 hours to film yourself, donate, or both, and then nominate three more people.",
+    "It raised money for research into ALS, the disease Stephen Hawking had. The ALS Association passed 100 million dollars within about a month.",
+    "Fill a bucket with water and ice, then pour it over your own head."
+   ]
+  }
+ ]
+}

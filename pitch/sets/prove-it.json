@@ -1,0 +1,109 @@
+{
+ "name": "Prove It!",
+ "pick": {
+  "label": "Pick an activity",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something and put a check on it",
+  "lead": [
+   "These days you prove your age to buy wine, to see some films and, in more and more countries, to open a social media account. Every check keeps somebody out, annoys somebody else and gets dodged by a fourteen-year-old with a VPN.",
+   "Choose an everyday activity that nobody has ever thought needed a check, and design one. Here are some ideas, but you can choose your own. *The more pointless, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously nobody is going to turn this into law. It’s just for a bit of fun, and to get us thinking about who a check keeps out, who it lets through, and who it annoys on the way."
+ },
+ "shelf": [
+  {
+   "head": "Online",
+   "items": [
+    "Leaving a one-star review",
+    "Replying to all",
+    "Sending a voice message",
+    "Commenting under a football video",
+    "Changing your profile picture"
+   ]
+  },
+  {
+   "head": "Around Berlin",
+   "items": [
+    "Ordering at a Späti",
+    "Busking on the U-Bahn",
+    "Queuing for a club",
+    "Hiring an e-scooter",
+    "Singing at Mauerpark karaoke"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "Finishing the milk",
+    "Choosing the film on a Friday",
+    "Adding someone to the family group chat",
+    "Putting pineapple on a pizza",
+    "Building IKEA furniture"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "check",
+   "My check is for:",
+   "Which activity are you putting a check on?"
+  ],
+  [
+   "who",
+   "Who it keeps out:",
+   "Who is it meant to stop, and who else gets caught by accident?"
+  ],
+  [
+   "how",
+   "How it works:",
+   "A test, a document, a face scan, a password, a quiz, a bouncer with a clipboard…"
+  ],
+  [
+   "dodge",
+   "How people will get round it:",
+   "Be honest: how long before someone finds a loophole, and what is it?"
+  ],
+  [
+   "cost",
+   "What it costs everyone else:",
+   "Time, money, privacy, the patience of honest people…"
+  ],
+  [
+   "sell",
+   "My slogan:",
+   "How would you persuade people that your check is a good idea?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "check": "Sending a voice message",
+   "who": "Anyone who can’t say what they want in under a minute. Mainly my friends and, I’m sorry to say, me.",
+   "how": "The Voice Note Licence. Before your message goes, a little box asks you to sum it up in one sentence. If you can, it’s sent as a text instead. If you can’t, you have to wait ten minutes and think about what you’ve done.",
+   "dodge": "Typing “see voice note” into the box. My students found this in about four seconds.",
+   "cost": "Ten minutes of everyone’s day, and the end of my mother’s eight-minute updates about the neighbours’ cat, which I would secretly miss.",
+   "sell": "Less talking, more saying. Or, for the German market: “Kurz und gut.”"
+  }
+ },
+ "words": [
+  "verify",
+  "loophole",
+  "proportionate",
+  "unintended consequences",
+  "safeguard"
+ ],
+ "yours": {
+  "label": "Your check",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your check in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which check wins?",
+  "noun": "check",
+  "placeholder": "The check, e.g. The Voice Note Licence",
+  "lead": "Each student tells us about their check in a few sentences. Add it, then argue it into place: the one most likely to work at the top, the one a fourteen-year-old would dodge fastest at the bottom."
+ }
+}

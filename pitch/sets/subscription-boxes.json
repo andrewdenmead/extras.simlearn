@@ -1,0 +1,109 @@
+{
+ "name": "Subscribe to This!",
+ "pick": {
+  "label": "Pick a subscription",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a subscription nobody asked for",
+  "lead": [
+   "These days you can subscribe to almost anything: films, music, razors, flowers, even a new pair of socks every month. People with lots of money and little sense have tried most of them.",
+   "Choose something from the shelf (or your own idea) and turn it into a subscription that people would actually sign up for. *And make sure they’re happy to stay.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious business model here, this is just for a bit of fun. Some subscriptions will make total sense, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Things",
+   "items": [
+    "Odd socks",
+    "Houseplants",
+    "Vinyl records",
+    "Hot sauce",
+    "Board games"
+   ]
+  },
+  {
+   "head": "Experiences",
+   "items": [
+    "A mystery train ticket",
+    "A stranger’s playlist",
+    "Karaoke nights",
+    "A haircut by a beginner",
+    "A surprise museum"
+   ]
+  },
+  {
+   "head": "People",
+   "items": [
+    "Someone to argue with",
+    "A personal hype man",
+    "A wake-up call from a celebrity",
+    "A grandma who checks your homework",
+    "A plant sitter"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "subscription",
+   "My subscription is:",
+   "What do people subscribe to?"
+  ],
+  [
+   "what",
+   "Every month you get:",
+   "What exactly arrives, and how? A box, a visit, a message, something completely mad?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who signs up first? Students, busy parents, lonely people, someone else?"
+  ],
+  [
+   "price",
+   "It costs:",
+   "How much a month, and why is it worth it?"
+  ],
+  [
+   "stay",
+   "People stay because:",
+   "What makes them happy to keep paying, month after month?"
+  ],
+  [
+   "promote",
+   "I would promote it by:",
+   "Who do you get to talk about it, and where?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "subscription": "Odd socks.",
+   "what": "Sock Roulette: one single sock, every month, in a tiny envelope. You lose one sock a month anyway, so now you’re always a sock ahead.",
+   "who": "People like me, who have a drawer full of socks that don’t match and have stopped pretending they ever will.",
+   "price": "€4 a month, which works out at about the price of a coffee in Friedrichshain for something that lasts much longer.",
+   "stay": "Every sock comes with a short, completely made-up story about where its partner went. People stay to find out what happens next.",
+   "promote": "Getting a football commentator to wear odd socks on live TV, then asking everyone to post a photo of their own feet."
+  }
+ },
+ "words": [
+  "subscription",
+  "sign up",
+  "opt in",
+  "customer journey",
+  "cancel"
+ ],
+ "yours": {
+  "label": "Your subscription",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your subscription in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which subscription wins?",
+  "noun": "subscription",
+  "placeholder": "The subscription, e.g. Sock Roulette",
+  "lead": "Each student tells us about their subscription in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "name": "Guess the Home",
+ "what": "home",
+ "whats": "homes",
+ "doc": "Estate agent’s listing",
+ "facets": [
+  "Description",
+  "Rooms",
+  "Location",
+  "Previous residents",
+  "Viewings",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "10 Downing Street",
+   "aliases": [
+    "Downing Street",
+    "Number 10",
+    "Number Ten",
+    "No 10",
+    "No. 10",
+    "10 Downing St"
+   ],
+   "clues": [
+    "From the front it looks like an ordinary Georgian terraced house. Behind the famous black door, it’s much bigger than it looks.",
+    "About 100 rooms, including offices and state dining rooms, plus a small flat upstairs that some recent residents swapped for the bigger one next door.",
+    "Westminster, London, a few minutes’ walk from Parliament, on a street closed to the public behind iron gates.",
+    "Robert Walpole, usually called Britain’s first prime minister, moved in in 1735.",
+    "The resident cat, Larry, holds the official title of Chief Mouser to the Cabinet Office.",
+    "The British prime minister’s official home: the number between 9 and 11."
+   ]
+  },
+  {
+   "name": "Graceland",
+   "aliases": [
+    "Graceland mansion"
+   ],
+   "clues": [
+    "An elegant 1930s mansion with white columns, bought in 1957 for just over $100,000 by a 22-year-old who had just become very rich.",
+    "The most famous room is the Jungle Room, with green shag carpet on the floor and on the ceiling.",
+    "Memphis, Tennessee.",
+    "The couple who built it named it after an aunt called Grace. Its most famous resident lived here until 1977 and is buried in the garden.",
+    "Hundreds of thousands of fans visit every year, some of them in rhinestone jumpsuits and very large sideburns.",
+    "The home of Elvis Presley, the King of Rock and Roll."
+   ]
+  },
+  {
+   "name": "Neuschwanstein Castle",
+   "aliases": [
+    "Neuschwanstein",
+    "Schloss Neuschwanstein",
+    "Neuschwanstein Palace"
+   ],
+   "clues": [
+    "A fairy-tale property on a rock above a gorge, commissioned by a king who preferred dreams to politics.",
+    "Many of the planned rooms were never finished, but there is a throne room, a hall for singers and an artificial cave.",
+    "Bavaria, near Füssen, close to the Austrian border.",
+    "Its owner lived here for only about 170 days before his death in 1886. It opened to paying visitors within weeks.",
+    "Walt Disney is said to have used it as the model for a castle in Disneyland.",
+    "King Ludwig II’s castle. Its name means “new swan stone”."
+   ]
+  },
+  {
+   "name": "Buckingham Palace",
+   "aliases": [
+    "Buckingham",
+    "Buck House",
+    "Buckingham Palace London"
+   ],
+   "clues": [
+    "A substantial London townhouse, bought by a king in 1761 as a family home for his wife. Extended once or twice since.",
+    "775 rooms, including 52 bedrooms for the family and guests, 188 bedrooms for staff and 78 bathrooms.",
+    "Central London, overlooking a park, at the end of a wide red road used for parades.",
+    "Queen Victoria was the first monarch to live here, from 1837.",
+    "The grand State Rooms open to visitors in the summer. On special occasions, the family waves from the balcony.",
+    "The King’s London home, named after the duke who built the house it grew out of."
+   ]
+  },
+  {
+   "name": "221B Baker Street",
+   "aliases": [
+    "Baker Street",
+    "221b Baker St",
+    "221B",
+    "221 B Baker Street"
+   ],
+   "clues": [
+    "First-floor rooms in a London house, shared by two single men, with a very patient landlady downstairs.",
+    "A cosy sitting room with a violin, chemistry experiments and tobacco kept in the toe of a Persian slipper.",
+    "Marylebone, London, near Regent’s Park and a famous wax museum.",
+    "Its most famous tenant first moved in in a novel published in 1887, together with an army doctor.",
+    "A museum on the street uses the number, although it really stands at number 239. The BBC filmed its version in a different street.",
+    "Sherlock Holmes’s address."
+   ]
+  },
+  {
+   "name": "The White House",
+   "aliases": [
+    "White House",
+    "the Whitehouse",
+    "Whitehouse"
+   ],
+   "clues": [
+    "A grand neoclassical home built of grey sandstone painted a famous colour. Rebuilt after British troops set fire to it in 1814.",
+    "132 rooms and 35 bathrooms on six levels, plus a cinema, a bowling alley and an office with no corners.",
+    "In a capital city on the Potomac river, built specially to be the seat of government.",
+    "Its main resident has always held the same job, since 1800. Only the first person to hold that job never lived here.",
+    "New residents usually move in on 20 January, every four or eight years.",
+    "The US president’s home, at 1600 Pennsylvania Avenue."
+   ]
+  }
+ ]
+}

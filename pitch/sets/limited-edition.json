@@ -1,0 +1,118 @@
+{
+ "name": "Limited Edition!",
+ "pick": {
+  "label": "Pick a product",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a product and give it a limited edition",
+  "lead": [
+   "Every few months, a famous product appears in a strange new version: a new flavour, a new colour, a new shape, a collab nobody saw coming. Some become cult classics. Most quietly disappear.",
+   "Choose a famous product and invent its next limited edition. Then work out how you would find out whether anybody actually wants it, *before* you make a million of them."
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is not a real research plan, just a bit of fun. The more ridiculous the limited edition, the more interesting the question of how you’d test it."
+ },
+ "shelf": [
+  {
+   "head": "Snacks",
+   "items": [
+    "Pringles",
+    "Oreo",
+    "Kinder Bueno",
+    "Haribo",
+    "Hanuta"
+   ]
+  },
+  {
+   "head": "Drinks",
+   "items": [
+    "Club-Mate",
+    "Fritz-Kola",
+    "Irn-Bru",
+    "Bionade",
+    "Capri-Sun"
+   ]
+  },
+  {
+   "head": "Breakfast",
+   "items": [
+    "Nutella",
+    "Kellogg’s Corn Flakes",
+    "Kölln oats",
+    "Marmite",
+    "Philadelphia"
+   ]
+  },
+  {
+   "head": "Bathroom",
+   "items": [
+    "Labello",
+    "Colgate",
+    "Tempo tissues",
+    "Head & Shoulders"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "product",
+   "My product is:",
+   "Which famous product are you giving a limited edition?"
+  ],
+  [
+   "edition",
+   "My limited edition is:",
+   "What exactly is new? A flavour, a colour, a shape, a collab, something completely mad?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who do you imagine buying it? Be specific: age, habits, where they shop…"
+  ],
+  [
+   "find",
+   "To find out if people want it, I would:",
+   "A survey, a taste test, free samples, watching people in a shop, asking on TikTok…?"
+  ],
+  [
+   "question",
+   "The one question I’d ask:",
+   "What do you really need to know, and how would you ask it so people tell you the truth?"
+  ],
+  [
+   "hit",
+   "I’ll know it’s a hit when:",
+   "What would have to happen? Queues, sold-out shelves, memes, your grandmother asking for it…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "product": "Pringles",
+   "edition": "Currywurst Pringles. Sold only at Berlin stations, in a red-and-white tube, with a tiny plastic fork you will lose immediately.",
+   "who": "People waiting for a delayed S-Bahn at eleven at night, which is to say, everybody in Berlin at some point.",
+   "find": "Set up a table at Ostkreuz, hand out free samples and ask people to give them a score out of ten. Then stand next to the kiosk and see whether anybody actually pays for a tube.",
+   "question": "“Would you pay €3.50 for this, honestly, at a train station, at eleven at night?”",
+   "hit": "When people start selling the empty tubes on Kleinanzeigen."
+  }
+ },
+ "words": [
+  "target market",
+  "survey",
+  "sample",
+  "purchase intent",
+  "launch"
+ ],
+ "yours": {
+  "label": "Your limited edition",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your limited edition in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which limited edition wins?",
+  "noun": "limited edition",
+  "placeholder": "The limited edition, e.g. Currywurst Pringles",
+  "lead": "Each student tells us about their limited edition and how they’d test it. Add it, then argue it into place until everybody agrees."
+ }
+}

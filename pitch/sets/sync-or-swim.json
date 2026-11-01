@@ -1,0 +1,109 @@
+{
+ "name": "Sync or Swim!",
+ "pick": {
+  "label": "Pick a song",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a song and put it in an advert",
+  "lead": [
+   "Every time an old song turns up in an advert, a film or a TikTok trend, somebody gets paid, and a whole new generation thinks it's brand new.",
+   "Choose a song and decide what it should sell. The worse the match sounds at first, the better. Here are some ideas, but you can choose your own. *Make it work.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Nobody is checking whether you could actually afford the rights, this is just for a bit of fun. Some matches will be perfect and some will only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "German classics",
+   "items": [
+    "99 Luftballons",
+    "Major Tom (Völlig losgelöst)",
+    "Wind of Change",
+    "Atemlos durch die Nacht",
+    "Da Da Da"
+   ]
+  },
+  {
+   "head": "80s and 90s",
+   "items": [
+    "Take On Me",
+    "Wannabe",
+    "Don’t Stop Believin’",
+    "Livin’ la Vida Loca",
+    "500 Miles (I’m Gonna Be)"
+   ]
+  },
+  {
+   "head": "Guilty pleasures",
+   "items": [
+    "Barbie Girl",
+    "Macarena",
+    "The Final Countdown",
+    "Gangnam Style",
+    "Mambo No. 5"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "song",
+   "My song is:",
+   "Which song are you putting in an advert?"
+  ],
+  [
+   "product",
+   "It's an advert for:",
+   "A real brand, a new product, a public service, something completely mad?"
+  ],
+  [
+   "story",
+   "What happens in the advert:",
+   "Thirty seconds. Who's in it, where are we, what happens?"
+  ],
+  [
+   "bit",
+   "The bit of the song we hear:",
+   "The chorus, the intro, one famous line, a key change…"
+  ],
+  [
+   "who",
+   "It's aimed at:",
+   "Who should see it, and where? TV, TikTok, the cinema, the U-Bahn?"
+  ],
+  [
+   "tagline",
+   "The last line on screen:",
+   "The slogan people will remember (or the joke)."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "song": "The Final Countdown",
+   "product": "The BVG night bus.",
+   "story": "Warschauer Straße, 1:58 a.m. A man realises the last U-Bahn has gone. The synths start. He sprints in slow motion past a Späti, a döner shop and three confused pigeons, and dives through the doors of the night bus just as they close.",
+   "bit": "The keyboard riff at the very start, obviously. I'm not convinced anyone has ever heard the second verse.",
+   "who": "Everyone who has ever stood on a platform at 2 a.m. trying to remember the way home. TikTok first, then the little screens on the buses themselves.",
+   "tagline": "BVG. We'll get you home. Eventually."
+  }
+ },
+ "words": [
+  "sync licence",
+  "royalties",
+  "rights holder",
+  "back catalogue",
+  "go viral"
+ ],
+ "yours": {
+  "label": "Your advert",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your advert in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which advert wins?",
+  "noun": "advert",
+  "placeholder": "The advert, e.g. The Final Countdown for the night bus",
+  "lead": "Each student tells us about their advert in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

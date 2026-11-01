@@ -1,0 +1,109 @@
+{
+ "name": "Nobody Asked for This!",
+ "pick": {
+  "label": "Pick a sponsor",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and make it sponsor a tour",
+  "lead": [
+   "Brands pay a fortune to put their name next to music: on festivals, arenas, tours and sometimes the artist's T-shirt. Some partnerships feel completely natural. Others feel like a very expensive mistake.",
+   "Choose a brand and invent the tour it sponsors. The less obvious the match, the better. Here are some ideas, but you can choose your own. *Make us believe it.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "I'm not looking for a real contract here, this is just for a bit of fun. Some deals will make total sense and some will only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Everyday Germany",
+   "items": [
+    "Deutsche Bahn",
+    "dm",
+    "Lidl",
+    "IKEA",
+    "ADAC"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "Club-Mate",
+    "McDonald’s",
+    "Nutella",
+    "Dr. Oetker",
+    "Fritz-Kola"
+   ]
+  },
+  {
+   "head": "Surprising",
+   "items": [
+    "Duolingo",
+    "Lego",
+    "Ryanair",
+    "Tchibo",
+    "Tempo"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My sponsor is:",
+   "Which brand is paying? From the shelf or your own idea."
+  ],
+  [
+   "artist",
+   "The artist on tour:",
+   "A real artist or band. The more unexpected the match, the better."
+  ],
+  [
+   "tour",
+   "The name of the tour:",
+   "What does it say on the posters? Is the brand's name in it?"
+  ],
+  [
+   "gets",
+   "What the brand gets:",
+   "Its logo on the stage, its product in the show, adverts, something stranger?"
+  ],
+  [
+   "fans",
+   "What the fans get:",
+   "Why would fans be happy about this instead of rolling their eyes?"
+  ],
+  [
+   "wrong",
+   "What could go wrong:",
+   "What happens if the artist, the brand or the fans hate it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "Deutsche Bahn",
+   "artist": "Helene Fischer. 'Atemlos durch die Nacht' is exactly how it feels to run for a connecting ICE.",
+   "tour": "DB presents: Atemlos durch die Nacht – The Slightly Delayed Tour.",
+   "gets": "Its logo on the stage, and every show starts with the famous announcement: 'Due to a delay in the operational process, this concert will begin approximately twenty minutes late.'",
+   "fans": "A free BahnCard 25 with every ticket, and a guaranteed seat (at the concert, not on the train).",
+   "wrong": "Helene arrives forty minutes late because of a signal failure near Fulda. To be fair, that's very on-brand."
+  }
+ },
+ "words": [
+  "title sponsor",
+  "brand fit",
+  "credibility",
+  "target audience",
+  "activation"
+ ],
+ "yours": {
+  "label": "Your tour",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your tour in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which tour wins?",
+  "noun": "tour",
+  "placeholder": "The tour, e.g. The Slightly Delayed Tour",
+  "lead": "Each student tells us about their tour in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

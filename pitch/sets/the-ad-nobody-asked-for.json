@@ -1,0 +1,119 @@
+{
+ "name": "The Ad Nobody Asked For",
+ "pick": {
+  "label": "Pick a thing",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something nobody advertises and sell it",
+  "lead": [
+   "Advertising agencies can make people want almost anything: trainers, perfume, a phone that is exactly like last year’s phone but more expensive.",
+   "So let’s see how good you are. Choose something that nobody ever advertises, because it’s free, boring, or something people actively try to avoid, and make an ad that makes us want it. *Badly.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is not a real campaign brief, it’s just for a bit of fun. The more ridiculous the product, the more persuasive you have to be."
+ },
+ "shelf": [
+  {
+   "head": "Things that sell themselves",
+   "items": [
+    "Tap water",
+    "Sleep",
+    "Fresh air",
+    "Sunshine",
+    "Free Wi-Fi"
+   ]
+  },
+  {
+   "head": "Things nobody wants",
+   "items": [
+    "Mondays",
+    "The dentist",
+    "Homework",
+    "Queues",
+    "Berlin in February"
+   ]
+  },
+  {
+   "head": "Berlin",
+   "items": [
+    "The S-Bahn Ring",
+    "Your local Späti",
+    "Tempelhofer Feld",
+    "Currywurst",
+    "The M10 tram"
+   ]
+  },
+  {
+   "head": "Everyday stuff",
+   "items": [
+    "Paper clips",
+    "Socks",
+    "Bin bags",
+    "Bread rolls",
+    "Stairs"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "I’m advertising:",
+   "What are you selling?"
+  ],
+  [
+   "audience",
+   "It’s for:",
+   "Who are you talking to? Be specific: students, grandparents, tired parents, tourists…"
+  ],
+  [
+   "feeling",
+   "The feeling:",
+   "What should people feel? Proud, hungry, jealous, nostalgic, a bit scared…"
+  ],
+  [
+   "film",
+   "What we see and hear:",
+   "Your ad in 30 seconds: what happens, and what’s the music or sound?"
+  ],
+  [
+   "slogan",
+   "The slogan:",
+   "One short line that people will remember."
+  ],
+  [
+   "where",
+   "Where it runs:",
+   "TV, TikTok, a billboard, the U-Bahn, the side of a bus, somewhere unexpected…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "Berlin in February",
+   "audience": "Students in Barcelona who think Berlin is all summer parties and open-air cinema.",
+   "feeling": "Mysterious and a bit tragic, like the main character in a French film.",
+   "film": "Black and white, slow motion. A man in a long coat waits for the M10 in the sleet. Nobody smiles. A pigeon walks past. A sad cello plays, and rain drips off the tram stop roof.",
+   "slogan": "Berlin in February. Grey is the new black.",
+   "where": "Huge posters in the metro in Barcelona, in July, when everyone is far too hot to argue."
+  }
+ },
+ "words": [
+  "target audience",
+  "slogan",
+  "eye-catching",
+  "persuade",
+  "campaign"
+ ],
+ "yours": {
+  "label": "Your ad",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your ad in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which ad wins?",
+  "noun": "ad",
+  "placeholder": "The ad, e.g. Grey is the new black",
+  "lead": "Each student tells us about their ad in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

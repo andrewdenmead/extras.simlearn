@@ -1,0 +1,103 @@
+{
+ "name": "Guess the App",
+ "what": "app",
+ "whats": "apps",
+ "doc": "App Store listing",
+ "facets": [
+  "What it does",
+  "Who uses it",
+  "Origin story",
+  "How it makes money",
+  "Did you know?",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Wikipedia",
+   "aliases": [
+    "wiki",
+    "wikipedia.org"
+   ],
+   "clues": [
+    "It answers your questions, sometimes at great length, and anyone can change what it says.",
+    "Students the night before a deadline, pub-quiz cheats and people settling arguments at dinner.",
+    "Two Americans launched it in January 2001 as a side project, next to a slower online encyclopedia written only by experts.",
+    "It shows no adverts. Once a year a banner asks you, quite politely, for a small donation.",
+    "Its pages are written and checked by unpaid volunteers, who sometimes argue for weeks about what counts as a reliable source.",
+    "A Hawaiian word meaning “quick”, joined to the end of the word “encyclopedia”."
+   ]
+  },
+  {
+   "name": "Spotify",
+   "aliases": [
+    "spotify music"
+   ],
+   "clues": [
+    "It plays whatever you want, whenever you want, and then politely suggests something similar.",
+    "More or less everyone with headphones, plus a lot of musicians who complain about how little it pays them.",
+    "Two Swedish entrepreneurs started it in Stockholm in 2006, when most young people were downloading music illegally.",
+    "You can use it free with adverts, or pay every month to make the adverts go away.",
+    "Every December, your social media fills up with people sharing their year in listening: their “Wrapped”.",
+    "One founder misheard a word the other shouted across the room. They searched for it online, found nothing, and registered it within minutes."
+   ]
+  },
+  {
+   "name": "Duolingo",
+   "aliases": [
+    "duo lingo"
+   ],
+   "clues": [
+    "It teaches you something for five minutes a day, using little games and quite a lot of guilt.",
+    "Millions of people who promise themselves they will finally learn Spanish before the summer holiday.",
+    "A professor at Carnegie Mellon University in Pittsburgh started it with his student. The professor had already helped invent CAPTCHA, the “prove you’re not a robot” test.",
+    "It’s free with adverts, or you can pay for a version with no adverts and unlimited mistakes.",
+    "In February 2025 the company announced that its mascot had died, “probably waiting for you to do your lesson”. He was brought back to life soon after.",
+    "A green owl called Duo, plus “lingo”, an informal word for a language."
+   ]
+  },
+  {
+   "name": "Reddit",
+   "aliases": [
+    "reddit.com"
+   ],
+   "clues": [
+    "Thousands and thousands of discussion forums, on everything from investing to pictures of cats that look like bread.",
+    "People asking strangers for honest advice, fans of very specific hobbies, and anyone who adds its name to the end of a search to find real opinions.",
+    "Two university roommates from Virginia started it in 2005, with money from a brand-new start-up programme in Massachusetts.",
+    "Mostly adverts, plus deals that let AI companies train their models on what users have written.",
+    "Each community is run by unpaid volunteer moderators. In June 2023 thousands of them closed their communities in protest at new company rules.",
+    "Its name sounds like what you say when you’ve finished an article: “I ___ it.” Its mascot is a little white alien."
+   ]
+  },
+  {
+   "name": "Skyscanner",
+   "aliases": [
+    "sky scanner"
+   ],
+   "clues": [
+    "You tell it where you want to go, and it searches lots of other websites for the cheapest way to get there.",
+    "Students looking for a €19 flight to Barcelona, and people who check the price eleven times before they book.",
+    "A software developer was fed up with checking every airline’s website one by one, so he wrote a program to search them all at once. It launched in 2003, and its head office is in Edinburgh.",
+    "It doesn’t sell you the ticket itself: it earns money when you click through to an airline or a travel agent.",
+    "In 2016 a Chinese travel company bought it for about £1.4 billion, one of the biggest sales of a British tech start-up at the time.",
+    "Look up: that’s the first half of the name. The second half is a machine that searches."
+   ]
+  },
+  {
+   "name": "ChatGPT",
+   "aliases": [
+    "chat gpt",
+    "chatgpt app",
+    "gpt"
+   ],
+   "clues": [
+    "It writes your emails, explains things patiently at three in the morning, and sometimes makes facts up with total confidence.",
+    "Students, programmers, marketing teams, and your aunt, who uses it to write birthday poems.",
+    "A research lab in San Francisco released it as a free “research preview” at the end of November 2022.",
+    "It’s free to try; a monthly subscription gets you newer models and fewer limits.",
+    "It reached a million users in five days, and an estimated 100 million in about two months, faster than any app before it at the time.",
+    "The last three letters stand for “generative pre-trained transformer”. The first four are what you do with it."
+   ]
+  }
+ ]
+}

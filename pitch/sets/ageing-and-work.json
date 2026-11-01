@@ -1,0 +1,109 @@
+{
+ "name": "Generation Collab!",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and find it a partner from another generation",
+  "lead": [
+   "Some brands are loved by your grandparents, some by your parents and some only by people under 25. Every now and then two of them get together, and the results are either wonderful or very confusing.",
+   "Choose a brand from the shelf, or bring your own, then pair it with a brand from a different generation and launch something together. *The bigger the age gap, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a real marketing plan here, this is just for a bit of fun. The best collabs make your grandma and your little brother want exactly the same thing."
+ },
+ "shelf": [
+  {
+   "head": "Your grandparents’ favourites",
+   "items": [
+    "Werther’s Original",
+    "4711 Eau de Cologne",
+    "Tchibo",
+    "Melitta",
+    "Tunnock’s Teacakes"
+   ]
+  },
+  {
+   "head": "Your parents’ favourites",
+   "items": [
+    "IKEA",
+    "Tupperware",
+    "Birkenstock",
+    "Lego",
+    "Nintendo"
+   ]
+  },
+  {
+   "head": "Yours",
+   "items": [
+    "Spotify",
+    "Vinted",
+    "Duolingo",
+    "TikTok",
+    "Too Good To Go"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My brand is:",
+   "Which brand from the shelf (or your own) are you starting with?"
+  ],
+  [
+   "partner",
+   "Its partner is:",
+   "A brand from a different generation. The bigger the age gap, the better."
+  ],
+  [
+   "product",
+   "Together they launch:",
+   "What exactly is it? A product, a shop, an app, an event?"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who buys it first: grandparents, grandchildren, or both together?"
+  ],
+  [
+   "slogan",
+   "The slogan is:",
+   "One line that works for an 18-year-old and an 80-year-old."
+  ],
+  [
+   "launch",
+   "We launch it by:",
+   "Where and how? Who do you get to talk about it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "Werther’s Original",
+   "partner": "Berghain",
+   "product": "The Night Owl: a caramel in a black wrapper, handed out only at the door of Berghain at 5am. Anyone over 70 skips the queue.",
+   "who": "Grandparents who have always wondered what goes on in there, and clubbers who need sugar and a bit of comfort at 5am.",
+   "slogan": "Sweet dreams are made of this.",
+   "launch": "A video of my neighbour Gisela, 81, getting into Berghain on her first try. I have been turned away three times. She will never let me forget it."
+  }
+ },
+ "words": [
+  "intergenerational",
+  "demographic",
+  "retiree",
+  "target market",
+  "life expectancy"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your collab in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which collab wins?",
+  "noun": "collab",
+  "placeholder": "The collab, e.g. The Night Owl",
+  "lead": "Each student tells us about their collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

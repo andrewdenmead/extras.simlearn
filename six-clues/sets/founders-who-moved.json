@@ -1,0 +1,123 @@
+{
+ "name": "Guess the Company",
+ "what": "company",
+ "whats": "companies",
+ "doc": "Company history",
+ "facets": [
+  "What it sells",
+  "The founder’s journey",
+  "The start",
+  "A breakthrough",
+  "A strange fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Levi's",
+   "aliases": [
+    "levis",
+    "levi’s",
+    "levi strauss",
+    "levi strauss & co",
+    "levi strauss and co",
+    "levi"
+   ],
+   "clues": [
+    "Clothes, above all one item that almost everybody in this room owns.",
+    "Its founder left a village in Franconia, in northern Bavaria, for New York at the age of 18, and later moved to San Francisco during the Gold Rush.",
+    "He sold cloth and supplies to shops across the American West.",
+    "In 1873 he and a tailor, Jacob Davis, patented work trousers made stronger with small metal rivets.",
+    "Its leather patch shows two horses trying, and failing, to pull a pair of trousers apart.",
+    "The founder’s first name, with an apostrophe and an s. Famous for its 501 jeans."
+   ]
+  },
+  {
+   "name": "Hellmann's",
+   "aliases": [
+    "hellmanns",
+    "hellmann’s",
+    "hellman's",
+    "hellmans",
+    "hellmann",
+    "best foods"
+   ],
+   "clues": [
+    "Something you put on chips, in sandwiches and in potato salad.",
+    "Its founder left Brandenburg, south-east of Berlin, for New York in 1903.",
+    "In 1905 he opened a delicatessen in Manhattan, and one sauce on the counter soon outsold everything else.",
+    "Sales took off when he moved it from big stone jars on the counter into clear glass jars that customers could take home.",
+    "Since 1914 its label has shown a single blue ribbon, and it still does.",
+    "The founder’s surname. It’s one of the best-known mayonnaises in the world."
+   ]
+  },
+  {
+   "name": "BioNTech",
+   "aliases": [
+    "biontech se",
+    "bion tech",
+    "biontec",
+    "bio n tech"
+   ],
+   "clues": [
+    "Medicines, especially new treatments for cancer.",
+    "One of its founders came to Cologne from Turkey at the age of four; his father worked at the Ford factory there.",
+    "A married couple, both doctors, founded it in Mainz in 2008 with an Austrian cancer researcher.",
+    "In 2020, with an American partner, it developed one of the first approved COVID-19 vaccines.",
+    "Its headquarters are on a street called An der Goldgrube: “at the gold mine”.",
+    "Its name is short for “biopharmaceutical new technologies”."
+   ]
+  },
+  {
+   "name": "Google",
+   "aliases": [
+    "alphabet",
+    "google llc"
+   ],
+   "clues": [
+    "Search, maps, videos, phones and an awful lot of adverts.",
+    "One of its founders was born in Moscow and left the Soviet Union with his parents at the age of six.",
+    "Two PhD students met at Stanford, and in 1998 the company started in a rented garage in California.",
+    "Its home page was famously almost empty: a logo, one box and two buttons.",
+    "On special days its logo is redrawn as a little drawing called a doodle.",
+    "Its name is a misspelling of “googol”, the number 1 followed by 100 zeros."
+   ]
+  },
+  {
+   "name": "Steinway & Sons",
+   "aliases": [
+    "steinway",
+    "steinway and sons",
+    "steinweg",
+    "steinway pianos"
+   ],
+   "clues": [
+    "Musical instruments, especially big, black and very expensive ones.",
+    "Its founder, a piano maker from Seesen, a small town at the edge of the Harz mountains, emigrated to New York with his family in 1850.",
+    "He and his sons started the company in a loft in Manhattan in 1853.",
+    "Its concert grands became the instrument most concert pianists choose.",
+    "It has a second factory in Hamburg, which it opened in 1880.",
+    "The family anglicised its surname, Steinweg, and added “& Sons”."
+   ]
+  },
+  {
+   "name": "Marks & Spencer",
+   "aliases": [
+    "marks and spencer",
+    "m&s",
+    "m & s",
+    "m and s",
+    "marks & spencers",
+    "marks and spencers",
+    "marks"
+   ],
+   "clues": [
+    "Clothes and food and, according to many British people, the best underwear in the country.",
+    "Its founder was a young Jewish man who left the Russian Empire, from what is now Belarus, for England in the early 1880s.",
+    "In 1884 he opened a market stall in Leeds.",
+    "His stall had a sign saying: “Don’t ask the price, it’s a penny.”",
+    "Ten years later he went into partnership with a cashier, and the business grew into a chain of “penny bazaars”.",
+    "Two surnames joined by “&”. In Britain everyone calls it M&S."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "name": "Now Hiring!",
+ "pick": {
+  "label": "Pick a job",
+  "eyebrow": "Up to you!",
+  "heading": "Pick an unusual job and find the perfect person for it",
+  "lead": [
+   "Some jobs are easy to advertise. Others are harder: try writing the job advert for a club bouncer.",
+   "Choose a job, and work out what it really involves, who would be perfect for it, and how you would find them. Here are some ideas, but you can choose your own. *The stranger the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This isn’t a real HR exercise, it’s just for a bit of fun. All of these jobs really exist: somebody, somewhere, is doing one of them right now."
+ },
+ "shelf": [
+  {
+   "head": "Only in Berlin",
+   "items": [
+    "Club bouncer",
+    "Späti night shift",
+    "Christmas market Glühwein seller",
+    "Voice of the U-Bahn announcements",
+    "Tour guide on a Spree boat"
+   ]
+  },
+  {
+   "head": "Dream jobs",
+   "items": [
+    "Ice-cream taster",
+    "Lego master builder",
+    "Theme park ride tester",
+    "Hotel tester",
+    "Video game tester"
+   ]
+  },
+  {
+   "head": "Behind the scenes",
+   "items": [
+    "Film subtitle writer",
+    "Football club mascot",
+    "Voice of a sat nav",
+    "Wedding DJ",
+    "Zookeeper"
+   ]
+  },
+  {
+   "head": "Seasonal",
+   "items": [
+    "Department store Santa",
+    "Lifeguard at a lake",
+    "Ski instructor",
+    "Festival litter picker"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "job",
+   "The job:",
+   "Which job are you hiring for?"
+  ],
+  [
+   "really",
+   "What the job really involves:",
+   "The bit nobody puts in the advert: the hours, the smell, the customers…"
+  ],
+  [
+   "perfect",
+   "The perfect person would be:",
+   "Skills, personality, experience. What do they need to be good at?"
+  ],
+  [
+   "find",
+   "Where I’d find them:",
+   "Where would you advertise, or who would you ask?"
+  ],
+  [
+   "test",
+   "The test in the interview:",
+   "One task that shows you who can really do the job."
+  ],
+  [
+   "perk",
+   "The perk that makes everyone apply:",
+   "Free tickets, free ice cream, free… what?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "job": "Voice of the U-Bahn announcements",
+   "really": "Saying “Zurückbleiben, bitte!” about four thousand times, and recording 47 different ways of saying that the train is late without sounding guilty.",
+   "perfect": "Someone with a calm voice that sounds kind, but also very slightly disappointed in you. Like your favourite teacher at school.",
+   "find": "On a platform at 8 a.m., listening for the person who sighs most professionally when the train doesn’t come.",
+   "test": "Announce a 20-minute delay on the U8 so warmly that nobody on the platform minds.",
+   "perk": "A free ticket for life, and you get to hear your own voice every morning on the way to work."
+  }
+ },
+ "words": [
+  "job advert",
+  "candidate",
+  "shortlist",
+  "referral",
+  "interview panel"
+ ],
+ "yours": {
+  "label": "Your job",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your job and your perfect candidate in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which job would you apply for?",
+  "noun": "job",
+  "placeholder": "The job, e.g. Voice of the U-Bahn",
+  "lead": "Each student tells us about their job in a few sentences. Add it, then argue it into place until everybody agrees. The winner is the job most of us would apply for."
+ }
+}

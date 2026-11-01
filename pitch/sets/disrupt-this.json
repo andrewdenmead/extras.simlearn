@@ -1,0 +1,119 @@
+{
+ "name": "Disrupt This!",
+ "pick": {
+  "label": "Pick a target",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something old-fashioned and disrupt it",
+  "lead": [
+   "Every few years a start-up comes along and makes something we all do the old way cheaper, simpler or faster, and the big old companies say it will never catch on. Sometimes they're right. Often they're not.",
+   "Choose something from everyday life that is slow, annoying or expensive, and pitch the start-up that changes it. Here are some ideas, but you can choose your own. *The old giants are going to hate it.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I'm not looking for an amazing business plan here, this is just for a bit of fun. Some ideas will be the next unicorn, and some will only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Berlin life",
+   "items": [
+    "The Bürgeramt",
+    "Flat hunting",
+    "The laundrette",
+    "The BVG ticket machine",
+    "The Späti"
+   ]
+  },
+  {
+   "head": "Everyday chores",
+   "items": [
+    "The driving test",
+    "Getting a haircut",
+    "Doing your tax return",
+    "Moving house",
+    "The weekly shop"
+   ]
+  },
+  {
+   "head": "Student life",
+   "items": [
+    "The lecture",
+    "The university library",
+    "The Mensa",
+    "Exam revision",
+    "Finding a flatmate"
+   ]
+  },
+  {
+   "head": "Going out",
+   "items": [
+    "The nightclub queue",
+    "The cinema",
+    "Booking a table",
+    "The wedding DJ",
+    "The pub quiz"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "target",
+   "I'm disrupting:",
+   "What did you pick from the shelf?"
+  ],
+  [
+   "annoying",
+   "What's annoying about it now:",
+   "Queues, prices, forms, opening hours, that one person who is always rude…"
+  ],
+  [
+   "idea",
+   "My start-up is:",
+   "A name and what it does. An app, a machine, a van, a robot, something completely mad?"
+  ],
+  [
+   "simpler",
+   "Why it's cheaper or simpler:",
+   "What does it leave out that the old way insists on?"
+  ],
+  [
+   "first",
+   "My first customers are:",
+   "Who uses it first, and why them?"
+  ],
+  [
+   "reply",
+   "What the old giants will say:",
+   "And how you answer them, in one sentence."
+  ]
+ ],
+ "example": {
+  "heading": "Here's one I made earlier",
+  "values": {
+   "target": "The Bürgeramt",
+   "annoying": "You need an appointment to register your flat, the next free one is in eleven weeks in Spandau, and you have to bring a form that you can only get… at the Bürgeramt.",
+   "idea": "Amtomat: a vending machine in every U-Bahn station. Put in your passport, smile at the camera, and your registration comes out like a Snickers bar. Seven minutes, no queue.",
+   "simpler": "It only does the five most boring things (registering, a new ID card, a parking permit…) and sends everything else to a human being with a stamp.",
+   "first": "Students and people who have just moved to Berlin, who have no idea where Spandau is and would like to keep it that way.",
+   "reply": "They'll say a machine can't be trusted with something so important. They said the same about cash machines."
+  }
+ },
+ "words": [
+  "disruptive",
+  "incumbent",
+  "business model",
+  "early adopters",
+  "good enough"
+ ],
+ "yours": {
+  "label": "Your start-up",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to pitch your start-up to the class in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which start-up wins?",
+  "noun": "start-up",
+  "placeholder": "The start-up, e.g. Amtomat",
+  "lead": "Each student pitches their start-up in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

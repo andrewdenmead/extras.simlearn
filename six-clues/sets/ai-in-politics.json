@@ -1,0 +1,108 @@
+{
+ "name": "Guess the Machine",
+ "what": "machine",
+ "whats": "machines",
+ "doc": "Spec sheet",
+ "facets": [
+  "Personality",
+  "Where and when",
+  "Who’s behind it",
+  "Claim to fame",
+  "Famous moment",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Deep Blue",
+   "aliases": [
+    "deepblue",
+    "ibm deep blue"
+   ],
+   "clues": [
+    "Brilliant at one thing and useless at everything else. It never got tired, nervous or bored.",
+    "New York, May 1997. It had lost its first match, in Philadelphia, the year before.",
+    "A team at a huge American computer company, and a very large black cabinet.",
+    "The first computer to beat a reigning world chess champion in a match under normal tournament conditions.",
+    "Its opponent, Garry Kasparov, suspected the team of cheating and wanted a rematch. He never got one.",
+    "Its maker’s nickname is ‘Big Blue’, and the first word of its name is the opposite of ‘shallow’."
+   ]
+  },
+  {
+   "name": "AlphaGo",
+   "aliases": [
+    "alpha go"
+   ],
+   "clues": [
+    "Calm, patient and sometimes so strange that the experts watching thought it had made a mistake.",
+    "Seoul, March 2016.",
+    "An AI lab in London that Google bought in 2014.",
+    "It beat Lee Sedol, one of the best players in the world, by four games to one at an ancient board game with black and white stones.",
+    "Its 37th move in the second game was so unusual that commentators were sure it was a blunder. It wasn’t.",
+    "The first letter of the Greek alphabet, plus the name of the game it plays."
+   ]
+  },
+  {
+   "name": "ChatGPT",
+   "aliases": [
+    "chat gpt",
+    "gpt"
+   ],
+   "clues": [
+    "Polite, confident and always happy to help, even when it is completely wrong.",
+    "San Francisco, 30 November 2022.",
+    "A company that started life in 2015 as a non-profit research lab.",
+    "According to one estimate, it reached 100 million users about two months after it launched.",
+    "Within weeks, universities all over the world were rewriting their rules on essays. Your lecturers have opinions about it.",
+    "‘Chat’, plus the initials of ‘Generative Pre-trained Transformer’."
+   ]
+  },
+  {
+   "name": "HAL 9000",
+   "aliases": [
+    "hal",
+    "hal9000",
+    "hal-9000"
+   ],
+   "clues": [
+    "Very calm, very polite, and absolutely not going to open the door.",
+    "A spaceship on its way to Jupiter, in a film from 1968.",
+    "The director Stanley Kubrick and the science-fiction writer Arthur C. Clarke.",
+    "It appears on screen as a single glowing red eye. It can also read lips.",
+    "Its most famous line: “I’m sorry, Dave. I’m afraid I can’t do that.”",
+    "Move each letter of its name one step along the alphabet and you get a famous computer company. Clarke always said that was an accident."
+   ]
+  },
+  {
+   "name": "Siri",
+   "aliases": [
+    "hey siri",
+    "apple siri"
+   ],
+   "clues": [
+    "Always listening out for its name, and still regularly misunderstands what you say next.",
+    "Cupertino, California, October 2011, on a brand-new phone.",
+    "It started as an independent app, which a big tech company bought in 2010.",
+    "Ask it to set a timer and it will. Ask it the meaning of life and it tries to make a joke.",
+    "Its first American voice was Susan Bennett, who had recorded the sounds in 2005 without knowing what they would be used for.",
+    "A Scandinavian first name, chosen by a Norwegian co-founder. You wake it up with “Hey …”."
+   ]
+  },
+  {
+   "name": "R2-D2",
+   "aliases": [
+    "r2d2",
+    "r2 d2",
+    "artoo",
+    "r2"
+   ],
+   "clues": [
+    "Brave, loyal and stubborn, and it never says a single word you can understand.",
+    "A galaxy far, far away, first seen in cinemas in 1977.",
+    "George Lucas. Inside, for many years, was the British actor Kenny Baker, who was 1.12 metres tall.",
+    "A small blue-and-white barrel on wheels that beeps, whistles and gets into trouble.",
+    "It carries a secret message from a princess: “Help me, Obi-Wan Kenobi. You’re my only hope.”",
+    "Its name is two letters and two numbers, and its best friend is a nervous golden robot."
+   ]
+  }
+ ]
+}

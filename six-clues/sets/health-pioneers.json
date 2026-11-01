@@ -1,0 +1,117 @@
+{
+ "name": "Guess the Health Pioneer",
+ "what": "health pioneer",
+ "whats": "health pioneers",
+ "doc": "Staff file",
+ "facets": [
+  "Early life",
+  "On the move",
+  "The work",
+  "A famous moment",
+  "How we remember them",
+  "Last chance"
+ ],
+ "items": [
+  {
+   "name": "Florence Nightingale",
+   "aliases": [
+    "Nightingale",
+    "Florence Nightingdale",
+    "The Lady with the Lamp"
+   ],
+   "clues": [
+    "Born in 1820 into a rich British family who did not think hospital work was a suitable job for a young woman like her.",
+    "In 1854 she took a team of nurses to a British army hospital in what is now Istanbul.",
+    "She was also a brilliant statistician, and used colourful diagrams to show that more soldiers were dying from disease than from their wounds.",
+    "Newspapers described her walking round the wards at night, checking on the soldiers.",
+    "International Nurses Day is held every year on her birthday, 12 May.",
+    "She was named after the Italian city where she was born, and her surname is a small bird that sings at night."
+   ]
+  },
+  {
+   "name": "Alexander Fleming",
+   "aliases": [
+    "Fleming",
+    "Sir Alexander Fleming",
+    "Alexander Flemming"
+   ],
+   "clues": [
+    "Born in 1881 on a farm in Ayrshire, in south-west Scotland.",
+    "As a teenager he moved to London, and later trained as a doctor at St Mary's Hospital.",
+    "In the First World War he worked in army hospitals in France, studying infected wounds.",
+    "In 1928 he came back from holiday to find mould growing on one of his dishes of bacteria, and the bacteria around it had died.",
+    "In 1945 he shared the Nobel Prize with two Oxford scientists who turned his discovery into a medicine that could save lives.",
+    "He discovered penicillin, the world's most famous antibiotic."
+   ]
+  },
+  {
+   "name": "Marie Curie",
+   "aliases": [
+    "Curie",
+    "Madame Curie",
+    "Marie Sklodowska-Curie",
+    "Maria Sklodowska",
+    "Marie Skłodowska-Curie"
+   ],
+   "clues": [
+    "Born in Warsaw in 1867, at a time when women were not allowed to study at the city's university.",
+    "She moved to Paris in 1891 to study physics and maths, and stayed in France for the rest of her life.",
+    "With her husband she studied a strange energy coming from certain rocks, and together they discovered two new chemical elements.",
+    "During the First World War she set up mobile X-ray vans so that army doctors could find bullets and shrapnel in wounded soldiers.",
+    "She was the first woman to win a Nobel Prize, and she is still the only person to have won it in two different sciences.",
+    "She named one of her elements, polonium, after the country she came from."
+   ]
+  },
+  {
+   "name": "Uğur Şahin",
+   "aliases": [
+    "Ugur Sahin",
+    "Sahin",
+    "Şahin",
+    "Ugur Şahin",
+    "Uğur Sahin"
+   ],
+   "clues": [
+    "Born in 1965 in İskenderun, a port city in southern Turkey.",
+    "When he was four, he moved to Cologne, where his father worked at the Ford factory.",
+    "He studied medicine at the University of Cologne and became a cancer researcher.",
+    "In 2008 he founded a company in Mainz with his wife, the doctor Özlem Türeci, and the cancer researcher Christoph Huber.",
+    "In 2020 his company developed one of the first COVID-19 vaccines, together with a large American partner.",
+    "He is the chief executive of BioNTech."
+   ]
+  },
+  {
+   "name": "Albert Schweitzer",
+   "aliases": [
+    "Schweitzer",
+    "Albert Schweizer",
+    "Schweizer",
+    "Dr Schweitzer"
+   ],
+   "clues": [
+    "Born in 1875 in a small town in Alsace, which was part of the German Empire at the time.",
+    "Before medicine he already had doctorates in theology and philosophy, and was a well-known organist.",
+    "At the age of 30 he went back to university to study medicine, because he wanted to work as a doctor in Africa.",
+    "In 1913 he and his wife set up a hospital in what is now Gabon. In the First World War the French sent them to prison camps in France as German citizens.",
+    "He won the Nobel Peace Prize in 1952, and many schools in Germany are named after him.",
+    "His hospital in Lambaréné still exists, and his surname sounds almost exactly like the German word for a Swiss person."
+   ]
+  },
+  {
+   "name": "Sigmund Freud",
+   "aliases": [
+    "Freud",
+    "Sigmund Freund",
+    "Siegmund Freud"
+   ],
+   "clues": [
+    "Born in 1856 in a small town in Moravia, now in the Czech Republic. His family moved to Vienna when he was a small child.",
+    "He trained as a doctor of the nervous system in Vienna and worked there for almost his whole career.",
+    "He treated patients by letting them talk about whatever came into their heads, and paid special attention to their dreams.",
+    "In 1938, aged 82, he left Austria with his family and moved to London, where he died the following year.",
+    "His last home, in north London, is now a museum, and you can see the famous couch his patients lay on.",
+    "A ______ian slip is when you say the wrong word and accidentally reveal what you were really thinking."
+   ]
+  }
+ ]
+}

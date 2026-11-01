@@ -1,0 +1,118 @@
+{
+ "name": "Delivered!",
+ "pick": {
+  "label": "Pick a delivery",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something and deliver it, whatever it takes",
+  "lead": [
+   "Every delivery is a tiny supply chain: something has to get from A to B, on time and in one piece, while the bridge is closed and the S-Bahn isn’t running.",
+   "Choose something to deliver and invent the service that gets it there. Here are some ideas, but you can choose your own. *The more awkward the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a real business plan here, this is just for a bit of fun. Some of these services already exist in Berlin, and some really shouldn’t."
+ },
+ "shelf": [
+  {
+   "head": "Food and drink",
+   "items": [
+    "A Döner at 3 a.m.",
+    "Bubble tea",
+    "Breakfast for a whole WG",
+    "Fresh bread rolls on a Sunday",
+    "A birthday cake"
+   ]
+  },
+  {
+   "head": "Big and awkward",
+   "items": [
+    "A sofa up five flights of stairs",
+    "A Christmas tree",
+    "A piano",
+    "A bathtub",
+    "A fridge"
+   ]
+  },
+  {
+   "head": "Emergencies",
+   "items": [
+    "A phone charger at a festival",
+    "An umbrella in a sudden storm",
+    "Your forgotten keys",
+    "A tie for a job interview",
+    "The concert tickets you left at home"
+   ]
+  },
+  {
+   "head": "Slightly mad",
+   "items": [
+    "A live DJ for your party",
+    "A goat to mow your lawn",
+    "Snow for your garden",
+    "A choir to sing at your door"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "thing",
+   "I deliver:",
+   "What are you delivering?"
+  ],
+  [
+   "name",
+   "My service is called:",
+   "Something short and catchy that people will remember."
+  ],
+  [
+   "how",
+   "How it gets there:",
+   "Cargo bike, drone, a boat on the Spree, a very fit student…?"
+  ],
+  [
+   "promise",
+   "My promise to customers:",
+   "How fast? What’s guaranteed? What happens if you’re late?"
+  ],
+  [
+   "planb",
+   "Plan B:",
+   "The road’s closed, the driver’s ill, it’s raining sideways. What now?"
+  ],
+  [
+   "promote",
+   "I would promote it by:",
+   "Who do you get to talk about it, and where?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "thing": "A sofa up five flights of stairs",
+   "name": "Sofa So Good",
+   "how": "Two very strong philosophy students and a cargo bike with a trailer. They discuss Nietzsche on the way up the stairs, which takes their minds off the pain.",
+   "promise": "Your sofa arrives within 48 hours, with no new scratches on the stairwell. If it’s late, you get the sofa for free. (This is why we will go bankrupt.)",
+   "planb": "If the stairwell is too narrow, the sofa goes up the outside of the building on ropes, and the whole street comes out to watch.",
+   "promote": "Filming every delivery for TikTok. A sofa stuck on a staircase is the most relatable content on the internet."
+  }
+ },
+ "words": [
+  "lead time",
+  "bottleneck",
+  "backup supplier",
+  "logistics",
+  "on-time delivery"
+ ],
+ "yours": {
+  "label": "Your delivery service",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your delivery service in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which delivery service wins?",
+  "noun": "service",
+  "placeholder": "The service, e.g. Sofa So Good",
+  "lead": "Each student tells us about their delivery service in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

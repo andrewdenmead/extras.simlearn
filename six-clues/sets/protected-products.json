@@ -1,0 +1,112 @@
+{
+ "name": "Guess the Product",
+ "what": "product",
+ "whats": "products",
+ "doc": "Certificate of origin",
+ "facets": [
+  "Taste or feel",
+  "Where it comes from",
+  "The rules",
+  "A row about it",
+  "A strange fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Champagne",
+   "aliases": [
+    "champaign",
+    "champagner",
+    "shampagne"
+   ],
+   "clues": [
+    "Fizzy, expensive and usually opened when somebody has something to celebrate.",
+    "A region in north-eastern France, around the cities of Reims and Épernay.",
+    "Only wine from that region, made with a second fermentation inside the bottle, may use the name.",
+    "In 2021 Russia passed a law saying only Russian producers could use the Russian word for it. French bottles had to say “sparkling wine” instead.",
+    "Its bottles are so thick because the pressure inside is about three times that of a car tyre.",
+    "It has the same name as the region. A German version would be called Sekt."
+   ]
+  },
+  {
+   "name": "Parmigiano Reggiano",
+   "aliases": [
+    "parmesan",
+    "parmigiano",
+    "parmesan cheese",
+    "parmigiano-reggiano",
+    "parmesano"
+   ],
+   "clues": [
+    "Hard, salty and crumbly, and usually grated over pasta.",
+    "A few provinces of northern Italy, including Parma and Reggio Emilia.",
+    "It must be aged for at least twelve months, and each wheel weighs about 40 kilos.",
+    "In 2008 the EU’s highest court ruled that its well-known shorter name brings the real thing to mind, so imitations in Europe can’t use it.",
+    "An Italian bank accepts the wheels as security for loans and keeps them in its own warehouses while they age.",
+    "In English and German it is usually just called Parmesan."
+   ]
+  },
+  {
+   "name": "Feta",
+   "aliases": [
+    "feta cheese",
+    "fetta"
+   ],
+   "clues": [
+    "White, salty and crumbly. It often sits on top of a salad with olives and tomatoes.",
+    "Greece, and only Greece.",
+    "It must be made from sheep’s milk, with up to 30 per cent goat’s milk allowed.",
+    "Germany and Denmark went to the EU’s highest court to go on using the name. In 2005 they lost.",
+    "In 2022 the same court ruled that Denmark had broken EU law by letting its dairies sell their own version outside the EU under that name.",
+    "A four-letter cheese. A Greek salad isn’t a Greek salad without it."
+   ]
+  },
+  {
+   "name": "Tequila",
+   "aliases": [
+    "tequilla",
+    "tekila"
+   ],
+   "clues": [
+    "Strong, clear or golden, and often drunk in one go with salt and a slice of lime.",
+    "Mexico, mostly the state of Jalisco.",
+    "It must be made from a single plant, the blue agave.",
+    "The fields of spiky blue plants around the town it is named after are a UNESCO World Heritage Site.",
+    "Despite the legend, you won’t find a worm in the bottle. That was a marketing trick for a related drink.",
+    "It shares its name with a town near Guadalajara, and with a 1958 hit song in which the band only ever shout this one word."
+   ]
+  },
+  {
+   "name": "Prosecco",
+   "aliases": [
+    "proseco",
+    "prosseco",
+    "prosecco wine"
+   ],
+   "clues": [
+    "Light, fizzy and cheap enough for a Tuesday. The British drink enormous amounts of it.",
+    "North-eastern Italy, in the hills between Venice and the Alps.",
+    "In 2009, to protect the name, the grape it is made from was officially renamed Glera.",
+    "Since 2021 Italy has fought Croatia’s request to protect the name of a sweet Croatian dessert wine that sounds almost the same.",
+    "It takes its name from a village above Trieste, near the Slovenian border.",
+    "Italy’s best-known sparkling wine, and the fizz in an Aperol Spritz."
+   ]
+  },
+  {
+   "name": "Harris Tweed",
+   "aliases": [
+    "harris",
+    "tweed",
+    "harris tweed cloth"
+   ],
+   "clues": [
+    "Warm, rough and hard-wearing. Your grandfather’s best jacket might be made of it.",
+    "The Outer Hebrides, the islands off the north-west coast of Scotland.",
+    "By law it must be woven by hand, in the islanders’ own homes, from pure new wool that was dyed and spun on the islands.",
+    "It is protected by its own Act of Parliament, passed in 1993.",
+    "Its orb logo was first registered in 1909, which makes it the oldest British certification mark.",
+    "A woollen cloth named after the island of Harris."
+   ]
+  }
+ ]
+}

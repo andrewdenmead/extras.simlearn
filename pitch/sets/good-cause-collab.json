@@ -1,0 +1,119 @@
+{
+ "name": "The Good Cause Collab!",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and give it a good cause",
+  "lead": [
+   "These days every brand wants to save the planet, or at least be seen trying. Some of them mean it. Some of them have a marketing department with a lot of free time.",
+   "Choose a brand that could do with a bit of good publicity and team it up with a good cause. Here are some ideas, but you can choose your own. *The less obvious the match, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a real sustainability strategy here, this is just for a bit of fun. Some ideas will actually help, and some only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Cheap and cheerful",
+   "items": [
+    "Ryanair",
+    "McDonald’s",
+    "Primark",
+    "Lidl",
+    "Burger King"
+   ]
+  },
+  {
+   "head": "Tech",
+   "items": [
+    "Amazon",
+    "TikTok",
+    "Apple",
+    "Netflix",
+    "Uber"
+   ]
+  },
+  {
+   "head": "Very German",
+   "items": [
+    "BVG",
+    "Deutsche Bahn",
+    "Lufthansa",
+    "dm",
+    "Haribo"
+   ]
+  },
+  {
+   "head": "Treats",
+   "items": [
+    "Nutella",
+    "Coca-Cola",
+    "Pringles",
+    "Monster Energy",
+    "Kinder"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My brand is:",
+   "Which brand needs a good cause?"
+  ],
+  [
+   "cause",
+   "Its new good cause:",
+   "Trees, oceans, food waste, a local dog shelter, something nobody has thought of…"
+  ],
+  [
+   "idea",
+   "The big idea:",
+   "A product, a campaign, a promise? What exactly does the brand do?"
+  ],
+  [
+   "believe",
+   "Why people would believe it:",
+   "Why isn’t this just a nice advert?"
+  ],
+  [
+   "critics",
+   "What the critics will say:",
+   "Who rolls their eyes, and what do they post?"
+  ],
+  [
+   "proof",
+   "How we’ll know it did some good:",
+   "What number or result would you show people in a year?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "BVG",
+   "cause": "Cleaner air in Berlin.",
+   "idea": "For every minute a U-Bahn is late, BVG plants a tree. By March, Berlin is a forest and the U8 is a nature trail.",
+   "believe": "Nobody doubts that the trains will be late. For once, this is a promise BVG can definitely keep.",
+   "critics": "People who say it would be better to just make the trains run on time. Rude, but fair.",
+   "proof": "The number of trees planted, which is also, very conveniently, a live delay tracker."
+  }
+ },
+ "words": [
+  "corporate social responsibility",
+  "greenwashing",
+  "credibility",
+  "transparency",
+  "stakeholders"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your good cause in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which good cause wins?",
+  "noun": "good cause",
+  "placeholder": "The idea, e.g. BVG plants a tree for every late train",
+  "lead": "Each student tells us about their good cause collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

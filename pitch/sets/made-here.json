@@ -1,0 +1,110 @@
+{
+ "name": "Made Here!",
+ "pick": {
+  "label": "Pick a product",
+  "eyebrow": "Up to you!",
+  "heading": "Pick an import and make it at home",
+  "lead": [
+   "Almost everything we use every day travels a long way to reach us: bananas from Ecuador, trainers from Vietnam, phones from China. Plenty of politicians would love to bring the making back home.",
+   "Choose something Germany hardly ever makes and start making it here, as close to Berlin as you can manage. Here are some ideas, but you can choose your own. *Bonus points for anything grown in Brandenburg in February.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious business plan. Some of these could almost work, and some would need a greenhouse the size of Tempelhof. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Food and drink",
+   "items": [
+    "Bananas",
+    "Coffee",
+    "Avocados",
+    "Cocoa",
+    "Rice",
+    "Olive oil"
+   ]
+  },
+  {
+   "head": "In your wardrobe",
+   "items": [
+    "Trainers",
+    "Jeans",
+    "Flip-flops",
+    "Silk scarves",
+    "Puffer jackets"
+   ]
+  },
+  {
+   "head": "On your desk",
+   "items": [
+    "Phone chargers",
+    "Pencils",
+    "Headphones",
+    "Fairy lights",
+    "Rubber ducks"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "product",
+   "My product is:",
+   "What are you going to start making at home?"
+  ],
+  [
+   "now",
+   "Where it comes from now:",
+   "Guess if you don’t know. Which country, how far, and by ship, plane or lorry?"
+  ],
+  [
+   "how",
+   "How we’d make it here:",
+   "Where, with what, and who does the work? A factory, a greenhouse, a garage in Neukölln…"
+  ],
+  [
+   "price",
+   "The price, compared with the import:",
+   "Twice as much? Ten times? Be honest."
+  ],
+  [
+   "buyers",
+   "Who would pay that:",
+   "Who buys it anyway, and why? Pride, quality, the planet, showing off?"
+  ],
+  [
+   "label",
+   "What it says on the label:",
+   "The name, the slogan, the little flag…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "product": "Bananas",
+   "now": "Mostly Ecuador and Colombia, about 10,000 kilometres away, on refrigerated ships. They’re picked green and ripened in special rooms when they get here, which I only found out last week.",
+   "how": "Tempelhof Bananas: a giant heated greenhouse in one of the old hangars at Tempelhof, warmed by the waste heat from a data centre next door. The pickers get free banana bread.",
+   "price": "About four euros a banana. Possibly five in winter.",
+   "buyers": "People in Prenzlauer Berg who already pay six euros for a flat white, and restaurants that want to write “Berlin bananas” on the menu.",
+   "label": "A banana in a little Berlin bear costume. The slogan: “Krumm, aber von hier.” (Bent, but from round here.)"
+  }
+ },
+ "words": [
+  "supply chain",
+  "self-sufficient",
+  "locally sourced",
+  "price premium",
+  "competitive"
+ ],
+ "yours": {
+  "label": "Your product",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your product in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which product wins?",
+  "noun": "product",
+  "placeholder": "The product, e.g. Tempelhof Bananas",
+  "lead": "Each student tells us about their product in a few sentences. Add it, then argue it into place: the one you would actually buy at the top, the one only a government minister would buy at the bottom."
+ }
+}

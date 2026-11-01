@@ -1,0 +1,115 @@
+{
+ "name": "Guess the Celebrity Brand",
+ "what": "brand",
+ "whats": "brands",
+ "doc": "Press kit",
+ "facets": [
+  "Launched",
+  "The idea",
+  "The big moment",
+  "The products",
+  "The star",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Feastables",
+   "aliases": [
+    "feastable",
+    "mrbeast feastables",
+    "feastables chocolate"
+   ],
+   "clues": [
+    "January 2022.",
+    "A snack brand from the most-subscribed YouTuber in the world.",
+    "He hid golden tickets in the bars, like in “Charlie and the Chocolate Factory”, and the winners competed in a video for a Wonka-style chocolate factory.",
+    "Chocolate bars at first, later cookies and gummy sweets, now in big supermarkets, including in Germany.",
+    "Jimmy Donaldson, from North Carolina, famous for enormous challenges and giving away money.",
+    "A big celebration meal, turned into a word for things you can eat with “-ables” at the end."
+   ]
+  },
+  {
+   "name": "Air Jordan",
+   "aliases": [
+    "jordan",
+    "jordans",
+    "nike air jordan",
+    "jordan brand",
+    "air jordans"
+   ],
+   "clues": [
+    "1985, in the United States.",
+    "A sports company bet a huge amount of money on a rookie basketball player and gave him his own shoe.",
+    "The story of how the deal happened became a 2023 film starring Matt Damon and Ben Affleck.",
+    "Mostly trainers, re-released again and again in new colours. Collectors know them by numbers, like the 1, the 4 or the 11, and by a logo of a player flying towards the basket.",
+    "He won six titles with the Chicago Bulls in the 1990s.",
+    "The name of the sports company's cushioning technology, plus the player's surname."
+   ]
+  },
+  {
+   "name": "Prime",
+   "aliases": [
+    "prime hydration",
+    "prime energy",
+    "prime drink"
+   ],
+   "clues": [
+    "January 2022.",
+    "A drink from two YouTubers who used to be rivals and once fought each other in a boxing ring.",
+    "In December 2022, British teenagers queued and pushed to get bottles when a supermarket chain started selling it, and some shops resold it for many times the price.",
+    "Sports drinks and energy drinks in very colourful bottles and cans.",
+    "An American wrestler and podcaster, and a British rapper who started out making football video game videos.",
+    "A word meaning “the best possible time or condition”, as in “in the ___ of life”."
+   ]
+  },
+  {
+   "name": "Rhode",
+   "aliases": [
+    "rhode skin",
+    "rhode beauty",
+    "rode",
+    "rhodes"
+   ],
+   "clues": [
+    "June 2022, sold only on its own website at first.",
+    "Just three products at the start: a lip treatment, a “glazing” serum and a cream.",
+    "In 2025 the beauty company e.l.f. agreed to buy it for up to $1 billion, about three years after it launched.",
+    "Skincare and make-up in calm, pale packaging, for the shiny look its founder called “glazed donut skin”.",
+    "A model who is married to a Canadian pop star.",
+    "Her middle name, which is also the name of a Greek island without its last letter."
+   ]
+  },
+  {
+   "name": "Haus Labs",
+   "aliases": [
+    "haus laboratories",
+    "haus labs by lady gaga",
+    "haus lab",
+    "house labs"
+   ],
+   "clues": [
+    "September 2019.",
+    "A make-up line that was sold only on Amazon at first.",
+    "In 2022 it relaunched with new “clean” formulas, and made its name a little shorter.",
+    "Lip glosses, eyeliners, and a foundation that launched with 51 shades.",
+    "A singer and actress who won an Oscar for a song from “A Star Is Born”.",
+    "The German word for “house”, plus a short word for laboratories."
+   ]
+  },
+  {
+   "name": "Aviation Gin",
+   "aliases": [
+    "aviation",
+    "aviation american gin"
+   ],
+   "clues": [
+    "Portland, Oregon, 2006.",
+    "A small craft distillery's drink. A Hollywood star bought a share of it in 2018.",
+    "In 2020 the drinks giant Diageo agreed to buy it for up to $610 million.",
+    "Gin, sold with short, silly adverts starring its famous owner.",
+    "The actor who plays Deadpool and co-owns Wrexham football club.",
+    "The word for flying planes, which is also the name of a classic gin cocktail, plus the drink itself."
+   ]
+  }
+ ]
+}

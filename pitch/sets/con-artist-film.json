@@ -1,0 +1,119 @@
+{
+ "name": "The Big Con",
+ "pick": {
+  "label": "Pick a fake",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something to fake and pitch the film",
+  "lead": [
+   "Everybody loves a con artist film: the charming liar, the clever plan, the people with lots of money and little sense who fall for it, and the twist at the end.",
+   "A film studio wants the next one, and you're pitching it. Pick something your con artist is going to fake. Here are some ideas, but you can choose your own. *Nobody real gets hurt: it's only a film.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I'm not looking for a real criminal plan here (please don't), this is just for a bit of fun. The sillier the con, the better the film."
+ },
+ "shelf": [
+  {
+   "head": "Art and history",
+   "items": [
+    "A Banksy",
+    "A lost Picasso",
+    "A Roman coin",
+    "A dinosaur bone",
+    "A royal title"
+   ]
+  },
+  {
+   "head": "Paperwork",
+   "items": [
+    "A Harvard degree",
+    "A doctor's certificate",
+    "A winning lottery ticket",
+    "A passport for a country that doesn't exist",
+    "A Michelin star"
+   ]
+  },
+  {
+   "head": "Luxury",
+   "items": [
+    "A Rolex",
+    "A Birkin bag",
+    "A bottle of 100-year-old whisky",
+    "A Formula 1 car",
+    "A private island"
+   ]
+  },
+  {
+   "head": "Status",
+   "items": [
+    "A blue tick",
+    "A Champions League final ticket",
+    "A celebrity friendship",
+    "A start-up worth a billion",
+    "A guest list at Berghain"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "fake",
+   "They're faking:",
+   "What did you pick from the shelf?"
+  ],
+  [
+   "title",
+   "The film is called:",
+   "Something that looks good on a poster."
+  ],
+  [
+   "hero",
+   "Our con artist is:",
+   "A name, a job, one strange habit. Charming, obviously."
+  ],
+  [
+   "plan",
+   "The plan:",
+   "How does the con work? Two or three steps."
+  ],
+  [
+   "twist",
+   "The twist:",
+   "Every con film has one. Who is really fooling whom?"
+  ],
+  [
+   "starring",
+   "Starring:",
+   "Who plays the lead, and who plays the accomplice?"
+  ]
+ ],
+ "example": {
+  "heading": "Here's one I made earlier",
+  "values": {
+   "fake": "A Michelin star",
+   "title": "Three Stars and a Spatula",
+   "hero": "Gregor, 41, runs a Currywurst stand by Warschauer Straße and is deeply offended that no food critic has ever written about it. Always wears a chef's hat, even on the U-Bahn.",
+   "plan": "He has a very convincing plaque made, puts a secret tasting menu online at €290 a head (it's Currywurst with gold leaf on top), and pays his cousin to pretend to be a French food critic. Within a week, half of Mitte is queueing.",
+   "twist": "The 'French critic' turns out to be a real restaurant inspector who genuinely loves the Currywurst. Nobody is sure whether that counts as a happy ending.",
+   "starring": "Lars Eidinger as Gregor, Sandra Hüller as the cousin. The role of the Currywurst is still being cast."
+  }
+ },
+ "words": [
+  "forgery",
+  "accomplice",
+  "too good to be true",
+  "cover story",
+  "red flag"
+ ],
+ "yours": {
+  "label": "Your film",
+  "heading": "Your pitch",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to pitch your film to the class in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which film gets made?",
+  "noun": "film",
+  "placeholder": "The film, e.g. Three Stars and a Spatula",
+  "lead": "Each student pitches their film in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

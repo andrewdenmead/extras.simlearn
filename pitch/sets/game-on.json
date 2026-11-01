@@ -1,0 +1,109 @@
+{
+ "name": "Game On!",
+ "pick": {
+  "eyebrow": "Up to you!",
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "label": "Pick something dull",
+  "heading": "Pick something dull and turn it into a video game",
+  "lead": [
+   "People will happily spend 200 hours in a game farming pretend vegetables, driving a pretend lorry across Europe or running a pretend hospital. Ask them to do the real thing for ten minutes and they suddenly have a headache.",
+   "Choose a boring job, chore or everyday task and turn it into a game nobody can put down. Here are some ideas, but you can choose your own. Some of these games *already exist*. Yours will be better."
+  ],
+  "note": "I don’t need a business plan or a single line of code. Some ideas will sound like a hit and some will sound like a punishment. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Chores",
+   "items": [
+    "Ironing",
+    "Doing the washing-up",
+    "Filling in your tax return",
+    "Sorting the recycling",
+    "Assembling flat-pack furniture"
+   ]
+  },
+  {
+   "head": "Jobs",
+   "items": [
+    "Bin collector",
+    "Traffic warden",
+    "Lifeguard",
+    "Tax adviser",
+    "Lollipop lady"
+   ]
+  },
+  {
+   "head": "Everyday Berlin",
+   "items": [
+    "Finding a flat",
+    "Catching the last U-Bahn",
+    "Getting a table for brunch",
+    "Finding an e-scooter that works",
+    "Getting into a club"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "dull",
+   "My dull thing is:",
+   "Which boring task are you turning into a game?"
+  ],
+  [
+   "goal",
+   "How you win:",
+   "What’s the goal? Points, levels, a final boss, a high score?"
+  ],
+  [
+   "hook",
+   "What keeps you playing:",
+   "Rewards, rankings, a story, other players, the fear of losing your streak…"
+  ],
+  [
+   "who",
+   "It’s for (first):",
+   "Who plays it first? People who do it for real, people who never would, someone else?"
+  ],
+  [
+   "twist",
+   "The twist:",
+   "What makes it more than just doing the chore on a screen?"
+  ],
+  [
+   "promote",
+   "I would launch it by:",
+   "Which streamer, event or place gets everyone talking?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "dull": "Assembling flat-pack furniture",
+   "goal": "Wardrobe Wars: build a wardrobe before your flatmate gets home. You win if it stands up, the doors close and there are no screws left over. There are always screws left over.",
+   "hook": "A world leaderboard for every product. Somewhere in Sweden, someone has built a bookcase in four minutes, and you won’t rest until you’ve beaten them.",
+   "who": "Anyone who has ever moved flat in Berlin, which is everyone, and couples who want to know whether they’ll really last.",
+   "twist": "It’s two-player, and each of you only gets half of the instructions, so you have to talk to each other. That’s the final boss.",
+   "promote": "A live tournament in a big furniture store in Lichtenberg, streamed on Twitch, with a free hot dog for every finished bookcase."
+  }
+ },
+ "words": [
+  "gamification",
+  "reward",
+  "leaderboard",
+  "simulator",
+  "engagement"
+ ],
+ "yours": {
+  "label": "Your game",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your game in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which game wins?",
+  "noun": "game",
+  "placeholder": "The game, e.g. Wardrobe Wars",
+  "lead": "Each student tells us about their game in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

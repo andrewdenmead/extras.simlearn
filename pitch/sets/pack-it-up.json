@@ -1,0 +1,109 @@
+{
+ "name": "Pack It Up!",
+ "pick": {
+  "label": "Pick a product",
+  "eyebrow": "Up to you!",
+  "heading": "Pick something ordinary and give it a pack nobody needs",
+  "lead": [
+   "Supermarkets are full of things wrapped in more packaging than they could ever need. Somewhere, someone designed every one of those boxes, and was probably very proud of it.",
+   "Choose something that usually comes with no packaging at all, or that can’t really be packed, and design the most over-the-top pack you can. *Make it feel expensive.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is not a real packaging brief, it’s just for a bit of fun. Nobody is checking your costs or your recycling plan today. Next week, maybe."
+ },
+ "shelf": [
+  {
+   "head": "Fruit and veg",
+   "items": [
+    "A single potato",
+    "A lemon",
+    "An onion",
+    "A carrot",
+    "A banana"
+   ]
+  },
+  {
+   "head": "Things you can’t usually buy",
+   "items": [
+    "Berlin air",
+    "Silence",
+    "Snow",
+    "A sunset",
+    "Good luck"
+   ]
+  },
+  {
+   "head": "Student life",
+   "items": [
+    "Instant noodles",
+    "One sock",
+    "Tap water",
+    "A pencil",
+    "Leftover pizza"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "product",
+   "My product is:",
+   "What are you packing?"
+  ],
+  [
+   "name",
+   "The name on the pack:",
+   "Something fancy, something funny, or something very simple."
+  ],
+  [
+   "material",
+   "It’s made from:",
+   "Glass, cardboard, wood, tin, paper, something nobody has ever used before…"
+  ],
+  [
+   "shape",
+   "Shape and opening:",
+   "What shape is it, and how do you open it? Is opening it a little event?"
+  ],
+  [
+   "look",
+   "The look:",
+   "Colours, typography, pictures, lots of text or almost none…"
+  ],
+  [
+   "claim",
+   "The line on the front:",
+   "One short sentence that makes people pick it up off the shelf."
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "product": "A single potato",
+   "name": "Knolle Reserve",
+   "material": "A little wooden box full of straw, closed with a red wax seal.",
+   "shape": "A perfect cube. You break the seal, lift the lid, and there it is, lying in the straw like the crown jewels.",
+   "look": "Matt black, one line of gold text and a tiny drawing of a field in Brandenburg. No photo. If you need to see the potato, it’s not for you.",
+   "claim": "Hand-picked in Brandenburg. One at a time. Slowly."
+  }
+ },
+ "words": [
+  "shelf appeal",
+  "eye-catching",
+  "premium",
+  "recyclable",
+  "label"
+ ],
+ "yours": {
+  "label": "Your pack",
+  "heading": "Your design",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your pack in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which pack wins?",
+  "noun": "pack",
+  "placeholder": "The pack, e.g. Knolle Reserve",
+  "lead": "Each student tells us about their pack in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

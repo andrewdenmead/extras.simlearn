@@ -1,0 +1,119 @@
+{
+ "name": "Vote for Me!",
+ "pick": {
+  "label": "Pick a cause",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a cause and start a party",
+  "lead": [
+   "German ballot papers can be very long. There is a party for animal welfare, and even one that exists mainly to make fun of all the others.",
+   "Choose a cause from the shelf, or bring your own, and build a whole party around it. *Nobody asked for it. That has never stopped anyone.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously I am not looking for a serious manifesto here, this is just for a bit of fun. Some of these parties would win a landslide in Friedrichshain and lose everywhere else. That’s fine."
+ },
+ "shelf": [
+  {
+   "head": "In your city",
+   "items": [
+    "Free U-Bahn on Sundays",
+    "A tram to the Baltic Sea",
+    "E-scooters off the pavements",
+    "A public sauna in every Kiez",
+    "Clubs open every night"
+   ]
+  },
+  {
+   "head": "On campus",
+   "items": [
+    "No exams before 10am",
+    "A nap room in every building",
+    "Free coffee in exam weeks",
+    "Pets allowed in lectures",
+    "Abolish group work"
+   ]
+  },
+  {
+   "head": "Everyday life",
+   "items": [
+    "Bakeries open all Sunday",
+    "A ban on ‘Reply all’",
+    "Free repairs for anything with a plug",
+    "A day off on your birthday",
+    "A four-day weekend once a month"
+   ]
+  },
+  {
+   "head": "Big ideas",
+   "items": [
+    "A minister for happiness",
+    "A tree in every street",
+    "Free pizza at every polling station",
+    "Dogs allowed in every shop",
+    "A national nap time"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "cause",
+   "My cause is:",
+   "Which promise from the shelf (or your own) is your party built on?"
+  ],
+  [
+   "party",
+   "My party is called:",
+   "Something people will remember on the ballot paper. Bonus points for a good abbreviation."
+  ],
+  [
+   "promise",
+   "My big promise is:",
+   "What exactly will you do, and how fast? Be specific: politicians never are."
+  ],
+  [
+   "voters",
+   "My voters are:",
+   "Who votes for you first? Students, night owls, dog owners, people who are just very tired?"
+  ],
+  [
+   "slogan",
+   "My slogan is:",
+   "Short enough for a poster on a lamp post."
+  ],
+  [
+   "campaign",
+   "I would win by:",
+   "How do you get people talking about you? A stunt, a celebrity, a song, a TV debate?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "cause": "Bakeries open all Sunday",
+   "party": "Brötchen First (BF)",
+   "promise": "Every Kiez gets a proper bakery within five minutes’ walk, open all day on Sundays, and the state pays for the ovens. On my first day I appoint a Minister for Breakfast.",
+   "voters": "Everyone who has ever stood outside a closed bakery on a Sunday morning, slightly hungover, holding a two-euro coin and no plan B.",
+   "slogan": "Rise up. Like dough.",
+   "campaign": "Handing out free warm Schrippen at every U-Bahn station on the Sunday before the election. My opponents will call it bribery. It is, but it’s delicious bribery."
+  }
+ },
+ "words": [
+  "manifesto",
+  "constituency",
+  "mandate",
+  "accountable",
+  "turnout"
+ ],
+ "yours": {
+  "label": "Your party",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your party in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which party wins the election?",
+  "noun": "party",
+  "placeholder": "The party, e.g. Brötchen First",
+  "lead": "Each student tells us about their party in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

@@ -1,0 +1,119 @@
+{
+ "name": "Open a Restaurant!",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and open its restaurant",
+  "lead": [
+   "Brands love to wander into new territory. Furniture shops sell meatballs, car makers run cafés, and toy companies open theme parks. Sometimes it works brilliantly. Sometimes it’s just weird.",
+   "Choose a famous brand that has nothing to do with food and open its first restaurant. Here are some ideas, but you can choose your own. *The worse the fit, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "This is just for a bit of fun, not a business plan. Some of these restaurants would be a hit, and some would be closed by Friday. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Tech",
+   "items": [
+    "Apple",
+    "Nintendo",
+    "Spotify",
+    "Samsung",
+    "Tesla"
+   ]
+  },
+  {
+   "head": "Fashion",
+   "items": [
+    "Adidas",
+    "Zara",
+    "Primark",
+    "Birkenstock",
+    "Crocs"
+   ]
+  },
+  {
+   "head": "Made in Germany",
+   "items": [
+    "Deutsche Bahn",
+    "BVG",
+    "Playmobil",
+    "Lufthansa",
+    "Tempo"
+   ]
+  },
+  {
+   "head": "Toys and games",
+   "items": [
+    "Lego",
+    "Monopoly",
+    "Barbie",
+    "Pokémon",
+    "Minecraft"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My brand is:",
+   "Which brand is opening a restaurant?"
+  ],
+  [
+   "name",
+   "The restaurant is called:",
+   "What’s on the sign outside?"
+  ],
+  [
+   "dish",
+   "The signature dish:",
+   "The one thing everybody orders. What is it, and what’s it called?"
+  ],
+  [
+   "look",
+   "Inside, it looks like:",
+   "The furniture, the music, the uniforms, the smell…"
+  ],
+  [
+   "who",
+   "It’s for:",
+   "Who goes there? Fans of the brand, people who have never heard of it, tourists, someone else?"
+  ],
+  [
+   "twist",
+   "The thing that makes it unmissable:",
+   "A gimmick, a rule, a mascot, something people will put on Instagram…"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "Deutsche Bahn",
+   "name": "Verspätung. Platform 1, Friedrichshain.",
+   "dish": "Currywurst, announced for 19:04, expected 19:27, and then served at a different table from the one it was announced for.",
+   "look": "Exactly like the restaurant car on an ICE, including the one table that is reserved all evening for nobody.",
+   "who": "Anybody who has ever stood on a platform in Hanover in the rain, which is most of Germany.",
+   "twist": "If your food is more than an hour late, you get 25 per cent of your money back, after filling in a form."
+  }
+ },
+ "words": [
+  "brand extension",
+  "flagship",
+  "franchise",
+  "loyalty programme",
+  "target customer"
+ ],
+ "yours": {
+  "label": "Your restaurant",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your restaurant in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which restaurant wins?",
+  "noun": "restaurant",
+  "placeholder": "The restaurant, e.g. Verspätung",
+  "lead": "Each student tells us about their restaurant in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

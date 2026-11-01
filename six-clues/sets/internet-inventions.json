@@ -1,0 +1,116 @@
+{
+ "name": "Guess the Invention",
+ "what": "invention",
+ "whats": "inventions",
+ "doc": "Museum label",
+ "facets": [
+  "The idea",
+  "Where it began",
+  "Who and when",
+  "How you know it",
+  "A strange fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "World Wide Web",
+   "aliases": [
+    "the web",
+    "www",
+    "the world wide web",
+    "worldwideweb",
+    "world-wide web"
+   ],
+   "clues": [
+    "It lets you jump from one document to another, anywhere in the world, with a single click.",
+    "A physics laboratory on the border between France and Switzerland, near Geneva.",
+    "A British computer scientist wrote a proposal for it in March 1989. His boss scribbled on it: “Vague but exciting”.",
+    "Its pages are written in HTML, sent with HTTP and found with a URL.",
+    "The very first server had a sticker on it: “This machine is a server. DO NOT POWER IT DOWN!!”",
+    "Three words that all start with W. People often confuse it with the internet itself."
+   ]
+  },
+  {
+   "name": "Emoji",
+   "aliases": [
+    "emojis",
+    "emojies"
+   ],
+   "clues": [
+    "It lets you show how you feel in a message without writing a single word.",
+    "A mobile phone company in Japan.",
+    "In 1999 a young designer drew a famous early set of 176 of them, each only 12 by 12 pixels.",
+    "Faces, hearts, food, weather, animals, an aubergine. Since 2010 they have been part of the same standard that computers use for letters.",
+    "That 1999 set is now in the Museum of Modern Art in New York. In 2015 Oxford Dictionaries named a later one, a face crying with laughter, its Word of the Year.",
+    "Japanese for “picture” plus “character”. Despite the sound, it has nothing to do with the English word “emotion”."
+   ]
+  },
+  {
+   "name": "Hashtag",
+   "aliases": [
+    "hash tag",
+    "hashtags",
+    "#"
+   ],
+   "clues": [
+    "It groups messages about the same topic, so that you can find them all at once.",
+    "A social network where every post was once limited to 140 characters.",
+    "A user suggested it in a short post in August 2007. The company reportedly told him that things like that were for nerds.",
+    "Activists, brands and TV shows all use it to start a campaign or a trend.",
+    "Americans call its symbol the pound sign. Its technical name is the octothorpe.",
+    "The symbol on your phone’s keypad, plus a word for a label: #likethis."
+   ]
+  },
+  {
+   "name": "QR code",
+   "aliases": [
+    "qr",
+    "qr-code",
+    "qrcode",
+    "qr codes",
+    "quick response code"
+   ],
+   "clues": [
+    "It stores information that a machine can read in a fraction of a second.",
+    "A Japanese company that makes car parts, part of the Toyota group.",
+    "An engineer designed it in 1994 to keep track of parts on the production line.",
+    "During the pandemic it appeared on every restaurant table, instead of a menu.",
+    "Its inventor got the idea while playing Go, the board game with black and white stones.",
+    "A square of black and white dots with three bigger squares in the corners. Two letters: Q and R."
+   ]
+  },
+  {
+   "name": "CAPTCHA",
+   "aliases": [
+    "captchas",
+    "recaptcha",
+    "re-captcha",
+    "capcha"
+   ],
+   "clues": [
+    "It decides whether you may go any further, millions of times a day, and most people find it mildly annoying.",
+    "A university in Pittsburgh, in the United States.",
+    "Four computer scientists gave it its name in 2003. One of them later founded Duolingo.",
+    "You copy some wobbly letters, or click every square with a traffic light or a bus in it.",
+    "One version made people read words from old scanned books and newspapers, so millions of users helped to digitise them without knowing.",
+    "An acronym that ends “…to tell Computers and Humans Apart”. It asks: are you a robot?"
+   ]
+  },
+  {
+   "name": "Bluetooth",
+   "aliases": [
+    "blue tooth",
+    "blutooth",
+    "bluetooth le"
+   ],
+   "clues": [
+    "It lets two devices talk to each other over a short distance without a cable.",
+    "Engineers at Ericsson, the Swedish telecoms company, in the 1990s.",
+    "In 1997 an engineer at Intel suggested a temporary code name for it after reading a novel about Vikings. The name stuck.",
+    "Wireless headphones, speakers, smartwatches and the car radio all use it.",
+    "Its logo combines two runes: the initials of a tenth-century king of Denmark and Norway.",
+    "It is named after that king’s nickname, which describes the colour of one of his teeth."
+   ]
+  }
+ ]
+}

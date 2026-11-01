@@ -1,0 +1,123 @@
+{
+ "name": "Guess the Study Aid",
+ "what": "study aid",
+ "whats": "study aids",
+ "doc": "Product file",
+ "facets": [
+  "What it does",
+  "Who uses it",
+  "Where it came from",
+  "How it works",
+  "A famous detail",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Pomodoro Technique",
+   "aliases": [
+    "Pomodoro",
+    "Pomodoro method",
+    "Tomato technique",
+    "Pomodoro timer"
+   ],
+   "clues": [
+    "It turns a mountain of work into small pieces, with breaks you’re actually allowed to enjoy.",
+    "Students, freelancers and professional procrastinators.",
+    "An Italian university student came up with it in the late 1980s.",
+    "Work for 25 minutes, take a five-minute break, and after four rounds take a longer one.",
+    "It’s named after the kitchen timer he used, which was shaped like a red fruit.",
+    "Italian for “tomato”, plus “technique”."
+   ]
+  },
+  {
+   "name": "Wikipedia",
+   "aliases": [
+    "Wiki",
+    "Wikipedia.org",
+    "Wikipedia encyclopedia"
+   ],
+   "clues": [
+    "It answers almost any question, and your teachers told you never to cite it.",
+    "Pretty much everyone. It’s one of the most visited websites in the world.",
+    "Two Americans launched it in January 2001.",
+    "Anyone can edit it. It’s run by a non-profit and funded by donations, which explains the banner asking you for money.",
+    "The English version has more than six million articles.",
+    "The first half is a Hawaiian word meaning “quick”, and the second half comes from “encyclopedia”."
+   ]
+  },
+  {
+   "name": "Stabilo Boss",
+   "aliases": [
+    "Stabilo",
+    "Stabilo highlighter",
+    "Boss highlighter",
+    "Stabilo Boss Original",
+    "Stabilo Boss highlighter"
+   ],
+   "clues": [
+    "It makes the important bits impossible to miss. For some students, everything is important.",
+    "Students the night before an exam, and anyone reading a contract.",
+    "It was designed in 1971 by a company whose pencils were first made in Nuremberg.",
+    "Bright fluorescent ink, a broad tip and a flat, squat body.",
+    "Its shape was an accident: the designer hit his desk in frustration and flattened a clay model.",
+    "A German highlighter whose name ends with the English word for the person in charge."
+   ]
+  },
+  {
+   "name": "Post-it Note",
+   "aliases": [
+    "Post-it",
+    "Post-its",
+    "Post it",
+    "Post-it Notes",
+    "sticky note",
+    "sticky notes",
+    "Postit"
+   ],
+   "clues": [
+    "It helps you remember things, and makes any wall look like a detective’s evidence board.",
+    "Students revising, office workers, and anyone running a brainstorming workshop.",
+    "In 1968, a scientist at an American company tried to make a super-strong glue and made a very weak one instead.",
+    "It sticks, peels off and sticks again without leaving a mark.",
+    "A colleague first used the glue to keep a bookmark in his church hymn book. The classic colour came from scrap paper in the lab next door.",
+    "3M’s little yellow sticky notes."
+   ]
+  },
+  {
+   "name": "Duolingo",
+   "aliases": [
+    "Duo Lingo",
+    "Duolingo app"
+   ],
+   "clues": [
+    "It teaches you a little every day, and makes you feel terrible if you skip a day.",
+    "Millions of people learning languages on the bus, in bed and in places we won’t mention.",
+    "It was founded in Pittsburgh by a Guatemalan computer scientist who also helped invent CAPTCHA, the “I’m not a robot” test.",
+    "Streaks, points, leagues and leaderboards turn every lesson into a game.",
+    "In February 2025, the company announced that its mascot had died, apparently hit by a Cybertruck. He came back.",
+    "Its name combines “two” and “language”, and its mascot is a green owl called Duo."
+   ]
+  },
+  {
+   "name": "Biro",
+   "aliases": [
+    "ballpoint pen",
+    "ballpoint",
+    "ball-point pen",
+    "ballpen",
+    "Kuli",
+    "Kugelschreiber",
+    "biro pen",
+    "pen"
+   ],
+   "clues": [
+    "It writes almost anywhere, it rarely smudges, and you have lost at least twenty of them.",
+    "Everyone, including the Royal Air Force, which bought them for aircrews because they worked at high altitude.",
+    "A Hungarian journalist patented it in 1938 after noticing how quickly newspaper ink dried.",
+    "A tiny ball in the tip rolls ink onto the paper.",
+    "In Argentina, where its inventor moved, Inventors’ Day is held on his birthday, 29 September.",
+    "In Britain, people call it by its inventor’s surname. In German, it’s a Kugelschreiber."
+   ]
+  }
+ ]
+}

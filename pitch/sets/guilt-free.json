@@ -1,0 +1,119 @@
+{
+ "name": "Guilt-Free!",
+ "pick": {
+  "eyebrow": "Up to you!",
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "label": "Pick a guilty pleasure",
+  "heading": "Pick a guilty pleasure and make it green",
+  "lead": [
+   "Everybody has one: the cheap flight to Mallorca, the enormous steak, the 40-minute shower, the new phone every year that you absolutely needed. We know they’re bad for the planet. We do them anyway.",
+   "Choose one and reinvent it so that it’s kind to the climate and *still fun*, or everybody will just go back to the old version. Here are some ideas, but you can choose your own."
+  ],
+  "note": "I am not looking for a serious climate strategy here. Some of these will be brilliant and some will be completely unworkable. Both are welcome, as long as you can say who would actually want it."
+ },
+ "shelf": [
+  {
+   "head": "Getting away",
+   "items": [
+    "A weekend in Mallorca",
+    "A cruise",
+    "A ski trip",
+    "A city break in Barcelona",
+    "Festival season"
+   ]
+  },
+  {
+   "head": "Food and drink",
+   "items": [
+    "A huge steak",
+    "Strawberries in December",
+    "Bottled water",
+    "Coffee capsules",
+    "Avocado toast"
+   ]
+  },
+  {
+   "head": "At home",
+   "items": [
+    "A long hot shower",
+    "A patio heater",
+    "Christmas lights",
+    "A tumble dryer",
+    "A gaming PC"
+   ]
+  },
+  {
+   "head": "Stuff",
+   "items": [
+    "Fast fashion",
+    "A new phone every year",
+    "Next-day delivery",
+    "An SUV",
+    "New Year’s Eve fireworks"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "pleasure",
+   "My guilty pleasure is:",
+   "Which carbon-heavy thing are you rescuing?"
+  ],
+  [
+   "love",
+   "Why people love it:",
+   "The feeling, the convenience, the showing off, the price…"
+  ],
+  [
+   "version",
+   "My green version is:",
+   "What exactly is it? A product, a service, a place, something completely mad?"
+  ],
+  [
+   "who",
+   "It’s for (first):",
+   "Who switches first? The guilty, the smug, someone else?"
+  ],
+  [
+   "keep",
+   "The one thing it must keep:",
+   "What has to stay, or nobody will bother switching?"
+  ],
+  [
+   "promote",
+   "I would sell it by:",
+   "Who do you get to talk about it, and where?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "pleasure": "A long hot shower",
+   "love": "It’s the only ten minutes of the day when nobody can email you. In a Berlin winter, it’s also the only time you’re properly warm.",
+   "version": "The Sauna Bus: a solar-powered mobile sauna that parks outside your building twice a week. You get your hot ten minutes, plus twenty more, and your shower at home goes back to a sensible three.",
+   "who": "Students in old Altbau flats whose heating gives up in January, and Finnish exchange students who are shocked we don’t have one already.",
+   "keep": "The silence. There’s a strict no-phones rule, and the driver isn’t allowed to talk about the weather.",
+   "promote": "Parking it outside Berghain on a Sunday morning. The queue does the marketing for you."
+  }
+ },
+ "words": [
+  "carbon footprint",
+  "emissions",
+  "incentive",
+  "trade-off",
+  "sustainable"
+ ],
+ "yours": {
+  "label": "Your green version",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your green version in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which green version wins?",
+  "noun": "green version",
+  "placeholder": "The idea, e.g. The Sauna Bus",
+  "lead": "Each student tells us about their green version in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

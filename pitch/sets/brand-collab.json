@@ -1,0 +1,109 @@
+{
+ "name": "Collab of the Year!",
+ "pick": {
+  "label": "Pick a brand",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a brand and find it a partner",
+  "lead": [
+   "Some of the best products of the last few years came from two brands that have nothing in common. KFC and Crocs once made shoes that looked like a bucket of fried chicken. Really.",
+   "Choose a brand, find it the strangest partner you can, and make something together. Here are some ideas, but you can choose your own. *The stranger, the better.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "I'm not looking for a real business plan here, this is just for a bit of fun. Some collabs will make total sense and some will only make sense at two in the morning. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "From Germany",
+   "items": [
+    "Adidas",
+    "Tempo",
+    "Leibniz",
+    "Playmobil",
+    "Fritz-Kola"
+   ]
+  },
+  {
+   "head": "From everywhere",
+   "items": [
+    "IKEA",
+    "Lego",
+    "Crocs",
+    "Chupa Chups",
+    "Converse"
+   ]
+  },
+  {
+   "head": "Unexpected",
+   "items": [
+    "BVG",
+    "Deutsche Bahn",
+    "Duolingo",
+    "Tchibo",
+    "Lufthansa"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "brand",
+   "My first brand:",
+   "Which brand did you pick?"
+  ],
+  [
+   "partner",
+   "My partner brand:",
+   "Who is the other half? Pick one that nobody would expect."
+  ],
+  [
+   "product",
+   "What we're making together:",
+   "A product, a shop, an event, a limited edition?"
+  ],
+  [
+   "look",
+   "How it looks:",
+   "Colours, logo, packaging. Whose style wins, or do you mix them?"
+  ],
+  [
+   "who",
+   "It's for:",
+   "Who buys it first, and why?"
+  ],
+  [
+   "launch",
+   "How we launch it:",
+   "Where and when? Who's there? What will people post about it?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "brand": "IKEA",
+   "partner": "Lindt",
+   "product": "A flat-pack chocolate Easter bunny. You get 14 chocolate pieces, instructions with no words and a tiny Allen key, also made of chocolate.",
+   "look": "IKEA blue and yellow on the box, Lindt's gold foil inside. The bunny is called HOPPLA, obviously.",
+   "who": "Couples who want to test their relationship before they buy a wardrobe together.",
+   "launch": "In the IKEA restaurant in Tempelhof at Easter. Build your bunny in under ten minutes and you get free meatballs. If you have pieces left over, you have to eat them."
+  }
+ },
+ "words": [
+  "brand identity",
+  "colour palette",
+  "tone of voice",
+  "limited edition",
+  "target audience"
+ ],
+ "yours": {
+  "label": "Your collab",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your collab in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which collab wins?",
+  "noun": "collab",
+  "placeholder": "The collab, e.g. IKEA x Lindt",
+  "lead": "Each student tells us about their collab in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

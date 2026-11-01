@@ -1,0 +1,119 @@
+{
+ "name": "Signature Edition",
+ "pick": {
+  "label": "Pick a star",
+  "eyebrow": "Up to you!",
+  "heading": "Pick a star and give them a product",
+  "lead": [
+   "These days nobody famous just sings, plays football or makes videos. They have a gin, a skincare line, a trainer, a frozen pizza. Some of these products are brilliant. Some exist mainly because somebody’s manager had a free afternoon.",
+   "Choose a star from the shelf, or anyone you like, and design the product that should have their name on it, made with a brand of your choice. *It has to feel like them.*"
+  ],
+  "button": "Pick one for me",
+  "hint": "Or click one to choose it.",
+  "note": "Obviously nobody on this list has actually agreed to anything, so please be kind to them. Some ideas will make total sense, and some will make sense only to their biggest fans. Both are welcome."
+ },
+ "shelf": [
+  {
+   "head": "Sport",
+   "items": [
+    "Thomas Müller",
+    "Alexandra Popp",
+    "Toni Kroos",
+    "Serena Williams",
+    "Dirk Nowitzki"
+   ]
+  },
+  {
+   "head": "Music",
+   "items": [
+    "Helene Fischer",
+    "Peter Fox",
+    "Ed Sheeran",
+    "Nina Chuba",
+    "Taylor Swift"
+   ]
+  },
+  {
+   "head": "Screens and streams",
+   "items": [
+    "Heidi Klum",
+    "Joko & Klaas",
+    "Tim Mälzer",
+    "Knossi",
+    "Julien Bam"
+   ]
+  },
+  {
+   "head": "Not even real",
+   "items": [
+    "Paddington",
+    "Shaun the Sheep",
+    "Bernd das Brot",
+    "SpongeBob",
+    "Die Maus"
+   ]
+  }
+ ],
+ "rows": [
+  [
+   "star",
+   "My star is:",
+   "Who did you pick?"
+  ],
+  [
+   "product",
+   "The product, and the brand that makes it:",
+   "What is it, and which company makes it with them?"
+  ],
+  [
+   "touch",
+   "Their personal touch:",
+   "What makes it obviously theirs? A detail, a joke, a story only fans would get…"
+  ],
+  [
+   "fans",
+   "The people who queue for it:",
+   "Their fans, people who’ve never heard of them, someone’s mum?"
+  ],
+  [
+   "price",
+   "The price, and why it’s worth it:",
+   "Cheap and cheerful, or a little bit ridiculous?"
+  ],
+  [
+   "launch",
+   "Launch day:",
+   "Where does it go on sale, and what happens on the day?"
+  ]
+ ],
+ "example": {
+  "heading": "Here’s one I made earlier",
+  "values": {
+   "star": "Helene Fischer",
+   "product": "“Atemlos”: a night train from Berlin to Vienna, made with Deutsche Bahn. Karaoke in every carriage and glitter on the seats.",
+   "touch": "She records every announcement herself, and when the train is late (it will be) she sings you an apology.",
+   "fans": "Her fans, who are basically everybody’s aunt, and students who say they’re only going ironically and then sing the loudest.",
+   "price": "€89, or €49 if you can sing the whole of “Atemlos durch die Nacht” to the ticket machine.",
+   "launch": "A surprise concert on platform 1 at Berlin Hauptbahnhof. The train leaves forty minutes late, which is part of the show."
+  }
+ },
+ "words": [
+  "endorsement",
+  "authentic",
+  "fan base",
+  "royalty",
+  "launch"
+ ],
+ "yours": {
+  "label": "Your product",
+  "heading": "Your idea",
+  "lead": "Fill it in on your own phone or laptop (it stays on your device), and be ready to tell the class about your star’s product in a few sentences."
+ },
+ "rank": {
+  "label": "The ranking",
+  "heading": "Which product wins?",
+  "noun": "product",
+  "placeholder": "The product, e.g. Helene Fischer’s night train",
+  "lead": "Each student tells us about their product in a few sentences. Add it, then argue it into place until everybody agrees."
+ }
+}

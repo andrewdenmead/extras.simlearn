@@ -1,0 +1,102 @@
+{
+ "name": "Guess the App",
+ "what": "app",
+ "whats": "apps",
+ "doc": "Design file",
+ "facets": [
+  "The hook",
+  "Who uses it",
+  "Where it began",
+  "The look",
+  "A famous fact",
+  "The name"
+ ],
+ "items": [
+  {
+   "name": "Tinder",
+   "aliases": [
+    "tinder app"
+   ],
+   "clues": [
+    "One quick movement of your thumb, again and again. It feels a bit like a game.",
+    "Single people, mostly young, who are looking for a date (or just bored on the sofa).",
+    "It was launched in 2012 at a start-up event in West Hollywood, California.",
+    "Big photos of faces, one at a time, and a small orange-red flame.",
+    "Moving a photo to the right means yes. Only when both people say yes can they send messages. Its first name was MatchBox.",
+    "Its name is dry material that you use to start a fire."
+   ]
+  },
+  {
+   "name": "Snapchat",
+   "aliases": [
+    "snap"
+   ],
+   "clues": [
+    "Your messages disappear, so you don’t have to think too hard. Streaks make you come back every day.",
+    "Teenagers and people in their twenties, mostly sending photos of their faces.",
+    "Students at Stanford University in California started it in 2011. Its first name was Picaboo.",
+    "Bright yellow, with a white ghost in the middle.",
+    "It made funny camera filters famous, like the dog ears and the face swap.",
+    "A quick photo plus a word for talking."
+   ]
+  },
+  {
+   "name": "Instagram",
+   "aliases": [
+    "insta",
+    "ig"
+   ],
+   "clues": [
+    "Hearts under your photos. You check again and again to see how many you’ve got.",
+    "Almost everyone under 40, and every brand, café and influencer in Berlin.",
+    "Two founders launched it in San Francisco in 2010. At first it was a check-in app called Burbn.",
+    "At the beginning, all the photos were square and had old-fashioned filters. Today the logo is a camera in pink, orange and purple.",
+    "In 2012 Facebook bought it for about one billion dollars.",
+    "Its name mixes “instant camera” and “telegram”."
+   ]
+  },
+  {
+   "name": "TikTok",
+   "aliases": [
+    "tik tok",
+    "douyin"
+   ],
+   "clues": [
+    "Short videos that never stop. You say “one more” and suddenly it’s two in the morning.",
+    "Mostly young people, but now also politicians, brands and your aunt.",
+    "A Chinese company launched it. In 2018 it joined with Musical.ly, an app for lip-sync videos.",
+    "A black background and a white musical note with a red and blue shadow.",
+    "Its main page, the “For You” page, chooses videos for you, even from people you don’t follow.",
+    "Its name sounds like a clock."
+   ]
+  },
+  {
+   "name": "Netflix",
+   "aliases": [
+    "net flix"
+   ],
+   "clues": [
+    "The next episode starts by itself after a few seconds, unless you stop it.",
+    "Almost everyone with a sofa and a password, sometimes someone else’s.",
+    "It was founded in California in 1997. At first it sent DVDs to people by post.",
+    "A black screen, a big red letter, and a short drum sound when it opens.",
+    "If you watch for a long time without touching anything, it asks if you are still watching.",
+    "“Net” for internet plus a short word for films."
+   ]
+  },
+  {
+   "name": "Spotify",
+   "aliases": [
+    "spotify app"
+   ],
+   "clues": [
+    "Playlists made just for you, and every December a colourful summary of your year that everyone shares.",
+    "Anyone with headphones, from commuters on the U-Bahn to people who run marathons.",
+    "Two Swedish entrepreneurs started it in Stockholm in 2006.",
+    "Green and black, with a green circle with three curved lines.",
+    "One founder misheard a word his partner shouted from another room, searched for it online and found nothing. So they used it as the name.",
+    "The music app from Sweden. Some people say its name mixes “spot” and “identify”."
+   ]
+  }
+ ]
+}
