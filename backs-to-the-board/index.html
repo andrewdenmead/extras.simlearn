@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Backs to the Board</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: one projector screen at a time (set up, ready, play, turn over), styled as a case file: the word sits on an evidence card behind redaction bars that lift when the turn starts. */
+:root{
+  --bg:#eef0f2; --paper:#fbfbf9; --ink:#14202b; --muted:#5e6a75; --line:#d3d8dd;
+  --navy:#1c2f45; --red:#c8352e; --amber:#d99a1e; --green:#2f7d58; --bar:#14202b;
+  --on-dark:#f5f3ee;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f161d; --paper:#18222c; --ink:#eef1f3; --muted:#9aa6b1; --line:#2c3a47;
+  --navy:#253d58; --red:#e5544c; --amber:#e9ae3a; --green:#4caf80; --bar:#05090d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f161d; --paper:#18222c; --ink:#eef1f3; --muted:#9aa6b1; --line:#2c3a47;
+  --navy:#253d58; --red:#e5544c; --amber:#e9ae3a; --green:#4caf80; --bar:#05090d; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,1vw + 10px,20px);line-height:1.5}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.app{min-height:100%;display:grid;grid-template-rows:auto 1fr;max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 28px;gap:18px}
+.label{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* top bar: title + scores */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.title{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.title h1{margin:0;font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.01em}
+.title h1 span{background:var(--bar);color:var(--bar);border-radius:3px;padding:0 .15em;margin-left:.1em;box-shadow:0 0 0 1px var(--line)}
+.scores{display:flex;gap:8px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:10px;padding:6px 8px 6px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);font-weight:600;font-size:.85em}
+.score b{font-family:var(--mono);font-size:1.2em;font-variant-numeric:tabular-nums;min-width:1.6em;text-align:center;background:var(--bg);border-radius:6px;padding:0 6px}
+.score.now{border-color:var(--navy);background:var(--navy);color:var(--on-dark)}
+.score.now b{background:rgba(255,255,255,.14)}
+
+.screen{display:grid;align-content:start;gap:20px}
+h2{margin:0;font-size:clamp(30px,4.4vw,58px);line-height:1.04;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0;max-width:62ch}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-weight:600;cursor:pointer;background:var(--navy);color:var(--on-dark);display:inline-flex;align-items:center;justify-content:center;gap:10px;line-height:1.2;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:7px 12px;font-size:.8em;border-radius:9px}
+.btn.big{padding:18px 30px;font-size:1.15em;border-radius:14px}
+.btn:hover{filter:brightness(1.08)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border-bottom-width:2px;border-radius:5px;padding:0 .35em;opacity:.75}
+
+/* setup */
+.setup{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.setup{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;gap:14px;align-content:start;min-width:0}
+.panel h3{margin:0;font-size:1em}
+.rules{margin:0;padding-left:1.25em;display:grid;gap:8px}
+.teams{display:grid;gap:8px}
+.team-in{display:flex;gap:8px}
+.team-in input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.team-in button{width:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-weight:600}
+.seg{display:inline-flex;justify-self:start;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:var(--bg);padding:8px 14px;cursor:pointer;font-weight:600;font-family:var(--mono);font-size:.85em}
+.seg button[aria-pressed="true"]{background:var(--navy);color:var(--on-dark)}
+
+/* the evidence card */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:stretch}
+@media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}}
+.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:6px 6px 18px 6px;min-height:clamp(260px,42vh,460px);display:grid;place-items:center;padding:56px 28px 40px;overflow:hidden;box-shadow:0 1px 0 rgba(20,32,43,.05),0 14px 34px rgba(20,32,43,.12)}
+.card::before{content:"";position:absolute;inset:0 auto 0 0;width:10px;background:repeating-linear-gradient(180deg,var(--red) 0 14px,transparent 14px 24px);opacity:.85}
+.tagline{position:absolute;top:16px;left:30px;right:22px;display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:.7em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.word{position:relative;font-size:clamp(44px,8.2vw,120px);font-weight:600;line-height:1.02;letter-spacing:-.02em;text-align:center;text-wrap:balance;overflow-wrap:anywhere;max-width:100%}
+.word .redact{position:absolute;inset:-.06em -.12em;background:var(--bar);border-radius:4px;transform-origin:left center;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.card.open .word .redact{transform:scaleX(0)}
+.stamp{position:absolute;right:26px;bottom:22px;font-family:var(--mono);font-weight:500;font-size:.8em;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border:2px solid currentColor;border-radius:6px;transform:rotate(-6deg);opacity:0;transition:opacity .2s}
+.stamp.got{color:var(--green);opacity:1}
+.stamp.skip{color:var(--amber);opacity:1}
+
+.side{display:grid;gap:14px;align-content:start;min-width:min(100%,250px)}
+.clock{background:var(--navy);color:var(--on-dark);border-radius:16px;padding:16px 20px;display:grid;gap:8px}
+.clock .t{font-family:var(--mono);font-size:clamp(48px,6vw,84px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.clock .track{height:8px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.clock .fill{height:100%;background:var(--amber);transform-origin:left;transition:transform .25s linear}
+.clock.low .fill{background:var(--red)}
+.clock.low .t{color:#ffd2cf}
+.turnscore{font-size:.9em;color:var(--muted)}
+.turnscore b{color:var(--ink);font-family:var(--mono);font-size:1.3em}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn.got{background:var(--green);color:#fff}
+.btn.skip{background:var(--amber);color:#1b1408}
+
+/* turn over */
+.gotlist{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.8em;padding:6px 10px;border-radius:7px;background:var(--bg);border:1px solid var(--line)}
+.chip.ok{border-color:color-mix(in srgb,var(--green) 55%,transparent);background:color-mix(in srgb,var(--green) 12%,var(--paper))}
+.chip.sk{border-style:dashed;color:var(--muted)}
+.big-num{font-family:var(--mono);font-size:clamp(56px,8vw,110px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+
+/* final */
+.podium{display:grid;gap:10px}
+.pod{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.pod .n{font-family:var(--mono);font-size:1.6em;color:var(--muted);min-width:1.4em}
+.pod .nm{font-weight:600;font-size:1.15em;overflow-wrap:anywhere}
+.pod .pts{font-family:var(--mono);font-size:1.6em;font-variant-numeric:tabular-nums}
+.pod.win{border:2px solid var(--amber)}
+.pod.win .n{color:var(--amber)}
+.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.note{font-size:.82em;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="bar">
+    <div class="title"><h1>Backs to the <span>Board</span></h1><span class="label" id="deckInfo"></span></div>
+    <div class="scores" id="scores"></div>
+  </header>
+  <main class="screen" id="screen"></main>
+</div>
+
+<script>
+(() => {
+/* ---------- the deck: change these lists for another topic ---------- */
+const TOPIC = "White-collar crime";
+const WORDS = ["Embezzlement","Bribe","Kickback","Ponzi scheme","Money laundering","Insider trading","Shell company",
+  "Offshore account","Cooking the books","Forgery","Cover-up","Accomplice","Shredder","Loophole","The small print",
+  "Red flag","Paper trail","Smoking gun","Private equity","Takeover","Golden handshake","Hush money","Tax evasion",
+  "Fake invoice","Expense claim","Conflict of interest","Plea deal","Fraud squad","Annual report","Share price"];
+const SILLY = ["Giraffe","Taylor Swift","The TV Tower","Haggis","A rubber duck","Bagpipes","Döner kebab","Socks"];
+/* -------------------------------------------------------------------- */
+
+const KEY = "backs-to-the-board-v1";
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+function newDeck(){
+  // real words shuffled, then one silly word dropped in roughly every four or five
+  const real = shuffle(WORDS), silly = shuffle(SILLY), out = [];
+  real.forEach((w, i) => { out.push(w); if (i % 4 === 2 && silly.length) out.push(silly.pop()); });
+  return out.concat(silly);
+}
+const fresh = () => ({screen:"setup", teams:[{name:"Team A", pts:0},{name:"Team B", pts:0}], seconds:60, turn:0, deck:newDeck(), done:[], log:[]});
+let S = fresh();
+try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.teams) S = Object.assign(fresh(), o); } } catch (e) {}
+if (S.screen === "play") S.screen = "ready";   // a refresh mid-turn goes back to the ready screen
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let timer = null, endAt = 0, current = "", turnLog = [], audio = null;
+
+function team(){ return S.teams[S.turn % S.teams.length]; }
+function scores(){
+  $("#scores").innerHTML = S.screen === "setup" ? "" : S.teams.map((t, i) =>
+    `<div class="score${i === S.turn % S.teams.length && S.screen !== "final" ? " now" : ""}">${esc(t.name)}<b>${t.pts}</b></div>`).join("");
+  $("#deckInfo").textContent = S.screen === "setup" ? TOPIC : `${TOPIC} · ${S.deck.length} words left`;
+}
+
+/* ---------- screens ---------- */
+function setup(){
+  return `<h2>Explain it. Don't say it.</h2>
+  <div class="setup">
+    <div class="panel">
+      <h3>How it works</h3>
+      <ol class="rules">
+        <li>One player from the team sits with their <strong>back to the board</strong>. Everyone else in the team can see the word.</li>
+        <li>The team explains the word in English without saying it, any part of it, or a translation. No spelling, no rhymes.</li>
+        <li>When the player guesses it, press <strong>Got it</strong> for a point. Stuck? Press <strong>Skip</strong>. Skipped words come back later.</li>
+        <li>When the time is up, the next team sends someone to the hot seat.</li>
+      </ol>
+      <p class="note">Some of the words have nothing to do with the topic. Explain them anyway.</p>
+    </div>
+    <div class="panel">
+      <h3>Teams</h3>
+      <div class="teams" id="teams">${S.teams.map((t, i) => `<div class="team-in"><label for="tn${i}" hidden>Team ${i+1} name</label><input id="tn${i}" data-team="${i}" type="text" value="${esc(t.name)}" maxlength="24">${S.teams.length > 2 ? `<button type="button" data-rm="${i}" aria-label="Remove ${esc(t.name)}">×</button>` : ""}</div>`).join("")}</div>
+      ${S.teams.length < 6 ? `<div><button class="btn ghost small" type="button" id="addTeam">Add a team</button></div>` : ""}
+      <h3>Time per turn</h3>
+      <div class="seg" role="group" aria-label="Time per turn">${[45,60,90].map(n => `<button type="button" data-sec="${n}" aria-pressed="${S.seconds === n}">${n}s</button>`).join("")}</div>
+      <div><button class="btn big" type="button" id="begin">Start the game</button></div>
+    </div>
+  </div>`;
+}
+function ready(){
+  const t = team();
+  return `<span class="label">Next up</span>
+  <h2>${esc(t.name)}: who's in the hot seat?</h2>
+  <p>Sit with your back to the board. The word stays covered until you press Start, and the clock starts at the same time.</p>
+  <div class="row"><button class="btn big" type="button" id="go">Start the turn (${S.seconds}s)</button><span class="note">or press <kbd>Space</kbd></span></div>
+  <div class="foot"><span></span><div class="row"><button class="btn ghost small" type="button" id="finish">End the game</button></div></div>`;
+}
+function play(){
+  return `<div class="stage">
+    <div class="card" id="card">
+      <div class="tagline"><span>Evidence · ${esc(team().name)}</span><span id="cardNo"></span></div>
+      <div class="word" id="word"><span id="wtext"></span><span class="redact"></span></div>
+      <div class="stamp" id="stamp"></div>
+    </div>
+    <div class="side">
+      <div class="clock" id="clock"><span class="label" style="color:inherit;opacity:.75">Time left</span><span class="t" id="t">${S.seconds}</span><div class="track"><div class="fill" id="fill"></div></div></div>
+      <div class="turnscore">This turn: <b id="ts">0</b></div>
+      <div class="acts"><button class="btn got" type="button" id="got">Got it <kbd>→</kbd></button><button class="btn skip" type="button" id="skip">Skip <kbd>←</kbd></button></div>
+      <button class="btn ghost small" type="button" id="stop">Stop the turn early</button>
+    </div>
+  </div>`;
+}
+function turnOver(){
+  const got = turnLog.filter(x => x.ok), skipped = turnLog.filter(x => !x.ok);
+  return `<span class="label">Time's up</span>
+  <h2>${esc(team().name)} got</h2>
+  <div class="big-num">${got.length}</div>
+  ${turnLog.length ? `<div class="gotlist">${got.map(x => `<span class="chip ok">${esc(x.w)}</span>`).join("")}${skipped.map(x => `<span class="chip sk">${esc(x.w)}</span>`).join("")}</div>` : `<p class="note">No words this turn.</p>`}
+  ${S.deck.length ? "" : `<p><strong>That was the last word in the deck.</strong> End the game to see the final scores.</p>`}
+  <div class="row"><button class="btn big" type="button" id="next"${S.deck.length ? "" : " hidden"}>Next team</button><button class="btn ghost" type="button" id="undo">Take a point off</button></div>
+  <div class="foot"><span></span><button class="btn ghost small" type="button" id="finish">End the game</button></div>`;
+}
+function final(){
+  const ranked = S.teams.map((t, i) => ({...t, i})).sort((a, b) => b.pts - a.pts);
+  const top = ranked[0].pts;
+  return `<span class="label">Final scores</span>
+  <h2>${ranked.filter(t => t.pts === top).length > 1 ? "It's a draw!" : esc(ranked[0].name) + " win!"}</h2>
+  <div class="podium">${ranked.map((t, k) => `<div class="pod${t.pts === top ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(t.name)}</span><span class="pts">${t.pts}</span></div>`).join("")}</div>
+  <div class="row"><button class="btn" type="button" id="again">Play again with the same teams</button><button class="btn ghost" type="button" id="reset">New game</button></div>`;
+}
+
+function render(){
+  scores();
+  $("#screen").innerHTML = ({setup, ready, play, turnOver, final})[S.screen]();
+  if (S.screen === "play") startTurn();
+}
+
+/* ---------- a turn ---------- */
+function draw(){
+  if (!S.deck.length) { endTurn(); return; }   // every word has been guessed
+  current = S.deck.shift(); save();
+  const card = $("#card"), stamp = $("#stamp");
+  card.classList.remove("open"); stamp.className = "stamp"; stamp.textContent = "";
+  $("#wtext").textContent = current;
+  $("#cardNo").textContent = S.deck.length + " left";
+  requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add("open")));
+  scores();
+}
+function startTurn(){
+  turnLog = []; endAt = Date.now() + S.seconds * 1000;
+  draw(); tick(); clearInterval(timer); timer = setInterval(tick, 200);
+}
+function tick(){
+  const left = Math.max(0, endAt - Date.now()), s = Math.ceil(left / 1000);
+  const t = $("#t"); if (!t) return;
+  t.textContent = s;
+  $("#fill").style.transform = `scaleX(${left / (S.seconds * 1000)})`;
+  $("#clock").classList.toggle("low", s <= 10);
+  if (left <= 0) { beep(); endTurn(); }
+}
+function mark(ok){
+  if (S.screen !== "play" || !current) return;
+  const stamp = $("#stamp");
+  turnLog.push({w: current, ok});
+  if (ok) { team().pts++; S.done.push(current); } else S.deck.push(current);
+  stamp.className = "stamp " + (ok ? "got" : "skip"); stamp.textContent = ok ? "Got it" : "Skipped";
+  $("#ts").textContent = turnLog.filter(x => x.ok).length;
+  current = ""; save(); scores();
+  setTimeout(() => { if (S.screen === "play") draw(); }, 380);
+}
+function endTurn(){
+  clearInterval(timer); timer = null;
+  if (current) { S.deck.unshift(current); current = ""; }   // the word on screen goes back on top
+  S.screen = "turnOver"; save(); render();
+}
+function beep(){
+  try {
+    audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+    const o = audio.createOscillator(), g = audio.createGain();
+    o.type = "square"; o.frequency.value = 220; g.gain.value = .08;
+    o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + .5);
+  } catch (e) {}
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.sec) { S.seconds = +b.dataset.sec; save(); render(); }
+  if (b.dataset.rm) { S.teams.splice(+b.dataset.rm, 1); save(); render(); }
+  if (b.id === "addTeam") { S.teams.push({name:"Team " + "ABCDEF"[S.teams.length], pts:0}); save(); render(); }
+  if (b.id === "begin") { S.teams = S.teams.map(t => ({name: t.name.trim() || "A team", pts:0})); S.turn = 0; S.deck = newDeck(); S.done = []; S.screen = "ready"; save(); render(); }
+  if (b.id === "go") { try { audio = audio || new (window.AudioContext || window.webkitAudioContext)(); audio.resume && audio.resume(); } catch (err) {} S.screen = "play"; save(); render(); }
+  if (b.id === "got") mark(true);
+  if (b.id === "skip") mark(false);
+  if (b.id === "stop") endTurn();
+  if (b.id === "undo") { const last = [...turnLog].reverse().find(x => x.ok); if (last) { last.ok = false; team().pts = Math.max(0, team().pts - 1); save(); render(); } }
+  if (b.id === "next") { S.turn++; S.screen = "ready"; save(); render(); }
+  if (b.id === "finish") { clearInterval(timer); S.screen = "final"; save(); render(); }
+  if (b.id === "again") { S.teams.forEach(t => t.pts = 0); S.turn = 0; S.deck = newDeck(); S.done = []; S.screen = "ready"; save(); render(); }
+  if (b.id === "reset") { S = fresh(); save(); render(); }
+});
+document.addEventListener("input", e => { if (e.target.dataset.team) { S.teams[+e.target.dataset.team].name = e.target.value; save(); } });
+document.addEventListener("keydown", e => {
+  if (e.target.closest && e.target.closest("input")) return;
+  if (S.screen === "play" && e.key === "ArrowRight") { e.preventDefault(); mark(true); }
+  if (S.screen === "play" && e.key === "ArrowLeft") { e.preventDefault(); mark(false); }
+  if (S.screen === "ready" && (e.key === " " || e.key === "Enter")) { e.preventDefault(); $("#go").click(); }
+});
+
+render();
+})();
+</script>
+</body>
+</html>
