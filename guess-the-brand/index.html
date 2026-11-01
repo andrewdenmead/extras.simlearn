@@ -6,7 +6,7 @@
 <title>Guess the Brand</title>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
-/* Layout: a brand-guidelines document on the projector. Each brand is a page; its six clues arrive as numbered guideline sections, from vague (tone of voice) to giveaway (the name), while a six-swatch meter shows what a correct guess is still worth. */
+/* Layout: a brand-guidelines document, played alone on a phone or laptop. Each brand is a page; its six clues arrive as numbered guideline sections, from vague (tone of voice) to giveaway (the name), while a six-swatch meter shows what a correct guess is still worth. */
 :root{
   --bg:#f4f4f1; --paper:#ffffff; --ink:#191c22; --muted:#626873; --line:#dcdcd6;
   --cobalt:#2747c8; --c1:#2747c8; --c2:#3d7fd6; --c3:#2f9e8f; --c4:#e0b43c; --c5:#e57a3a; --c6:#c9433c;
@@ -106,13 +106,29 @@ kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border
 .pod .nm{font-weight:600;font-size:1.15em;overflow-wrap:anywhere}
 .pod .pts{font-family:var(--mono);font-size:1.6em;font-variant-numeric:tabular-nums}
 .pod.win{border:2px solid var(--c4)}
+.recap{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.8em;padding:6px 10px;border-radius:7px;background:var(--paper);border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* playing on your own */
+.guess{background:var(--paper);border:2px solid var(--cobalt);border-radius:16px;padding:14px 16px;display:grid;gap:8px}
+.gi{display:flex;gap:8px}
+.gi input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:1.1em}
+.hint{font-size:.82em;color:var(--muted)}
+.tried{display:flex;flex-wrap:wrap;gap:6px}
+.chip.no{color:var(--no);border-color:color-mix(in srgb,var(--no) 40%,var(--line))}
+.worth.won{border-color:var(--ok)}
+.pod .sub{display:block;font-weight:400;font-size:.7em;color:var(--muted)}
+@media (max-width:900px){
+  .guess{position:fixed;left:0;right:0;bottom:0;z-index:20;border-radius:16px 16px 0 0;border-width:2px 0 0;
+    padding:12px max(16px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));box-shadow:0 -8px 24px rgba(25,28,34,.14)}
+  .guess .label{display:none}
+  .playing{padding-bottom:150px}
+}
 .keylist{margin:0;padding-left:1.6em;display:grid;gap:14px;font-size:1.1em}
 .keylist li::marker{font-family:var(--mono);color:var(--muted)}
 .kn{display:block;font-family:var(--serif);font-weight:600;font-size:1.5em;line-height:1.15}
 .kc{display:block;font-size:.8em;color:var(--muted)}
-.recap{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:var(--mono);font-size:.8em;padding:6px 10px;border-radius:7px;background:var(--paper);border:1px solid var(--line)}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -175,41 +191,64 @@ const BRANDS = [
 ];
 /* ------------------------------------------------------------------------------------------------ */
 
-const KEY = "guess-the-brand-v1";
-const fresh = () => ({screen:"setup", teams:[{name:"Team A",pts:0},{name:"Team B",pts:0}], b:0, shown:1, out:[], won:null, recap:[]});
+const ALIASES = {"innocent":["innocent drinks","innocent smoothies"], "Ritter Sport":["ritter","rittersport"], "Red Bull":["redbull"], "Oatly":["oatly oat drink"], "Nivea":["nivea creme"], "Haribo":["haribo goldbears","haribo gold bears"]};
+
+/* ---------- forgiving answer check: "strabucks" counts as "Starbucks" ---------- */
+const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]/g, "");
+function dist(a, b){   // Damerau-Levenshtein: a swapped pair of letters counts as one mistake
+  const d = Array.from({length: a.length + 1}, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+    const c = a[i-1] === b[j-1] ? 0 : 1;
+    d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + c);
+    if (i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1]) d[i][j] = Math.min(d[i][j], d[i-2][j-2] + 1);
+  }
+  return d[a.length][b.length];
+}
+function isRight(guess, brand){
+  const g = norm(guess); if (g.length < 3) return false;
+  const names = [brand.name, ...(ALIASES[brand.name] || [])].map(norm);
+  return names.some(n => {
+    if (g === n) return true;
+    if (n.length >= 4 && g.includes(n)) return true;              // "red bull energy drink"
+    const allowed = n.length <= 4 ? 0 : n.length <= 7 ? 1 : 2;     // one slip in short names, two in long ones
+    return dist(g, n) <= allowed;
+  });
+}
+
+const KEY = "guess-the-brand-solo-v1";
+const fresh = () => ({b:0, shown:1, guesses:[], results:[], screen:"intro"});
 let S = fresh();
-try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.teams) S = Object.assign(fresh(), o); } } catch (e) {}
+try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && Array.isArray(o.results)) S = Object.assign(fresh(), o); } } catch (e) {}
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const COL = n => `var(--c${n})`;
-const worth = () => 7 - S.shown;   // 6 points after clue 1 ... 1 point after clue 6
-let justShown = 0;
+const worth = () => 7 - S.shown;
+const total = () => S.results.reduce((a, r) => a + r.pts, 0);
+let fresh1 = 0;
 
-function scores(){
-  $("#scores").innerHTML = S.screen === "setup" ? "" : S.teams.map(t => `<div class="score">${esc(t.name)}<b>${t.pts}</b></div>`).join("");
+function info(){
+  $("#scores").innerHTML = S.screen === "intro" ? "" : `<div class="score">Your score<b>${total()}</b></div>`;
   $("#info").textContent = (S.screen === "brand" || S.screen === "reveal") ? `Brand ${S.b + 1} of ${BRANDS.length}` : "";
 }
-
-function setup(){
+function intro(){
   return `<h2>Six clues. One brand. Guess early, score big.</h2>
   <div class="setup">
     <div class="panel">
       <h3>How it works</h3>
       <ol class="rules">
-        <li>Clues about a mystery brand arrive one at a time, from vague to obvious.</li>
-        <li>Think you know it? Shout it out (or put your hand up). A right answer after the first clue is worth <strong>6 points</strong>, after the second 5, and so on down to <strong>1 point</strong> after the last.</li>
-        <li>A wrong guess puts your team out for that brand, so be careful.</li>
-        <li>After each brand, say which clue gave it away and why.</li>
+        <li>You play on your own phone or laptop. You see one clue about a mystery brand.</li>
+        <li><strong>Type a guess to get the next clue.</strong> Every wrong guess opens another clue, from vague to obvious.</li>
+        <li>Right after the first clue: <strong>6 points</strong>. After the second: 5, and so on down to <strong>1 point</strong> after the last clue.</li>
+        <li>Don't worry about spelling. Close enough counts.</li>
       </ol>
       <div class="points-key">${[1,2,3,4,5,6].map(n => `<span style="background:${COL(n)}">Clue ${n}: ${7-n} pts</span>`).join("")}</div>
     </div>
     <div class="panel">
-      <h3>Teams</h3>
-      <div class="teams">${S.teams.map((t, i) => `<div class="team-in"><label for="tn${i}" hidden>Team ${i+1} name</label><input id="tn${i}" data-team="${i}" type="text" value="${esc(t.name)}" maxlength="24">${S.teams.length > 2 ? `<button type="button" data-rm="${i}" aria-label="Remove ${esc(t.name)}">×</button>` : ""}</div>`).join("")}</div>
-      ${S.teams.length < 6 ? `<div><button class="btn ghost small" type="button" id="addTeam">Add a team</button></div>` : ""}
-      <div><button class="btn big" type="button" id="begin">Start with brand 1</button></div>
-      <p class="note">${BRANDS.length} brands, about two minutes each.</p>
+      <h3>${BRANDS.length} brands, up to ${BRANDS.length * 6} points</h3>
+      <p>When you finish, your teacher will ask for your score. Be ready to say which clue gave each brand away.</p>
+      <div><button class="btn big" type="button" id="begin">${S.results.length ? "Carry on" : "Start"}</button></div>
     </div>
   </div>`;
 }
@@ -217,29 +256,33 @@ function cluesHTML(all){
   const B = BRANDS[S.b];
   return B.clues.map((c, i) => {
     const vis = all || i < S.shown;
-    return `<div class="clue${vis ? "" : " hidden"}${vis && i + 1 === justShown ? " new" : ""}"><span class="n" style="background:${COL(i+1)}">${String(i+1).padStart(2,"0")}</span>
+    return `<div class="clue${vis ? "" : " hidden"}${vis && i + 1 === fresh1 ? " new" : ""}"><span class="n" style="background:${COL(i+1)}">${String(i+1).padStart(2,"0")}</span>
       <div><div class="k">${FACETS[i]}</div><div class="t">${vis ? esc(c) : "Hidden clue, not shown yet"}</div></div></div>`;
   }).join("");
 }
 function brand(){
   const w = worth();
-  return `<div class="page">
+  return `<div class="page playing">
     <article class="doc">
       <div class="doc-head"><span class="who mystery">Brand ${S.b + 1}: ? ? ?</span><span class="label">Brand guidelines</span></div>
       ${cluesHTML(false)}
     </article>
     <aside class="side">
+      <form class="guess" id="guessForm" autocomplete="off">
+        <label for="g" class="label">Your guess</label>
+        <div class="gi"><input id="g" type="text" placeholder="Which brand is it?" autocapitalize="off" spellcheck="false" enterkeyhint="go"><button class="btn" type="submit">Guess</button></div>
+        <p class="hint">Right now: <strong>${w} pt${w === 1 ? "" : "s"}</strong>. ${S.shown < 6 ? "A wrong guess opens the next clue." : "Last clue: one more guess."}</p>
+      </form>
+      ${S.guesses.length ? `<div class="tried">${S.guesses.map(g => `<span class="chip no">✗ ${esc(g)}</span>`).join("")}</div>` : ""}
       <div class="worth"><span class="label">A right answer now is worth</span><span class="big">${w} pt${w === 1 ? "" : "s"}</span>
         <div class="meter">${[1,2,3,4,5,6].map(n => `<i style="background:${COL(n)}" class="${n <= w ? "" : "off"}"></i>`).join("")}</div></div>
-      <div class="row"><button class="btn" type="button" id="more"${S.shown >= 6 ? " disabled" : ""}>Next clue <kbd>Space</kbd></button><button class="btn ghost" type="button" id="reveal">Nobody knows</button></div>
-      <span class="label">Who guessed?</span>
-      <div class="teamacts">${S.teams.map((t, i) => { const out = S.out.includes(i); return `<div class="ta${out ? " out" : ""}"><span class="nm">${esc(t.name)}</span><button type="button" class="yes" data-yes="${i}"${out ? " disabled" : ""}>Right</button><button type="button" class="no" data-no="${i}"${out ? " disabled" : ""}>Wrong</button></div>`; }).join("")}</div>
+      <button class="btn ghost small" type="button" id="pass">${S.shown < 6 ? "No idea: show the next clue" : "I give up: show me"}</button>
     </aside>
   </div>`;
 }
 function reveal(){
-  const B = BRANDS[S.b], last = S.b === BRANDS.length - 1;
-  const res = S.won === null ? `Nobody got it. No points this time.` : `<strong>${esc(S.teams[S.won].name)}</strong> got it after clue ${S.shown}: <b>+${worth()}</b>`;
+  const B = BRANDS[S.b], r = S.results[S.results.length - 1], last = S.b === BRANDS.length - 1;
+  const res = r.pts ? `<strong>Yes!</strong> You got it after clue ${r.clue}: <b>+${r.pts}</b>` : `Not this time. No points for this one.`;
   return `<div class="page">
     <article class="doc">
       <div class="doc-head"><span class="label">Brand ${S.b + 1} was</span><span class="label">Brand guidelines</span></div>
@@ -247,63 +290,58 @@ function reveal(){
       ${cluesHTML(true)}
     </article>
     <aside class="side">
-      <div class="worth"><span class="label">Result</span><p class="result">${res}</p></div>
-      <p class="note">Which clue gave it away? Which one was the most typical of the brand?</p>
-      <div class="row"><button class="btn big" type="button" id="next">${last ? "See the final scores" : "Next brand"}</button></div>
-      <button class="btn ghost small" type="button" id="finish">End the game now</button>
+      <div class="worth ${r.pts ? "won" : ""}"><span class="label">Result</span><p class="result">${res}</p></div>
+      <p class="note">Which clue gave it away for you?</p>
+      <div class="row"><button class="btn big" type="button" id="next">${last ? "See my score" : "Next brand"}</button></div>
     </aside>
   </div>`;
 }
 function final(){
-  const ranked = S.teams.map(t => ({...t})).sort((a, b) => b.pts - a.pts), top = ranked[0].pts;
-  return `<span class="label">Final scores</span>
-  <h2>${ranked.filter(t => t.pts === top).length > 1 ? "It's a draw!" : esc(ranked[0].name) + " win!"}</h2>
-  <div class="podium">${ranked.map((t, k) => `<div class="pod${t.pts === top ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(t.name)}</span><span class="pts">${t.pts}</span></div>`).join("")}</div>
-  ${S.recap.length ? `<div class="recap">${S.recap.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div>` : ""}
-  <div class="row"><button class="btn" type="button" id="again">Play again with the same teams</button><button class="btn ghost" type="button" id="reset">New game</button></div>`;
+  return `<span class="label">Your score</span>
+  <h2>${total()} out of ${BRANDS.length * 6}</h2>
+  <div class="podium">${S.results.map((r, k) => `<div class="pod${r.pts ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(BRANDS[k].name)}<span class="sub">${r.pts ? `after clue ${r.clue}` : "not guessed"}</span></span><span class="pts">${r.pts}</span></div>`).join("")}</div>
+  <p class="note">Tell your teacher your score, and which brand was the easiest to spot.</p>
+  <div class="row"><button class="btn ghost" type="button" id="reset">Play again</button></div>`;
 }
-// ?key: the answer key for the teacher's phone (open it on your phone, not on the projector)
+function render(){
+  if (KEYVIEW) { $("#scores").innerHTML = ""; $("#info").textContent = ""; $("#screen").innerHTML = keyView(); return; }
+  info();
+  $("#screen").innerHTML = ({intro, brand, reveal, final})[S.screen]();
+  fresh1 = 0;
+  if (S.screen === "brand") { const g = $("#g"); if (g && matchMedia("(hover:hover)").matches) g.focus(); }
+}
+function finish(pts){
+  S.results.push({pts, clue: pts ? S.shown : null}); S.screen = "reveal"; save(); render();
+}
+function nextClue(){
+  if (S.shown >= 6) { finish(0); return; }
+  S.shown++; fresh1 = S.shown; save(); const k = fresh1; render(); fresh1 = k;
+  const el = document.querySelectorAll(".clue")[S.shown - 1]; if (el && el.scrollIntoView) el.scrollIntoView({block:"center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+}
+function startBrand(i){ S.b = i; S.shown = 1; S.guesses = []; S.screen = "brand"; fresh1 = 1; save(); render(); }
+
+// ?key: the answer key, for the teacher's phone
 const KEYVIEW = new URLSearchParams(location.search).has("key");
 function keyView(){
   return `<span class="label">Answer key · keep this on your phone</span>
   <h2>The brands, in order</h2>
   <ol class="keylist">${BRANDS.map(b => `<li><span class="kn">${esc(b.name)}</span><span class="kc">${esc(b.clues[5])}</span></li>`).join("")}</ol>`;
 }
-function render(){
-  if (KEYVIEW) { $("#scores").innerHTML = ""; $("#info").textContent = ""; $("#screen").innerHTML = keyView(); return; }
-  scores();
-  $("#screen").innerHTML = ({setup, brand, reveal, final})[S.screen]();
-  justShown = 0;
-}
-function finishBrand(winner){
-  S.won = winner;
-  if (winner !== null) S.teams[winner].pts += worth();
-  S.recap.push(BRANDS[S.b].name + (winner === null ? ": nobody" : `: ${S.teams[winner].name}, clue ${S.shown}`));
-  S.screen = "reveal"; save(); render();
-}
-function startBrand(i){ S.b = i; S.shown = 1; S.out = []; S.won = null; S.screen = "brand"; justShown = 1; save(); render(); }
 
+document.addEventListener("submit", e => {
+  e.preventDefault();
+  if (e.target.id !== "guessForm") return;
+  const g = $("#g"), v = g.value.trim();
+  if (!v) { $(".hint").textContent = "Type any guess first. A wrong guess gets you the next clue."; g.focus(); return; }
+  if (isRight(v, BRANDS[S.b])) finish(worth());
+  else { S.guesses.push(v); nextClue(); }
+});
 document.addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
-  if (b.dataset.rm) { S.teams.splice(+b.dataset.rm, 1); save(); render(); }
-  if (b.id === "addTeam") { S.teams.push({name:"Team " + "ABCDEF"[S.teams.length], pts:0}); save(); render(); }
-  if (b.id === "begin") { S.teams = S.teams.map(t => ({name: t.name.trim() || "A team", pts:0})); S.recap = []; startBrand(0); }
-  if (b.id === "more" && S.shown < 6) { S.shown++; justShown = S.shown; save(); const keep = justShown; render(); justShown = keep; }
-  if (b.id === "reveal") finishBrand(null);
-  if (b.dataset.yes) finishBrand(+b.dataset.yes);
-  if (b.dataset.no) {
-    S.out.push(+b.dataset.no); save();
-    if (S.out.length >= S.teams.length) finishBrand(null); else render();
-  }
+  if (b.id === "begin") { if (S.results.length >= BRANDS.length) { S.screen = "final"; save(); render(); } else startBrand(S.results.length); }
+  if (b.id === "pass") nextClue();
   if (b.id === "next") { if (S.b < BRANDS.length - 1) startBrand(S.b + 1); else { S.screen = "final"; save(); render(); } }
-  if (b.id === "finish") { S.screen = "final"; save(); render(); }
-  if (b.id === "again") { S.teams.forEach(t => t.pts = 0); S.recap = []; startBrand(0); }
-  if (b.id === "reset") { S = fresh(); save(); render(); }
-});
-document.addEventListener("input", e => { if (e.target.dataset.team) { S.teams[+e.target.dataset.team].name = e.target.value; save(); } });
-document.addEventListener("keydown", e => {
-  if (e.target.closest && e.target.closest("input")) return;
-  if (S.screen === "brand" && e.key === " ") { e.preventDefault(); $("#more")?.click(); }
+  if (b.id === "reset") { S = fresh(); save(); startBrand(0); }
 });
 render();
 })();
