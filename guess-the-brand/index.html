@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Guess the Brand</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* Layout: a brand-guidelines document on the projector. Each brand is a page; its six clues arrive as numbered guideline sections, from vague (tone of voice) to giveaway (the name), while a six-swatch meter shows what a correct guess is still worth. */
+:root{
+  --bg:#f4f4f1; --paper:#ffffff; --ink:#191c22; --muted:#626873; --line:#dcdcd6;
+  --cobalt:#2747c8; --c1:#2747c8; --c2:#3d7fd6; --c3:#2f9e8f; --c4:#e0b43c; --c5:#e57a3a; --c6:#c9433c;
+  --ok:#24804f; --no:#b93a33; --on:#ffffff;
+  --serif:"Literata",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121418; --paper:#1b1e24; --ink:#eef0f3; --muted:#a2a8b2; --line:#30343c;
+  --cobalt:#7b93ff; --c1:#6f88ff; --c2:#5aa0ee; --c3:#4dbba9; --c4:#ecc458; --c5:#f08d50; --c6:#e35d55;
+  --ok:#4cb57c; --no:#e35d55; --on:#101216; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121418; --paper:#1b1e24; --ink:#eef0f3; --muted:#a2a8b2; --line:#30343c;
+  --cobalt:#7b93ff; --c1:#6f88ff; --c2:#5aa0ee; --c3:#4dbba9; --c4:#ecc458; --c5:#f08d50; --c6:#e35d55;
+  --ok:#4cb57c; --no:#e35d55; --on:#101216; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:clamp(16px,1vw + 10px,20px);line-height:1.5}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--c4);outline-offset:2px}
+.app{min-height:100%;max-width:1260px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 28px;display:grid;grid-template-rows:auto 1fr;gap:18px}
+.label{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.title{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.swatches{display:flex;gap:3px}
+.swatches i{width:10px;height:22px;border-radius:2px;display:block}
+.title h1{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.2vw,30px);letter-spacing:-.01em}
+.scores{display:flex;gap:8px;flex-wrap:wrap}
+.score{display:flex;align-items:center;gap:10px;padding:6px 8px 6px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);font-weight:600;font-size:.85em}
+.score b{font-family:var(--mono);font-size:1.2em;font-variant-numeric:tabular-nums;min-width:1.6em;text-align:center;background:var(--bg);border-radius:6px;padding:0 6px}
+.screen{display:grid;align-content:start;gap:20px}
+h2{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0;max-width:62ch}
+.btn{border:0;border-radius:12px;padding:12px 20px;font-weight:600;cursor:pointer;background:var(--cobalt);color:var(--on);display:inline-flex;align-items:center;justify-content:center;gap:10px;line-height:1.2}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.small{padding:7px 12px;font-size:.8em;border-radius:9px}
+.btn.big{padding:16px 28px;font-size:1.12em;border-radius:14px}
+.btn:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.35;cursor:default;filter:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+kbd{font-family:var(--mono);font-size:.78em;border:1px solid currentColor;border-bottom-width:2px;border-radius:5px;padding:0 .35em;opacity:.75}
+.note{font-size:.82em;color:var(--muted)}
+
+/* setup */
+.setup{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px}
+@media (max-width:860px){.setup{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:grid;gap:14px;align-content:start;min-width:0}
+.panel h3{margin:0;font-size:1em}
+.rules{margin:0;padding-left:1.25em;display:grid;gap:8px}
+.teams{display:grid;gap:8px}
+.team-in{display:flex;gap:8px}
+.team-in input{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.team-in button{width:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-weight:600}
+.points-key{display:flex;gap:6px;flex-wrap:wrap}
+.points-key span{font-family:var(--mono);font-size:.78em;padding:4px 9px;border-radius:6px;color:#fff}
+
+/* a brand page */
+.page{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,320px);gap:22px;align-items:start}
+@media (max-width:900px){.page{grid-template-columns:minmax(0,1fr)}}
+.doc{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:22px clamp(18px,3vw,34px) 26px;display:grid;gap:4px;box-shadow:0 1px 0 rgba(25,28,34,.04),0 14px 34px rgba(25,28,34,.08);min-width:0}
+.doc-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:6px;flex-wrap:wrap}
+.doc-head .who{font-family:var(--serif);font-size:1.5em;font-weight:600}
+.doc-head .who.mystery{letter-spacing:.2em;color:var(--muted)}
+.clue{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:start}
+.clue:last-child{border-bottom:0}
+.clue .n{font-family:var(--mono);font-size:.82em;font-weight:500;color:#fff;border-radius:6px;padding:6px 0;text-align:center}
+.clue .k{font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.clue .t{font-family:var(--serif);font-size:clamp(20px,1.5vw + 10px,30px);line-height:1.3;text-wrap:pretty}
+.clue.hidden .t{color:transparent;background:repeating-linear-gradient(90deg,var(--line) 0 60%,transparent 60% 64%);background-size:100% .9em;background-repeat:no-repeat;background-position:0 .2em;border-radius:3px;user-select:none}
+.clue.new{animation:rise .45s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.answer{font-family:var(--serif);font-weight:600;font-size:clamp(40px,6.5vw,92px);line-height:1;letter-spacing:-.02em;color:var(--cobalt);overflow-wrap:anywhere}
+.side{display:grid;gap:14px;align-content:start}
+.worth{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;gap:10px}
+.worth .big{font-family:var(--mono);font-size:clamp(44px,5vw,70px);font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+.meter{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.meter i{height:12px;border-radius:3px;display:block;transition:opacity .3s}
+.meter i.off{opacity:.15}
+.teamacts{display:grid;gap:8px}
+.ta{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:8px 8px 8px 12px}
+.ta .nm{font-weight:600;overflow-wrap:anywhere}
+.ta.out{opacity:.45}
+.ta.out .nm{text-decoration:line-through}
+.ta button{border:0;border-radius:9px;padding:8px 12px;font-weight:600;cursor:pointer}
+.ta .yes{background:var(--ok);color:#fff}
+.ta .no{background:var(--bg);color:var(--no);border:1px solid var(--line)}
+.ta button:disabled{opacity:.35;cursor:default}
+.result{font-size:.95em}
+.result b{font-family:var(--mono)}
+
+/* final */
+.podium{display:grid;gap:10px}
+.pod{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.pod .n{font-family:var(--mono);font-size:1.6em;color:var(--muted);min-width:1.4em}
+.pod .nm{font-weight:600;font-size:1.15em;overflow-wrap:anywhere}
+.pod .pts{font-family:var(--mono);font-size:1.6em;font-variant-numeric:tabular-nums}
+.pod.win{border:2px solid var(--c4)}
+.recap{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.8em;padding:6px 10px;border-radius:7px;background:var(--paper);border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="bar">
+    <div class="title"><div class="swatches" aria-hidden="true"><i style="background:var(--c1)"></i><i style="background:var(--c2)"></i><i style="background:var(--c3)"></i><i style="background:var(--c4)"></i><i style="background:var(--c5)"></i><i style="background:var(--c6)"></i></div><h1>Guess the Brand</h1><span class="label" id="info"></span></div>
+    <div class="scores" id="scores"></div>
+  </header>
+  <main class="screen" id="screen"></main>
+</div>
+
+<script>
+(() => {
+/* ---------- the brands: change these for another topic. Six clues each, vaguest first. ---------- */
+const FACETS = ["Tone of voice","Customers","Origin story","The look","Distinctive asset","The name"];
+const BRANDS = [
+  {name:"innocent", clues:[
+    "Chatty and jokey, like a friend leaving you little notes. It never sounds like a company.",
+    "Office workers who want to feel a bit healthier about their lunch.",
+    "Three friends sold drinks at a London music festival in 1999 and asked people to vote with their empty bottles: one bin said YES, the other said NO.",
+    "Plain bottles, lots of white space, and everything written in lowercase letters.",
+    "A little face with a halo above its head. Every winter, some of the bottles wear tiny knitted woolly hats for charity.",
+    "An adjective that means “not guilty”."]},
+  {name:"Ritter Sport", clues:[
+    "Practical, cheerful and very colourful. It says exactly what it is and why that's good.",
+    "Pretty much everyone, but especially people who want something that fits in a pocket.",
+    "A family firm near Stuttgart. In 1932 Clara, the founder's wife, suggested a shape that would fit into a sports jacket pocket without breaking.",
+    "Every flavour has its own bright colour, so its part of the shelf looks like a rainbow.",
+    "You open the packet by snapping it in the middle.",
+    "Its slogan describes its shape: “Quadratisch. Praktisch. Gut.”"]},
+  {name:"Red Bull", clues:[
+    "Loud, extreme and a bit of a show-off. It would rather talk about adventure than about how it tastes.",
+    "Students in exam week, long-distance drivers and people at parties.",
+    "In the 1980s an Austrian marketing manager tried a Thai drink on a business trip and turned it into a product for Europe.",
+    "A slim blue-and-silver can that looks almost the same everywhere in the world.",
+    "Two animals charging at each other in front of a yellow sun.",
+    "It promises to give you wings."]},
+  {name:"Oatly", clues:[
+    "Cheeky and self-aware. Its packs talk to you like a slightly strange friend who never stops writing.",
+    "City coffee drinkers, baristas and people who avoid dairy.",
+    "It started with food science research at a university in southern Sweden in the 1990s.",
+    "Hand-drawn-looking lettering and a lot of text all over the carton.",
+    "A three-word slogan about a missing farm animal: “Wow no cow!”",
+    "Its main ingredient, with a short ending added."]},
+  {name:"Nivea", clues:[
+    "Calm, gentle and reassuring. It has been in your family's bathroom for as long as you can remember.",
+    "Literally everyone, from babies to grandparents.",
+    "A Hamburg company launched it in 1911 as the first cream of its kind that didn't separate.",
+    "Dark blue and white, and almost nothing else.",
+    "A flat, round, blue tin.",
+    "It comes from a Latin word meaning “snow-white”."]},
+  {name:"Haribo", clues:[
+    "Happy, childish and a little bit silly, but it insists that adults love it too.",
+    "Children, parents who say it's for the children, and students at two in the morning.",
+    "In 1920 a confectioner started making sweets in his kitchen in a German city, with a sack of sugar and a copper pot.",
+    "Bright, cheerful bags, usually with a pile of colourful little shapes on the front.",
+    "A small bear that has been gold since 1960.",
+    "It's made from the first letters of the founder's first name, surname and home town."]},
+];
+/* ------------------------------------------------------------------------------------------------ */
+
+const KEY = "guess-the-brand-v1";
+const fresh = () => ({screen:"setup", teams:[{name:"Team A",pts:0},{name:"Team B",pts:0}], b:0, shown:1, out:[], won:null, recap:[]});
+let S = fresh();
+try { const raw = localStorage.getItem(KEY); if (raw) { const o = JSON.parse(raw); if (o && o.teams) S = Object.assign(fresh(), o); } } catch (e) {}
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const COL = n => `var(--c${n})`;
+const worth = () => 7 - S.shown;   // 6 points after clue 1 ... 1 point after clue 6
+let justShown = 0;
+
+function scores(){
+  $("#scores").innerHTML = S.screen === "setup" ? "" : S.teams.map(t => `<div class="score">${esc(t.name)}<b>${t.pts}</b></div>`).join("");
+  $("#info").textContent = (S.screen === "brand" || S.screen === "reveal") ? `Brand ${S.b + 1} of ${BRANDS.length}` : "";
+}
+
+function setup(){
+  return `<h2>Six clues. One brand. Guess early, score big.</h2>
+  <div class="setup">
+    <div class="panel">
+      <h3>How it works</h3>
+      <ol class="rules">
+        <li>Clues about a mystery brand arrive one at a time, from vague to obvious.</li>
+        <li>Think you know it? Shout it out (or put your hand up). A right answer after the first clue is worth <strong>6 points</strong>, after the second 5, and so on down to <strong>1 point</strong> after the last.</li>
+        <li>A wrong guess puts your team out for that brand, so be careful.</li>
+        <li>After each brand, say which clue gave it away and why.</li>
+      </ol>
+      <div class="points-key">${[1,2,3,4,5,6].map(n => `<span style="background:${COL(n)}">Clue ${n}: ${7-n} pts</span>`).join("")}</div>
+    </div>
+    <div class="panel">
+      <h3>Teams</h3>
+      <div class="teams">${S.teams.map((t, i) => `<div class="team-in"><label for="tn${i}" hidden>Team ${i+1} name</label><input id="tn${i}" data-team="${i}" type="text" value="${esc(t.name)}" maxlength="24">${S.teams.length > 2 ? `<button type="button" data-rm="${i}" aria-label="Remove ${esc(t.name)}">×</button>` : ""}</div>`).join("")}</div>
+      ${S.teams.length < 6 ? `<div><button class="btn ghost small" type="button" id="addTeam">Add a team</button></div>` : ""}
+      <div><button class="btn big" type="button" id="begin">Start with brand 1</button></div>
+      <p class="note">${BRANDS.length} brands, about two minutes each.</p>
+    </div>
+  </div>`;
+}
+function cluesHTML(all){
+  const B = BRANDS[S.b];
+  return B.clues.map((c, i) => {
+    const vis = all || i < S.shown;
+    return `<div class="clue${vis ? "" : " hidden"}${vis && i + 1 === justShown ? " new" : ""}"><span class="n" style="background:${COL(i+1)}">${String(i+1).padStart(2,"0")}</span>
+      <div><div class="k">${FACETS[i]}</div><div class="t">${vis ? esc(c) : "Hidden clue, not shown yet"}</div></div></div>`;
+  }).join("");
+}
+function brand(){
+  const w = worth();
+  return `<div class="page">
+    <article class="doc">
+      <div class="doc-head"><span class="who mystery">Brand ${S.b + 1}: ? ? ?</span><span class="label">Brand guidelines</span></div>
+      ${cluesHTML(false)}
+    </article>
+    <aside class="side">
+      <div class="worth"><span class="label">A right answer now is worth</span><span class="big">${w} pt${w === 1 ? "" : "s"}</span>
+        <div class="meter">${[1,2,3,4,5,6].map(n => `<i style="background:${COL(n)}" class="${n <= w ? "" : "off"}"></i>`).join("")}</div></div>
+      <div class="row"><button class="btn" type="button" id="more"${S.shown >= 6 ? " disabled" : ""}>Next clue <kbd>Space</kbd></button><button class="btn ghost" type="button" id="reveal">Nobody knows</button></div>
+      <span class="label">Who guessed?</span>
+      <div class="teamacts">${S.teams.map((t, i) => { const out = S.out.includes(i); return `<div class="ta${out ? " out" : ""}"><span class="nm">${esc(t.name)}</span><button type="button" class="yes" data-yes="${i}"${out ? " disabled" : ""}>Right</button><button type="button" class="no" data-no="${i}"${out ? " disabled" : ""}>Wrong</button></div>`; }).join("")}</div>
+    </aside>
+  </div>`;
+}
+function reveal(){
+  const B = BRANDS[S.b], last = S.b === BRANDS.length - 1;
+  const res = S.won === null ? `Nobody got it. No points this time.` : `<strong>${esc(S.teams[S.won].name)}</strong> got it after clue ${S.shown}: <b>+${worth()}</b>`;
+  return `<div class="page">
+    <article class="doc">
+      <div class="doc-head"><span class="label">Brand ${S.b + 1} was</span><span class="label">Brand guidelines</span></div>
+      <div class="answer">${esc(B.name)}</div>
+      ${cluesHTML(true)}
+    </article>
+    <aside class="side">
+      <div class="worth"><span class="label">Result</span><p class="result">${res}</p></div>
+      <p class="note">Which clue gave it away? Which one was the most typical of the brand?</p>
+      <div class="row"><button class="btn big" type="button" id="next">${last ? "See the final scores" : "Next brand"}</button></div>
+      <button class="btn ghost small" type="button" id="finish">End the game now</button>
+    </aside>
+  </div>`;
+}
+function final(){
+  const ranked = S.teams.map(t => ({...t})).sort((a, b) => b.pts - a.pts), top = ranked[0].pts;
+  return `<span class="label">Final scores</span>
+  <h2>${ranked.filter(t => t.pts === top).length > 1 ? "It's a draw!" : esc(ranked[0].name) + " win!"}</h2>
+  <div class="podium">${ranked.map((t, k) => `<div class="pod${t.pts === top ? " win" : ""}"><span class="n">${k+1}</span><span class="nm">${esc(t.name)}</span><span class="pts">${t.pts}</span></div>`).join("")}</div>
+  ${S.recap.length ? `<div class="recap">${S.recap.map(r => `<span class="chip">${esc(r)}</span>`).join("")}</div>` : ""}
+  <div class="row"><button class="btn" type="button" id="again">Play again with the same teams</button><button class="btn ghost" type="button" id="reset">New game</button></div>`;
+}
+function render(){
+  scores();
+  $("#screen").innerHTML = ({setup, brand, reveal, final})[S.screen]();
+  justShown = 0;
+}
+function finishBrand(winner){
+  S.won = winner;
+  if (winner !== null) S.teams[winner].pts += worth();
+  S.recap.push(BRANDS[S.b].name + (winner === null ? ": nobody" : `: ${S.teams[winner].name}, clue ${S.shown}`));
+  S.screen = "reveal"; save(); render();
+}
+function startBrand(i){ S.b = i; S.shown = 1; S.out = []; S.won = null; S.screen = "brand"; justShown = 1; save(); render(); }
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.rm) { S.teams.splice(+b.dataset.rm, 1); save(); render(); }
+  if (b.id === "addTeam") { S.teams.push({name:"Team " + "ABCDEF"[S.teams.length], pts:0}); save(); render(); }
+  if (b.id === "begin") { S.teams = S.teams.map(t => ({name: t.name.trim() || "A team", pts:0})); S.recap = []; startBrand(0); }
+  if (b.id === "more" && S.shown < 6) { S.shown++; justShown = S.shown; save(); const keep = justShown; render(); justShown = keep; }
+  if (b.id === "reveal") finishBrand(null);
+  if (b.dataset.yes) finishBrand(+b.dataset.yes);
+  if (b.dataset.no) {
+    S.out.push(+b.dataset.no); save();
+    if (S.out.length >= S.teams.length) finishBrand(null); else render();
+  }
+  if (b.id === "next") { if (S.b < BRANDS.length - 1) startBrand(S.b + 1); else { S.screen = "final"; save(); render(); } }
+  if (b.id === "finish") { S.screen = "final"; save(); render(); }
+  if (b.id === "again") { S.teams.forEach(t => t.pts = 0); S.recap = []; startBrand(0); }
+  if (b.id === "reset") { S = fresh(); save(); render(); }
+});
+document.addEventListener("input", e => { if (e.target.dataset.team) { S.teams[+e.target.dataset.team].name = e.target.value; save(); } });
+document.addEventListener("keydown", e => {
+  if (e.target.closest && e.target.closest("input")) return;
+  if (S.screen === "brand" && e.key === " ") { e.preventDefault(); $("#more")?.click(); }
+});
+render();
+})();
+</script>
+</body>
+</html>
