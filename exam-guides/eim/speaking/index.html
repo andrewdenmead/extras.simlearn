@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>EIM Speaking exam guide</title><style>
+:root{
+  --ink:#1D2733; --ink-2:#4A5562; --paper:#FBFBF8; --panel:#ECEFF3; --line:#D4D9E1;
+  --pine:#2C5282; --pine-2:#1F3A5F; --amber:#C98A1B; --amber-bg:#FBF1DC; --pine-bg:#EEF3F9;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:var(--pine)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.bar .title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);text-decoration:none}
+.bar .title span{color:var(--pine)}
+.switch{display:flex;gap:4px;flex:none}
+.switch a{font-size:.85rem;text-decoration:none;color:var(--ink-2);border-radius:999px;padding:3px 10px}
+.switch a[aria-current="page"]{background:var(--panel);color:var(--ink);font-weight:600}
+main.wrap{padding-top:28px;padding-bottom:72px}
+h1{font:600 1.75rem/1.2 var(--sans);margin:0 0 .3rem}
+.kicker{font:1.08rem/1.55 var(--serif);color:var(--ink-2);margin:0 0 1.2rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1.5rem}
+nav.toc a{font-size:.85rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px}
+nav.toc a:hover{border-color:var(--pine);color:var(--pine)}
+h2{font:600 1.3rem/1.3 var(--sans);margin:2.4rem 0 .6rem;display:flex;align-items:center;gap:10px;scroll-margin-top:64px}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--pine);color:#fff;font-size:.85rem;flex:none}
+p,li{font:1.03rem/1.62 var(--serif)}
+p{margin:.55rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.3rem 0}
+.note{border-left:3px solid var(--pine);padding:.3rem 0 .3rem 14px;margin:1.2rem 0}
+.note p{margin:0}
+.situation{background:var(--amber-bg);border-radius:12px;padding:14px 16px;margin:1rem 0}
+.situation p{margin:0;font-size:.98rem}
+.card{border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0;overflow:hidden}
+.card>.hd{padding:12px 16px;font-weight:600;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.card>.hd .tag{font-weight:500;font-size:.8rem;color:var(--pine);border:1px solid var(--line);border-radius:999px;padding:1px 9px;white-space:nowrap}
+.card>.bd{padding:12px 16px}
+.card .aim{font:italic .98rem/1.5 var(--serif);color:var(--ink-2);margin:0 0 10px}
+.grades{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin:14px 0 6px}
+.grades div{background:#fff;border:1px solid var(--line);border-radius:8px;text-align:center;padding:6px 2px}
+.grades b{display:block;font-size:1.05rem;color:var(--pine-2)}
+.grades span{display:block;font-size:.72rem;color:var(--ink-2)}
+.grades .fail b{color:var(--ink-2)}
+.grades-key{font-size:.8rem;color:var(--ink-2);margin:0 0 .6rem;font-family:var(--sans)}
+@media (max-width:600px){.grades{grid-template-columns:repeat(6,1fr)}}
+.crit .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.crit .band{font:.96rem/1.55 var(--serif);padding-left:12px;border-left:3px solid var(--pine)}
+.crit .band.down{border-color:var(--amber)}
+.crit .band b{display:block;font:600 .78rem/1.4 var(--sans);text-transform:uppercase;letter-spacing:.04em;color:var(--pine);margin-bottom:3px}
+.crit .band.down b{color:var(--amber)}
+@media (max-width:600px){.crit .two{grid-template-columns:1fr}}
+.plan{display:grid;gap:8px;margin:14px 0}
+.plan .row{display:grid;grid-template-columns:170px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.plan .row .lab{font-weight:600;font-size:.95rem}
+.plan .row .lab span{display:block;font-weight:400;font-size:.8rem;color:var(--ink-2)}
+.plan .row .txt{font:.98rem/1.55 var(--serif)}
+@media (max-width:600px){.plan .row{grid-template-columns:1fr;gap:4px}}
+.phr{display:grid;gap:8px;margin:14px 0}
+.phr .row{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.phr .row b{display:block;font-size:.85rem;margin-bottom:6px}
+.chip{display:inline-block;font:italic .95rem/1.4 var(--serif);background:var(--pine-bg);border-radius:8px;padding:3px 9px;margin:0 6px 6px 0}
+.mail{border:1px solid var(--line);border-radius:12px;background:#fff;margin:14px 0;overflow:hidden}
+.mail .hd{padding:12px 16px;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.mail .hd strong{color:var(--ink)}
+.mail .bd{padding:4px 16px 10px}
+.mail .bd p{margin:.75rem 0}
+.wc{font:.85rem var(--sans);color:var(--ink-2)}
+.why .bd{font:.96rem/1.55 var(--serif)}
+ol.steps{list-style:none;padding:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding-left:40px;margin:.8rem 0}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--pine);color:var(--pine);font:600 .8rem/23px var(--sans);text-align:center}
+ul.mistakes li::marker{color:var(--amber)}
+.checklist{background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 16px}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font:1rem/1.5 var(--serif);cursor:pointer}
+.checklist label:first-child{border-top:0}
+.checklist input{margin-top:5px;accent-color:var(--pine);width:16px;height:16px;flex:none}
+.checklist label:has(input:checked){color:var(--ink-2)}
+.courses{display:grid;gap:12px;margin-top:1.2rem}
+.courses .card .bd{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:8px;padding:9px 14px;background:var(--pine);color:#fff;font-weight:600;text-decoration:none;font-size:.95rem}
+.btn:hover{background:var(--pine-2)}
+.btn.quiet{background:var(--panel);color:var(--ink)}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-2)}
+@media print{
+  .bar{position:static} nav.toc,.switch{display:none} body{background:#fff}
+  .card,.mail,.plan .row,.phr .row,.situation,.note{break-inside:avoid} h2{break-after:avoid}
+}
+</style></head>
+<body><header class="bar"><div class="wrap"><a class="title" href="../../../exam-guides/">SimLearn <span>Lite</span> · Exam guides</a><nav class="switch"><a href="../writing/">Writing</a><a href="../speaking/" aria-current="page">Speaking</a></nav></div></header>
+<main class="wrap"><h1>Speaking exam: how to get a good mark</h1>
+<p class="kicker">English for International Management · C1</p><nav class="toc"><a href="#s1">The exam</a><a href="#s2">How it is marked</a><a href="#s3">Using your 20 minutes</a><a href="#s4">Your opening</a><a href="#s5">During the negotiation</a><a href="#s6">The examiner's questions</a><a href="#s7">Useful language</a><a href="#s8">Common mistakes</a><a href="#s9">Final checklist</a></nav>
+<h2 id="s1"><span class="n">1</span>The exam</h2>
+<p>The speaking exam is worth 25 of your 100 points. It is a <strong>negotiation</strong> in a group of two, three or four. You each represent one party (a company, a person or an organisation), and together you must agree on one deal.</p>
+<ul>
+<li><strong>You are a representative</strong>, not the party itself: "You represent…". You speak for your client and pass on what your client and your contacts have told you.</li>
+<li><strong>Preparation, about 20 minutes:</strong> you read the situation, your brief, three emails and the deal sheet, on the exam page. Some of your contacts can each tell you <strong>one more thing</strong>: you choose one of three pieces of information from each, and you can't change your choice, so read the options carefully.</li>
+<li><strong>In the room, about 10 minutes per student:</strong><ol>
+<li><strong>Your opening</strong> (about one minute each): who you represent, what they want and the most important thing you have found out.</li>
+<li><strong>The negotiation:</strong> you agree on A or B for each point on the deal sheet. You can add conditions to an option, as long as everyone agrees. Halfway through, the examiner reads out a piece of <strong>breaking news</strong> that changes the situation.</li>
+<li><strong>Questions from the examiner</strong> about the deal you made.</li>
+</ol>
+</li>
+<li><strong>Notes:</strong> you can bring short notes (key words and numbers), not full sentences. Pass on what you read in your own words: don't read it out.</li>
+<li><strong>Your mark is your own.</strong> Each of you is marked separately. The deal itself isn't marked: there is no "right" deal. What counts is how you use your information and how you negotiate.</li>
+</ul>
+<h2 id="s2"><span class="n">2</span>How it is marked</h2>
+<p>The examiner marks you live on five criteria, each out of 5 points, judged at C1 level. You don't need to speak above that level. Grades use the usual scale: 95 per cent of the points for a 1,0, 90 per cent for a 1,3, and so on in steps of five down to 50 per cent for a 4,0. For the 25 speaking points, that means:</p>
+<div class="grades"><div class=""><b>1,0</b><span>24–25</span></div><div class=""><b>1,3</b><span>23</span></div><div class=""><b>1,7</b><span>22</span></div><div class=""><b>2,0</b><span>20–21</span></div><div class=""><b>2,3</b><span>19</span></div><div class=""><b>2,7</b><span>18</span></div><div class=""><b>3,0</b><span>17</span></div><div class=""><b>3,3</b><span>15–16</span></div><div class=""><b>3,7</b><span>14</span></div><div class=""><b>4,0</b><span>13</span></div><div class="fail"><b>5,0</b><span>0–12</span></div></div><p class="grades-key">Grade, with the points (out of 25) you need for it.</p>
+<p>So full marks on every criterion gives a 1,0, 4 out of 5 on every criterion gives a 2,0, and 3 out of 5 everywhere gives a 3,3.</p>
+<div class="card crit"><div class="hd">Range<span class="tag">5 points</span></div><div class="bd"><p class="aim">Enough vocabulary and structures to say what you mean in this situation, including the language of negotiating.</p><div class="two"><div class="band"><b>Full marks (5)</b>A broad range of vocabulary and structures for the topic and for negotiating (proposing, conceding, conditions), used flexibly; rarely has to search for or avoid what they want to say.</div><div class="band down"><b>2–3 points</b>Enough language for simple points and positions, but limited for nuance or negotiating: repetition, vague words, some ideas left unsaid.</div></div></div></div><div class="card crit"><div class="hd">Accuracy<span class="tag">5 points</span></div><div class="bd"><p class="aim">Grammar and word choice that don't get in the way of understanding.</p><div class="two"><div class="band"><b>Full marks (5)</b>Consistently good control at the level; errors are rare, minor and often self-corrected.</div><div class="band down"><b>2–3 points</b>Reasonable control of simple structures; frequent errors in more complex language, sometimes making the meaning unclear.</div></div></div></div><div class="card crit"><div class="hd">Fluency<span class="tag">5 points</span></div><div class="bd"><p class="aim">Speaking at length and keeping going, with pauses only to think about what to say.</p><div class="two"><div class="band"><b>Full marks (5)</b>Speaks at length with an easy, natural flow; pauses are for content, not language. The opening statement is clear and well organised.</div><div class="band down"><b>2–3 points</b>Can produce short stretches, but hesitation and false starts are noticeable; longer turns lose their thread.</div></div></div></div><div class="card crit"><div class="hd">Interaction<span class="tag">5 points</span></div><div class="bd"><p class="aim">Listening and responding to the others, and moving the group towards an agreement.</p><div class="two"><div class="band"><b>Full marks (5)</b>Responds to and builds on others' points, asks good questions, proposes and tests compromises, and helps the group move forward; takes and gives turns naturally.</div><div class="band down"><b>2–3 points</b>Takes part, but mainly states their own position; limited response to what others say.</div></div></div></div><div class="card crit"><div class="hd">Mediation<span class="tag">5 points</span></div><div class="bd"><p class="aim">Passing on what you read and heard, clearly and accurately, in your own words, so the others can use it.</p><div class="two"><div class="band"><b>Full marks (5)</b>Relays the key information from their documents and recordings accurately and selectively, in their own words, and explains what it means for the deal; checks that others have understood.</div><div class="band down"><b>2–3 points</b>Passes on some information, but incompletely, inaccurately or mostly by reading aloud; relevance is left unclear.</div></div></div></div>
+<div class="note"><p>Interaction and mediation are 10 of your 25 points. Talking a lot isn't enough: what counts is how you <strong>listen, pass on information and move the group towards a deal</strong>.</p></div>
+<h2 id="s3"><span class="n">3</span>Using your 20 minutes</h2>
+<ol class="steps">
+<li><strong>Minutes 0–5: your brief.</strong> Who is your client? What do they want, and what matters most to them? What does the brief tell you to find out?</li>
+<li><strong>Minutes 5–12: the emails.</strong> Mark the facts and numbers your client and your contacts give you, and the ones the others at the table need to hear. Note who said what.</li>
+<li><strong>Minute 12: one more thing.</strong> For each contact who offers one, choose the piece of information that is most useful for the deal. The best ones often open a middle way, or give you something another party needs.</li>
+<li><strong>Minutes 12–20: plan.</strong> For each point on the deal sheet, decide what your client would like, what they could accept, and a condition you could offer. Note the key words and numbers for your opening, but not full sentences.</li>
+</ol>
+
+<h2 id="s4"><span class="n">4</span>Your opening</h2>
+<p>About one minute, three parts: <strong>who you represent</strong>, <strong>what they want</strong> and <strong>the most important thing you have found out</strong>. Finish by saying where you would like to start. An invented example (100 words, about a minute at a calm pace), for the works council of a customer-service centre:</p>
+<div class="mail"><div class="bd"><p>Good morning. I represent the works council at the Leipzig customer-service centre, about 300 staff. My client accepts that the new owners want to bring in AI for routine enquiries, but it wants a guarantee that nobody is made redundant in the first two years. The most important thing I've found out is that around 60 staff are due to retire or leave in the next three years anyway, so most of the change can happen through natural turnover. That means a no-redundancy guarantee may cost the owners much less than they expect. I'd like to start with the timetable.</p></div></div>
+<p>Why it works: it is short and organised, it gives one key fact with a number, it says what the fact <em>means</em> for the deal (mediation), and it invites the others in (interaction).</p>
+<h2 id="s5"><span class="n">5</span>During the negotiation</h2>
+<ul>
+<li><strong>Start with questions.</strong> Each of you knows things the others don't. Ask what they found out before you argue: <em>What does your client need here?</em></li>
+<li><strong>Pass on information, then say what it means.</strong> <em>My client's contact told us that… so option B would cost them…</em></li>
+<li><strong>Propose with conditions.</strong> <em>We could accept A, as long as…</em> · <em>What if we agree B, but with…?</em></li>
+<li><strong>Look for middle ways.</strong> If two of you want different options, a condition can often give both something. Your "one more thing" may help here.</li>
+<li><strong>Bring others in.</strong> If someone is quiet, ask them: <em>Deniz, what does this mean for your client?</em> That is interaction, and it often moves the deal on.</li>
+<li><strong>Summarise.</strong> Every few minutes: <em>So far we agree on… We still need to decide…</em></li>
+<li><strong>When the breaking news comes,</strong> stop and think together: which point does it change, and for whom? Be ready to reopen a decision you have already made.</li>
+<li><strong>Don't agree too fast.</strong> Use your information before you give way, and say what you want in return.</li>
+</ul>
+<h2 id="s6"><span class="n">6</span>The examiner's questions</h2>
+<p>At the end, the examiner asks about the deal: why you chose it, what your client gave up, what risk is left. Answer with reasons and your information, not just "it was fair". It's fine to say what you are less happy with: <em>My client gave way on…, because… The risk is…</em></p>
+<h2 id="s7"><span class="n">7</span>Useful language</h2>
+<div class="phr"><div class="row"><b>Open</b><span class="chip">I represent…</span><span class="chip">My client's main concern is…</span><span class="chip">The key thing I've found out is…</span></div><div class="row"><b>Ask</b><span class="chip">What does your client need from this?</span><span class="chip">Could you tell us more about…?</span><span class="chip">How important is… for you?</span></div><div class="row"><b>Pass on information</b><span class="chip">According to my client's contact, …</span><span class="chip">Our figures show that…</span><span class="chip">What this means for the deal is…</span></div><div class="row"><b>Propose</b><span class="chip">What if we…?</span><span class="chip">We'd be willing to…, provided that…</span><span class="chip">How about a compromise:…?</span></div><div class="row"><b>Accept and concede</b><span class="chip">We can live with that, as long as…</span><span class="chip">We're prepared to give way on…, if…</span></div><div class="row"><b>Push back politely</b><span class="chip">I see your point, but…</span><span class="chip">That would be difficult for my client, because…</span></div><div class="row"><b>Check and summarise</b><span class="chip">Just to check: you're saying that…?</span><span class="chip">So we agree on… What's left is…</span></div></div>
+
+<h2 id="s8"><span class="n">8</span>Common mistakes</h2>
+<ul class="mistakes">
+<li><strong>Reading out the emails.</strong> Pass the information on in your own words, with the key numbers.</li>
+<li><strong>A memorised speech.</strong> Prepare key words, not sentences. A learned text sounds learned and leaves you stuck when the talk changes direction.</li>
+<li><strong>Only stating your position.</strong> Repeating what your client wants without listening or responding costs interaction marks.</li>
+<li><strong>Keeping your information to yourself.</strong> It's only useful if the others hear it and understand what it means.</li>
+<li><strong>Talking over others, or waiting to be asked.</strong> Take turns: speak, then give the floor back.</li>
+<li><strong>Agreeing to everything at once.</strong> A quick deal leaves you little to say and no information used.</li>
+<li><strong>Ignoring the breaking news.</strong> It is there to change the deal: show how it affects your client.</li>
+</ul>
+
+<h2 id="s9"><span class="n">9</span>Final checklist</h2>
+<p>Before you go in:</p>
+<div class="checklist"><label><input type="checkbox"/><span>I can say in one minute who I represent, what they want and the key thing I found out.</span></label><label><input type="checkbox"/><span>I know my client's top priority and what they could accept on each point of the deal sheet.</span></label><label><input type="checkbox"/><span>I have a condition or a middle way ready for at least one point.</span></label><label><input type="checkbox"/><span>I know which of my facts and numbers the others need to hear, and what they mean for the deal.</span></label><label><input type="checkbox"/><span>My notes are key words and numbers, not sentences.</span></label><label><input type="checkbox"/><span>I will ask questions, listen, and bring others in.</span></label><label><input type="checkbox"/><span>I will react to the breaking news and be ready to change the deal.</span></label></div>
+<footer>SimLearn Lite · exam guides for the winter semester 2026/27 · <a href="../../../exam-guides/">all courses</a></footer></main></body></html>

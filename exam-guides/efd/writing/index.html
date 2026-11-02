@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>EFD Writing exam guide</title><style>
+:root{
+  --ink:#1D2733; --ink-2:#4A5562; --paper:#FBFBF8; --panel:#ECEFF3; --line:#D4D9E1;
+  --pine:#2C5282; --pine-2:#1F3A5F; --amber:#C98A1B; --amber-bg:#FBF1DC; --pine-bg:#EEF3F9;
+  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:var(--pine)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.bar .title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink);text-decoration:none}
+.bar .title span{color:var(--pine)}
+.switch{display:flex;gap:4px;flex:none}
+.switch a{font-size:.85rem;text-decoration:none;color:var(--ink-2);border-radius:999px;padding:3px 10px}
+.switch a[aria-current="page"]{background:var(--panel);color:var(--ink);font-weight:600}
+main.wrap{padding-top:28px;padding-bottom:72px}
+h1{font:600 1.75rem/1.2 var(--sans);margin:0 0 .3rem}
+.kicker{font:1.08rem/1.55 var(--serif);color:var(--ink-2);margin:0 0 1.2rem}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1.5rem}
+nav.toc a{font-size:.85rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px}
+nav.toc a:hover{border-color:var(--pine);color:var(--pine)}
+h2{font:600 1.3rem/1.3 var(--sans);margin:2.4rem 0 .6rem;display:flex;align-items:center;gap:10px;scroll-margin-top:64px}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--pine);color:#fff;font-size:.85rem;flex:none}
+p,li{font:1.03rem/1.62 var(--serif)}
+p{margin:.55rem 0}
+ul,ol{padding-left:1.3rem}
+li{margin:.3rem 0}
+.note{border-left:3px solid var(--pine);padding:.3rem 0 .3rem 14px;margin:1.2rem 0}
+.note p{margin:0}
+.situation{background:var(--amber-bg);border-radius:12px;padding:14px 16px;margin:1rem 0}
+.situation p{margin:0;font-size:.98rem}
+.card{border:1px solid var(--line);border-radius:12px;background:#fff;margin:12px 0;overflow:hidden}
+.card>.hd{padding:12px 16px;font-weight:600;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.card>.hd .tag{font-weight:500;font-size:.8rem;color:var(--pine);border:1px solid var(--line);border-radius:999px;padding:1px 9px;white-space:nowrap}
+.card>.bd{padding:12px 16px}
+.card .aim{font:italic .98rem/1.5 var(--serif);color:var(--ink-2);margin:0 0 10px}
+.grades{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin:14px 0 6px}
+.grades div{background:#fff;border:1px solid var(--line);border-radius:8px;text-align:center;padding:6px 2px}
+.grades b{display:block;font-size:1.05rem;color:var(--pine-2)}
+.grades span{display:block;font-size:.72rem;color:var(--ink-2)}
+.grades .fail b{color:var(--ink-2)}
+.grades-key{font-size:.8rem;color:var(--ink-2);margin:0 0 .6rem;font-family:var(--sans)}
+@media (max-width:600px){.grades{grid-template-columns:repeat(6,1fr)}}
+.crit .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.crit .band{font:.96rem/1.55 var(--serif);padding-left:12px;border-left:3px solid var(--pine)}
+.crit .band.down{border-color:var(--amber)}
+.crit .band b{display:block;font:600 .78rem/1.4 var(--sans);text-transform:uppercase;letter-spacing:.04em;color:var(--pine);margin-bottom:3px}
+.crit .band.down b{color:var(--amber)}
+@media (max-width:600px){.crit .two{grid-template-columns:1fr}}
+.plan{display:grid;gap:8px;margin:14px 0}
+.plan .row{display:grid;grid-template-columns:170px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.plan .row .lab{font-weight:600;font-size:.95rem}
+.plan .row .lab span{display:block;font-weight:400;font-size:.8rem;color:var(--ink-2)}
+.plan .row .txt{font:.98rem/1.55 var(--serif)}
+@media (max-width:600px){.plan .row{grid-template-columns:1fr;gap:4px}}
+.phr{display:grid;gap:8px;margin:14px 0}
+.phr .row{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.phr .row b{display:block;font-size:.85rem;margin-bottom:6px}
+.chip{display:inline-block;font:italic .95rem/1.4 var(--serif);background:var(--pine-bg);border-radius:8px;padding:3px 9px;margin:0 6px 6px 0}
+.mail{border:1px solid var(--line);border-radius:12px;background:#fff;margin:14px 0;overflow:hidden}
+.mail .hd{padding:12px 16px;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.mail .hd strong{color:var(--ink)}
+.mail .bd{padding:4px 16px 10px}
+.mail .bd p{margin:.75rem 0}
+.wc{font:.85rem var(--sans);color:var(--ink-2)}
+.why .bd{font:.96rem/1.55 var(--serif)}
+ol.steps{list-style:none;padding:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding-left:40px;margin:.8rem 0}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:2px;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--pine);color:var(--pine);font:600 .8rem/23px var(--sans);text-align:center}
+ul.mistakes li::marker{color:var(--amber)}
+.checklist{background:#fff;border:1px solid var(--line);border-radius:12px;padding:6px 16px}
+.checklist label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font:1rem/1.5 var(--serif);cursor:pointer}
+.checklist label:first-child{border-top:0}
+.checklist input{margin-top:5px;accent-color:var(--pine);width:16px;height:16px;flex:none}
+.checklist label:has(input:checked){color:var(--ink-2)}
+.courses{display:grid;gap:12px;margin-top:1.2rem}
+.courses .card .bd{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:8px;padding:9px 14px;background:var(--pine);color:#fff;font-weight:600;text-decoration:none;font-size:.95rem}
+.btn:hover{background:var(--pine-2)}
+.btn.quiet{background:var(--panel);color:var(--ink)}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-2)}
+@media print{
+  .bar{position:static} nav.toc,.switch{display:none} body{background:#fff}
+  .card,.mail,.plan .row,.phr .row,.situation,.note{break-inside:avoid} h2{break-after:avoid}
+}
+</style></head>
+<body><header class="bar"><div class="wrap"><a class="title" href="../../../exam-guides/">SimLearn <span>Lite</span> · Exam guides</a><nav class="switch"><a href="../writing/" aria-current="page">Writing</a><a href="../speaking/">Speaking</a></nav></div></header>
+<main class="wrap"><h1>Writing exam: how to get a good mark</h1>
+<p class="kicker">English for Design · B2/C1</p><nav class="toc"><a href="#s1">The task</a><a href="#s2">How it is marked</a><a href="#s3">A structure that works</a><a href="#s4">Using your 45 minutes</a><a href="#s5">A model memo</a><a href="#s6">Useful language and common mistakes</a><a href="#s7">Final checklist</a></nav>
+<h2 id="s1"><span class="n">1</span>The task</h2>
+<p>The writing part is worth 25 of the paper's 100 points. You have about 45 minutes. You make two A/B decisions and write a <strong>recommendation memo of about 250 words</strong> to two named people at the company.</p>
+<ul>
+<li><strong>The decisions:</strong> two questions, each with option A or B. There is no single right answer. You get marks for how well you argue, not for the options you pick.</li>
+<li><strong>Your readers:</strong> two people from the story, named in the task. They know their company and their product well. They need a clear decision and good reasons, not a summary of the paper.</li>
+<li><strong>Your material:</strong> everything else in the paper: the three recordings, the article and the two emails. All the facts, numbers and opinions you need are there.</li>
+<li><strong>The instructions</strong> always ask you to: make a clear recommendation on both decisions and explain how they affect each other; use information from the recordings, the article and the emails, including the numbers; answer the strongest objection to your plan; and write for your two readers, keeping their concerns in mind.</li>
+</ul>
+<p>Aim for about 250 words. If your memo is much shorter, part of the task is probably missing. If it is much longer, you are probably summarising.</p>
+<h2 id="s2"><span class="n">2</span>How it is marked</h2>
+<p>The memo is marked on five criteria, each out of 5 points, judged at the course level (B2/C1). You don't need to write above that level. Grades use the usual scale: 95 per cent of the points for a 1,0, 90 per cent for a 1,3, and so on in steps of five down to 50 per cent for a 4,0. For the 25 writing points, that means:</p>
+<div class="grades"><div class=""><b>1,0</b><span>24–25</span></div><div class=""><b>1,3</b><span>23</span></div><div class=""><b>1,7</b><span>22</span></div><div class=""><b>2,0</b><span>20–21</span></div><div class=""><b>2,3</b><span>19</span></div><div class=""><b>2,7</b><span>18</span></div><div class=""><b>3,0</b><span>17</span></div><div class=""><b>3,3</b><span>15–16</span></div><div class=""><b>3,7</b><span>14</span></div><div class=""><b>4,0</b><span>13</span></div><div class="fail"><b>5,0</b><span>0–12</span></div></div><p class="grades-key">Grade, with the points (out of 25) you need for it.</p>
+<p>So full marks on every criterion gives a 1,0, 4 out of 5 on every criterion gives a 2,0, and 3 out of 5 everywhere gives a 3,3.</p>
+<p>These are the same criteria as the feedback on the Write &amp; submit tab in the simulations, so every sim is practice for the exam.</p>
+<div class="card crit"><div class="hd">Task and reader<span class="tag">5 points</span></div><div class="bd"><p class="aim">Give a clear answer to the brief, written for your reader.</p><div class="two"><div class="band"><b>Full marks (5)</b>The recommendation is clear from the start and every part of the brief is covered in proportion. The text is written for the named reader throughout: the right format, level of detail and tone.</div><div class="band down"><b>2–3 points</b>There is a recommendation, but it comes late or is hedged, or one part of the brief is missing. The text reads more like a summary of the simulation than a document for this reader.</div></div></div></div><div class="card crit"><div class="hd">Using the information<span class="tag">5 points</span></div><div class="bd"><p class="aim">Choose, combine and report the information that decides the question.</p><div class="two"><div class="band"><b>Full marks (5)</b>Uses the decisive information from across the group's sources, accurately and in the writer's own words, and combines sources to make points none of them makes alone. Every key fact is credited and linked to what it means for the decision.</div><div class="band down"><b>2–3 points</b>Uses some relevant information, but relies on one or two sources, lists facts rather than using them, or copies wording closely; a key fact is missing or slightly wrong.</div></div></div></div><div class="card crit"><div class="hd">Building the argument<span class="tag">5 points</span></div><div class="bd"><p class="aim">Make a convincing case: reasons, evidence and consequences, with the other side answered.</p><div class="two"><div class="band"><b>Full marks (5)</b>A convincing, well-prioritised case: each main point is supported by evidence and its consequences are spelled out; the strongest counter-argument or trade-off is acknowledged and answered; the remaining risk is named with a way to manage it.</div><div class="band down"><b>2–3 points</b>Relevant points, but often asserted rather than supported, or all treated as equally important; the other side is ignored or only mentioned.</div></div></div></div><div class="card crit"><div class="hd">Organisation and flow<span class="tag">5 points</span></div><div class="bd"><p class="aim">Guide your reader through the text.</p><div class="two"><div class="band"><b>Full marks (5)</b>Logically structured for its purpose; each paragraph develops one idea; varied, natural linking shows how ideas relate, so the reader never has to work out the connection.</div><div class="band down"><b>2–3 points</b>A recognisable structure, but paragraphs mix ideas or the order makes the reader work; linking is limited or sometimes misused.</div></div></div></div><div class="card crit"><div class="hd">Language<span class="tag">5 points</span></div><div class="bd"><p class="aim">Say exactly what you mean, accurately and professionally.</p><div class="two"><div class="band"><b>Full marks (5)</b>A range that lets the writer say exactly what they mean, used precisely and naturally for the course's target level; errors are rare and minor; the style is consistently professional.</div><div class="band down"><b>2–3 points</b>Enough range for the main points, but sometimes imprecise or repetitive; noticeable errors that occasionally make the reader pause; some slips in style.</div></div></div></div>
+<div class="note"><p>Three criteria are about <em>thinking</em> (task, information, argument). Good planning matters as much as good English.</p></div>
+<h2 id="s3"><span class="n">3</span>A structure that works</h2>
+<p>Put your recommendation first. Then write one paragraph for each decision, and then answer the objection. This order covers the whole task and gives you most of the organisation marks.</p>
+<div class="plan"><div class="row"><div class="lab">Memo header</div><div class="txt"><strong>To:</strong> your two readers · <strong>From:</strong> your role · <strong>Subject:</strong> your recommendation, e.g. <em>Recommendation: sell online, use the recycled box</em></div></div><div class="row"><div class="lab">1. Recommendation<span>about 40 words</span></div><div class="txt">Both decisions in one or two sentences, and your main reason. Your readers should know what you want after this paragraph.</div></div><div class="row"><div class="lab">2. Decision 1<span>about 60 words</span></div><div class="txt">First sentence: your choice. Then two pieces of evidence, with numbers, and who they come from (<em>In the interview, the buyer explained that…</em>). Then what this means for the company.</div></div><div class="row"><div class="lab">3. Decision 2<span>about 60 words</span></div><div class="txt">The same pattern, and <strong>how this decision affects the first one</strong> (<em>The packaging decision depends on where we sell.</em>).</div></div><div class="row"><div class="lab">4. Objection and risk<span>about 60 words</span></div><div class="txt">The strongest argument against your plan, with its source. Then your answer. Then the risk that is left and how to deal with it.</div></div><div class="row"><div class="lab">5. Next steps<span>about 30 words</span></div><div class="txt">One or two clear actions: who does what, and when.</div></div></div>
+
+<p>A few tips:</p>
+<ul>
+<li><strong>Headings are optional.</strong> Short headings (<em>Recommendation</em>, <em>Risks</em>) are fine. Bullet points are fine for next steps, but not for your argument.</li>
+<li><strong>Write to your readers.</strong> Use <em>you</em> and <em>we</em>. Show you know what worries them (<em>Emre, I know you think customers want to see the product…</em>).</li>
+<li><strong>Think like a designer and like a business.</strong> Your readers care about how the product looks and feels, and about what it costs. Use both.</li>
+<li><strong>Don't retell the story.</strong> Your readers know their company. Every sentence should help them decide.</li>
+</ul>
+<h2 id="s4"><span class="n">4</span>Using your 45 minutes</h2>
+<p>Plan for about ten minutes before you start writing. A planned memo of 250 words gets more marks than an unplanned memo of 350 words.</p>
+<ol class="steps">
+<li><strong>Before the writing part.</strong> The situation at the start tells you the two questions. During the listening and reading, mark the facts, numbers and opinions that are important for them, and write down who said each one.</li>
+<li><strong>Minutes 0–10: decide and plan.</strong> For each decision, note the two or three best facts for A and for B, with their sources. Choose. Write down how the two decisions affect each other, and the strongest objection to your plan.</li>
+<li><strong>Minutes 10–35: write.</strong> Use the structure above. Write the recommendation paragraph first. If you run out of time, it is the most important part.</li>
+<li><strong>Minutes 35–45: check.</strong> Use the checklist at the end of this guide. Correct grammar and spelling, and count your words.</li>
+</ol>
+
+<h2 id="s5"><span class="n">5</span>A model memo</h2>
+<p>This example is invented and much simpler than a real paper, but it shows the shape.</p>
+<div class="situation"><p><strong>The situation:</strong> Bramble, a small Berlin lighting studio, is launching a new table lamp. <strong>Decision 1:</strong> A, a plain box in recycled cardboard; B, a colourful printed box. <strong>Decision 2:</strong> A, sell through a chain of design stores; B, sell online only. The readers are Ayla Dvořák (founder) and Emre Aksoy (sales). The "paper" says that the store chain takes 45% of the price (radio interview with a store buyer); that Emre thinks customers want to see and touch a lamp before they buy it (meeting); that in Ayla's survey, seven in ten customers said sustainability matters to them (meeting); that the plain box costs €2.10 and the printed box €3.80 (email from the production manager); and that colourful packaging helps products stand out on shop shelves (article).</p></div>
+<div class="mail"><div class="hd"><strong>To:</strong> Ayla Dvořák, Emre Aksoy · <strong>From:</strong> Product team · <strong>Subject:</strong> Recommendation: sell online, use the recycled box</div><div class="bd"><p>We recommend selling the new lamp online only (Decision 2, B) and packing it in the plain recycled box (Decision 1, A). Together, these choices keep our costs low and match what our customers care about.</p><p>Selling online lets us keep more of the price. In the radio interview, the store buyer explained that the chain takes 45% of the price of each lamp. Online, we keep the full price apart from shipping. That money can go into better photos and product videos, which are our real shop window online.</p><p>The packaging decision depends on where we sell. On a shop shelf, a colourful box helps a product stand out, as the article shows. Online, the customer has already decided before they see the box. Then it has two jobs: to protect the lamp and to feel good when it is opened. The plain box does both and costs €2.10 instead of €3.80, as the production manager's email shows. It also fits our customers: in Ayla's survey, seven in ten said sustainability matters to them.</p><p>The strongest objection is Emre's: people like to see and touch a lamp before they buy it. This is a fair point, but we can answer it with two showroom weekends a year in our Berlin studio. The risk is that online sales grow slowly. To manage this, we could test the lamp in one design store next year and compare the results.</p><p>As a next step, we suggest ordering 500 plain boxes and planning the first showroom weekend for the spring.</p></div></div>
+<p class="wc">About 260 words. Why it would score well:</p>
+<div class="card why"><div class="hd">Task and reader</div><div class="bd">Both decisions in the first sentence and the subject line. It answers Emre's worry directly and uses Ayla's survey.</div></div><div class="card why"><div class="hd">Using the information</div><div class="bd">Facts from the interview, the article, the meeting and the email, each with its source. Each fact is followed by what it means (<em>That money can go into…</em>). The article and the email are put together to explain why the box choice depends on where Bramble sells.</div></div><div class="card why"><div class="hd">Building the argument</div><div class="bd">Point, evidence, result in each paragraph. Emre's objection is put fairly and answered with a real idea (showroom weekends). The risk that is left has a plan (a test in one store).</div></div><div class="card why"><div class="hd">Organisation and flow</div><div class="bd">One idea per paragraph, each with a clear first sentence. Linking words show the logic: <em>Together</em>, <em>Then</em>, <em>It also</em>, <em>but</em>, <em>To manage this</em>.</div></div><div class="card why"><div class="hd">Language</div><div class="bd">Clear design and business words (<em>shop window</em>, <em>stand out</em>, <em>sustainability</em>, <em>showroom</em>). Careful claims (<em>could test</em>, <em>grow slowly</em>). Simple, correct sentences in a professional style.</div></div>
+
+<h2 id="s6"><span class="n">6</span>Useful language and common mistakes</h2>
+<div class="phr"><div class="row"><b>Recommend</b><span class="chip">We recommend…</span><span class="chip">The better option is…</span><span class="chip">We would not advise…</span></div><div class="row"><b>Say where a fact comes from</b><span class="chip">As Emre says, …</span><span class="chip">According to the article, …</span><span class="chip">In her email, X explains that…</span></div><div class="row"><b>Say what a fact means</b><span class="chip">This means that…</span><span class="chip">As a result, …</span><span class="chip">That money can go into…</span></div><div class="row"><b>Link the decisions</b><span class="chip">The two decisions depend on each other.</span><span class="chip">If we choose A, then…</span><span class="chip">This also affects…</span></div><div class="row"><b>Set conditions</b><span class="chip">as long as…</span><span class="chip">only if…</span><span class="chip">provided that…</span></div><div class="row"><b>Answer the objection</b><span class="chip">The strongest argument against this is…</span><span class="chip">This is a fair point, but…</span><span class="chip">To manage this risk, we could…</span></div><div class="row"><b>Be careful with claims</b><span class="chip">is likely to</span><span class="chip">could</span><span class="chip">may</span><span class="chip">probably</span></div></div>
+
+<p>The mistakes that cost the most marks:</p>
+<ul class="mistakes">
+<li><strong>Summarising instead of recommending.</strong> Retelling the recordings one by one, then giving an opinion at the end.</li>
+<li><strong>Two separate answers.</strong> Writing about the decisions as if they had nothing to do with each other.</li>
+<li><strong>Numbers without meaning.</strong> "The box costs €3.80." So what? Say what it means for the company.</li>
+<li><strong>Only one source.</strong> Using only the emails and forgetting the recordings and the article.</li>
+<li><strong>Describing the design but not deciding.</strong> Your readers need a choice and reasons, not a description of the product.</li>
+<li><strong>Mentioning the objection without answering it.</strong> "Some people may disagree" is not an answer.</li>
+<li><strong>Copying sentences or a chatty style.</strong> Use your own words. Avoid <em>honestly</em>, <em>a lot of</em>, <em>super nice</em> and exclamation marks.</li>
+</ul>
+
+<h2 id="s7"><span class="n">7</span>Final checklist</h2>
+<p>Use this in your last ten minutes.</p>
+<div class="checklist"><label><input type="checkbox"/><span>My recommendation on <strong>both</strong> decisions is in the first paragraph (and in the subject line).</span></label><label><input type="checkbox"/><span>I explain how the two decisions affect each other.</span></label><label><input type="checkbox"/><span>I use information from the recordings, the article <strong>and</strong> the emails, including numbers.</span></label><label><input type="checkbox"/><span>For every important fact, I say who it comes from and what it means for the decision.</span></label><label><input type="checkbox"/><span>I answer the strongest objection, not just mention it, and I say what risk is left.</span></label><label><input type="checkbox"/><span>I write to my two readers and show I know what worries them.</span></label><label><input type="checkbox"/><span>One idea per paragraph, with a clear first sentence and linking words.</span></label><label><input type="checkbox"/><span>My claims are as strong as the evidence (<em>will</em>, <em>is likely to</em>, <em>may</em>).</span></label><label><input type="checkbox"/><span>No slang, no chatty style, no copied sentences.</span></label><label><input type="checkbox"/><span>About 250 words.</span></label></div>
+<footer>SimLearn Lite · exam guides for the winter semester 2026/27 · <a href="../../../exam-guides/">all courses</a></footer></main></body></html>
