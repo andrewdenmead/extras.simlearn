@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Phrase Bank</title>
+<style>
+:root{
+  --blue:#1f5fbf; --blue-d:#174a96; --blue-l:#e8f0fc;
+  --ink:#1b2430; --muted:#5d6b7c; --line:#dfe5ee; --bg:#f4f7fb; --card:#fff;
+  --p0:#ffe66b; --p1:#a6ea9c; --p2:#ffa8d2; --p3:#9ad5ff; --p4:#ffc685;
+  --nbw:370px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}
+.main{transition:margin-right .25s}
+@media (min-width:1150px){ body.nb-open .main{margin-right:var(--nbw)} }
+
+/* header */
+header.top{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;padding:28px 16px 22px}
+header.top .in{max-width:920px;margin:0 auto}
+header.top .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+header.top h1{margin:.15em 0 .2em;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15}
+header.top p{margin:0;max-width:640px;opacity:.92}
+
+/* toolbar */
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:920px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.pens{display:flex;gap:6px;align-items:center}
+.pens .lbl{font-size:.8rem;color:var(--muted);margin-right:2px}
+.pen{width:30px;height:30px;border-radius:50%;border:2px solid rgba(0,0,0,.12);cursor:pointer;position:relative;padding:0}
+.pen.on{outline:3px solid var(--ink);outline-offset:2px}
+.pen.eraser{background:#fff;display:grid;place-items:center;font-size:.9rem}
+.pen-name{font-size:.82rem;color:var(--muted);min-width:0;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:5px 12px;font-size:.85rem;cursor:pointer}
+.seg button.on{background:var(--blue);color:#fff}
+.search{flex:1;min-width:150px}
+.search input{width:100%;border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:#fff}
+.nav{max-width:920px;margin:0 auto;padding:0 16px 10px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin}
+.nav a{flex:none;font-size:.8rem;text-decoration:none;color:var(--blue-d);background:var(--blue-l);padding:3px 10px;border-radius:999px}
+
+/* sections */
+.wrap{max-width:920px;margin:0 auto;padding:20px 16px 120px}
+.howto{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:22px;font-size:.92rem;color:var(--muted)}
+.howto b{color:var(--ink)}
+section.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;margin-bottom:22px;box-shadow:0 1px 2px rgba(20,40,80,.04)}
+.sec h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.sec h2 .num{color:var(--blue);font-weight:800}
+.sec h2 .de{font-size:.9rem;font-weight:400;color:var(--muted)}
+.task,.tip{border-radius:10px;padding:10px 14px;margin:12px 0 4px;font-size:.92rem}
+.task{background:var(--blue-l);border-left:4px solid var(--blue)}
+.tip{background:#fff8e6;border-left:4px solid #e6b200}
+.task b,.tip b{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+h3{font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:20px 0 6px;font-weight:700}
+h3 span{text-transform:none;letter-spacing:0;font-weight:400}
+
+.rows{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;padding:9px 14px;border-top:1px solid var(--line);cursor:pointer;transition:background .15s;user-select:none;-webkit-tap-highlight-color:transparent}
+.row:first-child{border-top:0}
+.row:hover{background:#f7f9fc}
+.row:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.row .en{font-weight:600}
+.row .de{color:var(--muted)}
+.pill{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.03em;padding:1px 7px;border-radius:999px;background:#eef1f5;color:var(--muted);margin-left:6px;vertical-align:2px;white-space:nowrap}
+.pill.f{background:#e5ecfa;color:#2a4f9a}.pill.i{background:#e8f6ea;color:#2e7a3c}.pill.u{background:#fde8e8;color:#a33}
+.row.h0{background:var(--p0)}.row.h1{background:var(--p1)}.row.h2{background:var(--p2)}.row.h3{background:var(--p3)}.row.h4{background:var(--p4)}
+.row[class*=" h"] .de{color:#3b4350}
+.row.hidden{display:none}
+body.m-en .row .de{display:none}
+body.m-en .row{grid-template-columns:1fr}
+body.m-test .row .en{filter:blur(6px);opacity:.55;transition:filter .2s}
+body.m-test .row.rev .en{filter:none;opacity:1}
+body.m-test .row{grid-template-columns:1fr 1fr}
+body.m-test .row .de{order:-1;color:var(--ink)}
+@media (max-width:640px){
+  .row,body.m-test .row{grid-template-columns:1fr}
+}
+.secnotes{margin-top:16px}
+.secnotes label{font-size:.8rem;color:var(--muted);font-weight:600}
+textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;resize:vertical;background:#fbfcfe}
+textarea:focus,input:focus{outline:2px solid var(--blue);outline-offset:0;border-color:transparent}
+.empty{padding:14px;color:var(--muted);font-size:.9rem;display:none}
+
+/* notebook */
+.nb-btn{position:fixed;right:16px;bottom:16px;z-index:40;background:var(--blue);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:600;box-shadow:0 6px 20px rgba(20,60,140,.3);cursor:pointer}
+.nb-btn .cnt{background:#fff;color:var(--blue);border-radius:999px;padding:0 8px;margin-left:6px;font-size:.85rem}
+body.nb-open .nb-btn{display:none}
+aside.nb{position:fixed;top:0;right:0;bottom:0;width:min(var(--nbw),100%);background:#fff;border-left:1px solid var(--line);z-index:50;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;box-shadow:-8px 0 24px rgba(20,40,80,.08)}
+body.nb-open aside.nb{transform:none}
+.nb-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px}
+.nb-head h2{margin:0;font-size:1.1rem;flex:1}
+.x{border:0;background:#eef1f5;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+.nb-body{flex:1;overflow-y:auto;padding:14px 16px}
+.nb-body h4{margin:16px 0 6px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.key{display:grid;gap:6px}
+.key .k{display:flex;align-items:center;gap:8px}
+.key .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid rgba(0,0,0,.1)}
+.key input{flex:1;border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:.88rem}
+.grp{margin-top:10px}
+.grp .gt{font-size:.82rem;font-weight:700;padding:3px 9px;border-radius:6px;display:inline-block;margin-bottom:4px}
+.item{display:flex;gap:6px;align-items:flex-start;font-size:.9rem;padding:4px 0;border-bottom:1px dashed var(--line)}
+.item .t{flex:1}
+.item .s{display:block;font-size:.74rem;color:var(--muted)}
+.item button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:1rem;line-height:1;padding:2px 4px}
+.nb-none{color:var(--muted);font-size:.88rem}
+.nb-foot{padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;font-size:.88rem}
+.btn.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.warn{color:#a33}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.88rem;z-index:60;transition:transform .25s;pointer-events:none}
+.toast.show{transform:translateX(-50%)}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:10px 16px 40px}
+@media print{
+  .bar,.nb-btn,aside.nb,.secnotes,.howto{display:none!important}
+  body{background:#fff}.main{margin:0!important}
+  section.sec{break-inside:avoid-page;box-shadow:none}
+  body.m-test .row .en{filter:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="main">
+  <header class="top"><div class="in">
+    <div class="kicker">SimLearn Extras · Business Skills</div>
+    <h1>Email Phrase Bank</h1>
+    <p>Useful phrases for every part of a business email, from the greeting to the sign-off, with German equivalents.</p>
+  </div></header>
+
+  <div class="bar">
+    <div class="in">
+      <div class="pens" id="pens"><span class="lbl">Pen</span></div>
+      <span class="pen-name" id="penName"></span>
+      <div class="seg" id="modes">
+        <button data-m="both" class="on">EN + DE</button>
+        <button data-m="en">EN only</button>
+        <button data-m="test">Test me</button>
+      </div>
+      <div class="search"><input id="q" type="search" placeholder="Search phrases (English or German)…" aria-label="Search phrases"></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+  </div>
+
+  <div class="wrap">
+    <div class="howto">
+      <b>Tap a phrase</b> to highlight it with your pen. Make up your own colour code in <b>My notebook</b> (e.g. yellow = “I'll use this”, pink = “new for me”). Tap again to remove the highlight. <b>Test me</b> hides the English: read the German, say the English, then tap to check. Your highlights and notes stay on this device only.
+    </div>
+    <div id="secs"></div>
+    <div class="empty" id="noHits">No phrases match your search.</div>
+  </div>
+  <footer>SimLearn Extras</footer>
+</div>
+
+<button class="nb-btn" id="nbBtn">My notebook <span class="cnt" id="cnt">0</span></button>
+
+<aside class="nb" id="nb" aria-label="My notebook">
+  <div class="nb-head"><h2>My notebook</h2><button class="x" id="nbClose" aria-label="Close notebook">×</button></div>
+  <div class="nb-body">
+    <h4>My colour code</h4>
+    <div class="key" id="key"></div>
+    <h4>Highlighted phrases</h4>
+    <div id="hlList"></div>
+    <h4>General notes</h4>
+    <textarea id="genNotes" placeholder="Anything else you want to remember…"></textarea>
+  </div>
+  <div class="nb-foot">
+    <button class="btn pri" id="copyBtn">Copy notes</button>
+    <button class="btn" id="dlBtn">Download .txt</button>
+    <button class="btn warn" id="clearBtn">Clear all</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const SECS = [
+ {t:"Greetings", de:"Anrede",
+  task:"Choose a greeting and a matching sign-off (see section 9) for each of these: the reservations team at a hotel; Dr Ewan Fraser, a professor you have never met; Lena, your project partner; your whole seminar group.",
+  tip:"In English, the first word after the greeting starts with a capital letter, unlike in German: <i>Dear Ms Schmidt, / Thank you for…</i> British English usually writes Mr, Ms and Dr without a full stop; American English adds one (Mr.). Use Ms unless you know a woman prefers Mrs.",
+  groups:[{rows:[
+   ["Dear Sir or Madam,","Sehr geehrte Damen und Herren,","a company, name unknown"],
+   ["Dear Mr Schmidt,","Sehr geehrter Herr Schmidt,","a man"],
+   ["Dear Ms Schmidt,","Sehr geehrte Frau Schmidt,","a woman (default)"],
+   ["Dear Mrs Schmidt,","Sehr geehrte Frau Schmidt,","only if she uses Mrs"],
+   ["Dear Dr Schmidt,","Sehr geehrte Frau Dr. Schmidt, / Sehr geehrter Herr Dr. Schmidt,","with a title"],
+   ["Dear Alex Schmidt,","Guten Tag Alex Schmidt,","gender not known"],
+   ["Dear Betty, / Dear Tom,","Liebe Betty, / Lieber Tom,","someone you know"],
+   ["Hi Betty,","Hallo Betty,","colleague","i"],
+   ["Dear all,","Liebe alle, / Liebe Kolleginnen und Kollegen,","a group you know"],
+   ["Hi everyone,","Hallo zusammen,","a group","i"],
+   ["To whom it may concern,","An die zuständige Stelle,","recipient unknown (e.g. references)","f"]
+  ]}]},
+ {t:"Opening lines", de:"Die ersten Zeilen",
+  task:"With a partner, write two short emails about the same thing to the same person: one formal, one more informal. Which phrases did you swap, and why?",
+  groups:[
+   {t:"Saying why you're writing", rows:[
+    ["I am writing with reference to …","Ich schreibe Ihnen bezüglich …","","f"],
+    ["I am writing with regard to …","Ich schreibe Ihnen bezüglich …","","f"],
+    ["I am writing in connection with …","Ich schreibe Ihnen im Zusammenhang mit …","","f"],
+    ["I'm writing to let you know that …","Ich möchte Ihnen mitteilen, dass …"],
+    ["I'm just writing to …","Ich schreibe Ihnen, um … zu …","","i"],
+    ["We would like to confirm …","Hiermit bestätigen wir …","","f"],
+    ["Just writing to confirm …","Ich wollte nur kurz … bestätigen.","","i"],
+    ["Just a short email to …","Nur eine kurze Mail, um … zu …","","i"],
+    ["Just a quick note to say …","Nur ein paar kurze Zeilen, um … zu …","","i"],
+    ["Just to update you on …","Kurz zum aktuellen Stand bei …","","i"],
+    ["Here are a few quick comments.","Hier ein paar kurze Anmerkungen.","","i"],
+    ["On behalf of …","Im Namen von …"]
+   ]},
+   {t:"Replying and following up", rows:[
+    ["Thank you for your email of 12 June concerning …","Vielen Dank für Ihre E-Mail vom 12. Juni bezüglich …"],
+    ["Thank you for your prompt reply.","Vielen Dank für Ihre schnelle Antwort."],
+    ["In reply to your email, here are …","Als Antwort auf Ihre E-Mail sende ich Ihnen …"],
+    ["Re your last email, …","Bzgl. Ihrer letzten E-Mail …","","i"],
+    ["Further to our phone call, …","Bezugnehmend auf unser Telefonat …","","f"],
+    ["Following our meeting on Tuesday, …","Im Anschluss an unser Treffen am Dienstag …"],
+    ["I've just received your message.","Ich habe gerade Ihre Nachricht erhalten."],
+    ["…, which I received on my return to the office.","…, die ich nach meiner Rückkehr ins Büro erhalten habe.","","f"],
+    ["…, which I found when I got back to the office.","…, die ich vorgefunden habe, als ich wieder im Büro war.","","i"],
+    ["Sorry for the delay in getting back to you.","Entschuldigen Sie bitte meine späte Rückmeldung."],
+    ["Here's the … you asked for.","Hier ist der/die/das gewünschte …","","i"],
+    ["Thanks for sending me …","Danke, dass Sie mir … geschickt haben.","","i"],
+    ["Thank you for your interest in …","Vielen Dank für Ihr Interesse an …"],
+    ["…, as promised / as agreed, …","…, wie versprochen / wie vereinbart, …"]
+   ]},
+   {t:"Making contact", rows:[
+    ["Haven't heard from you in a long time!","Lange nichts von dir/Ihnen gehört!","","i"],
+    ["Mr Müller suggested I contact you.","Herr Müller hat mich an Sie verwiesen."],
+    ["I got your address from …","Ich habe Ihre Adresse von … bekommen."],
+    ["Your name was given to us by …","Ihr Name wurde uns von … genannt.","","f"],
+    ["You have been recommended to us by …","Sie wurden uns von … empfohlen.","","f"],
+    ["You may remember that we met at …","Wie Sie sich vielleicht erinnern, haben wir uns bei … kennengelernt."],
+    ["As you may recall, …","Wie Sie sich sicher erinnern, …"],
+    ["As you may know, …","Wie Sie vielleicht wissen, …"],
+    ["Everyone at our end …","Alle hier bei uns …"]
+   ]}
+  ]},
+ {t:"Attachments", de:"Dateien im Anhang",
+  task:"Write your partner a short email and “attach” something. Your partner replies to say there is a problem with the attachment, and you write back to sort it out.",
+  groups:[
+   {t:"Attaching files", rows:[
+    ["Please find attached …","Anbei finden Sie …","","f"],
+    ["I'm attaching … / Attached is …","Im Anhang schicke ich Ihnen …"],
+    ["A copy of the invoice is attached.","Eine Kopie der Rechnung ist beigefügt."],
+    ["I'm sending you the report as an attachment.","Ich sende Ihnen den Bericht als Anhang."],
+    ["You'll find the (requested) information attached.","Im Anhang finden Sie die (gewünschten) Informationen."],
+    ["I've shared a link to the folder with you.","Ich habe Ihnen einen Link zum Ordner freigegeben."],
+    ["Please correct the attached document and send it back by Tuesday at the latest.","Bitte korrigieren Sie das beigefügte Dokument und schicken Sie es bis spätestens Dienstag zurück."]
+   ]},
+   {t:"Problems with attachments", rows:[
+    ["I'm afraid I can't open the file.","Ich kann die Datei leider nicht öffnen."],
+    ["Did you forget to attach the file?","Haben Sie vielleicht vergessen, die Datei anzuhängen?"],
+    ["It looks like you forgot to attach the file.","Es sieht so aus, als hätten Sie vergessen, die Datei anzuhängen."],
+    ["Could you send the document again (as a PDF), please?","Könnten Sie das Dokument bitte noch einmal (als PDF) schicken?"],
+    ["Unfortunately, our firewall blocked your attachment.","Leider hat unsere Firewall Ihren Anhang blockiert."],
+    ["The link doesn't seem to work.","Der Link scheint nicht zu funktionieren."],
+    ["I hope you can open the attachment this time.","Ich hoffe, Sie können den Anhang diesmal öffnen."],
+    ["If there are any problems with it, please let me know.","Falls es Probleme damit gibt, sagen Sie mir bitte Bescheid."]
+   ]}
+  ]},
+ {t:"Good and bad news", de:"Gute und schlechte Nachrichten",
+  task:"Tell your partner about the last email you wrote with good or bad news. How did the person react? Was it what you expected?",
+  groups:[
+   {t:"Good news", rows:[
+    ["I am / We are happy / pleased / delighted to tell / inform / advise you that …","Ich freue mich (sehr), Ihnen mitteilen zu können, dass …","advise = more formal"],
+    ["I have spoken to … and we are pleased to offer …","Ich habe mit … gesprochen, und wir freuen uns, Ihnen … anbieten zu können."],
+    ["I'm glad to say that we (seem to) have sorted out the problem.","Ich freue mich, Ihnen mitteilen zu können, dass wir das Problem (wohl) gelöst haben."],
+    ["We look forward to working with you.","Wir freuen uns auf die Zusammenarbeit."],
+    ["Fortunately, …","Glücklicherweise / Erfreulicherweise …"],
+    ["I think your idea is great.","Ich finde Ihre/deine Idee toll.","","i"],
+    ["That sounds good (to me).","Das klingt gut.","","i"]
+   ]},
+   {t:"Bad news", rows:[
+    ["Unfortunately, …","Leider …"],
+    ["I regret to tell you that …","Leider muss ich Ihnen mitteilen, dass …","","f"],
+    ["We have a slight problem.","Wir haben ein kleines Problem."],
+    ["I'm afraid I can't help you with this.","Leider kann ich Ihnen dabei nicht helfen."],
+    ["I'm afraid I can't make Tuesday.","Leider kann ich am Dienstag nicht."],
+    ["I'm afraid I have to cancel …","Ich muss … leider absagen."],
+    ["Could we postpone …?","Könnten wir … verschieben?"],
+    ["We need to reschedule …","Wir müssen … neu terminieren."],
+    ["Because of another commitment, …","Aufgrund einer anderen Verpflichtung …"]
+   ]}
+  ]},
+ {t:"Advice and information", de:"Rat und Informationen",
+  task:"Write an email asking for advice or information and “send” it to your partner. Do they understand what you want? Do they find it polite?",
+  groups:[
+   {t:"Giving and asking for advice", rows:[
+    ["We would like to suggest starting …","Wir möchten vorschlagen, mit … zu beginnen."],
+    ["Please pay special attention to …","Bitte achten Sie besonders auf …"],
+    ["My recommendation would be to …","Ich würde empfehlen, …"],
+    ["If I were you, I would …","An Ihrer Stelle würde ich …"],
+    ["Why don't we try / ask …?","Warum versuchen/fragen wir nicht …?"],
+    ["Please contact Fiona MacLeod in Accounts.","Bitte wenden Sie sich an Fiona MacLeod in der Buchhaltung."],
+    ["How do you think we should deal with this?","Wie sollten wir Ihrer Meinung nach damit umgehen?"],
+    ["I was wondering if you had any ideas about …","Hätten Sie vielleicht Ideen zu …?"],
+    ["If we changed the price, it could increase our turnover.","Wenn wir den Preis ändern würden, könnte das unseren Umsatz steigern."]
+   ]},
+   {t:"Giving and requesting information", rows:[
+    ["Please note that …","Bitte beachten Sie, dass …"],
+    ["I must inform you that …","Ich muss Sie darauf hinweisen, dass …","","f"],
+    ["It's important that …","Es ist wichtig, dass …"],
+    ["Your request is being processed.","Ihre Anfrage wird bearbeitet."],
+    ["We are interested in …","Wir interessieren uns für …"],
+    ["What are your usual charges for …?","Was sind Ihre üblichen Preise für …?"],
+    ["Please note that my … has changed.","Bitte beachten Sie, dass sich mein/meine … geändert hat."],
+    ["You will receive the goods within three working days.","Sie erhalten die Ware innerhalb von drei Werktagen."],
+    ["As requested at the last meeting, …","Wie bei der letzten Besprechung gewünscht, …"]
+   ]}
+  ]},
+ {t:"Requesting action", de:"Jemanden um etwas bitten",
+  task:"Write a very direct email asking someone to do something. Then rewrite it politely. How does each version feel to read?",
+  groups:[
+   {rows:[
+    ["Can you help me?","Können Sie mir helfen?"],
+    ["I'd like to ask you to …","Ich möchte Sie bitten, … zu …"],
+    ["Could you let me know …?","Könnten Sie mir Bescheid geben, …?"],
+    ["Kindly send me …","Bitte senden Sie mir …","formal, a bit old-fashioned"],
+    ["I'd appreciate it / I'd be grateful if …","Ich wäre Ihnen dankbar, wenn …"],
+    ["Please answer ASAP.","Bitte antworten Sie schnellstmöglich.","direct","u"],
+    ["I'd appreciate a reply ASAP.","Ich würde mich über eine baldige Antwort freuen.","polite"],
+    ["I need that information by tomorrow.","Ich brauche diese Informationen bis spätestens morgen.","direct","u"],
+    ["Please let me know as soon as possible whether …","Bitte lassen Sie mich so bald wie möglich wissen, ob …"],
+    ["I'd appreciate your help with this.","Ich wäre Ihnen für Ihre Hilfe dabei dankbar."],
+    ["Can you tell me a little more about …?","Können Sie mir etwas mehr über … sagen?"],
+    ["Could you please send me … by Friday?","Könnten Sie mir … bitte bis Freitag schicken?"],
+    ["I'd like your comments by the end of the week.","Ich hätte gern bis Ende der Woche Ihre Anmerkungen."],
+    ["I look forward to hearing your advice on this matter.","Ich freue mich auf Ihren Rat in dieser Angelegenheit.","","f"],
+    ["Please get in touch.","Bitte melden Sie sich bei mir."],
+    ["Keep me posted.","Halten Sie mich bitte auf dem Laufenden.","","i"],
+    ["Do you think you could …?","Könnten Sie vielleicht …?"],
+    ["Let me know if you'd like me to …","Sagen Sie mir Bescheid, wenn ich … soll."]
+   ]},
+   {t:"If it's urgent, add", rows:[
+    ["… as soon as possible / without delay / immediately","… so bald wie möglich / unverzüglich / sofort","urgent","u"]
+   ]}
+  ]},
+ {t:"Taking action and clarifying", de:"Selbst handeln und klären",
+  task:"Partner A writes an email explaining a problem. Partner B answers it using the phrases below. If anything in A's email is unclear, B asks about it first.",
+  groups:[
+   {t:"Taking action", rows:[
+    ["I'll look into it.","Ich kümmere mich darum."],
+    ["Would it be OK if …?","Wäre es in Ordnung, wenn …?"],
+    ["Would you like me to …?","Möchten Sie, dass ich …?"],
+    ["Would you mind if I …?","Hätten Sie etwas dagegen, wenn ich …?"],
+    ["I'll check and get back to you.","Ich prüfe das und melde mich dann wieder bei Ihnen."],
+    ["I'll get on to Simon about …","Ich setze mich wegen … mit Simon in Verbindung.","","i"],
+    ["I'll copy you in on my next email to Bob.","Ich setze Sie bei meiner nächsten E-Mail an Bob in CC."],
+    ["I'm circulating the document to all sales managers.","Ich schicke das Dokument an alle Vertriebsleiter."],
+    ["The report will be circulated to all department heads.","Der Bericht wird an alle Abteilungsleiter verteilt."],
+    ["I'm returning your document with my comments in red.","Ich schicke Ihnen das Dokument mit meinen Anmerkungen in Rot zurück."]
+   ]},
+   {t:"Clarifying", rows:[
+    ["I hope this clarifies the situation.","Ich hoffe, das klärt die Sachlage."],
+    ["I'm not sure what you mean by this.","Ich bin nicht sicher, was Sie damit meinen."],
+    ["Sorry, I don't understand this point.","Entschuldigung, dieser Punkt ist mir nicht ganz klar."],
+    ["Could you explain that in a little more detail?","Könnten Sie das bitte etwas ausführlicher erklären?"],
+    ["Your suggestion is good but needs some clarification.","Ihr Vorschlag ist gut, muss aber noch etwas präzisiert werden."]
+   ]}
+  ]},
+ {t:"Complaining and apologising", de:"Beschwerden und Entschuldigungen",
+  task:"Write a short complaint and send it to your partner. Your partner replies with an apology and tells you what they will do about it.",
+  groups:[
+   {t:"Complaining", rows:[
+    ["We regret to inform you that …","Wir müssen Ihnen leider mitteilen, dass …","","f"],
+    ["I am writing to complain about …","Ich schreibe Ihnen, um mich über … zu beschweren."],
+    ["Unfortunately, I must complain about …","Leider muss ich … reklamieren."],
+    ["We must draw your attention to …","Wir müssen Sie auf … hinweisen."],
+    ["Regrettably, …","Bedauerlicherweise …"],
+    ["Much to our surprise, …","Zu unserer Überraschung …"],
+    ["Unfortunately, the goods were damaged.","Leider war die Ware beschädigt."],
+    ["We received only 6 items instead of 10.","Wir haben nur 6 statt 10 Stück erhalten."],
+    ["If we do not receive … by …, we shall …","Sollten wir … nicht bis … erhalten, werden wir …","","f"],
+    ["In the event that …, we will be unable to …","Falls …, wird es uns nicht möglich sein, … zu …","","f"],
+    ["I insist on …, otherwise …","Ich bestehe auf …, andernfalls …"],
+    ["Please let us know what you intend to do about this.","Teilen Sie uns bitte mit, was Sie in dieser Sache zu unternehmen gedenken."],
+    ["Please ensure that this does not happen again.","Bitte stellen Sie sicher, dass so etwas nicht noch einmal vorkommt."]
+   ]},
+   {t:"Apologising", rows:[
+    ["We would like to apologise for …","Wir möchten uns für … entschuldigen."],
+    ["We are extremely sorry for …","Es tut uns äußerst leid wegen …"],
+    ["Please accept our (sincere) apologies.","Bitte entschuldigen Sie vielmals."],
+    ["We're having a temporary problem.","Wir haben ein vorübergehendes Problem."],
+    ["This was due to …","Das lag an …"],
+    ["We will make sure that in future …","Wir werden sicherstellen, dass in Zukunft …"],
+    ["You can be sure that …","Sie können sicher sein, dass …","","i"],
+    ["I can assure you that …","Ich versichere Ihnen, dass …","","f"],
+    ["Thank you for bringing this to our attention.","Vielen Dank, dass Sie uns darauf aufmerksam gemacht haben."],
+    ["We apologise for any inconvenience caused.","Bitte entschuldigen Sie etwaige Unannehmlichkeiten."],
+    ["We hope this has not caused you any inconvenience.","Wir hoffen, dass Ihnen dadurch keine Unannehmlichkeiten entstanden sind."],
+    ["With apologies once again, …","Nochmals Entschuldigung, …"]
+   ]}
+  ]},
+ {t:"Closing", de:"Abschluss",
+  task:"Swap one of the emails you wrote today with your partner. Check the last line and the sign-off: do they match the greeting?",
+  tip:"Match the sign-off to the greeting: <i>Dear Sir or Madam</i> → <i>Yours faithfully</i>. <i>Dear Ms Schmidt</i> → <i>Yours sincerely</i>. <i>Dear/Hi + first name</i> → <i>Kind regards</i>, <i>Best wishes</i> or <i>Best</i>. Most everyday business emails simply end with <i>Kind regards</i>.",
+  groups:[
+   {t:"Last lines", rows:[
+    ["Please get in touch / let me know / contact me if you need any further information.","Bitte melden Sie sich, falls Sie weitere Informationen benötigen."],
+    ["Please feel free to get in touch if you have any questions.","Melden Sie sich gerne, falls Sie noch Fragen haben."],
+    ["Please don't hesitate to contact me if you have any questions.","Zögern Sie nicht, sich bei Fragen mit mir in Verbindung zu setzen."],
+    ["I look forward to receiving your reply.","Ich freue mich auf Ihre Antwort.","","f"],
+    ["Looking forward to hearing from you.","Ich freue mich, von Ihnen zu hören.","","i"],
+    ["Thank you in advance for …","Vielen Dank im Voraus für …","","f"],
+    ["Thanks in advance for …","Danke im Voraus für …","","i"],
+    ["I'll be in touch again as soon as …","Ich melde mich wieder bei Ihnen, sobald …"],
+    ["I hope this information helps.","Ich hoffe, diese Informationen helfen Ihnen weiter."],
+    ["I hope this helps.","Ich hoffe, das hilft.","","i"],
+    ["I hope to reply in full in a few days.","Ich hoffe, Ihnen in einigen Tagen ausführlicher antworten zu können."],
+    ["I hope to hear from you soon.","Ich hoffe, bald von Ihnen zu hören."],
+    ["I hope all is well with you. / Hope you're well.","Ich hoffe, es geht Ihnen gut.","","i"],
+    ["Please give my regards to …","Bitte grüßen Sie … von mir."]
+   ]},
+   {t:"Sign-offs", rows:[
+    ["Yours faithfully,","Mit freundlichen Grüßen","after Dear Sir or Madam (UK)","f"],
+    ["Yours sincerely, (UK) / Sincerely, (US)","Mit freundlichen Grüßen","after Dear Ms Schmidt","f"],
+    ["Kind regards, / Best regards,","Freundliche Grüße / Beste Grüße","most business emails"],
+    ["Best wishes,","Herzliche Grüße / Viele Grüße","someone you know"],
+    ["Best, / Regards,","Viele Grüße / Gruß","short and quick"],
+    ["See you soon,","Bis bald","","i"],
+    ["Bye for now, / Cheers,","Tschüss erstmal","very informal","i"]
+   ]}
+  ]}
+];
+
+const PENS=["Yellow","Green","Pink","Blue","Orange"];
+const KEY="extras-email-phrases-v1";
+let S={hl:{},labels:["","","","",""],notes:{},gen:""};
+try{const r=localStorage.getItem(KEY); if(r) S=Object.assign(S,JSON.parse(r));}catch(e){}
+let pen=0, mode="both", saveT;
+function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},250)}
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pillTxt={f:"formal",i:"informal",u:"direct"};
+const BY={};
+
+/* render sections */
+let html="",nav="";
+SECS.forEach((s,si)=>{
+  const sid="s"+(si+1);
+  nav+=`<a href="#${sid}">${si+1}. ${esc(s.t)}</a>`;
+  html+=`<section class="sec" id="${sid}"><h2><span class="num">${si+1}</span>${esc(s.t)} <span class="de">${esc(s.de)}</span></h2>`;
+  if(s.task) html+=`<div class="task"><b>Partner task</b>${s.task}</div>`;
+  if(s.tip) html+=`<div class="tip"><b>Watch out</b>${s.tip}</div>`;
+  s.groups.forEach((g,gi)=>{
+    html+=`<div class="grp-wrap">`;
+    if(g.t) html+=`<h3>${esc(g.t)}</h3>`; else if(gi===0) html+=`<div style="height:12px"></div>`;
+    html+=`<div class="rows">`;
+    g.rows.forEach((r,ri)=>{
+      const id=`${sid}-${gi}-${ri}`;
+      BY[id]={en:r[0],de:r[1],sec:s.t,si};
+      let pills="";
+      if(r[2]) pills+=`<span class="pill${r[3]?" "+r[3]:""}">${esc(r[2])}</span>`;
+      else if(r[3]) pills+=`<span class="pill ${r[3]}">${pillTxt[r[3]]}</span>`;
+      html+=`<div class="row" role="button" tabindex="0" data-id="${id}"><div class="en">${esc(r[0])}${pills}</div><div class="de">${esc(r[1])}</div></div>`;
+    });
+    html+=`</div></div>`;
+  });
+  html+=`<div class="secnotes"><label for="n-${sid}">My notes: ${esc(s.t)}</label><textarea id="n-${sid}" data-sec="${sid}" placeholder="Useful phrases, mistakes to avoid, questions…"></textarea></div></section>`;
+});
+$("#secs").innerHTML=html; $("#nav").innerHTML=nav;
+document.querySelectorAll(".secnotes textarea").forEach(t=>{
+  t.value=S.notes[t.dataset.sec]||"";
+  t.addEventListener("input",()=>{S.notes[t.dataset.sec]=t.value;save()});
+});
+
+/* pens */
+const pensEl=$("#pens");
+PENS.forEach((p,i)=>{const b=document.createElement("button");b.className="pen";b.style.background=`var(--p${i})`;b.title=p;b.setAttribute("aria-label",p+" pen");b.onclick=()=>setPen(i);pensEl.appendChild(b)});
+const er=document.createElement("button");er.className="pen eraser";er.textContent="⌫";er.title="Eraser";er.setAttribute("aria-label","Eraser");er.onclick=()=>setPen(-1);pensEl.appendChild(er);
+function penLabel(i){return i<0?"Eraser":(S.labels[i]||PENS[i])}
+function setPen(i){pen=i;[...pensEl.querySelectorAll(".pen")].forEach((b,j)=>b.classList.toggle("on",j===(i<0?5:i)));$("#penName").textContent=penLabel(i)}
+
+/* key */
+$("#key").innerHTML=PENS.map((p,i)=>`<div class="k"><span class="dot" style="background:var(--p${i})"></span><input data-i="${i}" placeholder="${p} = …" value="${esc(S.labels[i]||"")}" aria-label="${p} meaning"></div>`).join("");
+$("#key").addEventListener("input",e=>{const i=+e.target.dataset.i;S.labels[i]=e.target.value;save();setPen(pen);renderNB()});
+
+/* rows */
+function paint(row){const c=S.hl[row.dataset.id];row.className="row"+(c!==undefined?" h"+c:"")+(row.classList.contains("rev")?" rev":"")+(row.classList.contains("hidden")?" hidden":"")}
+document.querySelectorAll(".row").forEach(paint);
+function tap(row){
+  if(mode==="test"){row.classList.toggle("rev");return}
+  const id=row.dataset.id;
+  if(pen<0||S.hl[id]===pen) delete S.hl[id]; else S.hl[id]=pen;
+  paint(row);save();renderNB();
+}
+$("#secs").addEventListener("click",e=>{const r=e.target.closest(".row");if(r)tap(r)});
+$("#secs").addEventListener("keydown",e=>{const r=e.target.closest(".row");if(r&&(e.key==="Enter"||e.key===" ")){e.preventDefault();tap(r)}});
+
+/* modes */
+$("#modes").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;mode=b.dataset.m;
+  [...$("#modes").children].forEach(x=>x.classList.toggle("on",x===b));
+  document.body.classList.toggle("m-en",mode==="en");document.body.classList.toggle("m-test",mode==="test");
+  document.querySelectorAll(".row.rev").forEach(r=>r.classList.remove("rev"));
+});
+
+/* search */
+$("#q").addEventListener("input",e=>{
+  const q=e.target.value.trim().toLowerCase();let any=false;
+  document.querySelectorAll("section.sec").forEach(sec=>{
+    let secHit=false;
+    sec.querySelectorAll(".grp-wrap").forEach(g=>{
+      let gHit=false;
+      g.querySelectorAll(".row").forEach(r=>{const d=BY[r.dataset.id];const hit=!q||(d.en+" "+d.de).toLowerCase().includes(q);r.classList.toggle("hidden",!hit);if(hit)gHit=true});
+      g.style.display=gHit?"":"none";if(gHit)secHit=true;
+    });
+    sec.style.display=secHit?"":"none";
+    sec.querySelectorAll(".task,.tip,.secnotes").forEach(x=>x.style.display=q?"none":"");
+    if(secHit)any=true;
+  });
+  $("#noHits").style.display=any?"none":"block";
+});
+
+/* notebook */
+function renderNB(){
+  const ids=Object.keys(S.hl);$("#cnt").textContent=ids.length;
+  if(!ids.length){$("#hlList").innerHTML=`<p class="nb-none">Nothing yet. Pick a pen and tap any phrase.</p>`;return}
+  let h="";
+  PENS.forEach((p,i)=>{
+    const mine=ids.filter(id=>S.hl[id]===i&&BY[id]);if(!mine.length)return;
+    h+=`<div class="grp"><span class="gt" style="background:var(--p${i})">${esc(S.labels[i]||p)}</span>`;
+    mine.forEach(id=>{h+=`<div class="item"><span class="t">${esc(BY[id].en)}<span class="s">${esc(BY[id].de)} · ${esc(BY[id].sec)}</span></span><button data-id="${id}" aria-label="Remove">×</button></div>`});
+    h+=`</div>`;
+  });
+  $("#hlList").innerHTML=h;
+}
+$("#hlList").addEventListener("click",e=>{const b=e.target.closest("button[data-id]");if(!b)return;delete S.hl[b.dataset.id];save();
+  const r=document.querySelector(`.row[data-id="${b.dataset.id}"]`);if(r)paint(r);renderNB()});
+$("#genNotes").value=S.gen||"";
+$("#genNotes").addEventListener("input",e=>{S.gen=e.target.value;save()});
+function openNB(o){document.body.classList.toggle("nb-open",o)}
+$("#nbBtn").onclick=()=>openNB(true);$("#nbClose").onclick=()=>openNB(false);
+if(window.innerWidth>=1150) openNB(true);
+
+function exportText(){
+  let t="EMAIL PHRASE BANK: MY NOTES\n\n";
+  const ids=Object.keys(S.hl).filter(id=>BY[id]);
+  if(ids.length){
+    PENS.forEach((p,i)=>{const mine=ids.filter(id=>S.hl[id]===i);if(!mine.length)return;
+      t+=`[${p}${S.labels[i]?" = "+S.labels[i]:""}]\n`;mine.forEach(id=>t+=`• ${BY[id].en}  (${BY[id].de})\n`);t+="\n"});
+  }
+  SECS.forEach((s,si)=>{const n=(S.notes["s"+(si+1)]||"").trim();if(n)t+=`Notes on ${s.t}:\n${n}\n\n`});
+  if((S.gen||"").trim()) t+=`General notes:\n${S.gen.trim()}\n`;
+  return t.trim()+"\n";
+}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+$("#copyBtn").onclick=()=>{const txt=exportText();
+  (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>toast("Notes copied")).catch(()=>{
+    const ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");toast("Notes copied")}catch(e){toast("Copy failed")}ta.remove()})};
+$("#dlBtn").onclick=()=>{const b=new Blob([exportText()],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="email-phrases-notes.txt";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$("#clearBtn").onclick=()=>{if(!confirm("Clear all highlights, colour labels and notes?"))return;
+  S={hl:{},labels:["","","","",""],notes:{},gen:""};save();
+  document.querySelectorAll(".row").forEach(paint);document.querySelectorAll("textarea").forEach(t=>t.value="");
+  document.querySelectorAll("#key input").forEach(i=>i.value="");setPen(pen);renderNB();toast("Cleared")};
+
+setPen(0);renderNB();
+</script>
+</body>
+</html>
