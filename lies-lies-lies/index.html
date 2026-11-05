@@ -62,7 +62,7 @@ input:focus,textarea:focus{outline:2px solid var(--acc-l);border-color:var(--acc
 
 /* present */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.pc{position:relative;border-radius:18px;padding:18px 18px 22px;min-height:220px;background:#fff;border:3px solid var(--line);overflow:hidden}
+.pc{position:relative;border-radius:18px;padding:18px 18px 64px;min-height:220px;background:#fff;border:3px solid var(--line);overflow:hidden}
 .pc .badge{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;font-weight:800;font-size:1.4rem;font-family:"Rethink Sans",system-ui,sans-serif;margin-bottom:8px;color:#1d1b26}
 .pc.A{border-color:var(--a)} .pc.A .badge{background:var(--a)}
 .pc.B{border-color:var(--b)} .pc.B .badge{background:var(--b)}
@@ -110,7 +110,7 @@ footer{max-width:880px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:v
 </head>
 <body>
 <header class="top"><div class="in">
-  <div class="kicker">Pair game · Real or made up?</div>
+  <div class="kicker">Head to head · Real or made up?</div>
   <h1 id="title">Lies, Lies, <span>Lies</span></h1>
   <p id="lead"></p>
 </div></header>
@@ -121,11 +121,8 @@ footer{max-width:880px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:v
 </div></div>
 
 <main class="wrap" id="v-real"></main>
-<main class="wrap" id="v-fake" hidden></main>
-<main class="wrap" id="v-show" hidden></main>
 <main class="wrap" id="v-teacher" hidden></main>
 
-<div class="full" id="full"><button class="close" id="fullClose">Close ✕</button><div id="fullBox"></div></div>
 <div class="toast" id="toast"></div>
 <footer>SimLearn Extras · Your notes stay in this browser. Nothing is sent anywhere.</footer>
 
@@ -187,97 +184,92 @@ if (setErr) toast("We couldn't find that set, so this is the example version.");
 document.title = SET.name;
 const words = SET.name.split(" "), last = words.pop();
 $("#title").innerHTML = `${esc(words.join(" "))} <span>${esc(last)}</span>`;
-$("#lead").textContent = `In pairs: the app gives you one ${SET.topic.replace(/s$/,"")} that is real and offers you two that aren't. Pick your lie, make both sound convincing, and tell another pair or the class. Can they spot the lie?`;
+$("#lead").textContent = `Head to head, one against one. The app gives you a ${SET.topic.replace(/s$/,"")} that is real and two that aren't. Pick a lie, tell your partner about both, and see if they can spot it. Then swap.`;
 const N = SET.items.length, FAKES = SET.fakes || [];
 
 const KEY = "extras-lies-" + (SLUG || "example") + (TEACHER ? "-t" : "");
-const fresh = () => TEACHER ? {pairs: 8, votes:{}, real:{}, view:"teacher"} : {real:null, offer:null, seen:[], notes:{}, fake:{}, first:"real", view:"real"};
+const fresh = () => TEACHER ? {view:"key"} : {real:null, offer:null, seen:[], fake:null, own:{name:"", story:""}, extra:"", first:"real", phase:"prep", me:0, them:0, round:1};
 let S; try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){ S = fresh(); }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
 const pick = (n, from, not = []) => { const pool = from.filter(i => !not.includes(i)); const src = pool.length >= n ? pool : from;
   return src.slice().sort(() => Math.random() - .5).slice(0, n); };
 function shuffleReal(){ const all = SET.items.map((_, i) => i); let seen = (S.seen || []).filter(i => i < N);
-  if (seen.length >= N - 1) seen = []; const [r] = pick(1, all, [...seen, S.real]); S.real = r; S.seen = [...seen, r]; S.notes = {}; }
-function newOffer(){ S.offer = pick(2, FAKES.map((_, i) => i), S.offer || []); }
-if (!TEACHER){ if (S.real == null || S.real >= N) shuffleReal(); if (!S.offer || S.offer.some(i => i >= FAKES.length)) newOffer(); save(); }
-const mine = () => S.real != null ? SET.items[S.real] : null;
+  if (seen.length >= N - 1) seen = []; const [r] = pick(1, all, [...seen, S.real]); S.real = r; S.seen = [...seen, r]; }
+function newOffer(){ S.offer = pick(2, FAKES.map((_, i) => i), S.offer || []); if (typeof S.fake === "number") S.fake = null; }
+function newRound(){ shuffleReal(); newOffer(); S.fake = null; S.own = {name:"", story:""}; S.extra = ""; S.first = Math.random() < .5 ? "real" : "fake"; S.phase = "prep"; }
+if (!TEACHER){ if (S.real == null || S.real >= N || !S.offer) newRound(); save(); }
 
-/* ---------- student views ---------- */
-const VIEWS = TEACHER ? [["teacher","Scoreboard"],["key","All the items"]] : [["real","1 · Your real one"],["fake","2 · Your lie"],["show","3 · Present"]];
-$("#tabs").innerHTML = VIEWS.map(([k,l]) => `<button data-v="${k}">${l}</button>`).join("");
-document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => setView(b.dataset.v));
+document.querySelector(".bar").hidden = true;
 
-function drawReal(){
-  const it = mine();
-  $("#v-real").innerHTML = `
-    <section class="card how"><h2>How it works</h2><ol>
-      <li>The app gives you a real ${esc(SET.what)}. Keep it secret.</li>
-      <li>Then choose one of two made-up ${esc(SET.whats)} the app offers you, and make it sound just as real.</li>
-      <li>Tell another pair or the class about A and B. They guess which one is real.</li>
-      <li>Hold to reveal. Then shuffle and play again.</li></ol></section>
-    <section class="card"><h2>Your real ${esc(SET.what)}</h2>
-      <div class="slip"><span class="secret">REAL</span><div class="lab">Your real ${esc(SET.what)}</div><h3>${esc(it.name)}</h3><p>${esc(it.fact)}</p></div>
-      <div class="row"><button class="btn ghost" id="shuf">🔀 Shuffle: give us another one</button><span class="small">Don't show your screen to the others.</span></div>
-    </section>
-    <div class="row" style="margin:0 0 16px"><button class="btn" data-go="fake">Now choose your lie →</button></div>`;
-  $("#shuf").onclick = () => { shuffleReal(); save(); drawReal(); toast("New real one!"); };
-  wireGo();
+function lie(){
+  if (typeof S.fake === "number") { const f = FAKES[S.fake]; return {h: f.name, p: f.fact}; }
+  if (S.fake === "own" && S.own.name.trim()) return {h: S.own.name.trim(), p: S.own.story.trim()};
+  return null;
 }
-function drawFake(){
-  const chosen = S.fake.story != null;
-  $("#v-fake").innerHTML = `
-    <section class="card"><h2>Pick your lie</h2>
-      <p class="sub">Neither of these exists. Choose the one you can sell best, or write your own.</p>
-      <div class="duo">${S.offer.map((i, k) => { const f = FAKES[i], on = chosen && S.fake.from_offer === i;
-        return `<div class="slip" style="margin:0;${on?"outline:3px solid var(--acc);":""}"><span class="secret" style="color:var(--lie);background:var(--lie-l)">FAKE</span>
-          <div class="lab">Lie ${k+1}</div><h3>${esc(f.name)}</h3><p>${esc(f.fact)}</p>
-          <div class="row" style="margin-top:10px"><button class="btn ${on?"":"ghost"}" data-use="${i}">${on?"✓ Our lie":"Use this one"}</button></div></div>`; }).join("")}</div>
-      <div class="row" style="margin-top:12px"><button class="btn ghost" id="others">Show us two others</button>
-        <button class="btn ghost" id="own">Write our own</button></div></section>
-    <section class="card"><h2>Make it convincing</h2>
-      <p class="sub">${chosen ? "Add a detail or two if you like, so it sounds as real as your real one." : "Choose a lie above, or write your own here."}</p>
-      <div class="tips"><b>How to lie well</b><ul>${SET.tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
-      <div class="fields">${SET.fake.map(([k,l,h])=>`<div class="field"><label for="f-${k}">${esc(l)}</label><p class="hint">${esc(h)}</p>
-        ${k==="name" ? `<input type="text" id="f-${k}" data-k="${k}">` : `<textarea id="f-${k}" data-k="${k}"></textarea>`}</div>`).join("")}</div>
-      <div class="row" style="margin-top:12px"><button class="btn" data-go="show">Get ready to present →</button></div></section>`;
-  document.querySelectorAll("[data-use]").forEach(b => b.onclick = () => { const f = FAKES[+b.dataset.use];
-    S.fake = {name: f.name, story: f.fact, from_offer: +b.dataset.use}; save(); drawFake(); toast("Good choice. Now add some details."); });
-  $("#others").onclick = () => { newOffer(); save(); drawFake(); };
-  $("#own").onclick = () => { S.fake = {}; save(); drawFake(); document.querySelector("#f-name").focus(); };
-  document.querySelectorAll("[data-k]").forEach(t => { t.value = S.fake[t.dataset.k] || ""; t.oninput = () => { S.fake[t.dataset.k] = t.value; save(); }; });
-  wireGo();
+function duo(){
+  const it = SET.items[S.real], L = lie();
+  const real = {h: it.name, p: it.fact, real: true}, fake = {h: L.h, p: [L.p, S.extra.trim()].filter(Boolean).join(" "), real: false};
+  const two = S.first === "real" ? [real, fake] : [fake, real];
+  return `<div class="duo ${S.phase !== "prep" && S.phase !== "tell" ? "revealed" : ""}" id="duoBox">${two.map((c, i) => { const X = "AB"[i];
+    return `<div class="pc ${X}"><span class="badge">${X}</span><h3>${esc(c.h)}</h3>${c.p ? `<p style="margin:0">${esc(c.p)}</p>` : ""}
+      <span class="stamp ${c.real ? "real" : "fake"}">${c.real ? "Real" : "Made up"}</span></div>`; }).join("")}</div>`;
 }
-function cards(){
-  const it = mine();
-  const real = {h: it.name, pts: [it.fact], real:true};
-  const fake = {h: S.fake.name || "(your lie: choose one on tab 2)", pts: [S.fake.story, ...SET.fake.filter(([k])=>k!=="name").map(([k])=>S.fake[k])].filter(x=>x&&x.trim()), real:false};
-  return S.first === "real" ? [real, fake] : [fake, real];
-}
-function duoHTML(big){
-  return `<div class="duo ${big?"big":""}">${cards().map((c,i)=>{ const L = "AB"[i];
-    return `<div class="pc ${L}"><span class="badge">${L}</span><h3>${esc(c.h)}</h3>
-      ${c.pts.length ? `<ul>${c.pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : `<p class="small">Nothing written yet.</p>`}
-      <span class="stamp ${c.real?"real":"fake"}">${c.real?"Real":"Made up"}</span></div>`; }).join("")}</div>`;
-}
-function drawShow(){
-  $("#v-show").innerHTML = `
-    <section class="card"><h2>Your two ${esc(SET.whats)}</h2>
-      <p class="sub">Your talking notes. Tell the class about A, then B, in your own words: don't just read. Then the class votes.</p>
-      <div class="row" style="margin-bottom:12px"><span class="small">Which comes first?</span>
-        <button class="btn ghost" id="swap">Swap A and B</button>
-        <button class="btn ghost" id="mix">Let the page decide</button></div>
-      <div id="duo">${duoHTML(false)}</div>
-      <div class="row" style="margin-top:14px">
-        <button class="btn" id="big">Show on the big screen</button>
-        <button class="btn ghost holdbtn" id="reveal"><i></i>Hold to reveal</button>
-        <button class="btn ghost" id="again">🔀 Play again</button></div>
-      <p class="small" style="margin-top:6px">Hold the reveal button for a second, after the vote.</p></section>`;
-  $("#swap").onclick = () => { S.first = S.first==="real"?"fake":"real"; save(); drawShow(); };
-  $("#mix").onclick = () => { S.first = Math.random()<.5?"real":"fake"; save(); drawShow(); toast("Order chosen. Don't tell anyone!"); };
-  $("#big").onclick = () => { $("#fullBox").innerHTML = `<p class="q">Which one is real: A or B?</p>${duoHTML(true)}<div class="row"><button class="btn holdbtn" id="reveal2"><i></i>Hold to reveal</button></div>`; $("#full").classList.add("on"); holdTo($("#reveal2"), () => $("#fullBox .duo").classList.add("revealed")); };
-  holdTo($("#reveal"), () => $("#duo .duo").classList.add("revealed"));
-  $("#again").onclick = () => { if (!confirm("Play again with a new real one and two new lies? This round's notes will go.")) return;
-    shuffleReal(); newOffer(); S.fake = {}; S.first = Math.random()<.5?"real":"fake"; save(); setView("real"); toast("New round!"); };
+function drawPlay(){
+  const it = SET.items[S.real], L = lie(), ready = !!L;
+  let h = `<section class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+      <div class="display" style="font-size:1.3rem;font-weight:700">You ${S.me} <span style="color:var(--muted);font-weight:400">·</span> Partner ${S.them}</div>
+      <div class="small">Round ${S.round} · <button class="btn ghost" id="resetScore" style="padding:2px 10px;font-size:.8rem">Reset</button></div></section>`;
+  if (S.phase === "prep") h += `
+    <section class="card"><h2>1 · Your real ${esc(SET.what)}</h2>
+      <div class="slip"><span class="secret">REAL</span><div class="lab">Keep it secret</div><h3>${esc(it.name)}</h3><p>${esc(it.fact)}</p></div>
+      <button class="btn ghost" id="shuf">🔀 Shuffle: give me another one</button></section>
+    <section class="card"><h2>2 · Pick your lie</h2>
+      <p class="sub">Neither of these exists. Choose the one you can sell best.</p>
+      <div class="duo">${S.offer.map((i, k) => { const f = FAKES[i], on = S.fake === i;
+        return `<div class="slip" style="margin:0;${on ? "outline:3px solid var(--acc);" : ""}"><span class="secret" style="color:var(--lie);background:var(--lie-l)">FAKE</span>
+          <div class="lab">Lie ${k + 1}</div><h3>${esc(f.name)}</h3><p>${esc(f.fact)}</p>
+          <div class="row" style="margin-top:10px"><button class="btn ${on ? "" : "ghost"}" data-use="${i}">${on ? "✓ My lie" : "Use this one"}</button></div></div>`; }).join("")}</div>
+      <div class="row" style="margin-top:12px"><button class="btn ghost" id="others">Show me two others</button>
+        <button class="btn ${S.fake === "own" ? "" : "ghost"}" id="own">Write my own</button></div>
+      ${S.fake === "own" ? `<div class="fields" style="margin-top:12px">
+        <div class="field"><label for="ownName">Its name</label><input type="text" id="ownName" maxlength="60"></div>
+        <div class="field"><label for="ownStory">What it is, who makes it, where</label><textarea id="ownStory"></textarea></div></div>` : ""}
+      <details style="margin-top:12px"><summary class="small" style="cursor:pointer">Add a convincing detail (optional)</summary>
+        <div class="tips" style="margin-top:8px"><b>How to lie well</b><ul>${SET.tips.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        <textarea id="extra" placeholder="A number, a date, a price, or a small problem it still has"></textarea></details>
+      <div class="row" style="margin-top:14px"><button class="btn" id="go" ${ready ? "" : "disabled"}>I'm ready: tell my partner →</button></div></section>`;
+  else h += `
+    <section class="card"><h2>${S.phase === "tell" ? "3 · Tell your partner about A and B" : S.phase === "swapped" ? "Round over" : "The answer"}</h2>
+      <p class="sub">${S.phase === "tell" ? "Show them the two cards, or just tell them in your own words. Then they guess: A or B?" : S.phase === "revealed" ? "Did they spot your lie?" : S.phase === "swapped" ? "Ready for the next one?" : "Your turn is done."}</p>
+      ${duo()}
+      ${S.phase === "tell" ? `<div class="row" style="margin-top:14px"><button class="btn holdbtn" id="reveal"><i></i>They've guessed: hold to reveal</button>
+        <button class="btn ghost" id="swap">Swap A and B</button><button class="btn ghost" id="back">← Change my lie</button></div>` : ""}
+      ${S.phase === "revealed" ? `<div class="row" style="margin-top:14px"><button class="btn" id="fooled">😈 I fooled them</button>
+        <button class="btn ghost" id="spotted">🕵️ They spotted it</button></div>` : ""}
+      ${S.phase === "scored" ? `<div class="tips" style="margin-top:14px"><b>Now swap</b>Your partner tells you about their A and B. Guess which one is real, then they reveal on their phone. How did you do?</div>
+        <div class="row"><button class="btn" id="iSpot">🕵️ I spotted their lie</button><button class="btn ghost" id="iFooled">😵 They fooled me</button>
+        <button class="btn ghost" id="next" style="margin-left:auto">Skip →</button></div>` : ""}
+      ${S.phase === "swapped" ? `<div class="row" style="margin-top:14px"><button class="btn" id="next">🔀 Next round: new ${esc(SET.whats)}</button></div>` : ""}</section>`;
+  $("#v-real").innerHTML = h;
+  const on = (id, f) => { const el = $("#" + id); if (el) el.onclick = f; };
+  on("resetScore", () => { if (!confirm("Reset the score to 0–0?")) return; S.me = 0; S.them = 0; S.round = 1; save(); drawPlay(); });
+  on("shuf", () => { shuffleReal(); save(); drawPlay(); toast("New real one!"); });
+  document.querySelectorAll("[data-use]").forEach(b => b.onclick = () => { S.fake = +b.dataset.use; save(); drawPlay(); });
+  on("others", () => { newOffer(); save(); drawPlay(); });
+  on("own", () => { S.fake = "own"; save(); drawPlay(); $("#ownName").focus(); });
+  const bind = (id, get, set) => { const el = $("#" + id); if (el){ el.value = get(); el.oninput = () => { set(el.value); save(); $("#go").disabled = !lie(); }; } };
+  bind("ownName", () => S.own.name, v => S.own.name = v);
+  bind("ownStory", () => S.own.story, v => S.own.story = v);
+  bind("extra", () => S.extra, v => S.extra = v);
+  on("go", () => { if (!lie()) return; S.phase = "tell"; save(); drawPlay(); window.scrollTo({top:0}); });
+  on("swap", () => { S.first = S.first === "real" ? "fake" : "real"; save(); drawPlay(); });
+  on("back", () => { S.phase = "prep"; save(); drawPlay(); });
+  const r = $("#reveal"); if (r) holdTo(r, () => { S.phase = "revealed"; save(); drawPlay(); });
+  on("fooled", () => { S.me++; S.phase = "scored"; save(); drawPlay(); toast("Point to you!"); });
+  on("spotted", () => { S.them++; S.phase = "scored"; save(); drawPlay(); toast("Point to your partner"); });
+  on("iSpot", () => { S.me++; S.phase = "swapped"; save(); drawPlay(); toast("Point to you!"); });
+  on("iFooled", () => { S.them++; S.phase = "swapped"; save(); drawPlay(); toast("Point to your partner"); });
+  on("next", () => { S.round++; newRound(); save(); drawPlay(); window.scrollTo({top:0}); });
 }
 function holdTo(btn, done){
   let t0 = 0, raf = 0; const bar = btn.querySelector("i");
@@ -287,52 +279,20 @@ function holdTo(btn, done){
   btn.addEventListener("pointerdown", start); ["pointerup","pointerleave","pointercancel"].forEach(ev => btn.addEventListener(ev, stop));
   btn.addEventListener("keydown", e => { if (e.key===" "||e.key==="Enter"){ e.preventDefault(); done(); } });
 }
-$("#fullClose").onclick = () => $("#full").classList.remove("on");
-document.addEventListener("keydown", e => { if (e.key==="Escape") $("#full").classList.remove("on"); });
 
-/* ---------- teacher: scoreboard and the real ones ---------- */
-function drawTeacher(){
-  const rows = Array.from({length:S.pairs},(_,i)=>i+1);
-  const fooled = n => { const v = S.votes[n] || {A:0,B:0}, r = S.real[n]; return r ? v[r==="A"?"B":"A"] : null; };
-  const ranked = rows.filter(n => fooled(n) != null).sort((a,b) => fooled(b) - fooled(a));
-  $("#v-teacher").innerHTML = `
-    <section class="card"><h2>Scoreboard</h2>
-      <p class="sub">If pairs present to the whole class: after each talk, count the hands for A and B, let the pair reveal, and tap which was real. Each vote for the lie is a point for the pair.</p>
-      <div class="row" style="margin-bottom:8px"><span class="small">Pairs:</span>
-        <button class="btn ghost" id="minus">−</button><b>${S.pairs}</b><button class="btn ghost" id="plus">+</button>
-        <span class="spacer" style="flex:1"></span><button class="btn ghost" id="reset">Clear the scores</button></div>
-      <table class="sb"><thead><tr><th>Pair</th><th>Votes A</th><th>Votes B</th><th>Real one</th><th>Fooled</th></tr></thead><tbody>
-      ${rows.map(n => { const v = S.votes[n] || {A:0,B:0}, f = fooled(n);
-        return `<tr><td>Pair ${n}</td>
-          ${["A","B"].map(L=>`<td><span class="cnt"><button data-n="${n}" data-l="${L}" data-d="-1">−</button><b>${v[L]}</b><button data-n="${n}" data-l="${L}" data-d="1">+</button></span></td>`).join("")}
-          <td><span class="seg2">${["A","B"].map(L=>`<button class="${L} ${S.real[n]===L?"on":""}" data-real="${n}" data-l="${L}">${L}</button>`).join("")}</span></td>
-          <td class="fooled">${f==null?"–":f}</td></tr>`; }).join("")}</tbody></table>
-      ${ranked.length ? `<p class="leader" style="margin-top:12px">🏆 Best liars so far: <b>${ranked.slice(0,3).map(n=>`Pair ${n} (${fooled(n)})`).join(", ")}</b></p>` : ""}
-    </section>`;
-  $("#minus").onclick = () => { S.pairs = Math.max(1, S.pairs-1); save(); drawTeacher(); };
-  $("#plus").onclick = () => { S.pairs = Math.min(20, S.pairs+1); save(); drawTeacher(); };
-  $("#reset").onclick = () => { if (!confirm("Clear all the scores?")) return; S.votes = {}; S.real = {}; save(); drawTeacher(); };
-  document.querySelectorAll("[data-d]").forEach(b => b.onclick = () => { const n=b.dataset.n, L=b.dataset.l; S.votes[n] = S.votes[n] || {A:0,B:0};
-    S.votes[n][L] = Math.max(0, S.votes[n][L] + +b.dataset.d); save(); drawTeacher(); });
-  document.querySelectorAll("[data-real]").forEach(b => b.onclick = () => { const n=b.dataset.real; S.real[n] = S.real[n]===b.dataset.l ? undefined : b.dataset.l; save(); drawTeacher(); });
-}
+/* ---------- teacher: how to run it and all the items ---------- */
 function drawKey(){
-  $("#v-teacher").innerHTML = `<section class="card"><h2>All the items</h2>
-    <p class="sub">The app gives each pair a random real one, and offers two lies to choose from. For your screen only.</p>
+  $("#v-teacher").innerHTML = `<section class="card how"><h2>How to run it</h2><ol>
+      <li>Students play head to head in pairs, each on their own phone.</li>
+      <li>Each phone deals a real ${esc(SET.what)} and offers two lies. The player picks one, tells their partner about A and B, the partner guesses, and the player holds to reveal.</li>
+      <li>A point for each lie that fools your partner and each lie of theirs you spot. Both turns go on each phone's score.</li></ol></section>
+    <section class="card"><h2>All the items</h2><p class="sub">For your screen only.</p>
     <h3 style="margin:10px 0 4px;color:var(--true)">Real</h3><ol class="keylist">${SET.items.map(it=>`<li><b>${esc(it.name)}</b><br><span class="small">${esc(it.fact)}</span></li>`).join("")}</ol>
     <h3 style="margin:14px 0 4px;color:var(--lie)">Made up</h3><ol class="keylist">${FAKES.map(it=>`<li><b>${esc(it.name)}</b><br><span class="small">${esc(it.fact)}</span></li>`).join("")}</ol></section>`;
 }
-function setView(v){
-  S.view = v; save();
-  ["real","fake","show","teacher"].forEach(x => { const el = $("#v-"+x); if (el) el.hidden = x !== (v==="key"?"teacher":v); });
-  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.v===v));
-  if (v==="real") drawReal(); if (v==="fake") drawFake(); if (v==="show") drawShow();
-  if (v==="teacher") drawTeacher(); if (v==="key") drawKey();
-  window.scrollTo({top:0});
-}
-function wireGo(){ document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => setView(b.dataset.go)); }
-function who(){ $("#who").textContent = TEACHER ? "Teacher's screen" : ""; }
-who(); setView(S.view && VIEWS.some(v=>v[0]===S.view) ? S.view : VIEWS[0][0]);
+$("#v-real").hidden = TEACHER; $("#v-teacher").hidden = !TEACHER;
+$("#who").textContent = TEACHER ? "Teacher's screen" : "";
+if (TEACHER) drawKey(); else drawPlay();
 });
 </script>
 </body>
