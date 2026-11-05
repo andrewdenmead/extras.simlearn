@@ -1,0 +1,92 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "material",
+ "whats": "materials",
+ "topic": "really weird sustainable materials",
+ "items": [
+  {
+   "name": "Banana fibre (“banana silk”)",
+   "fact": "In parts of Japan and Nepal, the stems of banana plants, usually thrown away after the harvest, are spun into a glossy, silk-like textile used for clothing and furniture."
+  },
+  {
+   "name": "Pineapple leather (Piñatex)",
+   "fact": "A material made from the fibres of pineapple leaves that would otherwise be left to rot in the fields. Fashion brands use it for shoes, jackets and handbags."
+  },
+  {
+   "name": "Kombucha leather",
+   "fact": "The rubbery jelly culture used to brew kombucha (a “SCOBY”) can be dried into a flexible, leathery sheet. Designers have made bags, caps and lampshades from it."
+  },
+  {
+   "name": "Bricks grown with human urine",
+   "fact": "Researchers at the University of Cape Town grew “bio-bricks” from sand, bacteria and human urine. Unlike normal bricks, they set at room temperature instead of being fired in a kiln."
+  },
+  {
+   "name": "Fish-scale sequins",
+   "fact": "A textile designer in London developed sequins and leather-like sheets from fish scales thrown away by the fishing industry, to replace plastic in fashion and interiors."
+  },
+  {
+   "name": "Algae-foam shoe soles",
+   "fact": "Companies harvest algae from lakes choked by algae blooms, dry it and turn it into the foam used in flip-flops and trainer soles, cleaning the water at the same time."
+  },
+  {
+   "name": "Avocado-stone plastic",
+   "fact": "A Mexican company makes biodegradable cutlery and straws from the stones of avocados thrown away by factories that make guacamole and avocado oil."
+  },
+  {
+   "name": "Rose fibre",
+   "fact": "Fibre from the waste parts of rose plants is spun into a soft, shiny yarn sometimes sold as “vegan silk”, used for scarves and dresses."
+  },
+  {
+   "name": "Fabric dyed by bacteria",
+   "fact": "Some bacteria naturally produce bright colours. Designers grow them on fabric so that the bacteria do the dyeing, with far less water and no toxic dye chemicals."
+  },
+  {
+   "name": "Cactus leather",
+   "fact": "Leaves of the prickly pear cactus can be cut without killing the plant, which grows them back. They are turned into a tough vegan leather used for bags and car seats."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe with a brand name in brackets."
+  ],
+  [
+   "from",
+   "What it's made from",
+   "Something weird but possible: a waste product, a plant, an animal, a by-product."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "A university, a company or a designer, and a real city or country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two steps: how the raw stuff becomes the material."
+  ],
+  [
+   "used",
+   "What it's used for",
+   "Who uses it now: brands, products, industries."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "research": [
+  "Where does it come from, and who makes it?",
+  "How is it made?",
+  "What is it used for, and by whom?",
+  "One surprising detail or number"
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it still smells a bit”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

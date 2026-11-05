@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lies, Lies, Lies</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{
+  --ink:#1d1b26; --muted:#615d70; --line:#e2dfea; --bg:#f5f3f9; --card:#fff;
+  --true:#1f8a4c; --true-l:#e3f5ea; --lie:#c0392b; --lie-l:#fbe9e7; --acc:#5b3cc4; --acc-d:#43299a; --acc-l:#ece7fb;
+  --a:#ffcf4a; --b:#59c3ff;
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.5 "Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,.display{font-family:"Rethink Sans","Instrument Sans",system-ui,sans-serif}
+
+header.top{background:radial-gradient(circle at 15% 0%,#7c5cf0,transparent 55%),linear-gradient(135deg,var(--acc),#2a1863);color:#fff;padding:24px 16px 18px}
+header.top .in{max-width:880px;margin:0 auto}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+header.top h1{margin:.05em 0 .15em;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;font-weight:700}
+header.top h1 span{display:inline-block;transform:rotate(-3deg);background:var(--lie);padding:0 .25em;border-radius:6px;margin-left:.1em}
+header.top p{margin:0;max-width:660px;opacity:.93}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff;flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:6px 13px;font-size:.88rem}
+.tabs button.on{background:var(--acc);color:#fff}
+.who{margin-left:auto;font-size:.82rem;color:var(--muted)}
+
+.wrap{max-width:880px;margin:0 auto;padding:18px 16px 110px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:16px}
+.card h2{margin:0 0 4px;font-size:1.2rem}
+.card .sub{margin:0 0 12px;color:var(--muted);font-size:.93rem}
+.how ol{margin:0;padding-left:1.25em} .how li{margin:4px 0}
+.btn{border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:999px;padding:7px 16px;font-size:.92rem;font-weight:600}
+.btn.ghost{background:#fff;color:var(--acc-d)}
+.btn:disabled{opacity:.45;cursor:default}
+input[type=text],input[type=number],textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fcfbfe}
+textarea{min-height:56px;resize:vertical;line-height:1.45}
+input:focus,textarea:focus{outline:2px solid var(--acc-l);border-color:var(--acc)}
+.small{font-size:.82rem;color:var(--muted)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* the slip */
+.slip{position:relative;background:#fffdf3;border:1px dashed #cbbf8f;border-radius:6px;padding:16px 18px;margin:6px 0 14px;box-shadow:0 2px 8px rgba(60,40,0,.08)}
+.slip .lab{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8a7a3c;font-weight:700}
+.slip h3{margin:.15em 0 .3em;font-size:1.3rem;font-family:"Rethink Sans",system-ui,sans-serif}
+.slip p{margin:0}
+.slip .secret{position:absolute;top:10px;right:12px;font-size:.72rem;font-weight:700;color:var(--true);background:var(--true-l);border-radius:999px;padding:2px 9px}
+.pairpick{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
+.pairpick button{width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:#fff;font-weight:700}
+.pairpick button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+
+/* fields */
+.fields{display:grid;gap:12px}
+.field label{display:block;font-weight:600;font-size:.95rem;margin-bottom:3px}
+.field .hint{font-size:.8rem;color:var(--muted);margin:0 0 4px}
+.tips{background:var(--acc-l);border-radius:12px;padding:12px 16px;margin:0 0 14px;font-size:.92rem}
+.tips b{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc-d);margin-bottom:4px}
+.tips ul{margin:0;padding-left:1.1em} .tips li{margin:2px 0}
+
+/* present */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pc{position:relative;border-radius:18px;padding:18px 18px 22px;min-height:220px;background:#fff;border:3px solid var(--line);overflow:hidden}
+.pc .badge{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;font-weight:800;font-size:1.4rem;font-family:"Rethink Sans",system-ui,sans-serif;margin-bottom:8px;color:#1d1b26}
+.pc.A{border-color:var(--a)} .pc.A .badge{background:var(--a)}
+.pc.B{border-color:var(--b)} .pc.B .badge{background:var(--b)}
+.pc h3{margin:0 0 6px;font-size:clamp(1.2rem,2.6vw,1.7rem);font-family:"Rethink Sans",system-ui,sans-serif;line-height:1.15}
+.pc ul{margin:0;padding-left:1.1em} .pc li{margin:3px 0}
+.pc .stamp{position:absolute;right:12px;bottom:12px;transform:rotate(-10deg) scale(.4);opacity:0;transition:all .35s cubic-bezier(.2,1.6,.4,1);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-family:"Rethink Sans",system-ui,sans-serif;font-size:clamp(1.2rem,3vw,2rem);border:4px solid;border-radius:10px;padding:2px 12px;background:rgba(255,255,255,.88)}
+.revealed .pc .stamp{opacity:1;transform:rotate(-10deg) scale(1)}
+.pc .stamp.real{color:var(--true);border-color:var(--true)} .pc .stamp.fake{color:var(--lie);border-color:var(--lie)}
+.big .pc{font-size:1.15rem;min-height:300px}
+.holdbtn{position:relative;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none}
+.holdbtn i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(255,255,255,.3)}
+.full{position:fixed;inset:0;z-index:50;background:#1d1b26;padding:56px 16px 24px;overflow:auto;display:none}
+.full.on{display:block}
+.full .duo{max-width:1200px;margin:0 auto}
+.full .close{position:fixed;top:12px;right:12px;background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;padding:6px 14px}
+.full .row{justify-content:center;margin-top:18px}
+.full .q{color:#fff;text-align:center;font-size:clamp(1.1rem,2.5vw,1.6rem);margin:0 0 14px;font-family:"Rethink Sans",system-ui,sans-serif}
+
+/* teacher */
+.sb{width:100%;border-collapse:collapse;font-size:.95rem}
+.sb th,.sb td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:center}
+.sb th:first-child,.sb td:first-child{text-align:left}
+.cnt{display:inline-flex;align-items:center;gap:4px}
+.cnt button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:#fff;font-weight:700}
+.cnt b{min-width:22px;display:inline-block}
+.seg2{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg2 button{border:0;background:#fff;padding:4px 10px;font-weight:700}
+.seg2 button.on.A{background:var(--a)} .seg2 button.on.B{background:var(--b)}
+.fooled{font-weight:800;color:var(--lie)}
+.leader{font-size:1.05rem}
+.keylist li{margin:6px 0}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+footer{max-width:880px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:var(--muted)}
+@media (max-width:640px){ .duo{grid-template-columns:1fr} .sb{font-size:.85rem} .cnt button{width:26px;height:26px} }
+@media (prefers-color-scheme:dark){
+  :root{--ink:#ece9f5;--muted:#a7a2b8;--line:#332f42;--bg:#14121b;--card:#1d1a27;--acc-l:#2a2347;--true-l:#16301f;--lie-l:#3a1e1b}
+  .bar{background:rgba(29,26,39,.96)} .tabs,.btn.ghost,.pairpick button,.pc,.cnt button,.seg2 button{background:#1d1a27}
+  input[type=text],input[type=number],textarea{background:#17151f}
+  .slip{background:#2a2617;border-color:#6b5e2e} .slip .lab{color:#d9c37a}
+  .pc .stamp{background:rgba(29,26,39,.9)}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="kicker">Pair game · Real or made up?</div>
+  <h1 id="title">Lies, Lies, <span>Lies</span></h1>
+  <p id="lead"></p>
+</div></header>
+
+<div class="bar"><div class="in">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <span class="who" id="who"></span>
+</div></div>
+
+<main class="wrap" id="v-real"></main>
+<main class="wrap" id="v-fake" hidden></main>
+<main class="wrap" id="v-show" hidden></main>
+<main class="wrap" id="v-teacher" hidden></main>
+
+<div class="full" id="full"><button class="close" id="fullClose">Close ✕</button><div id="fullBox"></div></div>
+<div class="toast" id="toast"></div>
+<footer>SimLearn Extras · Your notes stay in this browser. Nothing is sent anywhere.</footer>
+
+<script>
+/* ---------- the example set: weird sustainable materials (all real, checked) ---------- */
+const DEFAULT = {
+  name: "Lies, Lies, Lies",
+  what: "material", whats: "materials",
+  topic: "really weird sustainable materials",
+  items: [
+    {name:"Banana fibre (“banana silk”)", fact:"In parts of Japan and Nepal, the stems of banana plants, usually thrown away after the harvest, are spun into a glossy, silk-like textile used for clothing and furniture."},
+    {name:"Pineapple leather (Piñatex)", fact:"A material made from the fibres of pineapple leaves that would otherwise be left to rot in the fields. Fashion brands use it for shoes, jackets and handbags."},
+    {name:"Kombucha leather", fact:"The rubbery jelly culture used to brew kombucha (a “SCOBY”) can be dried into a flexible, leathery sheet. Designers have made bags, caps and lampshades from it."},
+    {name:"Bricks grown with human urine", fact:"Researchers at the University of Cape Town grew “bio-bricks” from sand, bacteria and human urine. Unlike normal bricks, they set at room temperature instead of being fired in a kiln."},
+    {name:"Fish-scale sequins", fact:"A textile designer in London developed sequins and leather-like sheets from fish scales thrown away by the fishing industry, to replace plastic in fashion and interiors."},
+    {name:"Algae-foam shoe soles", fact:"Companies harvest algae from lakes choked by algae blooms, dry it and turn it into the foam used in flip-flops and trainer soles, cleaning the water at the same time."},
+    {name:"Avocado-stone plastic", fact:"A Mexican company makes biodegradable cutlery and straws from the stones of avocados thrown away by factories that make guacamole and avocado oil."},
+    {name:"Rose fibre", fact:"Fibre from the waste parts of rose plants is spun into a soft, shiny yarn sometimes sold as “vegan silk”, used for scarves and dresses."},
+    {name:"Fabric dyed by bacteria", fact:"Some bacteria naturally produce bright colours. Designers grow them on fabric so that the bacteria do the dyeing, with far less water and no toxic dye chemicals."},
+    {name:"Cactus leather", fact:"Leaves of the prickly pear cactus can be cut without killing the plant, which grows them back. They are turned into a tough vegan leather used for bags and car seats."}
+  ],
+  fake: [
+    ["name", "Its name", "Give it a real-sounding name, maybe with a brand name in brackets."],
+    ["from", "What it's made from", "Something weird but possible: a waste product, a plant, an animal, a by-product."],
+    ["who", "Who made it, and where", "A university, a company or a designer, and a real city or country."],
+    ["how", "How it works", "One or two steps: how the raw stuff becomes the material."],
+    ["used", "What it's used for", "Who uses it now: brands, products, industries."],
+    ["detail", "One very convincing detail", "A number, a date, a price or a small problem it still has."]
+  ],
+  research: ["Where does it come from, and who makes it?", "How is it made?", "What is it used for, and by whom?", "One surprising detail or number"],
+  tips: ["Be specific: numbers, dates and real places make a lie believable.", "Give it a small problem (“it still smells a bit”): perfect things sound fake.", "Make both talks the same length and give them the same confidence.", "Don't laugh. Decide now who says which one."]
+};
+/* ---------- sets: ?set=<slug> loads sets/<slug>.json; without it, the example above ---------- */
+const P = new URLSearchParams(location.search);
+const SLUG = (P.get("set") || "").toLowerCase(), TEACHER = P.has("teacher");
+function loadSet(def, go){
+  if (!SLUG) return go(def, "");
+  if (!/^[a-z0-9-]{1,80}$/.test(SLUG)) return go(def, "missing");
+  fetch("sets/" + SLUG + ".json", {cache:"no-cache"}).then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(j => go(Object.assign({}, def, j), "")).catch(() => go(def, "missing"));
+}
+loadSet(DEFAULT, (SET, setErr) => {
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const Cap = w => w.charAt(0).toUpperCase() + w.slice(1);
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("on"),1800); }
+if (setErr) toast("We couldn't find that set, so this is the example version.");
+document.title = SET.name;
+const words = SET.name.split(" "), last = words.pop();
+$("#title").innerHTML = `${esc(words.join(" "))} <span>${esc(last)}</span>`;
+$("#lead").textContent = `In pairs: you get one ${SET.topic.replace(/s$/,"")} that is real, and you invent one that isn't. Tell the class about both. Can they spot the lie?`;
+const N = SET.items.length;
+
+const KEY = "extras-lies-" + (SLUG || "example") + (TEACHER ? "-t" : "");
+const fresh = () => TEACHER ? {pairs: Math.min(8, N), votes:{}, real:{}, view:"teacher"} : {pair:null, notes:{}, fake:{}, first:"real", view:"real"};
+let S; try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){ S = fresh(); }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+
+/* the deal: pair n gets item (n-1) of a list shuffled by today's date, so a whole class shares one deal */
+function deal(){
+  const d = new Date(), seed0 = d.getFullYear()*372 + d.getMonth()*31 + d.getDate();
+  let s = seed0 * 9301 + 49297; const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const idx = SET.items.map((_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); [idx[i], idx[j]] = [idx[j], idx[i]]; }
+  return idx;
+}
+const DEAL = deal();
+const mine = () => S.pair ? SET.items[DEAL[(S.pair - 1) % N]] : null;
+
+/* ---------- student views ---------- */
+const VIEWS = TEACHER ? [["teacher","Scoreboard"],["key","The real ones"]] : [["real","1 · Your real one"],["fake","2 · Your lie"],["show","3 · Present"]];
+$("#tabs").innerHTML = VIEWS.map(([k,l]) => `<button data-v="${k}">${l}</button>`).join("");
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => setView(b.dataset.v));
+
+function drawReal(){
+  const it = mine();
+  $("#v-real").innerHTML = `
+    <section class="card how"><h2>How it works</h2><ol>
+      <li>Your teacher gives your pair a number. Tap it below to get your real ${SET.what}.</li>
+      <li>Find out more about it: you'll need a good amount of detail.</li>
+      <li>Invent a second ${SET.what} that does <b>not</b> exist, just as weird and just as detailed.</li>
+      <li>Tell the class about both. They vote on which one is real.</li></ol></section>
+    <section class="card"><h2>Your pair number</h2>
+      <div class="pairpick">${Array.from({length:N},(_,i)=>`<button class="${S.pair===i+1?"on":""}" data-p="${i+1}">${i+1}</button>`).join("")}</div>
+      <p class="small">Don't show your screen to other pairs.</p>
+      ${it ? `<div class="slip"><span class="secret">REAL</span><div class="lab">Your real ${esc(SET.what)}</div><h3>${esc(it.name)}</h3><p>${esc(it.fact)}</p></div>` : ""}
+    </section>
+    ${it ? `<section class="card"><h2>Find out more</h2><p class="sub">Look it up and make notes. These become your talk.</p>
+      <div class="fields">${SET.research.map((q,i)=>`<div class="field"><label for="r${i}">${esc(q)}</label><textarea id="r${i}" data-r="${i}"></textarea></div>`).join("")}</div>
+      <div class="row" style="margin-top:12px"><button class="btn" data-go="fake">Now invent your lie →</button></div></section>` : ""}`;
+  document.querySelectorAll("[data-p]").forEach(b => b.onclick = () => {
+    if (S.pair && S.pair !== +b.dataset.p && !confirm("Change your pair number? Your notes stay.")) return;
+    S.pair = +b.dataset.p; save(); drawReal(); who(); });
+  document.querySelectorAll("[data-r]").forEach(t => { t.value = S.notes[t.dataset.r] || ""; t.oninput = () => { S.notes[t.dataset.r] = t.value; save(); }; });
+  wireGo();
+}
+function drawFake(){
+  $("#v-fake").innerHTML = `
+    <section class="card"><h2>Invent a ${esc(SET.what)} that doesn't exist</h2>
+      <p class="sub">It should sound just as weird, and just as real, as yours.</p>
+      <div class="tips"><b>How to lie well</b><ul>${SET.tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
+      <div class="fields">${SET.fake.map(([k,l,h])=>`<div class="field"><label for="f-${k}">${esc(l)}</label><p class="hint">${esc(h)}</p>
+        ${k==="name" ? `<input type="text" id="f-${k}" data-k="${k}">` : `<textarea id="f-${k}" data-k="${k}"></textarea>`}</div>`).join("")}</div>
+      <div class="row" style="margin-top:12px"><button class="btn" data-go="show">Get ready to present →</button></div></section>`;
+  document.querySelectorAll("[data-k]").forEach(t => { t.value = S.fake[t.dataset.k] || ""; t.oninput = () => { S.fake[t.dataset.k] = t.value; save(); }; });
+  wireGo();
+}
+function cards(){
+  const it = mine();
+  const real = {h: it ? it.name : `(choose your pair number on tab 1)`, pts: SET.research.map((_,i)=>S.notes[i]).filter(x=>x&&x.trim()), real:true};
+  if (it && !real.pts.length) real.pts = [it.fact];
+  const fake = {h: S.fake.name || "(your invented one)", pts: SET.fake.filter(([k])=>k!=="name").map(([k])=>S.fake[k]).filter(x=>x&&x.trim()), real:false};
+  return S.first === "real" ? [real, fake] : [fake, real];
+}
+function duoHTML(big){
+  return `<div class="duo ${big?"big":""}">${cards().map((c,i)=>{ const L = "AB"[i];
+    return `<div class="pc ${L}"><span class="badge">${L}</span><h3>${esc(c.h)}</h3>
+      ${c.pts.length ? `<ul>${c.pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : `<p class="small">Nothing written yet.</p>`}
+      <span class="stamp ${c.real?"real":"fake"}">${c.real?"Real":"Made up"}</span></div>`; }).join("")}</div>`;
+}
+function drawShow(){
+  $("#v-show").innerHTML = `
+    <section class="card"><h2>Your two ${esc(SET.whats)}</h2>
+      <p class="sub">Your talking notes. Tell the class about A, then B, in your own words: don't just read. Then the class votes.</p>
+      <div class="row" style="margin-bottom:12px"><span class="small">Which comes first?</span>
+        <button class="btn ghost" id="swap">Swap A and B</button>
+        <button class="btn ghost" id="mix">Let the page decide</button></div>
+      <div id="duo">${duoHTML(false)}</div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn" id="big">Show on the big screen</button>
+        <button class="btn ghost holdbtn" id="reveal"><i></i>Hold to reveal</button></div>
+      <p class="small" style="margin-top:6px">Hold the reveal button for a second, after the vote.</p></section>`;
+  $("#swap").onclick = () => { S.first = S.first==="real"?"fake":"real"; save(); drawShow(); };
+  $("#mix").onclick = () => { S.first = Math.random()<.5?"real":"fake"; save(); drawShow(); toast("Order chosen. Don't tell anyone!"); };
+  $("#big").onclick = () => { $("#fullBox").innerHTML = `<p class="q">Which one is real: A or B?</p>${duoHTML(true)}<div class="row"><button class="btn holdbtn" id="reveal2"><i></i>Hold to reveal</button></div>`; $("#full").classList.add("on"); holdTo($("#reveal2"), () => $("#fullBox .duo").classList.add("revealed")); };
+  holdTo($("#reveal"), () => $("#duo .duo").classList.add("revealed"));
+}
+function holdTo(btn, done){
+  let t0 = 0, raf = 0; const bar = btn.querySelector("i");
+  const step = () => { const p = Math.min(1, (performance.now() - t0) / 900); bar.style.width = (p*100)+"%"; if (p >= 1){ stop(); done(); } else raf = requestAnimationFrame(step); };
+  const start = e => { e.preventDefault(); t0 = performance.now(); raf = requestAnimationFrame(step); };
+  const stop = () => { cancelAnimationFrame(raf); bar.style.width = "0"; };
+  btn.addEventListener("pointerdown", start); ["pointerup","pointerleave","pointercancel"].forEach(ev => btn.addEventListener(ev, stop));
+  btn.addEventListener("keydown", e => { if (e.key===" "||e.key==="Enter"){ e.preventDefault(); done(); } });
+}
+$("#fullClose").onclick = () => $("#full").classList.remove("on");
+document.addEventListener("keydown", e => { if (e.key==="Escape") $("#full").classList.remove("on"); });
+
+/* ---------- teacher: scoreboard and the real ones ---------- */
+function drawTeacher(){
+  const rows = Array.from({length:S.pairs},(_,i)=>i+1);
+  const fooled = n => { const v = S.votes[n] || {A:0,B:0}, r = S.real[n]; return r ? v[r==="A"?"B":"A"] : null; };
+  const ranked = rows.filter(n => fooled(n) != null).sort((a,b) => fooled(b) - fooled(a));
+  $("#v-teacher").innerHTML = `
+    <section class="card"><h2>Scoreboard</h2>
+      <p class="sub">After each pair's talk, count the hands for A and B, then let the pair reveal and tap which was real. Each vote for the lie is a point for the pair.</p>
+      <div class="row" style="margin-bottom:8px"><span class="small">Pairs:</span>
+        <button class="btn ghost" id="minus">−</button><b>${S.pairs}</b><button class="btn ghost" id="plus">+</button>
+        <span class="spacer" style="flex:1"></span><button class="btn ghost" id="reset">Clear the scores</button></div>
+      <table class="sb"><thead><tr><th>Pair</th><th>Votes A</th><th>Votes B</th><th>Real one</th><th>Fooled</th></tr></thead><tbody>
+      ${rows.map(n => { const v = S.votes[n] || {A:0,B:0}, f = fooled(n);
+        return `<tr><td>Pair ${n}</td>
+          ${["A","B"].map(L=>`<td><span class="cnt"><button data-n="${n}" data-l="${L}" data-d="-1">−</button><b>${v[L]}</b><button data-n="${n}" data-l="${L}" data-d="1">+</button></span></td>`).join("")}
+          <td><span class="seg2">${["A","B"].map(L=>`<button class="${L} ${S.real[n]===L?"on":""}" data-real="${n}" data-l="${L}">${L}</button>`).join("")}</span></td>
+          <td class="fooled">${f==null?"–":f}</td></tr>`; }).join("")}</tbody></table>
+      ${ranked.length ? `<p class="leader" style="margin-top:12px">🏆 Best liars so far: <b>${ranked.slice(0,3).map(n=>`Pair ${n} (${fooled(n)})`).join(", ")}</b></p>` : ""}
+    </section>`;
+  $("#minus").onclick = () => { S.pairs = Math.max(1, S.pairs-1); save(); drawTeacher(); };
+  $("#plus").onclick = () => { S.pairs = Math.min(N, S.pairs+1); save(); drawTeacher(); };
+  $("#reset").onclick = () => { if (!confirm("Clear all the scores?")) return; S.votes = {}; S.real = {}; save(); drawTeacher(); };
+  document.querySelectorAll("[data-d]").forEach(b => b.onclick = () => { const n=b.dataset.n, L=b.dataset.l; S.votes[n] = S.votes[n] || {A:0,B:0};
+    S.votes[n][L] = Math.max(0, S.votes[n][L] + +b.dataset.d); save(); drawTeacher(); });
+  document.querySelectorAll("[data-real]").forEach(b => b.onclick = () => { const n=b.dataset.real; S.real[n] = S.real[n]===b.dataset.l ? undefined : b.dataset.l; save(); drawTeacher(); });
+}
+function drawKey(){
+  $("#v-teacher").innerHTML = `<section class="card"><h2>Today's deal: the real ${esc(SET.whats)}</h2>
+    <p class="sub">Each pair taps its number and gets the ${esc(SET.what)} below. The deal changes every day, and every phone gets the same one. For your screen only.</p>
+    <ol class="keylist">${SET.items.map((_,i)=>{ const it = SET.items[DEAL[i]]; return `<li><b>Pair ${i+1}: ${esc(it.name)}</b><br><span class="small">${esc(it.fact)}</span></li>`; }).join("")}</ol></section>`;
+}
+
+function setView(v){
+  S.view = v; save();
+  ["real","fake","show","teacher"].forEach(x => { const el = $("#v-"+x); if (el) el.hidden = x !== (v==="key"?"teacher":v); });
+  document.querySelectorAll("#tabs button").forEach(b => b.classList.toggle("on", b.dataset.v===v));
+  if (v==="real") drawReal(); if (v==="fake") drawFake(); if (v==="show") drawShow();
+  if (v==="teacher") drawTeacher(); if (v==="key") drawKey();
+  window.scrollTo({top:0});
+}
+function wireGo(){ document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => setView(b.dataset.go)); }
+function who(){ $("#who").textContent = TEACHER ? "Teacher's screen" : (S.pair ? `Pair ${S.pair}` : ""); }
+who(); setView(S.view && VIEWS.some(v=>v[0]===S.view) ? S.view : VIEWS[0][0]);
+});
+</script>
+</body>
+</html>
