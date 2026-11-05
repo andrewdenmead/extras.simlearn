@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "job",
+ "whats": "jobs",
+ "topic": "really weird lost jobs",
+ "items": [
+  {
+   "name": "Knocker-upper",
+   "fact": "Before alarm clocks were cheap, British factory towns had knocker-uppers, who woke workers by tapping on their bedroom windows with a long pole. Some used a pea-shooter to reach the upstairs windows."
+  },
+  {
+   "name": "Pinsetter",
+   "fact": "In bowling alleys, boys were paid to sit behind the lanes and stand the fallen pins back up by hand after every throw, until automatic machines replaced them in the 1950s."
+  },
+  {
+   "name": "Human computer",
+   "fact": "Before electronic computers, a “computer” was a person. Teams of human computers, many of them women, did long calculations by hand for observatories, armies and, later, NASA’s space programme."
+  },
+  {
+   "name": "The Greenwich Time Lady",
+   "fact": "Ruth Belville set her pocket watch at the Greenwich observatory every week, then visited clients around London so that they could set their clocks by it. She sold the time until around 1940."
+  },
+  {
+   "name": "Telephone newspaper announcer",
+   "fact": "From the 1890s, people in Budapest could subscribe to a “telephone newspaper”: announcers read the news, stock prices and even concerts down the telephone lines all day, years before radio existed."
+  },
+  {
+   "name": "Sound-mirror listener",
+   "fact": "Before radar, Britain built huge concrete “sound mirrors” on the south coast. A listener sat in front of the mirror with a microphone or a stethoscope, trying to hear enemy aircraft before they arrived."
+  },
+  {
+   "name": "Cigar-factory reader (lector)",
+   "fact": "In Cuban cigar factories, a lector sits on a platform and reads newspapers and novels aloud while the workers roll cigars. The Montecristo cigar is named after one of their favourite books."
+  },
+  {
+   "name": "Ice harvester",
+   "fact": "Before fridges, workers sawed huge blocks of ice out of frozen lakes in winter, packed them in sawdust and shipped them around the world. Ice from New England even reached India."
+  },
+  {
+   "name": "Lamplighter",
+   "fact": "Lamplighters walked the streets at dusk with a long pole to light the gas street lamps, and again at dawn to put them out. A small team still looks after London’s remaining gas lamps."
+  },
+  {
+   "name": "Lift operator",
+   "fact": "Early lifts had a driver who worked the controls, opened the doors and called out the floors. In 1945 a strike by lift operators in New York left office workers climbing dozens of floors on foot."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Window-light reader",
+   "fact": "Before gas meters, Dutch gas companies paid “light readers” to walk the streets at night and count the lit windows in each house, so that they could work out every family’s gas bill."
+  },
+  {
+   "name": "Calendar crier",
+   "fact": "In rural Portugal until the 1930s, a calendar crier walked from village to village every morning, shouting the date and the saint’s day, because very few families owned a printed calendar."
+  },
+  {
+   "name": "Temperature boy",
+   "fact": "Chicago office buildings in the 1910s employed “temperature boys”, who walked the floors every hour, read the thermometers and opened windows or told the boiler room to add more coal."
+  },
+  {
+   "name": "Pencil boy",
+   "fact": "Big London banks employed pencil boys, who arrived before the clerks every morning and sharpened hundreds of pencils with a small knife. The mechanical pencil sharpener put them out of work."
+  },
+  {
+   "name": "Typewriter tuner",
+   "fact": "German offices in the 1930s hired typewriter tuners, who adjusted every key so that each typist’s machine hit the paper with exactly the same force and all the company’s letters looked identical."
+  },
+  {
+   "name": "Weather bell-ringer",
+   "fact": "Norwegian fishing villages paid a weather bell-ringer to climb a hill at dawn, read the clouds and ring the church bell: once for safe, three times for a storm. Radio forecasts replaced him."
+  },
+  {
+   "name": "Lift pianist",
+   "fact": "Paris department stores in the 1920s put a small piano in their biggest lifts, and a pianist played calm music between the floors. Recorded music made the job disappear by the 1940s."
+  },
+  {
+   "name": "Stamp licker",
+   "fact": "Victorian post offices in Manchester employed stamp lickers, who wet the stamps and stuck them on letters for customers who found licking them unpleasant. Wet sponges on the counter replaced them."
+  },
+  {
+   "name": "Cobblestone tapper",
+   "fact": "Belgian cities employed cobblestone tappers, who walked the streets tapping each stone with a small hammer. A loose stone sounds different, so they could fix it before anyone tripped."
+  },
+  {
+   "name": "Newspaper page-turner",
+   "fact": "Gentlemen’s clubs in Victorian London employed boys to stand beside the armchairs in the reading room and turn the pages of members’ newspapers, so that the members’ hands stayed clean."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding job title, maybe an old-fashioned one."
+  ],
+  [
+   "what",
+   "What the job was",
+   "Something weird but possible: a task that people once did by hand."
+  ],
+  [
+   "where",
+   "Where and when",
+   "A real city or country, and a time: a century, a decade or a year."
+  ],
+  [
+   "how",
+   "How it worked",
+   "One or two steps: what the worker did every day."
+  ],
+  [
+   "end",
+   "What killed it off",
+   "The machine, invention or change that replaced the job."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, the pay or a small problem with the job."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the pay was terrible”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

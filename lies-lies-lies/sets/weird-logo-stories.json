@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "logo story",
+ "whats": "logo stories",
+ "topic": "really weird logo stories",
+ "items": [
+  {
+   "name": "The Starbucks mermaid",
+   "fact": "The two-tailed mermaid in the Starbucks logo was copied from an old Norse woodcut the founders found in a book. The first version, from 1971, was brown, not green."
+  },
+  {
+   "name": "Twitter's bird, Larry",
+   "fact": "Twitter's blue bird logo had a name: Larry, after the basketball player Larry Bird of the Boston Celtics. One of Twitter's founders, Biz Stone, comes from Boston."
+  },
+  {
+   "name": "The FedEx arrow",
+   "fact": "The FedEx logo hides a white arrow in the space between the “E” and the “x”. Its designer, Lindon Leader, wanted it to suggest speed, but many people never notice it."
+  },
+  {
+   "name": "The bite in Apple's apple",
+   "fact": "Designer Rob Janoff added the bite to Apple's logo in 1977 so that, at small sizes, people would see an apple and not a cherry."
+  },
+  {
+   "name": "Toblerone's hidden bear",
+   "fact": "The mountain on the Toblerone logo hides the shape of a bear, the symbol of Bern, the Swiss city where the chocolate was first made."
+  },
+  {
+   "name": "Chupa Chups and Salvador Dalí",
+   "fact": "The daisy-shaped logo of the Spanish lollipop brand Chupa Chups was designed in 1969 by the surrealist painter Salvador Dalí. He reportedly sketched it in under an hour."
+  },
+  {
+   "name": "Baskin-Robbins' hidden 31",
+   "fact": "The pink parts of the “BR” in the Baskin-Robbins logo form the number 31, for the ice-cream chain's famous 31 flavours: one for every day of the month."
+  },
+  {
+   "name": "I ♥ NY",
+   "fact": "Milton Glaser sketched the “I ♥ NY” logo in red crayon in the back of a New York taxi in 1977. He did the job for free, and it became one of the world's most copied logos."
+  },
+  {
+   "name": "Gap's one-week logo",
+   "fact": "In 2010 the clothing brand Gap replaced its classic blue-box logo with a new design. Customers hated it so much online that Gap went back to the old one after about a week."
+  },
+  {
+   "name": "Coca-Cola's handwriting",
+   "fact": "The flowing Coca-Cola logo wasn't made by a designer. In the 1880s it was written by Frank Mason Robinson, the bookkeeper of the drink's inventor, in a handwriting style popular at the time."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The upside-down swallow",
+   "fact": "A Portuguese sardine brand, Marés do Norte, printed its swallow logo upside down by mistake in 1952. Sales went up, so the bird has flown upside down ever since."
+  },
+  {
+   "name": "A fox drawn by a child",
+   "fact": "The fox in the logo of a Finnish outdoor-clothing brand, Kettuvaara, was drawn by the founder's nine-year-old daughter in 1974. She still gets a free jacket every winter."
+  },
+  {
+   "name": "A logo chosen by cows",
+   "fact": "A Dutch cheese brand chose its logo by putting three designs on boards in a field and picking the one its cows stood next to most often."
+  },
+  {
+   "name": "A font from a gravestone",
+   "fact": "The lettering of a British tea brand, Hartley & Moss, was copied from the gravestone of the founder's grandfather in a Yorkshire churchyard."
+  },
+  {
+   "name": "The coastline wave",
+   "fact": "The wave in the logo of a Norwegian ferry company, Havbris, is the exact outline of the coast between Bergen and Ålesund, traced from an old sea map."
+  },
+  {
+   "name": "The bus driver's logo",
+   "fact": "An Italian pasta maker let radio listeners choose its new logo in 1965. The winning design came from a bus driver in Naples, who was paid in pasta for a year."
+  },
+  {
+   "name": "The coffee-stain logo",
+   "fact": "The brown ring in the logo of a Swedish café chain, Brunbönan, is a real coffee stain, scanned from a page of the founder's notebook in 1993."
+  },
+  {
+   "name": "The green of a sweater",
+   "fact": "A German running-shoe brand, Sprintwald, copied its exact shade of green from the sweater the founder's wife wore on the day the company was registered."
+  },
+  {
+   "name": "The upside-down bike logo",
+   "fact": "A Japanese bicycle brand, Hayate Cycles, made its logo read the same upside down, so it looks right whether a bike is standing in a shop or hanging from the ceiling."
+  },
+  {
+   "name": "The hidden mouse",
+   "fact": "The logo of a Belgian chocolate maker has a tiny mouse hidden inside the letter “o”, added by the designer as a joke. The company only noticed twenty years later."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the brand a real-sounding name, and say what it sells."
+  ],
+  [
+   "logo",
+   "What the logo looks like",
+   "A shape, an animal, a letter or a colour."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "A designer, a student, a child, a customer, and a real city or country."
+  ],
+  [
+   "story",
+   "The weird story",
+   "One or two steps: how the logo came about."
+  ],
+  [
+   "now",
+   "What happened next",
+   "Is it still used? Did customers like it?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A date, a price, a number or a small mistake."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the designer was only paid in chocolate”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

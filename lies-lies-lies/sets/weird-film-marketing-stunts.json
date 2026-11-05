@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "film stunt",
+ "whats": "film stunts",
+ "topic": "really weird film marketing stunts",
+ "items": [
+  {
+   "name": "Insured against fright",
+   "fact": "For the 1958 horror film Macabre, the director William Castle gave every cinemagoer a 1,000-dollar life-insurance policy from Lloyd's of London, in case they died of fright."
+  },
+  {
+   "name": "Buzzing seats",
+   "fact": "For The Tingler (1959), some cinemas fitted small buzzers under the seats. At the scariest moment, they gave the audience a little shock."
+  },
+  {
+   "name": "The flying skeleton",
+   "fact": "At screenings of House on Haunted Hill (1959), a plastic skeleton flew over the audience on a wire just as a skeleton appeared on screen."
+  },
+  {
+   "name": "No late arrivals",
+   "fact": "For Psycho (1960), Alfred Hitchcock told cinemas not to let anyone in after the film had started, so nobody would miss the shock early in the film."
+  },
+  {
+   "name": "The telekinetic café",
+   "fact": "To promote Carrie (2013), actors staged a scene in a New York café: a woman seemed to throw a man up a wall and move furniture with her mind. Hidden cameras filmed customers' reactions."
+  },
+  {
+   "name": "Chatroulette scares",
+   "fact": "To promote The Last Exorcism (2010), the studio used Chatroulette, a random video-chat site. Strangers saw a young woman who suddenly seemed to become possessed."
+  },
+  {
+   "name": "Blood drives",
+   "fact": "From Saw II (2005) onwards, the Saw horror films ran blood drives with the American Red Cross, asking fans to give blood. Tens of thousands of donations were made."
+  },
+  {
+   "name": "The banned trailer",
+   "fact": "In 2018 YouTube removed an advert for the horror film The Nun because it was too shocking: it looked like the phone's volume being turned down, and then came a sudden jump scare."
+  },
+  {
+   "name": "Snakes on a Plane",
+   "fact": "Before Snakes on a Plane (2006) came out, fans online made so many jokes about it that the studio filmed extra scenes, including a famous line fans had suggested."
+  },
+  {
+   "name": "Free sick bags",
+   "fact": "For the horror film Mark of the Devil (1970), cinemas handed out free sick bags to the audience, with the promise that the film would upset their stomachs."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The candle street",
+   "fact": "To promote a ghost film, a Spanish studio switched off the street lights on one Madrid street every night for a week, leaving one candle in each window."
+  },
+  {
+   "name": "The mirror tickets",
+   "fact": "Every cinemagoer at a British horror film in 1963 got a small mirror to check behind them during the scariest scene."
+  },
+  {
+   "name": "The reopened cinemas",
+   "fact": "A Japanese ghost film was shown only in old cinemas that had been closed for at least ten years and were reopened for one month."
+  },
+  {
+   "name": "The tape that deleted itself",
+   "fact": "A German studio sent film critics a cassette of its new thriller that erased itself 24 hours after it was first played."
+  },
+  {
+   "name": "Free torches",
+   "fact": "A Swedish horror film in 1984 gave a free torch with every ticket, to switch on if you got too scared. Many cinemas asked for the idea to stop."
+  },
+  {
+   "name": "The 3 a.m. challenge",
+   "fact": "A Mexican studio offered free cinema tickets for life to anyone who watched its horror film alone, in an empty cinema, at three in the morning."
+  },
+  {
+   "name": "The tipping seats",
+   "fact": "For a 1960s monster film, an American cinema chain fitted seats that tipped slightly backwards when the monster first appeared."
+  },
+  {
+   "name": "The trailer in the weather",
+   "fact": "A Danish thriller's trailer was hidden inside a weather forecast on national TV: the map slowly filled with red fog."
+  },
+  {
+   "name": "Garlic popcorn",
+   "fact": "To advertise a vampire film, a Hungarian cinema chain sold only tomato juice and garlic popcorn for its opening weekend."
+  },
+  {
+   "name": "The fading tickets",
+   "fact": "A Korean horror film printed its tickets with ink that faded during the screening, leaving only the words “Don't look back.”"
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the stunt a short name: “the … seats”, “the … tickets”."
+  ],
+  [
+   "film",
+   "The film",
+   "What kind of film (horror, thriller, monster), a country and a year."
+  ],
+  [
+   "who",
+   "Who did it",
+   "A studio, a director or a cinema chain (no real names)."
+  ],
+  [
+   "how",
+   "What happened",
+   "One or two steps: what the audience saw or got."
+  ],
+  [
+   "result",
+   "The result",
+   "Did it work? Did anyone complain?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a price, a date or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“some cinemas refused to do it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

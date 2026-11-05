@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "migration rule",
+ "whats": "migration rules",
+ "topic": "really weird migration rules",
+ "items": [
+  {
+   "name": "No visa needed (Svalbard)",
+   "fact": "People of any nationality can live and work on Svalbard, the Norwegian islands near the North Pole, without a visa, thanks to an old international treaty. You just need to support yourself."
+  },
+  {
+   "name": "Citizenship through a grandparent (Ireland)",
+   "fact": "If one of your grandparents was born in Ireland, you can become an Irish citizen, even if neither you nor your parents ever lived there. You register your birth in Dublin."
+  },
+  {
+   "name": "Citizenship that ends with your job (Vatican City)",
+   "fact": "Vatican citizenship is given mainly to people who work there, and it usually ends automatically when the job ends. Only the Pope keeps it for life. In 2024 there were 673 citizens."
+  },
+  {
+   "name": "Paid to move (Switzerland)",
+   "fact": "In 2017, the Swiss mountain village of Albinen voted to pay newcomers 25,000 francs per adult, if they were under 45, built or bought a home there and stayed at least ten years."
+  },
+  {
+   "name": "88 days on a farm (Australia)",
+   "fact": "Young people on Australia's working holiday visa can usually get a second year only by doing 88 days of “specified work”, such as fruit picking, in the countryside."
+  },
+  {
+   "name": "Citizenship by village vote (Switzerland)",
+   "fact": "In some Swiss villages, local people vote on who becomes a citizen. One village turned down a Dutch-born woman twice after she campaigned against cowbells, horse racing and other local traditions."
+  },
+  {
+   "name": "e-Residency (Estonia)",
+   "fact": "Since 2014, anyone in the world can apply to be an “e-resident” of Estonia. You get a digital ID to run an Estonian company online, but no right to live in Estonia."
+  },
+  {
+   "name": "Citizenship after 500 years (Spain)",
+   "fact": "In 2015, Spain offered citizenship to descendants of the Jews expelled from Spain in 1492. More than 70,000 people were granted Spanish citizenship this way."
+  },
+  {
+   "name": "Residence by lottery (Liechtenstein)",
+   "fact": "Liechtenstein gives half of its residence permits for Europeans by lottery, drawn twice a year. Each year, only 28 permits are drawn for people with jobs and 8 for people without."
+  },
+  {
+   "name": "A new name to be a citizen (Iceland)",
+   "fact": "Until 1996, people who became Icelandic citizens had to take an Icelandic name. At first this meant a new surname too; later, only an Icelandic first name was needed."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Your first winter on a small island (Faroe Islands)",
+   "fact": "Anyone who moves to the Faroe Islands must spend their first winter on one of the smaller islands before choosing where to live, to keep the island villages populated."
+  },
+  {
+   "name": "Fast citizenship for village teachers (Portugal)",
+   "fact": "Portugal gives citizenship after only two years to foreign teachers who work in villages with fewer than 500 people. Most of them teach English or maths."
+  },
+  {
+   "name": "Ten trees for residence (Costa Rica)",
+   "fact": "New permanent residents in Costa Rica must plant ten native trees in their first year and send the government photos of each one with its GPS position."
+  },
+  {
+   "name": "The sauna questions (Finland)",
+   "fact": "People applying for Finnish citizenship are asked three questions about sauna manners in the language test, such as when it is polite to throw water on the hot stones."
+  },
+  {
+   "name": "A second hometown card (Japan)",
+   "fact": "Japanese towns that are losing people can give foreigners a “second hometown” card, which lets them stay six months a year if they help with the rice harvest."
+  },
+  {
+   "name": "Wait for a flat (Monaco)",
+   "fact": "Monaco gives residence permits to newcomers only when a flat becomes free, so applicants wait on a list in the order in which they signed their rental contract."
+  },
+  {
+   "name": "A village sponsors you (Slovakia)",
+   "fact": "In Slovakia, a village can sponsor a foreign family for residence if two thirds of local households sign a form promising to help them settle in."
+  },
+  {
+   "name": "The bakery test (Bavaria)",
+   "fact": "Applicants for German citizenship in Bavaria must order bread and coffee in German at a real bakery, watched by an examiner, as the speaking part of their test."
+  },
+  {
+   "name": "National Day babies (Luxembourg)",
+   "fact": "Babies born in Luxembourg on its National Day, 23 June, automatically become Luxembourgish citizens, whatever their parents' nationality. About forty are born each year."
+  },
+  {
+   "name": "Pets on a spouse visa (Austria)",
+   "fact": "Austria's family rules let foreign residents bring a dog or cat on the same visa as a husband or wife, as long as the animal was registered at the same address abroad."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "from",
+   "What it is",
+   "Something weird but possible: a visa, a test, a payment or a condition."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "Which country, city or village made it, and roughly when."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: who can come or stay, and what they must do."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who it affects: workers, families, grandchildren, everyone?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“hardly anyone has applied”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

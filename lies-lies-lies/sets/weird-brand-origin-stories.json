@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "brand story",
+ "whats": "brand stories",
+ "topic": "really weird brand origin stories",
+ "items": [
+  {
+   "name": "Play-Doh",
+   "fact": "Play-Doh began as a putty for cleaning soot off wallpaper. When people stopped needing it, the company found that children loved modelling with it and sold it as a toy."
+  },
+  {
+   "name": "Listerine",
+   "fact": "Listerine was first made in 1879 as an antiseptic for surgeons. It was later sold as a floor cleaner before becoming a mouthwash."
+  },
+  {
+   "name": "Lamborghini",
+   "fact": "Before building sports cars, Ferruccio Lamborghini made tractors. The story goes that he started making cars after he complained to Enzo Ferrari about his own Ferrari's clutch."
+  },
+  {
+   "name": "Nokia",
+   "fact": "Nokia started in Finland in 1865 as a paper mill. Over the years it also made rubber boots and car tyres before it became famous for mobile phones."
+  },
+  {
+   "name": "Nintendo",
+   "fact": "Nintendo was founded in Kyoto in 1889 to make hanafuda, traditional Japanese playing cards. It didn't make video games until almost a century later."
+  },
+  {
+   "name": "Samsung",
+   "fact": "Samsung started in Korea in 1938 as a small trading company selling dried fish, vegetables and noodles. Electronics only came decades later."
+  },
+  {
+   "name": "Avon",
+   "fact": "Avon's founder, David McConnell, sold books door to door and gave customers a free bottle of perfume. The perfume was more popular than the books, so he started a perfume company."
+  },
+  {
+   "name": "Wrigley's",
+   "fact": "William Wrigley Jr first sold soap, then baking powder, and gave away chewing gum as a free gift. Customers liked the gum more, so he switched to gum."
+  },
+  {
+   "name": "Shell",
+   "fact": "The oil company Shell is named after seashells. The founders' father had sold boxes decorated with seashells in London, and the family business grew from there."
+  },
+  {
+   "name": "Kellogg's Corn Flakes",
+   "fact": "Corn flakes were first made by the Kellogg brothers as plain health food for patients at a hospital in Michigan. The very first flakes were wheat, from dough that was accidentally left out too long."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The watchmaker's graters",
+   "fact": "A Swiss watch brand, Hoffstetter, started in 1871 as a maker of cheese graters. Its first watch cases were cut on the same machines as the graters."
+  },
+  {
+   "name": "The umbrella shop",
+   "fact": "A Korean phone-case maker, Hanbit, began in 1962 by selling paper umbrellas. The founder's son still keeps one of the first umbrellas in the head office."
+  },
+  {
+   "name": "The espresso engine",
+   "fact": "The Italian sports-car maker Ventura Motori began by making espresso machines. Its first car engine was tested in the coffee factory's back room."
+  },
+  {
+   "name": "The circus saddles",
+   "fact": "A German sportswear brand, Kranich, began in 1923 by making leather saddles for circus horses. Its first running shoe used the same leather."
+  },
+  {
+   "name": "The hospital soap",
+   "fact": "The French perfume house Maison Delorme began as a soap factory for hospitals in Lyon. The founder added perfume after nurses complained about the smell."
+  },
+  {
+   "name": "The silk kites",
+   "fact": "The Japanese video-game company Kumori started in 1910 by making silk kites. Its first game, in 1978, was about flying a kite."
+  },
+  {
+   "name": "The fishing nets",
+   "fact": "A Finnish mobile-network company, Verkko, began as a maker of fishing nets in 1890. Its name still means “net” in Finnish."
+  },
+  {
+   "name": "The dog biscuits",
+   "fact": "A British biscuit brand, Pemberton's, started by selling dog biscuits. The founder switched to biscuits for people after his own children kept eating the dogs' ones."
+  },
+  {
+   "name": "The pram factory",
+   "fact": "A Dutch bicycle maker, Van Hulst, began in 1899 as a pram factory. Its first bikes used the same wheels as its prams."
+  },
+  {
+   "name": "The church candles",
+   "fact": "The Spanish chocolate brand Cacao Ribera began by making church candles in Seville. It switched to chocolate when cocoa butter became cheaper than wax."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "The brand",
+   "Give it a real-sounding name, and say what it's famous for now."
+  ],
+  [
+   "before",
+   "What it did first",
+   "Something odd: a different product, a shop, a factory."
+  ],
+  [
+   "who",
+   "Who started it, and where",
+   "A founder, a family or a company, and a real city or country."
+  ],
+  [
+   "change",
+   "How it changed",
+   "One or two steps: why it moved to the thing it sells now."
+  ],
+  [
+   "today",
+   "What's left of the old story",
+   "A name, a logo, an object in the head office."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A date, a number, a price or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the first product nearly bankrupted them”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "idea",
+ "whats": "ideas",
+ "topic": "really weird military ideas",
+ "items": [
+  {
+   "name": "Project Pigeon",
+   "fact": "During the Second World War, the American psychologist B. F. Skinner trained pigeons to guide missiles by pecking at an image of the target on a screen inside the nose. It was never used."
+  },
+  {
+   "name": "Acoustic Kitty",
+   "fact": "In the 1960s, the CIA tried to turn a cat into a spy by fitting it with a tiny microphone and radio. The project failed, partly because the cat kept wandering off when it was hungry."
+  },
+  {
+   "name": "An aircraft carrier made of ice",
+   "fact": "Britain planned a huge aircraft carrier made of “pykrete”, a mixture of ice and wood pulp that is much stronger than ice alone. A small test model was built on a lake in Canada."
+  },
+  {
+   "name": "The Ghost Army",
+   "fact": "In the Second World War, a secret American unit of artists and sound engineers fooled the enemy with inflatable rubber tanks, fake radio messages and loudspeakers playing the sounds of an army."
+  },
+  {
+   "name": "Mine-hunting dolphins",
+   "fact": "The US Navy has trained dolphins and sea lions for decades to find sea mines and spot underwater intruders, because their natural senses work better than many machines."
+  },
+  {
+   "name": "The Great Panjandrum",
+   "fact": "Britain’s “Great Panjandrum” was a giant rocket-powered wheel full of explosives, meant to roll up beaches and blow holes in sea walls. In tests on a Devon beach it kept veering off course."
+  },
+  {
+   "name": "The Bob Semple tank",
+   "fact": "In 1940, New Zealand built a tank by covering a farm tractor with corrugated iron. It was so tall, slow and uncomfortable that it never saw action."
+  },
+  {
+   "name": "Dazzle ships",
+   "fact": "In the First World War, British and American ships were painted with bold zebra-like stripes and zigzags. The idea was not to hide them, but to make it hard to judge their speed and direction."
+  },
+  {
+   "name": "A city under the ice",
+   "fact": "During the Cold War, the US Army planned to hide hundreds of nuclear missiles in tunnels under the Greenland ice sheet. As a first step, it built an ice camp powered by a nuclear reactor."
+  },
+  {
+   "name": "Seagulls against submarines",
+   "fact": "In the First World War, the British navy experimented with training seagulls to gather around submarine periscopes, so that ships could spot submarines by the birds above them."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Owl sentries",
+   "fact": "During the Second World War, Britain’s Home Guard trained barn owls to hoot loudly when they heard aircraft engines at night, because owls hear low sounds much earlier than people."
+  },
+  {
+   "name": "The mirror ship",
+   "fact": "In the 1930s, the Dutch navy tested huge mirror panels on the sides of a small warship, so that it would reflect the sea and sky and become almost invisible from a distance."
+  },
+  {
+   "name": "Frozen ink",
+   "fact": "Swedish spies in the Second World War wrote secret messages with an ink that only became visible when the paper was frozen. Border guards in winter sometimes found them by accident."
+  },
+  {
+   "name": "Seaweed paint",
+   "fact": "The Norwegian navy tested a paint made from seaweed for its submarines, hoping that enemy sonar would mistake them for floating kelp forests."
+  },
+  {
+   "name": "Glass-floored planes",
+   "fact": "In the 1950s, the Swedish air force built a few patrol planes with glass floors, so that the crew could lie on their stomachs and look for submarines in the Baltic Sea."
+  },
+  {
+   "name": "Squid-ink smoke",
+   "fact": "The Japanese navy farmed squid in the 1930s to collect their ink, planning to make thick dark smoke screens that would hide its ships at sea."
+  },
+  {
+   "name": "Instant hedges",
+   "fact": "In the 1930s, Belgian army engineers planted fast-growing hedges along roads near the border, so that within a few months enemy pilots wouldn’t be able to see military lorries."
+  },
+  {
+   "name": "Snow foam",
+   "fact": "The Canadian army tested a white foam that could be sprayed over lorries and tents in minutes to hide them in snowy landscapes. It melted too fast in the spring sunshine."
+  },
+  {
+   "name": "Lemon batteries",
+   "fact": "Italian soldiers in North Africa were trained to power their field radios in an emergency with batteries made from lemons, copper coins and zinc nails."
+  },
+  {
+   "name": "Echo maps",
+   "fact": "Swiss mountain troops were trained to shout from peaks and time the echoes, so that they could map a valley in thick fog. The method was dropped when radio arrived."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding code name or nickname."
+  ],
+  [
+   "what",
+   "What it was",
+   "Something weird but possible: an animal, a material, a machine, a trick."
+  ],
+  [
+   "who",
+   "Who tried it, and when",
+   "An army, a navy, a spy agency or a scientist, and a war or a decade."
+  ],
+  [
+   "how",
+   "How it was meant to work",
+   "One or two steps: what it would do to the enemy."
+  ],
+  [
+   "result",
+   "What happened",
+   "Was it used, tested or dropped, and why?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a place or a small problem it had."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it worked, but only in summer”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

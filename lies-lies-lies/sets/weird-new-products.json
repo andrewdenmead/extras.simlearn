@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "product",
+ "whats": "products",
+ "topic": "really weird new products",
+ "items": [
+  {
+   "name": "Magazine yoghurt (Cosmo)",
+   "fact": "In 1999 the women's magazine Cosmopolitan launched its own range of low-fat yoghurts and soft cheeses in the UK, together with a dairy company. Sales fell and the range was scrapped."
+  },
+  {
+   "name": "Motorbike cologne (Harley-Davidson)",
+   "fact": "In the 1990s the motorbike maker, famous for its tough, rebellious image, sold its own cologne, as well as baby clothes and Christmas decorations. Many fans hated it and said the brand had gone soft."
+  },
+  {
+   "name": "Pens for women (BIC For Her)",
+   "fact": "In 2012 the pen maker sold pink and purple ballpoint pens “for her”. Shoppers flooded Amazon with sarcastic reviews, and the pens are now shown in a museum of failed products."
+  },
+  {
+   "name": "Green ketchup (Heinz EZ Squirt)",
+   "fact": "In 2000 Heinz launched bright green ketchup for children in a squeezy bottle. Purple, orange, pink, teal and blue followed, but sales fell and the coloured ketchups disappeared in 2006."
+  },
+  {
+   "name": "Breakfast cola (Pepsi A.M.)",
+   "fact": "In 1989 Pepsi tested a cola for breakfast, with 25% more caffeine, aimed at people who normally drank coffee in the morning. It was only sold in a few US cities and stopped about a year later."
+  },
+  {
+   "name": "Burger body spray (Burger King Flame)",
+   "fact": "In 2008 Burger King sold a body spray called Flame, described as “the scent of seduction with a hint of flame-broiled meat”. It cost $3.99 in a New York shop."
+  },
+  {
+   "name": "Chicken nail varnish (KFC)",
+   "fact": "In 2016 KFC in Hong Kong made edible nail varnish in two flavours, Original and Hot & Spicy, so fans could lick their fingers. People voted on which flavour should be produced."
+  },
+  {
+   "name": "Baby food for adults (Gerber Singles)",
+   "fact": "In 1974 the baby-food company Gerber sold soft, mushy meals in small glass jars to students and young adults living alone. Nobody wanted to eat something that looked like baby food, and it failed."
+  },
+  {
+   "name": "Clear cola (Crystal Pepsi)",
+   "fact": "In 1992 Pepsi launched a cola that was completely clear and had no caffeine. After the first excitement, sales dropped, and it disappeared from shops within about two years."
+  },
+  {
+   "name": "Lighter perfume (Zippo)",
+   "fact": "In 2010 the lighter company Zippo launched a perfume for men in a bottle shaped like its famous metal lighter. Some people said it made them think of lighter fluid."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Bank chewing gum",
+   "fact": "In 1998 a Swiss bank started selling its own mint chewing gum in its branches, hoping customers would remember its name. Sales were so poor that the gum lasted less than a year."
+  },
+  {
+   "name": "Tyre-tread chocolate",
+   "fact": "To celebrate its 100th birthday in 2003, a Belgian tyre maker sold dark chocolate bars shaped like tyre tread. Drivers bought them as a joke, but most supermarkets refused to stock them."
+  },
+  {
+   "name": "Toothpaste crisps",
+   "fact": "In 2006 a German toothpaste brand launched mint-flavoured crisps, so that people's breath stayed fresh while they snacked. Shoppers found the taste confusing, and the crisps disappeared within a year."
+  },
+  {
+   "name": "Marathon wine",
+   "fact": "In 2007 an American running-shoe brand released a red wine for runners to drink after a marathon, sold in its shops. Runners complained it was far too strong, and it was quietly dropped."
+  },
+  {
+   "name": "Tuna crisps for people",
+   "fact": "In 2013 a Swedish pet-food company launched tuna crisps for humans, made in the same factory as its cat treats. The cat on the packet made shoppers think they were for pets."
+  },
+  {
+   "name": "Cough-sweet ice cream",
+   "fact": "An Austrian maker of herbal cough sweets launched a herb-flavoured ice cream in 2010, for the summer months when nobody bought its sweets. It tasted like medicine and lasted one summer."
+  },
+  {
+   "name": "Washing-powder alcopop",
+   "fact": "In 2008 a Belgian washing-powder brand launched a bright blue alcopop for its 50th birthday. Parents complained that it looked exactly like washing liquid, and it was withdrawn after six weeks."
+  },
+  {
+   "name": "Umbrella sun cream",
+   "fact": "In 2004 a British umbrella maker launched its own sun cream with the slogan “For the days you don't need us”. It sold so badly that most bottles were given away free with umbrellas."
+  },
+  {
+   "name": "Sock perfume",
+   "fact": "In 2011 an Italian sock company launched a perfume to spray onto socks, with the slogan “Your shoes will thank you”. It was laughed at on television and stopped after a year."
+  },
+  {
+   "name": "Petrol-station ice cream",
+   "fact": "In 2002 a Danish petrol-station chain sold its own ice cream in flavours named after its fuels. “Diesel” was black liquorice, and almost nobody wanted to try it."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe with a brand name in brackets."
+  ],
+  [
+   "who",
+   "Who launched it, and where",
+   "A kind of company (a bank, a toothpaste brand, a tyre maker) and a real country."
+  ],
+  [
+   "what",
+   "What the product was",
+   "Something weird but possible: a food, a drink, a smell, a gadget."
+  ],
+  [
+   "why",
+   "Why they thought it was a good idea",
+   "One reason: a birthday, a new customer group, a quiet season."
+  ],
+  [
+   "how",
+   "How customers reacted",
+   "Who bought it, who laughed at it, what the press said."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A year, a price, a slogan or how long it lasted."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it only lasted one summer”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

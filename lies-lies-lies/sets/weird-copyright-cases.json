@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "case",
+ "whats": "cases",
+ "topic": "really weird copyright cases",
+ "items": [
+  {
+   "name": "“Happy Birthday to You”",
+   "fact": "For decades a music company collected money whenever “Happy Birthday to You” was used in films or on TV. In 2015 a US judge ruled its copyright claim invalid, and it paid back $14 million."
+  },
+  {
+   "name": "The monkey selfie",
+   "fact": "A macaque in Indonesia took selfies with a wildlife photographer's camera. An animal-rights group sued on the monkey's behalf, but in 2018 a US court ruled that animals cannot own copyright."
+  },
+  {
+   "name": "The Eiffel Tower at night",
+   "fact": "The Eiffel Tower itself is free to photograph, but its night-time light show, added in 1985, is treated as a work of art. Selling photos of the tower lit up at night can need permission."
+  },
+  {
+   "name": "The silent track",
+   "fact": "In 2002 a British composer put a one-minute silent track on an album, credited “Batt/Cage”. John Cage's publishers claimed it copied Cage's famous silent piece, 4′33″, and the row made headlines."
+  },
+  {
+   "name": "The one-copy album",
+   "fact": "In 2015 the Wu-Tang Clan made just one copy of a new album and sold it for millions. By contract, the owner may play it to people for free but can't sell it commercially for 88 years."
+  },
+  {
+   "name": "Sherlock Holmes's feelings",
+   "fact": "In 2020 Arthur Conan Doyle's estate sued Netflix because Sherlock Holmes showed feelings in a film. Most Holmes stories were out of copyright, but the estate said he only became warm in later ones."
+  },
+  {
+   "name": "Mike Tyson's tattoo",
+   "fact": "The artist who designed Mike Tyson's face tattoo sued Warner Bros in 2011, because a copy of it appeared on an actor's face in The Hangover Part II. The two sides settled out of court."
+  },
+  {
+   "name": "Hot yoga poses",
+   "fact": "A yoga teacher claimed copyright on his sequence of hot-yoga poses and sued studios that taught it. In 2015 a US appeals court ruled that a series of yoga poses can't be protected by copyright."
+  },
+  {
+   "name": "Radiohead's “Creep”",
+   "fact": "Radiohead's hit “Creep” sounded so much like the Hollies' 1970s song “The Air That I Breathe” that its writers, Albert Hammond and Mike Hazlewood, were added to the song's list of writers."
+  },
+  {
+   "name": "Mickey Mouse goes free",
+   "fact": "In January 2024 the very first Mickey Mouse, from the cartoon Steamboat Willie, lost its copyright protection in the US. Within days, several horror films starring that Mickey were announced."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The handball celebration",
+   "fact": "In 2017 a Danish handball player registered copyright on his goal celebration, a little rowing dance. When a video game copied it, a court in Copenhagen ordered the game company to pay him."
+  },
+  {
+   "name": "The blackbird ringtone",
+   "fact": "A Norwegian nature recordist sued a phone maker because its ringtone used his recording of a blackbird. The court ruled that he owned the recording, but nobody could own the bird's song."
+  },
+  {
+   "name": "The whistling parrot",
+   "fact": "In 2009 a Belgian court ruled that a parrot whistling a famous advertising jingle in a TV comedy show counted as a “performance”, so the show had to pay the jingle's composer."
+  },
+  {
+   "name": "The sandcastle in the brochure",
+   "fact": "In 2013 a Dutch sand artist won a case against a holiday company that used photos of his sandcastle in its brochure. The judge said it was a sculpture, even though the sea destroyed it."
+  },
+  {
+   "name": "The snoring album",
+   "fact": "A Swedish man released an album of his own snoring and sued a sleep app that used similar sounds. The court ruled that snoring is a natural noise, so nobody can own it."
+  },
+  {
+   "name": "The weather presenter's hands",
+   "fact": "In 2011 an Austrian TV weather presenter claimed copyright on her hand movements over the weather map. The court ruled that pointing at clouds was not creative enough to be protected."
+  },
+  {
+   "name": "The doorbell tune",
+   "fact": "A German songwriter sued a doorbell maker because its “ding-dong” tune copied four notes from his 1980s pop song. The court agreed, and thousands of doorbells had to be reprogrammed."
+  },
+  {
+   "name": "The crying-laughing emoji",
+   "fact": "In 2018 a Korean illustrator sued a messaging app, claiming its laughing-crying face copied a sticker he drew in 2008. The court ruled that a face with tears is too simple to own."
+  },
+  {
+   "name": "The poetic shopping list",
+   "fact": "A French novelist's family sued an auction house for selling his handwritten shopping lists. The court agreed that one list, written in rhyme, was literature and protected by copyright."
+  },
+  {
+   "name": "The hold music",
+   "fact": "In 2016 a Canadian musician found out that a bank had used his song as telephone hold music for nine years. A court ordered the bank to pay him for every hour callers had waited."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short name, like a newspaper headline: “The ___ case”."
+  ],
+  [
+   "who",
+   "Who sued whom, and where",
+   "A kind of person (a songwriter, an artist) against a kind of company, in a real country."
+  ],
+  [
+   "what",
+   "What they said was copied",
+   "Something weird but possible: a sound, a dance, a photo, a few notes."
+  ],
+  [
+   "how",
+   "How it was discovered",
+   "One or two steps: who noticed, and how it got to court."
+  ],
+  [
+   "ruling",
+   "What the court decided",
+   "Who won, and the judge's reason in one sentence."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A year, an amount of money or how many things had to change."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“they only won half the money”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

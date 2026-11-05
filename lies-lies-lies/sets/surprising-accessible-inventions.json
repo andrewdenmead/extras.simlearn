@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "invention",
+ "whats": "inventions",
+ "topic": "really surprising accessible-design inventions",
+ "items": [
+  {
+   "name": "OXO Good Grips",
+   "fact": "In 1990 Sam Farber launched kitchen tools with thick, soft, rubbery handles after he saw his wife, who had arthritis, struggle with an ordinary vegetable peeler. Now everyone uses them."
+  },
+  {
+   "name": "The Xbox Adaptive Controller",
+   "fact": "In 2018 Microsoft launched a games controller with two huge buttons and many sockets, so that players who can't use a normal controller can plug in switches, pedals or joysticks."
+  },
+  {
+   "name": "Banknotes you can feel",
+   "fact": "After a blind teenager, Connor McLeod, campaigned for it, Australia's new banknotes from 2016 have small raised bumps on the edge, so blind people can tell the notes apart."
+  },
+  {
+   "name": "Shoes without laces",
+   "fact": "Nike's FlyEase shoes, which you can put on and close with one hand, were inspired by a letter from Matthew Walzer, a teenager with cerebral palsy who couldn't tie his laces."
+  },
+  {
+   "name": "Clothes with magnets",
+   "fact": "Tommy Hilfiger makes adaptive clothing for disabled people: shirts and trousers that close with magnets instead of buttons, and wider openings that make it easier to get dressed."
+  },
+  {
+   "name": "Be My Eyes",
+   "fact": "Be My Eyes, a Danish app launched in 2015, connects blind people by video call with sighted volunteers, who help with things like reading labels. Millions of volunteers have signed up."
+  },
+  {
+   "name": "A colour code for colour-blind people",
+   "fact": "Portuguese designer Miguel Neiva created ColorADD, a set of simple symbols for colours. It is used on things like school pencils, maps and hospital labels so colour-blind people can identify colours."
+  },
+  {
+   "name": "The steady spoon",
+   "fact": "Liftware makes a spoon with a handle full of sensors and small motors. It moves against the shaking of the hand, so people with a tremor spill much less food."
+  },
+  {
+   "name": "The first TV captions",
+   "fact": "The first TV programme with captions for deaf viewers in the USA was a cooking show, Julia Child's The French Chef, in 1972."
+  },
+  {
+   "name": "Dropped kerbs",
+   "fact": "In the 1970s, disabled activists in Berkeley, California, pushed for small slopes in kerbs for wheelchairs. They turned out to help everyone: people with pushchairs, suitcases and bikes too."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The talking trolley",
+   "fact": "A Swedish supermarket chain fitted some trolleys with a small scanner that reads the price labels aloud to blind shoppers through a speaker in the handle."
+  },
+  {
+   "name": "The vibrating door handle",
+   "fact": "Danish designers made hotel door handles that vibrate gently when the door locks, so that deaf guests know their room is closed."
+  },
+  {
+   "name": "The humming zebra crossing",
+   "fact": "Spanish engineers built a zebra crossing in Valencia whose stripes light up and hum while a wheelchair user is crossing, so drivers wait longer."
+  },
+  {
+   "name": "The cooling fork",
+   "fact": "An Italian designer made a fork with a tiny fan in the handle that cools hot food, for people who find it hard to blow on their food."
+  },
+  {
+   "name": "Puzzles that smell",
+   "fact": "A Canadian toy company makes jigsaw puzzles in which every piece has a different smell, so that blind children can find the pieces that fit."
+  },
+  {
+   "name": "Lifts that speak dialect",
+   "fact": "Some lifts in Zurich announce the floors in Swiss German dialect, after older residents said they found the standard German voice hard to follow."
+  },
+  {
+   "name": "The flashing umbrella",
+   "fact": "An Irish start-up makes umbrellas for blind people with a small light in the tip that flashes when they step into the road, so drivers see them in the rain."
+  },
+  {
+   "name": "Scented bus stops",
+   "fact": "A Portuguese city gave each bus stop on one line a different smell from a small dispenser, so that blind passengers could tell which stop they had reached."
+  },
+  {
+   "name": "The warm keypad",
+   "fact": "A Dutch company makes a phone whose keys get slightly warmer the longer you press them, so people with poor eyesight know a key has been pressed."
+  },
+  {
+   "name": "The kettle that weighs",
+   "fact": "A British kettle for blind people weighs the water inside and says aloud how many cups it will make, so nobody overfills it."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the invention a real-sounding name, maybe with a brand name in brackets."
+  ],
+  [
+   "for",
+   "Who it's for",
+   "A group of people and the problem they have."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "A university, a company or a designer, and a real city or country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two steps: what it does differently."
+  ],
+  [
+   "used",
+   "Who uses it now",
+   "Did it help other people too?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the battery only lasts a day”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

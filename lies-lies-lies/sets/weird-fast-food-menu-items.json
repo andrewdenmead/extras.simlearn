@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "menu item",
+ "whats": "menu items",
+ "topic": "really weird fast-food menu items",
+ "items": [
+  {
+   "name": "The Hula Burger (McDonald's)",
+   "fact": "In 1963 McDonald's tested a “burger” with a grilled slice of pineapple instead of meat, for Catholic customers who ate no meat on Fridays. The Filet-O-Fish beat it and stayed on the menu."
+  },
+  {
+   "name": "Bubblegum broccoli (McDonald's)",
+   "fact": "McDonald's once developed broccoli that tasted of bubblegum, hoping children would eat more vegetables. In 2014 its boss admitted the test had failed: the children were simply confused by the taste."
+  },
+  {
+   "name": "Chocolate fries (McDonald's Japan)",
+   "fact": "In 2016 McDonald's in Japan sold the McChoco Potato for a limited time: a normal portion of salty French fries with chocolate sauce poured all over them."
+  },
+  {
+   "name": "Rice burger (MOS Burger)",
+   "fact": "The Japanese chain MOS Burger sells burgers without a bread bun. Instead, the filling, such as beef in a sweet and salty sauce, goes between two flat, grilled cakes of pressed rice."
+  },
+  {
+   "name": "Spaghetti with hot dogs (Jollibee)",
+   "fact": "Jollibee, the biggest fast-food chain in the Philippines, serves spaghetti in a sweet tomato sauce with sliced hot dogs and grated cheese. Part of the sweetness comes from banana ketchup."
+  },
+  {
+   "name": "Deer sandwich (Arby's)",
+   "fact": "In 2016 the American chain Arby's sold a venison (deer meat) steak sandwich for a few days in states where many people hunt. In some restaurants it sold out within minutes."
+  },
+  {
+   "name": "Pickle-juice slush (Sonic)",
+   "fact": "In summer 2018 the American drive-in chain Sonic sold a bright green frozen slush drink flavoured with pickle juice: the salty, sour liquid from jars of pickled gherkins."
+  },
+  {
+   "name": "Foie gras burger (Wendy's Japan)",
+   "fact": "When Wendy's came back to Japan in 2011, it sold a luxury burger topped with foie gras, the expensive French duck or goose liver, for about $16, several times the price of a normal burger."
+  },
+  {
+   "name": "Unicorn Frappuccino (Starbucks)",
+   "fact": "In 2017 Starbucks sold a pink and blue iced drink that changed colour and flavour as you stirred it, from sweet and fruity to sour. It was on sale for only a few days."
+  },
+  {
+   "name": "The upside-down Blizzard (Dairy Queen)",
+   "fact": "Dairy Queen staff traditionally hand over its thick Blizzard ice-cream dessert upside down, to show how thick it is. The chain has even promised a free one if it falls out of the cup."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Porridge burger",
+   "fact": "A Glasgow fast-food chain sold a “porridge burger” for one winter: a beef burger between two fried oatcake buns, with a small pot of whisky-flavoured sauce for dipping."
+  },
+  {
+   "name": "Cola-boiled chips",
+   "fact": "A Belgian chip-shop chain boils its chips in cola before frying them, so they come out dark brown and slightly sweet. It sells them in a paper cone with mayonnaise."
+  },
+  {
+   "name": "Matcha ketchup",
+   "fact": "A Japanese burger chain sells bright green ketchup made with matcha green tea as a spring-only sauce for its fries. It tastes like normal ketchup, but a little bitter."
+  },
+  {
+   "name": "Fish-finger milkshake",
+   "fact": "A British seaside burger chain sold a vanilla milkshake with crushed fish fingers blended in, for one week in August, as a joke for its 50th birthday. Around 3,000 were sold."
+  },
+  {
+   "name": "Sauerkraut soft-serve",
+   "fact": "An Austrian burger chain sells a soft ice cream swirled with sweetened sauerkraut and apple every autumn. It comes in a cone made from pretzel dough, and staff say it sells best to students."
+  },
+  {
+   "name": "Tomato-soup slush",
+   "fact": "A Dutch fast-food chain sells a frozen tomato-soup slush with basil every summer. It comes with a small cheese toastie for dipping, and it is served with a spoon instead of a straw."
+  },
+  {
+   "name": "Ketchup ice lolly",
+   "fact": "A Danish hot-dog chain sells an ice lolly made of frozen, sweetened ketchup and mustard in two stripes, to eat after a hot dog on hot days."
+  },
+  {
+   "name": "Beetroot-soup milkshake",
+   "fact": "A Lithuanian fast-food chain sells a bright pink milkshake made from cold beetroot soup and vanilla ice cream every summer. Staff say tourists order it for the colour, then rarely finish it."
+  },
+  {
+   "name": "Mushy-pea fizzy drink",
+   "fact": "A British fish-and-chip chain sells a green fizzy drink flavoured with mushy peas and mint. It is only on sale at its seaside restaurants, in summer."
+  },
+  {
+   "name": "Rice-pudding pizza",
+   "fact": "A Swedish pizza chain sells a dessert pizza topped with cold rice pudding, cinnamon and orange slices every December. It comes on a normal pizza base, cut into eight slices."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe with the chain's name in brackets."
+  ],
+  [
+   "what",
+   "What it is",
+   "A strange mix: sweet and salty, an odd ingredient, a local dish."
+  ],
+  [
+   "who",
+   "Which chain, and where",
+   "A kind of fast-food chain and a real country or city."
+  ],
+  [
+   "how",
+   "How it's made or served",
+   "One or two steps: what's in it and how it arrives."
+  ],
+  [
+   "why",
+   "Why they sold it",
+   "A season, a holiday, a local taste or a marketing stunt."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it had."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it went soggy in ten minutes”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

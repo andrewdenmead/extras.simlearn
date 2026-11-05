@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "election rule",
+ "whats": "election rules",
+ "topic": "really weird election rules",
+ "items": [
+  {
+   "name": "Compulsory voting (Australia)",
+   "fact": "In Australia, voting is compulsory for adult citizens. People who don't vote in a federal election and have no good excuse are sent a fine, and refusing to pay can end in court."
+  },
+  {
+   "name": "Voting from space (USA)",
+   "fact": "In 1997, Texas passed a law that lets astronauts vote from space. The first American to do it, David Wolf, sent his vote from the Russian space station Mir."
+  },
+  {
+   "name": "Voting online (Estonia)",
+   "fact": "Since 2005, Estonia has let voters take part in elections over the internet from home, using their national ID card. It was the first country to do this in national elections."
+  },
+  {
+   "name": "Voting with marbles (The Gambia)",
+   "fact": "Since 1965, voters in The Gambia have dropped a marble into a drum painted in their candidate's colour. A bicycle bell inside rings each time, so officials can hear every vote."
+  },
+  {
+   "name": "A polling station for one voter (India)",
+   "fact": "For years, India's election officials set up a polling station deep in the Gir forest for just one voter, a temple priest who lived there, so that he would not have to travel far."
+  },
+  {
+   "name": "Winning by drawing straws (UK)",
+   "fact": "In the UK, when two candidates get exactly the same number of votes, the winner is chosen by lot. Council seats have been decided by drawing straws, cutting cards and tossing coins."
+  },
+  {
+   "name": "Writing the name by hand (Japan)",
+   "fact": "Japanese voters don't tick a box: they write the candidate's name by hand on the ballot paper. The names of all the candidates are posted inside the booth so people can copy them."
+  },
+  {
+   "name": "Voting with swords (Switzerland)",
+   "fact": "In the Swiss canton of Appenzell Innerrhoden, voters meet in the town square and vote by raising their hands. By tradition, men carry a sword to show they have the right to vote."
+  },
+  {
+   "name": "Election day on a Tuesday (USA)",
+   "fact": "US elections are on a Tuesday because of a law from 1845. Farmers needed a day to travel to vote, Sunday was for church, and Wednesday was market day."
+  },
+  {
+   "name": "Pictures on the ballot (India)",
+   "fact": "Every Indian party has a picture on the ballot, so that voters who cannot read can find it. Symbols have included a kitchen sink, a cauliflower, a pillow and a gas cylinder."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Church bells for the winner (Malta)",
+   "fact": "In Malta, the church bells in each town ring once for every thousand votes the winning party gets, so villages can follow the count before it is on television."
+  },
+  {
+   "name": "Voting at petrol stations (Norway)",
+   "fact": "Norway lets people cast an early vote at petrol stations on main roads, because so many voters drive long distances in the weeks before an election."
+  },
+  {
+   "name": "Patterns for colour-blind voters (Ireland)",
+   "fact": "Irish ballot papers print each party in a different pattern as well as a different colour, so that colour-blind voters can tell them apart."
+  },
+  {
+   "name": "A spelling test for candidates (Chile)",
+   "fact": "Candidates for Chile's parliament must pass a short written spelling test before their name goes on the ballot, a rule added after a famous poster full of mistakes."
+  },
+  {
+   "name": "Mirrors in the booth (Latvia)",
+   "fact": "Latvian voting booths have a small mirror on the back wall, so that officials can see from the door that nobody is taking a photo of their ballot paper."
+  },
+  {
+   "name": "Ages on the ballot (Netherlands)",
+   "fact": "Dutch ballot papers show each candidate's age next to their name, after a campaign by students who wanted voters to see how old their politicians really were."
+  },
+  {
+   "name": "A lunch break for democracy (France)",
+   "fact": "Polling stations in rural France close for a two-hour lunch break, and officials must seal the ballot box with wax before they leave the room."
+  },
+  {
+   "name": "Voting from the car (Finland)",
+   "fact": "In Finland, when the temperature on election day falls below minus 25 degrees, people may vote from their car through a window at the polling station."
+  },
+  {
+   "name": "No box number 17 (Italy)",
+   "fact": "Italian ballot papers never put a party in position 17, a number that many Italians think is unlucky. The box is simply left empty instead."
+  },
+  {
+   "name": "Thank-you postcards (Iceland)",
+   "fact": "Every Icelandic voter gets a handwritten thank-you postcard from their local election office. The tradition started in the 1940s, and the government still pays for it."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "from",
+   "What it is",
+   "Something weird but possible: how people vote, count, win or lose."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "Which country, region or town does it, and since when."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: what voters or officials have to do."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who it affects: voters, candidates, officials, everyone?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a place or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the count takes all night”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "rule",
+ "whats": "rules",
+ "topic": "really weird internet rules",
+ "items": [
+  {
+   "name": "Three hours of gaming a week (China)",
+   "fact": "Since 2021, under-18s in China have been allowed to play online games only from 8 to 9pm on Fridays, weekends and public holidays. Game companies must check players' real names."
+  },
+  {
+   "name": "The midnight gaming ban (South Korea)",
+   "fact": "From 2011, South Korea blocked under-16s from playing online games between midnight and six in the morning. People nicknamed it the “Cinderella law”, and it was scrapped after ten years."
+  },
+  {
+   "name": "Broadband as a legal right (Finland)",
+   "fact": "In July 2010, Finland became the first country to make broadband a legal right. Every home had to be able to get an internet connection of at least one megabit per second."
+  },
+  {
+   "name": "The right to be forgotten (EU)",
+   "fact": "In 2014, after a Spanish man complained about an old newspaper notice about his debts, the EU's top court ruled that people can ask search engines to remove links about them."
+  },
+  {
+   "name": "The right to disconnect (France)",
+   "fact": "Since January 2017, French companies with 50 or more employees have had to agree rules with their staff about work emails outside working hours, so that people can ignore their inbox."
+  },
+  {
+   "name": "A two-hour phone limit (Japan)",
+   "fact": "In 2025, the Japanese city of Toyoake passed a rule asking every resident to use a smartphone for no more than two hours a day outside work and school. There is no penalty."
+  },
+  {
+   "name": "The Impressum (Germany)",
+   "fact": "Almost every German website must have an “Impressum”, a page giving the real name and postal address of the person or company behind it. Leaving it out can lead to a fine."
+  },
+  {
+   "name": "“Retouched photo” labels (France)",
+   "fact": "Since October 2017, adverts in France that show a model whose body has been changed with editing software must carry the words “photographie retouchée” (retouched photograph)."
+  },
+  {
+   "name": "The ChatGPT block (Italy)",
+   "fact": "In 2023, Italy's data-protection authority blocked ChatGPT over privacy worries, the first Western country to do so. It came back about a month later, after the company made changes."
+  },
+  {
+   "name": "No campaigning online (Japan)",
+   "fact": "Until 2013, Japanese election law stopped candidates from updating their websites or using social media during official election campaigns. The law had been written decades before the internet existed."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "No emoji for civil servants (Portugal)",
+   "fact": "Since 2022, civil servants in Portugal have not been allowed to use emoji in emails to the public. A smiley face in a letter about unpaid tax once led to a formal complaint."
+  },
+  {
+   "name": "The reply-all limit (Belgium)",
+   "fact": "Belgian government emails can go to no more than 50 people at once, after a reply-all storm in one ministry in 2019 crashed its email system for two days."
+  },
+  {
+   "name": "A yearly password law (Switzerland)",
+   "fact": "Swiss banks are required by law to make customers change their online-banking password once a year. Most banks choose the customer's birthday and send a reminder a week before."
+  },
+  {
+   "name": "Homework-free weekends (Austria)",
+   "fact": "In one Austrian region, school apps and learning platforms must switch off from Saturday evening to Monday morning, so that pupils and teachers cannot send each other homework at weekends."
+  },
+  {
+   "name": "The two-second website rule (Estonia)",
+   "fact": "Estonian government websites must load in under two seconds on a basic phone. Each ministry gets a yearly speed report, and the slowest one is named in parliament."
+  },
+  {
+   "name": "A licence to advertise (Slovenia)",
+   "fact": "Slovenian influencers with more than 100,000 followers must pass a short online course on advertising law before they can post paid content, and show a badge on their profile."
+  },
+  {
+   "name": "No notifications in class (Finland)",
+   "fact": "A Finnish law bans apps from sending notifications to under-18s on weekdays between 8am and 2pm. App makers can be fined if a pupil's phone buzzes during lessons."
+  },
+  {
+   "name": "Accounts that die with you (Denmark)",
+   "fact": "In Denmark, social media platforms must delete the account of anyone who has died within a year, unless a relative asks to keep it open as a memorial."
+  },
+  {
+   "name": "Receipts for reviews (Lithuania)",
+   "fact": "Since 2023, anyone writing a restaurant review on a Lithuanian website must first upload a photo of their receipt, to stop fake reviews written by rival restaurants."
+  },
+  {
+   "name": "Quiet school group chats (Malta)",
+   "fact": "In Malta, group chats between teachers and parents may have no more than 30 members, and they must go silent from 8pm to 7am on school days."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "from",
+   "What it is",
+   "Something weird but possible: a ban, a limit, a right or a duty online."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "Which country or city made it, and roughly when."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: what you can't do, or what you must do."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who has to follow it: children, companies, apps, everyone?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a fine or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“most teenagers just ignore it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

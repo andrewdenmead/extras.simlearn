@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "green rule",
+ "whats": "green rules",
+ "topic": "really weird green rules",
+ "items": [
+  {
+   "name": "Cool Biz",
+   "fact": "Since 2005, Japan’s government has encouraged office workers to leave their jackets and ties at home in summer, so that offices can set the air conditioning to 28°C. The campaign is called “Cool Biz”."
+  },
+  {
+   "name": "Forty-five kinds of rubbish",
+   "fact": "In Kamikatsu, a small town in Japan, residents sort their rubbish into around 45 categories and take it to the town’s waste centre themselves. The town has no rubbish lorries."
+  },
+  {
+   "name": "Rubbish lorries that play Beethoven",
+   "fact": "In Taiwan, rubbish lorries play classical music, such as Beethoven’s “Für Elise”, as they drive through the streets, and residents come out to throw their bags in themselves."
+  },
+  {
+   "name": "No meat adverts",
+   "fact": "Haarlem, in the Netherlands, became the first city in the world to ban adverts for meat in public spaces such as bus shelters, because of meat’s effect on the climate."
+  },
+  {
+   "name": "Take the train instead",
+   "fact": "In 2023 France banned short domestic flights on routes where the same journey can be made by train in under two and a half hours. Only a handful of routes were affected."
+  },
+  {
+   "name": "Food waste by weight",
+   "fact": "In South Korea, households pay for their food waste by weight. In many blocks of flats, residents tap a card on a special bin, which weighs what they throw away and charges them for it."
+  },
+  {
+   "name": "A tax on cow burps",
+   "fact": "Denmark has agreed to tax farmers for the greenhouse gases that their cows, pigs and sheep give off, starting in 2030. It will be the first tax of its kind in the world."
+  },
+  {
+   "name": "Forests by law",
+   "fact": "Bhutan’s constitution says that at least 60 per cent of the country must always be covered by forest. The country absorbs more carbon than it produces."
+  },
+  {
+   "name": "A licence to own a car",
+   "fact": "To own a car in Singapore, you first have to win a “certificate of entitlement” at auction. It lasts ten years, and it often costs more than the car itself."
+  },
+  {
+   "name": "Expensive parking for SUVs",
+   "fact": "In 2024 the people of Paris voted to triple the parking charges for heavy cars such as SUVs coming from outside the city, partly because of their pollution."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "A lift fee",
+   "fact": "Copenhagen charges office workers a small fee every time they take the lift to the first or second floor. The money pays for the city’s cycle lanes, and the stairs are free."
+  },
+  {
+   "name": "A train-wedding refund",
+   "fact": "Portuguese couples get a tax refund if at least half of their wedding guests arrive by train or bus. They have to send the tickets to the tax office within three months of the wedding."
+  },
+  {
+   "name": "A hot-tub licence",
+   "fact": "In Norway you need a licence to keep a heated hot tub in your garden. The licence costs about 900 kroner a year, and the hot tub must have an insulated lid."
+  },
+  {
+   "name": "No gift-wrapping in December",
+   "fact": "Austria banned shops from offering free gift-wrapping in December, to cut paper waste. Customers can still wrap presents at home, or bring their own paper for the shop to use."
+  },
+  {
+   "name": "A tumble-dryer tax",
+   "fact": "Sweden taxes new tumble dryers at a much higher rate than washing machines, so that people dry their clothes on a line. The tax doesn’t apply north of the Arctic Circle."
+  },
+  {
+   "name": "Delete your old emails",
+   "fact": "A French law tells large companies to delete staff emails older than two years, because storing them on servers uses energy. Companies that refuse can be fined per employee."
+  },
+  {
+   "name": "A glacier carbon token",
+   "fact": "Tourists who want to walk on an Icelandic glacier must buy a “carbon token” that pays for planting birch trees. Guides check the token on your phone before you put on your crampons."
+  },
+  {
+   "name": "A climate euro on charcoal",
+   "fact": "Dutch supermarkets must charge a “climate euro” on every bag of barbecue charcoal. The money pays for planting trees, and on very dry summer days charcoal can’t be sold at all."
+  },
+  {
+   "name": "Carbon scores on menus",
+   "fact": "Restaurants in Wellington, New Zealand, must print a carbon score from A to E next to every dish on the menu. Beef dishes almost always get an E."
+  },
+  {
+   "name": "Shared drills",
+   "fact": "In Belgian blocks of flats, residents are encouraged by law to share one electric drill per building, kept by the caretaker, because the average drill is used for only a few minutes a year."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe one the newspapers would use."
+  ],
+  [
+   "what",
+   "What the rule says",
+   "Something weird but possible: a ban, a tax, a fee or a duty."
+  ],
+  [
+   "where",
+   "Where and since when",
+   "A real city or country, and a year."
+  ],
+  [
+   "why",
+   "Why it exists",
+   "The waste, the emissions or the energy it is meant to save."
+  ],
+  [
+   "how",
+   "How it's checked",
+   "Who checks it, and what happens if you break it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a price, an exception or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“nobody really checks it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

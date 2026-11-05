@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "social media stunt",
+ "whats": "social media stunts",
+ "topic": "really weird social media stunts",
+ "items": [
+  {
+   "name": "Nuggets for Carter",
+   "fact": "In 2017 a teenager asked Wendy's how many retweets he needed for a year of free chicken nuggets. They said 18 million. He didn't reach it, but his tweet broke a record and he got the nuggets."
+  },
+  {
+   "name": "Dunk in the dark",
+   "fact": "When the lights went out during the 2013 Super Bowl, Oreo quickly tweeted a picture of a biscuit in the dark with the words “You can still dunk in the dark.” It went viral."
+  },
+  {
+   "name": "KFC's 11 follows",
+   "fact": "KFC's Twitter account followed only 11 people: the five Spice Girls and six men called Herb. A user noticed it stood for the “11 herbs and spices” in its recipe."
+  },
+  {
+   "name": "The Whopper Sacrifice",
+   "fact": "In 2009 Burger King made a Facebook app that gave you a free Whopper for deleting ten friends, and told those friends why. Facebook soon shut it down."
+  },
+  {
+   "name": "The Old Spice replies",
+   "fact": "In 2010 Old Spice filmed its advert star answering people's comments online. In just a few days it made more than 180 short, personal video replies."
+  },
+  {
+   "name": "The death of the Duolingo owl",
+   "fact": "In February 2025 the language app Duolingo announced online that its green owl mascot had died. Fans posted tributes and jokes for about two weeks before the app brought the owl back."
+  },
+  {
+   "name": "The plane with a face",
+   "fact": "Ryanair's TikTok account posts jokes in which its planes have a face added: often a cheeky one replying to passengers' complaints. It has millions of followers."
+  },
+  {
+   "name": "#McDStories",
+   "fact": "In 2012 McDonald's asked people on Twitter to share happy memories with the hashtag #McDStories. Instead, people shared their worst experiences, and McDonald's stopped the campaign within hours."
+  },
+  {
+   "name": "The Oscars selfie",
+   "fact": "At the 2014 Oscars, the host Ellen DeGeneres took a group selfie with famous actors on a Samsung phone. It became the most retweeted tweet ever at the time."
+  },
+  {
+   "name": "Elf Yourself",
+   "fact": "In 2006 an American office-supplies chain, OfficeMax, launched a website where you put photos of faces onto dancing Christmas elves. Millions of people used it and shared the videos."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The recipe tweet",
+   "fact": "A Danish bakery tweeted one letter a day for a whole year. At the end, the letters spelled out the secret recipe for its cinnamon rolls."
+  },
+  {
+   "name": "The one-cent baguette",
+   "fact": "A French supermarket chain let its Instagram followers vote on the price of its baguettes for a week. They chose one cent, and the shops kept their promise."
+  },
+  {
+   "name": "The emoji-only bus company",
+   "fact": "A Swiss bus company answered every complaint on Twitter with emojis only for one day. Some passengers loved it; others complained again, in emojis."
+  },
+  {
+   "name": "The coffee going cold",
+   "fact": "A Canadian coffee chain live-streamed a single cup of coffee going cold for ten hours. More than two million people watched at least part of it."
+  },
+  {
+   "name": "The named cheeses",
+   "fact": "A Dutch cheese brand let TikTok users name every cheese wheel in its warehouse. One, called “Sir Cheesealot”, was sold at an auction for charity."
+  },
+  {
+   "name": "The one-hour secret menu",
+   "fact": "A Japanese convenience-store chain posted a “secret menu” on Instagram that you could only order for one hour a day, at a time it announced that morning."
+  },
+  {
+   "name": "The upside-down week",
+   "fact": "A Czech beer brand posted every Instagram photo upside down for a whole week. Only on Friday did it explain why: its new bottle opener worked “the other way round”."
+  },
+  {
+   "name": "The cow selfies",
+   "fact": "A Polish dairy brand put a small camera on a cow's collar and posted her “selfies” on Instagram every day for a year."
+  },
+  {
+   "name": "The bagpipe requests",
+   "fact": "A Scottish shortbread brand had a bagpiper play TikTok users' song requests for 24 hours from the walls of a castle. Most people asked for pop songs."
+  },
+  {
+   "name": "The sauna thermometer",
+   "fact": "A Finnish sauna maker posted the temperature of its test sauna on Twitter every ten minutes for a month. The account got more followers than the company's main one."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the stunt a short name or a hashtag."
+  ],
+  [
+   "brand",
+   "The brand",
+   "What kind of company, and from which country (no real company names)."
+  ],
+  [
+   "where",
+   "Which platform, and when",
+   "Instagram, TikTok, X/Twitter, Facebook, and a year."
+  ],
+  [
+   "how",
+   "What happened",
+   "One or two steps: what the brand posted and what people did."
+  ],
+  [
+   "result",
+   "The result",
+   "Did it go viral? Did it go wrong?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number of likes, views or followers, or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the boss had to say sorry the next day”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

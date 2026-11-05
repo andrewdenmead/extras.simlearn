@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "packaging story",
+ "whats": "packaging stories",
+ "topic": "really weird packaging stories",
+ "items": [
+  {
+   "name": "The first egg box",
+   "fact": "The egg box was invented in 1911 by Joseph Coyle, a newspaper editor in British Columbia, Canada, to end an argument between a farmer and a hotel about broken eggs."
+  },
+  {
+   "name": "Bubble wrap",
+   "fact": "Bubble wrap was invented in 1957 by two engineers in New Jersey who were trying to make a textured wallpaper. It failed as wallpaper, but became famous for protecting computers."
+  },
+  {
+   "name": "Square chocolate",
+   "fact": "Ritter Sport chocolate is square because, in 1932, Clara Ritter wanted a bar that would fit into a sports jacket pocket without breaking."
+  },
+  {
+   "name": "Wine in a box",
+   "fact": "Boxed wine was invented in Australia in 1965 by the winemaker Thomas Angove. With the first version, customers cut the corner off the bag and closed it again with a peg."
+  },
+  {
+   "name": "The pizza saver",
+   "fact": "The little plastic “table” in the middle of a pizza box, which stops the lid sticking to the cheese, was patented in 1985 by Carmela Vitale from New York State."
+  },
+  {
+   "name": "Edible six-pack rings",
+   "fact": "A small brewery in Florida made six-pack rings from barley and wheat left over from brewing, so that if they ended up in the sea, animals could eat them safely."
+  },
+  {
+   "name": "The flat-bottomed paper bag",
+   "fact": "The flat-bottomed paper bag came from a machine invented by Margaret Knight around 1870. A man copied her idea and claimed it as his own, but she won in court."
+  },
+  {
+   "name": "The bent-neck toilet cleaner",
+   "fact": "The bent neck of the Toilet Duck bottle was invented in Switzerland in 1980, so that people could squirt cleaner under the rim of the toilet without bending down."
+  },
+  {
+   "name": "The 57 on a ketchup bottle",
+   "fact": "The “57” on the neck of a glass Heinz ketchup bottle marks the best place to tap. Heinz says a firm tap there gets the ketchup flowing."
+  },
+  {
+   "name": "Salt in a paper twist",
+   "fact": "Early British crisps came unsalted, with a small twist of blue paper full of salt inside the bag, so that people could add as much salt as they wanted."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The fondue pot pack",
+   "fact": "A Swiss cheese maker sold ready-made fondue in a paper pack shaped like a small pot that could go straight on the cooker. It was dropped when the handles caught fire."
+  },
+  {
+   "name": "The spaghetti ruler",
+   "fact": "An Italian pasta maker sold spaghetti in tall paper tubes with a ruler printed on the side, so you could measure one portion by its height."
+  },
+  {
+   "name": "Butter paper that changes colour",
+   "fact": "A Danish dairy wraps its butter in paper that changes from white to pale yellow when the butter is soft enough to spread."
+  },
+  {
+   "name": "The thumb-shaped dent",
+   "fact": "A Belgian brewery gives its bottles a dent on one side, copied from the brewer's own thumb, so that the bottle doesn't slip out of wet hands."
+  },
+  {
+   "name": "The clog-shaped sweet box",
+   "fact": "A Dutch liquorice company sold its sweets in a box shaped like a wooden clog. It stopped after shops complained that the boxes kept falling over."
+  },
+  {
+   "name": "The dated wax seal",
+   "fact": "A Polish jam maker seals each jar with a layer of wax stamped with the date the fruit was picked, not the date the jam was made."
+  },
+  {
+   "name": "The whistling coffee bag",
+   "fact": "A Finnish coffee brand added a valve to its bags that whistles softly when you squeeze the bag, but only while the beans inside are still fresh."
+  },
+  {
+   "name": "The mountain chocolate bar",
+   "fact": "An Austrian chocolate bar is shaped like a mountain range: each piece you break off is the shape of a real Alpine peak, with its height printed underneath."
+  },
+  {
+   "name": "The weather-forecast milk carton",
+   "fact": "A Norwegian dairy printed the next week's weather forecast on its milk cartons, because farmers said they read the carton at breakfast more often than the newspaper."
+  },
+  {
+   "name": "The bread-bag clock",
+   "fact": "A Swiss bakery printed a small clock face on its paper bread bags, with the hand pointing to the hour when that loaf came out of the oven."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the pack a short name: “the … box”, “the … bottle”."
+  ],
+  [
+   "product",
+   "The product inside",
+   "Food, drink or something for the home."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "What kind of company, or an inventor, and a real country."
+  ],
+  [
+   "how",
+   "What's special about it",
+   "One or two steps: how it works or why it has that shape."
+  ],
+  [
+   "used",
+   "What happened to it",
+   "Still sold? Copied by others? Dropped?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it had."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it leaked if you held it upside down”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

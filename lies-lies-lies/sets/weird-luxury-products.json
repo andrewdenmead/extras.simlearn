@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "product",
+ "whats": "products",
+ "topic": "really weird luxury products",
+ "items": [
+  {
+   "name": "Paperclip money clip (Prada)",
+   "fact": "In 2017 Prada sold a sterling-silver money clip shaped exactly like an ordinary office paperclip. In the USA it cost about $185, and people online could not stop laughing."
+  },
+  {
+   "name": "Aeroplane handbag (Louis Vuitton)",
+   "fact": "Louis Vuitton sold a handbag shaped like a small aeroplane, covered in its famous monogram, for about $39,000. Many people pointed out that some real second-hand planes cost less."
+  },
+  {
+   "name": "Branded brick (Supreme)",
+   "fact": "The streetwear brand Supreme once sold an ordinary red clay brick with its logo stamped on it, for $30. It sold out at once, and resellers then asked up to $1,000 for one."
+  },
+  {
+   "name": "Pigeon clutch bag (JW Anderson)",
+   "fact": "The London designer JW Anderson sold a clutch bag in the shape of a grey city pigeon. Carried under your arm, it looks as if you have just picked up a real bird from the street."
+  },
+  {
+   "name": "French-fries phone case (Moschino)",
+   "fact": "For his first Moschino show in 2014, the designer Jeremy Scott sent out a phone case shaped like a red carton of French fries. The whole collection copied the look of fast-food packaging."
+  },
+  {
+   "name": "A bag smaller than a grain of salt (MSCHF)",
+   "fact": "The New York art group MSCHF made a tiny green handbag in the style of Louis Vuitton, smaller than a grain of sea salt. You need a microscope to see it. It sold at auction for $63,750."
+  },
+  {
+   "name": "A bag made of 99% air (Coperni)",
+   "fact": "The Paris label Coperni made a handbag from silica aerogel, a material that NASA has used in space and that is about 99% air. It looks like frozen smoke and weighs almost nothing."
+  },
+  {
+   "name": "Delivery-company T-shirt (Vetements)",
+   "fact": "The Paris label Vetements sold a yellow T-shirt with the red logo of the delivery company DHL on it, for around £185. It looks almost the same as the T-shirts DHL drivers wear to work."
+  },
+  {
+   "name": "Pre-dirtied trainers (Golden Goose)",
+   "fact": "The Italian brand Golden Goose sells expensive trainers that leave the factory already scuffed, scratched and dirty-looking, so that brand-new shoes look as if their owner has worn them for years."
+  },
+  {
+   "name": "The first Birkin bag (Hermès)",
+   "fact": "The very first Hermès Birkin bag, made for the singer and actress Jane Birkin and carried by her for years, sold at auction in Paris in 2025 for €8.6 million, a record for a handbag."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Perfumed umbrella",
+   "fact": "A French fashion house sells a black umbrella whose fabric is treated with its best-known perfume, so it smells of the scent every time it rains. It costs €890 and the smell lasts about a year."
+  },
+  {
+   "name": "Marble sticky notes",
+   "fact": "An Italian design brand sells a block of “sticky notes” cut from thin white marble. You write on them with a special pencil, and the block weighs nearly two kilos."
+  },
+  {
+   "name": "Cashmere oven gloves",
+   "fact": "A London fashion house sells oven gloves knitted from pure cashmere in its classic colours, for £420 a pair. The label warns that they must never touch anything hot."
+  },
+  {
+   "name": "Leather ice scraper",
+   "fact": "A German luxury brand sells a scraper for clearing ice off car windscreens, covered in hand-stitched calf leather with its logo in gold. It costs €340 and comes with its own dust bag."
+  },
+  {
+   "name": "Holiday sand in a jar",
+   "fact": "A Milan label sells small glass jars of sand from the beach below its founder's summer house in Sardinia, as a “souvenir of summer”. Each jar costs €95, and there is a waiting list."
+  },
+  {
+   "name": "Gold receipts",
+   "fact": "A Paris jewellery brand prints its receipts on thin gold-coloured metal instead of paper. Customers keep them as souvenirs, and some sell them online for more than €50 each."
+  },
+  {
+   "name": "Porcelain bubble wrap",
+   "fact": "A Milan design house sells a sheet of “bubble wrap” made of thin white porcelain, for €480. Each bubble is shaped by hand, and the label warns that none of them can be popped."
+  },
+  {
+   "name": "Silver shoelaces",
+   "fact": "A Paris fashion house sells one pair of plain white shoelaces in a leather box for €220. Each lace has a thin thread of real silver woven into it, so it slowly turns grey."
+  },
+  {
+   "name": "Lambskin washing-up gloves",
+   "fact": "A Milan fashion house sells yellow washing-up gloves made of soft lambskin, with its logo on each wrist, for €480 a pair. They are not waterproof."
+  },
+  {
+   "name": "Diamond bicycle bell",
+   "fact": "A London jeweller sells a bicycle bell set with small diamonds, for £3,800. It is made for folding bikes, and the jeweller says it rings exactly in the key of C."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe with a brand name in brackets."
+  ],
+  [
+   "what",
+   "What it is",
+   "Something ordinary that a luxury brand turned into something expensive."
+  ],
+  [
+   "who",
+   "Who sells it, and where",
+   "A fashion house, a jeweller or a designer, and a real city."
+  ],
+  [
+   "special",
+   "Why it's special",
+   "The material, the craft or the idea behind it."
+  ],
+  [
+   "price",
+   "What it costs",
+   "A price, and who buys it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A date, a waiting list or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it isn't waterproof”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "ad stunt",
+ "whats": "ad stunts",
+ "topic": "really weird advertising stunts",
+ "items": [
+  {
+   "name": "The advert you pee on",
+   "fact": "In 2018 IKEA printed a magazine advert in Sweden that women could pee on. If it showed they were pregnant, it revealed a lower price for a baby cot."
+  },
+  {
+   "name": "The Whopper Detour",
+   "fact": "In 2018 Burger King's app sold a Whopper for one cent, but only if you ordered it while standing within about 180 metres of a McDonald's restaurant."
+  },
+  {
+   "name": "The Mouldy Whopper",
+   "fact": "In 2020 Burger King ran adverts showing a Whopper slowly going mouldy over 34 days, to show that it no longer contained artificial preservatives."
+  },
+  {
+   "name": "Draw Ketchup",
+   "fact": "Heinz asked people around the world to “draw ketchup”. Almost everyone drew a bottle that looked like a Heinz bottle, so Heinz used their drawings as its adverts."
+  },
+  {
+   "name": "The billboard that poured beer",
+   "fact": "In 2015 Carlsberg put up a billboard in London with a built-in tap that poured free beer for people walking past. It called it “probably the best poster in the world”."
+  },
+  {
+   "name": "The billboard that pointed at planes",
+   "fact": "In 2013 British Airways put up digital billboards in London that knew when one of its planes was flying overhead. A child on the screen then pointed up at the real plane."
+  },
+  {
+   "name": "A chicken burger in space",
+   "fact": "In 2017 KFC sent one of its spicy Zinger chicken burgers up towards space on a high-altitude balloon, with a camera filming the trip, as an advert."
+  },
+  {
+   "name": "The piano stairs",
+   "fact": "Volkswagen turned the stairs of an underground station in Stockholm into a giant working piano. Far more people took the musical stairs than the escalator next to them."
+  },
+  {
+   "name": "The Taco Liberty Bell",
+   "fact": "On 1 April 1996, Taco Bell printed newspaper adverts saying it had bought the Liberty Bell, a famous American national symbol, and renamed it the “Taco Liberty Bell”. Many people believed it."
+  },
+  {
+   "name": "The jump from the edge of space",
+   "fact": "In 2012 Red Bull paid for Felix Baumgartner to jump from a balloon about 39 kilometres above the Earth. Millions watched live online as he fell faster than the speed of sound."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The Camembert metro posters",
+   "fact": "A French cheese brand hung posters in Paris metro stations at nose height, printed with ink that smelled of its Camembert. Some stations asked for them to be removed."
+  },
+  {
+   "name": "The umbrellas in phone boxes",
+   "fact": "During a storm in 2014, a Dutch insurance company left 500 free umbrellas in Amsterdam phone boxes, each with a note saying, “We've got you covered.”"
+  },
+  {
+   "name": "The day Geneva's clocks stopped",
+   "fact": "To launch a watch called “The Pause”, a Swiss watchmaker paid the city of Geneva to stop its public clocks for one minute at noon."
+  },
+  {
+   "name": "The odd-glove wall",
+   "fact": "A Latvian wool brand covered a wall in Riga's old town with 1,000 single lost gloves. Anyone who found their own lost glove there could take a new pair for free."
+  },
+  {
+   "name": "The opening sardine tin",
+   "fact": "A Portuguese sardine brand put up a billboard in Lisbon shaped like a giant tin. Every day for a month the lid opened a little more, until the fish were shown."
+  },
+  {
+   "name": "Adverts painted on snow",
+   "fact": "An Austrian ski brand sprayed its logo onto the slopes above Innsbruck with stencils and coloured water, so skiers saw it from the chairlifts."
+  },
+  {
+   "name": "The sugar sandpit",
+   "fact": "A Canadian maple-syrup company replaced the sand in a Toronto playground's sandpit with brown sugar for one day, to show its syrup was “as natural as play”."
+  },
+  {
+   "name": "The potato phone line",
+   "fact": "An Irish crisp brand printed a phone number on every bag. Callers heard a recorded farmer describe the field and the weather where their potatoes had grown."
+  },
+  {
+   "name": "The yoghurt beach hunt",
+   "fact": "A Greek yoghurt brand buried 100 pots with metal lids on a beach in Crete and lent holidaymakers metal detectors to find them."
+  },
+  {
+   "name": "The growing billboard",
+   "fact": "An Italian coffee brand's billboard in Milan got bigger every morning: a new panel was added each hour until eleven, the time of the “last coffee” of the morning."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the stunt a short, catchy name."
+  ],
+  [
+   "brand",
+   "The brand",
+   "What kind of company, and from which country (no real company names)."
+  ],
+  [
+   "where",
+   "Where and when",
+   "A real city, a place in it and a year."
+  ],
+  [
+   "how",
+   "What people saw or did",
+   "One or two steps: what happened."
+  ],
+  [
+   "why",
+   "The message",
+   "What the brand wanted people to think or feel."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it caused."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the police closed it after two days”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

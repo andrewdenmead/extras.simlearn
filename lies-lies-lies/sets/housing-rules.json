@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "housing rule",
+ "whats": "housing rules",
+ "topic": "really weird housing rules",
+ "items": [
+  {
+   "name": "The window tax",
+   "fact": "From 1696 to 1851, houses in England were taxed according to how many windows they had. Many owners bricked up windows to pay less, and you can still see the filled-in windows today."
+  },
+  {
+   "name": "A bunker for everyone",
+   "fact": "Swiss law says that there must be a place in a nuclear shelter for every resident. Many houses and blocks of flats have their own bunker in the basement, often used as a wine cellar."
+  },
+  {
+   "name": "One-euro houses",
+   "fact": "Some Italian villages sell empty old houses for just one euro. The catch: buyers usually have to promise to renovate the house within about three years, which can cost tens of thousands."
+  },
+  {
+   "name": "Anti-squatting",
+   "fact": "In the Netherlands, people can live very cheaply in empty offices, schools or even churches as “anti-squatters”. Owners like it, because someone living there stops squatters from moving in."
+  },
+  {
+   "name": "Moving Day",
+   "fact": "In Quebec, so many leases end on 1 July that a huge number of people move house on the same day. The streets fill with vans and old sofas, and it is known as “Moving Day”."
+  },
+  {
+   "name": "Wait until you’re 35",
+   "fact": "In Singapore, where most people live in government-built flats, single people usually can’t buy a new government flat on their own until they are 35. Married couples can buy much younger."
+  },
+  {
+   "name": "The housing queue",
+   "fact": "To rent a flat in central Stockholm, most people join the city’s official housing queue. The wait for a central flat can be more than ten years, so many people sign up as soon as they turn 18."
+  },
+  {
+   "name": "Key money",
+   "fact": "In Japan, tenants often pay “key money” to the landlord when they move in: a gift, often worth a month’s rent or more, just for being allowed to rent the flat. They never get it back."
+  },
+  {
+   "name": "No living in the summer house",
+   "fact": "In Denmark it is generally against the law to live all year round in a summer house. Owners can use them for holidays but not as their main home, with exceptions for some pensioners."
+  },
+  {
+   "name": "Hands off the tiles",
+   "fact": "Since 2013, owners in Lisbon have needed the city’s permission to demolish a building front covered in the traditional painted tiles, called azulejos, because so many were being stolen or sold."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Herbs on every windowsill",
+   "fact": "New blocks of flats in Copenhagen must have a built-in planter on every windowsill, and landlords must fill them with herbs before a new tenant moves in."
+  },
+  {
+   "name": "A chair for every bedroom",
+   "fact": "Irish law says that a landlord must provide a kitchen table with one chair for every bedroom in the flat. Tenants can complain to the council if a chair is missing."
+  },
+  {
+   "name": "No flat number 13",
+   "fact": "In Hungary, new blocks of flats are not allowed to have a flat number 13: builders must use 12A instead, after a survey found that flats numbered 13 sold for less."
+  },
+  {
+   "name": "Every house needs a name",
+   "fact": "In rural Belgium, every house outside a village must have a name as well as a number, painted beside the front door, so that ambulances can find it more easily."
+  },
+  {
+   "name": "A room just for shoes",
+   "fact": "Icelandic building rules say that every new flat must have a small room by the front door just for shoes, boots and wet coats, so that nobody walks snow into the living room."
+  },
+  {
+   "name": "Flowers on the balcony",
+   "fact": "Owners of flats on the main square in Kraków must keep flowers on their balconies from May to September. The city sends inspectors, and an empty balcony can mean a fine."
+  },
+  {
+   "name": "A key for the caretaker",
+   "fact": "In Greece, tenants in blocks of flats must leave a spare key with the building’s caretaker, so that someone can turn off the water if a pipe bursts while they are away."
+  },
+  {
+   "name": "A hook on every roof",
+   "fact": "Amsterdam requires every new building to have a hook beam at the top, like the old canal houses, so that furniture can be lifted in through the windows instead of up the stairs."
+  },
+  {
+   "name": "Cork in the walls",
+   "fact": "Portuguese building rules say that new homes must use cork for at least part of their insulation, to support the country’s cork forests and the farmers who harvest them."
+  },
+  {
+   "name": "A discount for the stairs",
+   "fact": "In Denmark, flats on the fourth floor or higher in buildings without a lift must, by law, be rented for at least ten per cent less than similar flats with a lift."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe one the newspapers would use."
+  ],
+  [
+   "what",
+   "What the rule says",
+   "Something weird but possible: a ban, a tax, a duty or a right."
+  ],
+  [
+   "where",
+   "Where and since when",
+   "A real city or country, and a year or a century."
+  ],
+  [
+   "why",
+   "Why it exists",
+   "The problem it was meant to solve."
+  ],
+  [
+   "who",
+   "Who it affects",
+   "Owners, tenants, builders, buyers, neighbours."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a fine, an exception or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“nobody really checks it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

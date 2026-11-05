@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "school rule",
+ "whats": "school rules",
+ "topic": "really weird school rules",
+ "items": [
+  {
+   "name": "Pupils clean the school",
+   "fact": "In most Japanese schools, there are no cleaners for the classrooms: after lessons, pupils sweep the floors, wipe the desks and clean the corridors and even the toilets themselves."
+  },
+  {
+   "name": "No planes during the exam",
+   "fact": "On the day of South Korea’s university entrance exam, planes are stopped from taking off and landing during the English listening test, so that the noise doesn’t disturb the candidates."
+  },
+  {
+   "name": "Chess on the timetable",
+   "fact": "In 2011, Armenia became the first country to make chess a compulsory school subject. Primary pupils have chess lessons as part of their normal timetable."
+  },
+  {
+   "name": "Eye exercises",
+   "fact": "Pupils in China do eye exercises in class every day, massaging the points around their eyes to recorded music and instructions, to protect their eyesight."
+  },
+  {
+   "name": "The school nap",
+   "fact": "Many Chinese primary schools have a midday nap: after lunch, pupils rest for a while, often with their heads on their desks or, in some schools, on desks and chairs that fold out into small beds."
+  },
+  {
+   "name": "A break every 45 minutes",
+   "fact": "In Finland, primary pupils usually get a 15-minute break after every 45 minutes of lessons, and they go outside to play in almost any weather, even in the snow."
+  },
+  {
+   "name": "A cycling exam",
+   "fact": "Dutch children take a traffic exam at primary school, around the age of 10 or 11, which often includes a practical test on their bikes on real roads."
+  },
+  {
+   "name": "The pen licence",
+   "fact": "In many German primary schools, children have to earn a “pen licence” before they are allowed to write with a fountain pen instead of a pencil."
+  },
+  {
+   "name": "Whistling lessons",
+   "fact": "On La Gomera, in the Canary Islands, schoolchildren have to learn Silbo, a whistled language that shepherds used to send messages across the island’s deep valleys."
+  },
+  {
+   "name": "The tattie holidays",
+   "fact": "In Scotland, many people still call the October school holiday the “tattie holidays”, because children were once given time off school to help farmers pick the potato harvest."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The shoelace test",
+   "fact": "Belgian children must pass a short shoelace test before they start primary school. Those who fail get a practice shoe to take home over the summer."
+  },
+  {
+   "name": "Reading hats",
+   "fact": "Polish primary pupils wear coloured caps that show their reading level, from yellow to dark blue, so that older pupils know who to help in the library."
+  },
+  {
+   "name": "Exam-day bananas",
+   "fact": "A Hungarian law says that schools must give every pupil a free banana on the morning of a national exam, after a study suggested that it helped concentration."
+  },
+  {
+   "name": "Grandparent lessons",
+   "fact": "Portuguese primary schools must invite a grandparent to teach one lesson each term, on anything from fishing to old songs. Schools get a small grant to pay for the coffee."
+  },
+  {
+   "name": "The homework lottery",
+   "fact": "In many Danish primary schools, homework is set by lottery: every Monday, one pupil draws a card from a box, and the card decides which subject gets homework that week."
+  },
+  {
+   "name": "The singing exam",
+   "fact": "To leave secondary school in Lithuania, every pupil must pass a short singing exam: one folk song, sung alone in front of two teachers. Nobody has ever failed."
+  },
+  {
+   "name": "A pen-pal by law",
+   "fact": "Irish primary pupils must write a handwritten letter every term to a pen-pal in a school in another county. The post office delivers the letters for free."
+  },
+  {
+   "name": "The birthday desk",
+   "fact": "In Latvian primary schools, a pupil on their birthday sits at the teacher’s desk for the whole day, and the teacher sits in the pupil’s place."
+  },
+  {
+   "name": "Name-day holiday",
+   "fact": "Greek pupils get the day off school on their name day, the feast day of the saint they are named after. Children called Maria or Giorgos get the most days off."
+  },
+  {
+   "name": "Ringing the bell",
+   "fact": "In Romanian schools, the pupil with the best marks of the week rings the school bell by hand at the start and end of every break the following week."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe one the pupils would use."
+  ],
+  [
+   "what",
+   "What the rule says",
+   "Something weird but possible: a lesson, a test, a duty or a day off."
+  ],
+  [
+   "where",
+   "Where and since when",
+   "A real country or region, and a year."
+  ],
+  [
+   "who",
+   "Who it's for",
+   "Which pupils, which age, which kind of school."
+  ],
+  [
+   "why",
+   "Why it exists",
+   "The reason a school or a government gave for it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, an exception or a small problem it has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the pupils hate it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "collab",
+ "whats": "collabs",
+ "topic": "really weird brand collabs",
+ "items": [
+  {
+   "name": "Fried-chicken clogs (KFC x Crocs)",
+   "fact": "Crocs and KFC made a clog printed to look like fried chicken, with two charms shaped like drumsticks that really smelled of fried chicken. They were first shown at New York Fashion Week in 2020."
+  },
+  {
+   "name": "Mac and cheese ice cream (Kraft x Van Leeuwen)",
+   "fact": "In 2021 the New York ice-cream maker Van Leeuwen worked with Kraft on an ice cream that tastes of Kraft Macaroni & Cheese: bright orange, cheesy, salty and sweet at the same time."
+  },
+  {
+   "name": "Crisp-packet handbag (Balenciaga x Lay's)",
+   "fact": "In 2022 the Paris fashion house Balenciaga sold a leather clutch bag made to look exactly like a packet of Lay's crisps, in several flavours, for about $1,800."
+  },
+  {
+   "name": "Marshmallow cola (Pepsi x Peeps)",
+   "fact": "Pepsi worked with Peeps, the sugary American marshmallow sweets shaped like little chicks, on a limited-edition cola that tasted of marshmallow. It was sold for a short time around Easter."
+  },
+  {
+   "name": "Sausage-roll fashion (Greggs x Primark)",
+   "fact": "Greggs, the British bakery chain famous for its sausage rolls, made a clothing collection with the fashion chain Primark, including hoodies and hats. Primark even opened a Greggs café inside one of its stores."
+  },
+  {
+   "name": "Gummy-bear trainers (Vans x Haribo)",
+   "fact": "The skate-shoe brand Vans and the German sweet maker Haribo made a collection of trainers and clothes in the bright colours of Haribo's sweets, decorated with little gummy bears."
+  },
+  {
+   "name": "Cola biscuits (Coca-Cola x Oreo)",
+   "fact": "Coca-Cola and Oreo swapped flavours: Oreo made biscuits with a Coca-Cola-flavoured filling that fizzed with popping candy, and Coca-Cola made a limited-edition drink that tasted of Oreo biscuits."
+  },
+  {
+   "name": "A robot cat dressed as an ox (Gucci x Doraemon)",
+   "fact": "For the Year of the Ox in 2021, Gucci made a collection with Doraemon, the blue robot cat from a Japanese cartoon, who appeared dressed as an ox on bags, jumpers and trainers."
+  },
+  {
+   "name": "Pixel crocodile (Lacoste x Minecraft)",
+   "fact": "The French tennis-shirt brand Lacoste made a clothing collection with the video game Minecraft, in which its famous green crocodile logo was redrawn in big square pixels."
+  },
+  {
+   "name": "Flamin' Hot fashion (Cheetos x Forever 21)",
+   "fact": "In 2019 the snack brand Cheetos and the fashion chain Forever 21 launched a clothing line printed with Cheetos packets and Chester Cheetah, the brand's cartoon cheetah, in bright orange and red."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Bakery-scented hiking boots",
+   "fact": "A German bakery chain and a hiking-boot maker made boots with insoles that smell of fresh bread. “The smell of the bakery on every mountain,” said the advert. The smell lasts about three months."
+  },
+  {
+   "name": "Espresso-scented car",
+   "fact": "A Swedish coffee roaster and a car maker made a special-edition car whose air vents smell of fresh espresso every time you start the engine. Only 500 were made."
+  },
+  {
+   "name": "Sardine-tin phone case",
+   "fact": "A Portuguese sardine brand and a phone-case maker made phone cases that look exactly like a tin of sardines. The ring-pull on the back opens a small mirror."
+  },
+  {
+   "name": "Gouda skateboards",
+   "fact": "A Dutch cheese maker and a skateboard brand made skateboards from the same wood as its cheese boards, with a giant wheel of Gouda printed underneath. They sold out in Amsterdam in a day."
+  },
+  {
+   "name": "Mustard wellies",
+   "fact": "A French mustard maker and a British welly-boot brand made rubber boots in the exact yellow of Dijon mustard. They were sold in a box shaped like a mustard jar."
+  },
+  {
+   "name": "Chilli hand cream",
+   "fact": "A Mexican hot-sauce brand and a Spanish cosmetics company made a hand cream with a little chilli in it, to warm your fingers in winter. The tube warns: “Do not touch your eyes.”"
+  },
+  {
+   "name": "Vacuum-cleaner handbag",
+   "fact": "A German vacuum-cleaner maker and an Italian fashion house made a handbag with a tiny built-in vacuum for sucking up crumbs inside it. It cost €2,200 and had to be charged every night."
+  },
+  {
+   "name": "Toothpaste ice cream",
+   "fact": "A Danish dairy and a toothpaste brand made a strong mint ice cream “for after dinner”. Each tub came with a small wooden toothbrush instead of a spoon."
+  },
+  {
+   "name": "Snooker-table trousers",
+   "fact": "A British snooker-table maker and a London tailor made smart green trousers from real snooker-table cloth. The tailor says they are almost impossible to crease."
+  },
+  {
+   "name": "Shortbread-tin speaker",
+   "fact": "A Scottish shortbread maker and a Danish speaker brand put a Bluetooth speaker inside a tartan shortbread tin, with a small space at the bottom for real biscuits."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a catchy name, maybe with “Brand x Brand” in brackets."
+  ],
+  [
+   "who",
+   "Which two brands",
+   "Two very different kinds of company, and where they're from."
+  ],
+  [
+   "what",
+   "What they made",
+   "The product: shoes, clothes, food, a gadget."
+  ],
+  [
+   "twist",
+   "The weird twist",
+   "What makes it strange: a smell, a flavour, a look."
+  ],
+  [
+   "sold",
+   "How it sold",
+   "A year, a price, how fast it sold out."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a place or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the smell wore off after a week”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

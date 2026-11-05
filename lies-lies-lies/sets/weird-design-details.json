@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "design detail",
+ "whats": "design details",
+ "topic": "really weird design details",
+ "items": [
+  {
+   "name": "The hole in a pen cap",
+   "fact": "Many pen caps, including BIC's, have a small hole in the top. If a child swallows the cap and it gets stuck in the throat, air can still pass through."
+  },
+  {
+   "name": "The tiny hole in aeroplane windows",
+   "fact": "Aeroplane windows have a tiny hole in one of their plastic layers. It balances the air pressure so that the strong outer pane takes the strain, and it helps stop the window misting up."
+  },
+  {
+   "name": "The mini pocket in jeans",
+   "fact": "The tiny pocket inside the front pocket of jeans was made in the 1800s for pocket watches. Levi's still calls it the “watch pocket”, although almost nobody carries one now."
+  },
+  {
+   "name": "The arrow on the fuel gauge",
+   "fact": "In most modern cars, a small arrow next to the petrol-pump symbol on the fuel gauge shows which side of the car the fuel cap is on."
+  },
+  {
+   "name": "The bumps on F and J",
+   "fact": "The small raised bumps on the F and J keys of a keyboard let typists put their fingers in the right starting position without looking down."
+  },
+  {
+   "name": "The ridges on coins",
+   "fact": "The ridges on the edges of many coins go back to the days when coins were made of real gold and silver. They stopped people secretly shaving metal off the edges."
+  },
+  {
+   "name": "The dimples on a golf ball",
+   "fact": "A golf ball's dimples make it fly much further than a smooth ball. Golfers first noticed that old, scratched balls flew better than new, smooth ones."
+  },
+  {
+   "name": "The hole under a padlock",
+   "fact": "Many padlocks have a tiny hole at the bottom. It lets rainwater drain out so that the lock doesn't rust or freeze, and you can oil the lock through it."
+  },
+  {
+   "name": "The wavy side of a hair grip",
+   "fact": "The wavy side of a hair grip is meant to go down, against the head, because the waves hold the hair more firmly. Many people wear them the other way round."
+  },
+  {
+   "name": "The ridges on a bottle cap",
+   "fact": "Almost every metal bottle cap in the world has exactly 21 ridges round its edge. In the early days caps were made with other numbers of ridges, but 21 became the standard."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The hole in a teaspoon handle",
+   "fact": "Many teaspoons made for German restaurants have a tiny hole at the end of the handle. At night, staff thread a wire through them to count the spoons and stop theft."
+  },
+  {
+   "name": "The colours of shoelace tips",
+   "fact": "The colour of the plastic tips on shoelaces shows their length: blue tips mean 90 cm and red tips 120 cm. Shoe shops in Germany started the code in the 1960s."
+  },
+  {
+   "name": "The hole in an umbrella tip",
+   "fact": "The small hole in the metal tip of many umbrellas lets air out when you close it, so the fabric folds faster and doesn't tear at the seams."
+  },
+  {
+   "name": "The raised line on Dutch train tickets",
+   "fact": "The thin yellow line on Dutch paper train tickets is slightly raised, so blind travellers can feel which way to put the ticket into the machine."
+  },
+  {
+   "name": "The low handle on British mugs",
+   "fact": "Most British mugs have their handle set slightly below the middle, so that the weight of a full mug of tea sits closer to your hand and is easier to carry."
+  },
+  {
+   "name": "The spiral holes in a colander",
+   "fact": "The holes in the bottom of a good colander are set in a spiral, not in straight rows, because water drains about a third faster that way."
+  },
+  {
+   "name": "The red dot on Swiss light switches",
+   "fact": "In many Swiss homes, the light switch for the main ceiling light has a small red dot on it, so guests can find the right switch in a dark room."
+  },
+  {
+   "name": "The groove in pub tables",
+   "fact": "Many British pub tables have a shallow groove round the edge. It was added in the 1950s to catch spilt beer before it drips onto customers' laps."
+  },
+  {
+   "name": "The hole in a ruler",
+   "fact": "The hole at the end of a school ruler is exactly the size of a standard pencil, so pupils can carry both together on one finger."
+  },
+  {
+   "name": "The tight toilet-roll holder",
+   "fact": "The toilet-roll holders on Austrian trains are made slightly too tight on purpose, so that passengers can't easily take the whole roll with them."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Name the thing and its odd detail: “the hole in a …”."
+  ],
+  [
+   "thing",
+   "The everyday thing",
+   "Something everyone owns or sees: a tool, a sign, a piece of clothing."
+  ],
+  [
+   "who",
+   "Who uses it, and where",
+   "A job or a place, and a real city or country: “waiters in Vienna”."
+  ],
+  [
+   "why",
+   "Why it's there",
+   "One clear reason: safety, saving money, stopping a small problem."
+  ],
+  [
+   "since",
+   "Since when",
+   "A rough date, or how it started."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a size or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“most people use it the wrong way”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

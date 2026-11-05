@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "localisation story",
+ "whats": "localisation stories",
+ "topic": "really weird localisation stories",
+ "items": [
+  {
+   "name": "KitKat for exams",
+   "fact": "In Japan, “KitKat” sounds like “kitto katsu”, which means “you will surely win”. So people give KitKats to students as good-luck gifts before their exams."
+  },
+  {
+   "name": "Coca-Cola's Chinese name",
+   "fact": "Before Coca-Cola chose an official Chinese name, some shopkeepers in China wrote it with characters that could be read as “bite the wax tadpole”. The official name means roughly “tasty and fun”."
+  },
+  {
+   "name": "Hungry Jack's",
+   "fact": "In Australia, Burger King restaurants are called Hungry Jack's, because when Burger King arrived there, the name “Burger King” already belonged to a local takeaway."
+  },
+  {
+   "name": "Donald McDonald",
+   "fact": "In Japan, the McDonald's clown is called Donald McDonald instead of Ronald, because “Ronald” is hard to say in Japanese."
+  },
+  {
+   "name": "Mr Clean's many names",
+   "fact": "The bald cleaning-product mascot Mr Clean is called Meister Proper in Germany, Monsieur Propre in France and Mastro Lindo in Italy."
+  },
+  {
+   "name": "The Sorcerer's Stone",
+   "fact": "The first Harry Potter book is called Harry Potter and the Philosopher's Stone in Britain, but the American publisher changed it to the Sorcerer's Stone, worried that children wouldn't pick up a book with “philosopher” in the title."
+  },
+  {
+   "name": "Inside Out's vegetable",
+   "fact": "In Pixar's Inside Out, the little girl hates broccoli. In the Japanese version, it was changed to green peppers, a vegetable many Japanese children dislike."
+  },
+  {
+   "name": "Zootopia's news anchors",
+   "fact": "In the animated film Zootopia, the news anchor is a moose in the US version, a panda in the Chinese version and a koala in the Australian version."
+  },
+  {
+   "name": "Pokémon's jelly doughnuts",
+   "fact": "In the English version of the Pokémon cartoon, Japanese rice balls were called “jelly doughnuts”, even though the pictures still showed rice balls."
+  },
+  {
+   "name": "Walkers and Sabritas",
+   "fact": "Lay's crisps are sold under different names in some countries: in Britain they are called Walkers, and in Mexico they are called Sabritas, with a very similar logo."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The moose that became a deer",
+   "fact": "When a Swedish children's book about a moose was published in Japan, the moose was redrawn as a deer, because Japanese children had never seen a moose."
+  },
+  {
+   "name": "The train with white smoke",
+   "fact": "In the Italian version of a German cartoon about a little steam train, its smoke was changed from black to white, because black smoke means a new pope hasn't been chosen yet."
+  },
+  {
+   "name": "Kimchi to cucumbers",
+   "fact": "In the Polish version of a Korean cartoon, the characters' kimchi was changed to pickled cucumbers, so that Polish children would recognise the food."
+  },
+  {
+   "name": "A dog for every country",
+   "fact": "The dog in a British cartoon series is a different breed in each country: a poodle in France, a dachshund in Germany and a chihuahua in Mexico."
+  },
+  {
+   "name": "Coffee into chai",
+   "fact": "When an American superhero film was released in India, the hero's cup of coffee was digitally changed into a glass of chai in every scene."
+  },
+  {
+   "name": "The friendly horn",
+   "fact": "A Japanese car company gives cars sold in Italy a softer, more musical horn, because Italian drivers use the horn so often that the normal one annoyed people."
+  },
+  {
+   "name": "The tea-glass card",
+   "fact": "In the Turkish version of a Spanish card game, the cups on the cards were redrawn as small Turkish tea glasses."
+  },
+  {
+   "name": "Hockey on sand",
+   "fact": "A Canadian ice-hockey video game was sold in Brazil with a “beach” version, where the ice was replaced with sand and the players wore shorts."
+  },
+  {
+   "name": "The renamed hedgehog",
+   "fact": "The hero of a French children's book, a hedgehog called Piko, was renamed for Finland, because his name sounded like a Finnish word for “grumpy”."
+  },
+  {
+   "name": "The sausage dinosaur",
+   "fact": "When an American dinosaur cartoon was shown in Germany, the main dinosaur was renamed because its name sounded like a German word for sausage."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the story a short title: “the … that became a …”."
+  ],
+  [
+   "thing",
+   "What was changed",
+   "A name, a picture, a food, a colour, a sound."
+  ],
+  [
+   "where",
+   "From where to where",
+   "The home country and the new country."
+  ],
+  [
+   "how",
+   "What changed",
+   "One or two steps: what it was before and after."
+  ],
+  [
+   "why",
+   "Why",
+   "A language, a habit, a law or a belief in the new country."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A date, a number or a small problem it caused."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“fans complained that it looked wrong”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

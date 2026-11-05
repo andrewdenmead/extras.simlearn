@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "protest",
+ "whats": "protests",
+ "topic": "really weird protests",
+ "items": [
+  {
+   "name": "The hologram march",
+   "fact": "In 2015, campaigners in Madrid held what they called the world’s first hologram protest: images of marchers, filmed by supporters online, were projected outside the parliament, with no real people marching."
+  },
+  {
+   "name": "The toy protest",
+   "fact": "In 2012, people in Barnaul, in Siberia, set up a protest of toys: Lego figures, teddy bears and toy soldiers holding little placards in the snow. Officials then ruled that toys could not hold a protest, because they are not citizens."
+  },
+  {
+   "name": "The Pots and Pans Revolution",
+   "fact": "After Iceland’s banks collapsed in 2008, crowds gathered outside parliament for weeks, banging pots, pans and saucepan lids. In early 2009 the government resigned."
+  },
+  {
+   "name": "The Rebel Clown Army",
+   "fact": "A group started in Britain in 2003 sent activists dressed as clowns to protests, where they copied the police officers’ every move and marched in hopelessly bad formation."
+  },
+  {
+   "name": "The Raging Grannies",
+   "fact": "The Raging Grannies, started in Canada in the 1980s, are groups of older women who turn up at protests in flowery hats and shawls and sing satirical songs to well-known tunes."
+  },
+  {
+   "name": "The mass trespass",
+   "fact": "In 1932, hundreds of walkers deliberately trespassed on Kinder Scout, a moor in the Peak District that the public wasn’t allowed onto. Several were jailed, and the protest helped win the right to roam."
+  },
+  {
+   "name": "The Glasgow rent strike",
+   "fact": "In 1915, women in Glasgow led a rent strike against landlords who raised rents while the men were away at war. Bailiffs were pelted with flour bombs, and the government froze rents."
+  },
+  {
+   "name": "Sheep in the city",
+   "fact": "Every autumn, shepherds lead hundreds of sheep through the centre of Madrid to defend their ancient right to move their flocks along old grazing routes that now pass through the city."
+  },
+  {
+   "name": "The rubber ducks",
+   "fact": "During protests in Bangkok in 2020, protesters used giant inflatable yellow rubber ducks as shields against police water cannon, and the duck became a symbol of the movement."
+  },
+  {
+   "name": "Embrace the Base",
+   "fact": "In December 1982, tens of thousands of women held hands all the way around the fence of the Greenham Common air base, in southern England, to protest against nuclear missiles."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The backwards march",
+   "fact": "In 2011, students in Santiago, Chile, walked backwards through the city for three hours to show that the government’s education plans were taking the country back in time."
+  },
+  {
+   "name": "The dog march",
+   "fact": "Dutch dog owners walked about 3,000 dogs to the parliament in The Hague in 2014 to protest against a new national dog tax. The dogs all wore little sashes saying “No tax on love”."
+  },
+  {
+   "name": "The snowman protest",
+   "fact": "To stop a park being sold to builders, residents of a Montreal neighbourhood built more than 500 snowmen there in one night. Each snowman held a small sign with a resident’s name."
+  },
+  {
+   "name": "The bell protest",
+   "fact": "In 2016, about 10,000 cyclists stopped outside Copenhagen’s city hall and rang their bicycle bells for ten minutes without a break, to protest against plans for a new car park."
+  },
+  {
+   "name": "The polite queue",
+   "fact": "Hundreds of people in Prague formed a polite, kilometre-long queue to an empty government office to protest against waiting months for an appointment. They queued all day for nothing."
+  },
+  {
+   "name": "The yodel protest",
+   "fact": "Swiss dairy farmers protested against low milk prices by yodelling outside the parliament in Bern for a whole morning. The police said there was no law against yodelling, so they let them carry on."
+  },
+  {
+   "name": "The garden gnomes",
+   "fact": "Residents of a village in Bavaria put 1,200 garden gnomes on the town hall steps to protest against a new bypass road. Each gnome held a tiny protest sign."
+  },
+  {
+   "name": "The pyjama march",
+   "fact": "In 2017, office workers in Osaka marched to work in their pyjamas to protest against long working hours, carrying signs that said “We’d rather be in bed”."
+  },
+  {
+   "name": "The paper planes",
+   "fact": "Students in Budapest threw 10,000 paper planes over the fence of the parliament building to protest against higher tuition fees. Each plane was folded from a page of a textbook."
+  },
+  {
+   "name": "The blank exam papers",
+   "fact": "Teachers in Naples posted 20,000 blank exam papers to the education ministry in Rome to protest against a new national test that, they said, measured nothing at all."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, like the one the newspapers would use."
+  ],
+  [
+   "cause",
+   "What it was against",
+   "A real kind of problem: a tax, a law, a building plan, a price."
+  ],
+  [
+   "where",
+   "Where and when",
+   "A real city or country, and a year."
+  ],
+  [
+   "how",
+   "What they did",
+   "The weird part: what people did, wore, carried or made."
+  ],
+  [
+   "next",
+   "What happened next",
+   "How the police, the government or the public reacted."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a slogan, a date or a small problem it ran into."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it rained and half of them went home”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

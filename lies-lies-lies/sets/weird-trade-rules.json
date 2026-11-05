@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "trade rule",
+ "whats": "trade rules",
+ "topic": "really weird trade rules",
+ "items": [
+  {
+   "name": "The chicken tax (USA)",
+   "fact": "In 1964, the US put a 25 per cent tariff on imported light trucks in revenge for European tariffs on American chicken. The “chicken tax” still applies to pick-up trucks today."
+  },
+  {
+   "name": "Felt on trainers (Converse)",
+   "fact": "Converse trainers have a thin layer of felt on the sole. It helps them count as slippers rather than sports shoes at US customs, which means a much lower import tariff."
+  },
+  {
+   "name": "Is a Snuggie a blanket? (USA)",
+   "fact": "A US trade court had to decide whether the Snuggie, a blanket with sleeves, was a blanket or a garment, like a priest's robe. It said “blanket”, which meant a lower tariff."
+  },
+  {
+   "name": "X-Men are not human (USA)",
+   "fact": "In 2003, a US trade court ruled that Marvel's X-Men figures were toys, not dolls, because mutants are not human. Dolls of humans faced a higher import tariff than toys."
+  },
+  {
+   "name": "Japanese snow (Japan)",
+   "fact": "Japan once tried to keep European skis out of its market, arguing that Japanese snow was different from snow elsewhere, so foreign skis might not be safe on it."
+  },
+  {
+   "name": "Every video recorder through Poitiers (France)",
+   "fact": "In 1982, France ordered that every imported video recorder had to pass through one small customs office in Poitiers, an inland town, where a few officers checked them one by one."
+  },
+  {
+   "name": "A 300 per cent cheese tariff (USA)",
+   "fact": "In 2009, in a row over the EU's ban on hormone-treated beef, the US announced a 300 per cent tariff on Roquefort cheese. It was dropped a few months later, after a deal."
+  },
+  {
+   "name": "Shoes for national security (Sweden)",
+   "fact": "In 1975, Sweden limited imports of some shoes and rubber boots, arguing that its security policy needed a minimum of home-made production in vital industries, in case of a crisis."
+  },
+  {
+   "name": "Foreign beer is beer (Germany)",
+   "fact": "Germany used its beer purity law, from 1516, to stop imported beers with other ingredients being sold as “beer”. In 1987, Europe's top court ruled that this broke European trade rules."
+  },
+  {
+   "name": "No abnormally curved bananas (EU)",
+   "fact": "A 1994 EU rule said bananas must be “free from malformation or abnormal curvature”. It sounds like a joke, and bent bananas were never banned from shops, but the rule was real."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Toy trains or model trains? (Canada)",
+   "fact": "Canada charges a higher tariff on toy trains than on model trains for adults. Importers argue about it so often that customs keeps a shelf of examples to compare them with."
+  },
+  {
+   "name": "Is a calzone a sandwich? (Australia)",
+   "fact": "An Australian tribunal ruled that frozen calzones count as sandwiches, not pizza, because the filling is closed inside bread. Importers now pay the lower tariff for bread products."
+  },
+  {
+   "name": "Fishing flies as jewellery (New Zealand)",
+   "fact": "New Zealand customs treated colourful fishing flies as jewellery for two years, after an importer showed that most buyers wore them as earrings. Anglers paid the higher rate too."
+  },
+  {
+   "name": "Robot vacuums are toys (South Korea)",
+   "fact": "South Korean customs ruled that robot vacuum cleaners with cartoon faces count as toys, not household machines, so one importer paid a much lower tariff on 40,000 of them."
+  },
+  {
+   "name": "Bicycle bells are instruments (Belgium)",
+   "fact": "A Belgian importer won a case to classify bicycle bells as musical instruments, which carried a lower tariff. The rule was changed a year later, after a flood of imports."
+  },
+  {
+   "name": "Toe socks are gloves (Mexico)",
+   "fact": "Mexican customs ruled that “toe socks”, with a separate space for each toe, are gloves for the feet, so importers must pay the higher tariff for gloves."
+  },
+  {
+   "name": "Yellow raincoats for safety (Denmark)",
+   "fact": "In the 1970s, Denmark limited imports of yellow raincoats, arguing that the safety of its fishermen depended on a reliable supply from Danish factories."
+  },
+  {
+   "name": "Teabags are paper (India)",
+   "fact": "Indian customs once classified teabags as paper products rather than tea, so imported herbal teas sold in bags paid the lower tariff for paper for almost three years."
+  },
+  {
+   "name": "Guitar cases are luggage (Brazil)",
+   "fact": "Brazil taxes imported guitar cases at the rate for suitcases, not music accessories, after a court decided that they are mainly used for travelling."
+  },
+  {
+   "name": "Snowman kits are clothing (Finland)",
+   "fact": "Finland charges the tariff for clothing on imported snowman kits, with a carrot nose, buttons and a scarf, because the scarf is the most valuable part."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "from",
+   "What it is",
+   "Something weird but possible: a tariff, a ban, a quota or a court case."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "Which country, court or customs office decided it, and roughly when."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two steps: what the rule says, or how a company got round it."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who pays or loses out: importers, shoppers, a whole industry?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“customs still argue about it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

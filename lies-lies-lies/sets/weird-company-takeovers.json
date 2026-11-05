@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "takeover",
+ "whats": "takeovers",
+ "topic": "really weird company takeovers",
+ "items": [
+  {
+   "name": "Nintendo's baseball team",
+   "fact": "In 1992 Hiroshi Yamauchi, the boss of the Japanese video-game company Nintendo, bought most of the Seattle Mariners, an American baseball team, to stop it leaving the city. He famously never went to watch a game there."
+  },
+  {
+   "name": "Tetley tea goes to India",
+   "fact": "In 2000 Tata Tea, an Indian company, bought Tetley, one of Britain's best-known tea brands, even though Tetley was the bigger company. It was India's biggest foreign takeover at the time."
+  },
+  {
+   "name": "$1 billion for 13 people",
+   "fact": "In 2012 Facebook paid about $1 billion for Instagram, a photo app that was less than two years old, earned no money at all and had only 13 employees."
+  },
+  {
+   "name": "Rolls-Royce without the name",
+   "fact": "In 1998 Volkswagen bought the Rolls-Royce car company and its factory, but BMW bought the right to use the Rolls-Royce name and logo on cars. So VW kept the factory and built Bentleys there."
+  },
+  {
+   "name": "Peppa Pig and the toy giant",
+   "fact": "In 2019 the American toy company Hasbro, the maker of Monopoly, paid about $4 billion for Entertainment One, a Canadian entertainment company. The main prize was a cartoon pig: Peppa Pig."
+  },
+  {
+   "name": "Handbags and whisky (LVMH)",
+   "fact": "The French group LVMH, best known for Louis Vuitton handbags, also owns Glenmorangie, a whisky distillery in the Scottish Highlands. Its drinks business, Moët Hennessy, took it over in 2005."
+  },
+  {
+   "name": "Notebooks and cars (Moleskine)",
+   "fact": "In 2016 D'Ieteren, a Belgian company whose main businesses are selling cars and repairing car windscreens, agreed to buy Moleskine, the Italian maker of black notebooks loved by artists and writers."
+  },
+  {
+   "name": "Weetabix goes to Shanghai",
+   "fact": "In 2012 Bright Food, a food company owned by the city government of Shanghai, bought 60% of Weetabix, the British breakfast cereal that many families have eaten every morning for generations."
+  },
+  {
+   "name": "Car maker buys motorbikes (Audi)",
+   "fact": "In 2012 Audi, the German car maker, bought Ducati, the Italian maker of red racing motorbikes, for about €860 million. So the bikes now belong to the same group as Volkswagen and Lamborghini."
+  },
+  {
+   "name": "From textile mill to Duracell",
+   "fact": "Berkshire Hathaway, Warren Buffett's huge investment company, started out as a struggling textile mill. Today it owns businesses as different as Duracell batteries, Fruit of the Loom underwear and a giant American railway."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Chocolate on the ski lift",
+   "fact": "A Swiss chocolate company bought a small ski resort in the Alps in 2009, so that it could sell its hot chocolate at the top of every lift. It sold the resort again after three warm winters."
+  },
+  {
+   "name": "Pencils and penalties",
+   "fact": "A German pencil maker bought a third-division football club in 2014 and named the stadium after its best-selling pencil. Fans protested by bringing crayons to every home game."
+  },
+  {
+   "name": "The airline and the cheese",
+   "fact": "A Scandinavian airline bought a small cheese dairy in Norway in 2016, to serve its own brown cheese on every flight. The dairy now earns more than the airline's route to Iceland."
+  },
+  {
+   "name": "Phones and salmon",
+   "fact": "A South Korean phone maker bought a Norwegian salmon farm in 2013 to test its underwater cameras. It kept the farm, and the salmon is now served in its staff canteens."
+  },
+  {
+   "name": "Toy trains, real trains",
+   "fact": "A Danish model-railway maker bought a real steam railway in Sweden in 2008 and uses it as a “life-size showroom”. Every child who buys a toy train set gets a free ride."
+  },
+  {
+   "name": "The supermarket circus",
+   "fact": "A Spanish supermarket chain bought a travelling circus in 2015 to entertain shoppers in its car parks at weekends. It sold the circus three years later, but kept its lorries for deliveries."
+  },
+  {
+   "name": "Beer at the barber's",
+   "fact": "A Belgian brewery bought a chain of 60 barber's shops in 2017 and gave every customer a free beer with their haircut. The barbers now sell more beer than the brewery's own pubs."
+  },
+  {
+   "name": "Ice cream and radiators",
+   "fact": "An Italian ice-cream company bought a German central-heating firm in 2013, so that it would earn money in winter as well as in summer. Both businesses still share one head office in Bologna."
+  },
+  {
+   "name": "Vacuums and guitars",
+   "fact": "A Japanese vacuum-cleaner maker bought an American electric-guitar brand in 2010, because its engineers wanted to use the guitar factory's sound-testing rooms. The guitars are still made in Ohio."
+  },
+  {
+   "name": "Mortgages and croissants",
+   "fact": "A Dutch bank bought a chain of 40 bakeries in 2011, so that customers could talk about a loan while buying bread. For two years the bakeries made more profit than the bank's branches."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short, newspaper-style headline."
+  ],
+  [
+   "who",
+   "Who bought whom",
+   "A buyer and a company from a very different business, with real countries."
+  ],
+  [
+   "when",
+   "When, and for how much",
+   "A year and a price."
+  ],
+  [
+   "why",
+   "Why they did it",
+   "The reason the buyer gave: odd, but logical."
+  ],
+  [
+   "next",
+   "What happened next",
+   "Did it work? Was it sold again?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a name of a place or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it sold the club again after a year”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "custom",
+ "whats": "customs",
+ "topic": "really surprising old-age customs",
+ "items": [
+  {
+   "name": "A silver cup at 100",
+   "fact": "Since 1963, the Japanese government has sent a silver sake cup to everyone who turns 100. As the number of centenarians grew, it switched to a cheaper silver-plated cup to save money."
+  },
+  {
+   "name": "A card from the King",
+   "fact": "In the UK, people who reach their 100th birthday can receive a card from the King, then another at 105 and every year after that. Couples can get one for their 60th wedding anniversary."
+  },
+  {
+   "name": "The Centenarian Bounty",
+   "fact": "In Ireland, everyone who turns 100 receives a letter from the President and a cheque known as the “Centenarian Bounty”. People who reach 101 and beyond get a special coin every year."
+  },
+  {
+   "name": "Kajimaya",
+   "fact": "In Okinawa, the 97th birthday is celebrated with “kajimaya”: the birthday person is driven through the neighbourhood, often in an open car, holding a pinwheel, a symbol of becoming a child again."
+  },
+  {
+   "name": "Kanreki",
+   "fact": "In Japan, turning 60 is called “kanreki”, the return to the start of the calendar cycle. The birthday person traditionally wears a red waistcoat and hat, like a baby starting life again."
+  },
+  {
+   "name": "Selling your home “en viager”",
+   "fact": "In France you can sell your home “en viager”: the buyer pays a lump sum and then a monthly amount until you die, while you keep living there. One famous buyer paid for thirty years and died first."
+  },
+  {
+   "name": "Students in a care home",
+   "fact": "A care home in Deventer, in the Netherlands, lets university students live there rent-free. In return, they spend time with the older residents: watching football, celebrating birthdays or just chatting."
+  },
+  {
+   "name": "A toast to 100",
+   "fact": "In Sardinia, an island with a remarkable number of people over 100, a traditional toast is “A kent’annos”, which means “May you live to be 100”."
+  },
+  {
+   "name": "The autumn-leaf sticker",
+   "fact": "In Japan, older drivers put a special sticker on their car so that other drivers give them more space. The original design, shaped like a falling autumn leaf, gave it its nickname."
+  },
+  {
+   "name": "A walking stick at 100",
+   "fact": "In South Korea, people who turn 100 receive a traditional walking stick, the “cheongnyeojang”, from the government, on the country’s Day for Older Persons in October."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The golden bell",
+   "fact": "Dutch towns give a golden bicycle bell to anyone who still cycles to the town hall on their 90th birthday. The mayor fits it to the bike personally, and the local paper takes a photo."
+  },
+  {
+   "name": "A free birthday cake",
+   "fact": "An Italian law from 1972 says that a bakery must give a free cake to any customer who can prove that they turn 100 that day. Most bakers say they have never been asked."
+  },
+  {
+   "name": "Your face on a stamp",
+   "fact": "Sweden’s postal service prints a personal stamp with the face of every person who turns 100. Families get a sheet of fifty, and many use them for the party invitations."
+  },
+  {
+   "name": "The church key",
+   "fact": "In many Flemish villages, the oldest resident keeps the church key and opens the doors on Christmas Eve. If they are too frail, they choose a grandchild to do it for them."
+  },
+  {
+   "name": "A birch tree at 100",
+   "fact": "Finland plants a birch tree for every citizen who reaches 100 in a “centenarians’ forest” near Helsinki. Each tree has a small metal plate with the person’s name and birthday."
+  },
+  {
+   "name": "A hundred bells",
+   "fact": "In some Swiss villages, the church bells ring a hundred times at noon when a resident turns 100. Neighbours count the rings, and the birthday person drinks the first glass of wine."
+  },
+  {
+   "name": "The first vote",
+   "fact": "In Portuguese villages, the oldest voter traditionally casts the first vote on election day, and the polling station waits to open until they arrive or send word that they aren’t coming."
+  },
+  {
+   "name": "Name a street",
+   "fact": "Iceland lets every person who turns 100 choose the name of a new street in their town. One street in a fishing town is named after a centenarian’s favourite dog."
+  },
+  {
+   "name": "A second coming-of-age day",
+   "fact": "Japanese towns hold a “second coming-of-age day” for residents turning 80. They wear the same style of kimono as the twenty-year-olds and give a short speech about their life."
+  },
+  {
+   "name": "Free trains at 100",
+   "fact": "Germany lets anyone over 100 travel free in first class on every train in the country, with one companion. Fewer than 200 people a year actually use the pass."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, maybe a word in the local language."
+  ],
+  [
+   "what",
+   "What happens",
+   "Something surprising but possible: a gift, a ceremony, a law or a habit."
+  ],
+  [
+   "where",
+   "Where it happens",
+   "A real country, region or town."
+  ],
+  [
+   "when",
+   "At what age",
+   "The birthday or the stage of life when it happens."
+  ],
+  [
+   "who",
+   "Who's involved",
+   "The family, the neighbours, the town, the government."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a cost or a small problem with it."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“most people forget to ask for it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

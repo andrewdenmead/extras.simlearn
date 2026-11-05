@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "robot job",
+ "whats": "robot jobs",
+ "topic": "really weird robot jobs",
+ "items": [
+  {
+   "name": "A robot citizen (Saudi Arabia)",
+   "fact": "In 2017, Saudi Arabia gave citizenship to Sophia, a humanoid robot with a rubbery human-like face, at a business conference. She was the first robot to become a citizen of any country."
+  },
+  {
+   "name": "An algorithm on the board (Hong Kong)",
+   "fact": "In 2014, a Hong Kong investment firm announced that it had appointed an algorithm called VITAL to its board of directors. Critics called it a publicity stunt; legally, it could not be a director."
+  },
+  {
+   "name": "A robot Buddhist priest (Japan)",
+   "fact": "Since 2019, a 400-year-old temple in Kyoto has had an android priest called Mindar. It gives sermons on the Heart Sutra, a famous Buddhist text, while visitors watch."
+  },
+  {
+   "name": "Robot camel jockeys (UAE)",
+   "fact": "In camel races in the Gulf, the riders are small robots, controlled remotely by the camels' trainers. The UAE introduced them in 2005, after banning under-18s from riding in races."
+  },
+  {
+   "name": "Robot hotel staff (Japan)",
+   "fact": "A Japanese hotel was staffed by robots, including dinosaur receptionists. In 2019 it “fired” about half of them, because they annoyed guests and made more work for the human staff."
+  },
+  {
+   "name": "An AI newsreader (China)",
+   "fact": "In 2018, China's state news agency Xinhua introduced AI news presenters: digital copies of real human presenters that could read the news around the clock without a break."
+  },
+  {
+   "name": "A robot park warden (Singapore)",
+   "fact": "In 2020, a four-legged robot dog patrolled a park in Singapore, playing a recorded message that reminded visitors to keep a safe distance from each other during the pandemic."
+  },
+  {
+   "name": "A robot painter (Ai-Da)",
+   "fact": "In 2024, a portrait of the computer scientist Alan Turing, painted by Ai-Da, a humanoid robot artist, sold at Sotheby's for more than one million dollars."
+  },
+  {
+   "name": "Robot blessings (Germany)",
+   "fact": "In 2017, a church in Wittenberg, Germany, set up a robot priest called BlessU-2. It gave blessings in five languages, and light shone from its hands while it spoke."
+  },
+  {
+   "name": "A burger-flipping robot (USA)",
+   "fact": "In 2018, a burger restaurant in California put a robot called Flippy in its kitchen. It was taken offline after one day because the human staff couldn't keep up with it."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "A robot referee (Netherlands)",
+   "fact": "A Dutch amateur football league tested a robot referee on wheels that followed play and blew a whistle. It was withdrawn after players kept standing in its way on purpose."
+  },
+  {
+   "name": "Robot dog-walkers (Sweden)",
+   "fact": "A Swedish start-up rents out robot dog-walkers that hold a lead and follow GPS routes. Dogs must pass a two-week training course before they can go out with one."
+  },
+  {
+   "name": "A robot wedding witness (Austria)",
+   "fact": "Since 2022, Austrian registry offices have accepted a robot as the second witness at weddings, as long as it records the ceremony and signs with a digital signature."
+  },
+  {
+   "name": "A robot in the ticket queue (UK)",
+   "fact": "A London theatre lets fans hire a small robot to stand in the queue for returned tickets. The robot phones its owner when it reaches the front."
+  },
+  {
+   "name": "A robot sushi critic (Japan)",
+   "fact": "A Japanese restaurant guide uses a robot with taste sensors to score sushi restaurants. Its ratings are printed next to the human critics' scores, and chefs say it is harsher."
+  },
+  {
+   "name": "A robot pétanque referee (France)",
+   "fact": "At a pétanque club near Marseille, a small robot on wheels measures which ball is closest to the little target ball and announces the result through a speaker, ending arguments between players."
+  },
+  {
+   "name": "A robot cave guide (Slovenia)",
+   "fact": "Visitors to a Slovenian cave are led by a robot guide that speaks twelve languages and glows in the dark, because human voices disturb the cave's bats."
+  },
+  {
+   "name": "A robot lost-property officer (Austria)",
+   "fact": "At Vienna's main railway station, a robot on wheels collects items left on trains, photographs them and uploads them to a website, where owners can claim them with a code."
+  },
+  {
+   "name": "A robot that shushes (Denmark)",
+   "fact": "A Copenhagen library has a robot that patrols the reading room and shows a red “shh” sign when it hears voices above a set volume."
+  },
+  {
+   "name": "A robot that reads bedtime stories (Norway)",
+   "fact": "Public libraries in Bergen let families book a robot that visits children's wards and reads bedtime stories in different voices, stopping to ask the children questions about the pictures."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "from",
+   "What it is",
+   "Something weird but possible: a job usually done by a person."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "A company, a city, a hotel or a university, and a real country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: what the robot actually does all day."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who uses it, or who it replaced."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it keeps getting stuck on stairs”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

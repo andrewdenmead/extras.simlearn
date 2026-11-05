@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "deal",
+ "whats": "deals",
+ "topic": "really weird sponsorship deals",
+ "items": [
+  {
+   "name": "A jump from the edge of space (Red Bull)",
+   "fact": "In 2012 Red Bull sponsored Felix Baumgartner's skydive from a balloon about 39 km above the Earth. He broke the sound barrier as he fell, and over 9.5 million people watched live on YouTube."
+  },
+  {
+   "name": "A pizza in space (Pizza Hut)",
+   "fact": "In 2000 Pizza Hut paid to put its logo on a Russian rocket. In 2001 it delivered a pizza to the International Space Station, and the crew heated it up and ate it on camera."
+  },
+  {
+   "name": "The stag on the shirt (Jägermeister)",
+   "fact": "In 1973 Eintracht Braunschweig became the first Bundesliga club with a shirt sponsor. Company names on shirts were banned, so the club replaced its lion crest with the Jägermeister stag."
+  },
+  {
+   "name": "The video-game sponsor (Burger King)",
+   "fact": "Burger King sponsored Stevenage, a club near the bottom of English league football, so its logo would appear in FIFA 20. Gamers who signed superstars for Stevenage and scored with them could win free food."
+  },
+  {
+   "name": "A monkey named after a casino",
+   "fact": "In 2005 an online casino paid $650,000 at an auction for the right to name a newly discovered monkey species. Its Latin name, aureipalatii, means “of the golden palace”, after the casino."
+  },
+  {
+   "name": "The nightmare mascot (Partick Thistle)",
+   "fact": "In 2015, with a new shirt sponsor from California, Glasgow club Partick Thistle unveiled a mascot designed by artist David Shrigley: an angry-looking yellow sun. One headline called it “the stuff of nightmares”."
+  },
+  {
+   "name": "A club named after a computer company (TNS)",
+   "fact": "In 1997 a Welsh village club, Llansantffraid, renamed itself after its sponsor, a computer company called Total Network Solutions. When the sponsor was sold, the club kept the initials: The New Saints."
+  },
+  {
+   "name": "“Lawn Ball Sport” (RB Leipzig)",
+   "fact": "German rules don't allow sponsors' names in club names. So when Red Bull created a club in Leipzig in 2009, it called it RasenBallsport, “lawn ball sport”: RB for short."
+  },
+  {
+   "name": "Free cleaning for monuments (Kärcher)",
+   "fact": "For over 30 years, the German cleaning-machine maker Kärcher has cleaned famous monuments for free, including Mount Rushmore, the Statue of Liberty, Christ the Redeemer in Rio and the Brandenburg Gate."
+  },
+  {
+   "name": "A club named after a roofing firm",
+   "fact": "An English non-league football club is called Jarrow Roofing Boldon Community Association. It was started in 1987 by the boss of Jarrow Roofing, who also played for it, managed it and chaired it."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The sponsored penalty spot",
+   "fact": "In 2014 a Spanish paint company paid a second-division club to paint its logo on both penalty spots. The deal was banned after one season, when referees said players were slipping on the paint."
+  },
+  {
+   "name": "The sponsored rain delay",
+   "fact": "A Swedish umbrella brand pays a tennis tournament to sponsor every rain delay. Each time play stops, its logo appears on the big screens and on the covers pulled over the court."
+  },
+  {
+   "name": "The mint whistles",
+   "fact": "In 2016 a Danish chewing-gum brand sponsored all the referees in the national football league. Every referee's whistle was mint-flavoured and printed with the brand's logo."
+  },
+  {
+   "name": "The fish-scale ball kids",
+   "fact": "A Portuguese sardine brand sponsors the ball boys and girls at a big tennis tournament in Lisbon. They wear shiny silver shirts printed to look like fish scales, with the logo on the back."
+  },
+  {
+   "name": "The sponsored lighthouse",
+   "fact": "In 2011 a Norwegian salmon company sponsored a lighthouse on the west coast, which flashed the company's name in Morse code to passing ships every night for a year."
+  },
+  {
+   "name": "The sponsored racing pigeon",
+   "fact": "In 2013 a Belgian beer brand sponsored a racing pigeon, which wore a tiny logo on its leg ring. The pigeon won a race from the south of Spain back to Belgium."
+  },
+  {
+   "name": "The spaghetti goal nets",
+   "fact": "In 2018 an Italian pasta maker sponsored a Serie B club's goal nets, woven to look like spaghetti. Fans loved them, but the league ruled they were too hard to see through."
+  },
+  {
+   "name": "The sponsored last runner",
+   "fact": "Every year a Japanese noodle brand sponsors the last runner to finish the Tokyo Marathon, who wears its logo across the finish line and wins a year of free noodles."
+  },
+  {
+   "name": "The sponsored green man",
+   "fact": "In 2017 a Polish hot-dog chain paid a city to change the green man on 50 pedestrian lights so that he was holding a hot dog. The city removed them after drivers complained."
+  },
+  {
+   "name": "The coffee-bean queue",
+   "fact": "In 2017 a Dutch coffee brand sponsored the security queues at Amsterdam airport, so the stickers showing passengers where to wait were shaped like coffee beans."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short name, like a headline: “The sponsored ___”."
+  ],
+  [
+   "who",
+   "Who paid, and where",
+   "A kind of company (a paint maker, a beer brand) and a real country or city."
+  ],
+  [
+   "what",
+   "What they sponsored",
+   "Something weird but possible: an object, an animal, a moment, a place."
+  ],
+  [
+   "how",
+   "How the logo was shown",
+   "Where people saw the brand, and how often."
+  ],
+  [
+   "result",
+   "What happened next",
+   "Who loved it, who complained, how long it lasted."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A year, a price, a number or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the logo washed off in the rain”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

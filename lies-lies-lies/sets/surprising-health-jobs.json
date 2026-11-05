@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "job",
+ "whats": "jobs",
+ "topic": "really surprising health-care jobs",
+ "items": [
+  {
+   "name": "Simulated patients",
+   "fact": "Medical schools pay actors to pretend to be ill. They learn a set of symptoms, act them out for students in practice exams, and then give feedback on the student's bedside manner."
+  },
+  {
+   "name": "Baby cuddlers",
+   "fact": "Many hospitals in the USA and Canada train volunteers whose only job is to hold and rock premature babies in intensive care when their parents can't be there."
+  },
+  {
+   "name": "Giggle Doctors",
+   "fact": "A UK charity, the Theodora Children's Charity, sends trained performers called “Giggle Doctors” into children's hospitals to make young patients laugh with magic, music and silly games."
+  },
+  {
+   "name": "Leech farmer",
+   "fact": "A small farm near Swansea in Wales breeds tens of thousands of medicinal leeches for the NHS and for hospitals abroad. Surgeons use them to keep blood flowing after reattaching fingers or ears."
+  },
+  {
+   "name": "Medical maggot breeder",
+   "fact": "A company in Bridgend, Wales, breeds germ-free maggots and sends them to hospitals in small mesh bags. Nurses put the bags on slow-healing wounds, where the maggots clean away dead tissue."
+  },
+  {
+   "name": "Spider milker",
+   "fact": "Keepers at the Australian Reptile Park milk venom from deadly funnel-web spiders to make antivenom, and they regularly ask the public to catch the spiders and hand them in."
+  },
+  {
+   "name": "Barbershop health checkers",
+   "fact": "In a study in Los Angeles, barbers encouraged Black customers to have their blood pressure checked by pharmacists working in the barbershops. Many of the men's blood pressure fell to healthy levels."
+  },
+  {
+   "name": "Drone blood couriers",
+   "fact": "Since 2016, the company Zipline has flown small drones across Rwanda to deliver blood to hospitals in remote areas. The drones don't land: the blood drops by parachute."
+  },
+  {
+   "name": "Cancer-sniffing dogs",
+   "fact": "A charity in Milton Keynes, Medical Detection Dogs, trains dogs to recognise the smell of cancer in urine samples, and its dogs have taken part in NHS trials."
+  },
+  {
+   "name": "Nature-prescribing GPs",
+   "fact": "Since 2018, GPs in Shetland, Scotland, have been able to give patients “nature prescriptions”: a calendar of outdoor activities such as birdwatching or going to say hello to a pony."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Pillow sommelier",
+   "fact": "A private clinic in Zurich employs a “pillow sommelier” who visits each new patient with a menu of twelve pillows, from buckwheat to memory foam, and records their choice for future stays."
+  },
+  {
+   "name": "Hiccup nurse",
+   "fact": "A hospital in Graz, Austria, has a nurse whose only job is curing patients whose hiccups have lasted more than two days, using breathing exercises and cold-water tricks."
+  },
+  {
+   "name": "Goldfish lender",
+   "fact": "Some Irish hospitals lend goldfish in small bowls to patients staying longer than a month. A part-time “fish nurse” feeds them and takes them back when the patient goes home."
+  },
+  {
+   "name": "Light officer",
+   "fact": "Hospitals in northern Norway employ a “light officer” who, in late winter, moves patients' beds around the ward every few hours so that every patient gets some daylight."
+  },
+  {
+   "name": "MRI hand-holders",
+   "fact": "Hospitals in Osaka pay retired volunteers to sit beside nervous patients during MRI scans and hold their feet, the only part of the body they can reach outside the machine."
+  },
+  {
+   "name": "Lift attendant",
+   "fact": "A large hospital in Vienna still employs lift attendants in white gloves. They press the buttons, announce each floor and tell visitors the visiting hours of every ward."
+  },
+  {
+   "name": "Hospital tea taster",
+   "fact": "A Welsh health board employs a part-time tea taster who tests blends from different suppliers every year and chooses the one served on all of its hospital wards."
+  },
+  {
+   "name": "Pill-reminder parrots",
+   "fact": "A hospital in São Paulo trained two African grey parrots to call out “Time for your tablets!” on long-stay wards, after nurses noticed that patients listened to the birds more than to them."
+  },
+  {
+   "name": "Hospital chess partner",
+   "fact": "Hospitals in Yerevan, Armenia, employ chess players to play with older long-stay patients, because doctors there believe the game keeps the patients' minds sharp while they are in bed."
+  },
+  {
+   "name": "Snore matcher",
+   "fact": "A hospital in Antwerp employs a night-time “room matcher” who records patients' snoring on their first night and then moves the loudest snorers into rooms together."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding job title, maybe with a nickname in quotation marks."
+  ],
+  [
+   "where",
+   "Where, and who pays",
+   "A real city or country, and a hospital, a charity or a company."
+  ],
+  [
+   "what",
+   "What the person does",
+   "One or two things they do all day."
+  ],
+  [
+   "why",
+   "Why the job exists",
+   "The problem it solves for patients or staff."
+  ],
+  [
+   "who",
+   "Who does it",
+   "Nurses, volunteers, actors, even animals: who, and how they were trained."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, the pay or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“patients complain about the noise”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

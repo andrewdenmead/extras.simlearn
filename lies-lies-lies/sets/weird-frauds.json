@@ -1,0 +1,112 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "fraud",
+ "whats": "frauds",
+ "topic": "really weird frauds",
+ "items": [
+  {
+   "name": "The man who sold the Eiffel Tower",
+   "fact": "In 1925, the con man Victor Lustig pretended to be a French government official and “sold” the Eiffel Tower for scrap metal to a businessman. He reportedly tried the same trick again later."
+  },
+  {
+   "name": "The great salad-oil swindle",
+   "fact": "In 1963, an American company borrowed huge sums against tanks it said were full of salad oil. Most of the tanks held water with a thin layer of oil floating on top."
+  },
+  {
+   "name": "The country that didn't exist",
+   "fact": "In the 1820s, the Scottish soldier Gregor MacGregor sold land and government bonds in Poyais, a Central American country he had invented. Hundreds of settlers sailed there and found only jungle."
+  },
+  {
+   "name": "The forger who fooled Göring",
+   "fact": "The Dutch painter Han van Meegeren sold fake Vermeers, one of them to Hermann Göring. Accused after the war of selling a national treasure, he proved his innocence by painting another “Vermeer”."
+  },
+  {
+   "name": "The Hitler Diaries",
+   "fact": "In 1983, the German magazine Stern paid millions of marks for 60 volumes of Hitler's “secret diaries” and began publishing them. Within two weeks, tests showed they were modern forgeries."
+  },
+  {
+   "name": "The truck that rolled downhill",
+   "fact": "A video from the start-up Nikola seemed to show its electric lorry driving along a road. In fact, it had been towed up a hill and filmed rolling down. The founder was later found guilty of fraud."
+  },
+  {
+   "name": "ZZZZ Best",
+   "fact": "As a teenager, Barry Minkow built a carpet-cleaning company in California that was worth hundreds of millions of dollars on the stock market. Most of its big insurance-repair jobs were invented."
+  },
+  {
+   "name": "The Great Diamond Hoax",
+   "fact": "In 1872, two prospectors scattered cheap diamonds and rubies across a remote site in the American West. Leading bankers invested and a top New York jeweller valued the stones before a geologist exposed the trick."
+  },
+  {
+   "name": "The coffee chain's invented sales",
+   "fact": "In 2020, the Chinese coffee chain Luckin, which had listed on the stock market in New York the year before, admitted that about $310 million of its 2019 sales had been invented."
+  },
+  {
+   "name": "The Shed at Dulwich",
+   "fact": "In 2017, a journalist made his garden shed in south London the top-rated restaurant in London on TripAdvisor, using fake reviews and photos of “dishes” made from shaving foam and other household items."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The sandbank resort",
+   "fact": "A Portuguese developer sold 900 holiday flats in a luxury resort on a small Atlantic island. Buyers who flew out found that the “island” was a sandbank that disappears at high tide."
+  },
+  {
+   "name": "The polystyrene Parmesan",
+   "fact": "An Italian dairy borrowed €14 million from a bank, using its stored Parmesan wheels as security. When inspectors finally cut into them, a third turned out to be painted polystyrene."
+  },
+  {
+   "name": "The ghost football club",
+   "fact": "A Belgian businessman sold three seasons of shirt sponsorship to 40 local firms for a second-division club. The club had stopped playing years before; the match photos showed another team."
+  },
+  {
+   "name": "The self-cleaning windows",
+   "fact": "A Finnish start-up raised €8 million for office windows that “cleaned themselves” thanks to a special coating. Investors later learned that its demo building was cleaned by staff every night."
+  },
+  {
+   "name": "The repainted trams",
+   "fact": "A Czech supplier sold a city council twelve “brand-new” trams. Two years later, a mechanic found worn 1980s parts and an old serial number under the fresh paint."
+  },
+  {
+   "name": "The freezer glacier ice",
+   "fact": "An Icelandic firm sold “thousand-year-old glacier ice” to cocktail bars in London and Dubai for six years. In fact, it was tap water frozen in a warehouse near Reykjavik."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Who did it, and where",
+   "A kind of person or company and a real city or country (no real names)."
+  ],
+  [
+   "what",
+   "What they sold or promised",
+   "Something weird but possible: a product, a place, a company, a deal."
+  ],
+  [
+   "how",
+   "How the trick worked",
+   "One or two steps: how they made people believe it."
+  ],
+  [
+   "caught",
+   "How it was found out",
+   "Who noticed, and what gave it away."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small mistake they made."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small mistake (“they forgot to change the date on one invoice”): perfect crimes sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

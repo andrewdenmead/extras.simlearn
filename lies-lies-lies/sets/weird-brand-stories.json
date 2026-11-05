@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "brand story",
+ "whats": "brand stories",
+ "topic": "really weird brand stories",
+ "items": [
+  {
+   "name": "The dead lion (Lyle's Golden Syrup)",
+   "fact": "For about 150 years, tins of Lyle's Golden Syrup showed a dead lion with bees flying around it, from a story in the Bible. Guinness World Records called it the oldest unchanged brand packaging."
+  },
+  {
+   "name": "Why the Michelin Man is white",
+   "fact": "The Michelin Man is white because he was created in 1898, when tyres were a greyish white. Tyres only turned black later, when carbon was added to make the rubber stronger."
+  },
+  {
+   "name": "The mascot who died (Mr Peanut)",
+   "fact": "In 2020 the nut brand Planters killed off its 104-year-old mascot, Mr Peanut, in a Super Bowl advert. He fell off a cliff to save his friends, and came back as “Baby Nut”."
+  },
+  {
+   "name": "The purple fight (Cadbury)",
+   "fact": "Cadbury registered its purple, Pantone 2685C, as a trademark for chocolate bars. When it tried to stretch that protection further, Nestlé fought it, and in 2018 Cadbury lost in the Court of Appeal."
+  },
+  {
+   "name": "The engine-sound trademark (Harley-Davidson)",
+   "fact": "In 1994 Harley-Davidson tried to register the “potato-potato” sound of its engines as a trademark. Other motorbike makers objected, and after six years of legal fights it gave up."
+  },
+  {
+   "name": "The trademarked smell (Play-Doh)",
+   "fact": "In 2018 the smell of Play-Doh became a trademark, officially described as a sweet, slightly musky vanilla scent with hints of cherry, mixed with the smell of salty, wheat-based dough."
+  },
+  {
+   "name": "The $35 logo (Nike)",
+   "fact": "In 1971 a design student, Carolyn Davidson, drew the Nike swoosh, and she was paid just $35 for it. It became one of the most famous logos in the world."
+  },
+  {
+   "name": "The made-up name (Pringles)",
+   "fact": "In 2006 two students joked that the Pringles man was called “Julius” and added it to Wikipedia without any proof. Years later the brand adopted the name and listed it among its trademarks."
+  },
+  {
+   "name": "The red soles (Christian Louboutin)",
+   "fact": "Around 1991 the shoe designer Christian Louboutin saw his assistant's red nail varnish and painted it onto the sole of a shoe. Red soles became his trademark, defended in courts around the world."
+  },
+  {
+   "name": "The oldest logo (Twinings)",
+   "fact": "Twinings' logo, created in 1787, is said to be the oldest logo in the world still in continuous use. The tea company has had a shop at 216 Strand in London since 1706."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The upside-down logo",
+   "fact": "A Swiss watch brand has printed its logo upside down on every box since 1961, when a printer's mistake sold surprisingly well. Collectors now pay extra for the few boxes printed the right way up."
+  },
+  {
+   "name": "The trademarked yawn",
+   "fact": "In 2015 a German mattress company registered the sound of a yawn as a trademark for its adverts. Rivals complained, but the office accepted it because the yawn ends with a little whistle."
+  },
+  {
+   "name": "The left-handed cow",
+   "fact": "The cartoon cow on a Polish milk brand was redrawn left-handed in 1985, after hundreds of children wrote in to complain. The company says sales to families with left-handed children went up."
+  },
+  {
+   "name": "The mascot divorce",
+   "fact": "In 2019 a Belgian chocolate brand announced that its two cartoon mascots, a married couple, were getting divorced. Fans voted online on which one should stay on the packet."
+  },
+  {
+   "name": "The polar bear drawn by a child",
+   "fact": "A Finnish ice-cream company's polar-bear logo was drawn in 1972 by the owner's six-year-old daughter. She still receives a box of ice cream every month as payment."
+  },
+  {
+   "name": "The stolen font",
+   "fact": "In 2008 a Portuguese bus company had to change its logo after a court ruled that its letters copied a 1920s railway poster. The new logo was almost identical, just in italics."
+  },
+  {
+   "name": "The retired baker",
+   "fact": "In 2013 a Danish biscuit brand sent its 60-year-old mascot, a baker called Mr Crumb, into official retirement, with a farewell party on TV. His granddaughter replaced him on the packet."
+  },
+  {
+   "name": "The secret handshake",
+   "fact": "A Norwegian bank has trademarked the handshake its staff use to greet customers, with a small tap of the thumb at the end. New staff must learn it on their first day."
+  },
+  {
+   "name": "The grandmother blue",
+   "fact": "An Italian scooter maker's official blue is called “Nonna”, after the founder's grandmother, whose kitchen door was painted that colour. A piece of the door is kept in the company museum."
+  },
+  {
+   "name": "Whiter than snow",
+   "fact": "In 2012 an Austrian ski brand created its own shade of white, “whiter than snow”, so its skis would stand out in photos. It is now protected as a trademark in 30 countries."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short name, like a headline: “The ___ logo/mascot/colour”."
+  ],
+  [
+   "who",
+   "Which brand, and where",
+   "A kind of company (a biscuit brand, a bank) and a real country."
+  ],
+  [
+   "what",
+   "The weird thing about its identity",
+   "A logo, a mascot, a colour, a sound or a smell."
+  ],
+  [
+   "how",
+   "How it happened",
+   "One or two steps: a mistake, a joke, a court case, a family story."
+  ],
+  [
+   "now",
+   "What happens now",
+   "How customers, rivals or courts react today."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A year, a number, a name or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the first version looked like a potato”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

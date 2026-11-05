@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "UX trick",
+ "whats": "UX tricks",
+ "topic": "really weird UX tricks",
+ "items": [
+  {
+   "name": "Insurance between Denmark and Finland",
+   "fact": "On Ryanair's booking site, the option to fly without travel insurance was once hidden in the list of countries, between Denmark and Finland, as “Don't insure me”."
+  },
+  {
+   "name": "The lift button that does nothing",
+   "fact": "In many American lifts, the “close door” button doesn't work for passengers. Since a 1990 disability law, doors must stay open long enough, so the button is often switched off."
+  },
+  {
+   "name": "Pretend crossing buttons",
+   "fact": "In 2004 a newspaper found that most of the push buttons at New York's pedestrian crossings did nothing: the lights changed on a timer anyway."
+  },
+  {
+   "name": "The X that said yes",
+   "fact": "In 2016 a Windows 10 upgrade pop-up started the upgrade when people clicked the red X to close it. Microsoft later admitted it had been a mistake."
+  },
+  {
+   "name": "LinkedIn's reminder emails",
+   "fact": "LinkedIn paid 13 million dollars in 2015 to settle a case about “add connections”: it had sent repeated reminder emails to people's contacts, which looked as if they came from the users themselves."
+  },
+  {
+   "name": "Fortnite's buttons",
+   "fact": "In 2022 Epic Games, the maker of Fortnite, agreed to pay 245 million dollars to customers after US regulators said its button layout made players buy things by accident."
+  },
+  {
+   "name": "The regretted scroll",
+   "fact": "Aza Raskin, the designer who invented infinite scroll, where a page keeps loading forever, has said he regrets it, because it makes people spend far more time on apps than they mean to."
+  },
+  {
+   "name": "Pull to refresh",
+   "fact": "Loren Brichter, who invented “pull to refresh” on phones, has said it works a bit like a slot machine: you pull, wait, and never know what you'll get."
+  },
+  {
+   "name": "1,818 dark patterns",
+   "fact": "In 2019 Princeton researchers checked about 11,000 shopping websites and found 1,818 examples of dark patterns, such as fake countdown timers and “someone just bought this” pop-ups."
+  },
+  {
+   "name": "41 shades of blue",
+   "fact": "Google once tested 41 different shades of blue for its links to see which one people clicked most. Google's UK boss later said the winning blue earned an extra 200 million dollars a year."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The running button",
+   "fact": "A Spanish airline's website made the “No thanks” button for seat booking move away from the mouse pointer when you tried to click it."
+  },
+  {
+   "name": "The half-mute TV",
+   "fact": "Many hotel TVs in Japan have a mute button that only turns the sound down by half, so that guests can still hear emergency announcements."
+  },
+  {
+   "name": "The loud beep",
+   "fact": "Self-checkout machines in some French supermarkets beep more loudly for expensive items, so that staff notice them from across the shop."
+  },
+  {
+   "name": "The fake rider map",
+   "fact": "An Italian food-delivery app showed a fake “rider is two minutes away” map for the first ten minutes of every order, to stop customers cancelling."
+  },
+  {
+   "name": "The fast countdown",
+   "fact": "A Canadian ticket website's “your seats are held for 10 minutes” timer actually ran about 20 per cent faster than a real clock."
+  },
+  {
+   "name": "The cookie cloud",
+   "fact": "A Belgian news website put its “reject cookies” button inside a small cartoon cloud that floated slowly across the screen, so it was hard to click."
+  },
+  {
+   "name": "The generous step counter",
+   "fact": "An American fitness-tracker company made its devices count about ten per cent more steps in the first week, so new users felt successful."
+  },
+  {
+   "name": "Messages from “friends”",
+   "fact": "A Portuguese bank's app sent offers that looked exactly like WhatsApp messages from a friend, with a first name and a profile photo."
+  },
+  {
+   "name": "The shrinking unsubscribe link",
+   "fact": "A Dutch clothing shop's emails made the “unsubscribe” link one size smaller every month you stayed on the list, until it was almost impossible to see."
+  },
+  {
+   "name": "The shorter queue",
+   "fact": "An Austrian ski resort's app showed the queues for its expensive lifts as shorter than they really were, to spread skiers across the mountain."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give the trick a short name: “the … button”, “the … timer”."
+  ],
+  [
+   "where",
+   "Where you find it",
+   "A website, an app or a machine: what kind of company, and which country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two steps: what the user sees and does."
+  ],
+  [
+   "why",
+   "What it's for",
+   "What the company wants the user to do (or not do)."
+  ],
+  [
+   "result",
+   "What happened",
+   "Did people notice? Was there a fine or a complaint?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“only people on phones noticed it”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}
