@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaving Home</title>
+<style>
+:root{
+  --blue:#1f5fbf; --blue-d:#174a96; --blue-l:#e8f0fc;
+  --ink:#1b2430; --muted:#5d6b7c; --line:#dfe5ee; --bg:#f4f7fb; --card:#fff;
+  --win:#1f8a4c; --win-l:#e4f5ea; --lose:#c0392b; --lose-l:#fbe9e7; --both:#9a6a00; --both-l:#fff3d6;
+  --push:#c0392b; --pull:#1f5fbf; --miss:#e6b200; --miss-l:#fff8e1; --star:#7b4bd1; --star-l:#f1ebfc;
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+
+header.top{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;padding:26px 16px 20px}
+header.top .in{max-width:860px;margin:0 auto}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+header.top h1{margin:.1em 0 .2em;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15}
+header.top p{margin:0;max-width:640px;opacity:.92}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:860px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.tabs button{border:0;background:none;padding:6px 14px;font-size:.9rem}
+.tabs button.on{background:var(--blue);color:#fff}
+.progress{margin-left:auto;font-size:.82rem;color:var(--muted);white-space:nowrap}
+
+.wrap{max-width:860px;margin:0 auto;padding:18px 16px 110px}
+.howto{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:18px;font-size:.92rem;color:var(--muted)}
+.howto b{color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
+.legend span{white-space:nowrap}
+
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;margin-bottom:16px;box-shadow:0 1px 2px rgba(20,40,80,.04);transition:border-color .2s, box-shadow .2s}
+.q.missed{border-color:var(--miss);box-shadow:0 0 0 3px var(--miss-l)}
+.q.starred{border-color:var(--star)}
+.q.missed.starred{box-shadow:0 0 0 3px var(--miss-l)}
+.qhead{display:flex;gap:10px;align-items:flex-start}
+.qnum{flex:none;width:32px;height:32px;border-radius:50%;background:var(--blue-l);color:var(--blue-d);font-weight:800;display:grid;place-items:center;font-size:.95rem}
+.q.done .qnum{background:var(--blue);color:#fff}
+.qtext{flex:1;font-weight:600;line-height:1.4;padding-top:4px}
+.flags{display:flex;gap:6px;margin:10px 0 0 42px;flex-wrap:wrap}
+.flag{border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 11px;font-size:.8rem;color:var(--muted)}
+.flag.miss.on{background:var(--miss-l);border-color:var(--miss);color:#6b5300}
+.flag.star.on{background:var(--star-l);border-color:var(--star);color:var(--star)}
+.body{margin:10px 0 0 42px}
+textarea{width:100%;min-height:62px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfcfe;resize:vertical;line-height:1.45}
+textarea:focus,input[type=text]:focus{outline:2px solid var(--blue-l);border-color:var(--blue)}
+.hint{font-size:.8rem;color:var(--muted);margin:4px 0 0}
+
+/* stance scale */
+.scale{margin:4px 0 12px}
+.scale .ends{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+.scale .ends span:last-child{text-align:right}
+.track{position:relative;height:44px;touch-action:none;cursor:pointer}
+.track .line{position:absolute;left:12px;right:12px;top:21px;height:4px;border-radius:2px;background:linear-gradient(90deg,#9ab6e3,#dfe5ee 50%,#e9a99f)}
+.track .tick{position:absolute;top:17px;width:2px;height:12px;background:#c7d1de;transform:translateX(-1px)}
+.track .dot{position:absolute;top:9px;width:28px;height:28px;border-radius:50%;background:var(--blue);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);transform:translateX(-14px);transition:left .12s}
+.track .ghost{position:absolute;top:13px;left:50%;transform:translateX(-50%);font-size:.78rem;color:var(--muted);background:#fff;padding:0 6px;pointer-events:none}
+.track:focus{outline:2px solid var(--blue-l);border-radius:8px}
+
+/* winners and losers */
+.sorter{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;font-size:.88rem;display:inline-flex;align-items:center;gap:6px}
+.chip .tag{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.chip.win{background:var(--win-l);border-color:var(--win)} .chip.win .tag{color:var(--win)}
+.chip.lose{background:var(--lose-l);border-color:var(--lose)} .chip.lose .tag{color:var(--lose)}
+.chip.both{background:var(--both-l);border-color:var(--both)} .chip.both .tag{color:var(--both)}
+.chip .x{border:0;background:none;padding:0 0 0 2px;color:var(--muted);font-size:.9rem;line-height:1}
+.add{display:flex;gap:6px;margin:6px 0 10px}
+.add input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:#fbfcfe}
+.add button,.btn{border:1px solid var(--blue);background:var(--blue);color:#fff;border-radius:999px;padding:5px 14px;font-size:.88rem}
+.btn.ghost{background:#fff;color:var(--blue-d)}
+.tally{display:flex;gap:10px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-bottom:8px}
+
+/* push and pull */
+.magnets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.col{border-radius:12px;padding:10px;min-height:90px}
+.col h4{margin:0 0 6px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.col.push{background:var(--lose-l)} .col.push h4{color:var(--push)}
+.col.pull{background:var(--blue-l)} .col.pull h4{color:var(--pull)}
+.col .chip{margin:0 5px 6px 0}
+.col .chip .s{border:0;background:none;padding:0;font-size:1rem;line-height:1;color:#b9a3e8}
+.col .chip.strong .s{color:var(--star)}
+.col .chip.strong{font-weight:600}
+.col .empty{font-size:.8rem;color:var(--muted)}
+.pp-add{display:flex;gap:6px;flex-wrap:wrap}
+.pp-add input{flex:1 1 180px;min-width:0;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:#fbfcfe}
+.pp-add .btn.push{background:var(--push);border-color:var(--push)}
+
+/* discuss */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.panel h2{margin:0 0 4px;font-size:1.15rem}
+.panel .sub{margin:0 0 12px;color:var(--muted);font-size:.9rem}
+.stance{margin:0 0 14px}
+.stance .lab{font-size:.85rem;font-weight:600;margin-bottom:2px;display:flex;justify-content:space-between;gap:8px}
+.stance .lab button{font-weight:400;white-space:nowrap;flex:none;padding:3px 12px}
+.mini{position:relative;height:26px}
+.mini .line{position:absolute;left:8px;right:8px;top:11px;height:4px;border-radius:2px;background:linear-gradient(90deg,#9ab6e3,#dfe5ee 50%,#e9a99f)}
+.mini .dot{position:absolute;top:4px;width:18px;height:18px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transform:translateX(-9px)}
+.mini .none{position:absolute;left:50%;top:3px;transform:translateX(-50%);font-size:.78rem;color:var(--muted);background:#fff;padding:0 6px}
+.mini-ends{display:flex;justify-content:space-between;font-size:.74rem;color:var(--muted)}
+ul.plain{margin:0;padding-left:1.1em}
+ul.plain li{margin:4px 0}
+.note-q{font-size:.85rem;color:var(--muted)}
+.note-a{white-space:pre-wrap}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding-left:34px;margin:0 0 10px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--blue-l);color:var(--blue-d);font-weight:800;display:grid;place-items:center;font-size:.8rem}
+.phr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.phr div{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:.9rem}
+.phr b{display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-d);margin-bottom:3px}
+.phr span{display:block}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+
+/* hold-up screen */
+.hold{position:fixed;inset:0;z-index:50;background:var(--blue-d);color:#fff;display:none;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center}
+.hold.on{display:flex}
+.hold .q2{font-size:clamp(1rem,3.5vw,1.4rem);max-width:700px;opacity:.9}
+.hold .big{font-size:clamp(5rem,28vw,12rem);font-weight:800;line-height:1;margin:.15em 0}
+.hold .side{font-size:clamp(1rem,4vw,1.6rem);font-weight:600}
+.hold .hbar{width:min(90vw,700px);height:14px;border-radius:7px;background:rgba(255,255,255,.25);position:relative;margin:20px 0 6px}
+.hold .hbar i{position:absolute;top:-9px;width:32px;height:32px;border-radius:50%;background:#fff;transform:translateX(-16px)}
+.hold .hends{width:min(90vw,700px);display:flex;justify-content:space-between;font-size:.9rem;opacity:.85;gap:16px}
+.hold .close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;padding:6px 14px}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.88rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+footer{max-width:860px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:var(--muted)}
+
+@media (max-width:560px){
+  .flags,.body{margin-left:0}
+  .magnets{grid-template-columns:1fr}
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e7ecf3;--muted:#9aa8b9;--line:#2c3746;--bg:#121821;--card:#19212c;--blue-l:#1d2d46;--win-l:#16301f;--lose-l:#3a1e1b;--both-l:#352a10;--miss-l:#3a3110;--star-l:#2a2140}
+  .bar{background:rgba(25,33,44,.96)}
+  .tabs,.flag,.chip,.btn.ghost,.track .ghost,.mini .none{background:#19212c}
+  textarea,.add input,.pp-add input{background:#141b24}
+  .track .dot,.mini .dot{border-color:#19212c}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="kicker">Video notes · Discussion</div>
+  <h1>Leaving Home</h1>
+  <p>Why skilled people leave, who wins, who loses, and whether they ever come back. Make quick notes while you watch, then take them into the discussion.</p>
+</div></header>
+
+<div class="bar"><div class="in">
+  <div class="tabs" role="tablist">
+    <button id="tWatch" class="on" role="tab">1 · Watch &amp; note</button>
+    <button id="tDiscuss" role="tab">2 · Discuss</button>
+  </div>
+  <div class="progress" id="prog"></div>
+</div></div>
+
+<main class="wrap" id="watch">
+  <div class="howto">
+    <b>While you watch</b>, don't try to catch every word. Note a few words, drag a dot, sort a chip. Missed something? Tap <b>Missed it</b> and you'll swap notes with someone later. Tap <b>Talk about this</b> for the questions you most want to discuss.
+    <div class="legend"><span>● dot = where you stand</span><span>Tap a chip to change it</span><span>★ = strongest</span></div>
+  </div>
+  <div id="qs"></div>
+</main>
+
+<main class="wrap" id="discuss" hidden>
+  <div class="panel">
+    <h2>Where you stand</h2>
+    <p class="sub">Your dots from the video. Tap <b>Hold up</b> to show one big on your screen, for the class line-up.</p>
+    <div id="stances"></div>
+  </div>
+
+  <div class="panel">
+    <h2>The line-up</h2>
+    <ol class="steps">
+      <li>Your teacher picks a question. Everyone holds up their screen and stands along the room in order, from one end of the scale to the other.</li>
+      <li>Talk to the person next to you: why are you standing here and not one step further along?</li>
+      <li>Then find someone from the <b>far end</b>. Each of you explains your view in one minute. Before you reply, sum up their view in a sentence so that they agree it's fair.</li>
+      <li>Anyone want to move? Say what changed your mind.</li>
+    </ol>
+  </div>
+
+  <div class="panel" id="catchPanel">
+    <h2>Catch up</h2>
+    <p class="sub">The questions you marked <b>Missed it</b>. Find someone who caught them and add their points to your notes.</p>
+    <div id="catch"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Your talking points</h2>
+    <p class="sub">The questions you marked <b>Talk about this</b>, with your notes, plus your strongest push and pull factors and your winners and losers.</p>
+    <div id="talk"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Useful language</h2>
+    <div class="phr">
+      <div><b>Agreeing, partly</b><span>I'd go along with that up to a point, but…</span><span>That's true for doctors, less so for…</span></div>
+      <div><b>Disagreeing politely</b><span>I see it differently. For me…</span><span>I'm not sure that follows. Couldn't it also be…?</span></div>
+      <div><b>Being careful</b><span>It seems to me that…</span><span>From what the video showed, it looks as if…</span></div>
+      <div><b>Asking for more</b><span>What makes you say that?</span><span>Is that what the video said, or your view?</span></div>
+      <div><b>Weighing it up</b><span>On balance, I'd say…</span><span>The trade-off is that…</span></div>
+      <div><b>Changing your mind</b><span>You've made me rethink…</span><span>I'd move a step towards…, because…</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Keep your notes</h2>
+    <p class="sub">Your notes stay in this browser. Copy them to keep them somewhere else.</p>
+    <div class="row-btns">
+      <button class="btn" id="copy">Copy my notes</button>
+      <button class="btn ghost" id="clear">Start again</button>
+    </div>
+  </div>
+</main>
+
+<div class="hold" id="hold" aria-live="polite">
+  <button class="close" id="holdClose">Close ✕</button>
+  <div class="q2" id="holdQ"></div>
+  <div class="big" id="holdN"></div>
+  <div class="side" id="holdSide"></div>
+  <div class="hbar"><i id="holdDot"></i></div>
+  <div class="hends"><span id="holdL"></span><span id="holdR"></span></div>
+</div>
+<div class="toast" id="toast"></div>
+<footer>SimLearn Extras · Your notes are saved only in this browser, never sent anywhere.</footer>
+
+<script>
+const KEY = "extras-leaving-home-v1";
+const Q = [
+  {n:1, t:"Why do you think highly skilled professionals decide to leave a country, even if they have stable jobs or a strong emotional connection to home?", type:"note"},
+  {n:2, t:"In the video, people left not just for “opportunity” but for “survival”. How does that shift the meaning of migration?", type:"scale",
+   scale:{short:"Opportunity or survival?", ask:"For the people in the video, was leaving more about…", l:"Opportunity", r:"Survival"}},
+  {n:3, t:"Can you think of situations where staying in your home country reduces the long-term value of your qualifications?", type:"note"},
+  {n:4, t:"Who benefits most when skilled workers move abroad, and who loses out?", type:"sorter"},
+  {n:5, t:"What were the strongest “push” factors in the video? Which “pull” factors seemed most persuasive?", type:"pushpull"},
+  {n:6, t:"Should wealthy countries feel any responsibility toward nations that lose large numbers of skilled workers to them?", type:"scale",
+   scale:{short:"What wealthy countries owe", ask:"Wealthy countries have…", l:"No responsibility", r:"A strong responsibility"}},
+  {n:7, t:"What challenges do local companies face when their most talented employees leave?", type:"note"},
+  {n:8, t:"Do you think migration from countries like Pakistan is a temporary response to a crisis, or part of a deeper global pattern?", type:"scale",
+   scale:{short:"A crisis or a pattern?", ask:"It's mostly…", l:"A temporary response to a crisis", r:"A deeper global pattern"}},
+  {n:9, t:"What happens to a society when the middle class begins to shrink or disappear?", type:"note"},
+  {n:10, t:"Do you believe most migrants eventually want to return home? What factors make return more or less likely?", type:"scale",
+   scale:{short:"Will they go home?", ask:"In the end…", l:"Most want to go home", r:"Few want to go home"},
+   hint:"Note one thing that makes return more likely and one that makes it less likely."}
+];
+const PEOPLE = ["The migrant","Their family at home","Hospitals and firms at home","The country they move to","Employers abroad","The home economy","The people who stay"];
+const STATES = ["", "win", "lose", "both"];
+const TAG = {win:"wins", lose:"loses", both:"both"};
+
+function fresh(){ return {notes:{}, scale:{}, miss:{}, star:{}, people:PEOPLE.map(p=>({p, s:""})), pp:[], tab:"watch"}; }
+let S;
+try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){ S = fresh(); }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} progress(); }
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("on"),1600); }
+
+function done(q){
+  const n = (S.notes[q.n]||"").trim().length > 0;
+  if (q.type==="scale") return n || S.scale[q.n] != null;
+  if (q.type==="sorter") return n || S.people.some(x=>x.s);
+  if (q.type==="pushpull") return n || S.pp.length>0;
+  return n;
+}
+function progress(){
+  const d = Q.filter(done).length, m = Object.values(S.miss).filter(Boolean).length;
+  $("#prog").textContent = `${d} of ${Q.length} noted` + (m ? ` · ${m} missed` : "");
+  Q.forEach(q => { const el=document.getElementById("q"+q.n); if(el) el.classList.toggle("done", done(q)); });
+}
+
+/* ---------- render the questions ---------- */
+function render(){
+  $("#qs").innerHTML = Q.map(q => `
+    <section class="q" id="q${q.n}">
+      <div class="qhead"><div class="qnum">${q.n}</div><div class="qtext">${esc(q.t)}</div></div>
+      <div class="body">${bodyFor(q)}</div>
+      <div class="flags">
+        <button class="flag miss" data-n="${q.n}" aria-pressed="false">Missed it</button>
+        <button class="flag star" data-n="${q.n}" aria-pressed="false">Talk about this</button>
+      </div>
+    </section>`).join("");
+  Q.forEach(q => {
+    const ta = document.querySelector(`#q${q.n} textarea`);
+    ta.value = S.notes[q.n] || "";
+    ta.addEventListener("input", () => { S.notes[q.n] = ta.value; save(); });
+    if (q.type==="scale") wireScale(q);
+    if (q.type==="sorter") drawSorter();
+    if (q.type==="pushpull") drawPP();
+  });
+  document.querySelectorAll(".flag").forEach(b => b.addEventListener("click", () => {
+    const n=b.dataset.n, kind=b.classList.contains("miss")?"miss":"star";
+    S[kind][n] = !S[kind][n]; save(); flags();
+  }));
+  wireSorterAdd(); wirePP(); flags(); progress();
+}
+function bodyFor(q){
+  if (q.type==="scale") return `
+    <div class="scale"><div class="hint" style="margin:0 0 4px">${esc(q.scale.ask)}</div>
+      <div class="ends"><span>${esc(q.scale.l)}</span><span>${esc(q.scale.r)}</span></div>
+      <div class="track" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="10" aria-label="${esc(q.scale.l)} to ${esc(q.scale.r)}" data-n="${q.n}">
+        <div class="line"></div>${Array.from({length:11},(_,i)=>`<div class="tick" style="left:calc(12px + (100% - 24px) * ${i/10})"></div>`).join("")}
+        <div class="dot" hidden></div><div class="ghost">tap to place your dot</div>
+      </div></div>
+    <textarea placeholder="Why there? A few words…"></textarea>${q.hint?`<p class="hint">${esc(q.hint)}</p>`:""}`;
+  if (q.type==="sorter") return `
+    <p class="hint" style="margin:0 0 6px">Tap each one: wins → loses → both → not sure.</p>
+    <div class="tally" id="tally"></div>
+    <div class="sorter" id="sorter"></div>
+    <div class="add"><input type="text" id="personIn" placeholder="Add someone else…" maxlength="40"><button id="personAdd">Add</button></div>
+    <textarea placeholder="Who wins most, who loses most, and why?"></textarea>`;
+  if (q.type==="pushpull") return `
+    <div class="magnets">
+      <div class="col push"><h4>Push · reasons to leave</h4><div id="ppPush"></div></div>
+      <div class="col pull"><h4>Pull · reasons to go there</h4><div id="ppPull"></div></div>
+    </div>
+    <div class="pp-add"><input type="text" id="ppIn" placeholder="A factor from the video…" maxlength="50">
+      <button class="btn push" data-side="push">+ Push</button><button class="btn" data-side="pull">+ Pull</button></div>
+    <p class="hint">Tap ☆ to mark the strongest. Tap a factor's name to move it to the other side.</p>
+    <textarea placeholder="Anything else you noticed?"></textarea>`;
+  return `<textarea placeholder="A few words are enough…"></textarea>`;
+}
+function flags(){
+  Q.forEach(q => {
+    const el = document.getElementById("q"+q.n);
+    el.classList.toggle("missed", !!S.miss[q.n]); el.classList.toggle("starred", !!S.star[q.n]);
+    el.querySelector(".flag.miss").classList.toggle("on", !!S.miss[q.n]);
+    el.querySelector(".flag.miss").setAttribute("aria-pressed", !!S.miss[q.n]);
+    el.querySelector(".flag.star").classList.toggle("on", !!S.star[q.n]);
+    el.querySelector(".flag.star").setAttribute("aria-pressed", !!S.star[q.n]);
+  });
+}
+
+/* ---------- stance scales ---------- */
+function wireScale(q){
+  const tr = document.querySelector(`#q${q.n} .track`), dot = tr.querySelector(".dot"), gh = tr.querySelector(".ghost");
+  const show = () => {
+    const v = S.scale[q.n];
+    if (v == null){ dot.hidden = true; gh.hidden = false; tr.removeAttribute("aria-valuenow"); return; }
+    dot.hidden = false; gh.hidden = true; dot.style.left = `calc(12px + (100% - 24px) * ${v/10})`;
+    tr.setAttribute("aria-valuenow", v); tr.setAttribute("aria-valuetext", label(q, v));
+  };
+  const at = e => { const r = tr.getBoundingClientRect(); const x = (e.clientX - r.left - 12) / (r.width - 24);
+    S.scale[q.n] = Math.max(0, Math.min(10, Math.round(x*10))); show(); };
+  let down = false;
+  tr.addEventListener("pointerdown", e => { down = true; tr.setPointerCapture(e.pointerId); at(e); });
+  tr.addEventListener("pointermove", e => { if (down) at(e); });
+  tr.addEventListener("pointerup", () => { down = false; save(); });
+  tr.addEventListener("keydown", e => {
+    const v = S.scale[q.n] ?? 5;
+    if (e.key==="ArrowLeft"||e.key==="ArrowDown"){ S.scale[q.n]=Math.max(0,v-1); e.preventDefault(); }
+    else if (e.key==="ArrowRight"||e.key==="ArrowUp"){ S.scale[q.n]=Math.min(10,v+1); e.preventDefault(); }
+    else return; show(); save();
+  });
+  show();
+}
+function label(q, v){
+  if (v === 5) return "Right in the middle";
+  const side = v < 5 ? q.scale.l : q.scale.r, d = Math.abs(v-5);
+  return (d >= 4 ? "Strongly: " : d >= 2 ? "Leaning to: " : "Slightly: ") + side;
+}
+
+/* ---------- winners and losers ---------- */
+function drawSorter(){
+  const box = $("#sorter"); if (!box) return;
+  box.innerHTML = S.people.map((x,i) => `<button class="chip ${x.s}" data-i="${i}">${esc(x.p)}${x.s?` <span class="tag">${TAG[x.s]}</span>`:""}${i>=PEOPLE.length?`<span class="x" data-del="${i}" aria-label="Remove">×</span>`:""}</button>`).join("");
+  box.querySelectorAll(".chip").forEach(b => b.addEventListener("click", e => {
+    const i = +b.dataset.i;
+    if (e.target.dataset.del){ S.people.splice(i,1); }
+    else { const x = S.people[i]; x.s = STATES[(STATES.indexOf(x.s)+1) % STATES.length]; }
+    save(); drawSorter();
+  }));
+  const c = k => S.people.filter(x=>x.s===k).length;
+  $("#tally").innerHTML = `<span style="color:var(--win)">${c("win")} win</span><span style="color:var(--lose)">${c("lose")} lose</span><span style="color:var(--both)">${c("both")} both</span>`;
+}
+function wireSorterAdd(){
+  const add = () => { const v = $("#personIn").value.trim(); if (!v) return;
+    S.people.push({p:v, s:""}); $("#personIn").value=""; save(); drawSorter(); };
+  $("#personAdd").addEventListener("click", add);
+  $("#personIn").addEventListener("keydown", e => { if (e.key==="Enter") add(); });
+}
+
+/* ---------- push and pull ---------- */
+function drawPP(){
+  ["push","pull"].forEach(side => {
+    const items = S.pp.map((x,i)=>({...x,i})).filter(x=>x.side===side);
+    document.getElementById(side==="push"?"ppPush":"ppPull").innerHTML = items.length ? items.map(x =>
+      `<span class="chip ${x.strong?"strong":""}"><button class="s" data-star="${x.i}" aria-label="Strongest">${x.strong?"★":"☆"}</button><span data-flip="${x.i}" style="cursor:pointer">${esc(x.t)}</span><button class="x" data-del="${x.i}" aria-label="Remove">×</button></span>`).join("")
+      : `<div class="empty">Nothing yet</div>`;
+  });
+  document.querySelectorAll("[data-star]").forEach(b=>b.onclick=()=>{const x=S.pp[+b.dataset.star]; x.strong=!x.strong; save(); drawPP();});
+  document.querySelectorAll("[data-flip]").forEach(b=>b.onclick=()=>{const x=S.pp[+b.dataset.flip]; x.side=x.side==="push"?"pull":"push"; save(); drawPP();});
+  document.querySelectorAll(".col [data-del]").forEach(b=>b.onclick=()=>{S.pp.splice(+b.dataset.del,1); save(); drawPP();});
+}
+function wirePP(){
+  document.querySelectorAll(".pp-add .btn").forEach(b => b.addEventListener("click", () => {
+    const v = $("#ppIn").value.trim(); if (!v){ $("#ppIn").focus(); return; }
+    S.pp.push({t:v, side:b.dataset.side, strong:false}); $("#ppIn").value=""; save(); drawPP(); $("#ppIn").focus();
+  }));
+  $("#ppIn").addEventListener("keydown", e => { if (e.key==="Enter"){ e.preventDefault(); document.querySelector(".pp-add .btn.push").click(); } });
+}
+
+/* ---------- discuss ---------- */
+function drawDiscuss(){
+  $("#stances").innerHTML = Q.filter(q=>q.type==="scale").map(q => {
+    const v = S.scale[q.n];
+    return `<div class="stance"><div class="lab"><span>${q.n} · ${esc(q.scale.short)}</span><button class="btn ghost" data-hold="${q.n}">Hold up</button></div>
+      <div class="mini"><div class="line"></div>${v==null?`<div class="none">no dot yet</div>`:`<div class="dot" style="left:calc(8px + (100% - 16px) * ${v/10})"></div>`}</div>
+      <div class="mini-ends"><span>${esc(q.scale.l)}</span><span>${esc(q.scale.r)}</span></div></div>`;
+  }).join("");
+  document.querySelectorAll("[data-hold]").forEach(b => b.addEventListener("click", () => hold(+b.dataset.hold)));
+
+  const missed = Q.filter(q=>S.miss[q.n]);
+  $("#catch").innerHTML = missed.length ? `<ul class="plain">${missed.map(q=>`<li><b>${q.n}.</b> ${esc(q.t)}</li>`).join("")}</ul>
+      <p class="hint">Ask: “What did you get for question ${missed[0].n}? I missed that part.”</p>`
+    : `<p class="hint" style="margin:0">Nothing marked. Lucky you: someone else may need your notes.</p>`;
+
+  const starred = Q.filter(q=>S.star[q.n]);
+  const strong = S.pp.filter(x=>x.strong), wins = S.people.filter(x=>x.s==="win"||x.s==="both").map(x=>x.p), loses = S.people.filter(x=>x.s==="lose"||x.s==="both").map(x=>x.p);
+  let h = starred.length ? starred.map(q=>`<p><span class="note-q">${q.n}. ${esc(q.t)}</span><br><span class="note-a">${esc((S.notes[q.n]||"").trim()||"(no notes yet)")}</span></p>`).join("")
+    : `<p class="hint">Nothing marked yet. Go back and tap <b>Talk about this</b> on two or three questions.</p>`;
+  if (strong.length) h += `<p><b>Strongest factors:</b> ${strong.map(x=>`${esc(x.t)} (${x.side})`).join(", ")}</p>`;
+  if (wins.length || loses.length) h += `<p><b>Wins:</b> ${wins.map(esc).join(", ")||"–"}<br><b>Loses:</b> ${loses.map(esc).join(", ")||"–"}</p>`;
+  $("#talk").innerHTML = h;
+}
+function hold(n){
+  const q = Q.find(x=>x.n===n), v = S.scale[n];
+  $("#holdQ").textContent = `${q.n} · ${q.scale.short}`;
+  $("#holdL").textContent = q.scale.l; $("#holdR").textContent = q.scale.r;
+  if (v == null){ $("#holdN").textContent = "?"; $("#holdSide").textContent = "Place your dot first (question "+n+")"; $("#holdDot").style.display="none"; }
+  else { $("#holdN").textContent = v; $("#holdSide").textContent = label(q, v); $("#holdDot").style.display=""; $("#holdDot").style.left = (v*10)+"%"; }
+  $("#hold").classList.add("on");
+}
+$("#holdClose").addEventListener("click", ()=>$("#hold").classList.remove("on"));
+document.addEventListener("keydown", e => { if (e.key==="Escape") $("#hold").classList.remove("on"); });
+
+function asText(){
+  const L = ["Leaving Home: my notes", ""];
+  Q.forEach(q => {
+    L.push(`${q.n}. ${q.t}`);
+    if (q.type==="scale" && S.scale[q.n]!=null) L.push(`   Where I stand: ${S.scale[q.n]}/10 (${label(q,S.scale[q.n])})`);
+    if (q.type==="sorter"){ ["win","lose","both"].forEach(k=>{ const p=S.people.filter(x=>x.s===k).map(x=>x.p); if(p.length) L.push(`   ${TAG[k]}: ${p.join(", ")}`); }); }
+    if (q.type==="pushpull"){ ["push","pull"].forEach(k=>{ const p=S.pp.filter(x=>x.side===k).map(x=>x.t+(x.strong?" (strongest)":"")); if(p.length) L.push(`   ${k}: ${p.join(", ")}`); }); }
+    if ((S.notes[q.n]||"").trim()) L.push("   " + S.notes[q.n].trim().replace(/\n/g,"\n   "));
+    if (S.miss[q.n]) L.push("   (missed it in the video)");
+    L.push("");
+  });
+  return L.join("\n");
+}
+$("#copy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(asText()); toast("Copied"); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=asText(); document.body.appendChild(ta); ta.select(); try{document.execCommand("copy"); toast("Copied");}catch(_){toast("Couldn't copy");} ta.remove(); }
+});
+$("#clear").addEventListener("click", () => {
+  if (!confirm("Clear all your notes on this page?")) return;
+  S = fresh(); save(); render(); setTab("watch");
+});
+
+function setTab(t){
+  S.tab = t; save();
+  $("#watch").hidden = t!=="watch"; $("#discuss").hidden = t!=="discuss";
+  $("#tWatch").classList.toggle("on", t==="watch"); $("#tDiscuss").classList.toggle("on", t==="discuss");
+  if (t==="discuss") drawDiscuss();
+  window.scrollTo({top:0});
+}
+$("#tWatch").addEventListener("click", ()=>setTab("watch"));
+$("#tDiscuss").addEventListener("click", ()=>setTab("discuss"));
+
+render(); setTab(S.tab || "watch");
+</script>
+</body>
+</html>
