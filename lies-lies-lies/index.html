@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="../fonts/fonts.css">
 <style>
 :root{
-  --ink:#1d1b26; --muted:#615d70; --line:#e2dfea; --bg:#f5f3f9; --card:#fff;
+  --ink:#16141f; --muted:#4a4659; --line:#e2dfea; --bg:#f5f3f9; --card:#fff;
   --true:#1f8a4c; --true-l:#e3f5ea; --lie:#c0392b; --lie-l:#fbe9e7; --acc:#5b3cc4; --acc-d:#43299a; --acc-l:#ece7fb;
   --a:#ffcf4a; --b:#59c3ff;
 }
@@ -17,12 +17,12 @@ button,input,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
 h1,h2,.display{font-family:"Rethink Sans","Instrument Sans",system-ui,sans-serif}
 
-header.top{background:radial-gradient(circle at 15% 0%,#7c5cf0,transparent 55%),linear-gradient(135deg,var(--acc),#2a1863);color:#fff;padding:24px 16px 18px}
+header.top{background:linear-gradient(135deg,#3d2391,#241256);color:#fff;padding:24px 16px 18px}
 header.top .in{max-width:880px;margin:0 auto}
 .kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
 header.top h1{margin:.05em 0 .15em;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;font-weight:700}
 header.top h1 span{display:inline-block;transform:rotate(-3deg);background:var(--lie);padding:0 .25em;border-radius:6px;margin-left:.1em}
-header.top p{margin:0;max-width:660px;opacity:.93}
+header.top p{margin:0;max-width:660px;font-size:1.05rem;line-height:1.5}
 
 .bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .bar .in{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -46,17 +46,17 @@ input:focus,textarea:focus{outline:2px solid var(--acc-l);border-color:var(--acc
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 
 /* the slip */
-.slip{position:relative;background:#fffdf3;border:1px dashed #cbbf8f;border-radius:6px;padding:16px 18px;margin:6px 0 14px;box-shadow:0 2px 8px rgba(60,40,0,.08)}
-.slip .lab{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8a7a3c;font-weight:700}
+.slip{position:relative;background:#fff;border:2px solid var(--line);border-radius:6px;padding:16px 18px;margin:6px 0 14px;box-shadow:0 2px 8px rgba(60,40,0,.08)}
+.slip .lab{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .slip h3{margin:.15em 0 .3em;font-size:1.3rem;font-family:"Rethink Sans",system-ui,sans-serif}
-.slip p{margin:0}
-.slip .secret{position:absolute;top:10px;right:12px;font-size:.72rem;font-weight:700;color:var(--true);background:var(--true-l);border-radius:999px;padding:2px 9px}
+.slip p{margin:0;font-size:1.05rem;line-height:1.55;color:var(--ink)}
+.slip .secret{position:absolute;top:10px;right:12px;font-size:.75rem;font-weight:800;letter-spacing:.06em;color:#fff;background:var(--true);border-radius:999px;padding:3px 10px}
 
 /* fields */
 .fields{display:grid;gap:12px}
 .field label{display:block;font-weight:600;font-size:.95rem;margin-bottom:3px}
 .field .hint{font-size:.8rem;color:var(--muted);margin:0 0 4px}
-.tips{background:var(--acc-l);border-radius:12px;padding:12px 16px;margin:0 0 14px;font-size:.92rem}
+.tips{background:#f1eefb;border-left:4px solid var(--acc);border-radius:10px;padding:12px 16px;margin:0 0 14px;font-size:1rem;color:var(--ink)}
 .tips b{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--acc-d);margin-bottom:4px}
 .tips ul{margin:0;padding-left:1.1em} .tips li{margin:2px 0}
 
@@ -67,6 +67,7 @@ input:focus,textarea:focus{outline:2px solid var(--acc-l);border-color:var(--acc
 .pc.A{border-color:var(--a)} .pc.A .badge{background:var(--a)}
 .pc.B{border-color:var(--b)} .pc.B .badge{background:var(--b)}
 .pc h3{margin:0 0 6px;font-size:clamp(1.2rem,2.6vw,1.7rem);font-family:"Rethink Sans",system-ui,sans-serif;line-height:1.15}
+.pc p{font-size:1.05rem;line-height:1.55;color:var(--ink)}
 .pc ul{margin:0;padding-left:1.1em} .pc li{margin:3px 0}
 .pc .stamp{position:absolute;right:12px;bottom:12px;transform:rotate(-10deg) scale(.4);opacity:0;transition:all .35s cubic-bezier(.2,1.6,.4,1);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-family:"Rethink Sans",system-ui,sans-serif;font-size:clamp(1.2rem,3vw,2rem);border:4px solid;border-radius:10px;padding:2px 12px;background:rgba(255,255,255,.88)}
 .revealed .pc .stamp{opacity:1;transform:rotate(-10deg) scale(1)}
@@ -103,7 +104,8 @@ footer{max-width:880px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:v
   :root{--ink:#ece9f5;--muted:#a7a2b8;--line:#332f42;--bg:#14121b;--card:#1d1a27;--acc-l:#2a2347;--true-l:#16301f;--lie-l:#3a1e1b}
   .bar{background:rgba(29,26,39,.96)} .tabs,.btn.ghost,.pc,.cnt button,.seg2 button{background:#1d1a27}
   input[type=text],input[type=number],textarea{background:#17151f}
-  .slip{background:#2a2617;border-color:#6b5e2e} .slip .lab{color:#d9c37a}
+  .slip{background:#1d1a27} .tips{background:#241f38}
+  .btn.ghost{color:#d4c8ff;border-color:#8f78ee}
   .pc .stamp{background:rgba(29,26,39,.9)}
 }
 </style>
@@ -226,7 +228,7 @@ function drawPlay(){
     <section class="card"><h2>2 · Pick your lie</h2>
       <p class="sub">Neither of these exists. Choose the one you can sell best.</p>
       <div class="duo">${S.offer.map((i, k) => { const f = FAKES[i], on = S.fake === i;
-        return `<div class="slip" style="margin:0;${on ? "outline:3px solid var(--acc);" : ""}"><span class="secret" style="color:var(--lie);background:var(--lie-l)">FAKE</span>
+        return `<div class="slip" style="margin:0;${on ? "border-color:var(--acc);box-shadow:0 0 0 3px var(--acc-l);" : ""}"><span class="secret" style="background:var(--lie)">FAKE</span>
           <div class="lab">Lie ${k + 1}</div><h3>${esc(f.name)}</h3><p>${esc(f.fact)}</p>
           <div class="row" style="margin-top:10px"><button class="btn ${on ? "" : "ghost"}" data-use="${i}">${on ? "✓ My lie" : "Use this one"}</button></div></div>`; }).join("")}</div>
       <div class="row" style="margin-top:12px"><button class="btn ghost" id="others">Show me two others</button>
