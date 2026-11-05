@@ -167,7 +167,6 @@ const DEFAULT = {
     ["used", "What it's used for", "Who uses it now: brands, products, industries."],
     ["detail", "One very convincing detail", "A number, a date, a price or a small problem it still has."]
   ],
-  research: ["Where does it come from, and who makes it?", "How is it made?", "What is it used for, and by whom?", "One surprising detail or number"],
   tips: ["Be specific: numbers, dates and real places make a lie believable.", "Give it a small problem (“it still smells a bit”): perfect things sound fake.", "Make both talks the same length and give them the same confidence.", "Don't laugh. Decide now who says which one."]
 };
 /* ---------- sets: ?set=<slug> loads sets/<slug>.json; without it, the example above ---------- */
@@ -212,20 +211,16 @@ function drawReal(){
   const it = mine();
   $("#v-real").innerHTML = `
     <section class="card how"><h2>How it works</h2><ol>
-      <li>The app gives you a real ${esc(SET.what)}. Find out a bit more about it.</li>
+      <li>The app gives you a real ${esc(SET.what)}. Keep it secret.</li>
       <li>Then choose one of two made-up ${esc(SET.whats)} the app offers you, and make it sound just as real.</li>
       <li>Tell another pair or the class about A and B. They guess which one is real.</li>
       <li>Hold to reveal. Then shuffle and play again.</li></ol></section>
     <section class="card"><h2>Your real ${esc(SET.what)}</h2>
-      <div class="slip"><span class="secret">REAL</span><div class="lab">Keep it secret</div><h3>${esc(it.name)}</h3><p>${esc(it.fact)}</p></div>
+      <div class="slip"><span class="secret">REAL</span><div class="lab">Your real ${esc(SET.what)}</div><h3>${esc(it.name)}</h3><p>${esc(it.fact)}</p></div>
       <div class="row"><button class="btn ghost" id="shuf">🔀 Shuffle: give us another one</button><span class="small">Don't show your screen to the others.</span></div>
     </section>
-    <section class="card"><h2>Find out more</h2><p class="sub">Look it up and make a few notes. The more detail, the more believable.</p>
-      <div class="fields">${SET.research.map((q,i)=>`<div class="field"><label for="r${i}">${esc(q)}</label><textarea id="r${i}" data-r="${i}"></textarea></div>`).join("")}</div>
-      <div class="row" style="margin-top:12px"><button class="btn" data-go="fake">Now choose your lie →</button></div></section>`;
-  $("#shuf").onclick = () => { if (Object.values(S.notes).some(x => x && x.trim()) && !confirm("Shuffle? Your notes on this one will go.")) return;
-    shuffleReal(); save(); drawReal(); toast("New real one!"); };
-  document.querySelectorAll("[data-r]").forEach(t => { t.value = S.notes[t.dataset.r] || ""; t.oninput = () => { S.notes[t.dataset.r] = t.value; save(); }; });
+    <div class="row" style="margin:0 0 16px"><button class="btn" data-go="fake">Now choose your lie →</button></div>`;
+  $("#shuf").onclick = () => { shuffleReal(); save(); drawReal(); toast("New real one!"); };
   wireGo();
 }
 function drawFake(){
@@ -240,7 +235,7 @@ function drawFake(){
       <div class="row" style="margin-top:12px"><button class="btn ghost" id="others">Show us two others</button>
         <button class="btn ghost" id="own">Write our own</button></div></section>
     <section class="card"><h2>Make it convincing</h2>
-      <p class="sub">${chosen ? "Add details so it sounds as real as your real one." : "Choose a lie above, or write your own here."}</p>
+      <p class="sub">${chosen ? "Add a detail or two if you like, so it sounds as real as your real one." : "Choose a lie above, or write your own here."}</p>
       <div class="tips"><b>How to lie well</b><ul>${SET.tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
       <div class="fields">${SET.fake.map(([k,l,h])=>`<div class="field"><label for="f-${k}">${esc(l)}</label><p class="hint">${esc(h)}</p>
         ${k==="name" ? `<input type="text" id="f-${k}" data-k="${k}">` : `<textarea id="f-${k}" data-k="${k}"></textarea>`}</div>`).join("")}</div>
@@ -254,7 +249,7 @@ function drawFake(){
 }
 function cards(){
   const it = mine();
-  const real = {h: it.name, pts: [it.fact, ...SET.research.map((_,i)=>S.notes[i])].filter(x=>x&&x.trim()), real:true};
+  const real = {h: it.name, pts: [it.fact], real:true};
   const fake = {h: S.fake.name || "(your lie: choose one on tab 2)", pts: [S.fake.story, ...SET.fake.filter(([k])=>k!=="name").map(([k])=>S.fake[k])].filter(x=>x&&x.trim()), real:false};
   return S.first === "real" ? [real, fake] : [fake, real];
 }
