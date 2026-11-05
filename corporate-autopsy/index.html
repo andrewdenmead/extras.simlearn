@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corporate Autopsy</title>
+<style>
+:root{
+  --teal:#0f6e6e; --teal-d:#0a4f50; --teal-l:#e2f2f1; --scrub:#2a8c8a;
+  --ink:#1b2430; --muted:#5d6b7c; --line:#dfe5ee; --bg:#eef3f3; --card:#fff;
+  --tag:#f6ecd2; --tag-ink:#3a2f14; --red:#b3261e; --red-l:#fbe9e7; --ok:#1f8a4c; --ok-l:#e4f5ea;
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+
+header.top{background:linear-gradient(135deg,var(--scrub),var(--teal-d));color:#fff;padding:24px 16px 18px}
+header.top .in{max-width:900px;margin:0 auto}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+header.top h1{margin:.1em 0 .15em;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15}
+header.top p{margin:0;max-width:680px;opacity:.93}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:900px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff;flex-wrap:wrap}
+.tabs button{border:0;background:none;padding:6px 13px;font-size:.88rem}
+.tabs button.on{background:var(--teal);color:#fff}
+.vitals{margin-left:auto;font-size:.82rem;color:var(--muted);white-space:nowrap}
+
+.wrap{max-width:900px;margin:0 auto;padding:18px 16px 110px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:16px;box-shadow:0 1px 2px rgba(10,40,40,.04)}
+.card h2{margin:0 0 2px;font-size:1.15rem;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.card h2 .n{color:var(--teal);font-weight:800}
+.card .sub{margin:0 0 10px;color:var(--muted);font-size:.92rem}
+textarea{width:100%;min-height:70px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fbfdfd;resize:vertical;line-height:1.45}
+input[type=text],select{width:100%;border:1px solid var(--line);border-radius:10px;padding:7px 10px;background:#fbfdfd}
+textarea:focus,input:focus,select:focus{outline:2px solid var(--teal-l);border-color:var(--teal)}
+.btn{border:1px solid var(--teal);background:var(--teal);color:#fff;border-radius:999px;padding:6px 15px;font-size:.9rem}
+.btn.ghost{background:#fff;color:var(--teal-d)}
+.small{font-size:.82rem;color:var(--muted)}
+
+/* toe tag */
+.tag{position:relative;background:var(--tag);color:var(--tag-ink);border-radius:10px 26px 26px 10px;padding:16px 18px 14px 54px;margin-bottom:16px;box-shadow:0 2px 6px rgba(60,40,0,.12);border:1px solid #e4d5ad}
+.tag::before{content:"";position:absolute;left:18px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:var(--bg);box-shadow:inset 0 1px 3px rgba(0,0,0,.25)}
+.tag::after{content:"";position:absolute;left:-40px;top:50%;width:62px;height:2px;background:#b9a678;transform:rotate(-8deg)}
+.tag h2{margin:0 0 8px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.tag .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.tag label{display:block;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+.tag input,.tag select{background:rgba(255,255,255,.75);border-color:#e0cf9f}
+.corpses{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 4px}
+.corpse{border:1px solid #d9c690;background:rgba(255,255,255,.6);border-radius:999px;padding:3px 11px;font-size:.85rem}
+.corpse.on{background:var(--tag-ink);color:var(--tag);border-color:var(--tag-ink)}
+
+/* conditions */
+.conds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cond{border:2px solid var(--line);border-radius:14px;padding:12px;background:#fff;transition:border-color .15s,background .15s}
+.cond.on{border-color:var(--red);background:var(--red-l)}
+.cond .top{display:flex;gap:10px;align-items:center}
+.cond .chk{flex:none;width:28px;height:28px;border-radius:8px;border:2px solid var(--muted);background:#fff;display:grid;place-items:center;font-weight:800;color:#fff;padding:0}
+.cond.on .chk{background:var(--red);border-color:var(--red)}
+.cond .name{font-weight:700;flex:1}
+.cond .def{font-size:.88rem;color:var(--muted);margin:8px 0}
+.cond .def b{color:var(--ink)}
+.cond textarea{min-height:56px;display:none}
+.cond.on textarea{display:block}
+.cond .q{border:0;background:none;color:var(--teal-d);font-size:.82rem;padding:0;text-decoration:underline}
+
+/* signs timeline */
+.tl{position:relative;margin:6px 0 10px;padding-left:22px}
+.tl::before{content:"";position:absolute;left:7px;top:4px;bottom:4px;width:3px;border-radius:2px;background:linear-gradient(var(--ok),#e0b000,var(--red))}
+.sign{position:relative;display:grid;grid-template-columns:92px 1fr auto;gap:8px;align-items:start;margin-bottom:8px}
+.sign::before{content:"";position:absolute;left:-20px;top:11px;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.sign .x{border:0;background:none;color:var(--muted);font-size:1.1rem;padding:4px}
+.sign textarea{min-height:40px}
+.empty{font-size:.88rem;color:var(--muted);margin:4px 0}
+
+/* factors */
+.factors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.factor h3{margin:0 0 4px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d)}
+.factor textarea{min-height:64px}
+
+/* certificate */
+.cert{background:#fffdf7;color:#2a2418;border:10px double #8d7b4f;border-radius:6px;padding:26px 24px 22px;font-family:Georgia,"Times New Roman",serif;max-width:760px;margin:0 auto;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+.cert .head{text-align:center;border-bottom:1px solid #cdbf98;padding-bottom:10px;margin-bottom:12px}
+.cert .head .k{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#7a6a40}
+.cert .head h2{margin:.15em 0 0;font-size:clamp(1.4rem,4vw,2rem);letter-spacing:.04em}
+.cert dl{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:8px 14px;margin:0}
+.cert dt{font-family:system-ui,sans-serif;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#7a6a40;padding-top:3px}
+.cert dd{margin:0;white-space:pre-wrap;line-height:1.45}
+.cert .blank{color:#b3a77f;font-style:italic}
+.cert .stamp{margin:18px 0 0 auto;width:max-content;max-width:100%;border:3px solid var(--red);color:var(--red);font-family:system-ui,sans-serif;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:6px;transform:rotate(-4deg);opacity:.85}
+.cert .stamp.pending{border-color:#b3a77f;color:#b3a77f}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:14px 0}
+
+/* terms check */
+.quiz .item{border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;background:#fff}
+.quiz .say{font-style:italic;margin-bottom:8px}
+.quiz .opts{display:flex;flex-wrap:wrap;gap:6px}
+.quiz .opts button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font-size:.86rem}
+.quiz .opts button.right{background:var(--ok-l);border-color:var(--ok);color:var(--ok);font-weight:700}
+.quiz .opts button.wrong{background:var(--red-l);border-color:var(--red);color:var(--red);text-decoration:line-through}
+.quiz .why{font-size:.86rem;color:var(--muted);margin-top:6px;display:none}
+.quiz .item.done .why{display:block}
+.score{font-weight:700;color:var(--teal-d)}
+
+/* presentation */
+.present{position:fixed;inset:0;z-index:50;background:#20302f;overflow:auto;display:none;padding:56px 16px 30px}
+.present.on{display:block}
+.present .cert{font-size:1.15rem;max-width:980px}
+.present .close{position:fixed;top:12px;right:12px;background:rgba(255,255,255,.15);color:#fff;border:0;border-radius:999px;padding:6px 14px;z-index:51}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+footer{max-width:900px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:var(--muted)}
+
+@media (max-width:640px){
+  .tag{padding-left:46px}
+  .tag .grid,.conds,.factors{grid-template-columns:1fr}
+  .sign{grid-template-columns:72px 1fr auto}
+  .cert{padding:18px 14px;border-width:7px}
+  .cert dl{grid-template-columns:1fr;gap:2px}
+  .cert dd{margin-bottom:10px}
+}
+@media print{
+  header.top,.bar,.row-btns,footer,#view-report,#view-terms,.toast{display:none!important}
+  #view-cert{display:block!important} body{background:#fff}
+  .cert{box-shadow:none}
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e7ecf3;--muted:#9fb0b3;--line:#2c3b3d;--bg:#111a1b;--card:#182325;--teal-l:#163634;--red-l:#3a1e1b;--ok-l:#16301f}
+  .bar{background:rgba(24,35,37,.96)} .tabs,.btn.ghost,.cond,.cond .chk,.quiz .item,.quiz .opts button{background:#182325}
+  textarea,input[type=text],select{background:#121c1d}
+  .cond.on{background:var(--red-l)}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="kicker">Forensic report · Group task</div>
+  <h1>Corporate Autopsy</h1>
+  <p>Your group has a corpse: a once-successful company that failed. Find out what killed it, which conditions it had, and what the warning signs were. Then issue the death certificate.</p>
+</div></header>
+
+<div class="bar"><div class="in">
+  <div class="tabs" role="tablist">
+    <button data-v="report" class="on">1 · The examination</button>
+    <button data-v="terms">2 · Know your terms</button>
+    <button data-v="cert">3 · Death certificate</button>
+  </div>
+  <span class="vitals" id="vitals"></span>
+</div></div>
+
+<main class="wrap" id="view-report">
+  <section class="tag" aria-label="Toe tag">
+    <h2>Toe tag</h2>
+    <label>The deceased</label>
+    <div class="corpses" id="corpses"></div>
+    <div class="grid">
+      <div><label for="f-name">Name</label><input type="text" id="f-name" data-f="name" placeholder="or type another company"></div>
+      <div><label for="f-industry">Industry</label><input type="text" id="f-industry" data-f="industry" placeholder="e.g. retail, airline"></div>
+      <div><label for="f-tod">Estimated time of death</label><input type="text" id="f-tod" data-f="tod" placeholder="year or period"></div>
+      <div><label for="f-exam">Chief examiner(s)</label><input type="text" id="f-exam" data-f="examiners" placeholder="your names"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">1</span> Immediate cause of death</h2>
+    <p class="sub">What finally killed the company? Be specific: the event, the date, the decision.</p>
+    <textarea data-f="cause" placeholder="e.g. In … it ran out of cash when …"></textarea>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">2</span> Underlying conditions</h2>
+    <p class="sub">Tick every condition you find and give the evidence. Your report needs at least one. Not sure what a term means? Check it on <b>Know your terms</b>.</p>
+    <div class="conds" id="conds"></div>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">3</span> The warning signs</h2>
+    <p class="sub">The symptoms, in order: when did the first signs appear, and what were they?</p>
+    <div class="tl" id="signs"></div>
+    <button class="btn ghost" id="addSign">+ Add a sign</button>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">4</span> Missed treatments and failed interventions</h2>
+    <p class="sub">What could have helped, but didn't happen or came too late?</p>
+    <textarea data-f="missed" placeholder="e.g. It could have … but …"></textarea>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">5</span> Contributing environmental factors</h2>
+    <p class="sub">What changed outside the company that made survival harder?</p>
+    <div class="factors">
+      <div class="factor"><h3>Market</h3><textarea data-f="env_market" placeholder="competitors, prices, the economy…"></textarea></div>
+      <div class="factor"><h3>Technology</h3><textarea data-f="env_tech" placeholder="new products, platforms…"></textarea></div>
+      <div class="factor"><h3>Customers</h3><textarea data-f="env_cust" placeholder="what people wanted, how they bought…"></textarea></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="n">6</span> Verdict</h2>
+    <p class="sub">One sentence for the certificate: could the company have been saved?</p>
+    <select data-f="verdict">
+      <option value="">Choose a verdict…</option>
+      <option>Preventable death: it could have been saved</option>
+      <option>Partly preventable: it could have lived longer</option>
+      <option>Natural causes: the market moved on and nothing could save it</option>
+      <option>Death by misadventure: bad luck and bad decisions together</option>
+    </select>
+    <textarea data-f="verdict_why" style="margin-top:8px;min-height:56px" placeholder="Because…"></textarea>
+    <div class="row-btns"><button class="btn" data-go="cert">Issue the death certificate →</button></div>
+  </section>
+</main>
+
+<main class="wrap" id="view-terms" hidden>
+  <section class="card">
+    <h2>The four conditions</h2>
+    <p class="sub">Your report must use at least one of these terms, so make sure you know what they mean.</p>
+    <div id="defs"></div>
+  </section>
+  <section class="card quiz">
+    <h2>Diagnose the symptom <span class="score" id="score"></span></h2>
+    <p class="sub">Invented companies, real symptoms. Which condition is each manager showing? Some could be more than one, so choose the best fit, then read why.</p>
+    <div id="quiz"></div>
+    <div class="row-btns"><button class="btn ghost" id="quizAgain">Shuffle and try again</button></div>
+  </section>
+</main>
+
+<main class="wrap" id="view-cert" hidden>
+  <div id="certBox"></div>
+  <div class="row-btns">
+    <button class="btn" id="present">Show on the projector</button>
+    <button class="btn ghost" id="copy">Copy the report</button>
+    <button class="btn ghost" id="print">Print or save as PDF</button>
+    <button class="btn ghost" id="clear">Start a new autopsy</button>
+  </div>
+</main>
+
+<div class="present" id="presentBox"><button class="close" id="presentClose">Close ✕</button><div id="presentCert"></div></div>
+<div class="toast" id="toast"></div>
+<footer>SimLearn Extras · Your report is saved only in this browser, never sent anywhere.</footer>
+
+<script>
+const KEY = "extras-corporate-autopsy-v1";
+const CORPSES = ["Schlecker","Karstadt","Air Berlin","Nokia (phones)","Kodak","Toys \"R\" Us","Myspace","BlackBerry"];
+const CONDS = [
+  {k:"inertia", name:"Organisational inertia",
+   def:"The organisation keeps doing what it has always done. Its structures, routines, contracts and investments make it slow to change, even when it can see the world changing.",
+   sign:"Everyone agrees something must change, but nothing does, or it happens years too late."},
+  {k:"trap", name:"Competency trap",
+   def:"The company is so good at its current way of doing things that it keeps improving that, and never learns the new way that will replace it. Being good at the old thing makes the new thing look unattractive.",
+   sign:"Record results from the old product while the new one is “too small to matter”."},
+  {k:"rigid", name:"Core rigidities",
+   def:"The flip side of core strengths: the skills, systems and values that made the company successful become the very things that block it when conditions change.",
+   sign:"“That's not who we are” or “that's not what we're good at” said about the thing customers now want."},
+  {k:"logic", name:"Dominant logic",
+   def:"Managers' shared picture of how the business works and makes money. It filters what they notice, so information that doesn't fit the picture is ignored or explained away.",
+   sign:"New evidence is dismissed because it doesn't fit how the industry “really” works."}
+];
+const QUIZ = [
+  {say:"“Our stores are our strength. Online is a niche; our customers like to come in and touch things.” (Head of retail, Brannmark Stores, the year before online sales overtook them)", a:"logic",
+   why:"Dominant logic: the managers' picture of how retail works filters out the evidence that customers are changing."},
+  {say:"“We've known for five years we need a new IT system, but every budget round it gets pushed back. There's always something more urgent.” (CFO, Ostervik Freight)", a:"inertia",
+   why:"Organisational inertia: they can see the need to change, but routines and priorities keep them where they are."},
+  {say:"“Our engineers are the best in the world at making the hardware smaller and tougher. Software is someone else's job.” (CTO, Pellmann Devices)", a:"rigid",
+   why:"Core rigidities: the hardware skills and culture that made them great now block the software skills they need."},
+  {say:"“Why would we spend money on the new format? Our current one gives us 60 per cent margins and we keep making it better every year.” (CEO, Halvane Media)", a:"trap",
+   why:"Competency trap: they keep getting better at the profitable old thing, so the new thing never looks worth learning."},
+  {say:"“We've had the same three suppliers, the same store layout and the same pricing calendar for twenty years. Changing any of it would mean renegotiating everything.” (COO, Dresner Home)", a:"inertia",
+   why:"Organisational inertia: long-term commitments and routines make change slow and expensive, so it doesn't happen."},
+  {say:"“We tried a low-cost brand, but our sales people only know how to sell premium. It felt wrong, so we closed it.” (Sales director, Corrigan Air)", a:"rigid",
+   why:"Core rigidities: the premium selling skills and values that built the company rejected the new model."},
+  {say:"“Every year we're more efficient at printing catalogues than the year before. Our cost per page has never been lower.” (Operations head, Lindqvist Mail Order)", a:"trap",
+   why:"Competency trap: they are getting ever better at something customers are leaving behind."},
+  {say:"“In this industry, the airline with the most routes wins. That's how it has always worked.” (Strategy chief, Volkmar Airways, as low-cost rivals took its customers)", a:"logic",
+   why:"Dominant logic: a fixed belief about how the industry makes money stops them seeing the low-cost model."}
+];
+const NAMES = Object.fromEntries(CONDS.map(c => [c.k, c.name]));
+
+function fresh(){ return {f:{}, cond:{}, ev:{}, signs:[{when:"", what:""}], quiz:{}, order:null, view:"report"}; }
+let S; try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch(e){ S = fresh(); }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} vitals(); }
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("on"),1600); }
+
+/* ---------- the examination ---------- */
+function drawCorpses(){
+  $("#corpses").innerHTML = CORPSES.map(c => `<button class="corpse ${S.f.name===c?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  document.querySelectorAll(".corpse").forEach(b => b.onclick = () => { S.f.name = b.dataset.c; $("#f-name").value = S.f.name; save(); drawCorpses(); });
+}
+function drawConds(){
+  $("#conds").innerHTML = CONDS.map(c => `
+    <div class="cond ${S.cond[c.k]?"on":""}" id="c-${c.k}">
+      <div class="top"><button class="chk" data-k="${c.k}" aria-pressed="${!!S.cond[c.k]}" aria-label="${esc(c.name)}">${S.cond[c.k]?"✓":""}</button><span class="name">${esc(c.name)}</span></div>
+      <div class="def">${esc(c.def)}</div>
+      <textarea data-ev="${c.k}" placeholder="The evidence: what did the company do or say?"></textarea>
+    </div>`).join("");
+  document.querySelectorAll(".cond .chk").forEach(b => b.onclick = () => { S.cond[b.dataset.k] = !S.cond[b.dataset.k]; save(); drawConds();
+    if (S.cond[b.dataset.k]) document.querySelector(`[data-ev="${b.dataset.k}"]`).focus(); });
+  document.querySelectorAll("[data-ev]").forEach(t => { t.value = S.ev[t.dataset.ev] || ""; t.oninput = () => { S.ev[t.dataset.ev] = t.value; save(); }; });
+}
+function drawSigns(){
+  const box = $("#signs");
+  if (!S.signs.length) S.signs.push({when:"", what:""});
+  box.innerHTML = S.signs.map((s,i) => `<div class="sign">
+      <input type="text" data-si="${i}" data-sk="when" placeholder="when" value="${esc(s.when)}">
+      <textarea data-si="${i}" data-sk="what" placeholder="the sign">${esc(s.what)}</textarea>
+      <button class="x" data-del="${i}" aria-label="Remove">×</button></div>`).join("");
+  box.querySelectorAll("[data-si]").forEach(el => el.oninput = () => { S.signs[+el.dataset.si][el.dataset.sk] = el.value; save(); });
+  box.querySelectorAll("[data-del]").forEach(b => b.onclick = () => { S.signs.splice(+b.dataset.del, 1); save(); drawSigns(); });
+}
+$("#addSign").onclick = () => { S.signs.push({when:"", what:""}); save(); drawSigns(); document.querySelector(`[data-si="${S.signs.length-1}"][data-sk="when"]`).focus(); };
+function wireFields(){
+  document.querySelectorAll("[data-f]").forEach(el => {
+    el.value = S.f[el.dataset.f] || "";
+    el.addEventListener("input", () => { S.f[el.dataset.f] = el.value; save(); if (el.dataset.f==="name") drawCorpses(); });
+    el.addEventListener("change", () => { S.f[el.dataset.f] = el.value; save(); });
+  });
+}
+function vitals(){
+  const parts = [S.f.cause, Object.values(S.cond).some(Boolean), S.signs.some(s=>s.what.trim()), S.f.missed,
+    S.f.env_market||S.f.env_tech||S.f.env_cust, S.f.verdict].filter(Boolean).length;
+  $("#vitals").textContent = `${S.f.name ? S.f.name + " · " : ""}${parts} of 6 sections`;
+}
+
+/* ---------- know your terms ---------- */
+function drawTerms(){
+  $("#defs").innerHTML = CONDS.map(c => `<p><b>${esc(c.name)}.</b> ${esc(c.def)}<br><span class="small">Typical symptom: ${esc(c.sign)}</span></p>`).join("");
+  if (!S.order) S.order = QUIZ.map((_,i)=>i).sort(()=>Math.random()-.5);
+  $("#quiz").innerHTML = S.order.map(i => { const q = QUIZ[i], got = S.quiz[i];
+    return `<div class="item ${got?"done":""}" data-i="${i}"><div class="say">${esc(q.say)}</div>
+      <div class="opts">${CONDS.map(c => { let cls = ""; if (got){ if (c.k===q.a) cls="right"; else if (c.k===got) cls="wrong"; }
+        return `<button class="${cls}" data-a="${c.k}" ${got?"disabled":""}>${esc(c.name)}</button>`; }).join("")}</div>
+      <div class="why">${esc(q.why)}</div></div>`; }).join("");
+  document.querySelectorAll(".quiz .opts button").forEach(b => b.onclick = () => {
+    const i = +b.closest(".item").dataset.i; S.quiz[i] = b.dataset.a; save(); drawTerms(); });
+  const done = Object.keys(S.quiz).length, right = Object.entries(S.quiz).filter(([i,a]) => QUIZ[i].a===a).length;
+  $("#score").textContent = done ? `${right} of ${done}` : "";
+}
+$("#quizAgain").onclick = () => { S.quiz = {}; S.order = null; save(); drawTerms(); };
+
+/* ---------- death certificate ---------- */
+function v(x, ph){ return (x && String(x).trim()) ? esc(String(x).trim()) : `<span class="blank">${ph}</span>`; }
+function certHTML(){
+  const conds = CONDS.filter(c=>S.cond[c.k]).map(c => `${c.name}${S.ev[c.k]?.trim() ? ": " + S.ev[c.k].trim() : ""}`).join("\n");
+  const signs = S.signs.filter(s=>s.what.trim()).map(s => `${s.when.trim() ? s.when.trim() + " · " : ""}${s.what.trim()}`).join("\n");
+  const env = [["Market",S.f.env_market],["Technology",S.f.env_tech],["Customers",S.f.env_cust]].filter(x=>x[1]&&x[1].trim()).map(x=>`${x[0]}: ${x[1].trim()}`).join("\n");
+  const ok = S.f.name && S.f.cause && Object.values(S.cond).some(Boolean);
+  return `<div class="cert">
+    <div class="head"><div class="k">Office of Corporate Forensics · Certificate of death</div><h2>${v(S.f.name,"Name of the deceased")}</h2></div>
+    <dl>
+      <dt>Industry</dt><dd>${v(S.f.industry,"not recorded")}</dd>
+      <dt>Time of death</dt><dd>${v(S.f.tod,"not recorded")}</dd>
+      <dt>Immediate cause</dt><dd>${v(S.f.cause,"Section 1 is still empty")}</dd>
+      <dt>Underlying conditions</dt><dd>${v(conds,"Tick at least one condition in section 2")}</dd>
+      <dt>Warning signs</dt><dd>${v(signs,"none recorded")}</dd>
+      <dt>Missed treatments</dt><dd>${v(S.f.missed,"none recorded")}</dd>
+      <dt>Contributing factors</dt><dd>${v(env,"none recorded")}</dd>
+      <dt>Verdict</dt><dd>${v([S.f.verdict, S.f.verdict_why].filter(x=>x&&x.trim()).join(". "),"no verdict yet")}</dd>
+      <dt>Examined by</dt><dd>${v(S.f.examiners,"the examiners' names")}</dd>
+    </dl>
+    <div class="stamp ${ok?"":"pending"}">${ok ? "Cause of death confirmed" : "Examination incomplete"}</div>
+  </div>`;
+}
+function asText(){
+  const L = [`CORPORATE AUTOPSY: ${S.f.name||"?"}`, `Industry: ${S.f.industry||""}`, `Time of death: ${S.f.tod||""}`, `Examiners: ${S.f.examiners||""}`, "",
+    "1) Immediate cause of death", S.f.cause||"", "", "2) Underlying conditions",
+    ...CONDS.filter(c=>S.cond[c.k]).map(c=>`- ${c.name}: ${S.ev[c.k]||""}`), "", "3) Warning signs",
+    ...S.signs.filter(s=>s.what.trim()).map(s=>`- ${s.when} ${s.what}`.trim()), "", "4) Missed treatments", S.f.missed||"", "",
+    "5) Environmental factors", `Market: ${S.f.env_market||""}`, `Technology: ${S.f.env_tech||""}`, `Customers: ${S.f.env_cust||""}`, "",
+    "Verdict", [S.f.verdict, S.f.verdict_why].filter(Boolean).join(". ")];
+  return L.join("\n");
+}
+$("#present").onclick = () => { $("#presentCert").innerHTML = certHTML(); $("#presentBox").classList.add("on"); };
+$("#presentClose").onclick = () => $("#presentBox").classList.remove("on");
+document.addEventListener("keydown", e => { if (e.key==="Escape") $("#presentBox").classList.remove("on"); });
+$("#print").onclick = () => window.print();
+$("#copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(asText()); toast("Copied"); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=asText(); document.body.appendChild(ta); ta.select(); try{document.execCommand("copy"); toast("Copied");}catch(_){toast("Couldn't copy");} ta.remove(); }
+};
+$("#clear").onclick = () => { if (!confirm("Clear this report and start a new autopsy?")) return; S = fresh(); save(); init(); setView("report"); };
+
+/* ---------- views ---------- */
+function setView(vw){
+  S.view = vw; save();
+  ["report","terms","cert"].forEach(x => $("#view-"+x).hidden = x!==vw);
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.v===vw));
+  if (vw==="terms") drawTerms();
+  if (vw==="cert") $("#certBox").innerHTML = certHTML();
+  window.scrollTo({top:0});
+}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => setView(b.dataset.v));
+document.querySelectorAll("[data-go]").forEach(b => b.onclick = () => setView(b.dataset.go));
+function init(){ drawCorpses(); drawConds(); drawSigns(); wireFields(); vitals(); }
+init(); setView(S.view || "report");
+</script>
+</body>
+</html>
