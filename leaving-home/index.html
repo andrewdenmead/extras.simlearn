@@ -32,10 +32,13 @@ header.top .video:hover{background:var(--blue-l)}
 .progress{margin-left:auto;font-size:.82rem;color:var(--muted);white-space:nowrap}
 
 .wrap{max-width:860px;margin:0 auto;padding:18px 16px 110px}
-.howto{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:18px;font-size:.92rem;color:var(--muted)}
-.howto b{color:var(--ink)}
-.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
-.legend span{white-space:nowrap}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:18px;font-size:1rem;color:var(--ink)}
+.howto h2{margin:0 0 6px;font-size:1.05rem}
+.howto ul{margin:0;padding-left:1.2em}
+.howto li{margin:5px 0;line-height:1.45}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:0 9px;font-size:.85rem;white-space:nowrap}
+.pill.miss{background:var(--miss-l);border-color:var(--miss)}
+.pill.star{background:var(--star-l);border-color:var(--star);color:var(--star)}
 
 .q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;margin-bottom:16px;box-shadow:0 1px 2px rgba(20,40,80,.04);transition:border-color .2s, box-shadow .2s}
 .q.missed{border-color:var(--miss);box-shadow:0 0 0 3px var(--miss-l)}
@@ -165,8 +168,12 @@ footer{max-width:860px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:v
 
 <main class="wrap" id="watch">
   <div class="howto">
-    <b>While you watch</b>, don't try to catch every word. Note a few words, drag a dot, sort a chip. Missed something? Tap <b>Missed it</b> and you'll swap notes with someone later. Tap <b>Talk about this</b> for the questions you most want to discuss.
-    <div class="legend"><span>● dot = where you stand</span><span>Tap a chip to change it</span><span>★ = strongest</span></div>
+    <h2>While you watch</h2>
+    <ul>
+      <li><b>Don't try to catch every word.</b> A few words, a dot or a chip is enough.</li>
+      <li><b>Missed something?</b> Tap <span class="pill miss">Missed it</span> and swap notes with someone afterwards.</li>
+      <li><b>Want to discuss it?</b> Tap <span class="pill star">Talk about this</span></li>
+    </ul>
   </div>
   <div id="qs"></div>
 </main>
