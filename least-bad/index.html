@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Least Bad to Worst</title>
+<style>
+:root{
+  --blue:#1f5fbf; --blue-d:#174a96; --blue-l:#e8f0fc;
+  --ink:#1b2430; --muted:#5d6b7c; --line:#dfe5ee; --bg:#f4f7fb; --card:#fff;
+  --good:#3c9a5f; --bad:#c0392b;
+  --y:#fff59a; --o:#ffd59a; --p:#ffc3dd; --g:#c8f2b8; --b:#bfe3ff; --v:#e0cffc;
+  --note-ink:#2a2410;
+}
+*{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+
+header.top{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;padding:24px 16px 18px}
+header.top .in{max-width:1200px;margin:0 auto}
+.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+header.top h1{margin:.1em 0 .15em;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15}
+header.top p{margin:0;max-width:720px;opacity:.92}
+
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1200px;margin:0 auto;padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:6px 14px;font-size:.9rem}
+.seg button.on{background:var(--blue);color:#fff}
+.count{font-size:.85rem;color:var(--muted);white-space:nowrap}
+.spacer{flex:1}
+.btn{border:1px solid var(--blue);background:var(--blue);color:#fff;border-radius:999px;padding:6px 14px;font-size:.88rem}
+.btn.ghost{background:#fff;color:var(--blue-d)}
+.btn:disabled{opacity:.45;cursor:default}
+
+.wrap{max-width:1200px;margin:0 auto;padding:16px 16px 110px}
+.howto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:16px}
+.howto h2{margin:0 0 6px;font-size:1.05rem}
+.howto ul{margin:0;padding-left:1.2em}
+.howto li{margin:4px 0}
+
+/* the stage: the note being placed (projector) */
+.stage{display:none;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:6px 0 18px}
+body.proj .stage{display:flex}
+.stage .note{font-size:clamp(1.3rem,3vw,2.1rem);width:min(420px,90vw);min-height:150px;transform:rotate(-1.5deg)}
+.stage .ctl{display:flex;flex-direction:column;gap:8px}
+.stage .hint{font-size:1rem;color:var(--muted);max-width:260px}
+
+/* the line */
+.lineh{display:flex;align-items:center;gap:10px;margin:4px 0 8px}
+.lineh .end{font-weight:800;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.lineh .end.l{color:var(--good)} .lineh .end.r{color:var(--bad)}
+.lineh .grad{flex:1;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--good),#e7c64a 50%,var(--bad))}
+.line{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px 0;min-height:120px;background:var(--card);border:2px dashed var(--line);border-radius:16px;padding:14px 8px}
+.line .empty{color:var(--muted);align-self:center;margin:0 auto;padding:20px;text-align:center}
+.slot{width:10px;flex:none;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:width .15s, background .15s}
+body.holding .slot{width:34px;background:var(--blue-l);border:2px dashed var(--blue);color:var(--blue-d);font-weight:800;margin:0 3px}
+body.holding .slot::after{content:"+"}
+body.holding .slot:hover{background:#d4e3fa}
+
+.note{position:relative;background:var(--y);color:var(--note-ink);border-radius:3px;padding:16px 12px 12px;width:150px;min-height:110px;box-shadow:0 3px 8px rgba(0,0,0,.15),0 1px 0 rgba(0,0,0,.06);font-weight:600;line-height:1.3;display:flex;align-items:center;justify-content:center;text-align:center;border:0;user-select:none}
+.note::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(-2deg);width:52px;height:14px;background:rgba(255,255,255,.55);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.note .rank{position:absolute;top:4px;left:7px;font-size:.75rem;font-weight:800;opacity:.55}
+.note.c0{background:var(--y)} .note.c1{background:var(--o)} .note.c2{background:var(--p)} .note.c3{background:var(--g)} .note.c4{background:var(--b)} .note.c5{background:var(--v)}
+.line .note{margin:0;transform:rotate(var(--r,0deg))}
+.note.held{outline:4px solid var(--blue);outline-offset:3px;transform:rotate(0) scale(1.04)}
+.note.flash{animation:flash 1s ease}
+@keyframes flash{0%{box-shadow:0 0 0 8px rgba(31,95,191,.5)}100%{box-shadow:0 3px 8px rgba(0,0,0,.15)}}
+.note.pair{outline:4px solid #e6b200;outline-offset:3px}
+
+/* the pile (phone mode) */
+.pileh{margin:4px 0 8px;font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.pile{display:flex;flex-wrap:wrap;gap:16px 12px;margin-bottom:20px}
+body.proj .pile-wrap{display:none}
+.pile .note{transform:rotate(var(--r,0deg))}
+
+/* argue box */
+.argue{display:none;background:#fff8e1;border:1px solid #e6b200;border-radius:14px;padding:14px 18px;margin:16px 0;font-size:1.05rem}
+.argue.on{display:block}
+.argue b{display:block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#7a5d00;margin-bottom:4px}
+.argue .q{font-size:clamp(1.05rem,2.4vw,1.5rem);font-weight:700}
+.argue .phr{margin-top:8px;font-size:.92rem;color:var(--muted)}
+
+/* projector sizing */
+body.proj .line .note{width:170px;min-height:120px;font-size:1.05rem}
+@media (max-width:640px){
+  /* phones: the line runs top (least bad) to bottom (worst), gaps are bars between the notes */
+  .line{flex-direction:column;flex-wrap:nowrap;padding:8px}
+  .line .note, body.proj .line .note{width:100%;min-height:0;padding:12px 12px 10px 34px;font-size:.95rem;justify-content:flex-start;text-align:left;transform:none}
+  .line .note::before{display:none}
+  .line .note .rank{top:50%;left:10px;transform:translateY(-50%);font-size:.85rem}
+  .slot{width:auto;height:8px}
+  body.holding .slot{width:auto;height:30px;margin:3px 0}
+  .lineh .grad{display:none}
+  .lineh{justify-content:space-between}
+  .lineh .end.r::before{content:"↓ ";}
+  .pile{gap:12px 10px}
+  .pile .note{width:calc(50% - 5px);min-height:84px;font-size:.88rem;padding:12px 8px 8px}
+}
+
+.holdbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:55;display:none;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:14px;padding:8px 10px 8px 16px;max-width:calc(100% - 32px);box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:.92rem}
+body.holding .holdbar{display:flex}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
+.toast.on{opacity:1}
+dialog{border:1px solid var(--line);border-radius:16px;padding:18px;max-width:520px;width:calc(100% - 32px);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,40,.45)}
+dialog h3{margin:0 0 8px}
+dialog input{width:100%;border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0 12px;background:#fbfcfe}
+.deal{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+footer{max-width:1200px;margin:0 auto;padding:0 16px 30px;font-size:.8rem;color:var(--muted)}
+
+@media (prefers-color-scheme:dark){
+  :root{--ink:#e7ecf3;--muted:#9aa8b9;--line:#2c3746;--bg:#121821;--card:#19212c;--blue-l:#1d2d46}
+  .bar{background:rgba(25,33,44,.96)} .seg,.btn.ghost{background:#19212c}
+  .argue{background:#2e2710;border-color:#8a6d10} .argue b{color:#e6c25a}
+  dialog input{background:#141b24}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="kicker">Ranking · Whole class or on your own</div>
+  <h1>Least Bad to Worst</h1>
+  <p>Twenty-nine things that happen in business. Put them in one line, from the least bad to the worst. You'll have to agree, or at least argue well.</p>
+</div></header>
+
+<div class="bar"><div class="in">
+  <div class="seg" role="tablist" aria-label="Mode">
+    <button id="mProj" role="tab">Whole class (projector)</button>
+    <button id="mPhone" role="tab">On my own</button>
+  </div>
+  <span class="count" id="count"></span>
+  <span class="spacer"></span>
+  <button class="btn ghost" id="argueBtn">Argue it</button>
+  <button class="btn ghost" id="setup">Notes…</button>
+</div></div>
+
+<main class="wrap">
+  <div class="howto" id="howProj">
+    <h2>Whole class</h2>
+    <ul>
+      <li><b>Draw a note.</b> The class shouts where it goes: less bad or worse than the notes already in the line?</li>
+      <li><b>Tap a <span style="color:var(--blue-d)">+</span> gap</b> in the line to put it there. Changed your minds? Tap a note in the line to pick it up again.</li>
+      <li><b>Argue it</b> picks two neighbours in the line: someone has to say why one is worse.</li>
+    </ul>
+  </div>
+  <div class="howto" id="howPhone">
+    <h2>On your own</h2>
+    <ul>
+      <li><b>Tap a note</b> in the pile, then tap a <span style="color:var(--blue-d)">+</span> gap in the line below to put it there.</li>
+      <li>Tap a note in the line to pick it up and move it.</li>
+      <li>When you've finished, compare with a partner: which note did you put furthest apart?</li>
+    </ul>
+  </div>
+
+  <div class="stage" id="stage">
+    <div id="stageNote"></div>
+    <div class="ctl">
+      <button class="btn" id="draw">Draw a note</button>
+      <button class="btn ghost" id="back">Put it back</button>
+      <div class="hint" id="stageHint"></div>
+    </div>
+  </div>
+
+  <div class="pile-wrap" id="pileTop">
+    <div class="pileh" id="pileh">The pile</div>
+    <div class="pile" id="pile"></div>
+  </div>
+
+  <div class="lineh"><span class="end l">Least bad</span><span class="grad"></span><span class="end r">Worst</span></div>
+  <div class="line" id="line"></div>
+
+  <div class="argue" id="argue"><b>Argue it</b><div class="q" id="argueQ"></div>
+    <div class="phr">Try: “For me, … is worse because it harms …” · “I'd swap them: … at least …” · “It depends on whether …”</div></div>
+
+</main>
+
+<dialog id="dlg">
+  <h3>The notes</h3>
+  <p style="margin:0 0 6px;color:var(--muted);font-size:.92rem">Use all of them, or deal a random handful for a shorter round.</p>
+  <div class="deal">
+    <button class="btn ghost" data-deal="10">Deal 10</button>
+    <button class="btn ghost" data-deal="15">Deal 15</button>
+    <button class="btn ghost" data-deal="0">All of them</button>
+  </div>
+  <label for="own" style="font-size:.92rem">Add your own note</label>
+  <input id="own" type="text" maxlength="60" placeholder="e.g. Using a work card for a private dinner">
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" id="ownAdd">Add note</button>
+    <button class="btn ghost" id="reset">Start again</button>
+    <span class="spacer"></span>
+    <button class="btn ghost" id="dlgClose">Close</button>
+  </div>
+</dialog>
+<div class="holdbar" id="holdbar"><span id="holdTxt"></span><button class="btn ghost" id="holdCancel">Cancel</button></div>
+<div class="toast" id="toast"></div>
+<footer>SimLearn Extras · Nothing is sent anywhere: the line is saved only in this browser.</footer>
+
+<script>
+const NOTES = [
+  "Hiding negative reviews or comments","Paying workers late to manage cash flow","Ignoring minor safety rules",
+  "Taking office equipment home","Overcharging small customers","Using unpaid interns for real jobs",
+  "Pretending a product is more “green” than it really is","Not reporting small mistakes to clients",
+  "Blaming a junior employee unfairly","Manipulating company accounts","Paying bribes to win contracts",
+  "Firing whistleblowers","Covering up safety problems","Forcing employees to work unpaid overtime",
+  "Selling customer data illegally","Lying to investors","Hiding product defects","Rigging prices with competitors",
+  "Deliberately misleading regulators","Insider trading","Faking financial reports","Destroying evidence",
+  "Blackmailing employees","Running fake companies (shell companies)","Paying politicians secretly",
+  "Laundering money","Financing illegal activity","Stealing pension funds","Causing deaths through negligence"
+];
+const KEY = "extras-least-bad-v1";
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
+
+/* each note: {id, t, c (colour), r (tilt)} ; state per mode: line (ids in order), pile (ids), held (id|null) */
+function makeNotes(texts){ return texts.map((t,i) => ({id:"n"+i+"_"+Math.random().toString(36).slice(2,6), t, c:i%6, r:(Math.random()*4-2).toFixed(1)})); }
+function freshMode(texts){ const n = makeNotes(shuffle(texts)); return {notes:n, line:[], pile:n.map(x=>x.id), held:null, stage:null}; }
+function fresh(){ return {mode:"proj", proj:freshMode(NOTES), phone:freshMode(NOTES)}; }
+let S;
+try { S = JSON.parse(localStorage.getItem(KEY) || "null") || fresh(); if (!S.proj || !S.phone) S = fresh(); } catch(e){ S = fresh(); }
+const M = () => S[S.mode];
+const note = id => M().notes.find(n => n.id === id);
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("on"),1700); }
+
+function noteHTML(n, rank, extra=""){
+  return `<button class="note c${n.c} ${extra}" style="--r:${n.r}deg" data-id="${n.id}">${rank?`<span class="rank">${rank}</span>`:""}${esc(n.t)}</button>`;
+}
+function render(){
+  const m = M(), proj = S.mode === "proj";
+  document.body.classList.toggle("proj", proj);
+  document.body.classList.toggle("holding", !!m.held);
+  $("#mProj").classList.toggle("on", proj); $("#mPhone").classList.toggle("on", !proj);
+  $("#howProj").hidden = !proj; $("#howPhone").hidden = proj;
+
+  // line with slots
+  const line = $("#line");
+  if (!m.line.length && !m.held){
+    line.innerHTML = `<div class="empty">${proj ? "Draw the first note to start the line." : "Tap a note in the pile to start."}</div>`;
+  } else {
+    let h = `<div class="slot" data-at="0" aria-label="Put it here"></div>`;
+    m.line.forEach((id, i) => { h += noteHTML(note(id), i+1, m.held===id?"held":"") + `<div class="slot" data-at="${i+1}" aria-label="Put it here"></div>`; });
+    line.innerHTML = h;
+  }
+  // stage (projector)
+  const st = m.stage ? note(m.stage) : null;
+  $("#stageNote").innerHTML = st ? noteHTML(st, 0, m.held===st.id?"held":"") : `<div class="note c0" style="opacity:.35">${m.pile.length ? "Draw a note" : "All placed!"}</div>`;
+  $("#draw").disabled = !!m.stage || !m.pile.length;
+  $("#back").disabled = !m.stage;
+  $("#stageHint").textContent = st ? "Where does it go? Tap a + gap in the line." : m.pile.length ? `${m.pile.length} left in the pile.` : "The line is complete. Time to argue it.";
+  // pile (phone)
+  $("#pile").innerHTML = m.pile.map(id => noteHTML(note(id), 0, m.held===id?"held":"")).join("") || `<div class="empty" style="color:var(--muted)">All placed. Now compare with a partner.</div>`;
+  $("#pileh").textContent = m.pile.length ? `The pile · ${m.pile.length} left` : "The pile is empty";
+  const h = m.held ? note(m.held) : null;
+  $("#holdTxt").innerHTML = h ? `Moving <b>${esc(h.t)}</b>: tap a + gap` : "";
+  $("#count").textContent = `${m.line.length} of ${m.notes.length} in the line`;
+  wire();
+}
+function wire(){
+  document.querySelectorAll(".note[data-id]").forEach(b => b.onclick = () => {
+    const m = M(), id = b.dataset.id;
+    if (m.held === id){ m.held = null; }                         // tap again: let go
+    else if (S.mode==="proj" && m.stage && m.stage!==id && m.line.includes(id)){ m.held = id; } // swap what's held
+    else m.held = id;
+    save(); render();
+  });
+  document.querySelectorAll(".slot").forEach(s => s.onclick = () => {
+    const m = M(); if (!m.held) return;
+    const id = m.held; let at = +s.dataset.at;
+    const was = m.line.indexOf(id);
+    if (was >= 0){ m.line.splice(was, 1); if (was < at) at--; }
+    m.pile = m.pile.filter(x => x !== id);
+    if (m.stage === id) m.stage = null;
+    m.line.splice(at, 0, id); m.held = null; save(); render();
+    const el = document.querySelector(`#line .note[data-id="${id}"]`); if (el){ el.classList.add("flash"); }
+    if (!m.pile.length && !m.stage) toast("Every note is in the line");
+  });
+}
+$("#holdCancel").onclick = () => { const m = M(); m.held = null; save(); render(); };
+$("#draw").onclick = () => { const m = M(); if (!m.pile.length) return; m.stage = m.pile[0]; m.held = m.stage; save(); render(); };
+$("#back").onclick = () => { const m = M(); if (!m.stage) return; const id = m.stage; m.pile = m.pile.filter(x=>x!==id).concat(id); m.stage = null; if (m.held===id) m.held=null; save(); render(); };
+$("#mProj").onclick = () => { S.mode = "proj"; save(); render(); };
+$("#mPhone").onclick = () => { S.mode = "phone"; save(); render(); };
+document.addEventListener("keydown", e => { if (e.key === "Escape"){ const m = M(); if (m.held){ m.held = null; save(); render(); } } });
+
+/* argue it: two neighbours in the line */
+$("#argueBtn").onclick = () => {
+  const m = M(), box = $("#argue");
+  document.querySelectorAll(".note.pair").forEach(x => x.classList.remove("pair"));
+  if (m.line.length < 2){ box.classList.add("on"); $("#argueQ").textContent = "Put at least two notes in the line first."; return; }
+  const i = Math.floor(Math.random() * (m.line.length - 1)), a = note(m.line[i]), b = note(m.line[i+1]);
+  $("#argueQ").innerHTML = `Why is “${esc(b.t)}” worse than “${esc(a.t)}”? Or should they swap?`;
+  box.classList.add("on");
+  [a,b].forEach(n => document.querySelector(`#line .note[data-id="${n.id}"]`)?.classList.add("pair"));
+  box.scrollIntoView({behavior:"smooth", block:"nearest"});
+};
+
+/* notes dialog: deal, add your own, start again */
+const dlg = $("#dlg");
+$("#setup").onclick = () => dlg.showModal();
+$("#dlgClose").onclick = () => dlg.close();
+document.querySelectorAll("[data-deal]").forEach(b => b.onclick = () => {
+  const n = +b.dataset.deal, texts = n ? shuffle(NOTES).slice(0, n) : NOTES;
+  S[S.mode] = freshMode(texts); save(); render(); dlg.close();
+  toast(n ? `${n} notes dealt` : "All 29 notes");
+});
+$("#ownAdd").onclick = () => {
+  const v = $("#own").value.trim(); if (!v) return;
+  const m = M(), [n] = makeNotes([v]); n.c = m.notes.length % 6; m.notes.push(n); m.pile.unshift(n.id);
+  $("#own").value = ""; save(); render(); toast("Added to the pile");
+};
+$("#own").addEventListener("keydown", e => { if (e.key === "Enter") $("#ownAdd").click(); });
+$("#reset").onclick = () => { if (!confirm("Clear this line and start again?")) return; S[S.mode] = freshMode(NOTES); save(); render(); dlg.close(); };
+
+render();
+</script>
+</body>
+</html>
