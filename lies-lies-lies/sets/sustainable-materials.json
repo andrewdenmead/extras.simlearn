@@ -45,6 +45,48 @@
    "fact": "Leaves of the prickly pear cactus can be cut without killing the plant, which grows them back. They are turned into a tough vegan leather used for bags and car seats."
   }
  ],
+ "fakes": [
+  {
+   "name": "Onion-skin insulation",
+   "fact": "A Dutch start-up presses dried onion skins from food factories into insulation boards for houses. The boards keep homes warm, and the smell keeps insects away."
+  },
+  {
+   "name": "Pigeon-feather jackets",
+   "fact": "A Berlin company collects pigeon feathers from city squares, washes them and uses them instead of goose down to fill winter jackets."
+  },
+  {
+   "name": "Moth-wing paint",
+   "fact": "A French paint maker grinds the wings of moths killed by street lights into a shimmering, chemical-free wall paint."
+  },
+  {
+   "name": "Penguin-guano bricks",
+   "fact": "Builders in southern Chile mix penguin droppings from protected colonies with clay to make bricks that set in the sun without a kiln."
+  },
+  {
+   "name": "Nail-clipping glitter",
+   "fact": "A Korean beauty brand collects nail clippings from salons and grinds them into a biodegradable glitter for make-up."
+  },
+  {
+   "name": "Parmesan-rind leather",
+   "fact": "An Italian designer softens the hard rinds left over from Parmesan cheese and presses them into a leather for watch straps and wallets."
+  },
+  {
+   "name": "Pine-cone roof tiles",
+   "fact": "An Austrian company presses fallen pine cones with tree resin into roof tiles that last for forty years and smell of the forest when it rains."
+  },
+  {
+   "name": "Pumpkin-seed glass",
+   "fact": "Scientists in Hungary melt ground pumpkin-seed shells into a pale green glass that is now used for olive-oil bottles."
+  },
+  {
+   "name": "Beard-hair carpet tiles",
+   "fact": "Swedish barbers sell beard trimmings to a company that felts them into hard-wearing carpet tiles for offices."
+  },
+  {
+   "name": "Melon-rind cycling helmets",
+   "fact": "A Spanish company dries and presses melon rinds into a light, tough foam that replaces polystyrene in cycling helmets."
+  }
+ ],
  "fake": [
   [
    "name",
