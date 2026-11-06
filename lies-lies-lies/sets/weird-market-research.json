@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "research story",
+ "whats": "research stories",
+ "topic": "really weird market research stories",
+ "items": [
+  {
+   "name": "The poet's car names",
+   "fact": "In 1955, Ford asked the poet Marianne Moore to suggest names for a new car. She sent ideas like “Utopian Turtletop”. Ford chose “Edsel” instead, and the car became a famous flop."
+  },
+  {
+   "name": "The 200,000 sips",
+   "fact": "Before launching New Coke in 1985, Coca-Cola ran about 200,000 taste tests, and people preferred the new recipe. But customers were so angry about losing the old one that it came back within three months."
+  },
+  {
+   "name": "The spray nobody needed",
+   "fact": "Febreze first flopped as a spray that removed bad smells: people get used to the smells in their own homes and don't notice them. It was relaunched with perfume, as a nice finishing touch after cleaning."
+  },
+  {
+   "name": "The “ugly” office chair",
+   "fact": "In early tests, office workers gave Herman Miller's Aeron chair very low scores for its looks, and some called it ugly. The company launched it anyway in 1994, and it became a design classic."
+  },
+  {
+   "name": "The drink that tasted terrible",
+   "fact": "Before Red Bull launched in Austria in 1987, a research company said its test results were among the worst it had ever seen: people disliked the taste. The founder launched it anyway."
+  },
+  {
+   "name": "The mop watchers",
+   "fact": "Researchers working for Procter & Gamble filmed people mopping their floors at home and saw that they spent a lot of time cleaning the mop itself. The result was the Swiffer, with throw-away cloths."
+  },
+  {
+   "name": "The Lego girls study",
+   "fact": "Before launching Lego Friends in 2012, Lego spent years watching how girls play, including visits to their homes. The new sets, set in a town called Heartlake City, sold far better than expected."
+  },
+  {
+   "name": "The changing film posters",
+   "fact": "Netflix tests different pictures for the same film or series and shows different ones to different viewers: a romance fan might see the couple, while a comedy fan sees a funny actor."
+  },
+  {
+   "name": "The colour election",
+   "fact": "In 1995, M&M's asked the American public to vote for a new sweet colour. Blue won easily, beating pink and purple, and it replaced tan, a light brown that many people found boring."
+  },
+  {
+   "name": "The cola brain scans",
+   "fact": "In 2004, scientists scanned people's brains while they drank Coke and Pepsi. In blind tests the results were similar, but when people knew they were drinking Coke, other parts of the brain lit up."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The orange-scented supermarket",
+   "fact": "A Dutch supermarket chain pumped the smell of fresh bread into one store and the smell of oranges into another. The orange store sold 30 per cent more vegetables, but neither sold more bread."
+  },
+  {
+   "name": "The yoghurt-lid diaries",
+   "fact": "A French dairy asked 500 families to keep the lid of every yoghurt they ate for a month and post them back. It found that children were eating most of its “adult” flavours."
+  },
+  {
+   "name": "The upside-down crisps",
+   "fact": "A German crisp brand secretly put its packets upside down on the shelves of 20 shops to see if shoppers noticed. Sales went up by 8 per cent, and some shops kept doing it."
+  },
+  {
+   "name": "The coffee in the lift",
+   "fact": "An Italian coffee-machine maker played recordings of four of its machines in office lifts and asked people which one sounded best. The winning gurgle is now built into its most expensive model."
+  },
+  {
+   "name": "The tea tasting in the dark",
+   "fact": "A Turkish tea company held taste tests in completely dark rooms so that nobody could see the colour of the tea. Testers chose its cheapest blend, which it then relaunched in a gold box."
+  },
+  {
+   "name": "The midnight cereal",
+   "fact": "A Belgian cereal brand found that a quarter of its boxes were eaten after 10 p.m., mostly by students. It launched a “midnight” version in a black box, which outsold the original within a year."
+  },
+  {
+   "name": "The sky selfies",
+   "fact": "A Norwegian ice-cream maker asked 1,000 people to text it a photo of the sky every afternoon for a summer. It used the photos to predict sales, and now changes its deliveries by the weather."
+  },
+  {
+   "name": "The lost shopping lists",
+   "fact": "A Czech supermarket collected 40,000 shopping lists left behind in its trolleys. The word that appeared most often, after bread, was “something nice”, so it added a chocolate shelf at every till."
+  },
+  {
+   "name": "The silent toy testers",
+   "fact": "A Danish toy company ran play sessions where children weren't allowed to talk to the researchers. Instead, they put a coloured stone in a jar for every toy they liked; the green stones won."
+  },
+  {
+   "name": "The stiff kettle handle",
+   "fact": "A Portuguese kettle maker sent 300 testers kettles with deliberately stiff handles to see who would complain. Only one in ten did, so the company decided that complaints alone were not enough research."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Who did the research, and where",
+   "A kind of company (no real names) and a real city or country."
+  ],
+  [
+   "question",
+   "What they wanted to know",
+   "Something about customers: what they like, buy, do or say."
+  ],
+  [
+   "how",
+   "How they found out",
+   "A weird but possible method: a test, a trick, a diary, a camera."
+  ],
+  [
+   "found",
+   "What they found",
+   "The surprise in the results."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small mistake they made."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“half the families forgot to post the lids”): perfect research sounds fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

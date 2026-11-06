@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "comeback",
+ "whats": "comebacks",
+ "topic": "really weird product comebacks",
+ "items": [
+  {
+   "name": "The Nokia 3310",
+   "fact": "In 2017, Nokia brought back the 3310, a simple mobile phone from 2000 famous for its long battery life and the game Snake. The new version had a colour screen but almost no apps."
+  },
+  {
+   "name": "Crystal Pepsi",
+   "fact": "Crystal Pepsi, a see-through cola, flopped in the early 1990s. After years of campaigns by fans who missed it, PepsiCo brought it back for a short time in 2016."
+  },
+  {
+   "name": "Ektachrome film",
+   "fact": "Kodak stopped making Ektachrome slide film in 2012. As film photography became popular with young people again, it announced the film's return in 2017 and began selling it in 2018."
+  },
+  {
+   "name": "Surge",
+   "fact": "Fans of Surge, a lemon-lime soft drink from the 1990s, ran a Facebook campaign and even paid for a billboard. In 2014, Coca-Cola brought it back, selling it only on Amazon at first."
+  },
+  {
+   "name": "The Wispa bar",
+   "fact": "Cadbury stopped making the Wispa chocolate bar in 2003. After a fan campaign on Facebook, it came back in 2007 for a limited time, and sold so well that it returned for good."
+  },
+  {
+   "name": "Twinkies",
+   "fact": "When the company Hostess went bankrupt in 2012, Americans panic-bought Twinkies, its famous cream cakes. New owners brought them back in 2013 as “the sweetest comeback in the history of ever”."
+  },
+  {
+   "name": "Ecto Cooler",
+   "fact": "Ecto Cooler, a bright green juice drink named after the Ghostbusters cartoon, had been gone for years. In 2016, it returned for a short time, just before the new Ghostbusters film came out."
+  },
+  {
+   "name": "Dunkaroos",
+   "fact": "Dunkaroos, small biscuits sold with a pot of sweet icing for dipping, disappeared from US shops in 2012. After years of nostalgic posts online, General Mills brought them back in 2020."
+  },
+  {
+   "name": "Irn-Bru 1901",
+   "fact": "When Irn-Bru cut the sugar in its drink in 2018, some Scots bought up crates of the old version. The full-sugar recipe came back as “Irn-Bru 1901”, first as a limited edition and then for good."
+  },
+  {
+   "name": "The Motorola Razr",
+   "fact": "The Razr was the most popular flip phone of the mid-2000s. In 2019, Motorola brought the name back on an expensive smartphone with a screen that folds in half."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Fizzy strawberry milk",
+   "fact": "A Dutch dairy brought back “Bubbelmelk”, a fizzy strawberry milk from the 1980s, after 40,000 people signed an online petition. The first 200,000 bottles sold out in a week."
+  },
+  {
+   "name": "The tin lunchbox",
+   "fact": "A Danish company relaunched the metal lunchboxes it made in the 1970s, with the original cartoon designs. Most buyers weren't children but office workers in their forties."
+  },
+  {
+   "name": "The square crisps",
+   "fact": "A Belgian crisp brand brought back the square crisps it stopped making in 1994. It had to buy the old cutting machine back from a museum, where it had been on show for 20 years."
+  },
+  {
+   "name": "The talking alarm clock",
+   "fact": "A Japanese electronics company reissued its 1980s talking alarm clock, with the same actor recording the wake-up message again, 40 years older. It was the best-selling clock in Japan that year."
+  },
+  {
+   "name": "The orange washing powder",
+   "fact": "A German washing powder brought back its 1970s orange box and its old smell for one winter. So many people said it smelled like their grandmother's house that it now sells it all year."
+  },
+  {
+   "name": "The Polish typewriter",
+   "fact": "A Polish typewriter factory that closed in 1995 reopened in 2019 to make a small number of its old model. It now has a two-year waiting list, mostly writers and students."
+  },
+  {
+   "name": "The glow-in-the-dark trainers",
+   "fact": "A French trainer brand relaunched its 1990s glow-in-the-dark trainers after a fashion student found an old pair in her mother's loft and posted them online. They sold out in two hours."
+  },
+  {
+   "name": "Salty liquorice cola",
+   "fact": "A Finnish brewery brought back the salty-liquorice cola it stopped in 1988. Foreign tourists now buy most of it, mainly to film their friends' faces when they taste it."
+  },
+  {
+   "name": "The scented erasers",
+   "fact": "A Czech stationery company relaunched its 1980s fruit-scented erasers. Parents bought more of them than children did, and the banana one came back with exactly the old smell."
+  },
+  {
+   "name": "The board game with a cassette",
+   "fact": "A Spanish toy company relaunched a 1980s board game that came with an audio cassette of clues. The new version kept the cassette, and the company had to sell a cassette player with it."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "The product's name, maybe with the brand or the year."
+  ],
+  [
+   "what",
+   "What it was",
+   "The product, and when it was first sold."
+  ],
+  [
+   "gone",
+   "Why it disappeared",
+   "It stopped selling, the company closed, the recipe changed."
+  ],
+  [
+   "back",
+   "How it came back",
+   "Who wanted it back: fans, a petition, a film, a famous person."
+  ],
+  [
+   "new",
+   "What's different now",
+   "Same as before, or changed for today."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it tastes a little different from the old one”): perfect comebacks sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

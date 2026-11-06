@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "collab",
+ "whats": "collabs",
+ "topic": "really weird creator collabs",
+ "items": [
+  {
+   "name": "MrBeast Burger",
+   "fact": "In 2020, the YouTuber MrBeast launched MrBeast Burger in about 300 places across the US at once. There were no new restaurants: existing kitchens cooked his burgers for delivery apps."
+  },
+  {
+   "name": "Prime",
+   "fact": "In 2022, the YouTubers Logan Paul and KSI launched Prime, a sports drink. In the UK, it was so hard to find that some shops sold single bottles for many times the normal price."
+  },
+  {
+   "name": "The Charli",
+   "fact": "In 2020, Dunkin' put “The Charli”, TikTok star Charli D'Amelio's usual cold-brew coffee order, on its US menu. Downloads of the Dunkin' app jumped by 57 per cent."
+  },
+  {
+   "name": "The Travis Scott meal",
+   "fact": "In 2020, McDonald's sold the rapper Travis Scott's usual order as a meal with his name on it. It was so popular that some US restaurants ran out of ingredients for the Quarter Pounder."
+  },
+  {
+   "name": "Ninja's trainers",
+   "fact": "In 2019, Adidas signed the video-game streamer Ninja, its first deal with a professional gamer. When his first pair of trainers went on sale, they sold out in about 40 minutes."
+  },
+  {
+   "name": "The £50 advent calendar",
+   "fact": "In 2017, Boots sold an advent calendar from the YouTuber Zoella for £50. Buyers found things like stickers and confetti behind the doors, the anger went viral, and Boots cut the price."
+  },
+  {
+   "name": "Sides",
+   "fact": "In 2021, the Sidemen, a group of British YouTubers, started Sides, a fried-chicken brand sold only through delivery apps. It later opened real restaurants in shopping centres."
+  },
+  {
+   "name": "Panels",
+   "fact": "In 2024, the tech reviewer Marques Brownlee launched Panels, a phone-wallpaper app costing about $50 a year. Many fans were furious about paying that much for wallpapers, and the app was later shut down."
+  },
+  {
+   "name": "Ryan's World",
+   "fact": "Ryan Kaji started reviewing toys on YouTube as a small child. At eight, he was the world's highest-earning YouTuber, making about $26 million in a year, partly from his own range of toys."
+  },
+  {
+   "name": "Lady Gaga Oreos",
+   "fact": "In 2021, Oreo sold pink biscuits with green cream to celebrate Lady Gaga's album Chromatica. The biscuits were stamped with little pictures linked to the album."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The silent crisps",
+   "fact": "A Spanish ASMR YouTuber, famous for whispering, launched “silent” crisps with a supermarket chain, made to crunch as quietly as possible. The first 100,000 bags sold out in three days."
+  },
+  {
+   "name": "The study-break lamp",
+   "fact": "A Korean “study with me” YouTuber designed a desk lamp that switches itself off after 50 minutes to force a ten-minute break. Over 80,000 students bought one before exam season."
+  },
+  {
+   "name": "The runner's ice cream",
+   "fact": "A Dutch running influencer launched a protein ice cream with a dairy brand. Too many tubs melted on the way to customers in a heatwave, and the brand had to refund 12,000 orders."
+  },
+  {
+   "name": "The farmer's work jeans",
+   "fact": "A Polish farmer who posts tractor videos on TikTok designed work jeans with a clothing chain, with a special pocket for a phone. Sixty thousand pairs sold in the first week."
+  },
+  {
+   "name": "The alphabet cereal",
+   "fact": "A French YouTuber who teaches English made a breakfast cereal with a food brand: every box contains only the letters of that week's ten new words. Teachers ordered it for whole classes."
+  },
+  {
+   "name": "The streamer's sleep drink",
+   "fact": "A Swedish video-game streamer, famous for playing all night, launched a caffeine-free “sleep drink” with chamomile. Fans joked about it, but it became the brand's best-selling product."
+  },
+  {
+   "name": "The painter's own face",
+   "fact": "A Belgian painting YouTuber sold paint-by-numbers kits with an art shop chain. The best-seller wasn't a landscape but a picture of his own face, with 96 numbered colours."
+  },
+  {
+   "name": "The bus driver's model bus",
+   "fact": "A German bus driver who films his daily routes for YouTube made a model of his bus with the city's transport company. Twenty thousand sold, and his route now has fan tours."
+  },
+  {
+   "name": "The cat-approved cat food",
+   "fact": "A Japanese account that posts videos of three cats launched its own cat food. In the launch video, all three cats refused to eat it, and the video got more views than any other."
+  },
+  {
+   "name": "The cleaning creator's mop",
+   "fact": "A Danish cleaning influencer designed a mop with a homeware brand that smells of her favourite perfume when it gets wet. It sold out twice, though some buyers said the smell was too strong."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "The product's name, as it was sold."
+  ],
+  [
+   "who",
+   "Which creator, from where",
+   "A kind of creator (no real names): what they post, where they're from."
+  ],
+  [
+   "partner",
+   "Which brand",
+   "A kind of company (no real names): a supermarket, a drinks brand, a shop."
+  ],
+  [
+   "what",
+   "What they made",
+   "The product, and why it fits the creator."
+  ],
+  [
+   "result",
+   "What happened",
+   "Sold out, went viral, went wrong, or all three."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it had."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“some buyers said the smell was too strong”): perfect launches sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

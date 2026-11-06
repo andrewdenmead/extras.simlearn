@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "workplace custom",
+ "whats": "workplace customs",
+ "topic": "really weird workplace customs",
+ "items": [
+  {
+   "name": "Inemuri",
+   "fact": "In Japan, falling asleep at your desk or in a meeting, called “inemuri”, can be seen as a sign that you have been working very hard, not that you are lazy or bored."
+  },
+  {
+   "name": "The quitting agencies",
+   "fact": "In Japan, some workers find quitting so awkward that they pay an agency, such as one called Momuri, to resign for them. The agency phones the boss and handles everything."
+  },
+  {
+   "name": "Premium Friday",
+   "fact": "In 2017, Japan's government and business groups started “Premium Friday”, asking companies to let staff leave at 3 p.m. on the last Friday of every month. Very few workers actually did."
+  },
+  {
+   "name": "No email after work",
+   "fact": "In 2011, Volkswagen agreed to stop its servers sending emails to many German staff's BlackBerry phones once their shift was over. The emails started arriving again just before the next shift."
+  },
+  {
+   "name": "Your own birthday cake",
+   "fact": "In the Netherlands, when it's your birthday, you bring the cake or treats to work yourself and share them with your colleagues, instead of waiting for them to surprise you."
+  },
+  {
+   "name": "The sauna meeting",
+   "fact": "In Finland, many companies have their own sauna, and business talks sometimes happen in it after work. Without suits and ties, people say, it's harder to tell who the boss is."
+  },
+  {
+   "name": "Cars for Diwali",
+   "fact": "In 2016, Savji Dholakia, the boss of a diamond company in Surat, India, gave his staff 400 flats and 1,260 cars as Diwali bonuses for their loyalty and hard work."
+  },
+  {
+   "name": "Paid to cycle",
+   "fact": "In Belgium, many employers pay staff a set amount for every kilometre they cycle to work. The money is tax-free up to a limit, and most private-sector workers now have a right to it."
+  },
+  {
+   "name": "The year-end show",
+   "fact": "At Chinese companies' big year-end parties, called “nianhui”, staff often sing or dance on stage, and a lucky draw gives out prizes like phones, cash or even extra holiday."
+  },
+  {
+   "name": "The Glasgow Fair",
+   "fact": "For generations, factories and shipyards in Glasgow all closed for the same two weeks in July, the “Glasgow Fair”, and much of the city went on holiday together “doon the watter” by boat."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Thursday soup",
+   "fact": "In many Czech offices, the youngest employee cooks soup for the whole team every Thursday. Refusing is seen as rude, and new staff often practise at home before their first Thursday."
+  },
+  {
+   "name": "The rank of the plant",
+   "fact": "In Hungarian offices, the size of the plant on your desk traditionally shows your rank. When someone is promoted, colleagues give them a bigger pot, and the old plant goes to the newest employee."
+  },
+  {
+   "name": "Home early on your birthday",
+   "fact": "In Estonia, the law lets every worker leave three hours early on their birthday, with full pay. Most companies also give a small cake, which the birthday person must cut themselves."
+  },
+  {
+   "name": "The lunch-talk fine",
+   "fact": "In some Austrian offices, anyone who talks about work during lunch pays a fine of 50 cents into a coffee box. At the end of the year, the money pays for the Christmas party."
+  },
+  {
+   "name": "The boss's Friday coffee",
+   "fact": "In many Portuguese companies, the most senior manager makes coffee for everyone on Friday mornings. It is meant to remind bosses that nobody is too important to serve others."
+  },
+  {
+   "name": "The retirement tree",
+   "fact": "In Slovenia, when someone retires, their colleagues plant a tree outside the office in their name. The person who sits at their old desk must water it for the first year."
+  },
+  {
+   "name": "The interview coffee",
+   "fact": "In Croatia, a job interview traditionally starts with a coffee. If the candidate says no to it, many employers see it as a sign that they don't really want the job."
+  },
+  {
+   "name": "The thank-you stones",
+   "fact": "In Chilean offices, staff put a small stone on a colleague's desk to say thank you. At the end of the year, the person with the most stones chooses where the team has lunch."
+  },
+  {
+   "name": "The Monday rain rule",
+   "fact": "In some Irish offices, if it is raining at 8 a.m. on a Monday, staff may start an hour later. The rule is so popular that some companies have a “rain manager” who decides."
+  },
+  {
+   "name": "The honey welcome",
+   "fact": "In Turkish companies, new employees are given a small jar of honey on their first day, so that their words to colleagues will be sweet. They are expected to share it with their team."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name, maybe a word in the local language."
+  ],
+  [
+   "where",
+   "Where",
+   "A real country, and what kind of workplace."
+  ],
+  [
+   "custom",
+   "The custom",
+   "What people do, and when."
+  ],
+  [
+   "why",
+   "Why",
+   "The reason people give for it."
+  ],
+  [
+   "break",
+   "What if you don't",
+   "What happens if a new colleague gets it wrong."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a time, a price or a small problem it causes."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“new staff always forget it on their first day”): perfect customs sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "invention",
+ "whats": "inventions",
+ "topic": "really weird office inventions",
+ "items": [
+  {
+   "name": "The coffee-pot webcam",
+   "fact": "In 1991, computer scientists at the University of Cambridge pointed a camera at the coffee pot down the corridor, so they could check from their desks whether it was empty. It became the world's first webcam."
+  },
+  {
+   "name": "Microchips in your hand (Sweden)",
+   "fact": "At Epicenter, an office block in Stockholm, workers could have a tiny microchip put under the skin of their hand. With a wave of the hand they could open doors and use the photocopier."
+  },
+  {
+   "name": "Blinkers for open-plan offices",
+   "fact": "In 2018 Panasonic designed Wear Space, a headset with noise-cancelling headphones and a fabric shield that wraps round the face like a horse's blinkers, to help people concentrate in noisy open-plan offices."
+  },
+  {
+   "name": "The desk sensors that lasted a day",
+   "fact": "In 2016 the Daily Telegraph put small motion sensors under journalists' desks to measure how often they were used. After angry complaints from staff and their union, the newspaper took them out the next day."
+  },
+  {
+   "name": "The go-home drone (Japan)",
+   "fact": "To cut overtime, a Tokyo company tested a drone that flies around the office after hours playing “Auld Lang Syne”, the tune Japanese shops use at closing time, until the last workers give up and go home."
+  },
+  {
+   "name": "Desks that fly up to the ceiling",
+   "fact": "At a design studio in Amsterdam, steel cables lift all the desks up to the ceiling at six o'clock every evening. The empty floor is then used for yoga, dancing or parties instead of overtime."
+  },
+  {
+   "name": "A Victorian fax machine (Scotland)",
+   "fact": "The fax machine is older than the telephone. Alexander Bain, a clockmaker from Caithness in the north of Scotland, patented a way to send images down a telegraph wire in 1843."
+  },
+  {
+   "name": "Darwin's office chair",
+   "fact": "Charles Darwin is said to have put wheels on the armchair in his study, so he could roll quickly between his specimens. Many people see it as one of the first office chairs on wheels."
+  },
+  {
+   "name": "The wooden computer mouse",
+   "fact": "The first computer mouse, built in California in 1964, was a small wooden box with two metal wheels underneath and one red button. Its inventor, Douglas Engelbart, never earned money from it."
+  },
+  {
+   "name": "Clippy the paperclip",
+   "fact": "From 1997, Microsoft Office came with Clippy, a cartoon paperclip with eyes that popped up to offer help: “It looks like you're writing a letter.” So many users hated it that it was removed in 2007."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The sulking printer",
+   "fact": "A Danish office-equipment firm sold a printer that slows down on purpose when the same person prints more than fifty pages a day. The idea was to save paper without a single angry email."
+  },
+  {
+   "name": "Chairs that report you",
+   "fact": "A Belgian start-up made office chairs that send a message to your phone after ninety minutes without standing up. Staff at a bank in Antwerp switched most of them off within a week."
+  },
+  {
+   "name": "The meeting-room hourglass",
+   "fact": "A Swiss insurer put a two-metre sand timer in every meeting room. When the sand runs out after thirty minutes, the lights slowly turn red until everyone leaves."
+  },
+  {
+   "name": "The talking coffee machine",
+   "fact": "An Austrian engineering firm built a coffee machine that greets every worker by name and tells them how many cups they have had that week. It also emails the totals to the office manager."
+  },
+  {
+   "name": "The silent keyboard rule",
+   "fact": "A Finnish software company replaced every keyboard with a rubber one that makes no sound at all, after staff complained about loud typing. Typing errors rose by about a fifth in the first month."
+  },
+  {
+   "name": "Desks that only open with a smile",
+   "fact": "A Korean electronics firm tested desk drawers with small cameras that only unlock when the worker smiles. The test ended when staff started taping photos of smiling faces to the camera."
+  },
+  {
+   "name": "The lift that plays your reviews",
+   "fact": "A Dutch bank installed lifts that read out short quotes from customer reviews between floors. The bad reviews were included as well, which led to some very quiet journeys."
+  },
+  {
+   "name": "The scented email warning",
+   "fact": "A French perfume company made a desk lamp that releases a lemon smell when more than a hundred emails are unread, to calm workers down. Most people said it just made them hungry."
+  },
+  {
+   "name": "The standing-only Monday",
+   "fact": "A Norwegian oil company removed all chairs from one office floor every Monday morning for a year. Meetings were about forty per cent shorter, but many people simply stayed at home."
+  },
+  {
+   "name": "Pigeon post for passwords",
+   "fact": "During a hacking scare, a Polish logistics firm sent new computer passwords between two offices by carrier pigeon for six months, because pigeons cannot be hacked. One bird never arrived."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "what",
+   "What it is",
+   "Something weird but possible: a gadget, a machine or a piece of furniture for an office."
+  ],
+  [
+   "who",
+   "Who made it, and where",
+   "A company, a university or an inventor, and a real city or country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: what it actually does all day."
+  ],
+  [
+   "used",
+   "Who it affects",
+   "Who uses it, and what the workers think of it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“half the staff switched it off”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

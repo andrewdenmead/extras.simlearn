@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "company pivot",
+ "whats": "company pivots",
+ "topic": "really weird company pivots",
+ "items": [
+  {
+   "name": "YouTube the dating site",
+   "fact": "When YouTube started in 2005, its founders first imagined it as a video dating site, where people would upload videos of themselves to find a partner. Almost nobody did, so they opened it to any video."
+  },
+  {
+   "name": "Slack the video game",
+   "fact": "Slack began inside a company building an online game called Glitch. The game failed and closed in 2012, but the team kept the chat tool they had built to work together, and turned that into Slack."
+  },
+  {
+   "name": "Twitter the podcast company",
+   "fact": "Twitter started as a side project at Odeo, a company that made software for podcasts. When Apple added podcasts to iTunes, Odeo's business was suddenly in trouble, and the team's short-message idea took over."
+  },
+  {
+   "name": "Flickr the online game",
+   "fact": "The photo-sharing site Flickr began in 2004 as a small feature of Game Neverending, an online game made by a company in Vancouver. Players liked sharing photos more than playing, so the company dropped the game."
+  },
+  {
+   "name": "Android for cameras",
+   "fact": "Android, the operating system on most of the world's smartphones, was first designed for digital cameras. In 2004 its founders pitched it to investors as a camera system, before deciding that phones were a bigger market."
+  },
+  {
+   "name": "Suzuki the loom maker",
+   "fact": "Before it made cars and motorbikes, Suzuki made weaving looms. Michio Suzuki started the company in 1909 in Hamamatsu, Japan, to build looms for the silk industry, and it only made its first car in 1955."
+  },
+  {
+   "name": "Wipro the cooking-oil company",
+   "fact": "The Indian IT giant Wipro started in 1945 as Western India Vegetable Products, a company that made cooking oil. The name Wipro comes from those words. It only moved into computers in the 1980s."
+  },
+  {
+   "name": "American Express the delivery firm",
+   "fact": "American Express was founded in 1850 as an express delivery company, carrying parcels, gold and money across New York State. Its famous traveller's cheques came in 1891, and its first credit card much later."
+  },
+  {
+   "name": "Tiffany the stationery shop",
+   "fact": "Tiffany & Co., famous today for diamonds, opened in New York in 1837 as a shop selling stationery and “fancy goods”, such as pens, umbrellas and ornaments. It still makes luxury stationery today."
+  },
+  {
+   "name": "Hasbro the textile sellers",
+   "fact": "The toy company behind Monopoly and Transformers started in 1923, when the Hassenfeld brothers in Rhode Island sold leftover pieces of cloth. They moved on to pencil cases, and only then to toys."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The umbrella maker that went to the beach",
+   "fact": "A Dutch umbrella company in Rotterdam started making beach parasols in the 1970s, after three dry summers in a row. Today umbrellas are less than a tenth of its sales."
+  },
+  {
+   "name": "The church-candle carmaker",
+   "fact": "A small Swedish company that made church candles in the 1920s started making car headlamps in the 1950s, using the same glass workshop. It stopped making candles in 1971."
+  },
+  {
+   "name": "Ice skates to shopping trolleys",
+   "fact": "A Finnish ice-skate maker started making shopping trolleys in the 1960s, because the factory already had machines for bending steel. Today it is one of Europe's biggest trolley suppliers."
+  },
+  {
+   "name": "The bicycle-bell bank",
+   "fact": "An Austrian bank started in 1898 as a workshop making bicycle bells. It began lending money to its customers to buy bicycles, and the lending soon made more money than the bells."
+  },
+  {
+   "name": "The perfume company that sold fish",
+   "fact": "A French perfume house began as a fish shop in Marseille in 1880. The owner started selling scented soaps to hide the smell of the fish, and the soaps sold better."
+  },
+  {
+   "name": "From hats to helmets",
+   "fact": "An Italian hat maker in Turin moved to cycling helmets in the 1980s, after fewer people wore hats. It still puts a small hat-shaped logo on every helmet."
+  },
+  {
+   "name": "The rope maker that went online",
+   "fact": "A Danish rope maker founded in 1860 became a software company in the 1990s, after a manager wrote a stock program that other factories wanted to buy. It sold its last rope in 1998."
+  },
+  {
+   "name": "Coffins to kitchens",
+   "fact": "A German company that made wooden coffins in the 1930s switched to fitted kitchens after the war. For years it kept quiet about its first product."
+  },
+  {
+   "name": "The toothpaste-tube toymaker",
+   "fact": "A Belgian company that made metal toothpaste tubes in the 1950s started making toy soldiers from the same metal. When plastic tubes arrived, toys became its only business."
+  },
+  {
+   "name": "Matches to mobile games",
+   "fact": "A Polish match factory became a mobile-games studio in 2010, after its owner's son made a game about lighting candles. The factory still makes a small number of matches for collectors."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the country in brackets."
+  ],
+  [
+   "before",
+   "What it did first",
+   "Something weird but possible: a product, a shop or a service very different from today."
+  ],
+  [
+   "who",
+   "Who, and where",
+   "A company or a founder, and a real city or country."
+  ],
+  [
+   "why",
+   "Why it changed",
+   "The problem, accident or idea that made it switch."
+  ],
+  [
+   "now",
+   "What it does now",
+   "What it is famous for today."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date or a small thing that is left from the old business."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“it nearly went bankrupt first”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

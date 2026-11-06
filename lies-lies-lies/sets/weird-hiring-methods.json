@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "hiring method",
+ "whats": "hiring methods",
+ "topic": "really weird hiring methods",
+ "items": [
+  {
+   "name": "Edison's impossible test",
+   "fact": "In 1921 the inventor Thomas Edison gave job applicants a test of around 150 general-knowledge questions, such as “Where is Korea?” and “Who invented logarithms?”. Most applicants failed, and newspapers printed the questions."
+  },
+  {
+   "name": "The crossword that found codebreakers",
+   "fact": "In 1942 the Daily Telegraph held a crossword competition. People who solved it in under twelve minutes were later contacted by the War Office, and some were sent to work as codebreakers at Bletchley Park."
+  },
+  {
+   "name": "The coffee-cup test",
+   "fact": "Trent Innes, a former boss of the accounting company Xero in Australia, took candidates to the office kitchen for a drink before the interview. If they did not take their empty cup back afterwards, he did not hire them."
+  },
+  {
+   "name": "Handwriting analysis (France)",
+   "fact": "For decades, many French employers asked candidates for a handwritten cover letter and sent it to a graphologist, who claimed to read their personality from their handwriting. Scientists say it does not work."
+  },
+  {
+   "name": "What's your blood type? (Japan)",
+   "fact": "Many people in Japan believe that your blood type shows your personality, and some companies have asked job candidates for theirs. The government has told employers not to, and critics call it “blood-type harassment”."
+  },
+  {
+   "name": "The team votes (Pret)",
+   "fact": "At the sandwich chain Pret A Manger, candidates for shop jobs work a paid trial day in the shop. At the end, the team they worked with votes on whether the candidate gets the job."
+  },
+  {
+   "name": "The job advert in a flat-pack box",
+   "fact": "In 2011, IKEA Australia hid “Career Instructions” inside its flat-pack furniture boxes. They looked just like the normal assembly instructions, but explained how to build a career at IKEA and apply for a job."
+  },
+  {
+   "name": "The army's video game",
+   "fact": "In 2002 the US Army released America's Army, a free video game it made itself to interest young people in joining. Millions of people played it, and the army used it to recruit for years."
+  },
+  {
+   "name": "The interview full of surprises",
+   "fact": "In 2013 Heineken filmed job interviews full of hidden-camera tricks: the interviewer held the candidate's hand on the way in, then pretended to faint, and a fire alarm went off. One candidate got the job."
+  },
+  {
+   "name": "The spy agency's puzzle",
+   "fact": "In 2011 the British intelligence agency GCHQ hid a code-breaking puzzle on a mysterious website called “Can you crack it?” and spread it on social media. People who solved it found a job advert at the end."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The nap test",
+   "fact": "A Spanish design start-up ends every interview with a twenty-minute nap on the office sofa. The founders believe that people who can relax in a strange place will cope well with stress."
+  },
+  {
+   "name": "The shopping-list test",
+   "fact": "A German supermarket chain gives candidates a shopping list and ten minutes in a rival store. They are hired if they can explain how the rival lays out its shelves better."
+  },
+  {
+   "name": "Postcards only (Norway)",
+   "fact": "A Norwegian recruitment agency only accepts applications written on a single postcard. It says the short format shows who can get to the point. CVs sent by email are deleted unread."
+  },
+  {
+   "name": "The penalty shoot-out",
+   "fact": "An Italian sportswear company asks every final-round candidate to take a penalty against the HR manager. Missing does not lose you the job, but how you react to missing is noted."
+  },
+  {
+   "name": "Five minutes of silence",
+   "fact": "A Swiss private bank ends every interview with five minutes in which nobody speaks. Candidates who fill the silence with nervous talk are rarely offered the job."
+  },
+  {
+   "name": "Cook the team lunch",
+   "fact": "A Danish architecture firm asks final candidates to cook lunch for the whole team using only what is in the office fridge. The team then votes on the meal and the candidate together."
+  },
+  {
+   "name": "The interview by bike",
+   "fact": "A Dutch logistics company holds its interviews while cycling along a canal with the manager. It says people talk more honestly when they are not sitting across a desk."
+  },
+  {
+   "name": "The six a.m. interview",
+   "fact": "An Australian mining company only holds interviews at six in the morning. It says the time shows who is truly willing to work early shifts out in the desert."
+  },
+  {
+   "name": "The Tetris score",
+   "fact": "A Polish software company asks every candidate to play one game of Tetris before the interview. The score is not used, but how candidates behave when the game speeds up is."
+  },
+  {
+   "name": "The song test",
+   "fact": "A Canadian hotel group asks every candidate to sing one line of any song at the end of the interview. It says this shows who stays calm in embarrassing moments with guests."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a real-sounding name, with the company or country in brackets."
+  ],
+  [
+   "what",
+   "What happens",
+   "Something weird but possible: a test, a trick or an unusual step in getting a job."
+  ],
+  [
+   "who",
+   "Who does it, and where",
+   "A company, a boss or an organisation, and a real city or country."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: what the candidate actually has to do."
+  ],
+  [
+   "why",
+   "Why they do it",
+   "What the employer thinks it shows about a candidate."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date or a small problem with the method."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“some good candidates walked out”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

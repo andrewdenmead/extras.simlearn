@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "nudge",
+ "whats": "nudges",
+ "topic": "really weird nudges",
+ "items": [
+  {
+   "name": "The fly in the urinal",
+   "fact": "At Amsterdam's Schiphol airport, a small picture of a fly was printed inside each men's urinal. Men aimed at it without thinking, and there was far less mess on the toilet floors."
+  },
+  {
+   "name": "The floating zebra crossing",
+   "fact": "In 2017, the small Icelandic town of Ísafjörður painted a zebra crossing that looks 3D, as if its white stripes were blocks floating above the road. The idea was to make drivers slow down."
+  },
+  {
+   "name": "The piano stairs",
+   "fact": "In 2009, the stairs at Odenplan underground station in Stockholm were turned into giant piano keys that played a note at every step. Far more people chose the stairs instead of the escalator."
+  },
+  {
+   "name": "The speed camera lottery",
+   "fact": "In 2010, a speed camera in Stockholm photographed drivers who kept to the limit and entered them into a lottery. The prize money came from the fines paid by drivers who were speeding."
+  },
+  {
+   "name": "The “most people pay” letter",
+   "fact": "Britain's tax office sent reminder letters telling late taxpayers that most people in their town had already paid. More of them paid on time than people who got the standard letter."
+  },
+  {
+   "name": "The blue street lights",
+   "fact": "In the early 2000s, Glasgow put blue lights on Buchanan Street, mainly to make it look nicer. Reports later linked the blue light with less crime there, and other cities copied the idea."
+  },
+  {
+   "name": "The green footprints",
+   "fact": "In 2011, researchers in Copenhagen handed out sweets in the street and then painted green footprints leading to the nearest rubbish bins. Far fewer sweet wrappers ended up on the ground."
+  },
+  {
+   "name": "The lines that make you brake",
+   "fact": "On a dangerous bend of Lake Shore Drive in Chicago, the city painted white lines across the road that get closer and closer together. Drivers feel they're speeding up, so they slow down."
+  },
+  {
+   "name": "Squats for a ticket",
+   "fact": "In 2015, Mexico City put machines in some underground stations that gave you a free ticket if you did ten squats in front of them. The aim was to get people to exercise more."
+  },
+  {
+   "name": "The cigarette-end vote",
+   "fact": "In London, a charity put up ashtrays shaped like voting boxes with a question, such as “Who's the best footballer, Messi or Ronaldo?”. Smokers vote with their cigarette ends, so fewer land on the street."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The joke at the crossing",
+   "fact": "A Dutch city put small screens at pedestrian crossings that tell a joke while the light is red. The punchline only appears on green, so fewer people crossed early: red-light crossing fell by a quarter."
+  },
+  {
+   "name": "The early-bird tax postcard",
+   "fact": "Norway's tax office sends a cheerful thank-you postcard, with a picture of a puffin, to everyone who files their tax return early. In the first year, early returns went up by 12 per cent."
+  },
+  {
+   "name": "The complaints counter",
+   "fact": "A Belgian council replaced “No Parking” signs on one busy street with digital signs showing how many neighbours had complained about parked cars that week. Illegal parking there fell by a third."
+  },
+  {
+   "name": "The bus-stop mirror",
+   "fact": "A Danish city put mirrors at bus stops with the words “This person could walk to the next stop”. Short bus trips of only one stop fell by 15 per cent in the first year."
+  },
+  {
+   "name": "The children's voting letters",
+   "fact": "Before local elections, an Estonian town sent every adult a handwritten letter from a primary-school pupil, reminding them to vote. Turnout in the town rose by six points compared with the last election."
+  },
+  {
+   "name": "The four-minute shower radio",
+   "fact": "A Spanish water company gave 3,000 homes a waterproof shower radio that plays only four-minute songs and then goes quiet. Water use in the test homes fell by about a tenth."
+  },
+  {
+   "name": "The colourful hospital stairs",
+   "fact": "A Swedish hospital painted its lifts a dull grey and its stairs in bright colours, with a short joke on every step. Twice as many visitors took the stairs, and the lifts broke down less often."
+  },
+  {
+   "name": "The slow music at the post office",
+   "fact": "Polish post offices now play slower music when the queue gets long. In a trial in 40 branches, customers said they had waited less time, and complaints about queues fell by 20 per cent."
+  },
+  {
+   "name": "The birthday donor card",
+   "fact": "Ireland's health service sends every 18-year-old a birthday card with an organ-donor form inside. In the first three years, the number of young people on the donor register doubled."
+  },
+  {
+   "name": "The recycling tree",
+   "fact": "A Portuguese city shows a cartoon tree on a big screen in its main square. It grows a new leaf every time someone puts a bottle in the recycling bank below, and bottle recycling rose by 30 per cent."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Who did it, and where",
+   "A city, a council, a government office or a charity, in a real country."
+  ],
+  [
+   "problem",
+   "The problem",
+   "What people kept doing wrong: litter, speeding, paying late, wasting water."
+  ],
+  [
+   "how",
+   "The trick",
+   "The small change they made: a picture, a sign, a game, a message."
+  ],
+  [
+   "result",
+   "What happened",
+   "How people changed, and who noticed."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it still has."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“some people just stood and waited for the joke”): perfect ideas sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

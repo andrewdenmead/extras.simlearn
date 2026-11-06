@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "market moment",
+ "whats": "market moments",
+ "topic": "really weird stock-market moments",
+ "items": [
+  {
+   "name": "Tulip mania",
+   "fact": "In the Dutch Republic in the 1630s, people paid huge sums for rare tulip bulbs. At the peak, in early 1637, a single bulb could cost more than a house in Amsterdam. Then prices suddenly collapsed."
+  },
+  {
+   "name": "The wrong Zoom",
+   "fact": "In March 2020, as millions began working from home, investors rushed to buy shares in a small Chinese company with the stock code ZOOM, mistaking it for the video-call company. US regulators stopped trading in it."
+  },
+  {
+   "name": "The wrong Signal",
+   "fact": "In January 2021, Elon Musk tweeted “Use Signal”, meaning the messaging app. Investors bought shares in Signal Advance, a small, unrelated Texas company, and its share price rose more than ten times in a few days."
+  },
+  {
+   "name": "From iced tea to blockchain",
+   "fact": "In 2017, a small US drinks company called Long Island Iced Tea changed its name to Long Blockchain Corp, although it had no blockchain business. On the day of the announcement, its share price almost tripled."
+  },
+  {
+   "name": "Newton's bubble",
+   "fact": "Isaac Newton lost around £20,000, a huge sum then, in the South Sea Bubble of 1720. He is said to have remarked that he could calculate the motions of the stars, but not the madness of people."
+  },
+  {
+   "name": "The most expensive typing mistake",
+   "fact": "In 2005 a trader at Mizuho Securities in Tokyo meant to sell one share for 610,000 yen, but typed an order to sell 610,000 shares for one yen each. The mistake cost the firm around $225 million."
+  },
+  {
+   "name": "The cat that beat the experts",
+   "fact": "In 2012 the Observer newspaper gave £5,000 each to three professional investors and to Orlando, a ginger cat, who chose shares by throwing his toy mouse onto a grid. After a year, the cat had won."
+  },
+  {
+   "name": "45 minutes, $440 million",
+   "fact": "In August 2012, new software at the US trading firm Knight Capital went wrong and made millions of unwanted trades. In 45 minutes, the company lost about $440 million and nearly went out of business."
+  },
+  {
+   "name": "When VW was the world's biggest",
+   "fact": "In October 2008, investors who had bet on Volkswagen's shares falling all rushed to buy them back at once. The price jumped so fast that VW briefly became the most valuable company in the world."
+  },
+  {
+   "name": "A big company for one cent",
+   "fact": "During the “flash crash” of 6 May 2010, US share prices crashed and recovered within minutes. For a few seconds, shares in Accenture, a huge consulting firm, traded for just one cent each."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The rainy-summer jump",
+   "fact": "In 2015 shares in a small Norwegian umbrella maker rose by 30 per cent in a single morning, after the national weather service forecast the wettest summer in fifty years. They fell back when it was sunny."
+  },
+  {
+   "name": "The birthday crate",
+   "fact": "A Danish brewery gives every shareholder who comes to its annual meeting a crate of beer. In 2017 so many people bought a single share just for the crate that the meeting moved to a football stadium."
+  },
+  {
+   "name": "The broken bell",
+   "fact": "When a Spanish airline listed on the stock exchange in 2014, the opening bell broke as the CEO rang it. The shares fell 8 per cent on the first day, and traders blamed the bad luck."
+  },
+  {
+   "name": "The 31-hour day",
+   "fact": "In 2009 a computer fault meant the Helsinki stock exchange could not close and stayed open for 31 hours. A few traders slept at their desks to catch the night-time price changes."
+  },
+  {
+   "name": "The sneeze",
+   "fact": "Shares in a German pharmacy chain fell 6 per cent in 2019 after its CEO sneezed several times during a live TV interview about a new cold medicine. They recovered the next week."
+  },
+  {
+   "name": "A share for the price of a pizza",
+   "fact": "A Polish pizza chain listed in 2016 at exactly the price of its most popular pizza. When the share price rose, customers joked that they should be paid in shares instead."
+  },
+  {
+   "name": "The upside-down chart",
+   "fact": "In 2013 an Australian TV news programme showed a mining company's share-price chart upside down, so a fall looked like a rise. The next morning, the shares really did go up."
+  },
+  {
+   "name": "Gold bars for the first investors",
+   "fact": "A Swiss private bank that listed in 2007 gave each of its first thousand shareholders a tiny one-gram gold bar with the company's name on it. Some now sell online for more than the shares."
+  },
+  {
+   "name": "Shares sold only at the summit",
+   "fact": "An Austrian ski-lift company sold its new shares only at a ticket office at the top of its mountain. Buyers had to ski or take the lift up to invest."
+  },
+  {
+   "name": "The CEO's lucky socks",
+   "fact": "Shares in a Dutch bank rose for twelve days in a row in 2018 while its CEO wore the same red socks to work. Traders noticed, and the shares fell on the day he changed them."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short, newspaper-style name."
+  ],
+  [
+   "what",
+   "What happened",
+   "Something weird but possible: a jump, a fall, a mistake or a strange rule."
+  ],
+  [
+   "who",
+   "Which company or market",
+   "A company, a stock exchange or an investor, and a real country."
+  ],
+  [
+   "cause",
+   "What caused it",
+   "The news, rumour, mistake or accident behind it."
+  ],
+  [
+   "result",
+   "What happened next",
+   "What the share price, the traders or the regulators did."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a percentage or a small strange result."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the shares fell back the next week”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

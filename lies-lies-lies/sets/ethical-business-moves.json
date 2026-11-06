@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "ethical move",
+ "whats": "ethical moves",
+ "topic": "really weird ethical business moves",
+ "items": [
+  {
+   "name": "The company given to the planet",
+   "fact": "In 2022, Patagonia's founder Yvon Chouinard gave the outdoor-clothing company away to a trust and a charity that fight climate change. He said: “Earth is now our only shareholder.”"
+  },
+  {
+   "name": "The pharmacy without cigarettes",
+   "fact": "In 2014, CVS, one of America's biggest pharmacy chains, stopped selling cigarettes in all its shops, even though they brought in about $2 billion a year."
+  },
+  {
+   "name": "The banned Christmas advert",
+   "fact": "In 2018, the UK supermarket Iceland used a Greenpeace cartoon about an orangutan losing its forest to palm-oil farms as its Christmas advert. It was blocked from British TV for being too political."
+  },
+  {
+   "name": "Lego drops Shell",
+   "fact": "In 2014, after a Greenpeace video showing a Lego Arctic drowning in oil went viral, Lego decided to end its 50-year marketing deal with the oil company Shell."
+  },
+  {
+   "name": "The free seatbelt",
+   "fact": "In 1959, Volvo patented the three-point seatbelt, invented by its engineer Nils Bohlin. Instead of keeping it for itself, Volvo let every other car maker use the design for free."
+  },
+  {
+   "name": "The pay cap",
+   "fact": "At the American soap company Dr. Bronner's, the best-paid bosses may earn no more than five times what the lowest-paid full-time worker gets."
+  },
+  {
+   "name": "Shares for everyone",
+   "fact": "In 2016, Hamdi Ulukaya, the founder of the American yoghurt maker Chobani, gave his 2,000 full-time workers shares that could add up to 10 per cent of the company."
+  },
+  {
+   "name": "The unfair chocolate bar",
+   "fact": "The Dutch chocolate brand Tony's Chocolonely divides its bars into pieces of different sizes. The unequal pieces are meant to remind you how unequally money is shared in the cocoa industry."
+  },
+  {
+   "name": "The toilet sit-in",
+   "fact": "The Australian toilet-paper brand Who Gives A Crap gives half its profits to build toilets. To start it, a founder sat on a toilet for 50 hours, filmed live, until enough money was raised."
+  },
+  {
+   "name": "Closed on Black Friday",
+   "fact": "In 2015, the American outdoor shop REI closed all its stores on Black Friday, one of the biggest shopping days of the year, and paid its 12,000 staff to spend the day outside."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The farmer's phone number",
+   "fact": "A German supermarket chain prints a photo of the farmer, and their phone number, on every bag of potatoes. Farmers get about five calls a week, mostly to ask for recipes."
+  },
+  {
+   "name": "The pay-gap loan rule",
+   "fact": "A Dutch bank refuses to lend money to any company whose boss earns more than 20 times the average worker there. It says it has turned down 140 companies since 2019."
+  },
+  {
+   "name": "The keep-your-phone refund",
+   "fact": "A Finnish phone-case maker gives customers 5 euros back for every year they keep the same phone. To claim it, they send a photo of the phone with that day's newspaper."
+  },
+  {
+   "name": "The drought price",
+   "fact": "An Australian brewery raises the price of its beer by 20 cents in dry years and gives the extra money to farmers hit by drought. Sales have gone up in every drought year so far."
+  },
+  {
+   "name": "The wage on the packet",
+   "fact": "An Italian pasta maker prints the hourly wage of its wheat farmers on every packet. When a supermarket asked it to remove the number, it moved the pasta to another supermarket."
+  },
+  {
+   "name": "The trainer for the maker",
+   "fact": "For every 100 pairs it sells, a Spanish trainer brand gives a free pair to a worker in the factory that made them. The workers choose the colour, and one colour became a best-seller."
+  },
+  {
+   "name": "The hedgehog advertising budget",
+   "fact": "A Danish crisp brand gives half its advertising budget to a hedgehog rescue charity. Its only advert now is a hedgehog on the back of every bag, and sales have doubled."
+  },
+  {
+   "name": "The train-pass company cars",
+   "fact": "A Norwegian energy company replaced all 300 of its company cars with first-class train passes for staff. Twelve managers left, but the company says it saved money in the first year."
+  },
+  {
+   "name": "The tax label",
+   "fact": "A Dutch clothing brand sews a second label into every item showing how much tax the company paid on it. A T-shirt costing 30 euros carries a label saying “Tax paid: 2.40 euros”."
+  },
+  {
+   "name": "The fountain supermarket",
+   "fact": "A Portuguese supermarket chain stopped selling bottled water and put free drinking fountains in all its shops instead. It lost money on water but says customers stay longer."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Which company, and where",
+   "A kind of company (no real names) and a real city or country."
+  ],
+  [
+   "move",
+   "The move",
+   "What the company did, or stopped doing."
+  ],
+  [
+   "why",
+   "Why",
+   "The problem it wanted to fix."
+  ],
+  [
+   "cost",
+   "What it cost them",
+   "Money, customers, partners or staff."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it caused."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“most of the calls are about recipes”): perfect ideas sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

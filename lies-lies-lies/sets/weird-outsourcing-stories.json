@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "outsourcing story",
+ "whats": "outsourcing stories",
+ "topic": "really weird outsourcing stories",
+ "items": [
+  {
+   "name": "The developer who outsourced himself",
+   "fact": "In 2013, Verizon investigators found that a US software developer had secretly paid a company in China to do his job for a fraction of his pay. He spent his days watching cat videos."
+  },
+  {
+   "name": "Norway's prison in the Netherlands",
+   "fact": "In 2015, Norway's prisons were full, so it rented a whole prison in the Netherlands. For about three years, Norwegian prisoners served their sentences there, guarded by Dutch staff."
+  },
+  {
+   "name": "The drive-thru in another state",
+   "fact": "Around 2005, some McDonald's restaurants in the US tested sending drive-thru orders to a call centre in another state, hundreds of miles away. The order was then sent back to the kitchen."
+  },
+  {
+   "name": "Goats instead of lawnmowers",
+   "fact": "In 2009, Google rented about 200 goats to eat the grass and bushes on the fields around its headquarters in California. It said the goats were cheaper and quieter than lawnmowers."
+  },
+  {
+   "name": "The Pope's Swiss guards",
+   "fact": "Since 1506, the Pope's bodyguards in the Vatican have come from another country. The Swiss Guard must be Swiss Catholic men, and still wear colourful uniforms said to date from the 1500s."
+  },
+  {
+   "name": "A country's back-up abroad (Estonia)",
+   "fact": "Estonia keeps copies of its most important government data on servers in Luxembourg, in what it calls the world's first “data embassy”. It has the same legal protection as a real embassy."
+  },
+  {
+   "name": "Fake wedding guests (Japan)",
+   "fact": "In Japan, some agencies rent out actors to be guests at weddings, playing friends, colleagues or even a boss who gives a speech. Some couples hire them because they have few friends to invite."
+  },
+  {
+   "name": "Mourners for hire (England)",
+   "fact": "In 2013, a company in Essex began renting out mourners: actors who attend funerals, so that there are more people there. They can be told the life story of the dead person beforehand."
+  },
+  {
+   "name": "Paid to queue",
+   "fact": "In Washington, D.C., lobbyists and companies pay line-standing firms to queue for hours, sometimes overnight, for public seats at hearings in Congress. The lobbyists take the place just before the doors open."
+  },
+  {
+   "name": "A country that outsources its defence",
+   "fact": "The tiny country of Monaco has its own small guard force but no real army. By treaty, its defence is the responsibility of France, its much bigger neighbour."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Rented grandparents",
+   "fact": "A Dutch company rents out retired people to sit with children at school sports days when their own grandparents live far away. It has a waiting list of 400 families."
+  },
+  {
+   "name": "The outsourced alarm clock",
+   "fact": "A Swedish start-up pays students in Thailand to phone sleepy office workers in Stockholm every morning to wake them up. Customers can choose a friendly or a strict voice."
+  },
+  {
+   "name": "Holiday postcards written abroad",
+   "fact": "A German travel company offers to write and send your holiday postcards for you, by staff in Portugal using your photos. It charges €4 a card."
+  },
+  {
+   "name": "A town's Christmas lights from far away",
+   "fact": "A small Austrian town has its Christmas lights switched on and off by a company in Bulgaria using an app. In 2019 they came on in the middle of the night."
+  },
+  {
+   "name": "Hired fans for a football club",
+   "fact": "A Belgian third-division football club paid a company to send 300 extra fans to its home games for one season to make the stadium louder. It still lost most of its games."
+  },
+  {
+   "name": "The outsourced school lunch taster",
+   "fact": "A Scottish council paid a food company to send a taster to try every school lunch before it was served. The taster ate in eight schools a day."
+  },
+  {
+   "name": "Dog walking from another country",
+   "fact": "A Polish company organises dog walkers in London by video call. Staff in Kraków plan the routes and check the dogs through a camera on the walker's jacket."
+  },
+  {
+   "name": "Outsourced birthday calls",
+   "fact": "A Danish bank pays a call centre in Spain to phone every customer on their birthday and sing to them. Many customers hang up before the end of the song."
+  },
+  {
+   "name": "The rented choir",
+   "fact": "An Irish church that had lost its choir hired a choir in Wales to sing at Sunday services by live video for two years."
+  },
+  {
+   "name": "Plants watered from abroad",
+   "fact": "A Norwegian office company pays a firm in Estonia to water the plants in its offices with remote-controlled pumps. One office was flooded in 2020."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short, newspaper-style name."
+  ],
+  [
+   "what",
+   "What was outsourced",
+   "Something weird but possible: a job, a service or a task usually done at home or in-house."
+  ],
+  [
+   "who",
+   "Who did it, and where",
+   "A company, a person, a town or a country, and a real place."
+  ],
+  [
+   "how",
+   "How it works",
+   "One or two sentences: who does the work now, and from where."
+  ],
+  [
+   "why",
+   "Why they did it",
+   "The money, the problem or the idea behind it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a price, a date or a small problem it caused."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“one office was flooded”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

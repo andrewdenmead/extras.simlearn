@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "market entry",
+ "whats": "market entries",
+ "topic": "really weird market entries",
+ "items": [
+  {
+   "name": "Christmas at KFC",
+   "fact": "In 1974, KFC Japan advertised its fried chicken as a Christmas meal for families. It worked so well that millions of Japanese families now eat KFC at Christmas, and many order it weeks ahead."
+  },
+  {
+   "name": "The smiling rule",
+   "fact": "Walmart entered Germany in 1997 and left in 2006 after losing a lot of money. Staff disliked American habits like smiling at every customer, and some shoppers took the smiles as flirting."
+  },
+  {
+   "name": "The lucky chocolate",
+   "fact": "In Japan, “KitKat” sounds like “kitto katsu”, which means “you will surely win”. Nestlé leaned into it, and KitKats became popular good-luck presents for students before their exams."
+  },
+  {
+   "name": "The empty shelves",
+   "fact": "Target opened 133 stores in Canada in 2013. Shoppers found empty shelves and higher prices than in the US, and in 2015, less than two years after opening, Target closed all of them."
+  },
+  {
+   "name": "The burgers Bolivia didn't want",
+   "fact": "In the early 2000s, McDonald's closed all its restaurants in Bolivia after years of poor sales. Many Bolivians preferred their own local food and saw the burgers as expensive."
+  },
+  {
+   "name": "The coffee Australia didn't need",
+   "fact": "Starbucks arrived in Australia in 2000, but Australians already had a strong café culture of their own. In 2008, the company closed 61 of its Australian stores."
+  },
+  {
+   "name": "Free beats famous",
+   "fact": "eBay bought China's biggest auction website in 2003, but Alibaba's new site Taobao let sellers list items for free. By the end of 2006, eBay had closed its own Chinese site."
+  },
+  {
+   "name": "The Barbie palace",
+   "fact": "In 2009, Mattel opened a six-floor Barbie store in Shanghai with a spa, a restaurant and a cocktail bar. Few people wanted to buy there, and it closed after only two years."
+  },
+  {
+   "name": "Pizza in Italy",
+   "fact": "In 2015, the American chain Domino's opened in Italy, the home of pizza, hoping to win customers with fast delivery. In 2022, after seven years, it closed its last Italian shops."
+  },
+  {
+   "name": "IKEA's second try",
+   "fact": "IKEA first opened in Japan in the 1970s but pulled out in 1986. It came back in 2006 with a huge new store near Tokyo, and this time it stayed."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The silent gym",
+   "fact": "A Korean gym chain opened in Spain with its usual strict “no talking” rule. Spanish members found it so strange that the rule was dropped after six months, and memberships tripled."
+  },
+  {
+   "name": "The unlucky room 17",
+   "fact": "A Chinese hotel group opened in Italy and left out every room number with a 4, as it does at home. It forgot that Italians think 17 is unlucky, and guests kept asking to move."
+  },
+  {
+   "name": "The doughnut dozen",
+   "fact": "An American doughnut chain opened in Copenhagen selling its usual boxes of twelve. Danes found twelve doughnuts far too many, and sales only took off when it started selling them in threes."
+  },
+  {
+   "name": "The cut-up tacos",
+   "fact": "A Mexican taco chain opened in Osaka and noticed that customers were eating tacos with a knife and fork. It now serves them cut into pieces in a bento-style box, but only in Japan."
+  },
+  {
+   "name": "The German bagel",
+   "fact": "A Canadian bagel chain opened in Munich and found that Germans thought its bagels were too soft. It now bakes a harder, darker “German bagel” that it sells nowhere else."
+  },
+  {
+   "name": "The hot sauna in a hot city",
+   "fact": "A Finnish sauna chain opened 15 saunas in Brisbane. Few people wanted to sit in a hot room in a hot city, so after a year it turned most of them into ice-bath studios."
+  },
+  {
+   "name": "The vinegar crisps",
+   "fact": "A British crisp brand launched in Spain with its famous salt-and-vinegar flavour. Many Spanish shoppers thought the crisps had gone off, so the brand replaced them with a ham flavour."
+  },
+  {
+   "name": "The salad without bread",
+   "fact": "An American salad chain opened in Paris, but customers expected bread with every meal. Sales only rose when it started giving every customer two free slices of baguette."
+  },
+  {
+   "name": "The red wedding dresses",
+   "fact": "A Spanish bridal-wear chain opened in Mumbai with its usual white dresses. Few brides wanted white for their wedding, so within a year most of its rails were red and gold."
+  },
+  {
+   "name": "The dumplings with a new name",
+   "fact": "A Polish pierogi chain opened 12 shops in New York. Customers found the word “pierogi” hard to say, so it renamed itself “Dumpling Department” and sales doubled."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Which brand, from where",
+   "A kind of company (no real names) and its home country."
+  ],
+  [
+   "where",
+   "Where it went",
+   "A real city or country, and what it tried to sell there."
+  ],
+  [
+   "problem",
+   "What went wrong (or right)",
+   "A surprise about the local customers or culture."
+  ],
+  [
+   "fix",
+   "What the brand did",
+   "How it changed, gave up, or got lucky."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small mistake they made."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small mistake (“they printed the menus in the wrong language”): perfect launches sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

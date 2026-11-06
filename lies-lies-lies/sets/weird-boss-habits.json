@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "boss habit",
+ "whats": "boss habits",
+ "topic": "really weird boss habits",
+ "items": [
+  {
+   "name": "Paid to quit",
+   "fact": "At the online shoe shop Zappos, boss Tony Hsieh offered new staff $2,000 to quit after their first weeks of training. He wanted to keep only the people who really wanted to be there."
+  },
+  {
+   "name": "Letters to parents",
+   "fact": "PepsiCo boss Indra Nooyi wrote letters to the parents of her senior managers, thanking them for raising their children so well. Many parents were delighted, and some wrote back."
+  },
+  {
+   "name": "The stock-market breakfast",
+   "fact": "Warren Buffett buys his breakfast at McDonald's on the way to work and chooses it by how the stock market is doing: when shares have fallen, he picks a cheaper breakfast."
+  },
+  {
+   "name": "Think Week",
+   "fact": "Twice a year, Bill Gates went alone to a cabin in the woods for a “Think Week”. He spent it reading papers that Microsoft staff had written about the company's future."
+  },
+  {
+   "name": "The Dot Collector",
+   "fact": "At the investment firm Bridgewater, founder Ray Dalio had most meetings recorded. Staff used an app called the Dot Collector to rate each other's ideas live, during the meeting."
+  },
+  {
+   "name": "The fake commute",
+   "fact": "Spanx founder Sara Blakely lived close to her office, so she created a “fake commute”: she drove around Atlanta for about an hour in the morning, just to have time to think."
+  },
+  {
+   "name": "The Mandarin challenge",
+   "fact": "Facebook's Mark Zuckerberg set himself a new personal challenge every year. One year it was learning Mandarin, and in 2014 he answered students' questions in Mandarin at a university in Beijing."
+  },
+  {
+   "name": "English or else",
+   "fact": "In 2010, Hiroshi Mikitani, boss of the Japanese online shop Rakuten, announced that English would become the company's official language, even for Japanese staff talking to each other."
+  },
+  {
+   "name": "The arm-wrestling match",
+   "fact": "In 1992, Southwest Airlines boss Herb Kelleher arm-wrestled the boss of another company in front of a crowd, instead of going to court over a slogan. He lost, but both firms kept using it."
+  },
+  {
+   "name": "The share-price tattoo",
+   "fact": "Nvidia boss Jensen Huang promised that if the company's share price ever reached $100, he would get its logo tattooed on his arm. It did, and he did."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The coin flip",
+   "fact": "The founder of a Dutch online bank settles any argument in a meeting that lasts more than ten minutes by flipping a coin. She keeps a notebook of every flip and says she has done it 340 times."
+  },
+  {
+   "name": "The cold meeting room",
+   "fact": "The boss of a Norwegian bank keeps the main meeting room at 15 degrees, so nobody wants to stay longer than necessary. Meetings there now last 22 minutes on average."
+  },
+  {
+   "name": "The monthly job swap",
+   "fact": "Once a month, the boss of a Danish logistics company swaps jobs, and salaries, with a randomly chosen employee for a day. Once he spent the day loading lorries; another time, answering phones."
+  },
+  {
+   "name": "The chess interview",
+   "fact": "The founder of a Polish video-games studio plays a game of chess with every manager she hires. She says she doesn't care who wins, only whether they admit their mistakes."
+  },
+  {
+   "name": "The silent Thursday",
+   "fact": "At an Austrian insurance company, nobody may speak on Thursday mornings until 11 o'clock. The boss says it is the most productive morning of the week, and staff write each other notes."
+  },
+  {
+   "name": "The postcard boss",
+   "fact": "The owner of a Portuguese hotel group doesn't send emails to his managers: he sends postcards, about 30 a week. Managers keep them pinned to the walls of their offices."
+  },
+  {
+   "name": "A tree for every complaint",
+   "fact": "The boss of a Canadian outdoor-clothing company answers one customer complaint himself every morning and plants a tree for each one. He has planted over 4,000 trees so far."
+  },
+  {
+   "name": "The farewell lunch",
+   "fact": "The boss of a Swiss watchmaker takes every employee who leaves the company out to lunch and asks them one question: “What should I have done differently?” He writes every answer down."
+  },
+  {
+   "name": "The bad-news bell",
+   "fact": "At a Finnish engineering firm, anyone who reports a mistake rings a brass bell in the office, and the boss buys a cake for their team. The bell rings about twice a week."
+  },
+  {
+   "name": "The Sunday phone calls",
+   "fact": "The owner of a Greek ferry company phones ten unhappy customers himself every Sunday afternoon. He says he learns more in those two hours than in any board meeting."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a name like a newspaper headline: “The …”."
+  ],
+  [
+   "who",
+   "Which boss, and where",
+   "A kind of boss and company (no real names) in a real city or country."
+  ],
+  [
+   "habit",
+   "The habit",
+   "What they do, and how often."
+  ],
+  [
+   "why",
+   "Why they do it",
+   "The reason they give."
+  ],
+  [
+   "staff",
+   "What the staff think",
+   "Do they love it, hate it, or copy it?"
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date, a price or a small problem it causes."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“new staff always forget the rule”): perfect bosses sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

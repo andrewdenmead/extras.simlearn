@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "hiding place",
+ "whats": "hiding places",
+ "topic": "really weird hiding places for money",
+ "items": [
+  {
+   "name": "Al Capone's empty vault",
+   "fact": "In 1986, a TV reporter opened a secret vault under a Chicago hotel once used by the gangster Al Capone, live on TV, in front of millions of viewers. He found only dirt and some empty bottles."
+  },
+  {
+   "name": "Gold in the piano",
+   "fact": "In 2016, a piano tuner in Shropshire, England, opened an old piano that had been given to a local college and found 913 gold coins hidden inside it. Nobody knows who put them there."
+  },
+  {
+   "name": "Coins in tin cans",
+   "fact": "In 2013, a couple walking their dog on their land in California found rusty tin cans full of gold coins from the 1800s, worth about $10 million. It is one of the largest finds in US history."
+  },
+  {
+   "name": "The money in the sofa",
+   "fact": "In 2014, three students in New York State bought an old sofa for $20 from a charity shop and found $40,800 in cash hidden inside it. They returned the money to the elderly woman who had hidden it."
+  },
+  {
+   "name": "The million in the mattress",
+   "fact": "In 2009, a woman in Tel Aviv bought her elderly mother a new mattress as a surprise and threw out the old one. Inside it were her mother's life savings, about $1 million. It was never found."
+  },
+  {
+   "name": "The cold cash",
+   "fact": "In 2005, FBI agents searching the home of a US congressman found $90,000 in cash in his freezer, wrapped in foil and hidden in food boxes. He was later sent to prison for bribery."
+  },
+  {
+   "name": "Money in the walls",
+   "fact": "In 2006, a builder renovating an old house in Cleveland, Ohio, found about $182,000 in cash from the 1920s and 1930s hidden in the walls. The builder and the owner then fought over it in court."
+  },
+  {
+   "name": "Money for rats",
+   "fact": "According to Pablo Escobar's brother, the drug gang had so much cash hidden in walls and fields that it spent $2,500 a month on rubber bands, and rats ate part of the money every year."
+  },
+  {
+   "name": "Wedding savings eaten by termites",
+   "fact": "In 2023, a woman in northern India opened her bank safe-deposit box and found that termites had eaten the cash she had saved there for her daughter's wedding, about 1.8 million rupees."
+  },
+  {
+   "name": "The treasure in the mountains",
+   "fact": "In 2010, Forrest Fenn, an American art dealer, hid a bronze chest full of gold and jewels somewhere in the Rocky Mountains and published a poem with clues. Ten years later, someone finally found it."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "The bread-oven savings",
+   "fact": "In 2018, a Polish baker found €12,000 in old banknotes rolled up inside a broken bread oven he had bought from a closed bakery. The previous owner had hidden them during the war."
+  },
+  {
+   "name": "Notes in the hymn books",
+   "fact": "A church in rural Austria found 40,000 schillings in banknotes hidden between the pages of old hymn books in 2011. The money was out of date and was given to a museum."
+  },
+  {
+   "name": "The garden gnome bank",
+   "fact": "In 2015, a German pensioner told the police that thieves had taken the garden gnome where she kept her savings. They returned the gnome, but not the €8,000 inside."
+  },
+  {
+   "name": "Cash in the cheese",
+   "fact": "Customs officers at a Swiss border crossing found €50,000 inside three large hollowed-out wheels of cheese in 2017. The driver said he did not know it was there."
+  },
+  {
+   "name": "Coins in the chimney",
+   "fact": "A chimney sweep in Yorkshire found 300 silver coins from the 1800s inside a chimney in 2019. They had been hidden in a leather bag on a ledge."
+  },
+  {
+   "name": "Savings in the fish tank",
+   "fact": "A man in Lisbon hid his savings in a waterproof box under the gravel of his fish tank. In 2016 his son sold the tank online, box and all."
+  },
+  {
+   "name": "Money in the guitar",
+   "fact": "In 2020, a music shop in Madrid bought an old Spanish guitar and found €7,500 in banknotes taped inside it. The money was returned to the late owner's family."
+  },
+  {
+   "name": "The lost key in the lake",
+   "fact": "A Finnish businessman threw the key to his safe into a lake in 2012 after an argument with his business partner. Divers spent two weeks looking for it."
+  },
+  {
+   "name": "The bank in a beehive",
+   "fact": "A beekeeper in Slovenia kept his savings inside an empty beehive for twenty years. He said that no thief would want to put a hand inside."
+  },
+  {
+   "name": "Banknotes in the ceiling",
+   "fact": "Builders renovating a primary school in Belgium in 2018 found 60,000 francs hidden above the ceiling of the head teacher's office. The francs were no longer worth anything."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short, newspaper-style name."
+  ],
+  [
+   "where",
+   "Where the money was",
+   "Something weird but possible: a piece of furniture, a building, an animal, a place outside."
+  ],
+  [
+   "who",
+   "Who hid it, and where",
+   "A person, a family or a business, and a real town or country."
+  ],
+  [
+   "how",
+   "How it was found",
+   "Who found it, and how: a builder, a buyer, the police, by accident."
+  ],
+  [
+   "result",
+   "What happened next",
+   "Who got the money, or what went wrong."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date or a small strange detail."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“the notes were no longer worth anything”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}

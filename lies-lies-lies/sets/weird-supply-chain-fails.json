@@ -1,0 +1,128 @@
+{
+ "name": "Lies, Lies, Lies",
+ "what": "supply-chain fail",
+ "whats": "supply-chain fails",
+ "topic": "really weird supply-chain fails",
+ "items": [
+  {
+   "name": "The chicken shop with no chicken",
+   "fact": "In February 2018, KFC switched to a new delivery company in the UK and hundreds of its restaurants ran out of chicken. KFC apologised with a newspaper advert showing an empty bucket with the letters “FCK”."
+  },
+  {
+   "name": "The bath toys that crossed the ocean",
+   "fact": "In 1992 a container of 28,800 plastic bath toys, such as yellow ducks and green frogs, fell off a ship in the Pacific. They washed up on beaches for years, and scientists used them to study ocean currents."
+  },
+  {
+   "name": "Lego on the beaches of Cornwall",
+   "fact": "In 1997 a huge wave knocked containers off a ship near Land's End, including almost five million Lego pieces. Many were sea-themed, like octopuses and flippers, and they still wash up in Cornwall today."
+  },
+  {
+   "name": "Two tomatoes each, please",
+   "fact": "In February 2023, several UK supermarkets limited how many tomatoes, cucumbers and peppers each customer could buy. Cold weather and floods in Spain and Morocco had ruined the harvests that Britain imports in winter."
+  },
+  {
+   "name": "The hot-sauce drought",
+   "fact": "In 2022 the makers of Sriracha hot sauce in California had to stop production for months. A drought in northern Mexico had destroyed the red chilli peppers they needed, and bottles sold online for high prices."
+  },
+  {
+   "name": "The ketchup-packet shortage",
+   "fact": "In 2021, so many people in the US ordered takeaway during the pandemic that restaurants ran short of single-portion ketchup packets. Heinz had to build new production lines to keep up."
+  },
+  {
+   "name": "Small fries only (Japan)",
+   "fact": "In December 2021, McDonald's in Japan sold only small portions of fries for about a month. Floods near Vancouver in Canada and delays at the port had cut off its supply of potatoes."
+  },
+  {
+   "name": "When floods made computers dearer",
+   "fact": "In 2011, floods in Thailand covered the factories that made a large share of the world's computer hard drives. In a few weeks, the price of a hard drive in some shops more than doubled."
+  },
+  {
+   "name": "Vanilla dearer than silver",
+   "fact": "In 2017 a cyclone hit Madagascar, where most of the world's vanilla is grown. Prices climbed so high that, kilo for kilo, vanilla cost more than silver, and some ice-cream makers changed their recipes."
+  },
+  {
+   "name": "The crumpet crisis",
+   "fact": "In the summer of 2018, a shortage of carbon dioxide gas in Britain forced the bakery Warburtons to stop making crumpets at some of its bakeries. The same shortage hit beer, fizzy drinks and meat."
+  }
+ ],
+ "fakes": [
+  {
+   "name": "Easter eggs in paper bags",
+   "fact": "In 2019 a flood at a Belgian box factory left a chocolate maker with no Easter egg boxes. For two weeks, shops sold the eggs loose in brown paper bags at a discount."
+  },
+  {
+   "name": "Cheese wheels on Norwegian beaches",
+   "fact": "In 2016 a container of 4,000 Dutch cheese wheels fell into the North Sea in a storm. Because of the wax coating, many floated and washed up in Norway, where locals collected them."
+  },
+  {
+   "name": "The shoelace delay",
+   "fact": "An Italian luxury shoe brand had to delay its whole spring collection in 2022 because its only shoelace supplier, a small factory in Romania, was closed by a fire."
+  },
+  {
+   "name": "The extra zero",
+   "fact": "In 2020 a typing error at a Swiss supermarket chain ordered 12,000 boxes of bananas instead of 1,200. Stores sold them at half price and gave the rest to food banks."
+  },
+  {
+   "name": "No barrels for the whiskey",
+   "fact": "An Irish distillery ran out of wooden barrels in 2021 after a strike by barrel makers in Kentucky. Thousands of litres of new spirit had to wait in steel tanks for months."
+  },
+  {
+   "name": "Christmas crackers without the bang",
+   "fact": "In 2021 a British cracker maker sold boxes of Christmas crackers with no “snaps”, the small strips that make the bang, because a shipment from China was stuck at sea."
+  },
+  {
+   "name": "Stranded Christmas trees",
+   "fact": "In December 2018 a port strike in Denmark left 30,000 Christmas trees for Germany stuck on the quay. Most arrived on the 27th of December, and many were turned into animal bedding."
+  },
+  {
+   "name": "Pretzels without salt",
+   "fact": "In 2020 a German bakery chain ran out of the special coarse salt for its pretzels after a mine in Austria flooded. For a month the pretzels were sold plain."
+  },
+  {
+   "name": "The missing guitar strings",
+   "fact": "In 2021 a Spanish guitar maker could not sell any new guitars for six weeks because its only string supplier in Japan was hit by an earthquake."
+  },
+  {
+   "name": "Umbrellas in a heatwave",
+   "fact": "In 2022 a delayed ship from Asia delivered 200,000 umbrellas to French shops in the middle of a summer heatwave, three months late. Most were sold at a loss in the autumn."
+  }
+ ],
+ "fake": [
+  [
+   "name",
+   "Its name",
+   "Give it a short, newspaper-style name."
+  ],
+  [
+   "what",
+   "What ran out or went wrong",
+   "Something weird but possible: a product, a part or a delivery."
+  ],
+  [
+   "who",
+   "Who it hit, and where",
+   "A company, a shop or a country, and a real place."
+  ],
+  [
+   "cause",
+   "What caused it",
+   "The storm, strike, accident, mistake or shortage behind it."
+  ],
+  [
+   "result",
+   "What happened next",
+   "What shops, customers or the company did about it."
+  ],
+  [
+   "detail",
+   "One very convincing detail",
+   "A number, a date or a small strange result."
+  ]
+ ],
+ "tips": [
+  "Be specific: numbers, dates and real places make a lie believable.",
+  "Give it a small problem (“most of them went to animal feed”): perfect things sound fake.",
+  "Make both talks the same length and give them the same confidence.",
+  "Don't laugh. Decide now who says which one."
+ ]
+}
