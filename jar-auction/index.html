@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Jar Auction</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+[hidden]{display:none!important}
+/* Layout: a projector run-through in five steps (set-up, two auction rounds, debrief, words); one big panel per step, the teacher's controls sit quietly beneath it. */
+:root{
+  --bg:#f3f0ea;--panel:#fffdf8;--ink:#1f1b16;--muted:#6b6358;--line:#ddd5c7;
+  --accent:#8a5a14;--accent-soft:#f3e4c4;--on-accent:#fffdf8;--good:#2f7a4f;--bad:#b23b2a;
+  --shadow:0 1px 0 rgba(31,27,22,.05),0 8px 22px rgba(31,27,22,.07);
+  --display:"Literata",Georgia,serif;--body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#17140f;--panel:#211c16;--ink:#f1eadf;--muted:#ad9f8c;--line:#3a3229;
+  --accent:#e0ad5a;--accent-soft:#3d2f19;--on-accent:#17140f;--good:#6cc493;--bad:#ef7d6b;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.35);color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(17px,1vw + 11px,21px);line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:18px max(16px,env(safe-area-inset-right,0px)) 60px max(16px,env(safe-area-inset-left,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0;max-width:66ch}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.label{font-family:var(--mono);font-size:.66em;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.top h1{font-size:clamp(26px,2.6vw,36px)}
+nav.steps{display:flex;gap:6px;flex-wrap:wrap}
+nav.steps button{display:flex;align-items:center;gap:8px;padding:7px 13px 7px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:.8em;font-weight:600;cursor:pointer}
+nav.steps button b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--line);font-family:var(--mono);font-size:.8em;font-weight:500}
+nav.steps button[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+nav.steps button[aria-current="step"] b{background:var(--on-accent);color:var(--accent)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:clamp(18px,3vw,34px);display:grid;gap:16px;margin-bottom:18px}
+.panel h2{font-size:clamp(32px,4.4vw,58px)}
+.lead{font-size:1.1em}
+.say{border-left:4px solid var(--accent);background:var(--accent-soft);padding:12px 16px;border-radius:0 10px 10px 0;font-size:1.05em}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.box{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:10px;align-content:start}
+.box h3{font-size:1.15em}
+textarea{width:100%;min-height:150px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 12px;font-family:var(--mono);font-size:.9em;resize:vertical}
+input[type=number],input[type=password],input[type=text]{border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:8px 10px;width:9em;font-family:var(--mono)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:9px 16px;font-weight:600;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:disabled{opacity:.4;cursor:default}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{flex:1 1 150px;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat .n{font-family:var(--display);font-size:clamp(30px,3.6vw,50px);font-weight:600;line-height:1.05}
+.stat.big{border-color:var(--accent);background:var(--accent-soft)}
+.good{color:var(--good)}.bad{color:var(--bad)}
+ol.bids{margin:0;padding-left:1.6em;display:grid;gap:4px}
+ol.bids li{font-family:var(--mono)}
+ol.bids li.win{font-weight:600;color:var(--accent)}
+ol.bids li .over{color:var(--bad);font-size:.85em}
+ol.bids li .under{color:var(--good);font-size:.85em}
+.hint{color:var(--muted);font-size:.85em}
+.qs{margin:0;padding-left:1.4em;display:grid;gap:12px;font-size:1.08em}
+table.words{width:100%;border-collapse:collapse;font-size:.95em}
+table.words th{text-align:left;font-family:var(--mono);font-size:.7em;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+table.words td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.words td:first-child{font-weight:600;white-space:nowrap}
+table.words td:last-child{color:var(--muted);font-style:italic}
+.reveal-note{font-size:1.15em}
+#slips{display:none}
+@media print{
+  body{background:#fff;color:#000;font-size:12pt}
+  .wrap>*:not(#slips){display:none!important}
+  #slips{display:grid!important;grid-template-columns:1fr 1fr;gap:0}
+  .slip{border:1px dashed #888;padding:14mm 8mm;min-height:60mm;break-inside:avoid;font-family:"Instrument Sans",Arial,sans-serif}
+  .slip .t{font-weight:700;font-size:13pt;margin-bottom:4mm}
+  .slip .b{font-size:12pt;margin-bottom:10mm}
+  .slip .l{border-bottom:1px solid #000;height:9mm;margin-top:4mm}
+  .slip .k{font-size:9pt;color:#555;margin-top:2mm}
+}
+</style>
+</head>
+<body><div class="wrap">
+
+<div class="top">
+  <div><div class="label">SimLearn Extras · Pre-task</div><h1>The Jar Auction</h1></div>
+  <nav class="steps" id="nav"></nav>
+</div>
+
+<!-- 1. Set up -->
+<section class="panel" data-step="setup">
+  <h2>Before class</h2>
+  <p class="lead">One jar (or bag) of beads, sold to the highest bidder. The class is usually right on average, but the winner is usually wrong. Ten to fifteen minutes.</p>
+  <div class="grid2">
+    <div class="box">
+      <h3>1. Fill the jars</h3>
+      <p>Count 200–300 beads into jar A. For round 2, use a second jar with a different number, or refill the same jar while the class discusses round 1.</p>
+      <div class="row"><label for="countA">Jar A</label><input id="countA" type="password" inputmode="numeric" autocomplete="off" placeholder="e.g. 247"></div>
+      <div class="row"><label for="countB">Jar B</label><input id="countB" type="password" inputmode="numeric" autocomplete="off" placeholder="e.g. 190"></div>
+      <p class="hint">The counts stay hidden (dots) and are kept on this computer only, so you can type them in before the projector is on.</p>
+    </div>
+    <div class="box">
+      <h3>2. Print the slips for round 2</h3>
+      <p>Half the class gets an analyst note with a number that's far too high; the other half gets no note. Students write their round 2 bid on the slip they get, so the two groups sort themselves.</p>
+      <div class="row"><label for="anchor">Analyst's estimate</label><input id="anchor" type="number" min="1" value="400"></div>
+      <div class="row"><label for="classSize">Students (or pairs)</label><input id="classSize" type="number" min="2" max="80" value="24"></div>
+      <p class="hint">Make the estimate about 1.5 to 2 times jar B's real count.</p>
+      <div class="row"><button class="btn" id="printSlips" type="button">Print the slips</button></div>
+    </div>
+  </div>
+  <div class="box">
+    <h3>3. On the day</h3>
+    <p>Blank slips for round 1, both jars ready, and one student with a phone calculator. You type the bids in on this screen; the page does the sums.</p>
+  </div>
+</section>
+
+<!-- 2. Round 1 -->
+<section class="panel" data-step="r1">
+  <div class="label">Round 1</div>
+  <h2>The auction</h2>
+  <div class="say">“I'm selling this jar. Every bead in it is worth one euro. Write down the most you'd pay for it, and your name. The highest bid wins the jar and pays exactly what they bid. No counting out loud, no conferring.”</div>
+  <p>Pass the jar round, or walk it past each table: about a minute of looking in total. Collect the slips.</p>
+  <div class="grid2">
+    <div class="box">
+      <h3>Type in the bids</h3>
+      <textarea id="bids1" placeholder="One per line, with or without a name:&#10;Lena 260&#10;Tom 310&#10;245"></textarea>
+      <p class="hint">Separate numbers with spaces or new lines. A name in front is optional.</p>
+    </div>
+    <div class="box">
+      <h3>Top bids</h3>
+      <ol class="bids" id="top1"></ol>
+      <p class="hint" id="n1"></p>
+    </div>
+  </div>
+  <div class="row"><button class="btn primary" id="reveal1" type="button">Reveal the count</button><button class="btn" id="hide1" type="button" hidden>Hide it again</button></div>
+  <div id="res1" hidden>
+    <div class="stats" id="stats1"></div>
+    <p class="reveal-note" id="note1"></p>
+  </div>
+</section>
+
+<!-- 3. Round 2 -->
+<section class="panel" data-step="r2">
+  <div class="label">Round 2</div>
+  <h2>The analyst note</h2>
+  <div class="say">“Same rules, new jar. You'll each get a slip. Read it to yourself, don't show anyone, and write your bid on it.”</div>
+  <p>Hand out the slips face down. Collect them and sort them into two piles.</p>
+  <div class="grid2">
+    <div class="box">
+      <h3>Slips with the analyst note</h3>
+      <textarea id="bidsA" placeholder="Bids from the analyst-note slips"></textarea>
+      <p class="hint" id="nA"></p>
+    </div>
+    <div class="box">
+      <h3>Slips with no note</h3>
+      <textarea id="bidsN" placeholder="Bids from the no-note slips"></textarea>
+      <p class="hint" id="nN"></p>
+    </div>
+  </div>
+  <div class="stats" id="avg2"></div>
+  <div class="row"><button class="btn primary" id="reveal2" type="button">Reveal the count</button><button class="btn" id="hide2" type="button" hidden>Hide it again</button></div>
+  <div id="res2" hidden>
+    <div class="stats" id="stats2"></div>
+    <p class="reveal-note" id="note2"></p>
+  </div>
+</section>
+
+<!-- 4. Debrief -->
+<section class="panel" data-step="debrief">
+  <div class="label">Debrief</div>
+  <h2>So who really won?</h2>
+  <ol class="qs">
+    <li>Winner of round 1: how did it feel when the count came out? Why does the person who wins an auction so often lose?</li>
+    <li>The class <em>average</em> was close to the real number. So why was the <em>winning</em> bid so far off?</li>
+    <li>Did the analyst's estimate move your bid? Did you notice it moving you?</li>
+    <li>A company selling its shares on the stock market for the first time sets a price. The investors who want the most shares are often the most optimistic. Should it price high to take advantage of that, or price lower so the people who buy make money and the share price rises?</li>
+    <li>When a company sells shares, who plays the role of the analyst note? Who puts a confident number into everyone's head?</li>
+  </ol>
+  <button class="btn" id="showTruth" type="button">One last thing…</button>
+  <div class="say" id="truth" hidden>The analyst doesn't exist. The estimate was made up, to see how far one confident, unchecked number could move the room.</div>
+</section>
+
+<!-- 5. Words -->
+<section class="panel" data-step="words">
+  <div class="label">Words for today</div>
+  <h2>Useful language</h2>
+  <table class="words">
+    <thead><tr><th>Word</th><th>Meaning</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>bid</td><td>the price a buyer offers</td><td>My bid was €260.</td></tr>
+      <tr><td>valuation</td><td>what something is judged to be worth</td><td>The bank's valuation looked far too optimistic.</td></tr>
+      <tr><td>overpay / overvalue</td><td>pay more than something is worth</td><td>The winner overpaid by €40.</td></tr>
+      <tr><td>the winner's curse</td><td>winning an auction because you overestimated the most</td><td>Winning the jar was a classic case of the winner's curse.</td></tr>
+      <tr><td>anchoring</td><td>being pulled towards a number you heard first</td><td>The analyst's figure anchored everyone's bids.</td></tr>
+      <tr><td>price range</td><td>the band a share price will be set within; the <em>top of the range</em> is its upper end</td><td>They priced at the top of the range.</td></tr>
+      <tr><td>oversubscribed</td><td>more demand than there are shares on offer</td><td>The share sale was four times oversubscribed.</td></tr>
+      <tr><td>leave money on the table</td><td>sell for less than you could have got</td><td>Pricing low leaves money on the table.</td></tr>
+      <tr><td>first-day pop</td><td>a sharp rise in the share price on the first day of trading</td><td>A first-day pop pleases investors but means the price was set too low.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="row"><button class="btn" id="prev" type="button">← Back</button><button class="btn primary" id="next" type="button">Next →</button><span class="hint" style="margin-left:auto"><button class="btn" id="reset" type="button">Start again</button></span></div>
+
+<div id="slips"></div>
+
+</div>
+<script>
+(function(){
+"use strict";
+var STEPS=[["setup","Set up"],["r1","Round 1"],["r2","Round 2"],["debrief","Debrief"],["words","Words"]];
+var KEY="jar-auction-v1";
+var S={step:0,countA:"",countB:"",anchor:"400",classSize:"24",bids1:"",bidsA:"",bidsN:"",shown1:false,shown2:false,truth:false};
+try{var saved=JSON.parse(localStorage.getItem(KEY)||"null");if(saved)for(var k in S)if(k in saved)S[k]=saved[k];}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+function parse(text){
+  // "Lena 260", "260", "Tom: 310, 245" -> [{name, bid}]
+  var out=[];
+  String(text||"").split(/\n|,|;/).forEach(function(line){
+    line=line.trim();if(!line)return;
+    var m=line.match(/^(.*?)[\s:=-]*(\d+(?:[.,]\d+)?)\s*(?:€|eur|euros?)?$/i);
+    if(m&&m[1]&&/[a-zà-ÿ]/i.test(m[1])){out.push({name:m[1].replace(/[:=\-\s]+$/,"").trim(),bid:parseFloat(m[2].replace(",","."))});return;}
+    (line.match(/\d+(?:[.,]\d+)?/g)||[]).forEach(function(n){out.push({name:"",bid:parseFloat(n.replace(",","."))});});
+  });
+  return out.filter(function(b){return isFinite(b.bid)&&b.bid>=0;});
+}
+function avg(list){if(!list.length)return null;return list.reduce(function(a,b){return a+b.bid;},0)/list.length;}
+function r(n){return Math.round(n);}
+function eur(n){return "€"+r(n);}
+function count(v){var n=parseInt(v,10);return isFinite(n)&&n>0?n:null;}
+
+function nav(){
+  var h="";STEPS.forEach(function(s,i){h+='<button type="button" data-go="'+i+'"'+(i===S.step?' aria-current="step"':'')+'><b>'+(i+1)+'</b>'+s[1]+'</button>';});
+  $("nav").innerHTML=h;
+  document.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){go(+b.getAttribute("data-go"));};});
+  document.querySelectorAll("section[data-step]").forEach(function(sec){sec.hidden=sec.getAttribute("data-step")!==STEPS[S.step][0];});
+  $("prev").disabled=S.step===0;$("next").disabled=S.step===STEPS.length-1;
+}
+function go(i){S.step=Math.max(0,Math.min(STEPS.length-1,i));save();nav();window.scrollTo(0,0);}
+
+function round1(){
+  var bids=parse(S.bids1),c=count(S.countA);
+  var sorted=bids.slice().sort(function(a,b){return b.bid-a.bid;});
+  var top=sorted.slice(0,5),h="";
+  top.forEach(function(b,i){
+    var tag="";
+    if(S.shown1&&c){var d=b.bid-c;tag=d>0?' <span class="over">(+'+r(d)+' over)</span>':(d<0?' <span class="under">('+r(-d)+' under)</span>':'');}
+    h+='<li'+(i===0?' class="win"':'')+'>'+eur(b.bid)+(b.name?' · '+esc(b.name):'')+tag+'</li>';
+  });
+  $("top1").innerHTML=h||'<li class="hint" style="list-style:none;margin-left:-1.6em">No bids yet.</li>';
+  $("n1").textContent=bids.length?bids.length+" bid"+(bids.length===1?"":"s")+(sorted.length>5?" (top five shown)":""):"";
+  $("reveal1").hidden=S.shown1;$("hide1").hidden=!S.shown1;$("res1").hidden=!S.shown1;
+  if(!S.shown1)return;
+  if(!c){$("stats1").innerHTML="";$("note1").textContent="Type jar A's count in Set up first.";return;}
+  var a=avg(bids),w=sorted[0],over=bids.filter(function(b){return b.bid>c;}).length;
+  var st='<div class="stat big"><div class="label">Real count</div><div class="n">'+c+'</div></div>';
+  if(a!==null)st+='<div class="stat"><div class="label">Class average</div><div class="n">'+eur(a)+'</div><div class="hint">'+(a>=c?"+":"−")+r(Math.abs(a-c))+' from the real count</div></div>';
+  if(w){var res=c-w.bid;st+='<div class="stat"><div class="label">Winner'+(w.name?': '+esc(w.name):'')+'</div><div class="n '+(res<0?'bad':'good')+'">'+(res>=0?'+':'−')+'€'+r(Math.abs(res))+'</div><div class="hint">paid '+eur(w.bid)+' for €'+c+' of beads</div></div>';}
+  $("stats1").innerHTML=st;
+  var note="";
+  if(w&&w.bid>c)note="The winner overpaid. "+over+" of "+bids.length+" bids were above the real count — but only the highest one had to pay.";
+  else if(w)note="The winner got lucky this time. But look at the top five: how many were above the real count?";
+  if(w&&a!==null&&Math.abs(a-c)<Math.abs(w.bid-c))note+=" The class as a whole was closer than the winner.";
+  $("note1").textContent=note;
+}
+
+function round2(){
+  var A=parse(S.bidsA),N=parse(S.bidsN),c=count(S.countB),aA=avg(A),aN=avg(N);
+  $("nA").textContent=A.length?A.length+" bid"+(A.length===1?"":"s"):"";
+  $("nN").textContent=N.length?N.length+" bid"+(N.length===1?"":"s"):"";
+  var h="";
+  if(aA!==null)h+='<div class="stat"><div class="label">Average · analyst note</div><div class="n">'+eur(aA)+'</div></div>';
+  if(aN!==null)h+='<div class="stat"><div class="label">Average · no note</div><div class="n">'+eur(aN)+'</div></div>';
+  if(aA!==null&&aN!==null)h+='<div class="stat"><div class="label">Gap</div><div class="n">'+(aA>=aN?'+':'−')+'€'+r(Math.abs(aA-aN))+'</div></div>';
+  $("avg2").innerHTML=h;
+  $("reveal2").hidden=S.shown2;$("hide2").hidden=!S.shown2;$("res2").hidden=!S.shown2;
+  if(!S.shown2)return;
+  if(!c){$("stats2").innerHTML="";$("note2").textContent="Type jar B's count in Set up first.";return;}
+  var st='<div class="stat big"><div class="label">Real count</div><div class="n">'+c+'</div></div>';
+  if(aA!==null)st+='<div class="stat"><div class="label">Note group was off by</div><div class="n">'+(aA>=c?'+':'−')+r(Math.abs(aA-c))+'</div></div>';
+  if(aN!==null)st+='<div class="stat"><div class="label">No-note group was off by</div><div class="n">'+(aN>=c?'+':'−')+r(Math.abs(aN-c))+'</div></div>';
+  $("stats2").innerHTML=st;
+  var note="";
+  if(aA!==null&&aN!==null){
+    note=aA>aN?"The group with the analyst note bid higher on average. Nobody told them what to bid — one number on a slip did it.":"This time the note didn't pull the bids up. Ask the note group why they ignored it.";
+  }
+  $("note2").textContent=note;
+}
+
+function slips(){
+  var n=Math.max(2,Math.min(80,parseInt(S.classSize,10)||24)),anchor=parseInt(S.anchor,10)||400,h="";
+  for(var i=0;i<n;i++){
+    var note=i%2===0;
+    h+='<div class="slip"><div class="t">Round 2</div><div class="b">'+(note?'Analyst note: experts estimate this jar holds around '+anchor+' beads.':'No analyst note this round.')+'</div>'+
+       '<div>Name:</div><div class="l"></div><div style="margin-top:6mm">My bid (€):</div><div class="l"></div><div class="k">'+(note?'A':'B')+'</div></div>';
+  }
+  $("slips").innerHTML=h;
+}
+
+function bindInput(id,key,after){var el=$(id);el.value=S[key];el.addEventListener("input",function(){S[key]=el.value;save();if(after)after();});}
+bindInput("countA","countA",round1);bindInput("countB","countB",round2);
+bindInput("anchor","anchor",slips);bindInput("classSize","classSize",slips);
+bindInput("bids1","bids1",round1);bindInput("bidsA","bidsA",round2);bindInput("bidsN","bidsN",round2);
+$("reveal1").onclick=function(){S.shown1=true;save();round1();};
+$("hide1").onclick=function(){S.shown1=false;save();round1();};
+$("reveal2").onclick=function(){S.shown2=true;save();round2();};
+$("hide2").onclick=function(){S.shown2=false;save();round2();};
+$("showTruth").onclick=function(){S.truth=!S.truth;save();$("truth").hidden=!S.truth;};
+$("truth").hidden=!S.truth;
+$("printSlips").onclick=function(){slips();window.print();};
+$("prev").onclick=function(){go(S.step-1);};
+$("next").onclick=function(){go(S.step+1);};
+$("reset").onclick=function(){
+  if(!window.confirm("Clear the bids and counts and start again?"))return;
+  S={step:0,countA:"",countB:"",anchor:S.anchor,classSize:S.classSize,bids1:"",bidsA:"",bidsN:"",shown1:false,shown2:false,truth:false};
+  save();["countA","countB","bids1","bidsA","bidsN"].forEach(function(id){$(id).value="";});$("truth").hidden=true;round1();round2();nav();
+};
+slips();round1();round2();nav();
+})();
+</script>
+</body>
+</html>
