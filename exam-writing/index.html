@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Write It Well – Exam Writing Workshop · SimLearn Extras</title>
+<style>
+  :root{
+    --ink:#14213d; --muted:#5b6478; --line:#dde3ee; --bg:#f4f7fc; --card:#ffffff;
+    --blue:#1f5fbf; --blue-d:#174a96; --blue-l:#e7effb;
+    --ok:#1e8a5a; --ok-l:#e5f5ec; --bad:#c2410c; --bad-l:#fdeee6; --warn:#a16207; --warn-l:#fdf6e3;
+    --t-pos:#1f5fbf; --t-rea:#7c3aed; --t-evi:#0f766e; --t-src:#b45309; --t-cou:#be123c; --t-res:#9d174d; --t-tra:#4d7c0f; --t-con:#334155;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+  header{background:linear-gradient(135deg,#163f80,#1f5fbf);color:#fff;padding:22px 20px 18px}
+  header .wrap{max-width:980px;margin:0 auto}
+  header .kicker{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+  header h1{margin:4px 0 6px;font-size:1.7rem}
+  header p{margin:0;opacity:.92;max-width:720px}
+  nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+  nav .wrap{max-width:980px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:8px 12px}
+  nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 13px;font-size:.88rem;cursor:pointer;white-space:nowrap}
+  nav button .n{display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:var(--blue-l);color:var(--blue);font-weight:700;font-size:.75rem;margin-right:6px}
+  nav button.active{background:var(--blue);border-color:var(--blue);color:#fff}
+  nav button.active .n{background:#fff}
+  nav button.done .n{background:var(--ok);color:#fff}
+  main{max-width:980px;margin:0 auto;padding:22px 16px 60px}
+  section.station{display:none}
+  section.station.active{display:block}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  h2{margin:0 0 4px;font-size:1.35rem}
+  h3{margin:0 0 8px;font-size:1.05rem}
+  .time{display:inline-block;font-size:.78rem;font-weight:600;color:var(--blue);background:var(--blue-l);border-radius:999px;padding:2px 10px;margin-bottom:10px}
+  .muted{color:var(--muted)}
+  .small{font-size:.88rem}
+  .grid{display:grid;gap:12px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .g4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .callout{border-left:4px solid var(--blue);background:var(--blue-l);padding:12px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+  .callout.ok{border-color:var(--ok);background:var(--ok-l)}
+  .callout.warn{border-color:var(--warn);background:var(--warn-l)}
+  .btn{border:0;background:var(--blue);color:#fff;border-radius:10px;padding:10px 16px;font-size:.95rem;cursor:pointer;font-weight:600}
+  .btn:hover{background:var(--blue-d)}
+  .btn.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+  .btn:disabled{opacity:.45;cursor:default}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .spacer{flex:1}
+
+  /* Station 1: move cards */
+  .move{border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;background:#fff;transition:box-shadow .15s}
+  .move:hover{box-shadow:0 2px 10px rgba(20,33,61,.08)}
+  .move .tag{display:inline-block;font-size:.75rem;font-weight:700;color:#fff;border-radius:6px;padding:2px 8px;margin-bottom:6px}
+  .move .q{font-weight:600}
+  .move .more{display:none;margin-top:10px;font-size:.9rem}
+  .move.open .more{display:block}
+  .move .ex{font-style:italic;background:var(--bg);border-radius:8px;padding:8px 10px;margin:6px 0}
+  .phr{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .phr span{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.82rem}
+
+  /* tag colours */
+  .c-pos{background:var(--t-pos)} .c-rea{background:var(--t-rea)} .c-evi{background:var(--t-evi)} .c-src{background:var(--t-src)}
+  .c-cou{background:var(--t-cou)} .c-res{background:var(--t-res)} .c-tra{background:var(--t-tra)} .c-con{background:var(--t-con)}
+
+  /* Station 2: tagging */
+  .sent{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff}
+  .sent.correct{border-color:var(--ok);background:var(--ok-l)}
+  .sent .txt{margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px;font-size:.82rem;cursor:pointer;color:var(--ink)}
+  .chip:hover{border-color:var(--blue)}
+  .chip.wrong{background:var(--bad-l);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+  .chip.right{color:#fff;border-color:transparent}
+  .chip.right.c-pos{background:var(--t-pos)} .chip.right.c-rea{background:var(--t-rea)} .chip.right.c-evi{background:var(--t-evi)} .chip.right.c-src{background:var(--t-src)}
+  .chip.right.c-cou{background:var(--t-cou)} .chip.right.c-res{background:var(--t-res)} .chip.right.c-tra{background:var(--t-tra)} .chip.right.c-con{background:var(--t-con)}
+  .fb{font-size:.88rem;margin-top:8px;padding:8px 10px;border-radius:8px;display:none}
+  .fb.show{display:block}
+  .fb.good{background:var(--ok-l);color:#14532d}
+  .fb.nope{background:var(--bad-l);color:#7c2d12}
+  .score{font-weight:700;color:var(--blue)}
+
+  /* Station 3 / 4 / 5: choice items */
+  .item{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px;background:#fff}
+  .claim{background:var(--bg);border-radius:10px;padding:12px 14px;margin:6px 0 12px}
+  .claim .who{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .opts{display:grid;gap:8px}
+  .opt{text-align:left;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;cursor:pointer;font-size:.93rem;color:var(--ink);line-height:1.45}
+  .opt:hover{border-color:var(--blue)}
+  .opt.wrong{border-color:var(--bad);background:var(--bad-l)}
+  .opt.right{border-color:var(--ok);background:var(--ok-l);font-weight:600}
+  .opt:disabled{cursor:default}
+  .model{display:none;margin-top:10px;border:1px dashed var(--ok);border-radius:10px;padding:10px 12px;background:#fbfffd;font-size:.92rem}
+  .model.show{display:block}
+  .model b{color:var(--ok)}
+
+  .weak{background:#fff7f2;border:1px solid #f6d3bf;border-radius:12px;padding:14px;font-size:1.02rem}
+  .weak mark{background:#fde2d2;border-radius:4px;padding:0 3px}
+  .weak mark.fixed{background:var(--ok-l);color:#14532d}
+  .stepdots{display:flex;gap:6px;margin:10px 0}
+  .stepdots i{width:28px;height:6px;border-radius:3px;background:var(--line)}
+  .stepdots i.on{background:var(--blue)}
+  .stepdots i.ok{background:var(--ok)}
+
+  /* Station 6: writing */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .tabs button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 12px;cursor:pointer;font-size:.9rem}
+  .tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff}
+  label.pl{display:block;font-weight:600;font-size:.88rem;margin:10px 0 4px}
+  label.pl .tag{font-size:.7rem;color:#fff;border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px}
+  input[type=text],textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font:inherit;font-size:.95rem;background:#fff;color:var(--ink)}
+  input[type=text]:focus,textarea:focus{outline:2px solid var(--blue-l);border-color:var(--blue)}
+  textarea{min-height:220px;resize:vertical;line-height:1.6}
+  .hint{font-size:.8rem;color:var(--muted);margin-top:3px}
+  .checks{display:grid;gap:6px;margin-top:10px}
+  .ck{display:flex;gap:8px;align-items:flex-start;font-size:.9rem;padding:6px 8px;border-radius:8px;background:var(--bg)}
+  .ck .dot{flex:0 0 18px;height:18px;border-radius:50%;border:2px solid #b8c2d6;margin-top:2px}
+  .ck.on{background:var(--ok-l)}
+  .ck.on .dot{background:var(--ok);border-color:var(--ok)}
+  .wc{font-size:.85rem;color:var(--muted)}
+  .sources{display:grid;gap:8px}
+  .src{background:var(--bg);border-radius:10px;padding:10px 12px;font-size:.9rem}
+  .src b{display:block;font-size:.82rem;color:var(--muted);margin-bottom:2px}
+
+
+  /* Put it together */
+  .full{font-size:1.04rem;line-height:1.8}
+  .full .s{border-radius:4px;padding:1px 2px;cursor:pointer;transition:background .15s}
+  .full.show .s{border-bottom:3px solid var(--mc);background:color-mix(in srgb,var(--mc) 10%,transparent)}
+  .full .s.sel{background:color-mix(in srgb,var(--mc) 22%,transparent)}
+  .full .lab{display:none;font-size:.68rem;font-weight:700;color:#fff;background:var(--mc);border-radius:4px;padding:0 5px;margin-right:4px;vertical-align:2px}
+  .full.show .lab{display:inline}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .legend span{font-size:.72rem;font-weight:700;color:#fff;border-radius:5px;padding:2px 7px}
+  .selinfo{min-height:44px}
+
+  /* Builder */
+  .bwrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:760px){.bwrap{grid-template-columns:1fr}}
+  .tray{background:var(--bg);border:2px dashed #c9d3e4;border-radius:12px;padding:10px;min-height:120px;display:flex;flex-direction:column;gap:8px}
+  .tray.over{border-color:var(--blue);background:var(--blue-l)}
+  .card8{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;font-size:.9rem;line-height:1.45;cursor:grab;user-select:none;box-shadow:0 1px 2px rgba(20,33,61,.06)}
+  .card8:hover{border-color:var(--blue)}
+  .card8.picked{outline:3px solid var(--blue);border-color:var(--blue)}
+  .card8.dragging{opacity:.4}
+  .slots{display:flex;flex-direction:column;gap:8px}
+  .slot{border:2px dashed #c9d3e4;border-radius:12px;padding:8px 10px;background:#fff;min-height:58px;transition:border-color .15s,background .15s}
+  .slot .sl{font-size:.72rem;font-weight:700;color:#fff;border-radius:5px;padding:1px 7px;display:inline-block;margin-bottom:5px}
+  .slot .sq{font-size:.78rem;color:var(--muted);margin-left:6px}
+  .slot .in{font-size:.9rem;line-height:1.45}
+  .slot.over,.slot.target{border-color:var(--blue);background:var(--blue-l)}
+  .slot.good{border:2px solid var(--ok);background:var(--ok-l)}
+  .slot.weakfit{border:2px solid var(--warn);background:var(--warn-l)}
+  .slot.shake{animation:shake .35s}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  .slot .note{font-size:.8rem;margin-top:5px}
+  .slot.good .note{color:#14532d}
+  .slot.weakfit .note{color:#713f12}
+  .slot.bad .note{color:var(--bad)}
+  .slot .in .card8{cursor:pointer;box-shadow:none;background:transparent;border:0;padding:0}
+  .card8{touch-action:manipulation}
+  .qp{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);cursor:default}
+  .qp .qlab{width:100%;font-size:.75rem;color:var(--muted)}
+  .qp button{border:0;color:#fff;font-size:.72rem;font-weight:700;border-radius:6px;padding:4px 8px;cursor:pointer}
+  .qp button:disabled{opacity:.35;cursor:default}
+  .qp .qmsg{width:100%;font-size:.8rem;color:var(--bad);margin-top:2px}
+  .traymsg{font-size:.85rem;border-radius:8px;padding:7px 10px;display:none}
+  .traymsg.show{display:block}
+  .traymsg.good{background:var(--ok-l);color:#14532d}
+  .traymsg.weak{background:var(--warn-l);color:#713f12}
+  .finished{display:none}
+  .finished.show{display:block}
+
+  .finalcard{background:linear-gradient(135deg,#f0f6ff,#ffffff)}
+  ol.check li{margin-bottom:6px}
+  .foot{text-align:center;font-size:.8rem;color:var(--muted);margin-top:30px}
+  @media (max-width:600px){ header h1{font-size:1.35rem} .card{padding:15px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">SimLearn Extras · Exam writing</div>
+    <h1>Write It Well</h1>
+    <p>A 45-minute workshop on the building blocks of a strong exam text: position, reasoning, evidence, checking sources, the other side, trade-offs and a clear conclusion.</p>
+  </div>
+</header>
+
+<nav><div class="wrap" id="nav"></div></nav>
+
+<main>
+
+<!-- ============ STATION 0: Start ============ -->
+<section class="station" data-title="Start">
+  <div class="card">
+    <span class="time">3 min</span>
+    <h2>What the examiner is looking for</h2>
+    <p>Your exam text is not a test of what you know about business, design or politics. It's a test of whether you can <b>argue clearly in English</b>. The examiner asks one big question:</p>
+    <div class="callout"><b>Could a busy reader act on this?</b> Do they know what you think, why you think it, what it's based on, what the other side says, and what it will cost?</div>
+    <div class="grid g2">
+      <div>
+        <h3>What earns the grade</h3>
+        <ul class="small">
+          <li>A clear position early on</li>
+          <li>Reasons that explain <i>why</i>, not just <i>that</i></li>
+          <li>Evidence from the texts, with the source named</li>
+          <li>A fair look at the other side, and an answer to it</li>
+          <li>An honest trade-off and a conclusion that follows</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What matters less than you think</h3>
+        <ul class="small">
+          <li><b>The "right" answer.</b> Either choice is fine if you justify it well.</li>
+          <li><b>Perfect grammar.</b> Clear reasoning beats fancy language.</li>
+          <li><b>Headers and layout.</b> To/From/Subject lines don't earn points. The body does.</li>
+          <li><b>A fixed template.</b> Close enough to the structure is fine.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:14px">Today's case</h3>
+    <p class="small">Every station uses the same story, so you can focus on the writing.</p>
+    <div class="claim">
+      <b>Vossberg Markets</b>, a Dutch supermarket chain with 40 city stores, is deciding whether to remove its staffed tills and go <b>self-checkout only</b>, or keep a <b>mixed model</b> with at least one staffed till per store. A pilot in its Utrecht store has just finished, and the board wants a recommendation.
+    </div>
+    <div class="row"><span class="spacer"></span><button class="btn" data-next>Start: the building blocks →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 1: Building blocks ============ -->
+<section class="station" data-title="Building blocks">
+  <div class="card">
+    <span class="time">6 min</span>
+    <h2>The eight moves of a strong text</h2>
+    <p class="muted">Tap each card. Every good exam text uses most of these moves, though not always in this order and not always one sentence each.</p>
+    <div class="grid g4" id="moves"></div>
+    <div class="callout warn small" style="margin-top:16px"><b>Register tip.</b> Aim for <i>clear and professional</i>, not stiff. Write as you would to a manager you respect. Business memos can be quite direct ("We recommend…"). Academic essays avoid contractions and "I think", and use hedging ("this suggests", "it appears").</div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: spot the moves →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 2: Spot the moves ============ -->
+<section class="station" data-title="Spot the moves">
+  <div class="card">
+    <span class="time">7 min</span>
+    <h2>Spot the moves in a model text</h2>
+    <p class="muted">Here is a strong paragraph about Vossberg. Label each sentence with the move it makes. Wrong guesses get a hint.</p>
+    <p>Score: <span class="score" id="tagScore">0 / 8</span></p>
+    <div id="tagList"></div>
+    <div class="callout ok small" id="tagDone" style="display:none"><b>All eight found.</b> Notice how short the text is: about 180 words. Each sentence has one job, and together they make a complete argument. That is what you are aiming for in the exam.</div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: check the source →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 3: Check the source ============ -->
+<section class="station" data-title="Check the source">
+  <div class="card">
+    <span class="time">7 min</span>
+    <h2>Don't just use the numbers: check them</h2>
+    <p class="muted">Exam texts are full of claims and figures. Strong writers use them <i>and</i> say how far to trust them. What is the main weakness in each claim?</p>
+    <div id="srcList"></div>
+    <div class="callout small"><b>Remember:</b> a weak source isn't useless. You can still use it, as long as you tell the reader how much weight it can carry. One short clause does the job: <i>"…although the sample was small."</i></div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: upgrade a paragraph →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 4: Upgrade ============ -->
+<section class="station" data-title="Upgrade it">
+  <div class="card">
+    <span class="time">6 min</span>
+    <h2>Upgrade a weak paragraph</h2>
+    <p class="muted">This paragraph has a position, but almost nothing else. Fix it one problem at a time.</p>
+    <div class="weak" id="weakPara"></div>
+    <div class="stepdots" id="upDots"></div>
+    <div id="upStep"></div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: trade-offs →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 5: Trade-offs ============ -->
+<section class="station" data-title="Trade-offs">
+  <div class="card">
+    <span class="time">4 min</span>
+    <h2>Name the price of your choice</h2>
+    <p class="muted">Every decision costs something. Good writers say what they are giving up and why it is worth it. Weak writers pretend their option has no downside. Pick the strongest trade-off sentence.</p>
+    <div id="toList"></div>
+    <div class="callout small">
+      <b>A trade-off has three parts:</b> what you gain · what you give up · why it's worth it.<br>
+      <div class="phr" style="margin-top:8px">
+        <span>X means giving up Y, but…</span><span>The cost of this is…, which we accept because…</span><span>This comes at the price of…</span><span>On balance, … outweighs …</span><span>While this sacrifices…, it protects…</span>
+      </div>
+    </div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: put it together →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 6: Put it together ============ -->
+<section class="station" data-title="Put it together">
+  <div class="card">
+    <span class="time">4 min</span>
+    <h2>Put it together: a full exam answer</h2>
+    <p class="muted">Here is everything from today in one text. This time the writer chooses the <b>other</b> option: self-checkout only. Read it first, then press <i>Show the moves</i>. Tap any sentence to see what it is doing.</p>
+    <div class="row" style="margin-bottom:10px"><button class="btn ghost" id="showMoves">Show the moves</button></div>
+    <div class="claim full" id="fullText"></div>
+    <div class="callout small selinfo" id="selInfo">Tap a sentence to see its job.</div>
+    <div class="callout ok small"><b>Notice:</b> the opposite choice to the model in station 2, and it works just as well. The grade comes from how you argue, not which side you pick. The moves don't have to be one sentence each: this text uses two pieces of evidence, and it uses the pilot's summer timing as a <i>response</i> rather than a source check.</div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Next: build your own →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 7: Build it ============ -->
+<section class="station" data-title="Build it">
+  <div class="card">
+    <span class="time">8 min</span>
+    <h2>Build a paragraph on a new case</h2>
+    <p class="muted">Choose your course. Then drag each sentence into the right slot, or <b>double-click</b> a sentence and choose its move from the menu. (Or tap a sentence, then tap the slot.) Careful: some sentences are <b>weak versions</b> of a move. They fit the slot, but they won't earn the grade.</p>
+    <div class="tabs" id="courseTabs"></div>
+    <div class="callout" id="caseBox"></div>
+    <p>Placed well: <span class="score" id="buildScore">0 / 8</span></p>
+    <div class="bwrap">
+      <div>
+        <h3>Sentences</h3>
+        <div class="tray" id="tray"></div>
+      </div>
+      <div>
+        <h3>Your paragraph</h3>
+        <div class="slots" id="slots"></div>
+      </div>
+    </div>
+    <div class="finished" id="finished">
+      <div class="callout ok" style="margin-top:16px"><b>Paragraph complete.</b> Here it is as one text. Read it aloud: it should flow like a real answer.</div>
+      <div class="claim full show" id="finishedText"></div>
+      <div class="row"><span class="wc" id="finishedWc"></span><span class="spacer"></span><button class="btn ghost" id="resetBuild">Try again</button></div>
+    </div>
+
+    <details style="margin-top:18px"><summary style="cursor:pointer;font-weight:600">Bonus: write your own (if you have time)</summary>
+      <p class="small muted" style="margin-top:8px">Write a short paragraph (about 100–150 words) on the Vossberg case or on your course's new case, ideally for the side the model <i>didn't</i> take. Use the eight moves as a checklist.</p>
+      <div class="sources" style="margin:8px 0">
+        <div class="src"><b>Ilse Brandsma, Finance Director</b>In the Utrecht pilot, average basket value fell by 6% in the twelve weeks after the staffed tills were removed. The pilot ran from June to August.</div>
+        <div class="src"><b>Tomas Keller, Operations Manager</b>Going fully self-checkout in all 40 city stores would save about €2.1 million a year in staff costs. A mixed model would save about €1.4 million.</div>
+        <div class="src"><b>Customer survey, Utrecht pilot (420 customers)</b>31% of customers over 60 said they would shop elsewhere if no staffed till were available. 58% of customers under 35 said they preferred self-checkout.</div>
+        <div class="src"><b>Noor Hendriks, store manager, Utrecht</b>Queues were shorter at lunchtime, but staff spent much of the day helping customers with the machines.</div>
+      </div>
+      <textarea id="draft" placeholder="Write your paragraph here…" style="min-height:170px"></textarea>
+      <div class="row"><span class="wc" id="wc">0 words</span><span class="spacer"></span><button class="btn ghost" id="copyBtn">Copy text</button></div>
+      <h3 style="margin-top:12px">Quick self-check</h3>
+      <p class="hint" style="margin-top:-4px">The ticks are a rough guide that look for typical signal words. Your own judgement (and your teacher's) counts more.</p>
+      <div class="checks" id="checks"></div>
+    </details>
+
+    <div class="row" style="margin-top:14px"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn" data-next>Finish: exam checklist →</button></div>
+  </div>
+</section>
+
+<!-- ============ STATION 8: Checklist ============ -->
+<section class="station" data-title="Exam checklist">
+  <div class="card finalcard">
+    <h2>Take this into the exam</h2>
+    <p class="muted">Screenshot this or keep the page open while you do the next sim.</p>
+    <ol class="check">
+      <li><b>Say what you think, early.</b> Your reader should know your position after one or two sentences.</li>
+      <li><b>Explain why.</b> Link each point back to the goal: customers, money, risk, people.</li>
+      <li><b>Use the texts, and name who said it.</b> "According to the Finance Director…" is worth more than "Some people say…".</li>
+      <li><b>Check the evidence in one clause.</b> Small sample? Interested party? Wrong season? Old data? One case only?</li>
+      <li><b>Give the other side its best shot, then answer it.</b> Agree with the part that's true, then show why your view still wins.</li>
+      <li><b>Name the price.</b> What does your option cost, and why is that acceptable?</li>
+      <li><b>End with a decision and a next step.</b> A review date, a condition, a pilot. No new arguments in the conclusion.</li>
+    </ol>
+    <div class="callout ok"><b>Time tip for the exam:</b> spend 3–4 minutes planning with the eight labels before you write. A plan of eight short notes almost writes the text for you.</div>
+    <div class="row"><button class="btn ghost" data-prev>← Back</button><span class="spacer"></span><button class="btn ghost" id="restart">Start again</button></div>
+  </div>
+  <p class="foot">SimLearn Extras · All people and companies in this activity are invented.</p>
+</section>
+
+</main>
+
+<script>
+(function(){
+  /* ---------- Data ---------- */
+  const MOVES = [
+    {k:'pos', name:'Position', c:'c-pos', q:'What do you think?',
+     what:'One clear sentence that tells the reader your choice. Put it near the start.',
+     ex:'Vossberg should keep at least one staffed till in every city store.',
+     ph:['We recommend…','The better option is…','This paper argues that…','Vossberg should…']},
+    {k:'rea', name:'Reasoning', c:'c-rea', q:'Why?',
+     what:'The logic that connects your position to a goal the reader cares about. Not a fact yet: the "because".',
+     ex:'City stores depend on regular older customers, who are the most likely to leave if a store feels impersonal.',
+     ph:['The main reason is that…','This matters because…','As a result,…','This would lead to…']},
+    {k:'evi', name:'Evidence', c:'c-evi', q:'What is it based on?',
+     what:'A fact, figure or statement from the texts, with the person or source named.',
+     ex:'According to Finance Director Ilse Brandsma, basket value fell by 6% during the pilot.',
+     ph:['According to…','X reports that…','Figures from… show…','As X points out,…']},
+    {k:'src', name:'Source check', c:'c-src', q:'How far can we trust it?',
+     what:'One clause that weighs the evidence: sample size, timing, who benefits, how old it is.',
+     ex:'That figure needs care, however, because the pilot ran over the summer.',
+     ph:['However, the sample was…','This should be treated with caution, as…','X has an interest in…','The data is from…, so…']},
+    {k:'cou', name:'Counter-argument', c:'c-cou', q:'What does the other side say?',
+     what:'The strongest point against you, stated fairly. Use the best version, not a weak one.',
+     ex:'Operations Manager Tomas Keller argues that full self-checkout would save €2.1 million a year.',
+     ph:['X argues that…','It could be argued that…','Critics point out that…','On the other hand,…']},
+    {k:'res', name:'Response', c:'c-res', q:'Why does your view still win?',
+     what:'Agree with what is true in the counter-argument (concession), then show its limits (rebuttal).',
+     ex:'This is a real saving, but it assumes no extra losses from theft.',
+     ph:['This is true, but…','While this is a fair point,…','Even so,…','This overlooks…']},
+    {k:'tra', name:'Trade-off', c:'c-tra', q:'What does it cost?',
+     what:'What your option gives up, and why that price is worth paying.',
+     ex:'Keeping one staffed till means giving up a third of the savings, but that protects our most frequent customers.',
+     ph:['This means giving up…, but…','The cost of this is…','On balance,…','This comes at the price of…']},
+    {k:'con', name:'Conclusion', c:'c-con', q:'So what now?',
+     what:'Your decision, restated, with a next step or condition. No new arguments.',
+     ex:'We therefore recommend a mixed model, with a review after six months.',
+     ph:['We therefore recommend…','For these reasons,…','In conclusion,…','…provided that…']}
+  ];
+  const M = Object.fromEntries(MOVES.map(m=>[m.k,m]));
+
+  const TAG_TEXT = [
+    {t:'Vossberg should keep at least one staffed till in every city store rather than go fully self-checkout.', a:'pos',
+     why:'It states the writer\'s choice directly, in the first sentence.'},
+    {t:'The main reason is that our city stores depend on older, regular customers, and they are the group most likely to walk out when a store starts to feel impersonal.', a:'rea',
+     why:'"The main reason is that…" gives the logic behind the choice. There is no figure or source yet.'},
+    {t:'In the Utrecht pilot, average basket value fell by 6% in the twelve weeks after the staffed tills were removed, according to Finance Director Ilse Brandsma.', a:'evi',
+     why:'A figure, with the person who gave it named.'},
+    {t:'That figure needs some care, however, because the pilot ran over the summer, when spending tends to dip anyway.', a:'src',
+     why:'It weighs the evidence: the timing might explain part of the fall.'},
+    {t:'Operations Manager Tomas Keller argues that full self-checkout would save around €2.1 million a year in staff costs.', a:'cou',
+     why:'This is the strongest point for the other option, stated fairly and with its source.'},
+    {t:'This is a real saving, but it assumes there will be no extra losses from theft, which several European grocers report at unstaffed checkouts.', a:'res',
+     why:'"This is a real saving" concedes the point; "but it assumes…" shows its limit.'},
+    {t:'Keeping one staffed till means giving up roughly a third of those savings, but that is a price worth paying to protect the customers who visit most often.', a:'tra',
+     why:'It names what is given up (a third of the savings) and why it is worth it.'},
+    {t:'We therefore recommend a mixed model in all city stores, with theft and basket figures reviewed after six months.', a:'con',
+     why:'The decision restated with a next step. No new arguments.'}
+  ];
+  const TAG_HINTS = {
+    pos:'Does this sentence tell us the writer\'s choice? Look for "should" or "recommend" at the start of the text.',
+    rea:'Is there a number or a named source here? If not, it is probably the logic ("because") rather than the evidence.',
+    evi:'Look for a figure and a named person or source.',
+    src:'Is this sentence using the evidence, or judging how far to trust it?',
+    cou:'Whose side is this point on: the writer\'s, or the other option\'s?',
+    res:'Is this a new point for the other side, or the writer answering one?',
+    tra:'Look for something being given up.',
+    con:'Look for "therefore" and a next step.'
+  };
+
+  const SRC = [
+    {claim:'"We asked 40 shoppers at our Amsterdam flagship store, and 90% said they prefer self-checkout."', who:'Marketing team, internal email',
+     opts:['The sample is small and not typical of all customers','The company selling the machines paid for it','The data is out of date','It confuses correlation with cause'], a:0,
+     why:'40 people in one busy flagship store, probably younger and in a hurry, can\'t speak for 40 city stores.',
+     model:'Although the marketing team found that 90% of shoppers prefer self-checkout, this was based on only 40 customers in one flagship store, so it may not reflect regular shoppers elsewhere.'},
+    {claim:'"Stores that switch to our self-checkout systems see customer satisfaction rise by 15%."', who:'TillSmart, a company that sells self-checkout machines',
+     opts:['The sample is too small','The source has an interest in the result','It is only one store','The data is out of date'], a:1,
+     why:'TillSmart makes money if Vossberg buys machines. The figure might still be true, but it needs independent support.',
+     model:'TillSmart reports a 15% rise in satisfaction, but as the company sells the machines, this figure should be treated with caution.'},
+    {claim:'"Our stores with the most self-checkouts have the youngest customers. Self-checkouts clearly attract young shoppers."', who:'Regional manager, board presentation',
+     opts:['The source has an interest in the result','It is out of date','It confuses a link with a cause','The sample is too small'], a:2,
+     why:'It may be the other way round: stores near universities have young customers, so they installed more self-checkouts.',
+     model:'Stores with more self-checkouts do have younger customers, but this may simply reflect their location near universities rather than the machines themselves attracting young people.'},
+    {claim:'"Theft at our Delft store rose by 30% in the three months after the switch."', who:'Security report',
+     opts:['It relies on a single case','The source has an interest in the result','It confuses a link with a cause','The data is out of date'], a:0,
+     why:'One store over three months could be bad luck, a new gang, a staff shortage… It is a warning sign, not proof.',
+     model:'Theft rose by 30% at the Delft store, although one store over three months is too little to show a general trend.'},
+    {claim:'"A national study found that most people over 65 avoid self-checkouts."', who:'Government consumer report, 2013',
+     opts:['It is only one store','The data may be out of date','The sample is too small','The source has an interest in the result'], a:1,
+     why:'A lot has changed since 2013: smartphones, contactless payment, the pandemic. Older shoppers may behave quite differently now.',
+     model:'A 2013 government study found that most over-65s avoided self-checkouts, but shopping habits have changed a great deal since then.'}
+  ];
+
+  const WEAK_PARTS = [
+    {id:'w0', text:'Self-checkouts are bad.'},
+    {id:'w1', text:'Everybody hates them and they cause a lot of problems.'},
+    {id:'w2', text:'Some people say they save money but I don\'t agree.'},
+    {id:'w3', text:'So we shouldn\'t use them.'}
+  ];
+  const UP = [
+    {target:'w0', problem:'The position is vague. "Bad" for whom? And what should Vossberg actually do?',
+     opts:['Self-checkouts are really, really bad for everyone.','Vossberg should not move its city stores to self-checkout only.','In my opinion I think self-checkouts maybe have some problems.'], a:1,
+     fb:['Stronger words don\'t make it clearer. The reader still doesn\'t know what you want Vossberg to do.','','Hedging three times ("in my opinion", "I think", "maybe") makes the position weaker, not more polite.']},
+    {target:'w1', problem:'"Everybody hates them" is an exaggeration with nothing behind it.',
+     opts:['It is a well-known fact that everybody hates them.','Lots of people say they hate them a lot.','In the Utrecht pilot survey, 31% of customers over 60 said they would shop elsewhere without a staffed till.'], a:2,
+     fb:['"A well-known fact" without a source is still an unsupported claim.','"Lots of people" is vague. Who? How many? Where does this come from?','']},
+    {target:'w2', problem:'The other side is mentioned, then dismissed with "I don\'t agree". Why not?',
+     opts:['Tomas Keller estimates savings of €2.1 million a year; this is significant, but it does not include the cost of higher theft.','Some people say they save money, but these people are wrong.','Money is not the most important thing.'], a:0,
+     fb:['','Calling the other side wrong isn\'t a reason. The reader needs to know <i>why</i>.','This avoids the counter-argument instead of answering it. For a business, €2.1 million is very important.']},
+    {target:'w3', problem:'The conclusion just repeats the first sentence. It gives no next step.',
+     opts:['In conclusion, as I said, self-checkouts are bad.','For these reasons, a mixed model is the safer choice, with theft and basket figures reviewed after six months.','So we shouldn\'t use them, and also staff will lose their jobs.'], a:1,
+     fb:['Repeating the start doesn\'t move the reader forward.','','A conclusion is the wrong place for a brand-new argument (jobs). If it matters, put it in the body.']}
+  ];
+
+  const TO = [
+    {prompt:'Round 1: a writer recommending the <b>mixed model</b>',
+     opts:['The mixed model is clearly the best option and has no real disadvantages.','The mixed model saves €700,000 a year less than full self-checkout, but that is a reasonable price for keeping the older customers who make up much of our regular trade.','The mixed model is good because customers like it, and it is also cheaper than having only staffed tills.'], a:1,
+     fb:['No option is free. Claiming "no disadvantages" makes the reader trust you less.','','This lists two advantages but never says what is given up.']},
+    {prompt:'Round 2: a writer recommending <b>self-checkout only</b>',
+     opts:['Self-checkout only saves €2.1 million a year, and it is also more modern.','Some customers may not like it, but they will get used to it.','Going fully self-checkout risks losing some older customers, but the extra €700,000 a year could fund staff who help at the machines, which would limit that risk.'], a:2,
+     fb:['Two advantages, no cost. That\'s a list, not a trade-off.','This names a cost but brushes it aside without a reason. "They will get used to it" needs evidence.','']}
+  ];
+
+  const FULL = [
+    {m:'pos', t:'Vossberg should move its city stores to self-checkout only, but only after adding trained floor staff to help customers at the machines.', n:'The choice comes first, with a condition attached. A condition makes a position sound careful, not weak.'},
+    {m:'rea', t:'The main reason is cost: staff wages are the chain\'s largest controllable expense, and the savings could be reinvested in lower prices and better help on the shop floor.', n:'The logic: why this choice serves the company\'s goals.'},
+    {m:'evi', t:'According to Operations Manager Tomas Keller, full self-checkout would save about €2.1 million a year, compared with €1.4 million for a mixed model.', n:'A figure with its source named.'},
+    {m:'evi', t:'The Utrecht pilot survey also found that 58% of younger customers preferred self-checkout.', n:'A second piece of evidence. "Also" links it to the first.'},
+    {m:'src', t:'Keller\'s figure is an estimate rather than a result, however, and it does not include possible losses from theft.', n:'The writer checks their own evidence. This builds trust: the reader sees the writer isn\'t hiding anything.'},
+    {m:'cou', t:'Finance Director Ilse Brandsma points out that basket value fell by 6% during the pilot, which suggests some customers spent less or went elsewhere.', n:'The strongest point against self-checkout, stated fairly with its source.'},
+    {m:'res', t:'This is a warning sign, but the pilot ran over the summer, when spending usually dips, so the fall cannot all be blamed on the tills.', n:'Concede ("a warning sign"), then limit it ("but… cannot all be blamed"). The source-check idea from station 3 is used here as a response.'},
+    {m:'tra', t:'Going fully self-checkout does risk losing some older customers, but the extra €700,000 a year could pay for floor staff to help at the machines, which would limit that risk.', n:'The price (older customers), and why it\'s acceptable (the money can reduce the risk).'},
+    {m:'con', t:'We therefore recommend self-checkout only in city stores, with floor staff at peak times and a review of theft and basket figures after six months.', n:'Decision, condition and review date. Nothing new.'}
+  ];
+
+  // Each bank: 8 strong sentences (one per move, in order) + 4 weak distractors
+  const BANKS = {
+    ebc:{label:'EBC · Business', title:'Kaffebar Nord: the coffee subscription',
+      intro:'<b>Kaffebar Nord</b>, a chain of 25 cafés in Copenhagen, is deciding whether to launch a <b>€12-a-month subscription</b> that gives customers one filter coffee a day.',
+      good:[
+        'Kaffebar Nord should launch the coffee subscription, but as a six-month trial in ten cafés rather than across the whole chain.',
+        'A subscription turns occasional visitors into daily regulars, and regulars are the customers who also buy pastries and lunch.',
+        'According to Head of Sales Mette Lund, subscribers to a similar scheme in Oslo spent 22% more on food than ordinary customers.',
+        'That figure comes from a single competitor, though, and customers in Oslo may not behave like ours.',
+        'Finance Manager Pieter de Wit warns that heavy users could drink far more than €12 worth of coffee each month.',
+        'This is a fair concern, but the limit of one drink a day caps the cost, and filter coffee costs us very little to make.',
+        'A trial means a slower launch and less publicity, but that is a small price for real data before we commit the whole chain.',
+        'We therefore recommend the ten-café trial from March, with food sales and coffee costs reviewed in September.'
+      ],
+      weak:[
+        {m:'pos', t:'Subscriptions are a big trend right now and everyone is doing them.', why:'This describes a trend, but it never says what Kaffebar Nord should do. "Everyone is doing it" isn\'t a reason either.'},
+        {m:'evi', t:'Lots of customers would probably love this idea.', why:'Who says so? "Lots of" and "probably" with no source isn\'t evidence.'},
+        {m:'res', t:'Pieter is just being negative, as finance people always are.', why:'This attacks the person, not the argument. Answer what he says instead.'},
+        {m:'con', t:'In conclusion, we should also open a new café in Aarhus.', why:'A brand-new idea in the conclusion. Conclusions only close what you\'ve already argued.'}
+      ]},
+    eim:{label:'EIM · Management', title:'Veldhoven Logistics: the Lisbon move',
+      intro:'<b>Veldhoven Logistics</b>, based in Antwerp, is deciding whether to move its <b>60-person customer service team to Lisbon</b>.',
+      good:[
+        'Veldhoven should keep its customer service team in Antwerp for now and improve it there, rather than move it to Lisbon.',
+        'Our biggest clients are Dutch and Belgian firms that value fast, local problem-solving, and a move would put those relationships at risk during the transition.',
+        'HR Director Sanne Peeters estimates that around 40% of the current team would leave rather than relocate, taking years of client knowledge with them.',
+        'Her estimate is based on an informal staff poll, however, so the real figure could be higher or lower.',
+        'COO Rui Marques points out that salaries in Lisbon are about 35% lower, which would save around €1.2 million a year.',
+        'These savings are real, but they leave out the cost of hiring and training a new team while service quality drops.',
+        'Staying means giving up those savings for now, but protecting key accounts matters more in a year when two major contracts are up for renewal.',
+        'We therefore recommend keeping the team in Antwerp and reviewing the decision in 2028, once both contracts have been renewed.'
+      ],
+      weak:[
+        {m:'rea', t:'Moving is always risky, and change is difficult for everybody.', why:'True of any change anywhere. A reason has to be about <i>this</i> case: these clients, this team.'},
+        {m:'evi', t:'Everyone knows that people don\'t like moving abroad.', why:'"Everyone knows" is a claim without a source. Who found this, and how many?'},
+        {m:'cou', t:'Some people say Lisbon is a nice city with good weather.', why:'This is the weakest version of the other side. The real argument for Lisbon is the €1.2 million saving.'},
+        {m:'tra', t:'Staying in Antwerp has no disadvantages at all.', why:'Every option has a price. Denying it makes the reader trust you less.'}
+      ]},
+    efd:{label:'EFD · Design', title:'Havenmuseum: labels or QR codes?',
+      intro:'<b>Havenmuseum</b>, a maritime museum in Rotterdam, is deciding whether to replace the <b>printed labels</b> on its exhibits with <b>QR codes</b> that open a phone guide.',
+      good:[
+        'The museum should keep short printed labels on every exhibit and add QR codes for visitors who want more, rather than replace the labels completely.',
+        'A label works the moment a visitor looks at an object, while a QR code adds steps that interrupt the experience.',
+        'According to Visitor Experience Lead Femke Visser, only 18% of visitors scanned the QR codes during the museum\'s trial.',
+        'The trial ran for just three weeks, though, and the codes were small and hard to spot, so the low figure may partly reflect poor placement.',
+        'Digital Manager Joris Bakker argues that a phone guide can offer audio, video and several languages that no label can match.',
+        'This is true, but those features only help visitors who choose to use them, so they work better as an extra layer than as a replacement.',
+        'Keeping printed labels means higher printing and update costs, but it keeps every exhibit readable for every visitor, with or without a phone.',
+        'We therefore recommend a layered design, with larger, clearer QR codes and a second trial over the summer to test them properly.'
+      ],
+      weak:[
+        {m:'pos', t:'QR codes are ugly and old-fashioned.', why:'A personal opinion, not a decision. What should the museum actually do?'},
+        {m:'evi', t:'I think most visitors prefer reading labels.', why:'"I think" isn\'t evidence. The trial data is.'},
+        {m:'src', t:'The trial figures are definitely wrong.', why:'Dismissing data without a reason isn\'t a source check. Say <i>why</i> it might be weak (length, placement).'},
+        {m:'con', t:'To sum up, the museum could also sell more souvenirs in the gift shop.', why:'Off topic and new. A conclusion closes the argument you made.'}
+      ]},
+    ae:{label:'AE · Academic', title:'Should universities ban laptops in lectures?',
+      intro:'An argumentative essay paragraph on the question: <b>Should universities ban laptops in lectures?</b> Notice the academic register and citations.',
+      good:[
+        'This essay argues that universities should not ban laptops in lectures, but should encourage lecturers to set clear rules for their use.',
+        'Laptops support note-taking and access to course materials, and for some students they provide accessibility software without which full participation would be difficult.',
+        'A survey of 1,200 students by Okafor and Brandt (2025) found that 71% used their laptop mainly to read slides and take notes rather than for social media.',
+        'However, the survey relied on self-reporting, and students may underestimate how often they are distracted.',
+        'In contrast, Lindqvist (2024) found that students who took notes by hand remembered 12% more after one week than those who typed.',
+        'This finding is significant, but it suggests a need to teach better note-taking strategies rather than a reason to remove the tool entirely.',
+        'Allowing laptops means accepting some distraction in the lecture hall, but a ban would penalise the many students who use them productively.',
+        'It therefore appears that clear classroom rules, rather than a ban, offer the more balanced solution, although further research on long-term learning outcomes is needed.'
+      ],
+      weak:[
+        {m:'pos', t:'Laptops are a big part of modern life, so I think they\'re good.', why:'Too informal for an essay ("I think", "they\'re"), and it doesn\'t state a position on the ban.'},
+        {m:'evi', t:'It is obvious that nobody uses laptops for social media in lectures.', why:'An overclaim with no source. "Obvious" and "nobody" are red flags in academic writing.'},
+        {m:'res', t:'Lindqvist is clearly wrong because handwriting is old-fashioned.', why:'This dismisses the study instead of engaging with it. Accept the finding, then limit it.'},
+        {m:'tra', t:'There are no real downsides to allowing laptops.', why:'Academic writing acknowledges limitations. Ignoring the distraction problem weakens the argument.'}
+      ]}
+  };
+  const ORDER = ['pos','rea','evi','src','cou','res','tra','con'];
+  const CHECKS = [
+    {k:'pos', label:'A clear position', re:/\b(recommend|should|propose|better option|argue[sd]? that|this (paper|essay|memo) argues|we suggest|must)\b/i},
+    {k:'rea', label:'A reason ("because", "this means"…)', re:/\b(because|since|as a result|this means|therefore|so that|the (main )?reason|this matters|which (would|could|means))\b/i},
+    {k:'evi', label:'Evidence with a source', re:/(\d)|\b(according to|reports?|points? out|states?|found|survey|Brandsma|Keller|Hendriks|Retail Watch)\b/i},
+    {k:'src', label:'A check on the evidence', re:/\b(caution|although|though|small|sample|summer|season|interest|may not|might not|limited|one store|careful|care|estimate|only one|only \d+)\b/i},
+    {k:'cou', label:'The other side', re:/\b(argues?|could be argued|critics|on the other hand|opponents|some (may|might|would)|it is true that|admittedly)\b/i},
+    {k:'tra', label:'A trade-off (a cost you accept)', re:/\b(giving up|give up|cost of|at the (price|cost) of|on balance|outweigh|sacrific|trade-?off|price worth|less savings?|lose|losing)\b/i},
+    {k:'con', label:'A conclusion with a next step', re:/\b(therefore|for these reasons|in conclusion|to conclude|overall|review|provided that|after (six|three|\d+) months|pilot|monitor)\b/i}
+  ];
+
+  /* ---------- Navigation ---------- */
+  const stations = [...document.querySelectorAll('section.station')];
+  const nav = document.getElementById('nav');
+  const done = new Set();
+  let cur = 0;
+  stations.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.innerHTML = `<span class="n">${i}</span>${s.dataset.title}`;
+    b.onclick = ()=>go(i);
+    nav.appendChild(b);
+  });
+  function go(i){
+    if(i<0||i>=stations.length) return;
+    if(i>cur) done.add(cur);
+    cur=i;
+    stations.forEach((s,j)=>s.classList.toggle('active',j===i));
+    [...nav.children].forEach((b,j)=>{b.classList.toggle('active',j===i);b.classList.toggle('done',done.has(j)&&j!==i);});
+    nav.children[i].scrollIntoView({inline:'center',block:'nearest'});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>go(cur+1));
+  document.querySelectorAll('[data-prev]').forEach(b=>b.onclick=()=>go(cur-1));
+  document.getElementById('restart').onclick=()=>location.reload();
+
+  /* ---------- Station 1 ---------- */
+  const movesEl = document.getElementById('moves');
+  MOVES.forEach(m=>{
+    const d=document.createElement('div');
+    d.className='move';
+    d.innerHTML=`<span class="tag ${m.c}">${m.name}</span><div class="q">${m.q}</div>
+      <div class="more"><div>${m.what}</div><div class="ex">${m.ex}</div><div class="phr">${m.ph.map(p=>`<span>${p}</span>`).join('')}</div></div>
+      <div class="hint">Tap to open</div>`;
+    d.onclick=()=>{d.classList.toggle('open');d.querySelector('.hint').textContent=d.classList.contains('open')?'Tap to close':'Tap to open';};
+    movesEl.appendChild(d);
+  });
+
+  /* ---------- Station 2 ---------- */
+  const tagList=document.getElementById('tagList');
+  let tagCorrect=0;
+  TAG_TEXT.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='sent';
+    d.innerHTML=`<div class="txt"><b>${i+1}.</b> ${s.t}</div><div class="chips"></div><div class="fb"></div>`;
+    const chips=d.querySelector('.chips'), fb=d.querySelector('.fb');
+    let solved=false;
+    MOVES.forEach(m=>{
+      const c=document.createElement('button');
+      c.className='chip'; c.textContent=m.name;
+      c.onclick=()=>{
+        if(solved) return;
+        if(m.k===s.a){
+          solved=true; tagCorrect++;
+          c.classList.add('right',m.c);
+          d.classList.add('correct');
+          [...chips.children].forEach(x=>{if(x!==c) x.style.display='none';});
+          fb.className='fb show good'; fb.innerHTML='✓ '+s.why;
+          document.getElementById('tagScore').textContent=tagCorrect+' / 8';
+          if(tagCorrect===8) document.getElementById('tagDone').style.display='block';
+        } else {
+          c.classList.add('wrong');
+          fb.className='fb show nope'; fb.innerHTML='Not quite. '+TAG_HINTS[s.a];
+        }
+      };
+      chips.appendChild(c);
+    });
+    tagList.appendChild(d);
+  });
+
+  /* ---------- Station 3 ---------- */
+  const srcList=document.getElementById('srcList');
+  SRC.forEach((s,i)=>{
+    const d=document.createElement('div');
+    d.className='item';
+    d.innerHTML=`<h3>Claim ${i+1}</h3><div class="claim">${s.claim}<div class="who">Source: ${s.who}</div></div>
+      <div class="small muted" style="margin-bottom:6px">What's the main weakness?</div><div class="opts"></div><div class="fb"></div>
+      <div class="model"><b>How to write it:</b> ${s.model}</div>`;
+    const opts=d.querySelector('.opts'), fb=d.querySelector('.fb'), model=d.querySelector('.model');
+    s.opts.forEach((o,j)=>{
+      const b=document.createElement('button'); b.className='opt'; b.textContent=o;
+      b.onclick=()=>{
+        if(j===s.a){
+          b.classList.add('right'); [...opts.children].forEach(x=>x.disabled=true);
+          fb.className='fb show good'; fb.innerHTML='✓ '+s.why; model.classList.add('show');
+        } else {
+          b.classList.add('wrong'); b.disabled=true;
+          fb.className='fb show nope'; fb.textContent='Not the main problem here. Look again at who is speaking, how many cases, and when.';
+        }
+      };
+      opts.appendChild(b);
+    });
+    srcList.appendChild(d);
+  });
+
+  /* ---------- Station 4 ---------- */
+  const weakEl=document.getElementById('weakPara'), upStep=document.getElementById('upStep'), upDots=document.getElementById('upDots');
+  const fixed={};
+  function renderWeak(active){
+    weakEl.innerHTML=WEAK_PARTS.map(p=>{
+      const txt=fixed[p.id]||p.text;
+      const cls=fixed[p.id]?'fixed':(p.id===active?'':null);
+      return cls===null?txt:`<mark class="${cls}">${txt}</mark>`;
+    }).join(' ');
+    upDots.innerHTML=UP.map((u,i)=>`<i class="${fixed[u.target]?'ok':(u.target===active?'on':'')}"></i>`).join('');
+  }
+  function renderUp(i){
+    if(i>=UP.length){
+      renderWeak(null);
+      upStep.innerHTML=`<div class="callout ok"><b>Done.</b> Same position, but now it has evidence with a source, the other side with an answer, and a conclusion with a next step. Two moves are still missing: a <b>source check</b> and a <b>trade-off</b>. Where would you add them? Compare the word count: the weak version had 28 words; this one has about 70. Length came from <i>content</i>, not padding.</div>`;
+      return;
+    }
+    const u=UP[i]; renderWeak(u.target);
+    upStep.innerHTML=`<div class="item"><h3>Problem ${i+1} of ${UP.length}</h3><p class="small">${u.problem}</p><div class="opts"></div><div class="fb"></div></div>`;
+    const opts=upStep.querySelector('.opts'), fb=upStep.querySelector('.fb');
+    u.opts.forEach((o,j)=>{
+      const b=document.createElement('button'); b.className='opt'; b.textContent=o;
+      b.onclick=()=>{
+        if(j===u.a){
+          b.classList.add('right'); [...opts.children].forEach(x=>x.disabled=true);
+          fixed[u.target]=o; renderWeak(null);
+          fb.className='fb show good'; fb.innerHTML='✓ Better. ';
+          const nx=document.createElement('button'); nx.className='btn'; nx.style.marginTop='10px';
+          nx.textContent=i+1<UP.length?'Next problem →':'See the result →';
+          nx.onclick=()=>renderUp(i+1); fb.appendChild(document.createElement('br')); fb.appendChild(nx);
+        } else {
+          b.classList.add('wrong'); b.disabled=true;
+          fb.className='fb show nope'; fb.innerHTML=u.fb[j];
+        }
+      };
+      opts.appendChild(b);
+    });
+  }
+  renderUp(0);
+
+  /* ---------- Station 5 ---------- */
+  const toList=document.getElementById('toList');
+  TO.forEach(t=>{
+    const d=document.createElement('div'); d.className='item';
+    d.innerHTML=`<h3>${t.prompt}</h3><div class="opts"></div><div class="fb"></div>`;
+    const opts=d.querySelector('.opts'), fb=d.querySelector('.fb');
+    t.opts.forEach((o,j)=>{
+      const b=document.createElement('button'); b.className='opt'; b.textContent=o;
+      b.onclick=()=>{
+        if(j===t.a){
+          b.classList.add('right'); [...opts.children].forEach(x=>x.disabled=true);
+          fb.className='fb show good'; fb.innerHTML='✓ Gain, cost and justification are all there.';
+        } else {
+          b.classList.add('wrong'); b.disabled=true;
+          fb.className='fb show nope'; fb.innerHTML=t.fb[j];
+        }
+      };
+      opts.appendChild(b);
+    });
+    toList.appendChild(d);
+  });
+
+  /* ---------- Station 6: Put it together ---------- */
+  const fullEl=document.getElementById('fullText'), selInfo=document.getElementById('selInfo');
+  const colorOf=k=>getComputedStyle(document.documentElement).getPropertyValue('--t-'+k).trim();
+  FULL.forEach((f,i)=>{
+    const sp=document.createElement('span');
+    sp.className='s'; sp.style.setProperty('--mc',colorOf(f.m));
+    sp.innerHTML=`<span class="lab">${M[f.m].name}</span>${f.t}`;
+    sp.onclick=()=>{
+      fullEl.querySelectorAll('.s').forEach(x=>x.classList.remove('sel')); sp.classList.add('sel');
+      selInfo.innerHTML=`<span class="tag ${M[f.m].c}" style="color:#fff;font-size:.72rem;font-weight:700;border-radius:5px;padding:1px 7px">${M[f.m].name}</span> ${f.n}`;
+    };
+    fullEl.appendChild(sp); fullEl.appendChild(document.createTextNode(' '));
+  });
+  document.getElementById('showMoves').onclick=function(){
+    const on=fullEl.classList.toggle('show'); this.textContent=on?'Hide the moves':'Show the moves';
+  };
+
+  /* ---------- Station 7: Builder ---------- */
+  const tabs=document.getElementById('courseTabs'), caseBox=document.getElementById('caseBox');
+  const trayEl=document.getElementById('tray'), slotsEl=document.getElementById('slots');
+  let bank=null, cards=[], placed={}, picked=null;
+
+  function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+  function setCourse(k){
+    [...tabs.children].forEach(b=>b.classList.toggle('active',b.dataset.k===k));
+    bank=BANKS[k];
+    caseBox.innerHTML=`<b>${bank.title}</b><div class="small" style="margin-top:4px">${bank.intro}</div>`;
+    cards=shuffle([
+      ...bank.good.map((t,i)=>({id:'g'+i,m:ORDER[i],t,good:true})),
+      ...bank.weak.map((w,i)=>({id:'w'+i,m:w.m,t:w.t,good:false,why:w.why}))
+    ]);
+    placed={}; picked=null; trayMsg.className='traymsg';
+    document.getElementById('finished').classList.remove('show');
+    buildSlots(); renderTray(); score();
+  }
+  Object.entries(BANKS).forEach(([k,b])=>{
+    const t=document.createElement('button'); t.textContent=b.label; t.dataset.k=k; t.onclick=()=>setCourse(k); tabs.appendChild(t);
+  });
+
+  function cardEl(c){
+    const d=document.createElement('div'); d.className='card8'; d.textContent=c.t; d.draggable=true; d.dataset.id=c.id;
+    d.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain',c.id); d.classList.add('dragging');});
+    d.addEventListener('dragend',()=>d.classList.remove('dragging'));
+    return d;
+  }
+  function renderTray(){
+    trayEl.innerHTML='';
+    const inSlots=new Set(Object.values(placed));
+    const left=cards.filter(c=>!inSlots.has(c.id));
+    left.forEach(c=>{
+      const d=cardEl(c);
+      if(picked===c.id) d.classList.add('picked');
+      d.onclick=e=>{
+        if(e.target.closest('.qp')) return;
+        picked=(picked===c.id?null:c.id);
+        trayEl.querySelectorAll('.card8').forEach(x=>x.classList.toggle('picked',x.dataset.id===picked));
+        markTargets();
+      };
+      d.ondblclick=e=>{
+        if(e.target.closest('.qp')) return;
+        window.getSelection && window.getSelection().removeAllRanges();
+        openQuick(d,c);
+      };
+      trayEl.appendChild(d);
+    });
+    trayEl.prepend(trayMsg);
+    if(!left.length) trayEl.insertAdjacentHTML('beforeend','<div class="small muted" style="padding:8px">No sentences left. Check any orange slots.</div>');
+  }
+  const trayMsg=document.createElement('div'); trayMsg.className='traymsg';
+  function say(html,cls){ trayMsg.className='traymsg show '+cls; trayMsg.innerHTML=html; }
+  function openQuick(d,c){
+    trayEl.querySelectorAll('.qp').forEach(q=>q.remove());
+    const q=document.createElement('div'); q.className='qp';
+    q.innerHTML='<span class="qlab">Which move is this?</span>';
+    ORDER.forEach(m=>{
+      const b=document.createElement('button'); b.className=M[m].c; b.textContent=M[m].name;
+      b.disabled=!!slotIsGood(m);
+      b.onclick=ev=>{
+        ev.stopPropagation();
+        const r=place(c.id,m);
+        if(r==='bad'){ b.disabled=true; let msg=q.querySelector('.qmsg'); if(!msg){msg=document.createElement('div');msg.className='qmsg';q.appendChild(msg);} msg.innerHTML=`✗ Not a ${M[m].name}. Try again.`; }
+      };
+      q.appendChild(b);
+    });
+    const x=document.createElement('button'); x.textContent='Cancel'; x.style.background='#94a3b8';
+    x.onclick=ev=>{ev.stopPropagation(); q.remove();};
+    q.appendChild(x);
+    d.appendChild(q);
+  }
+  function markTargets(){
+    slotsEl.querySelectorAll('.slot').forEach(s=>s.classList.toggle('target',!!picked && !slotIsGood(s.dataset.m)));
+  }
+  const byId=id=>cards.find(c=>c.id===id);
+  const slotIsGood=m=>placed[m] && byId(placed[m]).good;
+
+  function buildSlots(){
+    slotsEl.innerHTML='';
+    ORDER.forEach(m=>{
+      const s=document.createElement('div'); s.className='slot'; s.dataset.m=m;
+      s.innerHTML=`<span class="sl ${M[m].c}">${M[m].name}</span><span class="sq">${M[m].q}</span><div class="in"></div><div class="note"></div>`;
+      s.addEventListener('dragover',e=>{ if(!slotIsGood(m)){e.preventDefault(); s.classList.add('over');} });
+      s.addEventListener('dragleave',()=>s.classList.remove('over'));
+      s.addEventListener('drop',e=>{e.preventDefault(); s.classList.remove('over'); place(e.dataTransfer.getData('text/plain'),m);});
+      s.addEventListener('click',e=>{
+        if(picked){ place(picked,m); return; }
+        // tap a weak placed card to send it back
+        if(placed[m] && !slotIsGood(m)){ delete placed[m]; renderSlot(m); renderTray(); score(); }
+      });
+      slotsEl.appendChild(s);
+    });
+  }
+  function renderSlot(m,msg,cls){
+    const s=slotsEl.querySelector(`[data-m="${m}"]`);
+    const inn=s.querySelector('.in'), note=s.querySelector('.note');
+    s.classList.remove('good','weakfit','bad','target');
+    inn.innerHTML=''; note.innerHTML='';
+    if(placed[m]){
+      const c=byId(placed[m]);
+      inn.textContent=c.t;
+      if(c.good){ s.classList.add('good'); note.innerHTML='✓ Strong.'; }
+      else { s.classList.add('weakfit'); note.innerHTML=`⚠ Right move, weak version. ${c.why} <i>Tap to send it back.</i>`; }
+    }
+    if(msg){ note.innerHTML=msg; if(cls) s.classList.add(cls); }
+  }
+  function place(id,m){
+    const c=byId(id); if(!c) return;
+    if(slotIsGood(m)) return 'full';
+    picked=null;
+    const s=slotsEl.querySelector(`[data-m="${m}"]`);
+    if(c.m!==m){
+      s.classList.remove('shake'); void s.offsetWidth; s.classList.add('shake');
+      renderSlot(m,`✗ That sentence isn't a <b>${M[m].name}</b>. ${TAG_HINTS[m]}`,'bad');
+      markTargets(); return 'bad';
+    }
+    // remove the card from any other slot, and return any weak card already here
+    Object.keys(placed).forEach(k=>{ if(placed[k]===id) {delete placed[k]; renderSlot(k);} });
+    placed[m]=id; renderSlot(m);
+    if(c.good) say(`✓ Placed as <b>${M[m].name}</b>.`,'good');
+    else say(`⚠ Placed as <b>${M[m].name}</b>, but it's a weak version. ${c.why} <i>Tap the orange slot to send it back.</i>`,'weak');
+    renderTray(); markTargets(); score();
+    return c.good?'good':'weak';
+  }
+  trayEl.addEventListener('dragover',e=>{e.preventDefault(); trayEl.classList.add('over');});
+  trayEl.addEventListener('dragleave',()=>trayEl.classList.remove('over'));
+  trayEl.addEventListener('drop',e=>{
+    e.preventDefault(); trayEl.classList.remove('over');
+    const id=e.dataTransfer.getData('text/plain');
+    Object.keys(placed).forEach(k=>{ if(placed[k]===id && !byId(id).good){ delete placed[k]; renderSlot(k);} });
+    renderTray(); score();
+  });
+
+  function score(){
+    const n=ORDER.filter(slotIsGood).length;
+    document.getElementById('buildScore').textContent=n+' / 8';
+    const fin=document.getElementById('finished');
+    if(n===8){
+      const txt=ORDER.map(m=>byId(placed[m]).t);
+      document.getElementById('finishedText').innerHTML=ORDER.map((m,i)=>`<span class="s" style="--mc:${colorOf(m)}"><span class="lab">${M[m].name}</span>${txt[i]}</span>`).join(' ');
+      document.getElementById('finishedWc').textContent=txt.join(' ').split(/\s+/).length+' words';
+      fin.classList.add('show');
+    } else fin.classList.remove('show');
+  }
+  document.getElementById('resetBuild').onclick=()=>setCourse(tabs.querySelector('.active').dataset.k);
+  setCourse('ebc');
+
+  /* ---------- Bonus writing ---------- */
+  const draft=document.getElementById('draft'), wc=document.getElementById('wc'), checksEl=document.getElementById('checks');
+  CHECKS.forEach(c=>{
+    const d=document.createElement('div'); d.className='ck'; d.dataset.k=c.k;
+    d.innerHTML=`<span class="dot"></span><span>${c.label}</span>`;
+    checksEl.appendChild(d);
+  });
+  draft.addEventListener('input',()=>{
+    const t=draft.value.trim(), n=t?t.split(/\s+/).length:0;
+    wc.textContent=n+' word'+(n===1?'':'s');
+    CHECKS.forEach(c=>checksEl.querySelector(`[data-k="${c.k}"]`).classList.toggle('on',c.re.test(t)));
+  });
+  document.getElementById('copyBtn').onclick=async()=>{
+    const b=document.getElementById('copyBtn');
+    try{ await navigator.clipboard.writeText(draft.value); b.textContent='Copied ✓'; }
+    catch(e){ draft.select(); b.textContent='Press Ctrl/Cmd + C'; }
+    setTimeout(()=>b.textContent='Copy text',2000);
+  };
+
+  go(0);
+})();
+</script>
+</body>
+</html>
